@@ -430,14 +430,6 @@ namespace sx {
 		return (p.x*p.x + p.y*p.y + p.z*p.z + p.w*p.w);
 	}
 
-	template<typename T, int N> inline const sx::vec<T,N> normalize (const sx::vec<T,N> &p) {
-		T d = sqrabsolute3(p);
-		if (denormalized_min < d) {
-			return (p / sx::sqrt(d));
-		}
-		return p;
-	}
-
 	template<typename T> inline const T normalize_self (vec<T,2> &p) {
 		T d = sqrabsolute2(p);
 		if (denormalized_min < d) {
@@ -770,6 +762,16 @@ template<typename T, int N> inline sx::vec<T,N> &operator/= (sx::vec<T,N> &a, co
 }
 
 namespace sx {
+
+	template<typename T, int N> inline const sx::vec<T,N> normalize (const sx::vec<T,N> &p) {
+		T d = sqrabsolute3(p);
+		if (denormalized_min < d) {
+			d = sx::sqrt(d);
+			return (p / d);
+		}
+		return p;
+	}
+
 	template<typename T> inline const T normalize_self (vec<T,3> &p) {
 		T d = sqrabsolute3(p);
 		if (denormalized_min < d) {

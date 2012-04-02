@@ -44,7 +44,11 @@
 	#if SXWINDOWS
 		#define DLLEXPORT __declspec(dllexport)
 	#else
-		#define DLLEXPORT
+		#if 4 <= __GNUC__
+			#define DLLEXPORT __attribute__((visibility("default")))
+		#else
+			#define DLLEXPORT
+		#endif
 	#endif
 #else
 	#define SXPLUGINNAMESPACEBEGIN(NAME) namespace NAME {
