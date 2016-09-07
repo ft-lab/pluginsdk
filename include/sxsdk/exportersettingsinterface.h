@@ -14,6 +14,8 @@ namespace sxsdk {
 		bool export_surface_attributes;
 		int export_filter_objects;
 
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
 	virtual int get_shadeversion (void* = nullptr) const = 0; // 0
 	virtual sx::uuid_class get_uuid (void* = nullptr) const = 0; // 1
 	virtual exporter_settings_interface &set_eol (int eol_param, void* = nullptr) = 0; // 2
@@ -114,6 +116,7 @@ namespace sxsdk {
 	virtual int exporter_settings_interface_dummy97(void *) { assert(false); throw "invalid interface exporter_settings_interface"; return 0; } // 97
 	virtual int exporter_settings_interface_dummy98(void *) { assert(false); throw "invalid interface exporter_settings_interface"; return 0; } // 98
 	virtual int exporter_settings_interface_dummy99(void *) { assert(false); throw "invalid interface exporter_settings_interface"; return 0; } // 99
+#pragma clang diagnostics pop
 	};
 
 	class _3ds_exporter_settings_interface : public exporter_settings_interface {
@@ -129,6 +132,8 @@ namespace sxsdk {
 		bool short_name;
 		std::string groupname_prefix;
 
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
 	virtual _3ds_exporter_settings_interface &set_export_material (bool export_material_param, void* = nullptr) = 0; // 0
 	virtual bool get_export_material (void* = nullptr) const = 0; // 1
 	virtual _3ds_exporter_settings_interface &set_image_filetype (int image_filetype_param, void* = nullptr) = 0; // 2
@@ -143,5 +148,6 @@ namespace sxsdk {
 	virtual const char* get_groupname_prefix (void* = nullptr) const = 0; // 11
 	virtual _3ds_exporter_settings_interface &set_short_name (bool short_name_param, void* = nullptr) = 0; // 12
 	virtual bool get_short_name (void* = nullptr) const = 0; // 13
+#pragma clang diagnostics pop
 	};
 }

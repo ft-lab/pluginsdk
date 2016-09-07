@@ -5,6 +5,8 @@ namespace sxsdk {
 	
 	class expression_interface : public unknown_interface {
 	public:
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
 enum expression_value_types_enum {	///< \en blah \enden \ja 値の種類 \endja 
 	type_unknown		= 0,	///< \en  \enden \ja 未定義 \endja 
 	type_real		= 1,	///< \en  \enden \ja 実数値 \endja 
@@ -22,5 +24,6 @@ enum expression_value_types_enum {	///< \en blah \enden \ja 値の種類 \endja
 	virtual const char* get_string (const char* variable, void* aux = 0) = 0; // 9
 	virtual int get_number_of_variable (void* aux = 0) = 0; // 10
 	virtual const char* get_variable (int number, void* aux = 0) = 0; // 11
+#pragma clang diagnostics pop
 	};
 }

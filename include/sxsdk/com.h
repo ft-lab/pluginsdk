@@ -1,5 +1,5 @@
 #pragma once
-#include "sx/core/com.hpp"
+#include "sxcore/com.hpp"
 
 #if __GNUG__
 	#define VTABLE_PADDING virtual void gcc_dummy0 () { }
@@ -18,6 +18,8 @@ public:
 		path_type, radio_button_type
 	};
 	explicit unknown_interface ();
+	unknown_interface (const unknown_interface&);
+	unknown_interface& operator= (const unknown_interface&);
 	virtual ~unknown_interface ();
 	virtual HRESULT STDMETHODCALLTYPE QueryInterface (REFIID, LPVOID *) { return E_NOINTERFACE; }
 	virtual ULONG STDMETHODCALLTYPE AddRef ();
@@ -25,25 +27,33 @@ public:
 	virtual bool is_implemented () { return true; }
 	int get_refcount () const { return ref; }
 	int get_shade_build_number () const;
-	volatile static unsigned interface_total_count;
+	static std::atomic<unsigned> interface_total_count;
 	void check_invariant () const { }
 protected:
-	volatile unsigned ref;
+	std::atomic<unsigned> ref;
 };
 
 /// \brief \en A smart pointer for reference counted *_interface classes. \enden \ja *_interfaceクラスのオブジェクトを指す参照カウントスマートポインタ。 \endja 
 template<class T> class compointer {
 public:
-	explicit compointer () : ptr(0) { }
+	explicit compointer () noexcept : ptr(nullptr) { }
 	/// \en blah \enden \ja compointerコンストラクタ。 \endja
-	explicit compointer (T *p, int n = 0) : ptr(p) {
+	explicit compointer (T *p, int n = 0) noexcept : ptr(p) {
 		if (ptr) while (n--) ptr->AddRef();
 	}
 	/// \en blah \enden \ja compointerコンストラクタ。 \endja
-	compointer (const compointer<T> &p) : ptr(p.ptr) {
+	compointer (const compointer &p) noexcept : ptr(p.ptr) {
 		if (ptr) ptr->AddRef();
 	}
-	~compointer () {
+	compointer (compointer&& t) noexcept : ptr(t.ptr) {
+		t.ptr = nullptr;
+	}
+	compointer& operator= (compointer&& t) noexcept {
+		ptr = t.ptr;
+		t.ptr = nullptr;
+		return *this;
+	}
+	~compointer () noexcept {
 		if (ptr) ptr->Release();
 	}
 	/// \en blah \enden \ja compointerが管理しているオブジェクトのポインタを返す。 \endja

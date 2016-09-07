@@ -1,0 +1,397 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		123FEE3D0817BC640055E2BB /* add_noise.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 123FEE380817BC640055E2BB /* add_noise.cpp */; };
+		123FEE3E0817BC640055E2BB /* SampleEffector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 123FEE390817BC640055E2BB /* SampleEffector.cpp */; };
+		123FEE410817BC640055E2BB /* invert_image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 123FEE3C0817BC640055E2BB /* invert_image.cpp */; };
+		123FEE540817BD240055E2BB /* add_noise_sample.tga in Resources */ = {isa = PBXBuildFile; fileRef = 123FEE530817BD240055E2BB /* add_noise_sample.tga */; };
+		12754799084564EE0029080F /* previewimagedialog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12754798084564EE0029080F /* previewimagedialog.cpp */; };
+		12974E740818D559005F9FC9 /* image_utility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12974E730818D559005F9FC9 /* image_utility.cpp */; };
+		12B8BD750B00396F00720F46 /* sample_effector_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12B8BD740B00396F00720F46 /* sample_effector_base.cpp */; };
+		16F9E2230546323A00F09F49 /* shdplugin.icns in Resources */ = {isa = PBXBuildFile; fileRef = 16F9E21A0546323A00F09F49 /* shdplugin.icns */; };
+		C7D5A211197E2CC700C2750A /* com.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C7D5A20E197E2CC700C2750A /* com.cpp */; };
+		C7D5A212197E2CC700C2750A /* debug.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C7D5A20F197E2CC700C2750A /* debug.cpp */; };
+		C7D5A213197E2CC700C2750A /* vectors.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C7D5A210197E2CC700C2750A /* vectors.cpp */; };
+		C7DBD49818989DBD0084FF3F /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DBD49718989DBD0084FF3F /* CoreServices.framework */; };
+		C7E1FEC019C7FDF4001E1773 /* sxuls in Resources */ = {isa = PBXBuildFile; fileRef = C7E1FEBE19C7FDF4001E1773 /* sxuls */; };
+		FFE6EE911A66504A0006CB66 /* SampleEffector.shdplugin in CopyFiles */ = {isa = PBXBuildFile; fileRef = B8C4EBC204BCAA9300A80009 /* SampleEffector.shdplugin */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1289E18207B20CAC005B92B6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = ../../../../../../builds/mac/plugins;
+			dstSubfolderSpec = 16;
+			files = (
+				FFE6EE911A66504A0006CB66 /* SampleEffector.shdplugin in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		089C1672FE841209C02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		121BE97A0817BBCF009DB341 /* SampleEffector.info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = SampleEffector.info.plist; path = plists/SampleEffector.info.plist; sourceTree = SOURCE_ROOT; };
+		123FEE380817BC640055E2BB /* add_noise.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = add_noise.cpp; path = ../../source/add_noise.cpp; sourceTree = SOURCE_ROOT; };
+		123FEE390817BC640055E2BB /* SampleEffector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SampleEffector.cpp; path = ../../source/SampleEffector.cpp; sourceTree = SOURCE_ROOT; };
+		123FEE3C0817BC640055E2BB /* invert_image.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = invert_image.cpp; path = ../../source/invert_image.cpp; sourceTree = SOURCE_ROOT; };
+		123FEE530817BD240055E2BB /* add_noise_sample.tga */ = {isa = PBXFileReference; lastKnownFileType = file; name = add_noise_sample.tga; path = ../../source/resources/add_noise_sample.tga; sourceTree = SOURCE_ROOT; };
+		12754798084564EE0029080F /* previewimagedialog.cpp */ = {isa = PBXFileReference; fileEncoding = 2147483649; lastKnownFileType = sourcecode.cpp.cpp; name = previewimagedialog.cpp; path = ../../source/previewimagedialog.cpp; sourceTree = SOURCE_ROOT; };
+		12974E730818D559005F9FC9 /* image_utility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = image_utility.cpp; path = ../../source/image_utility.cpp; sourceTree = SOURCE_ROOT; };
+		12B8BD740B00396F00720F46 /* sample_effector_base.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = sample_effector_base.cpp; path = ../../source/sample_effector_base.cpp; sourceTree = SOURCE_ROOT; };
+		16F9E21A0546323A00F09F49 /* shdplugin.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = shdplugin.icns; path = ../xshade/icns/shdplugin.icns; sourceTree = SOURCE_ROOT; };
+		32DBCF630370AF2F00C91783 /* xplugins_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xplugins_Prefix.pch; sourceTree = "<group>"; };
+		B8C4EBC204BCAA9300A80009 /* SampleEffector.shdplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleEffector.shdplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8FA2D5004BCE0E800A80009 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
+		B8FA2DE904BCE16F00A80009 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
+		B8FCB9DC06AB308C00544DB7 /* QuickTime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickTime.framework; path = /System/Library/Frameworks/QuickTime.framework; sourceTree = "<absolute>"; };
+		C77B38D7189883FB00A6D95B /* config.plugins.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = config.plugins.xcconfig; path = ../../../../xcconfig/config.plugins.xcconfig; sourceTree = "<group>"; };
+		C7D5A20E197E2CC700C2750A /* com.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = com.cpp; path = ../../../../include/sxcore/com.cpp; sourceTree = "<group>"; };
+		C7D5A20F197E2CC700C2750A /* debug.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = debug.cpp; path = ../../../../include/sxcore/debug.cpp; sourceTree = "<group>"; };
+		C7D5A210197E2CC700C2750A /* vectors.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = vectors.cpp; path = ../../../../include/sxcore/vectors.cpp; sourceTree = "<group>"; };
+		C7DBD49718989DBD0084FF3F /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = /System/Library/Frameworks/CoreServices.framework; sourceTree = "<absolute>"; };
+		C7E1FEBF19C7FDF4001E1773 /* en */ = {isa = PBXFileReference; lastKnownFileType = folder; name = en; path = ../../source/resources/en.lproj/sxuls; sourceTree = "<group>"; };
+		C7E1FEC119C7FE07001E1773 /* ja */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ja; path = ../../source/resources/ja.lproj/sxuls; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B8C4EBC004BCAA9300A80009 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7DBD49818989DBD0084FF3F /* CoreServices.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		089C166AFE841209C02AAC07 /* xplugins */ = {
+			isa = PBXGroup;
+			children = (
+				C77B38D7189883FB00A6D95B /* config.plugins.xcconfig */,
+				126A1F5507A4992400719165 /* mysource */,
+				B8F429BB04BCB35A00A80009 /* plists */,
+				08FB77AFFE84173DC02AAC07 /* Classes */,
+				32C88E010371C26100C91783 /* source */,
+				089C167CFE841241C02AAC07 /* Resources */,
+				089C1671FE841209C02AAC07 /* Frameworks and Libraries */,
+				19C28FB8FE9D52D311CA2CBB /* Products */,
+			);
+			name = xplugins;
+			sourceTree = "<group>";
+		};
+		089C1671FE841209C02AAC07 /* Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */,
+				1058C7AEFEA557BF11CA2CBB /* Other Frameworks */,
+			);
+			name = "Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		089C167CFE841241C02AAC07 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C7E1FEBE19C7FDF4001E1773 /* sxuls */,
+				123FEE530817BD240055E2BB /* add_noise_sample.tga */,
+				16F9E21A0546323A00F09F49 /* shdplugin.icns */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		08FB77AFFE84173DC02AAC07 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C7DBD49718989DBD0084FF3F /* CoreServices.framework */,
+				B8FCB9DC06AB308C00544DB7 /* QuickTime.framework */,
+				B8FA2D5004BCE0E800A80009 /* Carbon.framework */,
+				1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */,
+				B8FA2DE904BCE16F00A80009 /* OpenGL.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7AEFEA557BF11CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				089C1672FE841209C02AAC07 /* Foundation.framework */,
+				089C167FFE841241C02AAC07 /* AppKit.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		126A1F5507A4992400719165 /* mysource */ = {
+			isa = PBXGroup;
+			children = (
+				12B8BD740B00396F00720F46 /* sample_effector_base.cpp */,
+				12754798084564EE0029080F /* previewimagedialog.cpp */,
+				12974E730818D559005F9FC9 /* image_utility.cpp */,
+				123FEE380817BC640055E2BB /* add_noise.cpp */,
+				123FEE390817BC640055E2BB /* SampleEffector.cpp */,
+				123FEE3C0817BC640055E2BB /* invert_image.cpp */,
+			);
+			name = mysource;
+			sourceTree = "<group>";
+		};
+		19C28FB8FE9D52D311CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B8C4EBC204BCAA9300A80009 /* SampleEffector.shdplugin */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		32C88E010371C26100C91783 /* source */ = {
+			isa = PBXGroup;
+			children = (
+				C7D5A20E197E2CC700C2750A /* com.cpp */,
+				C7D5A20F197E2CC700C2750A /* debug.cpp */,
+				C7D5A210197E2CC700C2750A /* vectors.cpp */,
+				32DBCF630370AF2F00C91783 /* xplugins_Prefix.pch */,
+			);
+			name = source;
+			sourceTree = "<group>";
+		};
+		B8F429BB04BCB35A00A80009 /* plists */ = {
+			isa = PBXGroup;
+			children = (
+				121BE97A0817BBCF009DB341 /* SampleEffector.info.plist */,
+			);
+			name = plists;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		B8C4EBBD04BCAA9300A80009 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		B8C4EBC104BCAA9300A80009 /* SampleEffector */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 12D67531087E9FAC001D361A /* Build configuration list for PBXNativeTarget "SampleEffector" */;
+			buildPhases = (
+				B8C4EBBD04BCAA9300A80009 /* Headers */,
+				B8C4EBBE04BCAA9300A80009 /* Resources */,
+				B8C4EBBF04BCAA9300A80009 /* Sources */,
+				B8C4EBC004BCAA9300A80009 /* Frameworks */,
+				1289E18207B20CAC005B92B6 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SampleEffector;
+			productName = sample_importer;
+			productReference = B8C4EBC204BCAA9300A80009 /* SampleEffector.shdplugin */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		089C1669FE841209C02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+			};
+			buildConfigurationList = 12D67535087E9FAC001D361A /* Build configuration list for PBXProject "SampleEffector" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				de,
+				en,
+				es,
+				fr,
+				ja,
+				zh_CN,
+			);
+			mainGroup = 089C166AFE841209C02AAC07 /* xplugins */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B8C4EBC104BCAA9300A80009 /* SampleEffector */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B8C4EBBE04BCAA9300A80009 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7E1FEC019C7FDF4001E1773 /* sxuls in Resources */,
+				16F9E2230546323A00F09F49 /* shdplugin.icns in Resources */,
+				123FEE540817BD240055E2BB /* add_noise_sample.tga in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B8C4EBBF04BCAA9300A80009 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7D5A211197E2CC700C2750A /* com.cpp in Sources */,
+				123FEE3D0817BC640055E2BB /* add_noise.cpp in Sources */,
+				123FEE3E0817BC640055E2BB /* SampleEffector.cpp in Sources */,
+				C7D5A213197E2CC700C2750A /* vectors.cpp in Sources */,
+				123FEE410817BC640055E2BB /* invert_image.cpp in Sources */,
+				12974E740818D559005F9FC9 /* image_utility.cpp in Sources */,
+				12754799084564EE0029080F /* previewimagedialog.cpp in Sources */,
+				12B8BD750B00396F00720F46 /* sample_effector_base.cpp in Sources */,
+				C7D5A212197E2CC700C2750A /* debug.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C7E1FEBE19C7FDF4001E1773 /* sxuls */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C7E1FEBF19C7FDF4001E1773 /* en */,
+				C7E1FEC119C7FE07001E1773 /* ja */,
+			);
+			name = sxuls;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		12D67532087E9FAC001D361A /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_TRIGRAPHS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = xplugins_Prefix.pch;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = NO;
+				INFOPLIST_FILE = plists/SampleEffector.info.plist;
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_STYLE = Bundle;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = SampleEffector;
+				SECTORDER_FLAGS = "";
+				SYMROOT = ../../../../builds/mac;
+				WARNING_CFLAGS = "-w";
+				WRAPPER_EXTENSION = shdplugin;
+				ZERO_LINK = NO;
+			};
+			name = Development;
+		};
+		12D67533087E9FAC001D361A /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEPLOYMENT_LOCATION = NO;
+				DEPLOYMENT_POSTPROCESSING = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_ENABLE_TRIGRAPHS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = xplugins_Prefix.pch;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = NO;
+				INFOPLIST_FILE = plists/SampleEffector.info.plist;
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_STYLE = Bundle;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = SampleEffector;
+				SECTORDER_FLAGS = "";
+				SYMROOT = ../../../../builds/mac;
+				WARNING_CFLAGS = "-w";
+				WRAPPER_EXTENSION = shdplugin;
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		12D67536087E9FAC001D361A /* Development */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C77B38D7189883FB00A6D95B /* config.plugins.xcconfig */;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+			};
+			name = Development;
+		};
+		12D67537087E9FAC001D361A /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C77B38D7189883FB00A6D95B /* config.plugins.xcconfig */;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+			};
+			name = Deployment;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		12D67531087E9FAC001D361A /* Build configuration list for PBXNativeTarget "SampleEffector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12D67532087E9FAC001D361A /* Development */,
+				12D67533087E9FAC001D361A /* Deployment */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Deployment;
+		};
+		12D67535087E9FAC001D361A /* Build configuration list for PBXProject "SampleEffector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12D67536087E9FAC001D361A /* Development */,
+				12D67537087E9FAC001D361A /* Deployment */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Deployment;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 089C1669FE841209C02AAC07 /* Project object */;
+}

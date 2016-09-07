@@ -5,6 +5,8 @@ namespace sxsdk {
 
 	class loader_interface : public unknown_interface {
 	public:
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
 	virtual void do_load (sxsdk::loader_info_interface* loader_info, void* aux = 0) { }  // 0
 	virtual bool skip_load_objects ( void* aux =0 ) { return false; }  // 1
 	virtual void start ( void* aux =0 ) { }  // 2
@@ -14,7 +16,7 @@ namespace sxsdk {
 	virtual void head ( void* aux =0 ) { }  // 6
 	virtual void tail ( void* aux =0 ) { }  // 7
 	virtual bool must_skip ( void* aux =0 ) { return false; }  // 8
-	virtual void set_transformation (const sx::mat<float,4>& t, void* aux = 0) { }  // 9
+	virtual void set_transformation (const sxsdk::mat4& t, void* aux = 0) { }  // 9
 	virtual void clear_transformation ( void* aux =0 ) { }  // 10
 	virtual bool can_accept_polyline ( void* aux =0 ) { return false; }  // 11
 	virtual bool can_accept_polygon ( void* aux =0 ) { return false; }  // 12
@@ -36,8 +38,8 @@ namespace sxsdk {
 	virtual void do_polyline (sxsdk::points_interface* points, void* aux = 0) { }  // 28
 	virtual void do_polygon (int n, sxsdk::points_interface** c, void* aux = 0) { }  // 29
 	virtual void do_meshes (sxsdk::meshes_interface* m, void* aux = 0) { }  // 30
-	virtual void do_sphere (const sx::mat<float,4>& t, void* aux = 0) { }  // 31
-	virtual void do_disk (const sx::mat<float,4>& t, float t0, float t1, bool filled, void* aux = 0) { }  // 32
+	virtual void do_sphere (const sxsdk::mat4& t, void* aux = 0) { }  // 31
+	virtual void do_disk (const sxsdk::mat4& t, float t0, float t1, bool filled, void* aux = 0) { }  // 32
 	virtual void do_bezier_surface (sxsdk::mesh_interface* m, void* aux = 0) { }  // 33
 	virtual void begin_polymesh ( void* aux =0 ) { }  // 34
 	virtual void begin_polymesh_vertex (int n, void* aux = 0) { }  // 35
@@ -55,6 +57,14 @@ namespace sxsdk {
 	virtual void do_switch (sxsdk::part_class& switch_joint, void* aux = 0) { }  // 47
 	virtual bool can_accept_mirror ( void* aux =0 ) { return false; }  // 48
 	virtual void do_mirror (sxsdk::shape_class& shape, void* aux = 0) { }  // 49
+	virtual void begin_polymesh_face2 (int n, int number_of_face_groups, void* aux = 0) { }  // 50
+	virtual void end_polymesh_face2 ( void* aux =0 ) { }  // 51
+	virtual void begin_polymesh_face_group (int face_group_index, void* aux = 0) { }  // 52
+	virtual void end_polymesh_face_group ( void* aux =0 ) { }  // 53
+	virtual bool can_accept_polymesh_face_group ( void* aux =0 ) { return false; }  // 54
+	virtual void polymesh_face_uvs (int n_list, const int list[], const sxsdk::vec3* normals, const sxsdk::vec4* plane_equation, const int n_uvs, const sxsdk::vec2* uvs, void* aux = 0) { }  // 55
+#pragma clang diagnostics pop
+		virtual int get_interface_version () const = 0;
 	};
 }
 

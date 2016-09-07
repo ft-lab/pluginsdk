@@ -15,8 +15,8 @@ namespace sxsdk {
 
 namespace sxsdk {
 	/// \en blah \enden \ja 色深度 32bits/チャンネルの色を表す構造体 \endja
-	typedef sx::rgb<float> rgb_class;
-	typedef sx::rgba<float> rgba_class;
+	typedef sx::rgb_color<float> rgb_class;
+	typedef sx::rgba_color<float> rgba_class;
 }
 
 namespace sxsdk {
@@ -60,6 +60,9 @@ namespace sxsdk {
 		explicit mat4 (float s);
 		explicit mat4 (const sx::vec<float,3> &v);
 		explicit mat4 (const quaternion_class &q);
+		mat4 (const mat4&) = default;
+		mat4& operator= (const mat4&) SXLREF = default;
+
 		sx::vec<float,4> &operator[] (int i);
 		const sx::vec<float,4> &operator[] (int i) const;
 		bool operator== (const mat4 &t) const;
@@ -105,7 +108,7 @@ namespace sxsdk {
 			(*this)[3] = sx::vec<float,4>(m[3]);
 		}
 	};
-	inline static sx::mat<float,4> matrixt (const mat4 &m) { return sx::mat<float,4>(sx::vec<float,4>(m[0]), sx::vec<float,4>(m[1]), sx::vec<float,4>(m[2]), sx::vec<float,4>(m[3])); }
+	inline static sx::mat<float,4> matrixt (const mat4 &m) { return sx::mat<float,4>{ sx::vec<float,4>(m[0]), sx::vec<float,4>(m[1]), sx::vec<float,4>(m[2]), sx::vec<float,4>(m[3]) }; }
 }
 
 namespace sxsdk {
@@ -170,6 +173,9 @@ namespace sxsdk {
 
 		explicit box3_class () : empty(true) { }
 		explicit box3_class (float minx, float miny, float minz, float maxx, float maxy, float maxz) : min(minx, miny, minz, 0.0f), max(maxx, maxy, maxz, 0.0f), empty(false) { }
+		box3_class (const box3_class&) = default;
+		box3_class& operator= (const box3_class&) SXLREF = default;
+
 		box3_class &operator<< (const sx::vec<float,3> &v);
 		box3_class &operator<< (const box3_class &v);
 		float get_size () const { const sx::vec<float,4> size(max - min); return size.x + size.y + size.z; }
@@ -352,18 +358,17 @@ namespace sxsdk {
 	}
 	// \relates sx::vec<float,2>
 	inline static sx::vec<float,2> cartesian_to_polar (const sx::vec<float,2> &c) {
-		const float Pi = 3.14159265358979323846f;
 		sx::vec<float,2> p;
 		p[1] = absolute(c);
 		if (p[1] <= 0.0) return sx::vec<float,2>(0.0, 0.0);
 		if (std::abs(c[0]) < fabs(c[1])) {
 			p[0] = acos(c[0] / p[1]);
-			if (c[1] < 0.0) p[0] = (2.0*Pi) - p[0];
+			if (c[1] < 0.0) p[0] = (2.0 * sx::pi) - p[0];
 		}
 		else {
 			p[0] = asin(c[1] / p[1]);
-			if (c[0] < 0.0) p[0] = Pi - p[0];
-			if (p[0] < 0.0) p[0] += (2.0*Pi);
+			if (c[0] < 0.0) p[0] = sx::pi - p[0];
+			if (p[0] < 0.0) p[0] += (2.0 * sx::pi);
 		}
 		return p;
 	}
@@ -419,7 +424,7 @@ class Minor {
 	const sxsdk::mat4& m;
 	int j, k;
 public:
-	Minor(const sxsdk::mat4& _m, int _j, int _k):m(_m),j(_j),k(_k){};
+	Minor(const sxsdk::mat4& _m, int _j, int _k):m(_m),j(_j),k(_k){}
 	float det() const {
 		return (
 			(*this)(0,0) * ((*this)(1,1) * (*this)(2,2) - (*this)(1,2) * (*this)(2,1)) +
@@ -510,11 +515,11 @@ inline static sx::vec<float,4> max (const sx::vec<float,4> &a, const sx::vec<flo
 	return c;
 }
 
-#if SXWINDOWS
-	template<int K> COLORREF RGB_ (const sx::rgb<sx::unsigned8,K> &c) {
+#if SXAPI_CORE_WIN32
+	template<int K> COLORREF RGB_ (const sx::rgb_color<std::uint8_t,K> &c) {
 		return RGB(c.red, c.green, c.blue);
 	}
-	template<int K> COLORREF RGB_ (const sx::rgba<sx::unsigned8,K> &c) {
+	template<int K> COLORREF RGB_ (const sx::rgba_color<std::uint8_t,K> &c) {
 		return RGB(c.red, c.green, c.blue);
 	}
 #endif
@@ -854,7 +859,7 @@ inline sxsdk::mat4 sxsdk::mat4::xmat (const sx::vec<float,3> &v) {
 	sxsdk::mat4 t;
 	if (absolute(p) <= 0) {
 		if (c < 0)
-			t = sxsdk::mat4::rotate(sx::vec<float,3>(0,1,0), 3.14159265358979323846f);
+			t = sxsdk::mat4::rotate(sx::vec<float,3>(0,1,0), sx::pi);
 		else
 			t = sxsdk::mat4::identity;
 	}
@@ -873,7 +878,7 @@ inline sxsdk::mat4 sxsdk::mat4::ymat (const sx::vec<float,3> &v) {
 	sxsdk::mat4 t;
 	if (absolute(p) <= 0) {
 		if (c < 0)
-			t = sxsdk::mat4::rotate(sx::vec<float,3>(0,0,1), 3.14159265358979323846f);
+			t = sxsdk::mat4::rotate(sx::vec<float,3>(0,0,1), sx::pi);
 		else
 			t = sxsdk::mat4::identity;
 	}
@@ -892,7 +897,7 @@ inline sxsdk::mat4 sxsdk::mat4::zmat (const sx::vec<float,3> &v) {
 	sxsdk::mat4 t;
 	if (absolute(p) <= 0) {
 		if (c < 0)
-			t = sxsdk::mat4::rotate(sx::vec<float,3>(1,0,0), 3.14159265358979323846f);
+			t = sxsdk::mat4::rotate(sx::vec<float,3>(1,0,0), sx::pi);
 		else
 			t = sxsdk::mat4::identity;
 	}
@@ -1095,10 +1100,10 @@ inline sxsdk::box3_class &sxsdk::box3_class::operator<< (const box3_class &b) {
 	return *this;
 }
 
-inline static bool isnan (const sx::vec<float,2> &v) { return (sx::isnan(v.x) || sx::isnan(v.y)); }
-inline static bool isnan (const sx::vec<float,3> &v) { return (sx::isnan(v.x) || sx::isnan(v.y) || sx::isnan(v.z)); }
-inline static bool isnan (const sx::vec<float,4> &v) { return (sx::isnan(v.x) || sx::isnan(v.y) || sx::isnan(v.z) || sx::isnan(v.w)); }
-inline static bool isnan (const sxsdk::quaternion_class &v) { return (sx::isnan(v.x) || sx::isnan(v.y) || sx::isnan(v.z) || sx::isnan(v.w)); }
+inline static bool isnan (const sx::vec<float,2> &v) { return (std::isnan(v.x) || std::isnan(v.y)); }
+inline static bool isnan (const sx::vec<float,3> &v) { return (std::isnan(v.x) || std::isnan(v.y) || std::isnan(v.z)); }
+inline static bool isnan (const sx::vec<float,4> &v) { return (std::isnan(v.x) || std::isnan(v.y) || std::isnan(v.z) || std::isnan(v.w)); }
+inline static bool isnan (const sxsdk::quaternion_class &v) { return (std::isnan(v.x) || std::isnan(v.y) || std::isnan(v.z) || std::isnan(v.w)); }
 //inline static bool isnan (const sxsdk::mat4 &m) { return (isnan(m.x) || isnan(m.y) || isnan(m.z) || isnan(m.w)); }
 
 namespace sxsdk {

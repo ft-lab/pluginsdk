@@ -1,15 +1,16 @@
 #pragma once
 
 namespace sxsdk {
-	class
-	shape_saver_interface : public unknown_interface {
+	class shape_saver_interface : public unknown_interface {
 	public:
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
 	virtual void release (void* aux = 0) = 0; // 0
 	virtual void set_undo (void* aux = 0) const = 0; // 1
 	virtual void set_undo_action (void* aux = 0) const = 0; // 2
 	virtual void skin (void* aux = 0) = 0; // 3
 	virtual sxsdk::vec3 get_anchor_point (int i, void* aux = 0) = 0; // 4
-	virtual int get_number_of_points (void * = 0) const = 0; // 5
+	virtual int get_number_of_points (void* = nullptr) const = 0; // 5
 	virtual int shape_saver_interface_dummy6(void *) { assert(false); throw "invalid interface shape_saver_interface"; return 0; } // 6
 	virtual int shape_saver_interface_dummy7(void *) { assert(false); throw "invalid interface shape_saver_interface"; return 0; } // 7
 	virtual int shape_saver_interface_dummy8(void *) { assert(false); throw "invalid interface shape_saver_interface"; return 0; } // 8
@@ -204,5 +205,6 @@ namespace sxsdk {
 	virtual int shape_saver_interface_dummy197(void *) { assert(false); throw "invalid interface shape_saver_interface"; return 0; } // 197
 	virtual int shape_saver_interface_dummy198(void *) { assert(false); throw "invalid interface shape_saver_interface"; return 0; } // 198
 	virtual int shape_saver_interface_dummy199(void *) { assert(false); throw "invalid interface shape_saver_interface"; return 0; } // 199
+#pragma clang diagnostics pop
 	};
 }

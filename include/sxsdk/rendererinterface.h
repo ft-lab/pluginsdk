@@ -1,8 +1,9 @@
 #pragma once
-
 namespace sxsdk {
 	class renderer_interface : public exporter_interface {
 	public:
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
 	virtual void begin_rendering (rendering_context_interface* rendering_context, stream_interface* stream, void* aux = 0) { }  // 0
 	virtual void ask (stream_interface* stream, void* aux = 0) { }  // 1
 	virtual void render ( void* aux =0 ) { }  // 2
@@ -203,5 +204,6 @@ namespace sxsdk {
 	virtual int renderer_interface_dummy197(void *) { assert(false); throw "invalid interface renderer_interface"; return 0; } // 197
 	virtual int renderer_interface_dummy198(void *) { assert(false); throw "invalid interface renderer_interface"; return 0; } // 198
 	virtual int renderer_interface_dummy199(void *) { assert(false); throw "invalid interface renderer_interface"; return 0; } // 199
+#pragma clang diagnostics pop
 	};
 }

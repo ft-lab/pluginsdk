@@ -3,6 +3,8 @@
 namespace sxsdk {
 	class image_importer_interface : public plugin_interface {
 	public:
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
 	virtual const char* get_file_extension (int index, void* aux = 0) { return 0; }  // 0
 	virtual const char* get_file_description (int index, void* aux = 0) { return 0; }  // 1
 	virtual sxsdk::image_interface* do_import (int index, stream_interface* stream, void* aux = 0) { return 0; }  // 2
@@ -203,5 +205,6 @@ namespace sxsdk {
 	virtual int image_importer_interface_dummy197(void *) { assert(false); throw "invalid interface image_importer_interface"; return 0; } // 197
 	virtual int image_importer_interface_dummy198(void *) { assert(false); throw "invalid interface image_importer_interface"; return 0; } // 198
 	virtual int image_importer_interface_dummy199(void *) { assert(false); throw "invalid interface image_importer_interface"; return 0; } // 199
+#pragma clang diagnostics pop
 	};
 }

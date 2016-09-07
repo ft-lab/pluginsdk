@@ -1,18 +1,22 @@
 #pragma once
-#include "sx/core.h"
-#include "sx/core/debug.hpp"
-#include "sx/core/config.hpp"
+
+#include "sxcore/debug.hpp"
+#include "sxcore/config.hpp"
+#include "sxcore/unittest.hpp"
+#include "sxcore/object.hpp"
 #include "sxsdk/shadebuildnumber.h"
 #include "sxsdk/com.h"
 #include "sxsdk/uuid.h"
 #include "sxsdk/types.h"
-#include "sx/core/signature.hpp"
-#include "sx/core/memory.hpp"
-#include "sx/core/simd.hpp"
-#include "sx/core/bounds.hpp"
-#include "sx/core/vectors.hpp"
-#include "sx/core/pixel.hpp"
-#include "sx/core/vectorutility.hpp"
+//#include "sxcore/signature.hpp"
+#include "sxcore/memory.hpp"
+#include "sxcore/simd.hpp"
+#include "sxcore/bounds.hpp"
+#include "sxcore/vectors.hpp"
+#include "sxcore/pixel.hpp"
+#include "sxcore/imageutility.hpp"
+#include "sxcore/vectorutility.hpp"
+#include "sxcore/sxsdk.hpp"
 #include "sxsdk/vecs.h"
 
 #if SXQUICKTIME
@@ -23,19 +27,12 @@
 		#include <ImageCompression.h>
 	#endif
 #else
-	#if __LP64__
-		typedef unsigned int CodecType;
-		typedef unsigned int CodecQ;
-	#else
-		typedef unsigned long CodecType;
-		typedef unsigned long CodecQ;
-	#endif
+	typedef void CodecType;
+	typedef void CodecQ;
 #endif
 
-#if USE_PYTHON
-	#include <Python.h>
-#else
-	typedef void PyObject;
+#ifdef SXPYTHON
+#include <Python.h>
 #endif
 
 #if !SXWINDOWS
@@ -69,7 +66,8 @@ namespace xshade {
 	namespace control {
 		typedef void *control_class;
 	}
-	typedef void *window_class;
+	class window_class;
+//	typedef void *window_class;
 }
 namespace sxsdk {
 	// opaque types
@@ -218,10 +216,6 @@ namespace sxsdk {
 	class expression_interface;
 	class shade_interface;
 	class implementation_interface;
-	class gridmanager_window_interface;
-	class gridmanager_view_interface;
-	class batch_rendering_interface;
-	class rendering_history_interface;
 
 	class output_function_class;
 	class shader_info_base_class;
@@ -264,7 +258,7 @@ namespace sxsdk {
 	class ik_class;
 	class ik_data_class;
 }
-#define DEFINE_DYNAMIC_CAST(class_name, base_name, shape_type) static class_name &cast (base_name &s) { if (s.get_type() != shape_type) throw std::bad_cast(); return static_cast<class_name &>(s); } static const class_name &cast (const base_name &s) { if (s.get_type() != shape_type) throw std::bad_cast(); return static_cast<const class_name &>(s); } static class_name *cast (base_name *s) { if (s && s->get_type() != shape_type) return 0; return static_cast<class_name *>(s); } static const class_name *cast (const base_name *s) { if (s && s->get_type() != shape_type) return 0; return static_cast<const class_name *>(s); } 
+#define DEFINE_DYNAMIC_CAST(class_name, base_name, shape_type) static class_name &cast (base_name &s) { if (s.get_type() != shape_type) throw std::bad_cast(); return static_cast<class_name&>(s); } static const class_name &cast (const base_name &s) { if (s.get_type() != shape_type) throw std::bad_cast(); return static_cast<const class_name&>(s); } static class_name *cast (base_name *s) { if (s && s->get_type() != shape_type) return 0; return static_cast<class_name *>(s); } static const class_name *cast (const base_name *s) { if (s && s->get_type() != shape_type) return 0; return static_cast<const class_name *>(s); } 
 
 #include "sx/sxsdk/enums.hpp"
 #include "sxsdk/implementationinterface.h"
@@ -275,7 +269,7 @@ namespace sxsdk {
 #include "sxsdk/plugininterface.h"
 #include "sxsdk/mappinglayerclass.h"
 #include "sxsdk/surfaceinterface.h"
-#include "sxsdk/camerainterface.h"
+//#include "sxsdk/camerainterface.h"
 #include "sxsdk/distantlightitemclass.h"
 #include "sxsdk/distantlightinterface.h"
 #include "sxsdk/dialoginterface.h"
@@ -295,6 +289,7 @@ namespace sxsdk {
 #include "sxsdk/renderingcontextinterface.h"
 #include "sxsdk/renderinglightclass.h"
 #include "sxsdk/exporterinterface.h"
+#include "sxsdk/exportersettingsinterface.h"
 #include "sxsdk/imageexporterinterface.h"
 #include "sxsdk/pluginexporterinterface.h"
 #include "sxsdk/textstreaminterface.h"
@@ -317,6 +312,7 @@ namespace sxsdk {
 #include "sxsdk/backgroundinterface.h"
 #include "sxsdk/backgroundlayerclass.h"
 #include "sxsdk/bitmapinterface.h"
+#include "sxsdk/camerainterface.h"
 #include "sxsdk/colorinterface.h"
 #include "sxsdk/colorlistinterface.h"
 #include "sxsdk/correctioninterface.h"
@@ -345,10 +341,7 @@ namespace sxsdk {
 #include "sxsdk/shapesaverinterface.h"
 #include "sxsdk/shortcutinterface.h"
 #include "sxsdk/skinclass.h"
-#include "sxsdk/speedinterface.h"
 #include "sxsdk/surfaceclass.h"
 #include "sxsdk/physicalskyclass.h"
 #include "sxsdk/ikclass.h"
 #include "sxsdk/ikdataclass.h"
-#include "sxsdk/batchrenderinginterface.h"
-#include "sxsdk/renderinghistoryinterface.h"

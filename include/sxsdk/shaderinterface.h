@@ -7,6 +7,8 @@ namespace sxsdk {
     };
 	class shader_interface : public plugin_interface {
 	public:
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
 	virtual int get_default_map_mode ( void* aux =0 ) { return 3; }  // 0
 	virtual float evaluate (const sxsdk::vec3& p, void* aux = 0) { return 0.0; }  // 1
 	virtual bool supports_evaluate ( void* aux =0 ) { return false; }  // 2
@@ -207,44 +209,44 @@ namespace sxsdk {
 	virtual int shader_interface_dummy197(void *) { assert(false); throw "invalid interface shader_interface"; return 0; } // 197
 	virtual int shader_interface_dummy198(void *) { assert(false); throw "invalid interface shader_interface"; return 0; } // 198
 	virtual int shader_interface_dummy199(void *) { assert(false); throw "invalid interface shader_interface"; return 0; } // 199
-shader_info_base_class* get_shader_info (void * = 0) const { return i.implementation().shader_get_shader_info(); }
-const custom_element_info_base_class* get_custom_element_info (void * = 0) const { return i.implementation().shader_get_custom_element_info(); }
-custom_element_info_base_class* get_custom_element_per_thread_info (void * = 0) const { return i.implementation().shader_get_custom_element_per_thread_info(); }
-int get_intersection_number (void * = 0) const { return i.implementation().shader_get_intersection_number(); }
-stream_interface* get_stream_interface (void * = 0) const { return i.implementation().shader_get_stream_interface(); }
-float get_mapping (void * = 0) const { return i.implementation().shader_get_mapping(); }
-sxsdk::rgb_class get_mapping_color (void * = 0) const { return i.implementation().shader_get_mapping_color(); }
-float get_turbulence (void * = 0) const { return i.implementation().shader_get_turbulence(); }
-float get_softness (void * = 0) const { return i.implementation().shader_get_softness(); }
-int get_projection (void * = 0) const { return i.implementation().shader_get_projection(); }
+shader_info_base_class* get_shader_info (void* = nullptr) const { return i.implementation().shader_get_shader_info(); }
+const custom_element_info_base_class* get_custom_element_info (void* = nullptr) const { return i.implementation().shader_get_custom_element_info(); }
+custom_element_info_base_class* get_custom_element_per_thread_info (void* = nullptr) const { return i.implementation().shader_get_custom_element_per_thread_info(); }
+int get_intersection_number (void* = nullptr) const { return i.implementation().shader_get_intersection_number(); }
+stream_interface* get_stream_interface (void* = nullptr) const { return i.implementation().shader_get_stream_interface(); }
+float get_mapping (void* = nullptr) const { return i.implementation().shader_get_mapping(); }
+sxsdk::rgb_class get_mapping_color (void* = nullptr) const { return i.implementation().shader_get_mapping_color(); }
+float get_turbulence (void* = nullptr) const { return i.implementation().shader_get_turbulence(); }
+float get_softness (void* = nullptr) const { return i.implementation().shader_get_softness(); }
+int get_projection (void* = nullptr) const { return i.implementation().shader_get_projection(); }
 rgba_class sample_image ( float u, float v ) { return i.implementation().shader_sample_image(u, v); }
 sxsdk::vec2 sample_bump ( float u, float v ) { return i.implementation().shader_sample_bump(u, v); }
-sxsdk::vec3 get_P (void * = 0) const { return i.implementation().shader_get_P(); }
-shader_interface &set_P (const sxsdk::vec3 &P_param, void * = 0) { i.implementation().shader_set_P(P_param); return *this; }
-sxsdk::vec3 get_N (void * = 0) const { return i.implementation().shader_get_N(); }
-shader_interface &set_N (const sxsdk::vec3 &N_param, void * = 0) { i.implementation().shader_set_N(N_param); return *this; }
-sxsdk::vec3 get_Ng (void * = 0) const { return i.implementation().shader_get_Ng(); }
-sxsdk::vec3 get_I (void * = 0) const { return i.implementation().shader_get_I(); }
-sxsdk::rgb_class get_Cs (void * = 0) const { return i.implementation().shader_get_Cs(); }
-sxsdk::rgb_class get_Os (void * = 0) const { return i.implementation().shader_get_Os(); }
-float get_u (void * = 0) const { return i.implementation().shader_get_u(); }
-float get_v (void * = 0) const { return i.implementation().shader_get_v(); }
-float get_s (void * = 0) const { return i.implementation().shader_get_s(); }
-float get_t (void * = 0) const { return i.implementation().shader_get_t(); }
-sxsdk::vec3 get_dPdu (void * = 0) const { return i.implementation().shader_get_dPdu(); }
-sxsdk::vec3 get_dPdv (void * = 0) const { return i.implementation().shader_get_dPdv(); }
-bool has_uv (void * = 0) const { return i.implementation().shader_has_uv(); }
-bool has_st (void * = 0) const { return i.implementation().shader_has_st(); }
-bool has_tangents (void * = 0) const { return i.implementation().shader_has_tangents(); }
-float get_time (void * = 0) const { return i.implementation().shader_get_time(); }
-float get_du (void * = 0) const { return i.implementation().shader_get_du(); }
-float get_dv (void * = 0) const { return i.implementation().shader_get_dv(); }
-sxsdk::vec3 get_L (void * = 0) const { return i.implementation().shader_get_L(); }
-sxsdk::rgb_class get_Cl (void * = 0) const { return i.implementation().shader_get_Cl(); }
-sxsdk::rgb_class get_Ci (void * = 0) const { return i.implementation().shader_get_Ci(); }
-shader_interface &set_Ci (const sxsdk::rgb_class &Ci_param, void * = 0) { i.implementation().shader_set_Ci(Ci_param); return *this; }
-sxsdk::rgb_class get_Oi (void * = 0) const { return i.implementation().shader_get_Oi(); }
-shader_interface &set_Oi (const sxsdk::rgb_class &Oi_param, void * = 0) { i.implementation().shader_set_Oi(Oi_param); return *this; }
+sxsdk::vec3 get_P (void* = nullptr) const { return i.implementation().shader_get_P(); }
+shader_interface &set_P (const sxsdk::vec3 &P_param, void* = nullptr) { i.implementation().shader_set_P(P_param); return *this; }
+sxsdk::vec3 get_N (void* = nullptr) const { return i.implementation().shader_get_N(); }
+shader_interface &set_N (const sxsdk::vec3 &N_param, void* = nullptr) { i.implementation().shader_set_N(N_param); return *this; }
+sxsdk::vec3 get_Ng (void* = nullptr) const { return i.implementation().shader_get_Ng(); }
+sxsdk::vec3 get_I (void* = nullptr) const { return i.implementation().shader_get_I(); }
+sxsdk::rgb_class get_Cs (void* = nullptr) const { return i.implementation().shader_get_Cs(); }
+sxsdk::rgb_class get_Os (void* = nullptr) const { return i.implementation().shader_get_Os(); }
+float get_u (void* = nullptr) const { return i.implementation().shader_get_u(); }
+float get_v (void* = nullptr) const { return i.implementation().shader_get_v(); }
+float get_s (void* = nullptr) const { return i.implementation().shader_get_s(); }
+float get_t (void* = nullptr) const { return i.implementation().shader_get_t(); }
+sxsdk::vec3 get_dPdu (void* = nullptr) const { return i.implementation().shader_get_dPdu(); }
+sxsdk::vec3 get_dPdv (void* = nullptr) const { return i.implementation().shader_get_dPdv(); }
+bool has_uv (void* = nullptr) const { return i.implementation().shader_has_uv(); }
+bool has_st (void* = nullptr) const { return i.implementation().shader_has_st(); }
+bool has_tangents (void* = nullptr) const { return i.implementation().shader_has_tangents(); }
+float get_time (void* = nullptr) const { return i.implementation().shader_get_time(); }
+float get_du (void* = nullptr) const { return i.implementation().shader_get_du(); }
+float get_dv (void* = nullptr) const { return i.implementation().shader_get_dv(); }
+sxsdk::vec3 get_L (void* = nullptr) const { return i.implementation().shader_get_L(); }
+sxsdk::rgb_class get_Cl (void* = nullptr) const { return i.implementation().shader_get_Cl(); }
+sxsdk::rgb_class get_Ci (void* = nullptr) const { return i.implementation().shader_get_Ci(); }
+shader_interface &set_Ci (const sxsdk::rgb_class &Ci_param, void* = nullptr) { i.implementation().shader_set_Ci(Ci_param); return *this; }
+sxsdk::rgb_class get_Oi (void* = nullptr) const { return i.implementation().shader_get_Oi(); }
+shader_interface &set_Oi (const sxsdk::rgb_class &Oi_param, void* = nullptr) { i.implementation().shader_set_Oi(Oi_param); return *this; }
 void* get_vertexdata (int index) { return i.implementation().shader_get_vertexdata(index); }
 sxsdk::vec3 normalize ( const sxsdk::vec3&v ) { return i.implementation().shader_normalize(v); }
 float mod ( float x, float p ) { return i.implementation().shader_mod(x, p); }
@@ -288,7 +290,7 @@ sxsdk::vec4 noise4 ( float x, float y, float z ) { return noise4(sxsdk::vec3(x, 
 sxsdk::vec4 noise4 ( const sxsdk::vec4 &p ) { return i.implementation().shader_noise44(p); }
 sxsdk::vec4 noise4 ( const sxsdk::vec3&p, float t ) { return noise4(sxsdk::vec4(p.x, p.y, p.z, t)); }
 sxsdk::vec4 noise4 ( const sxsdk::vec2 &p, float z, float t ) { return noise4(sxsdk::vec4(p.x, p.y, z, t)); }
-sxsdk::vec4 noise4 ( float x, float y, float z, float t ) { return noise4(x, y, z, t); }
+sxsdk::vec4 noise4 ( float x, float y, float z, float t ) { return noise4(sxsdk::vec4(x, y, z, t)); }
 float cellnoise1 ( float x ) { return i.implementation().shader_cellnoise11(x); }
 float cellnoise1 ( const sxsdk::vec2 &p ) { return i.implementation().shader_cellnoise12(p); }
 float cellnoise1 ( float x, float y ) { return cellnoise1(sxsdk::vec2(x, y)); }
@@ -370,6 +372,7 @@ sxsdk::vec4 pnoise4 ( const sxsdk::vec2 &p, float z, float t, const sxsdk::vec4 
 sxsdk::vec4 pnoise4 ( float x, float y, float z, float t, const sxsdk::vec4 &period ) { return pnoise4(sxsdk::vec4(x, y, z, t), period); }
 float turbulence1 ( sxsdk::vec3 p, int m ) { return i.implementation().shader_turbulence1(p, m ); }
 sxsdk::vec3 turbulence3 ( sxsdk::vec3 p, int m ) { return i.implementation().shader_turbulence3(p, m ); } 
+#pragma clang diagnostics pop
 
 		shade_interface &i;
 		explicit shader_interface (shade_interface &shade) : i(shade) { }

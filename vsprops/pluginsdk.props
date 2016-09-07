@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <BOOSTPATH>../../../boost_1_55_0</BOOSTPATH>
+    <BOOSTTRPATH>../../../boost_1_55_0/tr1/tr1</BOOSTTRPATH>
+    <OPENEXRSUBPATH>openexr-1.6.1</OPENEXRSUBPATH>
+    <OPENGLSUBPATH>opengl</OPENGLSUBPATH>
+    <SXSDKINCLUDEPATH>../../../include</SXSDKINCLUDEPATH>
+    <DISABLE_BOOST_TR1>BOOST_TR1_ARRAY_HPP_INCLUDED;BOOST_TR1_FUNCTIONAL_HPP_INCLUDED;BOOST_TR1_MEMORY_HPP_INCLUDED;BOOST_TR1_TUPLE_HPP_INCLUDED;BOOST_TR1_TYPE_TRAITS_HPP_INCLUDED;BOOST_SYSTEM_NO_DEPRECATED</DISABLE_BOOST_TR1>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OutDir>$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <IgnoreImportLibrary>true</IgnoreImportLibrary>
+    <LinkIncremental>false</LinkIncremental>
+    <TargetName>$(ProjectName)$(TargetBits)$(Conffix)</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <Midl>
+      <PreprocessorDefinitions>$(DevMacro);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>$(BitType)</TargetEnvironment>
+      <TypeLibraryName>$(IntDir)$(ProjectName).tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/D extern_c="extern \"C\"" %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(BOOSTPATH);$(BOOSTTRPATH);$(SXSDKINCLUDEPATH);$(SXSDKINCLUDEPATH)/$(OPENEXRSUBPATH);$(SXSDKINCLUDEPATH)/$(OPENGLSUBPATH)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>$(DevMacro);$(BitMacro);$(DISABLE_BOOST_TR1);SXWIN32;_WINDOWS;SXWINDOWS;_SECURE_SCL=0;SXPLUGIN=1;SXCORE=;SXMODEL=;STDCALL=__stdcall;DLLEXPORT=__declspec(dllexport);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4819</DisableSpecificWarnings>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(ProjectName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <DisableSpecificWarnings>4819;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>$(DevMacro);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0411</Culture>
+    </ResourceCompile>
+    <Link>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <ProgramDatabaseFile>$(IntDir)$(ProjectName).pdb</ProgramDatabaseFile>
+      <ImportLibrary>$(IntDir)$(ProjectName).lib</ImportLibrary>
+      <LinkTimeCodeGeneration />
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy "$(OutDir)$(TargetName)$(TargetExt)" "../../../builds/win/$(BitType)/plugins/$(TargetName)$(TargetExt)"
+copy "$(OutDir)$(TargetName)$(TargetExt)" "./"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="BOOSTPATH">
+      <Value>$(BOOSTPATH)</Value>
+    </BuildMacro>
+    <BuildMacro Include="SXSDKINCLUDEPATH">
+      <Value>$(SXSDKINCLUDEPATH)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>

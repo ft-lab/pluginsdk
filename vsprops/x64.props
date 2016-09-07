@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets">
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros">
+    <TargetBits>64</TargetBits>
+    <BitType>X64</BitType>
+    <BitMacro>WIN32;WIN64</BitMacro>
+  </PropertyGroup>
+  <PropertyGroup>
+    <_ProjectFileVersion>11.0.61030.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="TargetBits">
+      <Value>$(TargetBits)</Value>
+    </BuildMacro>
+    <BuildMacro Include="BitMacro">
+      <Value>$(BitMacro)</Value>
+    </BuildMacro>
+    <BuildMacro Include="BitType">
+      <Value>$(BitType)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>

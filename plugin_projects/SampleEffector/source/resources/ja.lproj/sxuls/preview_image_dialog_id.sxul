@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dialog id="100" resizable="true" title="プレビューイメージ">
+	<vbox>
+		<custom height="300" id="100" min_height="50" min_width="50" resizable="true" width="300"/>
+		<group id="message_group" label="メッセージ">
+			<long-text default="OKをクリックすると結果をレンダリングイメージに適用します。" editable="false" id="101" label=""/>
+		</group>
+	</vbox>
+</dialog>

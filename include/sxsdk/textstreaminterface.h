@@ -1,10 +1,11 @@
 #pragma once
 
 namespace sxsdk {
-	class
-	text_stream_interface : public shade_interface {
+	class text_stream_interface : public shade_interface {
 	public:
-		typedef text_stream_interface& (*func_type ) (text_stream_interface&);
+		using func_type	= text_stream_interface& (*) (text_stream_interface&);
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
 	virtual text_stream_interface& read_line (const char*& s, void* aux = 0) = 0; // -1
 	virtual text_stream_interface& skip_line (void* aux = 0) = 0; // -1
 	virtual text_stream_interface& write_eol (void* aux = 0) = 0; // -1
@@ -29,14 +30,15 @@ namespace sxsdk {
 	virtual bool eof ( 
 				 ) = 0; // -1
 	virtual const char* read_token (const char*& s, void* aux = 0) = 0; // 0
-	virtual int get_indents (void * = 0) const = 0; // 1
-	virtual text_stream_interface &set_indents (int indents_param, void * = 0) = 0; // 2
-	virtual const char* get_indent_string (void * = 0) const = 0; // 3
-	virtual text_stream_interface &set_indent_string (const char* indent_string_param, void * = 0) = 0; // 4
+	virtual int get_indents (void* = nullptr) const = 0; // 1
+	virtual text_stream_interface &set_indents (int indents_param, void* = nullptr) = 0; // 2
+	virtual const char* get_indent_string (void* = nullptr) const = 0; // 3
+	virtual text_stream_interface &set_indent_string (const char* indent_string_param, void* = nullptr) = 0; // 4
 	virtual int text_stream_interface_dummy5(void *) { assert(false); throw "invalid interface text_stream_interface"; return 0; } // 5
-	virtual bool get_convert_encoding (void * = 0) const = 0; // 6
-	virtual text_stream_interface &set_convert_encoding (bool convert_encoding_param, void * = 0) = 0; // 7
-text_stream_interface& operator<< (const std::string& s) { return operator<<(s.c_str()); }
+	virtual bool get_convert_encoding (void* = nullptr) const = 0; // 6
+	virtual text_stream_interface &set_convert_encoding (bool convert_encoding_param, void* = nullptr) = 0; // 7
+text_stream_interface& operator<< (const std::string& s) { return operator<<(s.data()); }
+#pragma clang diagnostics pop
 	};
 }
 

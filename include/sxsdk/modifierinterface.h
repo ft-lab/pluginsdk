@@ -3,6 +3,8 @@
 namespace sxsdk {
 	class modifier_interface : public plugin_interface {
 	public:
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
 	virtual bool accepts_sphere ( void *aux = 0 ) const { return accepts_sphere_private(aux); }  // -1
 	virtual bool accepts_disk ( void *aux = 0 ) const { return accepts_disk_private(aux); }  // -1
 	virtual bool accepts_rectangle ( void *aux = 0 ) const { return accepts_rectangle_private(aux); }  // -1
@@ -212,5 +214,6 @@ namespace sxsdk {
 	virtual int modifier_interface_dummy197(void *) { assert(false); throw "invalid interface modifier_interface"; return 0; } // 197
 	virtual int modifier_interface_dummy198(void *) { assert(false); throw "invalid interface modifier_interface"; return 0; } // 198
 	virtual int modifier_interface_dummy199(void *) { assert(false); throw "invalid interface modifier_interface"; return 0; } // 199
+#pragma clang diagnostics pop
 	};
 }

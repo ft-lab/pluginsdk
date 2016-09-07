@@ -3,6 +3,8 @@
 namespace sxsdk {
 	class handler_interface : public plugin_interface {
 	public:
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
 	virtual void clicked (int key_flags, void* aux = 0) { } // 0
 	virtual bool draw (sxsdk::graphic_context_interface & gc, const sx::rectangle_class & r, bool selected, void* aux = 0) { return false; } // 1
 	virtual void focused ( void* aux =0 ) { } // 2
@@ -203,5 +205,6 @@ namespace sxsdk {
 	virtual int handler_interface_dummy197(void *) { assert(false); throw "invalid interface handler_interface"; return 0; } // 197
 	virtual int handler_interface_dummy198(void *) { assert(false); throw "invalid interface handler_interface"; return 0; } // 198
 	virtual int handler_interface_dummy199(void *) { assert(false); throw "invalid interface handler_interface"; return 0; } // 199
+#pragma clang diagnostics pop
 	};
 }

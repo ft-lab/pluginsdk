@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dialog default_button="true" id="100" resizable="true" title="ノイズを加える">
+	<hbox>
+		<vbox>
+			<long-text default="300 * 200" editable="false" id="101" label="画像サイズ: " short_text="true"/>
+			<custom height="200" id="111" min_height="50" min_width="50" resizable="true" width="200"/>
+			<hbox>
+				<selection default="1" id="121" label="|処理前|処理後|-|アルファチャンネル|Zバッファ"/>
+				<push-button id="122" label="更新"/>
+			</hbox>
+			<bool default="true" id="131" label="オートプレビュー"/>
+		</vbox>
+		<vbox>
+			<group id="noise_group" label="ノイズ設定">
+				<float default="0.2" id="201" label="適用率" slider="true" unit=""/>
+				<bool default="false" id="202" label="単色ノイズを生成"/>
+			</group>
+			<group id="noise_color_group" label="ノイズカラー">
+				<float default="1.0" id="211" label="R ch" slider="true" unit=""/>
+				<float default="1.0" id="212" label="G ch" slider="true" unit=""/>
+				<float default="1.0" id="213" label="B ch" slider="true" unit=""/>
+				<float default="0.0" id="214" label="Alpha ch" slider="true" unit=""/>
+			</group>
+			<group id="apply_to_group" label="適用範囲">
+				<selection default="0" id="221" label="|全画面|背景のみ|前景のみ"/>
+			</group>
+			<group id="reflects_z_depth_group" label="Z値による影響">
+				<float default="0.0" id="231" label="反映率" slider="true" unit=""/>
+				<bool default="true" id="232" label="反転"/>
+			</group>
+			<group id="animation_options_group" label="アニメーションオプション">
+				<bool default="false" id="241" label="アニメーションノイズ"/>
+			</group>
+		</vbox>
+	</hbox>
+</dialog>

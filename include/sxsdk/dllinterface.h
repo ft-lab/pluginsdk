@@ -3,6 +3,8 @@
 namespace sxsdk {
 	class dll_interface : public shade_interface {
 	public:
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
 	virtual void get_info (shade_plugin_info& info, shade_interface* shade, void * aux = 0) = 0; // 0
 	virtual int get_text_encoding (shade_interface* shade, void * aux = 0) = 0; // 1
 	virtual void load (void * aux = 0) = 0; // 2
@@ -19,5 +21,6 @@ namespace sxsdk {
 	virtual const char* get_file_name (void * aux = 0) = 0; // 13
 	virtual bool is_entered (const IID& iid, int i, void * aux = 0) = 0; // 14
 	virtual sx::uuid_class get_uuid (const IID& iid, int i, void * aux = 0) = 0; // 15
+#pragma clang diagnostics pop
 	};
 }

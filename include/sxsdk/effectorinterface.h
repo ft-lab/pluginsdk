@@ -3,6 +3,8 @@
 namespace sxsdk {
 	class effector_interface : public plugin_interface {
 	public:
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
 	virtual void begin (rendering_context_interface* rendering_context, stream_interface* stream, void* aux = 0) { }  // 0
 	virtual void ask (stream_interface* stream, void* aux = 0) { }  // 1
 	virtual void do_post_effect ( void* aux =0 ) { }  // 2
@@ -204,5 +206,6 @@ namespace sxsdk {
 	virtual int effector_interface_dummy197(void *) { assert(false); throw "invalid interface effector_interface"; return 0; } // 197
 	virtual int effector_interface_dummy198(void *) { assert(false); throw "invalid interface effector_interface"; return 0; } // 198
 	virtual int effector_interface_dummy199(void *) { assert(false); throw "invalid interface effector_interface"; return 0; } // 199
+#pragma clang diagnostics pop
 	};
 }

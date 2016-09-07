@@ -4,9 +4,9 @@ namespace sxsdk {
 	class shortcut_interface : public shade_interface {
 	public:
 		/// \en blah \enden \ja キーのインデックス \endja
-		enum key_enum {
+		enum /*class*/ key_enum {
 			/// \en "a" key \enden \ja "a"キー \endja
-			key_a,
+			key_a = 0,
 			/// \en "b" key \enden \ja "b"キー \endja
 			key_b,
 			/// \en "c" key \enden \ja "c"キー \endja
@@ -108,13 +108,39 @@ namespace sxsdk {
 			/// \en "f15" key \enden \ja "f15"キー \endja
 			key_f15,
 			/// \en "tab" key \enden \ja "tab"キー \endja
-			key_tab
+			key_tab,
+			key_space,
+			key_delete,
+			key_open_bracket,
+			key_close_bracket,
+			key_plus,
+			key_minus,
+			key_asterisk,
+			key_slash,
+			key_dot,
+			key_comma,
+			key_left,
+			key_up,
+			key_right,
+			key_down,
+			key_backspace,
+			key_escape,
+			key_pageup,
+			key_pagedown,
+			key_home,
+			key_end,
+			End,
+			Begin = 0,
+			key_error = -1,
 		};
 		virtual ~shortcut_interface () { }
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
 	virtual bool execute (int key, int modifiers = 0, void* aux = 0) = 0; // 0
 	virtual bool is_assigned (int key, void* aux = 0) = 0; // 1
 	virtual const char* get_command_string (int key, void* aux = 0) = 0; // 2
 	virtual int get_command_id (int key, void* aux = 0) = 0; // 3
 	virtual void stream_to_clipboard (void* aux = 0) = 0; // 4
+#pragma clang diagnostics pop
 	};
 }

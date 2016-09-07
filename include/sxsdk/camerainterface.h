@@ -1,9 +1,10 @@
 #pragma once
 
 namespace sxsdk {
-	class
-	camera_interface : public shade_interface {
+	class camera_interface : public shade_interface {
 	public:
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
 	virtual void save (const char*const& path, void* aux = 0) = 0; // 0
 	virtual void load (const char*const& path, void* aux = 0) = 0; // 1
 	virtual int get_number_of_views (void* aux = 0) = 0; // 2
@@ -53,34 +54,35 @@ namespace sxsdk {
 	virtual void restore_from_default (void* aux = 0) = 0; // 39
 	virtual void back (void* aux = 0) = 0; // 40
 	virtual void forward (void* aux = 0) = 0; // 41
-	virtual camera_interface &set_correction (float correction_param, void * = 0) = 0; // 42
-	virtual float get_correction (void * = 0) const = 0; // 43
-	virtual camera_interface &set_film_shift (float film_shift_param, void * = 0) = 0; // 44
-	virtual float get_film_shift (void * = 0) const = 0; // 45
-	virtual camera_interface &set_film_rise (float film_rise_param, void * = 0) = 0; // 46
-	virtual float get_film_rise (void * = 0) const = 0; // 47
-	virtual camera_interface &set_film_swing (float film_swing_param, void * = 0) = 0; // 48
-	virtual float get_film_swing (void * = 0) const = 0; // 49
-	virtual camera_interface &set_film_tilt (float film_tilt_param, void * = 0) = 0; // 50
-	virtual float get_film_tilt (void * = 0) const = 0; // 51
-	virtual camera_interface &set_lens_swing (float lens_swing_param, void * = 0) = 0; // 52
-	virtual float get_lens_swing (void * = 0) const = 0; // 53
-	virtual camera_interface &set_lens_tilt (float lens_tilt_param, void * = 0) = 0; // 54
-	virtual float get_lens_tilt (void * = 0) const = 0; // 55
-	virtual camera_interface &set_scale (float scale_param, void * = 0) = 0; // 56
-	virtual float get_scale (void * = 0) const = 0; // 57
-	virtual camera_interface &set_current_camera (int current_camera_param, void * = 0) = 0; // 58
-	virtual int get_current_camera (void * = 0) const = 0; // 59
+	virtual camera_interface &set_correction (float correction_param, void* = nullptr) = 0; // 42
+	virtual float get_correction (void* = nullptr) const = 0; // 43
+	virtual camera_interface &set_film_shift (float film_shift_param, void* = nullptr) = 0; // 44
+	virtual float get_film_shift (void* = nullptr) const = 0; // 45
+	virtual camera_interface &set_film_rise (float film_rise_param, void* = nullptr) = 0; // 46
+	virtual float get_film_rise (void* = nullptr) const = 0; // 47
+	virtual camera_interface &set_film_swing (float film_swing_param, void* = nullptr) = 0; // 48
+	virtual float get_film_swing (void* = nullptr) const = 0; // 49
+	virtual camera_interface &set_film_tilt (float film_tilt_param, void* = nullptr) = 0; // 50
+	virtual float get_film_tilt (void* = nullptr) const = 0; // 51
+	virtual camera_interface &set_lens_swing (float lens_swing_param, void* = nullptr) = 0; // 52
+	virtual float get_lens_swing (void* = nullptr) const = 0; // 53
+	virtual camera_interface &set_lens_tilt (float lens_tilt_param, void* = nullptr) = 0; // 54
+	virtual float get_lens_tilt (void* = nullptr) const = 0; // 55
+	virtual camera_interface &set_scale (float scale_param, void* = nullptr) = 0; // 56
+	virtual float get_scale (void* = nullptr) const = 0; // 57
+	virtual camera_interface &set_current_camera (int current_camera_param, void* = nullptr) = 0; // 58
+	virtual int get_current_camera (void* = nullptr) const = 0; // 59
 	virtual void remove_metacamera (void* aux = 0) = 0; // 60
 	virtual void memorize_as_camera (void* aux = 0) = 0; // 61
-	virtual sxsdk::enums::camera_mode get_camera_mode (void * = 0) const = 0; // 62
-	virtual camera_interface &set_camera_mode (sxsdk::enums::camera_mode camera_mode_param, void * = 0) = 0; // 63
-	virtual enums::master_camera_mode get_master_camera_mode (void * = 0) const = 0; // 64
-	virtual camera_interface &set_master_camera_mode (enums::master_camera_mode master_camera_mode_param, void * = 0) = 0; // 65
+	virtual sxsdk::enums::camera_mode get_camera_mode (void* = nullptr) const = 0; // 62
+	virtual camera_interface &set_camera_mode (sxsdk::enums::camera_mode camera_mode_param, void* = nullptr) = 0; // 63
+	virtual enums::master_camera_mode get_master_camera_mode (void* = nullptr) const = 0; // 64
+	virtual camera_interface &set_master_camera_mode (enums::master_camera_mode master_camera_mode_param, void* = nullptr) = 0; // 65
 	virtual part_interface* get_camera_object_interface (void* aux = 0) = 0; // 66
-	virtual part_class* get_camera_object (void * = 0) const = 0; // 67
-	virtual int get_number_of_metacameras (void * = 0) const = 0; // 68
+	virtual part_class* get_camera_object (void* = nullptr) const = 0; // 67
+	virtual int get_number_of_metacameras (void* = nullptr) const = 0; // 68
 	virtual int test_1 ( void* aux =0 ) { return 1; } // 69
 	virtual void memorize_as_metacamera (void* aux = 0) = 0; // 70
+#pragma clang diagnostics pop
 	};
 }

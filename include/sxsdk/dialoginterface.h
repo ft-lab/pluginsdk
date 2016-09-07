@@ -3,73 +3,81 @@
 namespace sxsdk {
 	class window_interface;
 
-	class dialog_item_class : public sx::signature<0x22777F09> {
+	class dialog_item_class : public sx::object {
 	public:
 		virtual ~dialog_item_class () { }
 		VTABLE_PADDING
-	virtual bool get_bool (void * = 0) const = 0; // 0
-	virtual dialog_item_class &set_bool (bool bool_param, void * = 0) = 0; // 1
-	virtual bool get_bool_default (void * = 0) const = 0; // 2
-	virtual dialog_item_class &set_bool_default (bool bool_default_param, void * = 0) = 0; // 3
-	virtual unsigned get_selection (void * = 0) const = 0; // 4
-	virtual dialog_item_class &set_selection (unsigned selection_param, void * = 0) = 0; // 5
-	virtual unsigned get_selection_default (void * = 0) const = 0; // 6
-	virtual dialog_item_class &set_selection_default (unsigned selection_default_param, void * = 0) = 0; // 7
-	virtual sxsdk::rgb_class get_rgb (void * = 0) const = 0; // 8
-	virtual dialog_item_class &set_rgb (const sxsdk::rgb_class &rgb_param, void * = 0) = 0; // 9
-	virtual sxsdk::rgb_class get_rgb_default (void * = 0) const = 0; // 10
-	virtual dialog_item_class &set_rgb_default (const sxsdk::rgb_class &rgb_default_param, void * = 0) = 0; // 11
-	virtual const char* get_string (void * = 0) const = 0; // 12
-	virtual dialog_item_class &set_string (const char* string_param, void * = 0) = 0; // 13
-	virtual const char* get_string_default (void * = 0) const = 0; // 14
-	virtual dialog_item_class &set_string_default (const char* string_default_param, void * = 0) = 0; // 15
-	virtual int get_int (void * = 0) const = 0; // 16
-	virtual dialog_item_class &set_int (int int_param, void * = 0) = 0; // 17
-	virtual int get_int_default (void * = 0) const = 0; // 18
-	virtual dialog_item_class &set_int_default (int int_default_param, void * = 0) = 0; // 19
-	virtual float get_float (void * = 0) const = 0; // 20
-	virtual dialog_item_class &set_float (float float_param, void * = 0) = 0; // 21
-	virtual float get_float_default (void * = 0) const = 0; // 22
-	virtual dialog_item_class &set_float_default (float float_default_param, void * = 0) = 0; // 23
-	virtual double get_double (void * = 0) const = 0; // 24
-	virtual dialog_item_class &set_double (double double_param, void * = 0) = 0; // 25
-	virtual double get_double_default (void * = 0) const = 0; // 26
-	virtual dialog_item_class &set_double_default (double double_default_param, void * = 0) = 0; // 27
-	virtual sxsdk::vec3 get_vec3 (void * = 0) const = 0; // 28
-	virtual dialog_item_class &set_vec3 (const sxsdk::vec3 &vec3_param, void * = 0) = 0; // 29
-	virtual sxsdk::vec3 get_vec3_default (void * = 0) const = 0; // 30
-	virtual dialog_item_class &set_vec3_default (const sxsdk::vec3 &vec3_default_param, void * = 0) = 0; // 31
-	virtual const char* get_text (void * = 0) const = 0; // 32
-	virtual dialog_item_class &set_text (const char* text_param, void * = 0) = 0; // 33
-dialog_item_class& set_text (const std::string& s) { return set_text(s.c_str()); }
-	virtual const char* get_text_default (void * = 0) const = 0; // 34
-	virtual dialog_item_class &set_text_default (const char* text_default_param, void * = 0) = 0; // 35
-	virtual dialog_item_class &set_range (const sxsdk::vec2 &range_param, void * = 0) = 0; // 36
-	virtual dialog_item_class &set_window (sxsdk::window_interface* window_param, void * = 0) = 0; // 37
-	virtual bool get_enabled (void * = 0) const = 0; // 38
-	virtual dialog_item_class &set_enabled (bool enabled_param, void * = 0) = 0; // 39
-	virtual int get_id (void * = 0) const = 0; // 40
-	virtual dialog_item_class &set_tooltip (const char* tooltip_param, void * = 0) = 0; // 41
-	virtual dialog_item_class &set_progress (float progress_param, void * = 0) = 0; // 42
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	virtual bool get_bool (void* = nullptr) const = 0; // 0
+	virtual dialog_item_class &set_bool (bool bool_param, void* = nullptr) = 0; // 1
+	virtual bool get_bool_default (void* = nullptr) const = 0; // 2
+	virtual dialog_item_class &set_bool_default (bool bool_default_param, void* = nullptr) = 0; // 3
+	virtual unsigned get_selection (void* = nullptr) const = 0; // 4
+	virtual dialog_item_class &set_selection (unsigned selection_param, void* = nullptr) = 0; // 5
+	virtual unsigned get_selection_default (void* = nullptr) const = 0; // 6
+	virtual dialog_item_class &set_selection_default (unsigned selection_default_param, void* = nullptr) = 0; // 7
+	virtual sxsdk::rgb_class get_rgb (void* = nullptr) const = 0; // 8
+	virtual dialog_item_class &set_rgb (const sxsdk::rgb_class &rgb_param, void* = nullptr) = 0; // 9
+	virtual sxsdk::rgb_class get_rgb_default (void* = nullptr) const = 0; // 10
+	virtual dialog_item_class &set_rgb_default (const sxsdk::rgb_class &rgb_default_param, void* = nullptr) = 0; // 11
+	virtual const char* get_string (void* = nullptr) const = 0; // 12
+	virtual dialog_item_class &set_string (const char* string_param, void* = nullptr) = 0; // 13
+	virtual const char* get_string_default (void* = nullptr) const = 0; // 14
+	virtual dialog_item_class &set_string_default (const char* string_default_param, void* = nullptr) = 0; // 15
+	virtual int get_int (void* = nullptr) const = 0; // 16
+	virtual dialog_item_class &set_int (int int_param, void* = nullptr) = 0; // 17
+	virtual int get_int_default (void* = nullptr) const = 0; // 18
+	virtual dialog_item_class &set_int_default (int int_default_param, void* = nullptr) = 0; // 19
+	virtual float get_float (void* = nullptr) const = 0; // 20
+	virtual dialog_item_class &set_float (float float_param, void* = nullptr) = 0; // 21
+	virtual float get_float_default (void* = nullptr) const = 0; // 22
+	virtual dialog_item_class &set_float_default (float float_default_param, void* = nullptr) = 0; // 23
+	virtual double get_double (void* = nullptr) const = 0; // 24
+	virtual dialog_item_class &set_double (double double_param, void* = nullptr) = 0; // 25
+	virtual double get_double_default (void* = nullptr) const = 0; // 26
+	virtual dialog_item_class &set_double_default (double double_default_param, void* = nullptr) = 0; // 27
+	virtual sxsdk::vec3 get_vec3 (void* = nullptr) const = 0; // 28
+	virtual dialog_item_class &set_vec3 (const sxsdk::vec3 &vec3_param, void* = nullptr) = 0; // 29
+	virtual sxsdk::vec3 get_vec3_default (void* = nullptr) const = 0; // 30
+	virtual dialog_item_class &set_vec3_default (const sxsdk::vec3 &vec3_default_param, void* = nullptr) = 0; // 31
+	virtual const char* get_text (void* = nullptr) const = 0; // 32
+	virtual dialog_item_class &set_text (const char* text_param, void* = nullptr) = 0; // 33
+dialog_item_class& set_text (const std::string& s) { return set_text(s.data()); }
+	virtual const char* get_text_default (void* = nullptr) const = 0; // 34
+	virtual dialog_item_class &set_text_default (const char* text_default_param, void* = nullptr) = 0; // 35
+	virtual dialog_item_class &set_range (const sxsdk::vec2 &range_param, void* = nullptr) = 0; // 36
+	virtual dialog_item_class &set_window (sxsdk::window_interface* window_param, void* = nullptr) = 0; // 37
+	virtual bool get_enabled (void* = nullptr) const = 0; // 38
+	virtual dialog_item_class &set_enabled (bool enabled_param, void* = nullptr) = 0; // 39
+	virtual int get_id (void* = nullptr) const = 0; // 40
+	virtual dialog_item_class &set_tooltip (const char* tooltip_param, void* = nullptr) = 0; // 41
+	virtual dialog_item_class &set_progress (float progress_param, void* = nullptr) = 0; // 42
 	virtual dialog_item_class& append_listbox_item (const char* label, bool check, void* aux = 0) = 0; // 43
-dialog_item_class& append_listbox_item (const std::string& label, bool check) { return append_listbox_item(label.c_str(), check); }
+dialog_item_class& append_listbox_item (const std::string& label, bool check) { return append_listbox_item(label.data(), check); }
 	virtual bool get_listbox_check (int i, void* aux = 0) const = 0; // 44
 	virtual dialog_item_class& set_listbox_check (int i, bool check, void* aux = 0) = 0; // 45
 	virtual const char* get_listbox_label (int i, void* aux = 0) const = 0; // 46
 	virtual dialog_item_class& set_listbox_label (int i, const char* label, void* aux = 0) = 0; // 47
-	virtual int get_number_of_listbox_items (void * = 0) const = 0; // 48
+	virtual int get_number_of_listbox_items (void* = nullptr) const = 0; // 48
 	virtual dialog_item_class& clear_listbox (void* aux = 0) = 0; // 49
 	virtual dialog_item_class& insert_listbox_item (int i, const char* label, bool check, void* aux = 0) = 0; // 50
 	virtual dialog_item_class& remove_listbox_item (int i, void* aux = 0) = 0; // 51
-	virtual sxsdk::vec2 get_vec2 (void * = 0) const = 0; // 52
-	virtual dialog_item_class &set_vec2 (const sxsdk::vec2 &vec2_param, void * = 0) = 0; // 53
-	virtual sxsdk::vec2 get_vec2_default (void * = 0) const = 0; // 54
-	virtual dialog_item_class &set_vec2_default (const sxsdk::vec2 &vec2_default_param, void * = 0) = 0; // 55
-dialog_item_class& set_listbox_label (const std::string& label) { return set_listbox_label(label.c_str()); }
+	virtual sxsdk::vec2 get_vec2 (void* = nullptr) const = 0; // 52
+	virtual dialog_item_class &set_vec2 (const sxsdk::vec2 &vec2_param, void* = nullptr) = 0; // 53
+	virtual sxsdk::vec2 get_vec2_default (void* = nullptr) const = 0; // 54
+	virtual dialog_item_class &set_vec2_default (const sxsdk::vec2 &vec2_default_param, void* = nullptr) = 0; // 55
+dialog_item_class& set_listbox_label (int i, const std::string& label) { return set_listbox_label(i, label.data()); }
+	virtual dialog_item_class& set_listbox_item_id (int i, int id, void* aux = 0) = 0; // 56
+	virtual int get_listbox_item_id (int i, void* aux = 0) const = 0; // 57
+#pragma clang diagnostics pop
 	};
 
+	class dialog_profile_class;
 	class dialog_interface : public plugin_interface {
 	public:
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
 	virtual int get_shade_version () const = 0; // -1
 	virtual int get_id (void* aux = 0) = 0; // -1
 	virtual const char* get_dialog_title (shade_interface* shade, void* aux = 0) = 0; // -1
@@ -114,11 +122,13 @@ dialog_item_class& set_listbox_label (const std::string& label) { return set_lis
 	virtual sx::uuid_class get_property_plugin_uuid (int index, void* aux = 0) = 0; // -1
 	virtual bool can_choose_directory ( int index, void* aux =0 ) = 0; // -1
 	virtual bool can_choose_file ( int index, void* aux =0 ) = 0; // -1
+	virtual void get_list_property_xvalue (int index, std::vector<sx::list_item_xvalue_class>& value, void* aux = 0) = 0; // -1
+	virtual void set_list_property_xvalue (int index, const std::vector<sx::list_item_xvalue_class>& value, void* aux = 0) = 0; // -1
 	virtual bool ask (const char* s = 0, void* aux = 0) = 0; // 0
 	virtual int append_item (unknown_interface::property_type_enum type, const char* name, int item_id = -1, const char* unit = 0) = 0; // 1
 	virtual void set_title (const char* title, void* aux = 0) = 0; // 2
 	virtual bool do_not_ask (void* aux = 0) = 0; // 3
-	virtual dialog_interface &set_separator (char separator_param, void * = 0) = 0; // 4
+	virtual dialog_interface &set_separator (char separator_param, void* = nullptr) = 0; // 4
 	virtual void append_reset_button (void* aux = 0) = 0; // 5
 	virtual void append_default_button (void* aux = 0) = 0; // 6
 	virtual void set_bool_default_value (int index, bool value, void* aux = 0) = 0; // 7
@@ -149,17 +159,17 @@ dialog_item_class& set_listbox_label (const std::string& label) { return set_lis
 	virtual PyObject* get_value (int index, void* aux = 0) = 0; // 32
 	virtual void set_value (int index, PyObject* value, void* aux = 0) = 0; // 33
 	virtual void set_default_value (int index, PyObject* value, void* aux = 0) = 0; // 34
-	virtual int get_dialog_id (void * = 0) const = 0; // 35
-	virtual const char* get_title (void * = 0) const = 0; // 36
+	virtual int get_dialog_id (void* = nullptr) const = 0; // 35
+	virtual const char* get_title (void* = nullptr) const = 0; // 36
 	virtual int begin_box (bool vertical = true, void* aux = 0) = 0; // 37
 	virtual int end_box (void* aux = 0) = 0; // 38
 	virtual void get_rgba_property_value (int index, rgba_class& value, void* aux = 0) = 0; // 39
 	virtual void set_rgba_property_value (int index, const rgba_class& value, void* aux = 0) = 0; // 40
-	virtual dialog_interface &set_responder (sxsdk::plugin_interface* responder_param, void * = 0) = 0; // 41
-	virtual dialog_interface &set_resource_name (const char* resource_name_param, void * = 0) = 0; // 42
+	virtual dialog_interface &set_responder (sxsdk::plugin_interface* responder_param, void* = nullptr) = 0; // 41
+	virtual dialog_interface &set_resource_name (const char* resource_name_param, void* = nullptr) = 0; // 42
 	virtual dialog_item_class& get_dialog_item (int with_id, void* aux = 0) = 0; // 43
 	virtual int append_custom (sx::vec<int,2> size, sxsdk::plugin_interface* responder = 0) = 0; // 44
-	virtual sx::uuid_class get_dialog_uuid (void * = 0) const = 0; // 45
+	virtual sx::uuid_class get_dialog_uuid (void* = nullptr) const = 0; // 45
 	virtual int append_listbox_deprecated (int rows = 5, sxsdk::plugin_interface* responder = 0) = 0; // 46
 	virtual int append_push_button_deprecated (const char* name, sxsdk::plugin_interface* responder = 0) = 0; // 47
 	virtual void initialize (void* aux = 0) { } // 48
@@ -167,8 +177,8 @@ dialog_item_class& set_listbox_label (const std::string& label) { return set_lis
 	virtual int append_secure_string (const char* name = 0, const char* unit = 0, sxsdk::plugin_interface* responder = 0) = 0; // 50
 	virtual int append_secure_short_string (const char* name = 0, const char* unit = 0, sxsdk::plugin_interface* responder = 0) = 0; // 51
 	virtual int append_path (const char* name = 0, bool can_choose_directory = true, bool can_choose_file = true, sxsdk::plugin_interface* responder = 0) = 0; // 52
-	virtual dialog_interface &set_focus (int focus_param, void * = 0) = 0; // 53
-	virtual int get_focus (void * = 0) const = 0; // 54
+	virtual dialog_interface &set_focus (int focus_param, void* = nullptr) = 0; // 53
+	virtual int get_focus (void* = nullptr) const = 0; // 54
 	virtual int append_push_button (const char* name, int flags = 0, sxsdk::plugin_interface* responder = 0, void* aux = 0) = 0; // 55
 	virtual int append_bool (const char* name = 0, const char* unit = 0, int flags = 0, sxsdk::plugin_interface* responder = 0, void* aux = 0) = 0; // 56
 	virtual int append_selection (const char* name, const char* unit = 0, int flags = 0, sxsdk::plugin_interface* responder = 0, void* aux = 0) = 0; // 57
@@ -314,12 +324,13 @@ dialog_item_class& set_listbox_label (const std::string& label) { return set_lis
 	virtual int dialog_interface_dummy197(void *) { assert(false); throw "invalid interface dialog_interface"; return 0; } // 197
 	virtual int dialog_interface_dummy198(void *) { assert(false); throw "invalid interface dialog_interface"; return 0; } // 198
 	virtual int dialog_interface_dummy199(void *) { assert(false); throw "invalid interface dialog_interface"; return 0; } // 199
+#pragma clang diagnostics pop
 
 		bool get_bool_property_value ( int index) { bool v; get_bool_property_value(index , v); return v; }
 		int get_int_property_value ( int index) { int v; get_int_property_value(index , v); return v; }
 		float get_float_property_value ( int index) { float v; get_float_property_value(index , v); return v; }
-		sx::vec<float,3> get_vec3_property_value ( int index) { sx::vec<float,3> v; get_vec3_property_value(index , v); return v; }
-		sx::rgb<float> get_rgb_property_value ( int index) { sx::rgb<float> v; get_rgb_property_value(index , v); return v; }
+		sx::vec3 get_vec3_property_value ( int index) { sx::vec3 v; get_vec3_property_value(index , v); return v; }
+		sx::rgb get_rgb_property_value ( int index) { sx::rgb v; get_rgb_property_value(index , v); return v; }
 		unsigned get_selection_property_value ( int index) { unsigned v; get_selection_property_value(index , v); return v; }
 		const char* get_string_property_value ( int index) { const char* v; get_string_property_value(index , v); return v; }
 		double get_double_property_value ( int index) { double v; get_double_property_value(index , v); return v; }
@@ -328,17 +339,19 @@ dialog_item_class& set_listbox_label (const std::string& label) { return set_lis
 		void set_float_property_value ( int index , float value , float default_value) { set_float_property_value(index , value); set_float_default_value(index , default_value); }
 		void set_double_property_value ( int index , double value , double default_value) { set_double_property_value(index , value); set_double_default_value(index , default_value); }
 		void set_selection_property_value ( int index , unsigned value , unsigned default_value) { set_selection_property_value(index , value); set_selection_default_value(index , default_value); }
-		void set_vec3_property_value ( int index , sx::vec<float,3> value , sx::vec<float,3> default_value) { set_vec3_property_value(index , value); set_vec3_default_value(index , default_value); }
-		void set_rgb_property_value ( int index , sx::rgb<float> value , sx::rgb<float> default_value) { set_rgb_property_value(index , value); set_rgb_default_value(index , default_value); }
+		void set_vec3_property_value ( int index , sx::vec3 value , sx::vec3 default_value) { set_vec3_property_value(index , value); set_vec3_default_value(index , default_value); }
+		void set_rgb_property_value ( int index , sx::rgb value , sx::rgb default_value) { set_rgb_property_value(index , value); set_rgb_default_value(index , default_value); }
 		void set_string_property_value ( int index , const char* value , const char* default_value) { set_string_property_value(index , value); set_string_default_value(index , default_value); }
-		sx::vec<float,3> get_vector3_property_value ( int index) { sx::vec<float,3> v(1.0f, 1.0f, 1.0f); get_vec3_property_value(index , v); return sx::vec<float,3>(v); }
-		sx::rgb<float> get_vectorrgb_property_value ( int index) { sx::rgb<float> v(1.0f, 1.0f, 1.0f); get_rgb_property_value(index , v); return sx::rgb<float>(v); }
-		void set_vector3_property_value ( int index , const sx::vec<float,3> &value , const sx::vec<float,3> &default_value) { set_vec3_property_value(index , sx::vec<float,3>(value)); set_vec3_default_value(index , sx::vec<float,3>(default_value)); }
-		void set_vectorrgb_property_value ( int index , const sx::rgb<float> &value , const sx::rgb<float> &default_value) { set_rgb_property_value(index , sx::rgb<float>(value)); set_rgb_default_value(index , sx::rgb<float>(default_value)); }
+		sx::vec3 get_vector3_property_value ( int index) { sx::vec3 v(1.0f, 1.0f, 1.0f); get_vec3_property_value(index , v); return sx::vec3(v); }
+		sx::rgb get_vectorrgb_property_value ( int index) { sx::rgb v(1.0f, 1.0f, 1.0f); get_rgb_property_value(index , v); return sx::rgb(v); }
+		void set_vector3_property_value ( int index , const sx::vec3 &value , const sx::vec3 &default_value) { set_vec3_property_value(index , sx::vec3(value)); set_vec3_default_value(index , sx::vec3(default_value)); }
+		void set_vectorrgb_property_value ( int index , const sx::rgb &value , const sx::rgb &default_value) { set_rgb_property_value(index , sx::rgb(value)); set_rgb_default_value(index , sx::rgb(default_value)); }
 	};
 
 	class property_list_interface : public dialog_interface {
 	public:
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
 	virtual void finalize (void* aux = 0) { } // 0
 	virtual void unfinalize (void* aux = 0) { } // 1
 	virtual int property_list_interface_dummy2(void *) { assert(false); throw "invalid interface property_list_interface"; return 0; } // 2
@@ -539,5 +552,6 @@ dialog_item_class& set_listbox_label (const std::string& label) { return set_lis
 	virtual int property_list_interface_dummy197(void *) { assert(false); throw "invalid interface property_list_interface"; return 0; } // 197
 	virtual int property_list_interface_dummy198(void *) { assert(false); throw "invalid interface property_list_interface"; return 0; } // 198
 	virtual int property_list_interface_dummy199(void *) { assert(false); throw "invalid interface property_list_interface"; return 0; } // 199
+#pragma clang diagnostics pop
 	};
 }

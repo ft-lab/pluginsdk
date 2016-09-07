@@ -56,17 +56,16 @@
 	#include <iomanip>
 
 	// tr1 headers
-	#include <boost/tr1/array.hpp>
-	#include <boost/tr1/functional.hpp>
-	#include <boost/tr1/memory.hpp>
-	#include <boost/tr1/tuple.hpp>
-	#include <boost/tr1/unordered_map.hpp>
-	#include <boost/tr1/type_traits.hpp>
-	namespace std {
-		using namespace tr1;
-	}
+	//#include <boost/tr1/array.hpp>
+	//#include <boost/tr1/functional.hpp>
+	//#include <boost/tr1/memory.hpp>
+	//#include <boost/tr1/tuple.hpp>
+	//#include <boost/tr1/unordered_map.hpp>
+	//#include <boost/tr1/type_traits.hpp>
+	//namespace std {
+	//	using namespace tr1;
+	//}
 
-	#include "boost/any.hpp"
 	#include "boost/version.hpp"
 	#include "boost/static_assert.hpp"
 	BOOST_STATIC_ASSERT(104200 <= BOOST_VERSION);
@@ -88,29 +87,29 @@
 		BOOST_STATIC_ASSERT(_SECURE_SCL == 0);
 	#endif
 
-	#if (_MSC_VER < 1600)
-		#include "sx/core/uniqueptr.hpp"
-		namespace std {
-			using boost::unique_ptr;
-		}
-		const class {
-		public:
-			template<class T> operator T*() const { return 0; }
-			template<class C, class T> operator T C::*() const { return 0; }
-		private:
-		  void operator&() const;
-		} nullptr = {};
-	#endif
+	//#if (_MSC_VER < 1600)
+	//	#include "sxcore/uniqueptr.hpp"
+	//	namespace std {
+	//		using boost::unique_ptr;
+	//	}
+	//	const class {
+	//	public:
+	//		template<class T> operator T*() const { return 0; }
+	//		template<class C, class T> operator T C::*() const { return 0; }
+	//	private:
+	//	  void operator&() const;
+	//	} nullptr = {};
+	//#endif
 
-	#include "sx/core/config.hpp" // must be included early
-	//#include "sx/core/assert.hpp"
-	#include "sx/core/signature.hpp"
-	#include "sx/core/types.hpp"
-	#include "sx/core/adl.hpp"
-	#include "sx/core/cast.hpp"
-	#include "sx/core/property.hpp"
-	#include "sx/core/relations.hpp"
-	#include "sx/core/vectorutility.hpp"
-	#include "sx/core/debug.hpp"
+	#include "sxcore/config.hpp" // must be included early
+	//#include "sxcore/assert.hpp"
+	//#include "sxcore/signature.hpp"
+	#include "sxcore/types.hpp"
+	#include "sxcore/adl.hpp"
+	//#include "sxcore/cast.hpp"
+	#include "sxcore/property.hpp"
+	#include "sxcore/relations.hpp"
+	#include "sxcore/vectorutility.hpp"
+	#include "sxcore/debug.hpp"
 
 #endif

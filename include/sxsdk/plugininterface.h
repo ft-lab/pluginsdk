@@ -1,8 +1,7 @@
 #pragma once
 
 namespace sxsdk {
-	class
-	plugin_interface : public unknown_interface {
+	class plugin_interface : public unknown_interface {
 	public:
 		  enum {
 			flag_mask = 0xf0000000,
@@ -10,12 +9,12 @@ namespace sxsdk {
 			force_flag = 0x20000000,
 		  };
 		  enum {
-			#if SXMACOSX || SXIOS
+			#if SXAPI_CORE_FOUNDATION
 				#ifndef __COREFOUNDATION_CFSTRINGENCODINGEXT__
 					#error
 				#endif
 				japanese_encoding = kCFStringEncodingMacJapanese,
-			#elif SXWINDOWS
+			#elif SXOS_WINDOWS
 				japanese_encoding = 932,
 			#else
 				japanese_encoding = 1,
@@ -24,8 +23,11 @@ namespace sxsdk {
 		  };
 		  enum {
 			wireframe_pick_mode_flag = 0x01,
-			wireframe_bounding_box_mode_flag = 0x02
+			wireframe_bounding_box_mode_flag = 0x02,
+			wireframe_retina_mode_flag = 0x04
 		  };
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
 	virtual int get_id (void* aux = 0) { return 0; }  // 0
 	virtual unknown_interface::property_type_enum get_property_type (int index, void* aux = 0) { return unknown_interface::void_type; } // 1
 	virtual int get_property_id (int index, void* aux = 0) { return 0; } // 2
@@ -109,12 +111,12 @@ namespace sxsdk {
 	virtual void create_line_mode_exited (bool& b, sxsdk::scene_interface* scene, int closed, void* aux = 0) { b = false; } // 80
 	virtual void creating_shape_changed (bool& b, sxsdk::shape_class& shape, void* aux = 0) { b = false; } // 81
 	virtual const char* get_exception_string () const { return 0; } // 82
-	virtual void context ( dll_interface *context, void * = 0 ) { } // 83
+	virtual void context ( dll_interface *context, void* = nullptr ) { } // 83
 	virtual void scene_being_saved (bool& b, sxsdk::scene_interface* scene, void* aux = 0) { b = false; } // 84
 	virtual void local_light_changed (bool& b, sxsdk::shape_class& shape, void* aux = 0) { b = false; } // 85
 	virtual void distant_light_changed (bool& b, sxsdk::scene_interface* scene, int index, void* aux = 0) { b = false; } // 86
-	virtual void current_distant_light_index_changed ( bool &b, int index, void * = 0 ) { b = false; } // 87
-	virtual void current_mapping_index_changed ( bool &b, int index, void * = 0 ) { b = false; } // 88
+	virtual void current_distant_light_index_changed ( bool &b, int index, void* = nullptr ) { b = false; } // 87
+	virtual void current_mapping_index_changed ( bool &b, int index, void* = nullptr ) { b = false; } // 88
 	virtual int get_property_lines ( int index, void* aux =0 ) { return 0; } // 89
 	virtual void get_rgba_property_value (int index, rgba_class& value, void* aux = 0) { } // 90
 	virtual void set_rgba_property_value (int index, const rgba_class& value, void* aux = 0) { } // 91
@@ -134,7 +136,7 @@ namespace sxsdk {
 	virtual void get_list_property_value (int index, std::vector<sx::list_item_value_class>& value, void* aux = 0) { } // 105
 	virtual void set_list_property_value (int index, const std::vector<sx::list_item_value_class>& value, void* aux = 0) { } // 106
 	virtual void setup_rendering_view (bool& b, rendering_context_interface* rendering_context, void* aux = 0) { b = false; } // 107
-	virtual void modify_joint_matrix (bool& b, const sxsdk::shape_class& shape, const sxsdk::joint_value_class & value, float weight, sxsdk::mat4 & t, void* aux = 0) { const part_class *const p = dynamic_cast<const part_class *>(&shape); if (p) joint_matrix(b, *const_cast<part_class *>(p), weight, t); } // 108
+	virtual void modify_joint_matrix (bool& b, const sxsdk::shape_class& shape, const sxsdk::joint_value_class & value, float weight, sxsdk::mat4 & t, void* aux = 0) { const part_class *const p = reinterpret_cast<const part_class *>(&shape); if (p) joint_matrix(b, *const_cast<part_class *>(p), weight, t); } // use reinterpret_cast instead of dynamic_cast in order to avoid having to include sxsdk::shape_class definition header file. // 108
 	virtual void sound_stopped (bool& b, void* aux = 0) { b = false; } // 109
 	virtual void dialog_idle (sxsdk::dialog_interface& dialog, void* aux = 0) { } // 110
 	virtual bool can_choose_directory ( int index, void* aux =0 ) { return false; } // 111
@@ -150,16 +152,16 @@ namespace sxsdk {
 	virtual void get_vec2_property_value (int index, sxsdk::vec2& value, void* aux = 0) { } // 121
 	virtual void set_vec2_property_value (int index, const sxsdk::vec2& value, void* aux = 0) { } // 122
 	virtual const sxsdk::vec2* get_vec2_default_value ( int index, void* aux =0 ) { return 0; } // 123
-	virtual int plugin_interface_dummy124(void *) { assert(false); throw "invalid interface plugin_interface"; return 0; } // 124
-	virtual int plugin_interface_dummy125(void *) { assert(false); throw "invalid interface plugin_interface"; return 0; } // 125
-	virtual int plugin_interface_dummy126(void *) { assert(false); throw "invalid interface plugin_interface"; return 0; } // 126
-	virtual int plugin_interface_dummy127(void *) { assert(false); throw "invalid interface plugin_interface"; return 0; } // 127
-	virtual int plugin_interface_dummy128(void *) { assert(false); throw "invalid interface plugin_interface"; return 0; } // 128
-	virtual int plugin_interface_dummy129(void *) { assert(false); throw "invalid interface plugin_interface"; return 0; } // 129
-	virtual int plugin_interface_dummy130(void *) { assert(false); throw "invalid interface plugin_interface"; return 0; } // 130
-	virtual int plugin_interface_dummy131(void *) { assert(false); throw "invalid interface plugin_interface"; return 0; } // 131
-	virtual int plugin_interface_dummy132(void *) { assert(false); throw "invalid interface plugin_interface"; return 0; } // 132
-	virtual int plugin_interface_dummy133(void *) { assert(false); throw "invalid interface plugin_interface"; return 0; } // 133
+	virtual int support_profile (void* aux = 0) const { return 0; } // 124
+	virtual const char* get_profile_idname (void* aux = 0) { return nullptr; } // 125
+	virtual bool save_profile (const char* name = 0, void* aux = 0) { return false; } // 126
+	virtual bool load_profile (const char* name = 0, void* aux = 0) { return false; } // 127
+	virtual int number_of_profile (void* aux = 0) { return 0; } // 128
+	virtual const char* get_profile_name (int index = 0, void* aux = 0) { return nullptr; } // 129
+	virtual void get_list_property_xvalue (int index, std::vector<sx::list_item_xvalue_class>& value, void* aux = 0) { } // 130
+	virtual void set_list_property_xvalue (int index, const std::vector<sx::list_item_xvalue_class>& value, void* aux = 0) { } // 131
+	virtual bool setup_profile (void* aux = 0) { return false; } // 132
+	virtual bool use_uv_menu (void* aux = 0) { return false; }  // 133
 	virtual int plugin_interface_dummy134(void *) { assert(false); throw "invalid interface plugin_interface"; return 0; } // 134
 	virtual int plugin_interface_dummy135(void *) { assert(false); throw "invalid interface plugin_interface"; return 0; } // 135
 	virtual int plugin_interface_dummy136(void *) { assert(false); throw "invalid interface plugin_interface"; return 0; } // 136
@@ -228,5 +230,6 @@ namespace sxsdk {
 	virtual int plugin_interface_dummy199(void *) { assert(false); throw "invalid interface plugin_interface"; return 0; } // 199
 int version () const { try { return get_shade_version(); } catch (int v) { return v; }; return 0; } 
 sx::uuid_class uuid () { if (390398 <= version()) return const_cast<plugin_interface &>(*this).get_uuid(); return sxsdk::uuid_from_pluginid(const_cast<plugin_interface &>(*this).get_id()); } 
+#pragma clang diagnostics pop
 	};
 }

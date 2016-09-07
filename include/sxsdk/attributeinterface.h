@@ -6,9 +6,9 @@ namespace sxsdk {
 		/// \en blah \enden \ja 融合のウェイト(0.0f~1.0f) \endja
 		float t;
 		/// \en blah \enden \ja 参照する形状のポインタ \endja
-		sxsdk::shape_class *shape;
+		sxsdk::shape_class*	shape{};
 
-		explicit shape_mix_class () : shape(0) { }
+		explicit shape_mix_class () = default;
 		explicit shape_mix_class (float t, shape_class *shape) : t(t), shape(shape) { }
 	};
 
@@ -17,15 +17,17 @@ namespace sxsdk {
 		/// \en blah \enden \ja レイの始点位置からの距離 \endja
 		float t;
 		/// \en blah \enden \ja 交点の座標 \endja
-		sx::vec<float,3> point;
+		sx::vec3 point;
 		/// \en blah \enden \ja 交点の法線 \endja
-		sx::vec<float,3> normal;
+		sx::vec3 normal;
 		/// \en blah \enden \ja \a shape_mixes 配列のサイズ \endja
-		int number_of_shapes;
+		int number_of_shapes{ 0 };
 		/// \en blah \enden \ja 融合する可能性のある形状の配列 \endja
-		sxsdk::shape_mix_class *shape_mixes;
+		sxsdk::shape_mix_class*	shape_mixes{};
 
-		explicit intersection_class () : number_of_shapes(0), shape_mixes(0) { }
+		intersection_class () = default;
+		intersection_class (intersection_class&& t) noexcept : t(t.t), point(t.point), normal(t.normal), number_of_shapes(t.number_of_shapes), shape_mixes(t.shape_mixes) { t.shape_mixes = nullptr; }
+		intersection_class& operator= (intersection_class&& t) noexcept { std::swap(this->t, t.t); std::swap(point, t.point); std::swap(normal, t.normal); std::swap(number_of_shapes, t.number_of_shapes); std::swap(shape_mixes, t.shape_mixes); return *this; }
 		~intersection_class () { delete[] shape_mixes; }
 	};
 
@@ -36,6 +38,8 @@ namespace sxsdk {
 
 	class attribute_interface : public plugin_interface {
 	public:
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
 	virtual void make_wireframe (sxsdk::shape_class & shape, const sxsdk::mat4& mat, int view, int flags, void* aux = 0) { make_wireframe_private(shape, mat, view); } // -1
 	virtual bool ask_shape (sxsdk::shape_class& shape, void* aux = 0) { return false; } // 0
 	virtual bool ask_distant_light (sxsdk::distant_light_interface* light, int i, void* aux = 0) { return false; } // 1
@@ -237,5 +241,6 @@ namespace sxsdk {
 	virtual int attribute_interface_dummy197(void *) { assert(false); throw "invalid interface attribute_interface"; return 0; } // 197
 	virtual int attribute_interface_dummy198(void *) { assert(false); throw "invalid interface attribute_interface"; return 0; } // 198
 	virtual int attribute_interface_dummy199(void *) { assert(false); throw "invalid interface attribute_interface"; return 0; } // 199
+#pragma clang diagnostics pop
 	};
 }

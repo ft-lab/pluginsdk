@@ -1,10 +1,11 @@
 #pragma once
 
 namespace sxsdk {
-	class
-	plugin_exporter_interface : public shade_interface {
+	class plugin_exporter_interface : public shade_interface {
 	public:
-	virtual sxsdk::scene_interface* get_scene_interface (void * = 0) const = 0; // -1
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	virtual sxsdk::scene_interface* get_scene_interface (void* = nullptr) const = 0; // -1
 	virtual void do_export (void* aux = 0) = 0; // 0
 	virtual sxsdk::stream_interface* get_stream_interface (void* aux = 0) = 0; // 1
 	virtual text_stream_interface* get_text_stream_interface (void* aux = 0) = 0; // 2
@@ -26,7 +27,8 @@ namespace sxsdk {
 	virtual proxy_shape_class* get_current_proxy_shape (void* aux = 0) = 0; // 18
 	virtual proxy_shape_class* get_root_proxy_shape (void* aux = 0) = 0; // 19
 	virtual const char* get_file_path (void* aux = 0) = 0; // 20
-	virtual bool get_active (void * = 0) const = 0; // 21
-	virtual int get_rendering_flag (void * = 0) const = 0; // 22
+	virtual bool get_active (void* = nullptr) const = 0; // 21
+	virtual int get_rendering_flag (void* = nullptr) const = 0; // 22
+#pragma clang diagnostics pop
 	};
 }

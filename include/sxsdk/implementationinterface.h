@@ -1,8 +1,82 @@
 #pragma once
 
+class plugin_push_button_class;
+class plugin_checkbox_class;
+class plugin_slider_class;
+class plugin_number_class;
+class plugin_popup_class;
+class plugin_color_disk_class;
+class plugin_color_box_class;
+class plugin_image_box_class;
+class plugin_static_text_class;
+class plugin_radio_button_class;
+class plugin_popup_menu_class;
+class plugin_disclosure_button_class;
+class plugin_tab_class;
+class plugin_vec2_control_class;
+class plugin_vec3_control_class;
+class plugin_vec4_control_class;
+class plugin_quaternion_control_class;
+class plugin_matrix_control_class;
+class plugin_scale_control_class;
+class plugin_flasher_class;
+class plugin_table_control_class;
+class plugin_editable_text_class;
 namespace sxsdk {
+	class quaternion_class;
+	class handler_interface;
+	class image_interface;
+	class graphic_context_interface;
+	class window_interface;
+	class image_view_interface;
+	class shader_info_base_class;
+	class stream_interface;
+	class tool_box_view_interface;
+	class color_view_interface;
+	class background_view_interface;
+	class surface_view_interface;
+	class browser_view_interface;
+	class correction_view_interface;
+	class camera_view_interface;
+	class distant_light_view_interface;
+	class ruler_view_interface;
+	class message_view_interface;
+	class script_view_interface;
+	class shortcut_view_interface;
+	class radiosity_view_interface;
+	class skin_view_interface;
+	class motion_view_interface;
+	class object_info_view_interface;
+	class aggregate_view_interface;
+	class rendering_options_view_interface;
+	class radiosity_options_view_interface;
+	class renderingservice_interface;
+	class dialog_interface;
+	class dialog_item_class;
+	class scene_interface;
+	class meshtools_view_interface;
+	class meshtools_window_interface;
+	class custom_element_info_base_class;
+	class shape_class;
+	class polygon_mesh_interface;
+	class exporter_settings_interface;
+	class points_interface;
+	class path_replicator_interface;
+	class surface_class;
+	class texture_interface;
+	class master_surface_class;
+	class gridmanager_window_interface;
+	class gridmanager_view_interface;
+	class surface_replicator_interface;
+	class bone_joint_interface;
+	class batch_rendering_interface;
+	class rendering_history_interface;
+	class part_class;
+
 	class implementation_interface : public unknown_interface {
 	public:
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
 	virtual xshade::window_class* window_new (sxsdk::window_interface& wi, sxsdk::window_interface* parent, int flags) = 0; // 0
 	virtual void window_show (sxsdk::window_interface& w) = 0; // 1
 	virtual void window_hide (sxsdk::window_interface& w) = 0; // 2
@@ -434,9 +508,9 @@ namespace sxsdk {
 	virtual sxsdk::mat4 get_sequence_joint_matrix (const sxsdk::shape_class& shape, float sequence_value) = 0; // 391
 	virtual sxsdk::mat4 get_sequence_local_to_world_matrix (const sxsdk::shape_class& shape, float sequence_value) = 0; // 392
 	virtual sxsdk::mat4 get_sequence_world_to_local_matrix (const sxsdk::shape_class& shape, float sequence_value) = 0; // 393
-	virtual sxsdk::shape_class& do_manifold_boolean (sxsdk::shape_class& target_shape, sxsdk::shape_class& src_shape, sxsdk::smlib::boolean_operation_type bo_type, int& err) = 0; // 394
-	virtual sxsdk::shape_class& do_manifold_boolean_with_n (sxsdk::shape_class& target_shape, const std::vector<shape_class*>& src_shapes, sxsdk::smlib::boolean_operation_type bo_type, int& err) = 0; // 395
-	virtual sxsdk::polygon_mesh_interface * create_boolean_polygon_mesh_interface (sxsdk::shape_class& target_shape, sxsdk::shape_class& src_shape, sxsdk::smlib::boolean_operation_type bo_type) = 0; // 396
+	virtual sxsdk::shape_class& do_manifold_boolean (sxsdk::shape_class& src_shape, sxsdk::shape_class& target_shape, sxsdk::smlib::boolean_operation_type bo_type, int& err) = 0; // 394
+	virtual sxsdk::shape_class& do_manifold_boolean_with_n (sxsdk::shape_class& src_shape, const std::vector<shape_class*>& target_shape, sxsdk::smlib::boolean_operation_type bo_type, int& err) = 0; // 395
+	virtual sxsdk::polygon_mesh_interface * create_boolean_polygon_mesh_interface (sxsdk::shape_class& src_shape, sxsdk::shape_class& target_shape, sxsdk::smlib::boolean_operation_type bo_type) = 0; // 396
 	virtual sxsdk::exporter_settings_interface * create_exporter_settings_interface (const sx::uuid_class& exporter_id) = 0; // 397
 	virtual sxsdk::points_interface * create_converted_polyline_points_interface (sxsdk::shape_class& shape, int level) = 0; // 398
 	virtual bool is_path_replicator (const sxsdk::shape_class& shape) = 0; // 399
@@ -468,7 +542,7 @@ namespace sxsdk {
 	virtual int window_get_number_of_table_rows (sxsdk::window_interface& w, plugin_table_control_class& c) = 0; // 425
 	virtual int window_get_number_of_table_columns (sxsdk::window_interface& w, plugin_table_control_class& c) = 0; // 426
 	virtual sxsdk::path_replicator_interface* get_path_replicator_interface (const sxsdk::shape_class& shape) = 0; // 427
-	virtual const char* get_shadeexplorer_data_path () = 0; // 428
+	virtual const char* get_shadeexplorer_data_path (const char* option = 0) = 0; // 428
 	virtual plugin_number_class& window_create_number_with_unit (sxsdk::window_interface& w, handler_interface& handler, int control_id, int x, int y, int dx, int dy, const char* title, const char* unit) = 0; // 429
 	virtual bool open_backup (const char * file_path, const char * output_folder, int flags) = 0; // 430
 	virtual void window_set_table_string_value (sxsdk::window_interface& w, plugin_table_control_class& c, int row, int col, const char* value) = 0; // 431
@@ -568,5 +642,27 @@ namespace sxsdk {
 	virtual void copy_file (const char * copy_path, const char * to_path) = 0; // 524
 	virtual void delete_file (const char * file_path) = 0; // 525
 	virtual void remove_directory_and_files (const char * file_path) = 0; // 526
+	virtual bool remove_sandbox_bookmark_file (const char * file_path) = 0; // 527
+	virtual void make_text_wireframe (const sxsdk::shape_class& shape, const sxsdk::mat4& mat, const sxsdk::vec3& p, const char * text, int view, bool ortho = false) = 0; // 528
+	virtual void open_help (const sx::uuid_class& uuid) = 0; // 529
+	virtual const char* expand_path (const char* path) = 0; // 530
+	virtual const char* get_shadeexplorer_preset_path (const char* option = 0) = 0; // 531
+	virtual void select_catalog (const char* catalog_id = 0, const char* option = 0) = 0; // 532
+	virtual void update_catalog (const char* catalog_id = 0, const char* option = 0) = 0; // 533
+	virtual const char* product_info (const char* key = 0) = 0; // 534
+	virtual void make_points_wireframe (const sxsdk::shape_class& shape, const sxsdk::mat4& mat, int n, const sxsdk::vec3* p, float size) = 0; // 535
+	virtual sxsdk::shape_class& do_thickness (const sxsdk::shape_class& shape, float distance, int sided, int create_side, bool distance_from_vertex) = 0; // 536
+	virtual int get_number_of_plugin_profiles (const sx::uuid_class& plugin_id, int scope, void* aux = 0) = 0; // 537
+	virtual const char* get_plugin_profile (const sx::uuid_class& plugin_id, int index, int scope, int data_type, void* aux = 0) = 0; // 538
+	virtual void do_shell_separation (const std::vector<shape_class*>& shapes) = 0; // 539
+	virtual bool get_mirroring (const sxsdk::shape_class& shape) const = 0; // 540
+	virtual void set_mirroring (sxsdk::shape_class& shape, bool mirroring_param) = 0; // 541
+	virtual const char* get_temporary_path (const char* dirname) = 0; // 542
+	virtual int call_widget_function (const sx::uuid_class& widget_id, const char* func_name, const char* args) = 0; // 543
+	virtual void do_disconnected_separation (const std::vector<shape_class*>& shapes) = 0; // 544
+	virtual sxsdk::shape_class& create_wrapping_mesh_obsolete (const std::vector<shape_class*>& src_shapes, int level = 0, bool hide_source_shapes = false, void* aux = 0) = 0; // 545
+	virtual void window_opengl_viewport (sxsdk::window_interface& w, int x, int y, int width, int height) = 0; // 546
+	virtual void draw_primitive (const sxsdk::shape_class& shape, const sxsdk::mat4& mat, sxsdk::enums::primitive_type mode, int n_v, const sxsdk::vec3 v[], const sxsdk::rgba_class* color, const float* size) = 0; // 547
+#pragma clang diagnostics pop
 	};
 }

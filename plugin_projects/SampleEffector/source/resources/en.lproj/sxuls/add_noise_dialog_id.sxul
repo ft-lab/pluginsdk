@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dialog id="100" default_button="true" resizable="true" title="Add Noise">
+	<hbox>
+		<vbox>
+			<long-text id="101" label="Image size: " default="300 * 200" editable="false" short_text="true"/>
+			<custom id="111" height="200" width="200" resizable="true" min_height="50" min_width="50"/>
+			<hbox>
+				<selection id="121" default="1" label="|Before|After|-|Alpha channnel|Z-depth"/>
+				<push-button id="122" label="Redraw"/>
+			</hbox>
+			<bool id="131" default="true" label="Auto Preview"/>
+		</vbox>
+		<vbox>
+			<group id="noise_group" label="Noise">
+				<float id="201" default="0.2" label="Weight" unit="" slider="true"/>
+				<bool id="202" default="false" label="Generate monocolor noise"/>
+			</group>
+			<group id="noise_color_group" label="Noise color">
+				<float id="211" default="1.0" label="R ch" unit="" slider="true"/>
+				<float id="212" default="1.0" label="G ch" unit="" slider="true"/>
+				<float id="213" default="1.0" label="B ch" unit="" slider="true"/>
+				<float id="214" default="0.0" label="Alpha ch" unit="" slider="true"/>
+			</group>
+			<group id="apply_to_group" label="Apply to">
+				<selection default="0" id="221" label="|Full screen|Background only|Foreground only"/>
+			</group>
+			<group id="reflects_z_depth_group" label="Reflects Z-depth">
+				<float id="231" default="0.0" label="Weight" unit="" slider="true"/>
+				<bool id="232" default="true" label="Revert"/>
+			</group>
+			<group id="animation_options_group" label="Animation options">
+				<bool id="241" default="false" label="Animated noise"/>
+			</group>
+		</vbox>
+	</hbox>
+</dialog>

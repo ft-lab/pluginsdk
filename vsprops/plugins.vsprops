@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioPropertySheet
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="shade"
+	OutputDirectory=".\$(ProjectName)\$(PlatformName)\$(ConfigurationName)"
+	IntermediateDirectory=".\$(ProjectName)\$(PlatformName)\$(ConfigurationName)"
+	>
+	<Tool
+		Name="VCMIDLTool"
+		PreprocessorDefinitions=""
+		MkTypLibCompatible="true"
+		SuppressStartupBanner="true"
+		TargetEnvironment="1"
+		TypeLibraryName=".\$(ProjectName)\$(PlatformName)\$(ConfigurationName)\$(ProjectName).tlb"
+		HeaderFileName=""
+	/>
+	<Tool
+		Name="VCCLCompilerTool"
+		AdditionalOptions="/D extern_c=&quot;extern \&quot;C\&quot;&quot;"
+		AdditionalIncludeDirectories="../../../include;../../../boost_1_36_0"
+		EnableEnhancedInstructionSet="1"
+		Optimization="2"
+		PreprocessorDefinitions="WIN32;SXWIN32;_WINDOWS;SXWINDOWS;Windows=1;PLUGIN=1;STDCALL=_stdcall;DLLEXPORT=__declspec(dllexport);for=if(true)for"
+		RuntimeLibrary="2"
+		ForceConformanceInForLoopScope="true"
+		RuntimeTypeInfo="true"
+		UsePrecompiledHeader="0"
+		PrecompiledHeaderFile=".\$(ProjectName)\$(PlatformName)\$(ConfigurationName)\$(ProjectName).pch"
+		AssemblerListingLocation=".\$(ProjectName)\$(PlatformName)\$(ConfigurationName)\"
+		ObjectFile=".\$(ProjectName)\$(PlatformName)\$(ConfigurationName)\"
+		ProgramDataBaseFileName=".\$(ProjectName)\$(PlatformName)\$(ConfigurationName)\"
+		SuppressStartupBanner="true"
+		DisableSpecificWarnings="4819"
+	/>
+	<Tool
+		Name="VCLinkerTool"
+		IgnoreImportLibrary="true"
+		OutputFile=".\$(PlatformName)\$(ProjectName)\$(ConfigurationName)$(Conffix).dll"
+		AdditionalLibraryDirectories="..\..\$(PlatformName)"
+		LinkIncremental="1"
+		SuppressStartupBanner="true"
+		ProgramDatabaseFile=".\$(ProjectName)\$(PlatformName)\$(ConfigurationName)\$(ProjectName).pdb"
+		SubSystem="2"
+		ImportLibrary=".\$(ProjectName)\$(PlatformName)\$(ConfigurationName)\$(ProjectName).lib"
+	/>
+</VisualStudioPropertySheet>

@@ -1,11 +1,16 @@
 #pragma once
 
 namespace sxsdk {
-	class
-	joint_value_class {
+	class joint_value_class {
 	public:
-		virtual ~joint_value_class () { }
+		joint_value_class () = default;
+		joint_value_class (const joint_value_class&) = default;
+		joint_value_class& operator= (const joint_value_class&)SXLREF = default;
+		virtual ~joint_value_class () = default;
 		VTABLE_PADDING
-	virtual float get_scalar (void * = 0) const = 0; // 0
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	virtual float get_scalar (void* = nullptr) const = 0; // 0
+#pragma clang diagnostics pop
 	};
 }

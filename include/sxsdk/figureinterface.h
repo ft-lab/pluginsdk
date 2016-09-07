@@ -3,6 +3,8 @@
 namespace sxsdk {
 	class figure_interface : public plugin_interface {
 	public:
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
 	virtual bool do_figure (sxsdk::scene_interface* scene, void* aux = 0) = 0; // 0
 	virtual int figure_interface_dummy1(void *) { assert(false); throw "invalid interface figure_interface"; return 0; } // 1
 	virtual int figure_interface_dummy2(void *) { assert(false); throw "invalid interface figure_interface"; return 0; } // 2
@@ -203,5 +205,6 @@ namespace sxsdk {
 	virtual int figure_interface_dummy197(void *) { assert(false); throw "invalid interface figure_interface"; return 0; } // 197
 	virtual int figure_interface_dummy198(void *) { assert(false); throw "invalid interface figure_interface"; return 0; } // 198
 	virtual int figure_interface_dummy199(void *) { assert(false); throw "invalid interface figure_interface"; return 0; } // 199
+#pragma clang diagnostics pop
 	};
 }

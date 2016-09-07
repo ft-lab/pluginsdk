@@ -1,5 +1,6 @@
 #pragma once
 
+
 namespace sxsdk {
 	class shape_interface : public shade_interface {
 	public:
@@ -16,18 +17,18 @@ namespace sxsdk {
 		virtual void* get_handle ( void* aux =0 )  ;
 		virtual const char* get_shader_obsolete ( void* aux =0 )  ; // obsolete
 		virtual bool has_color_obsolete ( void* aux =0 )  ; // obsolete
-		virtual sx::rgb<float> get_color_obsolete ( void* aux =0 )  ; // obsolete
+		virtual sx::rgb get_color_obsolete ( void* aux =0 )  ; // obsolete
 		virtual bool is_one_of_active_shapes ( void* aux =0 )  ;
 		virtual shape_interface* begin ( void* aux =0 ) ;
 		virtual bool is_end ( void* aux =0 ) ;
 		virtual mat4 get_transformation ( void* aux =0 ) ;
 		virtual int get_number_of_points ( void* aux =0 )  ;
-		virtual sx::vec<float,3> get_point ( int i , void* aux =0 ) ;
-		virtual void set_point ( int i , const sx::vec<float,3>& v , void* aux =0 ) ;
+		virtual sx::vec3 get_point ( int i , void* aux =0 ) ;
+		virtual void set_point ( int i , const sx::vec3& v , void* aux =0 ) ;
 		virtual void set_name ( const char* s , void* aux =0 ) ;
 		virtual const char* get_name ( void* aux =0 ) ;
-		virtual void set_extrude ( const sx::vec<float,3>& v , void* aux =0 )  ; //
-		virtual sx::vec<float,3> get_extrude ( void* aux =0 )  ;
+		virtual void set_extrude ( const sx::vec3& v , void* aux =0 )  ; //
+		virtual sx::vec3 get_extrude ( void* aux =0 )  ;
 		virtual void set_revolve_from ( float f , void* aux =0 )  ; //
 		virtual float get_revolve_from ( void* aux =0 )  ;
 		virtual void set_revolve_to ( float f , void* aux =0 )  ; //
@@ -36,8 +37,8 @@ namespace sxsdk {
 		virtual void set_has_surface_attributes ( bool b , void* aux =0 )  ;
 		virtual void set_has_diffuse_color ( bool b , void* aux =0 )  ; void set_has_base_color ( bool b , void* aux =0 )  { set_has_diffuse_color(b , aux ) ; } //35003 name changed
 		virtual bool get_has_diffuse_color ( void* aux =0 )  ; bool get_has_base_color ( void* aux =0 )  { return get_has_diffuse_color(aux ) ; } //35003 name changed
-		virtual void set_base_color ( const sx::rgb<float>& color , void* aux =0 )  ; // 35003 predicated
-		virtual sx::rgb<float> get_diffuse_color ( void* aux =0 )  ; sx::rgb<float> get_base_color ( void* aux =0 )  { return get_diffuse_color(aux ) ; } //35003 name changed
+		virtual void set_base_color ( const sx::rgb& color , void* aux =0 )  ; // 35003 predicated
+		virtual sx::rgb get_diffuse_color ( void* aux =0 )  ; sx::rgb get_base_color ( void* aux =0 )  { return get_diffuse_color(aux ) ; } //35003 name changed
 		virtual void set_master_surface ( void* master_surface_handle , void* aux =0 )  ; //
 		virtual void* get_master_surface ( void* aux =0 )  ;
 		virtual part_interface* get_part_interface ( void* aux =0 ) ;
@@ -46,7 +47,7 @@ namespace sxsdk {
 		virtual disk_interface* get_disk_interface ( void* aux =0 ) ;
 		virtual sphere_interface* get_sphere_interface ( void* aux =0 ) ;
 		virtual light_interface* get_light_interface ( void* aux =0 ) ;
-		virtual sx::vec<float,3> get_center_point ( void* aux =0 )  ;
+		virtual sx::vec3 get_center_point ( void* aux =0 )  ;
 		virtual mat4 get_local_to_world_matrix ( void* aux =0 ) ;
 		virtual mat4 get_world_to_local_matrix ( void* aux =0 ) ;
 		virtual void transform ( const mat4& matrix , void* aux =0 )  ;
@@ -71,8 +72,8 @@ namespace sxsdk {
 		virtual void set_axis_matrix ( const mat4& m , void* aux =0 )  ; //28013
 		virtual int get_ordinal ( void* aux =0 )  ; // 28022
 		virtual void set_surface ( surface_interface* surface , void* aux =0 )  ; //28061
-		virtual void make_line_wireframe ( const mat4& mat , int n , const sx::vec<float,3>* p , bool closed =false , void* aux =0 ) ; //28066
-		virtual shape_class& get_shape (void* aux = 0);
+		virtual void make_line_wireframe ( const mat4& mat , int n , const sx::vec3* p , bool closed =false , void* aux =0 ) ; //28066
+		virtual shape_class& get_shape (void* aux = nullptr);
 		virtual void update ( void* aux =0 )  ; //28086
 		virtual void begin_set_point ( void* aux =0 )  ; //28086
 		virtual void end_set_point ( void* aux =0 )  ; //28086
@@ -91,8 +92,8 @@ namespace sxsdk {
 		virtual bool is_shown ( void* aux =0 )  ; //29134
 		virtual float get_diffuse_value ( void* aux =0 )  ; //30046
 		virtual void set_diffuse_value ( float f , void* aux =0 )  ; //30046
-		virtual void solid_extrude ( const sx::vec<float,3>& v , void* aux =0 )  ; //31000
-		virtual void solid_revolve ( const sx::vec<float,3>& v0 , const sx::vec<float,3>& v1 , void* aux =0 )  ; //31000
+		virtual void solid_extrude ( const sx::vec3& v , void* aux =0 )  ; //31000
+		virtual void solid_revolve ( const sx::vec3& v0 , const sx::vec3& v1 , void* aux =0 )  ; //31000
 		virtual void solid_clear ( void* aux =0 )  ; //31000
 		virtual void reset_transformation ( bool deep =false , void* aux =0 ) ; //31050
 		virtual meshes_interface* create_converted_meshes_interface ( int level =2 , int texture =0 , void* aux =0 )  ; meshes_interface* convert_to_meshes ( int level =2 , int texture =0 , void* aux =0 )  { return create_converted_meshes_interface(level , texture , aux ) ; } //31050 33042:changed to create_converted_meshes_interface
@@ -130,10 +131,10 @@ namespace sxsdk {
 		virtual int get_active_control_points ( int *p , void* aux =0 ) ; //33044
 			virtual int shape_interface_test_1 ( void* aux =0 )  { return 1; }
 		virtual bool has_special_character ( char c , void* aux =0 ) ; //34011
-		virtual void set_diffuse_color ( const sx::rgb<float>& color , void* aux =0 )  ; //35003
+		virtual void set_diffuse_color ( const sx::rgb& color , void* aux =0 )  ; //35003
 		virtual shape_class& link_object ( const mat4& t , void* aux =0 )  ; //35033
 		virtual shape_saver_interface* create_shape_saver_interface ( void* aux =0 )  ;
-		virtual texture_interface* create_texture_interface ( int self , const sx::vec<float,3>& point , const sx::vec<float,3>& shading_normal , const sx::vec<float,3>& geometric_normal , const sx::vec<float,3>& incident , const sx::vec<float,2>* uv , const sx::vec<float,3>* du , const sx::vec<float,3>* dv , void* aux =0 ) ; //35040
+		virtual texture_interface* create_texture_interface ( int self , const sx::vec3& point , const sx::vec3& shading_normal , const sx::vec3& geometric_normal , const sx::vec3& incident , const sx::vec2* uv , const sx::vec3* du , const sx::vec3* dv , void* aux =0 ) ; //35040
 		virtual radiosity_attributes_interface* get_radiosity_attributes_interface ( void* aux =0 ) ; //35079
 		virtual void move_links ( const mat4& t , void* aux =0 ) ; //36015
 		virtual part_interface* get_linked_dad_interface ( void* aux =0 ) ; //36015
@@ -147,64 +148,64 @@ namespace sxsdk {
 		virtual void set_active_vertex_indices (int n, int *indices, void *aux = 0); //139 + 60 431141
 		virtual int get_active_vertex_indices (int *indices, void *aux = 0); //140 + 59 431141
 		virtual void update_skin_bindings (void *aux = 0); //141 + 58 431141
-		virtual int shape_interface_dummy0(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy1(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy2(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy3(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy4(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy5(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy6(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy7(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy8(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy9(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy10(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy11(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy12(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy13(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy14(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy15(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy16(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy17(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy18(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy19(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy20(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy21(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy22(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy23(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy24(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy25(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy26(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy27(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy28(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy29(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy30(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy31(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy32(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy33(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy34(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy35(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy36(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy37(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy38(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy39(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy40(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy41(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy42(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy43(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy44(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy45(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy46(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy47(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy48(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy49(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy50(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy51(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy52(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy53(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy54(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy55(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy56(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
-		virtual int shape_interface_dummy57(void *) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy0(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy1(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy2(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy3(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy4(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy5(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy6(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy7(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy8(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy9(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy10(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy11(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy12(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy13(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy14(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy15(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy16(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy17(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy18(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy19(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy20(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy21(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy22(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy23(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy24(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy25(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy26(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy27(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy28(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy29(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy30(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy31(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy32(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy33(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy34(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy35(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy36(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy37(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy38(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy39(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy40(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy41(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy42(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy43(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy44(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy45(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy46(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy47(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy48(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy49(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy50(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy51(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy52(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy53(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy54(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy55(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy56(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
+		virtual int shape_interface_dummy57(void*) { SXASSERT(false); throw "invalid interface shape_interface"; return 0; }
 	};
 
 	class part_interface : public shape_interface {
@@ -224,18 +225,18 @@ namespace sxsdk {
 		virtual void set_transformation_matrix ( const mat4& m , void* aux =0 )  ; //
 		virtual mat4 get_transformation_matrix ( void* aux =0 )  ;
 		virtual void switch_ ( void* aux =0 )  ; // 27088
-		virtual void set_anchor_point ( int i , const sx::vec<float,3>& p , const bool* world_coordinates )  ; // 27107
-		virtual sx::vec<float,3> get_anchor_point ( int i , const bool* world_coordinates )  ; // 27107
-		virtual void set_inhandle ( int i , const sx::vec<float,3>& v , const bool* world_coordinates )  ; // 27121
-		virtual sx::vec<float,3> get_inhandle ( int i , const bool* world_coordinates )  ; //27121
-		virtual void set_outhandle ( int i , const sx::vec<float,3>& v , const bool* world_coordinates )  ; // 27121
-		virtual sx::vec<float,3> get_outhandle ( int i , const bool* world_coordinates )  ; //27121
+		virtual void set_anchor_point ( int i , const sx::vec3& p , const bool* world_coordinates )  ; // 27107
+		virtual sx::vec3 get_anchor_point ( int i , const bool* world_coordinates )  ; // 27107
+		virtual void set_inhandle ( int i , const sx::vec3& v , const bool* world_coordinates )  ; // 27121
+		virtual sx::vec3 get_inhandle ( int i , const bool* world_coordinates )  ; //27121
+		virtual void set_outhandle ( int i , const sx::vec3& v , const bool* world_coordinates )  ; // 27121
+		virtual sx::vec3 get_outhandle ( int i , const bool* world_coordinates )  ; //27121
 		virtual void set_handle_linked ( int i , bool b , void* aux =0 )  ; // 27121
 		virtual bool get_handle_linked ( int i , void* aux =0 )  ; //27121
-		virtual void set_lateral_inhandle ( int i , const sx::vec<float,3>& v , const bool* world_coordinates )  ; // 27121
-		virtual sx::vec<float,3> get_lateral_inhandle ( int i , const bool* world_coordinates )  ; //27121
-		virtual void set_lateral_outhandle ( int i , const sx::vec<float,3>& v , const bool* world_coordinates )  ; // 27121
-		virtual sx::vec<float,3> get_lateral_outhandle ( int i , const bool* world_coordinates )  ; //27121
+		virtual void set_lateral_inhandle ( int i , const sx::vec3& v , const bool* world_coordinates )  ; // 27121
+		virtual sx::vec3 get_lateral_inhandle ( int i , const bool* world_coordinates )  ; //27121
+		virtual void set_lateral_outhandle ( int i , const sx::vec3& v , const bool* world_coordinates )  ; // 27121
+		virtual sx::vec3 get_lateral_outhandle ( int i , const bool* world_coordinates )  ; //27121
 		virtual void set_lateral_handle_linked ( int i , bool b , void* aux =0 )  ; // 27121
 		virtual bool get_lateral_handle_linked ( int i , void* aux =0 )  ; //27121
 		virtual void set_closed ( bool b , void* aux =0 )  ; // 27121
@@ -251,7 +252,7 @@ namespace sxsdk {
 		virtual void set_surface_closed ( bool b , void* aux =0 )  ; //28020
 		virtual bool get_surface_switched ( void* aux =0 )  ; //28020
 		virtual void set_surface_switched ( bool b , void* aux =0 )  ; //28020
-		virtual part_class& get_part (void* aux = 0);
+		virtual part_class& get_part (void* aux = nullptr);
 		virtual mat4 get_joint_matrix ( void* aux =0 )  ; //29015
 		virtual bool get_flat_joint ( void* aux =0 )  ; //29015
 		virtual void set_flat_joint ( bool b , void* aux =0 )  ; //29015
@@ -282,160 +283,160 @@ namespace sxsdk {
 		virtual shape_interface* get_link_interface ( void* aux =0 ) ; //35033
 		virtual void set_link_interface ( shape_interface* shape , void* aux =0 ) ; //36011
 		
-		virtual int part_interface_dummy0(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy1(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy2(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy3(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy4(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy5(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy6(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy7(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy8(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy9(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy10(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy11(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy12(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy13(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy14(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy15(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy16(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy17(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy18(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy19(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy20(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy21(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy22(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy23(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy24(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy25(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy26(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy27(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy28(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy29(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy30(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy31(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy32(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy33(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy34(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy35(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy36(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy37(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy38(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy39(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy40(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy41(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy42(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy43(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy44(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy45(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy46(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy47(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy48(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy49(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy50(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy51(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy52(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy53(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy54(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy55(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy56(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy57(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy58(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy59(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy60(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy61(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy62(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy63(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy64(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy65(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy66(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy67(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy68(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy69(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy70(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy71(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy72(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy73(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy74(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy75(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy76(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy77(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy78(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy79(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy80(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy81(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy82(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy83(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy84(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy85(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy86(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy87(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy88(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy89(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy90(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy91(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy92(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy93(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy94(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy95(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy96(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy97(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy98(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy99(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy100(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy101(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy102(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy103(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy104(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy105(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy106(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy107(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy108(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy109(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy110(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy111(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy112(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy113(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy114(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy115(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy116(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy117(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy118(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy119(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy120(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy121(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy122(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy123(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy124(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy125(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy126(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy127(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy128(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy129(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy130(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy131(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
-		virtual int part_interface_dummy132(void *) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy0(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy1(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy2(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy3(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy4(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy5(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy6(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy7(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy8(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy9(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy10(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy11(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy12(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy13(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy14(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy15(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy16(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy17(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy18(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy19(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy20(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy21(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy22(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy23(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy24(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy25(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy26(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy27(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy28(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy29(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy30(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy31(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy32(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy33(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy34(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy35(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy36(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy37(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy38(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy39(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy40(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy41(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy42(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy43(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy44(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy45(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy46(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy47(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy48(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy49(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy50(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy51(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy52(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy53(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy54(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy55(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy56(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy57(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy58(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy59(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy60(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy61(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy62(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy63(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy64(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy65(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy66(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy67(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy68(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy69(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy70(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy71(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy72(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy73(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy74(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy75(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy76(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy77(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy78(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy79(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy80(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy81(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy82(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy83(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy84(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy85(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy86(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy87(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy88(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy89(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy90(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy91(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy92(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy93(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy94(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy95(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy96(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy97(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy98(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy99(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy100(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy101(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy102(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy103(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy104(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy105(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy106(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy107(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy108(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy109(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy110(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy111(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy112(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy113(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy114(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy115(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy116(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy117(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy118(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy119(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy120(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy121(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy122(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy123(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy124(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy125(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy126(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy127(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy128(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy129(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy130(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy131(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
+		virtual int part_interface_dummy132(void*) { SXASSERT(false); throw "invalid interface part_interface"; return 0; }
 	};
 
 	class line_interface : public shape_interface {
 	public:
-		virtual void set_point ( int i , const sx::vec<float,3>& v , void* aux =0 ) ;
-		virtual sx::vec<float,3> get_point ( int i , void* aux =0 ) ;
+		virtual void set_point ( int i , const sx::vec3& v , void* aux =0 ) ;
+		virtual sx::vec3 get_point ( int i , void* aux =0 ) ;
 		virtual bool is_control_point_selected ( int i , void* aux =0 ) ;
 
 		virtual int get_number_of_control_points ( void* aux =0 )  ;
-		virtual void set_anchor_point ( int i , const sx::vec<float,3>& v , void* aux =0 )  ; //
-		virtual sx::vec<float,3> get_anchor_point ( int i , void* aux =0 )  ;
-		virtual void set_inhandle ( int i , const sx::vec<float,3>& v , void* aux =0 )  ; //
-		virtual sx::vec<float,3> get_inhandle ( int i , void* aux =0 )  ;
-		virtual void set_outhandle ( int i , const sx::vec<float,3>& v , void* aux =0 )  ; //
-		virtual sx::vec<float,3> get_outhandle ( int i , void* aux =0 )  ;
+		virtual void set_anchor_point ( int i , const sx::vec3& v , void* aux =0 )  ; //
+		virtual sx::vec3 get_anchor_point ( int i , void* aux =0 )  ;
+		virtual void set_inhandle ( int i , const sx::vec3& v , void* aux =0 )  ; //
+		virtual sx::vec3 get_inhandle ( int i , void* aux =0 )  ;
+		virtual void set_outhandle ( int i , const sx::vec3& v , void* aux =0 )  ; //
+		virtual sx::vec3 get_outhandle ( int i , void* aux =0 )  ;
 		virtual void set_handle_linked ( int i , bool b , void* aux =0 )  ; //
 		virtual bool get_handle_linked ( int i , void* aux =0 )  ;
-		virtual void set_lateral_inhandle ( int i , const sx::vec<float,3>& v , void* aux =0 )  ; //
-		virtual sx::vec<float,3> get_lateral_inhandle ( int i , void* aux =0 )  ;
-		virtual void set_lateral_outhandle ( int i , const sx::vec<float,3>& v , void* aux =0 )  ; //
-		virtual sx::vec<float,3> get_lateral_outhandle ( int i , void* aux =0 )  ;
+		virtual void set_lateral_inhandle ( int i , const sx::vec3& v , void* aux =0 )  ; //
+		virtual sx::vec3 get_lateral_inhandle ( int i , void* aux =0 )  ;
+		virtual void set_lateral_outhandle ( int i , const sx::vec3& v , void* aux =0 )  ; //
+		virtual sx::vec3 get_lateral_outhandle ( int i , void* aux =0 )  ;
 		virtual void set_lateral_handle_linked ( int i , bool b , void* aux =0 )  ; //
 		virtual bool get_lateral_handle_linked ( int i , void* aux =0 )  ;
 		virtual void set_closed ( bool b , void* aux =0 )  ; //
@@ -453,7 +454,7 @@ namespace sxsdk {
 		virtual void reverse ( void* aux =0 )  ; // 27088 ati]
 		virtual void insert_control_point ( float t , void* aux =0 )  ; //27116
 		virtual void remove_control_point ( int i , void* aux =0 )  ; // 27122
-		virtual line_class& get_line (void* aux = 0);
+		virtual line_class& get_line (void* aux = nullptr);
 		virtual void iron ( int n =-1 , const int* i =0 , void* aux =0 )  ; //29101
 		virtual void smooth ( int n =-1 , const int* i =0 , void* aux =0 )  ; //29101
 		virtual void unsmooth ( int n =-1 , const int* i =0 , void* aux =0 )  ; //29101
@@ -486,161 +487,161 @@ namespace sxsdk {
 		virtual enums::light_type get_light_type ( void* aux =0 ) ; //36031
 		virtual void set_light_type (enums::light_type i, void* aux =0 ) ;
 		
-		virtual int line_interface_dummy0(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy1(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy2(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy3(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy4(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy5(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy6(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy7(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy8(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy9(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy10(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy11(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy12(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy13(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy14(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy15(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy16(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy17(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy18(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy19(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy20(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy21(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy22(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy23(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy24(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy25(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy26(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy27(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy28(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy29(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy30(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy31(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy32(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy33(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy34(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy35(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy36(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy37(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy38(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy39(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy40(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy41(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy42(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy43(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy44(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy45(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy46(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy47(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy48(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy49(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy50(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy51(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy52(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy53(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy54(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy55(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy56(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy57(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy58(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy59(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy60(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy61(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy62(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy63(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy64(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy65(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy66(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy67(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy68(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy69(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy70(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy71(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy72(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy73(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy74(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy75(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy76(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy77(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy78(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy79(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy80(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy81(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy82(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy83(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy84(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy85(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy86(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy87(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy88(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy89(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy90(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy91(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy92(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy93(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy94(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy95(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy96(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy97(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy98(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy99(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy100(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy101(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy102(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy103(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy104(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy105(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy106(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy107(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy108(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy109(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy110(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy111(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy112(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy113(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy114(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy115(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy116(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy117(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy118(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy119(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy120(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy121(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy122(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy123(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy124(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy125(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy126(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy127(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy128(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy129(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy130(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy131(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy132(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy133(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy134(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy135(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy136(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy137(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy138(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy139(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy140(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy141(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy142(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
-		virtual int line_interface_dummy143(void *) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy0(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy1(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy2(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy3(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy4(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy5(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy6(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy7(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy8(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy9(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy10(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy11(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy12(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy13(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy14(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy15(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy16(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy17(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy18(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy19(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy20(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy21(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy22(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy23(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy24(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy25(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy26(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy27(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy28(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy29(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy30(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy31(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy32(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy33(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy34(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy35(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy36(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy37(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy38(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy39(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy40(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy41(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy42(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy43(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy44(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy45(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy46(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy47(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy48(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy49(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy50(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy51(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy52(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy53(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy54(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy55(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy56(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy57(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy58(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy59(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy60(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy61(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy62(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy63(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy64(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy65(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy66(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy67(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy68(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy69(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy70(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy71(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy72(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy73(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy74(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy75(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy76(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy77(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy78(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy79(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy80(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy81(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy82(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy83(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy84(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy85(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy86(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy87(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy88(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy89(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy90(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy91(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy92(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy93(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy94(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy95(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy96(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy97(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy98(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy99(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy100(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy101(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy102(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy103(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy104(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy105(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy106(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy107(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy108(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy109(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy110(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy111(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy112(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy113(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy114(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy115(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy116(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy117(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy118(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy119(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy120(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy121(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy122(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy123(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy124(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy125(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy126(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy127(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy128(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy129(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy130(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy131(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy132(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy133(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy134(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy135(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy136(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy137(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy138(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy139(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy140(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy141(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy142(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
+		virtual int line_interface_dummy143(void*) { SXASSERT(false); throw "invalid interface line_interface"; return 0; }
 	};
 
 	class polygon_mesh_interface : public shape_interface {
 	public:
-		virtual void set_point ( int i , const sx::vec<float,3>& v , void* aux =0 ) ;
-		virtual sx::vec<float,3> get_point ( int i , void* aux =0 ) ;
+		virtual void set_point ( int i , const sx::vec3& v , void* aux =0 ) ;
+		virtual sx::vec3 get_point ( int i , void* aux =0 ) ;
 		virtual bool is_control_point_selected ( int i , void* aux =0 ) ;
 
 		virtual void set_threshold ( float f , void* aux =0 )  ; //
 		virtual float get_threshold ( void* aux =0 )  ;
-		virtual void append_point ( const sx::vec<float,3>& p , void* aux =0 )  ; //
+		virtual void append_point ( const sx::vec3& p , void* aux =0 )  ; //
 		virtual void append_edge ( int i0 , int i1 , void* aux =0 )  ; //
 		virtual void make_edges ( void* aux =0 )  ; // 2.70
 		virtual void set_smooth_edges ( bool b , void* aux =0 )  ; //
@@ -649,8 +650,8 @@ namespace sxsdk {
 		virtual int get_number_of_faces ( void* aux =0 ) ;
 		virtual void get_edge ( int i , int& v0 , int& v1 , void* aux =0 )  ; // 27034
 		virtual void get_face ( int i , int& v0 , int& v1 , int& v2 , int& v3 , void* aux =0 )  ; // 27034
-		virtual void set_anchor_point ( int i , const sx::vec<float,3>& p , void* aux =0 )  ; // 27107
-		virtual sx::vec<float,3> get_anchor_point ( int i , void* aux =0 )  ; // 27107
+		virtual void set_anchor_point ( int i , const sx::vec3& p , void* aux =0 )  ; // 27107
+		virtual sx::vec3 get_anchor_point ( int i , void* aux =0 )  ; // 27107
 		virtual int get_number_of_active_control_points ( void* aux =0 )  ; //27121
 		virtual int get_first_active_control_point ( void* aux =0 )  ; // 27121
 		virtual int get_next_active_control_point ( void* aux =0 )  ; // 27121
@@ -660,8 +661,8 @@ namespace sxsdk {
 		virtual void remove_control_point ( int i , void* aux =0 )  ; // 27122
 		virtual void set_round ( float round , void* aux =0 )  ; //28009
 		virtual float get_round ( void* aux =0 )  ; //28009
-		virtual int get_face_n ( int i , int* v , sx::vec<float,3>* normals =0 )  ; // 28018
-		virtual polygon_mesh_class& get_polygon_mesh (void* aux = 0);
+		virtual int get_face_n ( int i , int* v , sx::vec3* normals =0 )  ; // 28018
+		virtual polygon_mesh_class& get_polygon_mesh (void* aux = nullptr);
 		virtual void set_show_edges ( bool b , void* aux =0 )  ; //29100
 		virtual bool get_show_edges ( void* aux =0 )  ; //29100
 		virtual void append_face ( int n , const int* v , void* aux =0 )  ; //29119
@@ -669,10 +670,10 @@ namespace sxsdk {
 		virtual void unsubdivide ( void* aux =0 )  ; //29125
 		virtual void remove_edge ( int i , void* aux =0 )  ; //31000
 		virtual void remove_face ( int i , void* aux =0 )  ; //31000
-		virtual int get_uv_n ( int i , sx::vec<float,2>* uv , void* aux =0 )  ; //31063
+		virtual int get_uv_n ( int i , sx::vec2* uv , void* aux =0 )  ; //31063
 		virtual image_interface* get_texture_image_interface ( void* aux =0 )  ; image_interface* get_texture ( void* aux =0 )  { return get_texture_image_interface(aux ) ; } //31063 33042:changed to get_texture_image_interface
-		virtual void set_uv ( int i , int j , const sx::vec<float,2>& uv , void* aux =0 )  ; //31102
-		virtual sx::vec<float,2> get_uv ( int i , int j , void* aux =0 )  ; //31102
+		virtual void set_uv ( int i , int j , const sx::vec2& uv , void* aux =0 )  ; //31102
+		virtual sx::vec2 get_uv ( int i , int j , void* aux =0 )  ; //31102
 		virtual bool has_uv ( int i , void* aux =0 )  ; //31102
 		virtual void clear_uv_obsolete ( int i , void* aux =0 ) { } //31102 37042 obsoleted
 		virtual void make_edge ( int i0 , int i1 , void* aux =0 )  ; //32052
@@ -687,10 +688,10 @@ namespace sxsdk {
 		virtual void end_removing_edges ( void* aux =0 )  ; //32047
 		virtual bool is_control_point_selected_obsolete ( int i , void* aux =0 )  ; //32067 obsolete 32297
 		virtual void setup_normal ( void* aux =0 )  ; //33023
-		virtual void set_parameter_uv ( int i , int j , const sx::vec<float,2>& uv , void* aux =0 )  ; //33054
-		virtual sx::vec<float,2> get_parameter_uv ( int i , int j , void* aux =0 )  ; //33054
-		virtual void set_distance_uv ( int i , int j , const sx::vec<float,2>& uv , void* aux =0 )  ; //33054
-		virtual sx::vec<float,2> get_distance_uv ( int i , int j , void* aux =0 )  ; //33054
+		virtual void set_parameter_uv ( int i , int j , const sx::vec2& uv , void* aux =0 )  ; //33054
+		virtual sx::vec2 get_parameter_uv ( int i , int j , void* aux =0 )  ; //33054
+		virtual void set_distance_uv ( int i , int j , const sx::vec2& uv , void* aux =0 )  ; //33054
+		virtual sx::vec2 get_distance_uv ( int i , int j , void* aux =0 )  ; //33054
 		virtual int polygon_mesh_interface_test_1 ( void* aux =0 )  { return 1; }
 		virtual bool adjust_face_direction ( void* aux =0 )  ; //35003
 		virtual bool has_consistent_faces ( void* aux =0 )  ; //35003
@@ -704,143 +705,143 @@ namespace sxsdk {
 		virtual int fccwev ( int e , int v , bool check , void* aux =0 ) ; //36076
 		virtual int fcwev ( int e , int v , bool check , void* aux =0 ) ; //36076
 		virtual void setup_plane_equation ( void* aux =0 ) ; //36076
-		virtual sx::vec<float,4> get_plane_equation ( int f , void* aux =0 ) ; //36076
+		virtual sx::vec4 get_plane_equation ( int f , void* aux =0 ) ; //36076
 		
-		virtual int get_number_of_uv_layers (void* aux = 0) const; // 450090
-		virtual void clear_uv_layers (void* aux = 0); // 450090
-		virtual int append_uv_layer (void* aux = 0); // 450090
+		virtual int get_number_of_uv_layers (void* aux = nullptr) const; // 450090
+		virtual void clear_uv_layers (void* aux = nullptr); // 450090
+		virtual int append_uv_layer (void* aux = nullptr); // 450090
 		virtual void remove_uv_layer (const int uv_layer_index, void* aux  = 0); // 450090
 		
-		virtual void clear_face_group (void* aux = 0);  // 450090
-		virtual int get_number_of_face_groups (void* aux = 0); // 450090 
-		virtual bool set_face_group_index (const int face_index, const int face_group_index, void* aux = 0); // 450090
-		virtual int get_face_group_index (const int face_index, void* aux = 0); // 450090
-		virtual void *get_face_group (const int face_index, void* aux = 0); // 450090
-		virtual void *get_face_group_surface (const int face_group_index, void* aux = 0); // 450090
- 		virtual int append_face_group (void* aux = 0); // 450101
- 		virtual bool set_face_group_surface (const int face_group_index, void *master_surface_param, void* aux = 0); // 450101
- 		virtual bool remove_face_group (const int face_group_index, void* aux = 0); // 450101
+		virtual void clear_face_group (void* aux = nullptr);  // 450090
+		virtual int get_number_of_face_groups (void* aux = nullptr); // 450090 
+		virtual bool set_face_group_index (const int face_index, const int face_group_index, void* aux = nullptr); // 450090
+		virtual int get_face_group_index (const int face_index, void* aux = nullptr); // 450090
+		virtual void *get_face_group (const int face_index, void* aux = nullptr); // 450090
+		virtual void *get_face_group_surface (const int face_group_index, void* aux = nullptr); // 450090
+ 		virtual int append_face_group (void* aux = nullptr); // 450101
+ 		virtual bool set_face_group_surface (const int face_group_index, void *master_surface_param, void* aux = nullptr); // 450101
+ 		virtual bool remove_face_group (const int face_group_index, void* aux = nullptr); // 450101
  
-		virtual int polygon_mesh_interface_dummy0(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy1(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy2(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy3(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy4(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy5(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy6(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy7(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy8(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy9(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy10(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy11(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy12(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy13(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy14(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy15(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy16(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy17(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy18(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy19(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy20(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy21(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy22(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy23(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy24(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy25(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy26(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy27(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy28(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy29(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy30(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy31(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy32(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy33(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy34(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy35(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy36(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy37(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy38(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy39(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy40(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy41(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy42(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy43(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy44(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy45(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy46(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy47(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy48(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy49(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy50(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy51(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy52(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy53(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy54(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy55(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy56(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy57(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy58(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy59(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy60(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy61(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy62(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy63(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy64(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy65(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy66(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy67(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy68(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy69(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy70(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy71(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy72(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy73(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy74(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy75(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy76(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy77(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy78(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy79(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy80(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy81(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy82(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy83(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy84(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy85(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy86(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy87(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy88(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy89(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy90(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy91(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy92(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy93(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy94(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy95(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy96(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy97(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy98(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy99(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy100(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy101(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy102(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy103(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy104(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy105(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy106(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy107(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy108(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy109(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy110(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy111(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy112(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy113(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy114(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy115(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy116(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy117(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy118(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
-		virtual int polygon_mesh_interface_dummy119(void *) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy0(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy1(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy2(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy3(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy4(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy5(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy6(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy7(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy8(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy9(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy10(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy11(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy12(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy13(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy14(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy15(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy16(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy17(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy18(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy19(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy20(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy21(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy22(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy23(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy24(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy25(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy26(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy27(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy28(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy29(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy30(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy31(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy32(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy33(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy34(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy35(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy36(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy37(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy38(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy39(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy40(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy41(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy42(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy43(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy44(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy45(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy46(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy47(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy48(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy49(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy50(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy51(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy52(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy53(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy54(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy55(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy56(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy57(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy58(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy59(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy60(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy61(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy62(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy63(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy64(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy65(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy66(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy67(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy68(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy69(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy70(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy71(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy72(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy73(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy74(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy75(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy76(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy77(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy78(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy79(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy80(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy81(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy82(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy83(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy84(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy85(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy86(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy87(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy88(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy89(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy90(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy91(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy92(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy93(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy94(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy95(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy96(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy97(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy98(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy99(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy100(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy101(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy102(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy103(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy104(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy105(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy106(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy107(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy108(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy109(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy110(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy111(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy112(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy113(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy114(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy115(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy116(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy117(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy118(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
+		virtual int polygon_mesh_interface_dummy119(void*) { SXASSERT(false); throw "invalid interface polygon_mesh_interface"; return 0; }
 	};
 
 	class disk_interface : public shape_interface {
@@ -853,408 +854,408 @@ namespace sxsdk {
 		virtual float get_from ( void* aux =0 )  ;
 		virtual void set_to ( float f , void* aux =0 )  ;
 		virtual float get_to ( void* aux =0 )  ;
-		virtual void set_center ( const sx::vec<float,3>& v , void* aux =0 ) ;
-		virtual sx::vec<float,3> get_center ( void* aux =0 )  ;
-		virtual void set_radius ( const sx::vec<float,2>& v , void* aux =0 ) ;
-		virtual sx::vec<float,2> get_radius ( void* aux =0 )  ;
+		virtual void set_center ( const sx::vec3& v , void* aux =0 ) ;
+		virtual sx::vec3 get_center ( void* aux =0 )  ;
+		virtual void set_radius ( const sx::vec2& v , void* aux =0 ) ;
+		virtual sx::vec2 get_radius ( void* aux =0 )  ;
 		virtual mat4 get_matrix ( void* aux =0 ) ;
 		virtual void set_matrix ( const mat4& t , void* aux =0 ) ;
-		virtual disk_class& get_disk (void* aux = 0);
+		virtual disk_class& get_disk (void* aux = nullptr);
 		virtual int disk_interface_test_1 ( void* aux =0 )  { return 1; }
 		
-		virtual int disk_interface_dummy0(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy1(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy2(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy3(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy4(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy5(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy6(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy7(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy8(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy9(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy10(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy11(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy12(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy13(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy14(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy15(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy16(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy17(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy18(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy19(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy20(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy21(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy22(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy23(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy24(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy25(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy26(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy27(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy28(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy29(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy30(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy31(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy32(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy33(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy34(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy35(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy36(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy37(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy38(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy39(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy40(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy41(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy42(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy43(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy44(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy45(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy46(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy47(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy48(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy49(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy50(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy51(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy52(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy53(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy54(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy55(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy56(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy57(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy58(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy59(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy60(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy61(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy62(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy63(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy64(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy65(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy66(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy67(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy68(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy69(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy70(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy71(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy72(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy73(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy74(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy75(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy76(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy77(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy78(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy79(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy80(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy81(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy82(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy83(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy84(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy85(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy86(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy87(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy88(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy89(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy90(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy91(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy92(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy93(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy94(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy95(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy96(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy97(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy98(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy99(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy100(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy101(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy102(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy103(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy104(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy105(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy106(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy107(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy108(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy109(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy110(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy111(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy112(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy113(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy114(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy115(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy116(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy117(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy118(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy119(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy120(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy121(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy122(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy123(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy124(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy125(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy126(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy127(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy128(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy129(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy130(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy131(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy132(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy133(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy134(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy135(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy136(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy137(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy138(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy139(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy140(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy141(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy142(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy143(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy144(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy145(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy146(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy147(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy148(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy149(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy150(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy151(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy152(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy153(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy154(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy155(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy156(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy157(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy158(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy159(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy160(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy161(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy162(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy163(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy164(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy165(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy166(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy167(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy168(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy169(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy170(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy171(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy172(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy173(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy174(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy175(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy176(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy177(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy178(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy179(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy180(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy181(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy182(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy183(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy184(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
-		virtual int disk_interface_dummy185(void *) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy0(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy1(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy2(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy3(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy4(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy5(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy6(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy7(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy8(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy9(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy10(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy11(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy12(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy13(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy14(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy15(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy16(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy17(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy18(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy19(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy20(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy21(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy22(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy23(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy24(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy25(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy26(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy27(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy28(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy29(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy30(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy31(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy32(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy33(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy34(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy35(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy36(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy37(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy38(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy39(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy40(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy41(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy42(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy43(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy44(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy45(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy46(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy47(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy48(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy49(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy50(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy51(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy52(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy53(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy54(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy55(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy56(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy57(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy58(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy59(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy60(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy61(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy62(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy63(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy64(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy65(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy66(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy67(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy68(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy69(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy70(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy71(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy72(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy73(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy74(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy75(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy76(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy77(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy78(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy79(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy80(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy81(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy82(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy83(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy84(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy85(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy86(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy87(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy88(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy89(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy90(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy91(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy92(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy93(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy94(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy95(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy96(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy97(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy98(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy99(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy100(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy101(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy102(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy103(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy104(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy105(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy106(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy107(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy108(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy109(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy110(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy111(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy112(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy113(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy114(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy115(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy116(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy117(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy118(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy119(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy120(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy121(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy122(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy123(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy124(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy125(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy126(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy127(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy128(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy129(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy130(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy131(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy132(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy133(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy134(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy135(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy136(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy137(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy138(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy139(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy140(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy141(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy142(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy143(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy144(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy145(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy146(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy147(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy148(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy149(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy150(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy151(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy152(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy153(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy154(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy155(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy156(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy157(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy158(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy159(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy160(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy161(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy162(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy163(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy164(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy165(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy166(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy167(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy168(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy169(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy170(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy171(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy172(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy173(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy174(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy175(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy176(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy177(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy178(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy179(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy180(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy181(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy182(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy183(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy184(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
+		virtual int disk_interface_dummy185(void*) { SXASSERT(false); throw "invalid interface disk_interface"; return 0; }
 	};
 
 	class sphere_interface : public shape_interface {
 	public:
 		virtual bool is_control_point_selected ( int i , void* aux =0 ) ;
 
-		virtual void set_center ( const sx::vec<float,3>& v , void* aux =0 ) ;
-		virtual sx::vec<float,3> get_center ( void* aux =0 ) ;
-		virtual void set_radius ( const sx::vec<float,3>& v , void* aux =0 ) ;
-		virtual sx::vec<float,3> get_radius ( void* aux =0 ) ;
+		virtual void set_center ( const sx::vec3& v , void* aux =0 ) ;
+		virtual sx::vec3 get_center ( void* aux =0 ) ;
+		virtual void set_radius ( const sx::vec3& v , void* aux =0 ) ;
+		virtual sx::vec3 get_radius ( void* aux =0 ) ;
 		virtual mat4 get_matrix ( void* aux =0 ) ;
 		virtual void set_matrix ( const mat4& t , void* aux =0 ) ;
-		virtual sphere_class& get_sphere (void* aux = 0);
+		virtual sphere_class& get_sphere (void* aux = nullptr);
 		virtual int sphere_interface_test_1 ( void* aux =0 )  { return 1; }
 		
-		virtual int sphere_interface_dummy0(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy1(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy2(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy3(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy4(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy5(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy6(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy7(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy8(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy9(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy10(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy11(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy12(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy13(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy14(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy15(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy16(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy17(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy18(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy19(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy20(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy21(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy22(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy23(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy24(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy25(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy26(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy27(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy28(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy29(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy30(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy31(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy32(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy33(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy34(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy35(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy36(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy37(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy38(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy39(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy40(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy41(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy42(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy43(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy44(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy45(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy46(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy47(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy48(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy49(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy50(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy51(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy52(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy53(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy54(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy55(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy56(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy57(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy58(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy59(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy60(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy61(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy62(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy63(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy64(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy65(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy66(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy67(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy68(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy69(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy70(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy71(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy72(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy73(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy74(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy75(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy76(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy77(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy78(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy79(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy80(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy81(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy82(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy83(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy84(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy85(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy86(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy87(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy88(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy89(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy90(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy91(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy92(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy93(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy94(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy95(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy96(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy97(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy98(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy99(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy100(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy101(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy102(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy103(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy104(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy105(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy106(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy107(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy108(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy109(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy110(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy111(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy112(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy113(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy114(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy115(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy116(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy117(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy118(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy119(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy120(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy121(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy122(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy123(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy124(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy125(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy126(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy127(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy128(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy129(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy130(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy131(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy132(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy133(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy134(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy135(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy136(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy137(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy138(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy139(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy140(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy141(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy142(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy143(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy144(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy145(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy146(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy147(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy148(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy149(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy150(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy151(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy152(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy153(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy154(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy155(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy156(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy157(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy158(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy159(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy160(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy161(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy162(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy163(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy164(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy165(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy166(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy167(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy168(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy169(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy170(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy171(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy172(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy173(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy174(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy175(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy176(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy177(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy178(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy179(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy180(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy181(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy182(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy183(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy184(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy185(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy186(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy187(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy188(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy189(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy190(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
-		virtual int sphere_interface_dummy191(void *) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy0(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy1(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy2(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy3(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy4(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy5(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy6(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy7(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy8(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy9(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy10(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy11(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy12(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy13(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy14(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy15(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy16(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy17(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy18(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy19(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy20(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy21(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy22(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy23(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy24(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy25(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy26(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy27(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy28(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy29(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy30(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy31(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy32(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy33(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy34(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy35(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy36(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy37(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy38(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy39(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy40(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy41(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy42(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy43(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy44(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy45(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy46(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy47(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy48(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy49(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy50(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy51(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy52(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy53(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy54(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy55(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy56(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy57(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy58(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy59(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy60(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy61(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy62(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy63(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy64(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy65(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy66(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy67(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy68(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy69(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy70(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy71(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy72(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy73(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy74(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy75(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy76(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy77(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy78(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy79(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy80(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy81(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy82(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy83(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy84(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy85(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy86(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy87(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy88(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy89(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy90(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy91(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy92(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy93(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy94(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy95(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy96(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy97(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy98(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy99(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy100(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy101(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy102(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy103(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy104(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy105(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy106(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy107(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy108(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy109(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy110(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy111(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy112(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy113(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy114(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy115(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy116(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy117(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy118(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy119(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy120(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy121(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy122(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy123(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy124(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy125(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy126(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy127(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy128(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy129(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy130(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy131(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy132(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy133(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy134(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy135(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy136(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy137(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy138(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy139(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy140(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy141(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy142(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy143(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy144(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy145(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy146(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy147(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy148(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy149(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy150(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy151(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy152(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy153(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy154(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy155(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy156(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy157(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy158(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy159(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy160(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy161(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy162(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy163(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy164(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy165(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy166(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy167(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy168(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy169(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy170(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy171(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy172(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy173(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy174(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy175(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy176(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy177(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy178(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy179(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy180(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy181(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy182(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy183(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy184(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy185(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy186(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy187(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy188(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy189(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy190(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
+		virtual int sphere_interface_dummy191(void*) { SXASSERT(false); throw "invalid interface sphere_interface"; return 0; }
 	};
 
 	class light_interface : public shape_interface {
@@ -1275,192 +1276,192 @@ namespace sxsdk {
 		virtual float get_shadow ( void* aux =0 )  ;
 		virtual void set_shadow_softness ( float f , void* aux =0 )  ; //
 		virtual float get_shadow_softness ( void* aux =0 )  ;
-		virtual void set_direction ( const sx::vec<float,3>& v , void* aux =0 )  ; //
-		virtual sx::vec<float,3> get_direction ( void* aux =0 )  ;
+		virtual void set_direction ( const sx::vec3& v , void* aux =0 )  ; //
+		virtual sx::vec3 get_direction ( void* aux =0 )  ;
 		virtual void set_specular ( float f , void* aux =0 )  ; // 2.70
 		virtual float get_specular ( void* aux =0 )  ; // 2.70
 		virtual void set_diffuse ( float f , void* aux =0 )  ; // 2.70
 		virtual float get_diffuse ( void* aux =0 )  ; // 2.70
-		virtual void set_position ( const sx::vec<float,3>& v , void* aux =0 )  ; // 28013
-		virtual sx::vec<float,3> get_position ( void* aux =0 )  ; // 28013
-		virtual light_class& get_light (void* aux = 0);
+		virtual void set_position ( const sx::vec3& v , void* aux =0 )  ; // 28013
+		virtual sx::vec3 get_position ( void* aux =0 )  ; // 28013
+		virtual light_class& get_light (void* aux = nullptr);
 		virtual int light_interface_test_1 ( void* aux =0 )  { return 1; }
-		virtual void set_center ( const sx::vec<float,3>& v , void* aux =0 )  ;
-		virtual sx::vec<float,3> get_center ( void* aux =0 )  ;
+		virtual void set_center ( const sx::vec3& v , void* aux =0 )  ;
+		virtual sx::vec3 get_center ( void* aux =0 )  ;
 		virtual void set_lumen ( bool b , void* aux =0 )  ;	// 35038
 		virtual bool get_lumen ( void* aux =0 )  ;			// 35038
 		virtual void load_ies ( const char* path , void* aux =0 )  ; //36013
 		
-		virtual int light_interface_dummy0(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy1(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy2(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy3(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy4(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy5(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy6(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy7(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy8(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy9(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy10(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy11(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy12(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy13(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy14(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy15(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy16(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy17(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy18(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy19(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy20(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy21(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy22(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy23(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy24(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy25(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy26(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy27(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy28(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy29(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy30(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy31(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy32(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy33(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy34(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy35(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy36(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy37(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy38(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy39(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy40(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy41(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy42(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy43(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy44(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy45(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy46(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy47(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy48(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy49(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy50(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy51(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy52(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy53(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy54(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy55(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy56(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy57(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy58(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy59(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy60(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy61(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy62(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy63(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy64(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy65(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy66(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy67(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy68(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy69(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy70(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy71(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy72(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy73(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy74(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy75(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy76(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy77(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy78(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy79(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy80(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy81(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy82(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy83(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy84(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy85(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy86(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy87(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy88(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy89(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy90(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy91(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy92(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy93(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy94(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy95(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy96(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy97(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy98(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy99(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy100(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy101(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy102(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy103(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy104(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy105(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy106(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy107(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy108(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy109(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy110(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy111(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy112(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy113(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy114(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy115(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy116(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy117(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy118(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy119(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy120(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy121(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy122(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy123(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy124(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy125(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy126(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy127(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy128(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy129(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy130(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy131(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy132(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy133(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy134(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy135(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy136(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy137(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy138(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy139(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy140(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy141(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy142(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy143(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy144(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy145(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy146(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy147(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy148(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy149(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy150(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy151(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy152(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy153(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy154(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy155(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy156(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy157(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy158(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy159(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy160(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy161(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy162(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy163(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy164(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy165(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy166(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy167(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy168(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy169(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
-		virtual int light_interface_dummy170(void *) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy0(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy1(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy2(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy3(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy4(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy5(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy6(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy7(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy8(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy9(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy10(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy11(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy12(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy13(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy14(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy15(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy16(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy17(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy18(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy19(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy20(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy21(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy22(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy23(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy24(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy25(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy26(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy27(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy28(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy29(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy30(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy31(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy32(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy33(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy34(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy35(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy36(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy37(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy38(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy39(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy40(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy41(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy42(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy43(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy44(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy45(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy46(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy47(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy48(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy49(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy50(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy51(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy52(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy53(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy54(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy55(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy56(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy57(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy58(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy59(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy60(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy61(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy62(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy63(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy64(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy65(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy66(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy67(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy68(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy69(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy70(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy71(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy72(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy73(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy74(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy75(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy76(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy77(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy78(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy79(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy80(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy81(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy82(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy83(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy84(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy85(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy86(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy87(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy88(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy89(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy90(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy91(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy92(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy93(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy94(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy95(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy96(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy97(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy98(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy99(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy100(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy101(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy102(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy103(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy104(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy105(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy106(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy107(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy108(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy109(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy110(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy111(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy112(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy113(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy114(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy115(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy116(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy117(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy118(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy119(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy120(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy121(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy122(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy123(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy124(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy125(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy126(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy127(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy128(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy129(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy130(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy131(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy132(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy133(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy134(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy135(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy136(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy137(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy138(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy139(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy140(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy141(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy142(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy143(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy144(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy145(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy146(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy147(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy148(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy149(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy150(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy151(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy152(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy153(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy154(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy155(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy156(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy157(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy158(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy159(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy160(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy161(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy162(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy163(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy164(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy165(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy166(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy167(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy168(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy169(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
+		virtual int light_interface_dummy170(void*) { SXASSERT(false); throw "invalid interface light_interface"; return 0; }
 	};
 }

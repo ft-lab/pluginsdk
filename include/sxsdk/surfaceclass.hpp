@@ -6,11 +6,7 @@ namespace model {
 // end
 
 namespace sxsdk {
-	class
-	// implementation
-	SXMODEL
-	// end
-	surface_class {
+	class surface_class {
 	public:
 		virtual ~surface_class () { }
 		VTABLE_PADDING
@@ -20,10 +16,9 @@ namespace sxsdk {
 		model::surface_class &self;
 		
 		explicit surface_class (model::surface_class &self) : self(self) { }
-		surface_class &operator= (const surface_class &) { return *this; }
+		surface_class (const surface_class&)						= delete;
+		surface_class& operator= (const surface_class&) noexcept	{ return *this; }
 		void check_encryption () const;
-	private:
-		surface_class (const surface_class &);
 	// end
 	};
 }

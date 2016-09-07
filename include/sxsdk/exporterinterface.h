@@ -3,6 +3,8 @@
 namespace sxsdk {
 	class exporter_interface : public plugin_interface {
 	public:
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
 	virtual int get_number_of_passes ( void* aux =0 ) { return 1; }  // 0
 	virtual int get_file_type ( void* aux =0 ) { return 0; }  // 1
 	virtual const char* get_file_extension ( void* aux =0 ) { return 0; }  // 2
@@ -73,8 +75,8 @@ namespace sxsdk {
 	virtual bool can_access_external_sandbox ( void* aux =0 ) { return false; }  // 67
 	virtual int get_number_of_access_files_outside_sandbox ( void* aux =0 ) { return 0; }  // 68
 	virtual const char *get_access_file_path_outside_sandbox (int i, void* aux = 0) { return 0; }  // 69
-	virtual int exporter_interface_dummy70(void *) { assert(false); throw "invalid interface exporter_interface"; return 0; } // 70
-	virtual int exporter_interface_dummy71(void *) { assert(false); throw "invalid interface exporter_interface"; return 0; } // 71
+	virtual bool can_accept_polymesh_face_vertex_colors ( void* aux =0 ) { return false; }  // 70
+	virtual void polymesh_face_vertex_colors (int n_list, const int list[], const sxsdk::rgba_class* vertex_colors, int layer_index, int number_of_layers, void* aux = 0) { }  // 71
 	virtual int exporter_interface_dummy72(void *) { assert(false); throw "invalid interface exporter_interface"; return 0; } // 72
 	virtual int exporter_interface_dummy73(void *) { assert(false); throw "invalid interface exporter_interface"; return 0; } // 73
 	virtual int exporter_interface_dummy74(void *) { assert(false); throw "invalid interface exporter_interface"; return 0; } // 74
@@ -203,5 +205,6 @@ namespace sxsdk {
 	virtual int exporter_interface_dummy197(void *) { assert(false); throw "invalid interface exporter_interface"; return 0; } // 197
 	virtual int exporter_interface_dummy198(void *) { assert(false); throw "invalid interface exporter_interface"; return 0; } // 198
 	virtual int exporter_interface_dummy199(void *) { assert(false); throw "invalid interface exporter_interface"; return 0; } // 199
+#pragma clang diagnostics pop
 	};
 }

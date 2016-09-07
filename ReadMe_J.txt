@@ -1,79 +1,50 @@
-Shade 13.2.2 Plugin SDK (463042)
+﻿Shade 15.1.0 Plugin SDK (481137)
 ----------------------------------------
-Thank you for downloading Shade 13 Plugin SDK. Before you use this SDK, please read the following requirements and up-to-date information for your development of Shade plugin.
+Thank you for downloading Shade 15 Plugin SDK. Before you use this SDK, please read the following requirements and up-to-date information for your development of Shade plugin.
 
-このプラグインSDKは、Shade 13.1.1 ProfessionalまたはShade 13.1.1 Standardの13.1.1(461395)以降のバージョンに対応しています。
-13.1.1(461394)より前のバージョンはサポートしておりません。
+このプラグインSDKは、Shade 15.1.0 ProfessionalまたはShade 15.1.0 Standardの15.1.0(481137)以降のバージョンに対応しています。
+15.1.0(481137)より前のバージョンはサポートしておりません。
 
-■ Shade 13.2.2 Plugin SDK の内容
 
-　Shade 13.2.2 Plugin SDKには以下のフォルダが含まれています。
+■ 変更履歴
 
-　Shade 13.2.2 Plugin SDK ：
-	・  サンプルプラグイン作成用プロジェクトファイル Windows版(sample¥windowsフォルダ)
-	・  サンプルプラグイン作成用プロジェクトファイル Mac OS X版(sample¥macosxフォルダ)
-	・  サンプルソースファイル(sample¥sourceフォルダ)
+[2015/07/17] Shade 15.1.0 Plugin SDK (481137)
+
+・Shade 15.1.0 Plugin SDK 公開。
+
+■ Shade 15.1.0 Plugin SDK の内容
+
+　Shade 15.1.0 Plugin SDKには以下のフォルダが含まれています。
+
+　Shade 15.1.0 Plugin SDK ：
+	・  プラグイン作成用スケルトンプロジェクト Windows/Mac OS X版(plugin_projects¥skeletonフォルダ)
+	・  サンプルプラグインプロジェクト Windows/Mac OS X版(plugin_projects¥SampleEffectorフォルダ)
 	・  ライブラリファイル(includeフォルダ)
-	・  BOOST C++ ライブラリ(boost_1_43_0フォルダ)
-	・  Plugin SDK ドキュメント(doc¥index.ja.html HTML形式)
+	・  BOOST C++ ライブラリ(boost_1_55_0フォルダ)
+	・  Property sheets (C++) files for Visual Studio (/vsprops)
+	・  Project configuration files for Xcode (/xcconfig)
 
 ■ プラグイン開発環境について
 
 　Windows
 	・ OS
+		Windows 8/8.1 32bit / 64bit
 		Windows 7 32bit / 64bit
-		Windows Vista 32bit / 64bit
-		Windows XP Professional x64 Edition
-		Windows XP Professional / Home Edition / Media Center Edition (SP2以降)
 	・ 開発ツール
-		Visual Studio 2010 (Visual C++ 2010) SP1
-		Visual Studio 2008 (Visual C++ 2008) SP1
+		Visual Studio 2013 (Visual C++ 2013) Update 4
 
-	※ Windows Me/98/95/NT 4.0には対応しておりません。
-	※ Visual Studio .NET 2003、Visual C++ .NET 2003、Visual Studio .NET 2002、Visual C++ .NET 2002、
-		Visual C++ 6.0には対応しておりません。
-	※ Visual Studio 2008/2010の利用言語は、Visual C++ 2008/2010となります。 
-	※ Visual C++ 2008/2010 Express Editionでは、64bit版のプラグインは開発できません。
-	※ Visual Studio 2008/2010およびVisual C++ 2008/2010利用時は、Visual Studio 2008/2010 Service Pack 1の適用を推奨します。
+	※ Windows Vista/XPには対応しておりません。
+	※ Visual Studio 2013およびVisual C++ 2013利用時は、Visual Studio 2013 Update 4の適用を推奨します。
 	　 
-	   Visual Studio 2010 Service Pack 1
-	   http://www.microsoft.com/ja-jp/download/details.aspx?id=23691
-	　 Visual Studio 2008 Service Pack 1
-	　 http://www.microsoft.com/japan/msdn/vstudio/downloads/sp/vs2008/sp1/
+	   Visual Studio 2013 Update 4
+	   https://www.microsoft.com/ja-JP/download/details.aspx?id=44921
 
 　Mac OS X
 	・ OS
-		Mac OS X 10.6.2以降
-		Mac OS X 10.5.8
+		Mac OS X 10.8以降
 	・ 開発ツール
-		Xcode 3.2.1以降 / Xcode 4.3 / Xcode 4.4
+		Xcode 6.1以降
 
-	※ Classic環境あるいはMac OS 9には対応しておりません。
-	※ CodeWarriorおよびProjectBuilder、Xcode 3.2以前には対応しておりません。
-	　 Apple Developer Connection
-	　 http://developer.apple.com/jp/
-
-■ Visual C++ 2010 Express Editionでのプラグイン開発について
-
-　Visual Studio 2010 Standard Edition以上/Visual C++ 2010 Express Editionでは、Platform SDKは組み込まれていますので別途設定は不要です。
-
-　Visual C++ 2010 Express Editionを以下のWebページからプログラムをダウンロードし、
-　インストールします。
-
-	Visual C++ 2010 Express Edition
-	http://www.microsoft.com/japan/msdn/vstudio/express/visualc/
-
-　インストールが完了するとShade 13.1 プラグインの開発が行えるようになります。
-
-■ Xcode 4.4でのプラグイン開発について
-
-　Mac OS X 10.8 (Mountain Lion)環境のXcode 4.4にてプラグインを作成する際は、
-　サンプルプロジェクトの設定を変更する必要があります。
-
-　pluginsプロジェクトを選択し、Build Settingsでの ArchitecturesグループにてBase SDKの選択を「OS X 10.7」とします。
-　これで、OS X 10.7/10.8にて動作するプラグインのビルドができるようになります。
-　ただし、Xcode 4.4でビルドしたプラグインはOS X 10.6以前では動作しません。
-　OS X 10.6でも動作するプラグインをビルドするには、OS X 10.7上のXcode 4.3を使用する必要があります。
 
 ■ Plugin SDKサンブルプログラムについて
 
@@ -84,7 +55,7 @@ Thank you for downloading Shade 13 Plugin SDK. Before you use this SDK, please r
 　変更を行ってください。
 
 　各ソースファイルはそれそれのプラグインのフォルダ内に格納されています。
-　プロジェクトファイルは、macosx/plugins/plugins.xcodeproj, windows/plugins/pluginsamples2008.sln, pluginsamples2010.sln に格納されています。
+　プロジェクトファイルは、/mac/plugins/sampleplugin.xcodeproj, /win/sampleplugin.sln に格納されています。
 　１つのプロジェクトでサンプルプログラムと標準プログラムのすべてのプラグインがコンパイルできる構成になっています。
 
 ■ Boostライブラリについて
@@ -114,9 +85,7 @@ ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 
 
-
-
-2013年1月　株式会社イーフロンティア
+2015年7月　株式会社Shade3D
 ----------------------------------------
-※Shadeは、株式会社イーフロンティアの商標です。
+※Shade 3Dは、株式会社Shade3Dの商標です。
 その他記載の社名、ロゴ、製品名、ファイルフォーマット名はそれぞれ各社の商号、登録商標または商標です。

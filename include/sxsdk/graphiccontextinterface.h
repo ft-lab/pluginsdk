@@ -3,6 +3,8 @@
 namespace sxsdk {
 	class graphic_context_interface : public shade_interface {
 	public:
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
 	virtual int graphic_context_interface_dummy0(void *) { assert(false); throw "invalid interface graphic_context_interface"; return 0; } // 0
 	virtual int graphic_context_interface_dummy1(void *) { assert(false); throw "invalid interface graphic_context_interface"; return 0; } // 1
 	virtual void set_color (const sxsdk::rgb_class& color, void* aux = 0) = 0; // 2
@@ -40,5 +42,6 @@ namespace sxsdk {
 	virtual void draw_uniscaled_bitmap (bitmap_interface* image, const sx::rectangle_class& destination_rectangle, void* aux = 0) = 0; // 34
 	virtual void paint_polygon (int n_points, const sxsdk::vec2 points[], void* aux = 0) = 0; // 35
 	virtual void frame_polygon (int n_points, const sxsdk::vec2 points[], void* aux = 0) = 0; // 36
+#pragma clang diagnostics pop
 	};
 }

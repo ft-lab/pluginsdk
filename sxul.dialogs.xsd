@@ -43,6 +43,7 @@
         <xsd:element ref="include" />
         <xsd:element ref="listbox" />
         <xsd:element ref="path" />
+        <xsd:element ref="tab" />
       </xsd:choice>
       <xsd:attribute name="title" type="xsd:string">
         <xsd:annotation>
@@ -106,6 +107,7 @@
         <xsd:element ref="include" />
         <xsd:element ref="listbox" />
         <xsd:element ref="path" />
+        <xsd:element ref="tab" />
       </xsd:choice>
       <xsd:attribute name="id" type="xsd:integer">
         <xsd:annotation>
@@ -139,6 +141,7 @@
         <xsd:element ref="include" />
         <xsd:element ref="listbox" />
         <xsd:element ref="path" />
+        <xsd:element ref="tab" />
       </xsd:choice>
       <xsd:attribute name="id" type="xsd:integer">
         <xsd:annotation>
@@ -826,6 +829,20 @@
       <xsd:attribute name="tooltip" type="xsd:string">
         <xsd:annotation>
           <xsd:documentation> \en tooltip \enden  \ja ツールティップ \endja </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="tab">
+    <xsd:annotation>
+      <xsd:documentation> \en tab item \enden  \ja タブ \endja </xsd:documentation>
+      <xsd:documentation> \ja tabタグ内に vboxで囲ったタグを入れることで、タブ要素を指定します。このときのvboxのlabelがタブの項目名として表示されます。 \endja </xsd:documentation>
+      <xsd:documentation> \ja tabタグは、groupタグの中に配置することはできません。 \endja </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:attribute name="id" type="xsd:integer">
+        <xsd:annotation>
+          <xsd:documentation> \en id \enden  \ja 識別子 \endja </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
     </xsd:complexType>

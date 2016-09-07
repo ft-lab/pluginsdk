@@ -1,11 +1,12 @@
 #pragma once
 
 namespace sxsdk {
-	class
-	stream_interface : public shade_interface {
+	class stream_interface : public shade_interface {
 	public:
-	virtual sxsdk::scene_interface* get_scene_interface (void * = 0) const = 0; // -1
-	#if SXWINDOWS 
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	virtual sxsdk::scene_interface* get_scene_interface (void* = nullptr) const = 0; // -1
+	#if SXOS_WINDOWS 
 	virtual void set_swap_endian (bool b, void* aux = 0) = 0; // -1
 	virtual bool get_swap_endian (void* aux = 0) = 0; // -1
 	virtual stream_interface& read_float (float& f, void* aux = 0) = 0; // -1
@@ -62,9 +63,9 @@ namespace sxsdk {
 	virtual const char* get_name () = 0; // -1
 	virtual bool eof () = 0; // -1
 	#endif 
-	virtual const char* get_label (void * = 0) const = 0; // 0
-	virtual stream_interface &set_label (const char* label_param, void * = 0) = 0; // 1
-	virtual const char* get_file_path (void * = 0) const = 0; // 2
+	virtual const char* get_label (void* = nullptr) const = 0; // 0
+	virtual stream_interface &set_label (const char* label_param, void* = nullptr) = 0; // 1
+	virtual const char* get_file_path (void* = nullptr) const = 0; // 2
 const char* get_file_spec (void* aux = 0) { return get_file_path(); }
 	virtual int stream_interface_dummy3(void *) { assert(false); throw "invalid interface stream_interface"; return 0; } // 3
 	virtual stream_interface& read_vec3 (sxsdk::vec3& v, void* aux = 0) = 0; // 4
@@ -84,5 +85,6 @@ stream_interface& write (const char & c) { return write_char(c); }
 stream_interface& write (const short & i) { return write_short(i); }
 stream_interface& write (const int & i) { return write_int(i); }
 stream_interface& write (const float & f) { return write_float(f); }
+#pragma clang diagnostics pop
 	};
 }

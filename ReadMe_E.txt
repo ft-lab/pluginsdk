@@ -1,21 +1,23 @@
-Shade 13.2.2 Plugin SDK (463042)
+Shade 15.1.0 Plugin SDK (481137)
 ----------------------------------------
-Thank you for downloading Shade 13 Plugin SDK. Before you use this SDK, please read the following requirements and up-to-date information for your development of Shade plugin.
 
-This plugin SDK is based on Shade 13.1.1 build 461395 and is compatible with both Professional and Standard version. All plugins built with this SDK will run on Shade 13.1.1 and above version. If you want to run your plugin in the previous version of Shade, try use the old Plugin SDK or avoid to use those new functions listed in "What's new in Shade 13.1.1 Plugin SDK" section.
+Thank you for downloading Shade 15 Plugin SDK. Before you use this SDK, please read the following requirements and up-to-date information for your development of Shade plugin.
+
+This plugin SDK is based on Shade 15.1.0 build 481137 and is compatible with both Professional and Standard version. All plugins built with this SDK will run on Shade 15.1.0 and above version. If you want to run your plugin in the previous version of Shade, try use the old Plugin SDK or avoid to use those new functions listed in "What's new in Shade 15.1.0 Plugin SDK" section.
 
 
 ------------------------------------------
 Inside this Plugin SDK
 ------------------------------------------
 
-Shade 13.2.2 Plugin SDK contains:
-- Sample Plugins and Project files for Windows development (/samples/windows/plugins)
-- Sample Plugins and Project files for Mac OS X development (/samples/macosx/plugins)
-- Source codes for sample plugins (/sample/source/plugins)
+Shade 15.1.0 Plugin SDK contains:
+
+- Skeleton Project files for Windows and Mac OS X development (/plugin_projects/skeleton)
+- Sample Plugins and Project files for Windows and Mac OS X development (/plugin_projects/SampleEffector)
 - SDK header files (/include)
-- BOOST C++ Library files (/boost_1_43_0)
-- Plugin SDK Document (/doc/index.en.html)
+- BOOST C++ Library files (/boost_1_55_0)
+- Property sheets (C++) files for Visual Studio (/vsprops)
+- Project configuration files for Xcode (/xcconfig)
 
 
 ------------------------------------------
@@ -23,84 +25,51 @@ Plugin Development Environments
 ------------------------------------------
 
 Windows OS:
+- Windows 8/8.1 32bit / 64bit
 - Windows 7 32bit / 64bit
-- Windows Vista 32bit / 64bit
-- Windows XP Professional x64 Edition
-- Windows XP Professional / Home Edition / Media Center Edition (SP2 or above)
 
 Windows Development Tools:
-- Visual Studio 2010 (Visual C++ 2010) SP1
-- Visual Studio 2008 (Visual C++ 2008) SP1
+- Visual Studio 2013 (Visual C++ 2013) Update 4
 
-* Windows Me/98/95/NT 4.0 are not compatible.
-* Visual Studio .NET 2003 / Visual C++ .NET 2003、Visual Studio .NET 2002 / Visual C++ .NET 2002 / Visual C++ 6.0 are not compatible.
-* Visual C++ 2008/2010 Express Edition is not supported 64-bit development of Shade Plugin.
-* Service Pack 1 is highly recommend when using Visual Studio 2008/2010.
+* Windows Vista and XP are not compatible.
+* Update 4 is highly recommend when using Visual Studio 2013.
 
-	Download Visual Studio 2010 Service Pack 1,
-	http://www.microsoft.com/en-us/download/details.aspx?id=23691
-
-	Download Visual Studio 2008 Service Pack 1
-	http://www.microsoft.com/en-us/download/details.aspx?id=10986
+	Download Visual Studio 2013 Update 4,
+	https://www.microsoft.com/en-us/download/details.aspx?id=44921
 
 Mac OS X:
-- OS X 10.6 / 10.7 / 10.8
+- OS X 10.8 / 10.9 / 10.10
 
 Mac OS X Development Tools
-- Xcode 3.2.1 later / Xcode 4.3.x / Xcode 4.4
+- Xcode 6.1 or above
 
-* Classic / Mac OS 9 / Mac OS X 10.5 and previous versions are not supported.
-* CodeWarrior, Project Builder and Xcode 3.2 are not supported.
-
-
---------------------------------------------------------
-Plugin Development with Visual C++ 2010 Express Edition
---------------------------------------------------------
-
-- For Visual Studio 2010 Standard Edition or later / Visual C++ 2010 Express Edition, Platform SDK is already embedded, so there is not need for extra settings.
-
-	Download free version of Visual C++ 2010 Express Edition
-	http://www.microsoft.com/visualstudio/en-us/products/2010-editions/visual-cpp-express
-
-- Use this free version of Visual C++ 2010 Express Edition for Shade 13 plugin development.
-
-
-------------------------------------------
-Plugin Development with Xcode 4.4
-------------------------------------------
-
-- You can use Xcode 4.4 under Mac OS X 10.8 (Mountain Lion) for Shade Plugin development, however, you need to change some settings in your plugin project file as shown at the followings.
-
-- In your plugins project, go to "Build Settings" and under the "Architectures" group, change the Base SDK to "OS X 10.7" instead of "OS X 10.6". Then your plugin will run under both OS X 10.7 and 10.8. However, if you want to run your plugin under 10.6, then you should use Xcode 4.3.
+* Mac OS X 10.7 and previous versions are not supported.
 
 
 ------------------------------------------
 Plugin SDK Samples
 ------------------------------------------
 
-- To try the sample plugins, copy them to your desired location together with the "include" and "boost_1_43_0" directory. 
+- To try the sample plugins, copy them to your desired location together with the "include" and "boost_1_55_0" directory. 
 - Simply open the sample project and build it.
 - If you want to use the sample plugin as your base development, please make sure to change the plugin ID to your unique UUID instead.
-- You can find the project file at "sample" directory that included all the sample plugin source codes.
+- You can find the project file at "sample" directory that included the sample plugin source codes.
 
-	For Mac OS X: /macosx/plugins/plugins.xcodeproj
-	For Windows: /windows/plugins/pluginsamples2008.sln or pluginsamples2010.sln
+	For Mac OS X: /mac/plugins/sampleplugin.xcodeproj
+	For Windows: /win/sampleplugin.sln
 
 
 ------------------------------------------
 Location of 3rd Party Plugins
 ------------------------------------------
 
-To use plugins, scripts or widgets from 3rd party with Shade 13, please install at the following location:
+To use plugins, scripts or widgets from 3rd party with Shade 3D ver.15, please install at the following location:
 
-Windows Vista / 7
-- Default My Documents at C:\Users\[user name]\Documents\Shade 13\plugins or scripts or widgets
+Windows 7 / 8 / 8.1
+- Default My Documents at C:\Users\[user name]\Documents\Shade 3D ver.15\plugins or scripts or widgets
 
-Windows XP
-- Default My Documents at C:\Documents and Settings\[user name]\My Documents\Shade 13\plugins or scripts or widgets
-
-Mac OS X 10.6 / 10.7 / 10.8
-- Local User Documents at /Users/[user name]/Documents/Shade 13/plugins or scripts or widgets
+Mac OS X 10.8 / 10.9/ 10.10
+- Local User Documents at /Users/[user name]/Documents/Shade 3D ver.15/plugins or scripts or widgets
 
 
 ------------------------------------------
@@ -136,5 +105,5 @@ DEALINGS IN THE SOFTWARE.
 Copyright & Trademark Notice
 ------------------------------------------
 
-Shade 13 Copyright(c) 1986-2012 e frontier, Inc. All rights reserved. Shade 13 is a trademark of e frontier, Inc. All other trademarks or registered trademarks are the property of their respective owners.
+Shade 3D ver.15 Copyright(c) 1986-2015 Shade3D Co.,Ltd. All rights reserved. Shade 3D ver.15 is a trademark of Shade3D Co.,Ltd., Inc. All other trademarks or registered trademarks are the property of their respective owners.
 

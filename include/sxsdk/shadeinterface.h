@@ -1,5 +1,8 @@
 #pragma once
 
+struct _object;
+using PyObject = _object;
+
 namespace sxsdk {
 	class shade_interface : public unknown_interface {
 	public:
@@ -10,6 +13,8 @@ namespace sxsdk {
 			virtual void output (int i0 , int i1 , int i2 , int i3) {
 			}
 		};
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
 	virtual void* get_extended_interface (void* aux = 0); // 0
 	virtual void get_error_code_obsolete (void* aux = 0) { } // 1
 	virtual void reset_error_code (void* aux = 0); // 2
@@ -31,10 +36,10 @@ namespace sxsdk {
 	virtual bool get_visible (void* = nullptr) const; // 18
 	virtual shade_interface &set_smooth_apply (bool smooth_apply_param, void* = nullptr); // 19
 	virtual bool get_smooth_apply (void* = nullptr) const; // 20
-	virtual int get_version (void* = nullptr) const; // 21
+	virtual int get_version (void* = nullptr) const; int get_build() const { return get_version(); }  // 21
 	virtual void beep (void* aux = 0); // 22
 	virtual void message (const char* message, void* aux = 0); // 23
-void message (const std::string s) { message(s.c_str()); }
+void message (const std::string s) { message(s.data()); }
 	virtual sxsdk::mat4 make_tv (const sxsdk::vec3& f, const sxsdk::vec3& a, float bank, bool shift, float h_shift, float v_shift, float parallel, bool top_view, void* aux = 0); // 24
 	virtual void plane_equation (int n, const sxsdk::vec3* p, sxsdk::vec4& param, void* aux = 0); // 25
 	virtual const char* get_active_document (void* = nullptr) const; // 26
@@ -148,10 +153,10 @@ void message (const std::string s) { message(s.c_str()); }
 	virtual const char* get_error_string (void* aux = 0); // 132
 	virtual int get_error_code (void* aux = 0); // 133
 	virtual int shade_interface_test_1 (void* aux = 0) { return 1; } // 134
-#if SXMACOSX 
+#if SXOS_OSX 
 	virtual sxsdk::image_interface* create_image_interface_from_resource_deprecated (const char* image_id, void* aux = 0); // 135
 		sxsdk::image_interface* get_image_interface_from_resource_deprecated (const char* image_id, void* aux = 0) { return create_image_interface_from_resource_deprecated(image_id); }
-#elif SXWINDOWS 
+#elif SXAPI_MFC 
 	virtual sxsdk::image_interface* create_image_interface_from_resource_deprecated (int image_id, void* aux = 0); // 135
 		sxsdk::image_interface* get_image_interface_from_resource_deprecated (int image_id, void* aux = 0) { return create_image_interface_from_resource_deprecated(image_id); }
 #else 
@@ -205,7 +210,7 @@ void message (const std::string s) { message(s.c_str()); }
 	virtual aggregate_window_interface* get_aggregate_window_interface (void* = nullptr) const; // 181
 	virtual sxsdk::stream_interface* create_file_interface (const char* path, void* aux = 0); // 182
 	virtual text_stream_interface* create_text_file_interface (const char* path, bool read_mode = false); // 183
-	virtual void register_python_object (PyObject* object, void* aux = 0); // 184
+	virtual void register_python_object_obsolete (const char* object, void* aux = 0); // 184
 	virtual sxsdk::image_interface* create_joined_image_interface (int n_images, sxsdk::image_interface* const images[], void* aux = 0); // 185
 	virtual message_window_interface* get_message_window_interface (void* = nullptr) const; // 186
 	virtual int shade_interface_dummy187(void *) { assert(false); throw "invalid interface shade_interface"; return 0; } // 187
@@ -315,7 +320,7 @@ void purge_images () { (const_cast<shade_interface *>(this))->implementation().p
 int get_build_date (void* = nullptr) const { return (const_cast<shade_interface *>(this))->implementation().get_build_date(); }
 int get_bits (void* = nullptr) const { return (const_cast<shade_interface *>(this))->implementation().get_bits(); }
 const char* get_processor (void* = nullptr) const { return (const_cast<shade_interface *>(this))->implementation().get_processor(); }
-const char* get_shadeexplorer_data_path () { return (const_cast<shade_interface *>(this))->implementation().get_shadeexplorer_data_path(); }
+const char* get_shadeexplorer_data_path (const char* option = 0) { return (const_cast<shade_interface *>(this))->implementation().get_shadeexplorer_data_path(option); }
 bool open_backup (const char* file_path, const char* output_folder = 0, int flags = 0) { return (const_cast<shade_interface *>(this))->implementation().open_backup(file_path, output_folder, flags); }
 const char* get_version_info (void* = nullptr) const { return (const_cast<shade_interface *>(this))->implementation().get_version_info(); }
 void virtual_query () { return (const_cast<shade_interface *>(this))->implementation().virtual_query(); }
@@ -335,5 +340,19 @@ void move_file (const char* move_path, const char* to_path, void* aux = 0) { ret
 void copy_file (const char* copy_path, const char* to_path, void* aux = 0) { return (const_cast<shade_interface *>(this))->implementation().copy_file(copy_path, to_path); }
 void delete_file (const char* file_path, void* aux = 0) { return (const_cast<shade_interface *>(this))->implementation().delete_file(file_path); }
 void remove_directory_and_files (const char* file_path, void* aux = 0) { return (const_cast<shade_interface *>(this))->implementation().remove_directory_and_files(file_path); }
+bool remove_sandbox_bookmark_file (const char* file_path, void* aux = 0) { return (const_cast<shade_interface *>(this))->implementation().remove_sandbox_bookmark_file(file_path); }
+void open_help (const sx::uuid_class& uuid, void* aux = 0) { return (const_cast<shade_interface *>(this))->implementation().open_help(uuid); }
+const char* expand_path (const char* path, void* aux = 0) { return (const_cast<shade_interface *>(this))->implementation().expand_path(path); }
+const char* get_shadeexplorer_preset_path (const char* option = 0) { return (const_cast<shade_interface *>(this))->implementation().get_shadeexplorer_preset_path(option); }
+void select_catalog (const char* catalog_id = 0, const char* option = 0) { (const_cast<shade_interface *>(this))->implementation().select_catalog(catalog_id, option); }
+void update_catalog (const char* catalog_id = 0, const char* option = 0) { (const_cast<shade_interface *>(this))->implementation().update_catalog(catalog_id, option); }
+const char* product_info (const char* key = 0) { return (const_cast<shade_interface *>(this))->implementation().product_info(key); }
+int get_number_of_plugin_profiles (const sx::uuid_class& plugin_id, int scope, void* aux = 0) { return (const_cast<shade_interface *>(this))->implementation().get_number_of_plugin_profiles(plugin_id, scope); }
+int number_of_profiles_scriptimplementation (const sx::uuid_class& plugin_id, int scope) { return get_number_of_plugin_profiles(plugin_id, scope); }
+const char* get_plugin_profile (const sx::uuid_class& plugin_id, int index, int scope, int data_type, void* aux = 0) { return (const_cast<shade_interface *>(this))->implementation().get_plugin_profile(plugin_id, index, scope, data_type); }
+const char* get_profile_scriptimplementation (const sx::uuid_class& plugin_id, int index, int scope, int data_type) { return get_plugin_profile(plugin_id, index, scope, data_type); }
+const char* get_temporary_path (const char* dirname, void* aux = 0) { return (const_cast<shade_interface *>(this))->implementation().get_temporary_path(dirname); }
+int call_widget_function (const sx::uuid_class& widget_id, const char* func_name, const char* args, void* aux = 0) { return (const_cast<shade_interface *>(this))->implementation().call_widget_function(widget_id, func_name, args); }
+#pragma clang diagnostics pop
 	};
 }

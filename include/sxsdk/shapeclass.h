@@ -1,20 +1,68 @@
 #pragma once
-
+//#pragma message("sxsdk/shapeclass.hpp")
 
 #ifndef DEFINE_DYNAMIC_CAST
-	#define DEFINE_DYNAMIC_CAST(class_name, base_name, shape_type) static class_name &cast (base_name &s) { if (s.get_type() != shape_type) throw std::bad_cast(); return static_cast<class_name &>(s); } static const class_name &cast (const base_name &s) { if (s.get_type() != shape_type) throw std::bad_cast(); return static_cast<const class_name &>(s); } static class_name *cast (base_name *s) { if (s && s->get_type() != shape_type) return 0; return static_cast<class_name *>(s); } static const class_name *cast (const base_name *s) { if (s && s->get_type() != shape_type) return 0; return static_cast<const class_name *>(s); }
+	#define DEFINE_DYNAMIC_CAST(class_name, base_name, shape_type) static class_name &cast (base_name &s) { if (s.get_type() != shape_type) throw std::bad_cast(); return static_cast<class_name&>(s); } static const class_name &cast (const base_name &s) { if (s.get_type() != shape_type) throw std::bad_cast(); return static_cast<const class_name&>(s); } static class_name *cast (base_name *s) { if (s && s->get_type() != shape_type) return 0; return static_cast<class_name*>(s); } static const class_name *cast (const base_name *s) { if (s && s->get_type() != shape_type) return 0; return static_cast<const class_name*>(s); }
 #endif
 
-namespace model {
-	class polygonmesh_topology_data_class;
-}
 
 namespace sxsdk {
-	class
-	shape_class {
+	namespace enums {
+		enum shadow_type : unsigned;
+	}
+	class scene_interface;
+	class surface_interface;
+	class motion_interface;
+	class line_class;
+	class polygon_mesh_class;
+	class disk_class;
+	class sphere_class;
+	class light_class;
+	class mesh_interface;
+	class shape_interface;
+	class meshes_interface;
+	class shape_saver_interface;
+	class radiosity_attributes_interface;
+	class skin_class;
+	class control_point_class;
+	class rotator_joint_interface;
+	class slider_joint_interface;
+	class scale_joint_interface;
+	class uniscale_joint_interface;
+	class light_effector_interface;
+	class path_joint_interface;
+	class morph_effector_interface;
+	class ball_joint_interface;
+	class custom_joint_interface;
+	class proxy_shape_class;
+	class sound_track_interface;
+	class master_image_class;
+	class switch_effector_interface;
+	class part_interface;
+	class surface_saver_interface;
+	class master_shape_class;
+	class vertex_class;
+	class edge_class;
+	class face_class;
+	class surface_saver_class;
+	class master_image_class;
+	class light_interface;
+	class line_saver_class;
+	class line_interface;
+	class polygon_mesh_saver_class;
+	class vertex_attribute_interface;
+	class sphere_interface;
+	class sphere_saver_class;
+	class disk_interface;
+	class disk_saver_class;
+	class intensity_distribution_class;
+
+	class shape_class {
 	public:
 		virtual ~shape_class () { }
 		VTABLE_PADDING
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
  
 	class const_iterator; 
 	class const_reverse_iterator; 
@@ -99,39 +147,39 @@ namespace sxsdk {
 		const shape_class *p; 
 	}; 
  
-	virtual sxsdk::scene_interface* get_scene_interface (void * = 0) const = 0; // 0
-	virtual surface_interface* get_surface_interface (void * = 0) const = 0; // 1
-	virtual sxsdk::motion_interface* get_motion_interface (void * = 0) const = 0; // 2
-	virtual sxsdk::shape_class* get_bro (void * = 0) const = 0; // 3
-	virtual sxsdk::shape_class* get_sis (void * = 0) const = 0; // 4
-	virtual part_class* get_dad (void * = 0) const = 0; // 5
-	virtual sxsdk::shape_class* get_son (void * = 0) const = 0; // 6
-	virtual enums::shape_type get_type (void * = 0) const = 0; // 7
-	virtual void* get_handle (void * = 0) const = 0; // 8
+	virtual sxsdk::scene_interface* get_scene_interface (void* = nullptr) const = 0; // 0
+	virtual surface_interface* get_surface_interface (void* = nullptr) const = 0; // 1
+	virtual sxsdk::motion_interface* get_motion_interface (void* = nullptr) const = 0; // 2
+	virtual sxsdk::shape_class* get_bro (void* = nullptr) const = 0; // 3
+	virtual sxsdk::shape_class* get_sis (void* = nullptr) const = 0; // 4
+	virtual part_class* get_dad (void* = nullptr) const = 0; // 5
+	virtual sxsdk::shape_class* get_son (void* = nullptr) const = 0; // 6
+	virtual enums::shape_type get_type (void* = nullptr) const = 0; // 7
+	virtual void* get_handle (void* = nullptr) const = 0; // 8
 	virtual sxsdk::rgb_class get_color_obsolete (void* aux = 0) = 0; // 9
-	virtual bool is_one_of_active_shapes (void * = 0) const = 0; // 10
+	virtual bool is_one_of_active_shapes (void* = nullptr) const = 0; // 10
 	virtual iterator begin (void* aux = 0) const = 0; // 11
 	virtual iterator end (void* aux = 0) const = 0; // 12
-	virtual sxsdk::mat4 get_transformation (void * = 0) const = 0; // 13
-	virtual int get_number_of_points (void * = 0) const = 0; // 14
+	virtual sxsdk::mat4 get_transformation (void* = nullptr) const = 0; // 13
+	virtual int get_number_of_points (void* = nullptr) const = 0; // 14
 	virtual sxsdk::vec3 get_point (int i, void* aux = 0) = 0; // 15
 	virtual void set_point (int i, const sxsdk::vec3& v, void* aux = 0) = 0; // 16
-	virtual shape_class &set_name (const char* name_param, void * = 0) = 0; // 17
-	virtual const char* get_name (void * = 0) const = 0; // 18
-	virtual shape_class &set_extrude (const sxsdk::vec3 &extrude_param, void * = 0) = 0; // 19
-	virtual sxsdk::vec3 get_extrude (void * = 0) const = 0; // 20
-	virtual shape_class &set_revolve_from (float revolve_from_param, void * = 0) = 0; // 21
-	virtual float get_revolve_from (void * = 0) const = 0; // 22
-	virtual shape_class &set_revolve_to (float revolve_to_param, void * = 0) = 0; // 23
-	virtual float get_revolve_to (void * = 0) const = 0; // 24
-	virtual bool get_has_surface_attributes (void * = 0) const = 0; // 25
-	virtual shape_class &set_has_surface_attributes (bool has_surface_attributes_param, void * = 0) = 0; // 26
-	virtual shape_class &set_has_diffuse_color_deprecated (bool has_diffuse_color_deprecated_param, void * = 0) = 0; // 27
-	virtual bool get_has_diffuse_color_deprecated (void * = 0) const = 0; // 28
+	virtual shape_class &set_name (const char* name_param, void* = nullptr) = 0; // 17
+	virtual const char* get_name (void* = nullptr) const = 0; // 18
+	virtual shape_class &set_extrude (const sxsdk::vec3 &extrude_param, void* = nullptr) = 0; // 19
+	virtual sxsdk::vec3 get_extrude (void* = nullptr) const = 0; // 20
+	virtual shape_class &set_revolve_from (float revolve_from_param, void* = nullptr) = 0; // 21
+	virtual float get_revolve_from (void* = nullptr) const = 0; // 22
+	virtual shape_class &set_revolve_to (float revolve_to_param, void* = nullptr) = 0; // 23
+	virtual float get_revolve_to (void* = nullptr) const = 0; // 24
+	virtual bool get_has_surface_attributes (void* = nullptr) const = 0; // 25
+	virtual shape_class &set_has_surface_attributes (bool has_surface_attributes_param, void* = nullptr) = 0; // 26
+	virtual shape_class &set_has_diffuse_color_deprecated (bool has_diffuse_color_deprecated_param, void* = nullptr) = 0; // 27
+	virtual bool get_has_diffuse_color_deprecated (void* = nullptr) const = 0; // 28
 	virtual void set_base_color_deprecated (const sxsdk::rgb_class& color, void* aux = 0) = 0; // 29
-	virtual sxsdk::rgb_class get_diffuse_color_deprecated (void * = 0) const = 0; // 30
-	virtual shape_class &set_master_surface (sxsdk::master_surface_class* master_surface_param, void * = 0) = 0; // 31
-	virtual sxsdk::master_surface_class* get_master_surface (void * = 0) const = 0; // 32
+	virtual sxsdk::rgb_class get_diffuse_color_deprecated (void* = nullptr) const = 0; // 30
+	virtual shape_class &set_master_surface (sxsdk::master_surface_class* master_surface_param, void* = nullptr) = 0; // 31
+	virtual sxsdk::master_surface_class* get_master_surface (void* = nullptr) const = 0; // 32
 	virtual const part_class& get_part (void* aux = 0) const = 0; // 33
 	virtual part_class& get_part (void* aux = 0) = 0; // 34
 	virtual const line_class& get_line (void* aux = 0) const = 0; // 35
@@ -144,23 +192,23 @@ namespace sxsdk {
 	virtual sphere_class& get_sphere (void* aux = 0) = 0; // 42
 	virtual const light_class& get_light (void* aux = 0) const = 0; // 43
 	virtual light_class& get_light (void* aux = 0) = 0; // 44
-	virtual sxsdk::vec3 get_center_point (void * = 0) const = 0; // 45
-	virtual sxsdk::mat4 get_local_to_world_matrix (void * = 0) const = 0; // 46
-	virtual sxsdk::mat4 get_world_to_local_matrix (void * = 0) const = 0; // 47
+	virtual sxsdk::vec3 get_center_point (void* = nullptr) const = 0; // 45
+	virtual sxsdk::mat4 get_local_to_world_matrix (void* = nullptr) const = 0; // 46
+	virtual sxsdk::mat4 get_world_to_local_matrix (void* = nullptr) const = 0; // 47
 	virtual void transform (const sxsdk::mat4& matrix, void* aux = 0) = 0; // 48
 	virtual bool has_surface (void* aux = 0) = 0; // 49
-	virtual bool has_motion (void * = 0) const = 0; // 50
-	virtual bool has_bro (void * = 0) const = 0; // 51
-	virtual bool has_sis (void * = 0) const = 0; // 52
-	virtual bool has_dad (void * = 0) const = 0; // 53
-	virtual bool has_son (void * = 0) const = 0; // 54
+	virtual bool has_motion (void* = nullptr) const = 0; // 50
+	virtual bool has_bro (void* = nullptr) const = 0; // 51
+	virtual bool has_sis (void* = nullptr) const = 0; // 52
+	virtual bool has_dad (void* = nullptr) const = 0; // 53
+	virtual bool has_son (void* = nullptr) const = 0; // 54
 	virtual void remove (void* aux = 0) = 0; // 55
-	virtual bool is_extruded (void * = 0) const = 0; // 56
-	virtual bool is_revolved (void * = 0) const = 0; // 57
-	virtual sxsdk::mat4 get_axis_matrix (void * = 0) const = 0; // 58
-	virtual shape_class &set_flip_face (bool flip_face_param, void * = 0) = 0; // 59
-	virtual bool get_flip_face (void * = 0) const = 0; // 60
-	virtual int get_total_number_of_control_points (void * = 0) const = 0; // 61
+	virtual bool is_extruded (void* = nullptr) const = 0; // 56
+	virtual bool is_revolved (void* = nullptr) const = 0; // 57
+	virtual sxsdk::mat4 get_axis_matrix (void* = nullptr) const = 0; // 58
+	virtual shape_class &set_flip_face (bool flip_face_param, void* = nullptr) = 0; // 59
+	virtual bool get_flip_face (void* = nullptr) const = 0; // 60
+	virtual int get_total_number_of_control_points (void* = nullptr) const = 0; // 61
 	virtual void cancel_transformation (void* aux = 0) = 0; // 62
 	virtual mesh_interface* convert_to_mesh_obsolete (int m = 0, int n = 0, void* aux = 0) = 0; // 63
 	virtual sxsdk::stream_interface* create_attribute_stream_interface (int stream_id, int wireframe_id = 0, int intersection_id = 0, void* aux = 0) = 0; // 64
@@ -169,7 +217,7 @@ namespace sxsdk {
 		sxsdk::stream_interface* get_attribute_stream (int stream_id, void* aux = 0) { return get_attribute_stream_interface(stream_id); }
 	virtual void make_sphere_wireframe (const sxsdk::mat4& mat, const sxsdk::mat4& trans, void* aux = 0) = 0; // 66
 	virtual void set_axis_matrix (const sxsdk::mat4& to, void* aux = 0) = 0; // 67
-	virtual int get_ordinal (void * = 0) const = 0; // 68
+	virtual int get_ordinal (void* = nullptr) const = 0; // 68
 	virtual void set_surface (surface_interface* surface, void* aux = 0) = 0; // 69
 	virtual void make_line_wireframe (const sxsdk::mat4& mat, int n, const sxsdk::vec3* p, bool closed = false, void* aux = 0) = 0; // 70
 	virtual void update (void* aux = 0) = 0; // 71
@@ -186,12 +234,12 @@ namespace sxsdk {
 	virtual shape_interface* get_shape_interface (void* aux = 0) = 0; // 82
 	virtual void copy (void* aux = 0) = 0; // 83
 	virtual void paste (void* aux = 0) = 0; // 84
-	virtual bool is_switched (void * = 0) const = 0; // 85
+	virtual bool is_switched (void* = nullptr) const = 0; // 85
 	virtual sxsdk::shape_class& copy_object (const sxsdk::mat4& t, void* aux = 0) = 0; // 86
 	virtual void move_object (const sxsdk::mat4& t, void* aux = 0) = 0; // 87
-	virtual bool is_shown (void * = 0) const = 0; // 88
-	virtual float get_diffuse_value_deprecated (void * = 0) const = 0; // 89
-	virtual shape_class &set_diffuse_value_deprecated (float diffuse_value_deprecated_param, void * = 0) = 0; // 90
+	virtual bool is_shown (void* = nullptr) const = 0; // 88
+	virtual float get_diffuse_value_deprecated (void* = nullptr) const = 0; // 89
+	virtual shape_class &set_diffuse_value_deprecated (float diffuse_value_deprecated_param, void* = nullptr) = 0; // 90
 	virtual void solid_extrude (const sxsdk::vec3& by, void* aux = 0) = 0; // 91
 	virtual void solid_revolve (const sxsdk::vec3& v0, const sxsdk::vec3& v1, void* aux = 0) = 0; // 92
 	virtual void solid_clear (void* aux = 0) = 0; // 93
@@ -199,12 +247,12 @@ namespace sxsdk {
 	virtual meshes_interface* create_converted_meshes_interface (int level = 2, int texture = 0, void* aux = 0) = 0; // 95
 	virtual polygon_mesh_interface* create_converted_polygon_mesh_interface (int level = 2, int texture = 0, void* aux = 0) = 0; // 96
 	virtual void adjust_transformation (void* aux = 0) = 0; // 97
-	virtual bool get_modifiable (void * = 0) const = 0; // 98
-	virtual shape_class &set_modifiable (bool modifiable_param, void * = 0) = 0; // 99
-	virtual bool get_browsable (void * = 0) const = 0; // 100
-	virtual shape_class &set_browsable (bool browsable_param, void * = 0) = 0; // 101
-	virtual int get_render_flag (void * = 0) const = 0; // 102
-	virtual shape_class &set_render_flag (int render_flag_param, void * = 0) = 0; // 103
+	virtual bool get_modifiable (void* = nullptr) const = 0; // 98
+	virtual shape_class &set_modifiable (bool modifiable_param, void* = nullptr) = 0; // 99
+	virtual bool get_browsable (void* = nullptr) const = 0; // 100
+	virtual shape_class &set_browsable (bool browsable_param, void* = nullptr) = 0; // 101
+	virtual int get_render_flag (void* = nullptr) const = 0; // 102
+	virtual shape_class &set_render_flag (int render_flag_param, void* = nullptr) = 0; // 103
 	virtual void set_active_control_point (int at, bool select, void* aux = 0) = 0; // 104
 	virtual bool get_active_control_point (int at, void* aux = 0) = 0; // 105
 	virtual void append_skin (part_class& part, float weight = 1.0, void* aux = 0) = 0; // 106
@@ -214,20 +262,20 @@ void activate (void* aux = 0) { select(); }
 	virtual void select_all_control_points (bool select, void* aux = 0) = 0; // 109
 	virtual bool is_control_point_selected (int i, void* aux = 0) = 0; // 110
 	virtual bool get_rendering_flag_obsolete (void* aux = 0) {return true;} // 111
-	virtual shape_class &set_has_shadow_map_size (bool has_shadow_map_size_param, void * = 0) = 0; // 112
-	virtual bool get_has_shadow_map_size (void * = 0) const = 0; // 113
-	virtual shape_class &set_shadow_map_size (int shadow_map_size_param, void * = 0) = 0; // 114
-	virtual int get_shadow_map_size (void * = 0) const = 0; // 115
-	virtual shape_class &set_has_shadow_map_bias (bool has_shadow_map_bias_param, void * = 0) = 0; // 116
-	virtual bool get_has_shadow_map_bias (void * = 0) const = 0; // 117
-	virtual shape_class &set_shadow_map_bias (float shadow_map_bias_param, void * = 0) = 0; // 118
-	virtual float get_shadow_map_bias (void * = 0) const = 0; // 119
-	virtual shape_class &set_has_shadow_map_blur (bool has_shadow_map_blur_param, void * = 0) = 0; // 120
-	virtual bool get_has_shadow_map_blur (void * = 0) const = 0; // 121
-	virtual shape_class &set_shadow_map_blur (float shadow_map_blur_param, void * = 0) = 0; // 122
-	virtual float get_shadow_map_blur (void * = 0) const = 0; // 123
-	virtual shape_class &set_shadow_type (sxsdk::enums::shadow_type shadow_type_param, void * = 0) = 0; // 124
-	virtual sxsdk::enums::shadow_type get_shadow_type (void * = 0) const = 0; // 125
+	virtual shape_class &set_has_shadow_map_size (bool has_shadow_map_size_param, void* = nullptr) = 0; // 112
+	virtual bool get_has_shadow_map_size (void* = nullptr) const = 0; // 113
+	virtual shape_class &set_shadow_map_size (int shadow_map_size_param, void* = nullptr) = 0; // 114
+	virtual int get_shadow_map_size (void* = nullptr) const = 0; // 115
+	virtual shape_class &set_has_shadow_map_bias (bool has_shadow_map_bias_param, void* = nullptr) = 0; // 116
+	virtual bool get_has_shadow_map_bias (void* = nullptr) const = 0; // 117
+	virtual shape_class &set_shadow_map_bias (float shadow_map_bias_param, void* = nullptr) = 0; // 118
+	virtual float get_shadow_map_bias (void* = nullptr) const = 0; // 119
+	virtual shape_class &set_has_shadow_map_blur (bool has_shadow_map_blur_param, void* = nullptr) = 0; // 120
+	virtual bool get_has_shadow_map_blur (void* = nullptr) const = 0; // 121
+	virtual shape_class &set_shadow_map_blur (float shadow_map_blur_param, void* = nullptr) = 0; // 122
+	virtual float get_shadow_map_blur (void* = nullptr) const = 0; // 123
+	virtual shape_class &set_shadow_type (sxsdk::enums::shadow_type shadow_type_param, void* = nullptr) = 0; // 124
+	virtual sxsdk::enums::shadow_type get_shadow_type (void* = nullptr) const = 0; // 125
 	virtual const char* get_error_string (void* aux = 0) = 0; // 126
 	virtual int get_active_control_points (int* p, void* aux = 0) = 0; // 127
 	virtual int get_error_code (void* aux = 0) = 0; // 128
@@ -236,58 +284,58 @@ void activate (void* aux = 0) { select(); }
 	virtual part_class& link_object (const sxsdk::mat4& t, void* aux = 0) = 0; // 131
 	virtual shape_saver_interface* create_shape_saver_interface (void* aux = 0) = 0; // 132
 	virtual sxsdk::texture_interface* create_texture_interface (int self = 0, const sxsdk::vec3& point = sxsdk::vec3(0.0f,0.0f,0.0f), const sxsdk::vec3& shading_normal = sxsdk::vec3(0.0f,1.0f,0.0f), const sxsdk::vec3& geometric_normal = sxsdk::vec3(0.0f,1.0f,0.0f), const sxsdk::vec3& incident = sxsdk::vec3(0.0f,0.0f,-1.0f), const sxsdk::vec2* uv = 0, const sxsdk::vec3* du = 0, const sxsdk::vec3* dv = 0, const sxsdk::vec4* uvs = 0) = 0; // 133
-	virtual sxsdk::radiosity_attributes_interface* get_radiosity_attributes_interface (void * = 0) const = 0; // 134
-	virtual int get_links (part_class* list[], void * = 0) const = 0; // 135
+	virtual sxsdk::radiosity_attributes_interface* get_radiosity_attributes_interface (void* = nullptr) const = 0; // 134
+	virtual int get_links (part_class* list[], void* = nullptr) const = 0; // 135
 	virtual void move_links (const sxsdk::mat4& t, void* aux = 0) = 0; // 136
-	virtual part_class* get_linked_dad (void * = 0) const = 0; // 137
+	virtual part_class* get_linked_dad (void* = nullptr) const = 0; // 137
 	virtual const char* get_exception_string () const { return 0; } // 138
 	virtual skin_class& get_skin_deprecated (int i, void* aux = 0) = 0; // 139
-	virtual int get_number_of_skin_points (void * = 0) const = 0; // 140
+	virtual int get_number_of_skin_points (void* = nullptr) const = 0; // 140
 	virtual bool has_symbol (char symbol, void* aux = 0) = 0; // 141
-	virtual bool is_container (void * = 0) const = 0; // 142
+	virtual bool is_container (void* = nullptr) const = 0; // 142
 	virtual sxsdk::control_point_class& control_point (int i, void* aux = 0) = 0; // 143
-	virtual bool is_rotator_joint (void * = 0) const = 0; // 144
-	virtual bool is_slider_joint (void * = 0) const = 0; // 145
-	virtual bool is_scale_joint (void * = 0) const = 0; // 146
-	virtual bool is_uniscale_joint (void * = 0) const = 0; // 147
-	virtual bool is_light_effector (void * = 0) const = 0; // 148
-	virtual bool is_path_joint (void * = 0) const = 0; // 149
-	virtual bool is_morph_effector (void * = 0) const = 0; // 150
-	virtual bool is_ball_joint (void * = 0) const = 0; // 151
-	virtual bool is_custom_joint (void * = 0) const = 0; // 152
-	virtual sxsdk::rotator_joint_interface* get_rotator_joint_interface (void * = 0) const = 0; // 153
-	virtual sxsdk::slider_joint_interface* get_slider_joint_interface (void * = 0) const = 0; // 154
-	virtual sxsdk::scale_joint_interface* get_scale_joint_interface (void * = 0) const = 0; // 155
-	virtual sxsdk::uniscale_joint_interface* get_uniscale_joint_interface (void * = 0) const = 0; // 156
-	virtual sxsdk::light_effector_interface* get_light_effector_interface (void * = 0) const = 0; // 157
-	virtual sxsdk::path_joint_interface* get_path_joint_interface (void * = 0) const = 0; // 158
-	virtual sxsdk::morph_effector_interface* get_morph_effector_interface (void * = 0) const = 0; // 159
-	virtual sxsdk::ball_joint_interface* get_ball_joint_interface (void * = 0) const = 0; // 160
-	virtual sxsdk::custom_joint_interface* get_custom_joint_interface (void * = 0) const = 0; // 161
+	virtual bool is_rotator_joint (void* = nullptr) const = 0; // 144
+	virtual bool is_slider_joint (void* = nullptr) const = 0; // 145
+	virtual bool is_scale_joint (void* = nullptr) const = 0; // 146
+	virtual bool is_uniscale_joint (void* = nullptr) const = 0; // 147
+	virtual bool is_light_effector (void* = nullptr) const = 0; // 148
+	virtual bool is_path_joint (void* = nullptr) const = 0; // 149
+	virtual bool is_morph_effector (void* = nullptr) const = 0; // 150
+	virtual bool is_ball_joint (void* = nullptr) const = 0; // 151
+	virtual bool is_custom_joint (void* = nullptr) const = 0; // 152
+	virtual sxsdk::rotator_joint_interface* get_rotator_joint_interface (void* = nullptr) const = 0; // 153
+	virtual sxsdk::slider_joint_interface* get_slider_joint_interface (void* = nullptr) const = 0; // 154
+	virtual sxsdk::scale_joint_interface* get_scale_joint_interface (void* = nullptr) const = 0; // 155
+	virtual sxsdk::uniscale_joint_interface* get_uniscale_joint_interface (void* = nullptr) const = 0; // 156
+	virtual sxsdk::light_effector_interface* get_light_effector_interface (void* = nullptr) const = 0; // 157
+	virtual sxsdk::path_joint_interface* get_path_joint_interface (void* = nullptr) const = 0; // 158
+	virtual sxsdk::morph_effector_interface* get_morph_effector_interface (void* = nullptr) const = 0; // 159
+	virtual sxsdk::ball_joint_interface* get_ball_joint_interface (void* = nullptr) const = 0; // 160
+	virtual sxsdk::custom_joint_interface* get_custom_joint_interface (void* = nullptr) const = 0; // 161
 	virtual void stream_to_clipboard (void* aux = 0) = 0; // 162
-	virtual skin_class& get_skin (void * = 0) const = 0; // 163
-	virtual surface_interface* get_nonnil_surface_interface (void * = 0) const = 0; // 164
+	virtual skin_class& get_skin (void* = nullptr) const = 0; // 163
+	virtual surface_interface* get_nonnil_surface_interface (void* = nullptr) const = 0; // 164
 	virtual void inactivate (void* aux = 0) = 0; // 165
 	virtual sxsdk::stream_interface* create_attribute_stream_interface_with_uuid (const sx::uuid_class& stream_id, const sx::uuid_class& wireframe_id = sxsdk::uuid_from_pluginid(0), const sx::uuid_class& intersection_id = sxsdk::uuid_from_pluginid(0), const sx::uuid_class& renderingobject_id = sxsdk::uuid_from_pluginid(0), void* aux = 0) = 0; // 166
 	virtual sxsdk::stream_interface* get_attribute_stream_interface_with_uuid (const sx::uuid_class& stream_id, void* aux = 0) const = 0; // 167
 	virtual bool delete_attribute_with_uuid (const sx::uuid_class& stream_id, void* aux = 0) = 0; // 168
 	virtual const proxy_shape_class& get_proxy_shape (void* aux = 0) const = 0; // 169
 	virtual proxy_shape_class& get_proxy_shape (void* aux = 0) = 0; // 170
-	virtual surface_class* get_surface (void * = 0) const = 0; // 171
-	virtual sxsdk::shape_class* get_parent (void * = 0) const = 0; // 172
-	virtual sxsdk::shape_class* get_linked_parent (void * = 0) const = 0; // 173
+	virtual surface_class* get_surface (void* = nullptr) const = 0; // 171
+	virtual sxsdk::shape_class* get_parent (void* = nullptr) const = 0; // 172
+	virtual sxsdk::shape_class* get_linked_parent (void* = nullptr) const = 0; // 173
 	virtual void push_transformation_matrix (void* aux = 0) = 0; // 174
 	virtual void pop_transformation_matrix (void* aux = 0) = 0; // 175
-	virtual shape_class &set_rendering (int rendering_param, void * = 0) = 0; // 176
-	virtual int get_rendering (void * = 0) const = 0; // 177
+	virtual shape_class &set_rendering (int rendering_param, void* = nullptr) = 0; // 176
+	virtual int get_rendering (void* = nullptr) const = 0; // 177
 	virtual void convert_to_polygon_mesh_with_subdivision_level (int level, void* aux = 0) = 0; // 178
 	virtual void convert_to_polygon_mesh_with_divisions (int lateral_division, int longitudinal_division, void* aux = 0) = 0; // 179
 	virtual void convert_to_polygon_mesh_with (int level = -1, int lateral = -1, int longitudinal = -1, void* aux = 0) = 0; // 180
-	virtual int get_shadow_catcher (void * = 0) const = 0; // 181
-	virtual shape_class &set_shadow_catcher (int shadow_catcher_param, void * = 0) = 0; // 182
+	virtual int get_shadow_catcher (void* = nullptr) const = 0; // 181
+	virtual shape_class &set_shadow_catcher (int shadow_catcher_param, void* = nullptr) = 0; // 182
 	virtual void invalidate_vertex_array (void* aux = 0) = 0; // 183
-	virtual sxsdk::sound_track_interface* get_sound_track_interface (void * = 0) const = 0; // 184
-	virtual bool is_sound_track (void * = 0) const = 0; // 185
+	virtual sxsdk::sound_track_interface* get_sound_track_interface (void* = nullptr) const = 0; // 184
+	virtual bool is_sound_track (void* = nullptr) const = 0; // 185
 	virtual reverse_iterator rbegin (void* aux = 0) const = 0; // 186
 	virtual reverse_iterator rend (void* aux = 0) const = 0; // 187
 	virtual const master_image_class& get_master_image (void* aux = 0) const = 0; // 188
@@ -295,10 +343,10 @@ void activate (void* aux = 0) { select(); }
 	virtual void set_related_shape (const sx::uuid_class& relation_id, sxsdk::shape_class* shape, void* aux = 0) = 0; // 190
 	virtual int get_related_shapes (const sx::uuid_class& relation_id, sxsdk::shape_class** shapes = 0, void* aux = 0) = 0; // 191
 	virtual void delete_relation (const sx::uuid_class& relation_id, sxsdk::shape_class* shape = 0, void* aux = 0) = 0; // 192
-	virtual bool is_switch_effector (void * = 0) const = 0; // 193
-	virtual sxsdk::switch_effector_interface* get_switch_effector_interface (void * = 0) const = 0; // 194
-	virtual implementation_interface& get_implementation (void * = 0) const = 0; // 195
-	virtual int shape_class_dummy196(void *) { assert(false); throw "invalid interface shape_class"; return 0; } // 196
+	virtual bool is_switch_effector (void* = nullptr) const = 0; // 193
+	virtual sxsdk::switch_effector_interface* get_switch_effector_interface (void* = nullptr) const = 0; // 194
+	virtual implementation_interface& get_implementation (void* = nullptr) const = 0; // 195
+	virtual void select_all (bool select, void* aux = 0) = 0; // 196
 	virtual int shape_class_dummy197(void *) { assert(false); throw "invalid interface shape_class"; return 0; } // 197
 	virtual int shape_class_dummy198(void *) { assert(false); throw "invalid interface shape_class"; return 0; } // 198
 	virtual int shape_class_dummy199(void *) { assert(false); throw "invalid interface shape_class"; return 0; } // 199
@@ -316,58 +364,70 @@ int tag_value_type (const char* tagName, void* aux = 0) { return get_implementat
 std::vector<const char*> tags_obsolete (void* aux = 0) { return get_implementation().tags_obsolete(*this); }
 bool has_tag (const char* tagName, void* aux = 0) { return get_implementation().has_tag(*this,tagName); }
 void remove_tag (const char* tagName, void* aux = 0) { get_implementation().remove_tag(*this,tagName); }
-sx::uuid_class get_uuid (void * = 0) const { return get_implementation().uuid(*this); }
+sx::uuid_class get_uuid (void* = nullptr) const { return get_implementation().uuid(*this); }
 polygon_mesh_interface * create_converted_polygon_mesh_interface (int level, int texture, bool triangulate, bool divide, void* aux = 0) { return get_implementation().create_converted_polygon_mesh_interface(*this, level, texture, triangulate, divide); }
 sxsdk::mat4 get_sequence_transformation (float sequence_value, void* aux = 0) const { return get_implementation().get_sequence_transformation(*this, sequence_value); }
 sxsdk::mat4 get_sequence_joint_matrix (float sequence_value, void* aux = 0) const { return get_implementation().get_sequence_joint_matrix(*this, sequence_value); }
 sxsdk::points_interface* create_converted_polyline_points_interface (int level = 2, void* aux = 0) { return get_implementation().create_converted_polyline_points_interface(*this, level); }
 sxsdk::mat4 get_sequence_local_to_world_matrix (float sequence_value, void* aux = 0) const { return get_implementation().get_sequence_local_to_world_matrix(*this, sequence_value); }
 sxsdk::mat4 get_sequence_world_to_local_matrix (float sequence_value, void* aux = 0) const { return get_implementation().get_sequence_world_to_local_matrix(*this, sequence_value); }
-bool is_path_replicator (void * = 0) const { return get_implementation().is_path_replicator(*this); }
-sxsdk::path_replicator_interface* get_path_replicator_interface (void * = 0) const { return get_implementation().get_path_replicator_interface(*this); }
-shape_class &set_bounding_box_size (sxsdk::vec3 bounding_box_size_param, void * = 0) { get_implementation().set_bounding_box_size(*this, bounding_box_size_param); return *this; }
-sxsdk::vec3 get_bounding_box_size (void * = 0) const { return get_implementation().get_bounding_box_size(*this); }
-surface_class& get_surface_reference (void * = 0) const { return get_implementation().get_surface_reference(*this); }
-shape_class &set_bounding_box_center (sxsdk::vec3 bounding_box_center_param, void * = 0) { get_implementation().set_bounding_box_center(*this, bounding_box_center_param); return *this; }
-sxsdk::vec3 get_bounding_box_center (void * = 0) const { return get_implementation().get_bounding_box_center(*this); }
-shape_class &set_active_vertex_indices (int n, int list[], void * = 0) { get_implementation().set_active_vertex_indices(*this, n, list); return *this; }
-int get_active_vertex_indices (int list[], void * = 0) const { return get_implementation().get_active_vertex_indices(*this, list); }
+bool is_path_replicator (void* = nullptr) const { return get_implementation().is_path_replicator(*this); }
+sxsdk::path_replicator_interface* get_path_replicator_interface (void* = nullptr) const { return get_implementation().get_path_replicator_interface(*this); }
+shape_class &set_bounding_box_size (sxsdk::vec3 bounding_box_size_param, void* = nullptr) { get_implementation().set_bounding_box_size(*this, bounding_box_size_param); return *this; }
+sxsdk::vec3 get_bounding_box_size (void* = nullptr) const { return get_implementation().get_bounding_box_size(*this); }
+surface_class& get_surface_reference (void* = nullptr) const { return get_implementation().get_surface_reference(*this); }
+shape_class &set_bounding_box_center (sxsdk::vec3 bounding_box_center_param, void* = nullptr) { get_implementation().set_bounding_box_center(*this, bounding_box_center_param); return *this; }
+sxsdk::vec3 get_bounding_box_center (void* = nullptr) const { return get_implementation().get_bounding_box_center(*this); }
+shape_class &set_active_vertex_indices (int n, int list[], void* = nullptr) { get_implementation().set_active_vertex_indices(*this, n, list); return *this; }
+int get_active_vertex_indices (int list[], void* = nullptr) const { return get_implementation().get_active_vertex_indices(*this, list); }
 void update_skin_bindings () { get_implementation().update_skin_bindings(*this); }
-int get_tags (const char* list[], void * = 0) const { return get_implementation().get_tags(*this, list); }
+int get_tags (const char* list[], void* = nullptr) const { return get_implementation().get_tags(*this, list); }
 sxsdk::texture_interface* create_texture_interface2 (int self = 0, const sxsdk::vec3& point = sxsdk::vec3(0.0f,0.0f,0.0f), const sxsdk::vec3& shading_normal = sxsdk::vec3(0.0f,1.0f,0.0f), const sxsdk::vec3& geometric_normal = sxsdk::vec3(0.0f,1.0f,0.0f), const sxsdk::vec3& incident = sxsdk::vec3(0.0f,0.0f,-1.0f), const sxsdk::vec2* uv = 0, const sxsdk::vec3* du = 0, const sxsdk::vec3* dv = 0, int n_uvs = 0, const sxsdk::vec2* uvs = 0, sxsdk::master_surface_class* master_surface = 0) { return get_implementation().create_texture_interface2(*this, self, point, shading_normal, geometric_normal, incident, uv, du, dv, n_uvs, uvs, master_surface); }
-bool is_surface_replicator (void * = 0) const { return get_implementation().is_surface_replicator(*this); }
-sxsdk::surface_replicator_interface* get_surface_replicator_interface (void * = 0) const { return get_implementation().get_surface_replicator_interface(*this); }
-int get_skin_type (void * = 0) const { return get_implementation().get_skin_type(*this); }
-shape_class &set_skin_type (int skin_type_param, void * = 0) { get_implementation().set_skin_type(*this, skin_type_param); return *this; }
-sxsdk::bone_joint_interface* get_bone_joint_interface (void * = 0) const { return get_implementation().get_bone_joint_interface(*this); }
-bool is_bone_joint (void * = 0) const { return get_implementation().is_bone_joint(*this); }
+bool is_surface_replicator (void* = nullptr) const { return get_implementation().is_surface_replicator(*this); }
+sxsdk::surface_replicator_interface* get_surface_replicator_interface (void* = nullptr) const { return get_implementation().get_surface_replicator_interface(*this); }
+int get_skin_type (void* = nullptr) const { return get_implementation().get_skin_type(*this); }
+shape_class &set_skin_type (int skin_type_param, void* = nullptr) { get_implementation().set_skin_type(*this, skin_type_param); return *this; }
+sxsdk::bone_joint_interface* get_bone_joint_interface (void* = nullptr) const { return get_implementation().get_bone_joint_interface(*this); }
+bool is_bone_joint (void* = nullptr) const { return get_implementation().is_bone_joint(*this); }
 void unlink_master_surface (bool deep, void* aux = 0) { get_implementation().unlink_master_surface(*this, deep); }
+void make_text_wireframe (const sxsdk::mat4& mat, const sxsdk::vec3& p, const char * text, int view, bool ortho = false, void* aux = 0) { get_implementation().make_text_wireframe(*this, mat, p, text, view, ortho); }
+void make_points_wireframe (const sxsdk::mat4& mat, int n, const sxsdk::vec3* p, float size = 3.0f, void* aux = 0) { get_implementation().make_points_wireframe(*this, mat, n, p, size); }
+void draw_primitive (const sxsdk::mat4& mat, sxsdk::enums::primitive_type mode, int n_v, const sxsdk::vec3 v[], const sxsdk::rgba_class* color, const float* size, void* aux = 0) { get_implementation().draw_primitive(*this, mat, mode, n_v, v, color, size); }
+sxsdk::shape_class& do_thickness (float distance, int sided, int create_side, bool distance_from_vertex, void* aux = 0) { return get_implementation().do_thickness(*this, distance, sided, create_side, distance_from_vertex); }
+bool get_mirroring (void* = nullptr) const { return get_implementation().get_mirroring(*this); }
+shape_class &set_mirroring (bool mirroring_param, void* = nullptr) { get_implementation().set_mirroring(*this, mirroring_param); return *this; }
+#pragma clang diagnostics pop
 	};
-
-	class
-	sentinel_class : public shape_class {
+	
+	class sentinel_class : public shape_class {
 	public:
 		DEFINE_DYNAMIC_CAST(sentinel_class , shape_class , enums::sentinel)	
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+#pragma clang diagnostics pop
 	};
 
-	class
-	insert_class : public shape_class {
+	class insert_class : public shape_class {
 	public:
 		DEFINE_DYNAMIC_CAST(insert_class , shape_class , enums::dxf_insert)	
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+#pragma clang diagnostics pop
 	};
 
-	class
-	part_class : public shape_class {
+	class part_class : public shape_class {
 	public:
 		DEFINE_DYNAMIC_CAST(part_class , shape_class , enums::part)	
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
 	virtual shape_saver_interface* create_shape_saver_interface (void* aux = 0) = 0; // -1
-	virtual enums::part_type get_part_type (void * = 0) const = 0; // 0
-	virtual bool is_master_surface (void * = 0) const = 0; // 1
-	virtual int get_number_of_sons (void * = 0) const = 0; // 2
+	virtual enums::part_type get_part_type (void* = nullptr) const = 0; // 0
+	virtual bool is_master_surface (void* = nullptr) const = 0; // 1
+	virtual int get_number_of_sons (void* = nullptr) const = 0; // 2
 	virtual bool has_skip_joint_obsolete (void* aux = 0) { return false; } // 3
-	virtual bool is_pose_joint (void * = 0) const = 0; // 4
-	virtual part_class &set_transformation_matrix (const sxsdk::mat4 &transformation_matrix_param, void * = 0) = 0; // 5
-	virtual sxsdk::mat4 get_transformation_matrix (void * = 0) const = 0; // 6
+	virtual bool is_pose_joint (void* = nullptr) const = 0; // 4
+	virtual part_class &set_transformation_matrix (const sxsdk::mat4 &transformation_matrix_param, void* = nullptr) = 0; // 5
+	virtual sxsdk::mat4 get_transformation_matrix (void* = nullptr) const = 0; // 6
 	virtual void switch_ (void* aux = 0) = 0; // 7
 	virtual void set_anchor_point_deprecated (int i, const sxsdk::vec3& p, const bool* world_coordinates) = 0; // 8
 	virtual sxsdk::vec3 get_anchor_point_deprecated (int i, const bool* world_coordinates) = 0; // 9
@@ -383,29 +443,29 @@ void unlink_master_surface (bool deep, void* aux = 0) { get_implementation().unl
 	virtual sxsdk::vec3 get_lateral_outhandle_deprecated (int i, const bool* world_coordinates) = 0; // 19
 	virtual void set_lateral_handle_linked_deprecated (int i, bool b, void* aux = 0) = 0; // 20
 	virtual bool get_lateral_handle_linked_deprecated (int i, void* aux = 0) = 0; // 21
-	virtual part_class &set_closed (bool closed_param, void * = 0) = 0; // 22
-	virtual bool get_closed (void * = 0) const = 0; // 23
-	virtual int get_number_of_active_control_points (void * = 0) const = 0; // 24
-	virtual int get_first_active_control_point_deprecated (void * = 0) const = 0; // 25
-	virtual int get_next_active_control_point_deprecated (void * = 0) const = 0; // 26
+	virtual part_class &set_closed (bool closed_param, void* = nullptr) = 0; // 22
+	virtual bool get_closed (void* = nullptr) const = 0; // 23
+	virtual int get_number_of_active_control_points (void* = nullptr) const = 0; // 24
+	virtual int get_first_active_control_point_deprecated (void* = nullptr) const = 0; // 25
+	virtual int get_next_active_control_point_deprecated (void* = nullptr) const = 0; // 26
 	virtual void select_all_control_points_obsolete (void* aux = 0) = 0; // 27
 	virtual void unselect_all_control_points_obsolete (void* aux = 0) = 0; // 28
 	virtual void select_control_point_obsolete (int i, void* aux = 0) = 0; // 29
 	virtual void remove_control_point (int i, void* aux = 0) = 0; // 30
-	virtual bool get_surface_closed (void * = 0) const = 0; // 31
-	virtual part_class &set_surface_closed (bool surface_closed_param, void * = 0) = 0; // 32
-	virtual bool get_surface_switched (void * = 0) const = 0; // 33
-	virtual part_class &set_surface_switched (bool surface_switched_param, void * = 0) = 0; // 34
-	virtual sxsdk::mat4 get_joint_matrix (void * = 0) const = 0; // 35
-	virtual bool get_flat_joint (void * = 0) const = 0; // 36
-	virtual part_class &set_flat_joint (bool flat_joint_param, void * = 0) = 0; // 37
+	virtual bool get_surface_closed (void* = nullptr) const = 0; // 31
+	virtual part_class &set_surface_closed (bool surface_closed_param, void* = nullptr) = 0; // 32
+	virtual bool get_surface_switched (void* = nullptr) const = 0; // 33
+	virtual part_class &set_surface_switched (bool surface_switched_param, void* = nullptr) = 0; // 34
+	virtual sxsdk::mat4 get_joint_matrix (void* = nullptr) const = 0; // 35
+	virtual bool get_flat_joint (void* = nullptr) const = 0; // 36
+	virtual part_class &set_flat_joint (bool flat_joint_param, void* = nullptr) = 0; // 37
 	virtual void reverse (void* aux = 0) = 0; // 38
 	virtual void iron (int n = -1, const int* i = 0, void* aux = 0) = 0; // 39
 	virtual void smooth (int n = -1, const int* i = 0, void* aux = 0) = 0; // 40
 	virtual void unsmooth (int n = -1, const int* i = 0, void* aux = 0) = 0; // 41
 	virtual part_interface* get_part_interface (void* aux = 0) = 0; // 42
-	virtual bool get_disclosed (void * = 0) const = 0; // 43
-	virtual part_class &set_disclosed (bool disclosed_param, void * = 0) = 0; // 44
+	virtual bool get_disclosed (void* = nullptr) const = 0; // 43
+	virtual part_class &set_disclosed (bool disclosed_param, void* = nullptr) = 0; // 44
 	virtual surface_saver_class* get_surface_saver (void* aux = 0) = 0; // 45
 	virtual void disclose_all (void* aux = 0) = 0; // 46
 	virtual void undisclose_all (void* aux = 0) = 0; // 47
@@ -419,25 +479,25 @@ void unlink_master_surface (bool deep, void* aux = 0) { get_implementation().unl
 	virtual void remove_lateral_outhandle_deprecated (int i, void* aux = 0) = 0; // 55
 	virtual mesh_interface* create_control_mesh_interface (void* aux = 0) = 0; // 56
 		mesh_interface* get_control_mesh (void* aux = 0) { return create_control_mesh_interface(); }
-	virtual float get_joint_blend (void * = 0) const = 0; // 57
-	virtual part_class &set_joint_blend (float joint_blend_param, void * = 0) = 0; // 58
+	virtual float get_joint_blend (void* = nullptr) const = 0; // 57
+	virtual part_class &set_joint_blend (float joint_blend_param, void* = nullptr) = 0; // 58
 	virtual void set_view (void* aux = 0) = 0; // 59
-	virtual sxsdk::enums::anchor_type get_view_anchor (void * = 0) const = 0; // 60
-	virtual part_class &set_view_anchor (sxsdk::enums::anchor_type view_anchor_param, void * = 0) = 0; // 61
+	virtual sxsdk::enums::anchor_type get_view_anchor (void* = nullptr) const = 0; // 60
+	virtual part_class &set_view_anchor (sxsdk::enums::anchor_type view_anchor_param, void* = nullptr) = 0; // 61
 	virtual void select_camera_joint (void* aux = 0) = 0; // 62
-	virtual sxsdk::shape_class* get_link_master (void * = 0) const = 0; // 63
-	virtual part_class &set_link_master (sxsdk::shape_class* link_master_param, void * = 0) = 0; // 64
-	virtual part_class &set_group (bool group_param, void * = 0) = 0; // 65
-	virtual bool get_group (void * = 0) const = 0; // 66
-	virtual bool is_master_image (void * = 0) const = 0; // 67
-	virtual bool is_master_shape (void * = 0) const = 0; // 68
+	virtual sxsdk::shape_class* get_link_master (void* = nullptr) const = 0; // 63
+	virtual part_class &set_link_master (sxsdk::shape_class* link_master_param, void* = nullptr) = 0; // 64
+	virtual part_class &set_group (bool group_param, void* = nullptr) = 0; // 65
+	virtual bool get_group (void* = nullptr) const = 0; // 66
+	virtual bool is_master_image (void* = nullptr) const = 0; // 67
+	virtual bool is_master_shape (void* = nullptr) const = 0; // 68
 	virtual const master_shape_class& get_master_shape (void* aux = 0) const = 0; // 69
 	virtual master_shape_class& get_master_shape (void* aux = 0) = 0; // 70
 	virtual void setup_surface_part_polygonmesh (int level = 2, void* aux = 0) = 0; // 71
 	virtual void clean_surface_part_polygonmesh (void* aux = 0) = 0; // 72
-	virtual int get_number_of_vertices (void * = 0) const = 0; // 73
-	virtual int get_number_of_edges (void * = 0) const = 0; // 74
-	virtual int get_number_of_faces (void * = 0) const = 0; // 75
+	virtual int get_number_of_vertices (void* = nullptr) const = 0; // 73
+	virtual int get_number_of_edges (void* = nullptr) const = 0; // 74
+	virtual int get_number_of_faces (void* = nullptr) const = 0; // 75
 	virtual void setup_plane_equation (void* aux = 0) = 0; // 76
 	virtual sxsdk::vec4 get_plane_equation (int f, void* aux = 0) = 0; // 77
 	virtual vertex_class& vertex (int i, void* aux = 0) = 0; // 78
@@ -562,10 +622,10 @@ void unlink_master_surface (bool deep, void* aux = 0) { get_implementation().unl
 	virtual int part_class_dummy197(void *) { assert(false); throw "invalid interface part_class"; return 0; } // 197
 	virtual int part_class_dummy198(void *) { assert(false); throw "invalid interface part_class"; return 0; } // 198
 	virtual int part_class_dummy199(void *) { assert(false); throw "invalid interface part_class"; return 0; } // 199
+#pragma clang diagnostics pop
 	};
 
-	class
-	plugin_filereference_class {
+	class plugin_filereference_class {
 	public:
 		enum { not_found, failed_to_load, recursive };
 		enum { shape_type, surface_type, image_type };
@@ -574,18 +634,19 @@ void unlink_master_surface (bool deep, void* aux = 0) { get_implementation().unl
 		virtual bool alert (int error_type, const char* path, const char* name, int file_type, int number_of_extensions, char** extensions) { return true; }
 	};
 
-	class
-	master_shape_class : public part_class {
+	class master_shape_class : public part_class {
 	public:
 		DEFINE_DYNAMIC_CAST(master_shape_class , part_class , enums::part)	
-	virtual master_shape_class &set_path (const char* path_param, void * = 0) = 0; // 0
-	virtual const char* get_path (void * = 0) const = 0; // 1
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	virtual master_shape_class &set_path (const char* path_param, void* = nullptr) = 0; // 0
+	virtual const char* get_path (void* = nullptr) const = 0; // 1
 	virtual bool update_external_reference (bool ask = true, void* aux = 0) = 0; // 2
 	virtual bool update_external_reference (plugin_filereference_class& resolver, void* aux = 0) = 0; // 3
 	virtual void unlink_external_reference (bool ask, bool unlink_all = false, void* aux = 0) = 0; // 4
 	virtual bool file_exists (void* aux = 0) = 0; // 5
 	virtual bool has_external_reference (void* aux = 0) = 0; // 6
-	virtual int master_shape_class_dummy7(void *) { assert(false); throw "invalid interface master_shape_class"; return 0; } // 7
+	virtual enums::part_type get_part_type_pythonmethod (void* = nullptr) const = 0; // 7
 	virtual int master_shape_class_dummy8(void *) { assert(false); throw "invalid interface master_shape_class"; return 0; } // 8
 	virtual int master_shape_class_dummy9(void *) { assert(false); throw "invalid interface master_shape_class"; return 0; } // 9
 	virtual int master_shape_class_dummy10(void *) { assert(false); throw "invalid interface master_shape_class"; return 0; } // 10
@@ -778,20 +839,22 @@ void unlink_master_surface (bool deep, void* aux = 0) { get_implementation().unl
 	virtual int master_shape_class_dummy197(void *) { assert(false); throw "invalid interface master_shape_class"; return 0; } // 197
 	virtual int master_shape_class_dummy198(void *) { assert(false); throw "invalid interface master_shape_class"; return 0; } // 198
 	virtual int master_shape_class_dummy199(void *) { assert(false); throw "invalid interface master_shape_class"; return 0; } // 199
+#pragma clang diagnostics pop
 	};
 
-	class
-	master_surface_class : public shape_class {
+	class master_surface_class : public shape_class {
 	public:
 		DEFINE_DYNAMIC_CAST(master_surface_class , shape_class , enums::master_surface)	
-	virtual master_surface_class &set_path (const char* path_param, void * = 0) = 0; // 0
-	virtual const char* get_path (void * = 0) const = 0; // 1
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	virtual master_surface_class &set_path (const char* path_param, void* = nullptr) = 0; // 0
+	virtual const char* get_path (void* = nullptr) const = 0; // 1
 	virtual bool update_external_reference (bool ask = true, void* aux = 0) = 0; // 2
 	virtual bool update_external_reference (plugin_filereference_class& resolver, void* aux = 0) = 0; // 3
 	virtual void unlink_external_reference (bool ask, bool unlink_all = false, void* aux = 0) = 0; // 4
 	virtual bool file_exists (void* aux = 0) = 0; // 5
-	virtual bool get_external_reference (void * = 0) const = 0; // 6
-	virtual master_surface_class &set_external_reference (bool external_reference_param, void * = 0) = 0; // 7
+	virtual bool get_external_reference (void* = nullptr) const = 0; // 6
+	virtual master_surface_class &set_external_reference (bool external_reference_param, void* = nullptr) = 0; // 7
 	virtual bool has_external_reference (void* aux = 0) = 0; // 8
 	virtual int master_surface_class_dummy9(void *) { assert(false); throw "invalid interface master_surface_class"; return 0; } // 9
 	virtual int master_surface_class_dummy10(void *) { assert(false); throw "invalid interface master_surface_class"; return 0; } // 10
@@ -984,14 +1047,16 @@ void unlink_master_surface (bool deep, void* aux = 0) { get_implementation().unl
 	virtual int master_surface_class_dummy197(void *) { assert(false); throw "invalid interface master_surface_class"; return 0; } // 197
 	virtual int master_surface_class_dummy198(void *) { assert(false); throw "invalid interface master_surface_class"; return 0; } // 198
 	virtual int master_surface_class_dummy199(void *) { assert(false); throw "invalid interface master_surface_class"; return 0; } // 199
+#pragma clang diagnostics pop
 	};
 
-	class
-	master_image_class : public shape_class {
+	class master_image_class : public shape_class {
 	public:
 		DEFINE_DYNAMIC_CAST(master_image_class , shape_class , enums::master_image)	
-	virtual master_image_class &set_image (sxsdk::image_interface* image_param, void * = 0) = 0; // 0
-	virtual sxsdk::image_interface* get_image (void * = 0) const = 0; // 1
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	virtual master_image_class &set_image (sxsdk::image_interface* image_param, void* = nullptr) = 0; // 0
+	virtual sxsdk::image_interface* get_image (void* = nullptr) const = 0; // 1
 	virtual void load_image (const char* from, void* aux = 0) = 0; // 2
 	virtual void save_image (const char* to, void* aux = 0) = 0; // 3
 	virtual bool is_master_image_being_used (void* aux = 0) = 0; // 4
@@ -1190,71 +1255,73 @@ void unlink_master_surface (bool deep, void* aux = 0) { get_implementation().unl
 	virtual int master_image_class_dummy197(void *) { assert(false); throw "invalid interface master_image_class"; return 0; } // 197
 	virtual int master_image_class_dummy198(void *) { assert(false); throw "invalid interface master_image_class"; return 0; } // 198
 	virtual int master_image_class_dummy199(void *) { assert(false); throw "invalid interface master_image_class"; return 0; } // 199
+#pragma clang diagnostics pop
 	};
 
-	class
-	light_class : public shape_class {
+	class light_class : public shape_class {
 	public:
 		DEFINE_DYNAMIC_CAST(light_class , shape_class , enums::light)	
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
 	virtual shape_saver_interface* create_shape_saver_interface (void* aux = 0) = 0; // -1
-	virtual light_class &set_center (const sxsdk::vec3 &center_param, void * = 0) = 0; // 0
-	virtual sxsdk::vec3 get_center (void * = 0) const = 0; // 1
-	virtual light_class &set_intensity (float intensity_param, void * = 0) = 0; // 2
-	virtual float get_intensity (void * = 0) const = 0; // 3
-	virtual light_class &set_spotlight (bool spotlight_param, void * = 0) = 0; // 4
-	virtual bool get_spotlight (void * = 0) const = 0; // 5
-	virtual light_class &set_attenuation_deprecated (int attenuation_deprecated_param, void * = 0) = 0; // 6
-	virtual int get_attenuation_deprecated (void * = 0) const = 0; // 7
-	virtual light_class &set_angle (float angle_param, void * = 0) = 0; // 8
-	virtual float get_angle (void * = 0) const = 0; // 9
-	virtual light_class &set_softness (float softness_param, void * = 0) = 0; // 10
-	virtual float get_softness (void * = 0) const = 0; // 11
-	virtual light_class &set_shadow (float shadow_param, void * = 0) = 0; // 12
-	virtual float get_shadow (void * = 0) const = 0; // 13
-	virtual light_class &set_shadow_softness (float shadow_softness_param, void * = 0) = 0; // 14
-	virtual float get_shadow_softness (void * = 0) const = 0; // 15
-	virtual light_class &set_direction (const sxsdk::vec3 &direction_param, void * = 0) = 0; // 16
-	virtual sxsdk::vec3 get_direction (void * = 0) const = 0; // 17
-	virtual light_class &set_specular (float specular_param, void * = 0) = 0; // 18
-	virtual float get_specular (void * = 0) const = 0; // 19
-	virtual light_class &set_diffuse (float diffuse_param, void * = 0) = 0; // 20
-	virtual float get_diffuse (void * = 0) const = 0; // 21
-	virtual light_class &set_position (const sxsdk::vec3 &position_param, void * = 0) = 0; // 22
-	virtual sxsdk::vec3 get_position (void * = 0) const = 0; // 23
+	virtual light_class &set_center (const sxsdk::vec3 &center_param, void* = nullptr) = 0; // 0
+	virtual sxsdk::vec3 get_center (void* = nullptr) const = 0; // 1
+	virtual light_class &set_intensity (float intensity_param, void* = nullptr) = 0; // 2
+	virtual float get_intensity (void* = nullptr) const = 0; // 3
+	virtual light_class &set_spotlight (bool spotlight_param, void* = nullptr) = 0; // 4
+	virtual bool get_spotlight (void* = nullptr) const = 0; // 5
+	virtual light_class &set_attenuation_deprecated (int attenuation_deprecated_param, void* = nullptr) = 0; // 6
+	virtual int get_attenuation_deprecated (void* = nullptr) const = 0; // 7
+	virtual light_class &set_angle (float angle_param, void* = nullptr) = 0; // 8
+	virtual float get_angle (void* = nullptr) const = 0; // 9
+	virtual light_class &set_softness (float softness_param, void* = nullptr) = 0; // 10
+	virtual float get_softness (void* = nullptr) const = 0; // 11
+	virtual light_class &set_shadow (float shadow_param, void* = nullptr) = 0; // 12
+	virtual float get_shadow (void* = nullptr) const = 0; // 13
+	virtual light_class &set_shadow_softness (float shadow_softness_param, void* = nullptr) = 0; // 14
+	virtual float get_shadow_softness (void* = nullptr) const = 0; // 15
+	virtual light_class &set_direction (const sxsdk::vec3 &direction_param, void* = nullptr) = 0; // 16
+	virtual sxsdk::vec3 get_direction (void* = nullptr) const = 0; // 17
+	virtual light_class &set_specular (float specular_param, void* = nullptr) = 0; // 18
+	virtual float get_specular (void* = nullptr) const = 0; // 19
+	virtual light_class &set_diffuse (float diffuse_param, void* = nullptr) = 0; // 20
+	virtual float get_diffuse (void* = nullptr) const = 0; // 21
+	virtual light_class &set_position (const sxsdk::vec3 &position_param, void* = nullptr) = 0; // 22
+	virtual sxsdk::vec3 get_position (void* = nullptr) const = 0; // 23
 	virtual light_interface* get_light_interface (void* aux = 0) = 0; // 24
-	virtual light_class &set_lumen (bool lumen_param, void * = 0) = 0; // 25
-	virtual bool get_lumen (void * = 0) const = 0; // 26
+	virtual light_class &set_lumen (bool lumen_param, void* = nullptr) = 0; // 25
+	virtual bool get_lumen (void* = nullptr) const = 0; // 26
 	virtual void load_ies (const char* from, void* aux = 0) = 0; // 27
-	virtual light_class &set_distribution_type (sxsdk::enums::light_distribution_type distribution_type_param, void * = 0) = 0; // 28
-	virtual sxsdk::enums::light_distribution_type get_distribution_type (void * = 0) const = 0; // 29
-	virtual light_class &set_volume_light (bool volume_light_param, void * = 0) = 0; // 30
-	virtual bool get_volume_light (void * = 0) const = 0; // 31
-	virtual light_class &set_volume_light_intensity (float volume_light_intensity_param, void * = 0) = 0; // 32
-	virtual float get_volume_light_intensity (void * = 0) const = 0; // 33
-	virtual light_class &set_volume_light_auto_radius (bool volume_light_auto_radius_param, void * = 0) = 0; // 34
-	virtual bool get_volume_light_auto_radius (void * = 0) const = 0; // 35
-	virtual light_class &set_volume_light_radius (float volume_light_radius_param, void * = 0) = 0; // 36
-	virtual float get_volume_light_radius (void * = 0) const = 0; // 37
-	virtual sxsdk::enums::castshadow_type get_volume_light_castshadow_type (void * = 0) const = 0; // 38
-	virtual light_class &set_volume_light_castshadow_type (sxsdk::enums::castshadow_type volume_light_castshadow_type_param, void * = 0) = 0; // 39
-	virtual light_class &set_volume_light_quality (int volume_light_quality_param, void * = 0) = 0; // 40
-	virtual int get_volume_light_quality (void * = 0) const = 0; // 41
+	virtual light_class &set_distribution_type (sxsdk::enums::light_distribution_type distribution_type_param, void* = nullptr) = 0; // 28
+	virtual sxsdk::enums::light_distribution_type get_distribution_type (void* = nullptr) const = 0; // 29
+	virtual light_class &set_volume_light (bool volume_light_param, void* = nullptr) = 0; // 30
+	virtual bool get_volume_light (void* = nullptr) const = 0; // 31
+	virtual light_class &set_volume_light_intensity (float volume_light_intensity_param, void* = nullptr) = 0; // 32
+	virtual float get_volume_light_intensity (void* = nullptr) const = 0; // 33
+	virtual light_class &set_volume_light_auto_radius (bool volume_light_auto_radius_param, void* = nullptr) = 0; // 34
+	virtual bool get_volume_light_auto_radius (void* = nullptr) const = 0; // 35
+	virtual light_class &set_volume_light_radius (float volume_light_radius_param, void* = nullptr) = 0; // 36
+	virtual float get_volume_light_radius (void* = nullptr) const = 0; // 37
+	virtual sxsdk::enums::castshadow_type get_volume_light_castshadow_type (void* = nullptr) const = 0; // 38
+	virtual light_class &set_volume_light_castshadow_type (sxsdk::enums::castshadow_type volume_light_castshadow_type_param, void* = nullptr) = 0; // 39
+	virtual light_class &set_volume_light_quality (int volume_light_quality_param, void* = nullptr) = 0; // 40
+	virtual int get_volume_light_quality (void* = nullptr) const = 0; // 41
 	virtual void save_ies (const char* to, void* aux = 0) = 0; // 42
 	virtual void clear_ies (void* aux = 0) = 0; // 43
-	virtual light_class &set_attenuation (sxsdk::enums::attenuation_type attenuation_param, void * = 0) = 0; // 44
-	virtual sxsdk::enums::attenuation_type get_attenuation (void * = 0) const = 0; // 45
-	virtual light_class &set_cylinder_radius (float cylinder_radius_param, void * = 0) = 0; // 46
-	virtual float get_cylinder_radius (void * = 0) const = 0; // 47
-	virtual light_class &set_distant (bool distant_param, void * = 0) = 0; // 48
-	virtual bool get_distant (void * = 0) const = 0; // 49
-	virtual light_class &set_has_light_color (bool has_light_color_param, void * = 0) = 0; // 50
-	virtual bool get_has_light_color (void * = 0) const = 0; // 51
-	virtual light_class &set_light_color (const sxsdk::rgb_class &light_color_param, void * = 0) = 0; // 52
-	virtual sxsdk::rgb_class get_light_color (void * = 0) const = 0; // 53
-	virtual light_class &set_light_color_quantity (float light_color_quantity_param, void * = 0) = 0; // 54
-	virtual float get_light_color_quantity (void * = 0) const = 0; // 55
-	virtual light_class &set_ambient (float ambient_param, void * = 0) = 0; // 56
-	virtual float get_ambient (void * = 0) const = 0; // 57
+	virtual light_class &set_attenuation (sxsdk::enums::attenuation_type attenuation_param, void* = nullptr) = 0; // 44
+	virtual sxsdk::enums::attenuation_type get_attenuation (void* = nullptr) const = 0; // 45
+	virtual light_class &set_cylinder_radius (float cylinder_radius_param, void* = nullptr) = 0; // 46
+	virtual float get_cylinder_radius (void* = nullptr) const = 0; // 47
+	virtual light_class &set_distant (bool distant_param, void* = nullptr) = 0; // 48
+	virtual bool get_distant (void* = nullptr) const = 0; // 49
+	virtual light_class &set_has_light_color (bool has_light_color_param, void* = nullptr) = 0; // 50
+	virtual bool get_has_light_color (void* = nullptr) const = 0; // 51
+	virtual light_class &set_light_color (const sxsdk::rgb_class &light_color_param, void* = nullptr) = 0; // 52
+	virtual sxsdk::rgb_class get_light_color (void* = nullptr) const = 0; // 53
+	virtual light_class &set_light_color_quantity (float light_color_quantity_param, void* = nullptr) = 0; // 54
+	virtual float get_light_color_quantity (void* = nullptr) const = 0; // 55
+	virtual light_class &set_ambient (float ambient_param, void* = nullptr) = 0; // 56
+	virtual float get_ambient (void* = nullptr) const = 0; // 57
 	virtual int light_class_dummy58(void *) { assert(false); throw "invalid interface light_class"; return 0; } // 58
 	virtual int light_class_dummy59(void *) { assert(false); throw "invalid interface light_class"; return 0; } // 59
 	virtual int light_class_dummy60(void *) { assert(false); throw "invalid interface light_class"; return 0; } // 60
@@ -1397,14 +1464,16 @@ void unlink_master_surface (bool deep, void* aux = 0) { get_implementation().unl
 	virtual int light_class_dummy197(void *) { assert(false); throw "invalid interface light_class"; return 0; } // 197
 	virtual int light_class_dummy198(void *) { assert(false); throw "invalid interface light_class"; return 0; } // 198
 	virtual int light_class_dummy199(void *) { assert(false); throw "invalid interface light_class"; return 0; } // 199
+#pragma clang diagnostics pop
 	};
 
-	class
-	line_class : public shape_class {
+	class line_class : public shape_class {
 	public:
 		DEFINE_DYNAMIC_CAST(line_class , shape_class , enums::line)	
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
 	virtual shape_saver_interface* create_shape_saver_interface (void* aux = 0) = 0; // -1
-	virtual int get_number_of_control_points (void * = 0) const = 0; // 0
+	virtual int get_number_of_control_points (void* = nullptr) const = 0; // 0
 	virtual void set_anchor_point_deprecated (int i, const sxsdk::vec3& v, void* aux = 0) = 0; // 1
 	virtual sxsdk::vec3 get_anchor_point_deprecated (int i, void* aux = 0) = 0; // 2
 	virtual void set_inhandle_deprecated (int i, const sxsdk::vec3& v, void* aux = 0) = 0; // 3
@@ -1419,13 +1488,13 @@ void unlink_master_surface (bool deep, void* aux = 0) { get_implementation().unl
 	virtual sxsdk::vec3 get_lateral_outhandle_deprecated (int i, void* aux = 0) = 0; // 12
 	virtual void set_lateral_handle_linked_deprecated (int i, bool b, void* aux = 0) = 0; // 13
 	virtual bool get_lateral_handle_linked_deprecated (int i, void* aux = 0) = 0; // 14
-	virtual line_class &set_closed (bool closed_param, void * = 0) = 0; // 15
-	virtual bool get_closed (void * = 0) const = 0; // 16
-	virtual line_class &set_hole (bool hole_param, void * = 0) = 0; // 17
-	virtual bool get_hole (void * = 0) const = 0; // 18
-	virtual int get_number_of_active_control_points (void * = 0) const = 0; // 19
-	virtual int get_first_active_control_point_deprecated (void * = 0) const = 0; // 20
-	virtual int get_next_active_control_point_deprecated (void * = 0) const = 0; // 21
+	virtual line_class &set_closed (bool closed_param, void* = nullptr) = 0; // 15
+	virtual bool get_closed (void* = nullptr) const = 0; // 16
+	virtual line_class &set_hole (bool hole_param, void* = nullptr) = 0; // 17
+	virtual bool get_hole (void* = nullptr) const = 0; // 18
+	virtual int get_number_of_active_control_points (void* = nullptr) const = 0; // 19
+	virtual int get_first_active_control_point_deprecated (void* = nullptr) const = 0; // 20
+	virtual int get_next_active_control_point_deprecated (void* = nullptr) const = 0; // 21
 	virtual void select_all_control_points_obsolete (void* aux = 0) = 0; // 22
 	virtual void unselect_all_control_points_obsolete (void* aux = 0) = 0; // 23
 	virtual void select_control_point_obsolete (int i, void* aux = 0) = 0; // 24
@@ -1442,12 +1511,12 @@ void unlink_master_surface (bool deep, void* aux = 0) { get_implementation().unl
 	virtual void degenerate (void* aux = 0) = 0; // 35
 	virtual line_interface* get_line_interface (void* aux = 0) = 0; // 36
 	virtual line_saver_class* get_line_saver (void* aux = 0) = 0; // 37
-	virtual float get_light_intensity (void * = 0) const = 0; // 38
-	virtual line_class &set_light_intensity (float light_intensity_param, void * = 0) = 0; // 39
-	virtual float get_light_specular_deprecated (void * = 0) const = 0; // 40
-	virtual line_class &set_light_specular_deprecated (float light_specular_deprecated_param, void * = 0) = 0; // 41
-	virtual bool get_light_visible (void * = 0) const = 0; // 42
-	virtual line_class &set_light_visible (bool light_visible_param, void * = 0) = 0; // 43
+	virtual float get_light_intensity (void* = nullptr) const = 0; // 38
+	virtual line_class &set_light_intensity (float light_intensity_param, void* = nullptr) = 0; // 39
+	virtual float get_light_specular_deprecated (void* = nullptr) const = 0; // 40
+	virtual line_class &set_light_specular_deprecated (float light_specular_deprecated_param, void* = nullptr) = 0; // 41
+	virtual bool get_light_visible (void* = nullptr) const = 0; // 42
+	virtual line_class &set_light_visible (bool light_visible_param, void* = nullptr) = 0; // 43
 	virtual bool has_inhandle_deprecated (int i, void* aux = 0) = 0; // 44
 	virtual bool has_outhandle_deprecated (int i, void* aux = 0) = 0; // 45
 	virtual bool has_lateral_inhandle_deprecated (int i, void* aux = 0) = 0; // 46
@@ -1456,35 +1525,35 @@ void unlink_master_surface (bool deep, void* aux = 0) { get_implementation().unl
 	virtual void remove_outhandle_deprecated (int i, void* aux = 0) = 0; // 49
 	virtual void remove_lateral_inhandle_deprecated (int i, void* aux = 0) = 0; // 50
 	virtual void remove_lateral_outhandle_deprecated (int i, void* aux = 0) = 0; // 51
-	virtual line_class &set_lumen (bool lumen_param, void * = 0) = 0; // 52
-	virtual bool get_lumen (void * = 0) const = 0; // 53
-	virtual sxsdk::enums::light_type get_light_type (void * = 0) const = 0; // 54
-	virtual line_class &set_light_type (sxsdk::enums::light_type light_type_param, void * = 0) = 0; // 55
-	virtual line_class &set_shadow (float shadow_param, void * = 0) = 0; // 56
-	virtual float get_shadow (void * = 0) const = 0; // 57
-	virtual line_class &set_specular (float specular_param, void * = 0) = 0; // 58
-	virtual float get_specular (void * = 0) const = 0; // 59
-	virtual line_class &set_diffuse (float diffuse_param, void * = 0) = 0; // 60
-	virtual float get_diffuse (void * = 0) const = 0; // 61
+	virtual line_class &set_lumen (bool lumen_param, void* = nullptr) = 0; // 52
+	virtual bool get_lumen (void* = nullptr) const = 0; // 53
+	virtual sxsdk::enums::light_type get_light_type (void* = nullptr) const = 0; // 54
+	virtual line_class &set_light_type (sxsdk::enums::light_type light_type_param, void* = nullptr) = 0; // 55
+	virtual line_class &set_shadow (float shadow_param, void* = nullptr) = 0; // 56
+	virtual float get_shadow (void* = nullptr) const = 0; // 57
+	virtual line_class &set_specular (float specular_param, void* = nullptr) = 0; // 58
+	virtual float get_specular (void* = nullptr) const = 0; // 59
+	virtual line_class &set_diffuse (float diffuse_param, void* = nullptr) = 0; // 60
+	virtual float get_diffuse (void* = nullptr) const = 0; // 61
 	virtual float calculate_parameter (float distance, void* aux = 0) = 0; // 62
-	virtual line_class &set_volume_light (bool volume_light_param, void * = 0) = 0; // 63
-	virtual bool get_volume_light (void * = 0) const = 0; // 64
-	virtual line_class &set_volume_light_intensity (float volume_light_intensity_param, void * = 0) = 0; // 65
-	virtual float get_volume_light_intensity (void * = 0) const = 0; // 66
-	virtual line_class &set_volume_light_auto_radius (bool volume_light_auto_radius_param, void * = 0) = 0; // 67
-	virtual bool get_volume_light_auto_radius (void * = 0) const = 0; // 68
-	virtual line_class &set_volume_light_radius (float volume_light_radius_param, void * = 0) = 0; // 69
-	virtual float get_volume_light_radius (void * = 0) const = 0; // 70
-	virtual sxsdk::enums::castshadow_type get_volume_light_castshadow_type (void * = 0) const = 0; // 71
-	virtual line_class &set_volume_light_castshadow_type (sxsdk::enums::castshadow_type volume_light_castshadow_type_param, void * = 0) = 0; // 72
-	virtual line_class &set_volume_light_quality (int volume_light_quality_param, void * = 0) = 0; // 73
-	virtual int get_volume_light_quality (void * = 0) const = 0; // 74
-	virtual line_class &set_has_light_color (bool has_light_color_param, void * = 0) = 0; // 75
-	virtual bool get_has_light_color (void * = 0) const = 0; // 76
-	virtual line_class &set_light_color (const sxsdk::rgb_class &light_color_param, void * = 0) = 0; // 77
-	virtual sxsdk::rgb_class get_light_color (void * = 0) const = 0; // 78
-	virtual line_class &set_light_color_quantity (float light_color_quantity_param, void * = 0) = 0; // 79
-	virtual float get_light_color_quantity (void * = 0) const = 0; // 80
+	virtual line_class &set_volume_light (bool volume_light_param, void* = nullptr) = 0; // 63
+	virtual bool get_volume_light (void* = nullptr) const = 0; // 64
+	virtual line_class &set_volume_light_intensity (float volume_light_intensity_param, void* = nullptr) = 0; // 65
+	virtual float get_volume_light_intensity (void* = nullptr) const = 0; // 66
+	virtual line_class &set_volume_light_auto_radius (bool volume_light_auto_radius_param, void* = nullptr) = 0; // 67
+	virtual bool get_volume_light_auto_radius (void* = nullptr) const = 0; // 68
+	virtual line_class &set_volume_light_radius (float volume_light_radius_param, void* = nullptr) = 0; // 69
+	virtual float get_volume_light_radius (void* = nullptr) const = 0; // 70
+	virtual sxsdk::enums::castshadow_type get_volume_light_castshadow_type (void* = nullptr) const = 0; // 71
+	virtual line_class &set_volume_light_castshadow_type (sxsdk::enums::castshadow_type volume_light_castshadow_type_param, void* = nullptr) = 0; // 72
+	virtual line_class &set_volume_light_quality (int volume_light_quality_param, void* = nullptr) = 0; // 73
+	virtual int get_volume_light_quality (void* = nullptr) const = 0; // 74
+	virtual line_class &set_has_light_color (bool has_light_color_param, void* = nullptr) = 0; // 75
+	virtual bool get_has_light_color (void* = nullptr) const = 0; // 76
+	virtual line_class &set_light_color (const sxsdk::rgb_class &light_color_param, void* = nullptr) = 0; // 77
+	virtual sxsdk::rgb_class get_light_color (void* = nullptr) const = 0; // 78
+	virtual line_class &set_light_color_quantity (float light_color_quantity_param, void* = nullptr) = 0; // 79
+	virtual float get_light_color_quantity (void* = nullptr) const = 0; // 80
 	virtual int line_class_dummy81(void *) { assert(false); throw "invalid interface line_class"; return 0; } // 81
 	virtual int line_class_dummy82(void *) { assert(false); throw "invalid interface line_class"; return 0; } // 82
 	virtual int line_class_dummy83(void *) { assert(false); throw "invalid interface line_class"; return 0; } // 83
@@ -1604,38 +1673,40 @@ void unlink_master_surface (bool deep, void* aux = 0) { get_implementation().unl
 	virtual int line_class_dummy197(void *) { assert(false); throw "invalid interface line_class"; return 0; } // 197
 	virtual int line_class_dummy198(void *) { assert(false); throw "invalid interface line_class"; return 0; } // 198
 	virtual int line_class_dummy199(void *) { assert(false); throw "invalid interface line_class"; return 0; } // 199
+#pragma clang diagnostics pop
 	};
 
-	class
-	polygon_mesh_class : public shape_class {
+	class polygon_mesh_class : public shape_class {
 	public:
 		DEFINE_DYNAMIC_CAST(polygon_mesh_class , shape_class , enums::polygon_mesh)	
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
 	virtual shape_saver_interface* create_shape_saver_interface (void* aux = 0) = 0; // -1
-	virtual polygon_mesh_class &set_threshold (float threshold_param, void * = 0) = 0; // 0
-	virtual float get_threshold (void * = 0) const = 0; // 1
+	virtual polygon_mesh_class &set_threshold (float threshold_param, void* = nullptr) = 0; // 0
+	virtual float get_threshold (void* = nullptr) const = 0; // 1
 	virtual void append_point (const sxsdk::vec3& at, void* aux = 0) = 0; // 2
 	virtual void append_edge (int i0, int i1, void* aux = 0) = 0; // 3
 	virtual void make_edges (void* aux = 0) = 0; // 4
-	virtual polygon_mesh_class &set_smooth_edges (bool smooth_edges_param, void * = 0) = 0; // 5
-	virtual bool get_smooth_edges (void * = 0) const = 0; // 6
-	virtual int get_number_of_edges (void * = 0) const = 0; // 7
-	virtual int get_number_of_faces (void * = 0) const = 0; // 8
+	virtual polygon_mesh_class &set_smooth_edges (bool smooth_edges_param, void* = nullptr) = 0; // 5
+	virtual bool get_smooth_edges (void* = nullptr) const = 0; // 6
+	virtual int get_number_of_edges (void* = nullptr) const = 0; // 7
+	virtual int get_number_of_faces (void* = nullptr) const = 0; // 8
 	virtual void get_edge_deprecated (int i, int& v0, int& v1, void* aux = 0) = 0; // 9
 	virtual void get_face_deprecated (int i, int& v0, int& v1, int& v2, int& v3, void* aux = 0) = 0; // 10
 	virtual void set_anchor_point_deprecated (int i, const sxsdk::vec3& p, void* aux = 0) = 0; // 11
 	virtual sxsdk::vec3 get_anchor_point_deprecated (int i, void* aux = 0) = 0; // 12
-	virtual int get_number_of_active_control_points (void * = 0) const = 0; // 13
-	virtual int get_first_active_control_point_deprecated (void * = 0) const = 0; // 14
-	virtual int get_next_active_control_point_deprecated (void * = 0) const = 0; // 15
+	virtual int get_number_of_active_control_points (void* = nullptr) const = 0; // 13
+	virtual int get_first_active_control_point_deprecated (void* = nullptr) const = 0; // 14
+	virtual int get_next_active_control_point_deprecated (void* = nullptr) const = 0; // 15
 	virtual void select_all_control_points_obsolete (void* aux = 0) = 0; // 16
 	virtual void unselect_all_control_points_obsolete (void* aux = 0) = 0; // 17
 	virtual void select_control_point_obsolete (int i, void* aux = 0) = 0; // 18
 	virtual void remove_control_point (int i, void* aux = 0) = 0; // 19
-	virtual polygon_mesh_class &set_round (float round_param, void * = 0) = 0; // 20
-	virtual float get_round (void * = 0) const = 0; // 21
+	virtual polygon_mesh_class &set_round (float round_param, void* = nullptr) = 0; // 20
+	virtual float get_round (void* = nullptr) const = 0; // 21
 	virtual int get_face_n_deprecated (int i, int* v, sxsdk::vec3* normals = 0) = 0; // 22
-	virtual polygon_mesh_class &set_show_edges (bool show_edges_param, void * = 0) = 0; // 23
-	virtual bool get_show_edges (void * = 0) const = 0; // 24
+	virtual polygon_mesh_class &set_show_edges (bool show_edges_param, void* = nullptr) = 0; // 23
+	virtual bool get_show_edges (void* = nullptr) const = 0; // 24
 	virtual polygon_mesh_interface* get_polygon_mesh_interface (void* aux = 0) = 0; // 25
 	virtual void append_face (int n_v, const int v[], void* aux = 0) = 0; // 26
 	virtual void subdivide (int level, void* aux = 0) = 0; // 27
@@ -1644,7 +1715,7 @@ void unlink_master_surface (bool deep, void* aux = 0) { get_implementation().unl
 	virtual void remove_edge (int at, void* aux = 0) = 0; // 30
 	virtual void remove_face (int at, void* aux = 0) = 0; // 31
 	virtual int get_uv_n_deprecated (int i, sxsdk::vec2* uv, void* aux = 0) = 0; // 32
-	virtual sxsdk::image_interface* get_texture_image_interface (void * = 0) const = 0; // 33
+	virtual sxsdk::image_interface* get_texture_image_interface (void* = nullptr) const = 0; // 33
 	virtual void set_uv_deprecated (int i, int j, const sxsdk::vec2& uv, void* aux = 0) = 0; // 34
 	virtual sxsdk::vec2 get_uv_deprecated (int i, int j, void* aux = 0) = 0; // 35
 	virtual bool has_uv_deprecated (int i, void* aux = 0) = 0; // 36
@@ -1666,10 +1737,10 @@ void unlink_master_surface (bool deep, void* aux = 0) { get_implementation().unl
 	virtual void set_distance_uv_deprecated (int i, int j, const sxsdk::vec2& uv, void* aux = 0) = 0; // 52
 	virtual sxsdk::vec2 get_distance_uv_deprecated (int i, int j, void* aux = 0) = 0; // 53
 	virtual bool adjust_face_direction (void* aux = 0) = 0; // 54
-	virtual bool has_consistent_faces (void * = 0) const = 0; // 55
+	virtual bool has_consistent_faces_deprecated (void* = nullptr) const = 0; // 55
 	virtual vertex_attribute_interface* get_vertex_attribute_interface_obsolete (int i, int j, void* aux = 0) = 0; // 56
 	virtual void set_vertex_attribute_obsolete (int i, int j, vertex_attribute_interface* vertex_attribute, void* aux = 0) = 0; // 57
-	virtual void cleanup_redundant_vertices (void* aux = 0) = 0; // 58
+	virtual void cleanup_redundant_vertices_deprecated (void* aux = 0) = 0; // 58
 	virtual void setup_winged_edge (void* aux = 0) = 0; // 59
 	virtual void clean_winged_edge (void* aux = 0) = 0; // 60
 	virtual int eccwfv (int f, int v, bool check, void* aux = 0) = 0; // 61
@@ -1681,12 +1752,12 @@ void unlink_master_surface (bool deep, void* aux = 0) { get_implementation().unl
 	virtual vertex_class& vertex (int i, void* aux = 0) = 0; // 67
 	virtual edge_class& edge (int i, void* aux = 0) = 0; // 68
 	virtual face_class& face (int i, void* aux = 0) = 0; // 69
-	virtual polygon_mesh_class &set_roundness_type (int roundness_type_param, void * = 0) = 0; // 70
-	virtual int get_roundness_type (void * = 0) const = 0; // 71
-	virtual polygon_mesh_class &set_active_edge_indices (int n, int list[], void * = 0) = 0; // 72
-	virtual int get_active_edge_indices (int list[], void * = 0) const = 0; // 73
-	virtual polygon_mesh_class &set_active_face_indices (int n, int list[], void * = 0) = 0; // 74
-	virtual int get_active_face_indices (int list[], void * = 0) const = 0; // 75
+	virtual polygon_mesh_class &set_roundness_type (int roundness_type_param, void* = nullptr) = 0; // 70
+	virtual int get_roundness_type (void* = nullptr) const = 0; // 71
+	virtual polygon_mesh_class &set_active_edge_indices (int n, int list[], void* = nullptr) = 0; // 72
+	virtual int get_active_edge_indices (int list[], void* = nullptr) const = 0; // 73
+	virtual polygon_mesh_class &set_active_face_indices (int n, int list[], void* = nullptr) = 0; // 74
+	virtual int get_active_face_indices (int list[], void* = nullptr) const = 0; // 75
 	virtual int get_number_of_uv_layers (void* aux = 0) = 0; // 76
 	virtual void clear_uv_layers (void* aux = 0) = 0; // 77
 	virtual int append_uv_layer (void* aux = 0) = 0; // 78
@@ -1700,332 +1771,436 @@ void unlink_master_surface (bool deep, void* aux = 0) { get_implementation().unl
 	virtual int append_face_group (void* aux = 0) = 0; // 86
 	virtual bool set_face_group_surface (int face_group_index, sxsdk::master_surface_class* master_surface_param, void* aux = 0) = 0; // 87
 	virtual bool remove_face_group (int face_group_index, void* aux = 0) = 0; // 88
+	virtual void select_loop_faces (void* aux = 0) = 0; // 89
+	virtual void select_loop_edges (void* aux = 0) = 0; // 90
+	virtual void select_boundary_edges (void* aux = 0) = 0; // 91
+	virtual void select_contiguous_surface (sxsdk::enums::selection_mode_enum selection_mode = sxsdk::enums::last_selection_mode, void* aux = 0) = 0; // 92
+	virtual void select_contiguous_surface_uv (int uv_index, sxsdk::enums::selection_mode_enum selection_mode = sxsdk::enums::last_selection_mode, void* aux = 0) = 0; // 93
+	virtual void select_coplanar_faces (bool contiguous_surface, void* aux = 0) = 0; // 94
+	virtual void select_overlapping_vertices (void* aux = 0) = 0; // 95
+	virtual void select_overlapping_faces (void* aux = 0) = 0; // 96
+	virtual void select_non_planar_faces (void* aux = 0) = 0; // 97
+	virtual void select_non_manifold_edges (sxsdk::enums::selection_mode_enum selection_mode = sxsdk::enums::last_selection_mode, void* aux = 0) = 0; // 98
+	virtual void select_internal_faces (void* aux = 0) = 0; // 99
+	virtual void cleanup_redundant_vertices (bool active_only = false, bool relative = true, float tolerance = 0.00001, void* aux = 0) = 0; // 100
+	virtual int get_number_of_shells (void* = nullptr) const = 0; // 101
+	virtual void select_shell (int shell_index, void* aux = 0) = 0; // 102
+	virtual int get_number_of_non_manifold_edges (void* = nullptr) const = 0; // 103
+	virtual void select_border_edges (void* aux = 0) = 0; // 104
+	virtual int get_border_edges_group (int list[], void* = nullptr) const = 0; // 105
+std::vector<int> get_border_edges_group_scriptimplementation (void* = nullptr) const ;
+	virtual int append_faces_from_edges (int n_v, const int v[], void* aux = 0) = 0; // 106
+	virtual void unify_normals (bool orient_outward, bool active_only, void* aux = 0) = 0; // 107
+	virtual void triangulate_faces (int n_v, const int v[], void* aux = 0) = 0; // 108
+	virtual int get_non_manifold_edge_faces_group (int list[], void* = nullptr) const = 0; // 109
+std::vector<int> get_non_manifold_edge_faces_group_scriptimplementation (void* = nullptr) const ;
+	virtual int get_internal_faces_group (int list[], void* = nullptr) const = 0; // 110
+std::vector<int> get_internal_faces_group_scriptimplementation (void* = nullptr) const ;
+	virtual void separate_non_manifold_edges (int n_v, const int v[], void* aux = 0) = 0; // 111
+	virtual void separate_all_non_manifold_edges (void* aux = 0) = 0; // 112
+	virtual void select_redundant_vertices (void* aux = 0) = 0; // 113
+	virtual void cleanup_redundant_edges (void* aux = 0) = 0; // 114
+	virtual bool has_non_orientable_faces (void* = nullptr) const = 0; // 115
+	virtual bool has_inconsistent_faces (void* = nullptr) const = 0; // 116
+	virtual void set_selection_mode (sxsdk::enums::selection_mode_enum selection_mode, bool tight, void* aux = 0) = 0; // 117
+	virtual sxsdk::polygon_mesh_class& separate_selected_faces (bool duplicate, bool as_new_shape, void* aux = 0) = 0; // 118
+	virtual polygon_mesh_class &set_roundness_uv (bool roundness_uv_param, void* = nullptr) = 0; // 119
+	virtual bool get_roundness_uv (void* = nullptr) const = 0; // 120
+	virtual polygon_mesh_class &set_roundness_smooth_triangles (bool roundness_smooth_triangles_param, void* = nullptr) = 0; // 121
+	virtual bool get_roundness_smooth_triangles (void* = nullptr) const = 0; // 122
+	virtual polygon_mesh_class &set_roundness_boundary_rule (int roundness_boundary_rule_param, void* = nullptr) = 0; // 123
+	virtual int get_roundness_boundary_rule (void* = nullptr) const = 0; // 124
+	virtual void select_ring_edges (void* aux = 0) = 0; // 125
+	virtual void select_inner_region_faces (void* aux = 0) = 0; // 126
+	virtual void select_grow (void* aux = 0) = 0; // 127
+	virtual void select_shrink (void* aux = 0) = 0; // 128
+	virtual void select_concave_faces (void* aux = 0) = 0; // 129
+	virtual void select_inclusion_faces (bool inclusion_only, void* aux = 0) = 0; // 130
+	virtual int get_number_of_vertex_color_layers (void* = nullptr) const = 0; // 131
+	virtual void clear_vertex_color_layers (void* aux = 0) = 0; // 132
+	virtual int append_vertex_color_layer (void* aux = 0) = 0; // 133
+	virtual void remove_vertex_color_layer (int layer_index, void* aux = 0) = 0; // 134
+	virtual void select_negative_curvature (void* aux = 0) = 0; // 135
+	virtual void select_self_intersecting_faces (void* aux = 0) = 0; // 136
+	virtual void select_thin_elements (float threshold, void* aux = 0) = 0; // 137
+	virtual void select_small_elements (float threshold, void* aux = 0) = 0; // 138
+	virtual void select_zero_area_faces (void* aux = 0) = 0; // 139
+	virtual void select_sharp_edges (float threshold, void* aux = 0) = 0; // 140
+	virtual void select_planar (float threshold, void* aux = 0) = 0; // 141
+	virtual void fatten (float threshold, void* aux = 0) = 0; // 142
+void select_flatness_scriptimplementation () { select_coplanar_faces(true); }
+void select_multiple_vertices_scriptimplementation () { select_overlapping_vertices(); }
+void select_double_faces_scriptimplementation () { select_overlapping_faces(); }
+void select_nonplaner_scriptimplementation () { select_non_planar_faces(); }
+void auto_fix_normals_scriptimplementation () { unify_normals(true, false); }
+void divide_into_triangles_scriptimplementation (int n_v, const int v[]) { triangulate_faces(n_v, v); }
+void select_triple_nodes_scriptimplementation () { select_non_manifold_edges(sxsdk::enums::last_selection_mode); }
+void select_contiguous_scriptimplementation (sxsdk::enums::selection_mode_enum selection_mode = sxsdk::enums::face_selection_mode) { select_contiguous_surface(selection_mode); }
+void select_contiguous_uv_scriptimplementation (int uv_index, sxsdk::enums::selection_mode_enum selection_mode = sxsdk::enums::face_selection_mode) { select_contiguous_surface_uv(uv_index, selection_mode); }
+int get_number_of_triple_node_edges_scriptimplementation (void* = nullptr) const { return get_number_of_non_manifold_edges(); }
+std::vector<int> get_triple_nodes_edge_faces_group_scriptimplementation (void* = nullptr) const { return get_non_manifold_edge_faces_group_scriptimplementation(); }
+void unlink_faces_from_triple_nodes_edge_scriptimplementation (int n_v, const int v[]) { separate_non_manifold_edges(n_v, v); }
+void detach_all_triple_nodes_edges_scriptimplementation () { separate_all_non_manifold_edges(); }
+#pragma clang diagnostics pop
 	};
 
-	class
-	sphere_class : public shape_class {
+	class sphere_class : public shape_class {
 	public:
 		DEFINE_DYNAMIC_CAST(sphere_class , shape_class , enums::sphere)
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
 	virtual shape_saver_interface* create_shape_saver_interface (void* aux = 0) = 0; // -1
-	virtual sphere_class &set_center (const sxsdk::vec3 &center_param, void * = 0) = 0; // 0
-	virtual sxsdk::vec3 get_center (void * = 0) const = 0; // 1
-	virtual sphere_class &set_radius (const sxsdk::vec3 &radius_param, void * = 0) = 0; // 2
-	virtual sxsdk::vec3 get_radius (void * = 0) const = 0; // 3
-	virtual sxsdk::mat4 get_matrix (void * = 0) const = 0; // 4
-	virtual sphere_class &set_matrix (const sxsdk::mat4 &matrix_param, void * = 0) = 0; // 5
+	virtual sphere_class &set_center (const sxsdk::vec3 &center_param, void* = nullptr) = 0; // 0
+	virtual sxsdk::vec3 get_center (void* = nullptr) const = 0; // 1
+	virtual sphere_class &set_radius (const sxsdk::vec3 &radius_param, void* = nullptr) = 0; // 2
+	virtual sxsdk::vec3 get_radius (void* = nullptr) const = 0; // 3
+	virtual sxsdk::mat4 get_matrix (void* = nullptr) const = 0; // 4
+	virtual sphere_class &set_matrix (const sxsdk::mat4 &matrix_param, void* = nullptr) = 0; // 5
 	virtual sphere_interface* get_sphere_interface (void* aux = 0) = 0; // 6
 	virtual sphere_saver_class* get_sphere_saver (void* aux = 0) = 0; // 7
-	virtual sphere_class &set_volume_distance_decay (bool volume_distance_decay_param, void * = 0) = 0; // 8
-	virtual bool get_volume_distance_decay (void * = 0) const = 0; // 9
+	virtual sphere_class &set_volume_distance_decay (bool volume_distance_decay_param, void* = nullptr) = 0; // 8
+	virtual bool get_volume_distance_decay (void* = nullptr) const = 0; // 9
+#pragma clang diagnostics pop
 	};
 
-	class
-	disk_class : public shape_class {
+	class disk_class : public shape_class {
 	public:
 		DEFINE_DYNAMIC_CAST(disk_class , shape_class , enums::disk)	
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
 	virtual shape_saver_interface* create_shape_saver_interface (void* aux = 0) = 0; // -1
-	virtual disk_class &set_fill (bool fill_param, void * = 0) = 0; // 0
-	virtual bool get_fill (void * = 0) const = 0; // 1
-	virtual disk_class &set_starting_angle (float starting_angle_param, void * = 0) = 0; // 2
-	virtual float get_starting_angle (void * = 0) const = 0; // 3
-	virtual disk_class &set_ending_angle (float ending_angle_param, void * = 0) = 0; // 4
-	virtual float get_ending_angle (void * = 0) const = 0; // 5
-	virtual disk_class &set_center (const sxsdk::vec3 &center_param, void * = 0) = 0; // 6
-	virtual sxsdk::vec3 get_center (void * = 0) const = 0; // 7
-	virtual disk_class &set_radius (const sxsdk::vec2 &radius_param, void * = 0) = 0; // 8
-	virtual sxsdk::vec2 get_radius (void * = 0) const = 0; // 9
-	virtual sxsdk::mat4 get_matrix (void * = 0) const = 0; // 10
-	virtual disk_class &set_matrix (const sxsdk::mat4 &matrix_param, void * = 0) = 0; // 11
+	virtual disk_class &set_fill (bool fill_param, void* = nullptr) = 0; // 0
+	virtual bool get_fill (void* = nullptr) const = 0; // 1
+	virtual disk_class &set_starting_angle (float starting_angle_param, void* = nullptr) = 0; // 2
+	virtual float get_starting_angle (void* = nullptr) const = 0; // 3
+	virtual disk_class &set_ending_angle (float ending_angle_param, void* = nullptr) = 0; // 4
+	virtual float get_ending_angle (void* = nullptr) const = 0; // 5
+	virtual disk_class &set_center (const sxsdk::vec3 &center_param, void* = nullptr) = 0; // 6
+	virtual sxsdk::vec3 get_center (void* = nullptr) const = 0; // 7
+	virtual disk_class &set_radius (const sxsdk::vec2 &radius_param, void* = nullptr) = 0; // 8
+	virtual sxsdk::vec2 get_radius (void* = nullptr) const = 0; // 9
+	virtual sxsdk::mat4 get_matrix (void* = nullptr) const = 0; // 10
+	virtual disk_class &set_matrix (const sxsdk::mat4 &matrix_param, void* = nullptr) = 0; // 11
 	virtual disk_interface* get_disk_interface (void* aux = 0) = 0; // 12
 	virtual disk_saver_class* get_disk_saver (void* aux = 0) = 0; // 13
+#pragma clang diagnostics pop
 	};
 
-	class
-	proxy_shape_class : public shape_class {
+	class proxy_shape_class : public shape_class {
 	public:
 		DEFINE_DYNAMIC_CAST(proxy_shape_class , shape_class , enums::proxy_shape)	
 		~proxy_shape_class ();
-	virtual proxy_shape_class* get_bro (void * = 0) const = 0; // -1
-	virtual proxy_shape_class* get_sis (void * = 0) const = 0; // -1
-	virtual proxy_shape_class* get_parent (void * = 0) const = 0; // -1
-	virtual proxy_shape_class* get_linked_parent (void * = 0) const = 0; // -1
-	virtual sxsdk::shape_class& get_shape (void * = 0) const = 0; // 0
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	virtual proxy_shape_class* get_bro (void* = nullptr) const = 0; // -1
+	virtual proxy_shape_class* get_sis (void* = nullptr) const = 0; // -1
+	virtual proxy_shape_class* get_parent (void* = nullptr) const = 0; // -1
+	virtual proxy_shape_class* get_linked_parent (void* = nullptr) const = 0; // -1
+	virtual sxsdk::shape_class& get_shape (void* = nullptr) const = 0; // 0
 	virtual sxsdk::texture_interface& texture (int thread = 0, void* aux = 0) = 0; // 1
-	virtual proxy_shape_class &set_object_id_color (const sxsdk::vec3 &object_id_color_param, void * = 0) = 0; // 2
-	virtual sxsdk::vec3 get_object_id_color (void * = 0) const = 0; // 3
-	virtual proxy_shape_class &set_surface_id_color (const sxsdk::vec3 &surface_id_color_param, void * = 0) = 0; // 4
-	virtual sxsdk::vec3 get_surface_id_color (void * = 0) const = 0; // 5
-	virtual proxy_shape_class &set_marker_index (int marker_index_param, void * = 0) = 0; // 6
-	virtual int get_marker_index (void * = 0) const = 0; // 7
-	virtual proxy_shape_class &set_object_mask_index (int object_mask_index_param, void * = 0) = 0; // 8
-	virtual int get_object_mask_index (void * = 0) const = 0; // 9
-	virtual proxy_shape_class &set_surface_mask_index (int surface_mask_index_param, void * = 0) = 0; // 10
-	virtual int get_surface_mask_index (void * = 0) const = 0; // 11
+	virtual proxy_shape_class &set_object_id_color (const sxsdk::vec3 &object_id_color_param, void* = nullptr) = 0; // 2
+	virtual sxsdk::vec3 get_object_id_color (void* = nullptr) const = 0; // 3
+	virtual proxy_shape_class &set_surface_id_color (const sxsdk::vec3 &surface_id_color_param, void* = nullptr) = 0; // 4
+	virtual sxsdk::vec3 get_surface_id_color (void* = nullptr) const = 0; // 5
+	virtual proxy_shape_class &set_marker_index (int marker_index_param, void* = nullptr) = 0; // 6
+	virtual int get_marker_index (void* = nullptr) const = 0; // 7
+	virtual proxy_shape_class &set_object_mask_index (int object_mask_index_param, void* = nullptr) = 0; // 8
+	virtual int get_object_mask_index (void* = nullptr) const = 0; // 9
+	virtual proxy_shape_class &set_surface_mask_index (int surface_mask_index_param, void* = nullptr) = 0; // 10
+	virtual int get_surface_mask_index (void* = nullptr) const = 0; // 11
 	virtual sxsdk::proxy_shape_class& set_face_group_surface_id_color (const int face_group_index, const sxsdk::vec3 & surface_id_color_param, void* aux = 0) = 0; // 12
 	virtual sxsdk::vec3 get_face_group_surface_id_color (const int face_group_index = -1, void* aux = 0) const = 0; // 13
+#pragma clang diagnostics pop
 	};
 
-	class
-	rotator_joint_interface : public unknown_interface {
+	class rotator_joint_interface : public unknown_interface {
 	public:
-	virtual rotator_joint_interface &set_pivot (const sxsdk::vec3 &pivot_param, void * = 0) = 0; // 0
-	virtual sxsdk::vec3 get_pivot (void * = 0) const = 0; // 1
-	virtual rotator_joint_interface &set_direction (const sxsdk::vec3 &direction_param, void * = 0) = 0; // 2
-	virtual sxsdk::vec3 get_direction (void * = 0) const = 0; // 3
-	virtual rotator_joint_interface &set_rotation (float rotation_param, void * = 0) = 0; // 4
-	virtual float get_rotation (void * = 0) const = 0; // 5
-	virtual rotator_joint_interface &set_range (bool range_param, void * = 0) = 0; // 6
-	virtual bool get_range (void * = 0) const = 0; // 7
-	virtual rotator_joint_interface &set_blend (float blend_param, void * = 0) = 0; // 8
-	virtual float get_blend (void * = 0) const = 0; // 9
-	virtual rotator_joint_interface &set_flat (bool flat_param, void * = 0) = 0; // 10
-	virtual bool get_flat (void * = 0) const = 0; // 11
-	virtual rotator_joint_interface &set_limit (const sxsdk::vec2 &limit_param, void * = 0) = 0; // 12
-	virtual sxsdk::vec2 get_limit (void * = 0) const = 0; // 13
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	virtual rotator_joint_interface &set_pivot (const sxsdk::vec3 &pivot_param, void* = nullptr) = 0; // 0
+	virtual sxsdk::vec3 get_pivot (void* = nullptr) const = 0; // 1
+	virtual rotator_joint_interface &set_direction (const sxsdk::vec3 &direction_param, void* = nullptr) = 0; // 2
+	virtual sxsdk::vec3 get_direction (void* = nullptr) const = 0; // 3
+	virtual rotator_joint_interface &set_rotation (float rotation_param, void* = nullptr) = 0; // 4
+	virtual float get_rotation (void* = nullptr) const = 0; // 5
+	virtual rotator_joint_interface &set_range (bool range_param, void* = nullptr) = 0; // 6
+	virtual bool get_range (void* = nullptr) const = 0; // 7
+	virtual rotator_joint_interface &set_blend (float blend_param, void* = nullptr) = 0; // 8
+	virtual float get_blend (void* = nullptr) const = 0; // 9
+	virtual rotator_joint_interface &set_flat (bool flat_param, void* = nullptr) = 0; // 10
+	virtual bool get_flat (void* = nullptr) const = 0; // 11
+	virtual rotator_joint_interface &set_limit (const sxsdk::vec2 &limit_param, void* = nullptr) = 0; // 12
+	virtual sxsdk::vec2 get_limit (void* = nullptr) const = 0; // 13
+#pragma clang diagnostics pop
 	};
 
-	class
-	slider_joint_interface : public unknown_interface {
+	class slider_joint_interface : public unknown_interface {
 	public:
-	virtual slider_joint_interface &set_starting_position (const sxsdk::vec3 &starting_position_param, void * = 0) = 0; // 0
-	virtual sxsdk::vec3 get_starting_position (void * = 0) const = 0; // 1
-	virtual slider_joint_interface &set_ending_position (const sxsdk::vec3 &ending_position_param, void * = 0) = 0; // 2
-	virtual sxsdk::vec3 get_ending_position (void * = 0) const = 0; // 3
-	virtual slider_joint_interface &set_slide (float slide_param, void * = 0) = 0; // 4
-	virtual float get_slide (void * = 0) const = 0; // 5
-	virtual slider_joint_interface &set_range (bool range_param, void * = 0) = 0; // 6
-	virtual bool get_range (void * = 0) const = 0; // 7
-	virtual slider_joint_interface &set_blend (float blend_param, void * = 0) = 0; // 8
-	virtual float get_blend (void * = 0) const = 0; // 9
-	virtual slider_joint_interface &set_flat (bool flat_param, void * = 0) = 0; // 10
-	virtual bool get_flat (void * = 0) const = 0; // 11
-	virtual slider_joint_interface &set_limit (const sxsdk::vec2 &limit_param, void * = 0) = 0; // 12
-	virtual sxsdk::vec2 get_limit (void * = 0) const = 0; // 13
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	virtual slider_joint_interface &set_starting_position (const sxsdk::vec3 &starting_position_param, void* = nullptr) = 0; // 0
+	virtual sxsdk::vec3 get_starting_position (void* = nullptr) const = 0; // 1
+	virtual slider_joint_interface &set_ending_position (const sxsdk::vec3 &ending_position_param, void* = nullptr) = 0; // 2
+	virtual sxsdk::vec3 get_ending_position (void* = nullptr) const = 0; // 3
+	virtual slider_joint_interface &set_slide (float slide_param, void* = nullptr) = 0; // 4
+	virtual float get_slide (void* = nullptr) const = 0; // 5
+	virtual slider_joint_interface &set_range (bool range_param, void* = nullptr) = 0; // 6
+	virtual bool get_range (void* = nullptr) const = 0; // 7
+	virtual slider_joint_interface &set_blend (float blend_param, void* = nullptr) = 0; // 8
+	virtual float get_blend (void* = nullptr) const = 0; // 9
+	virtual slider_joint_interface &set_flat (bool flat_param, void* = nullptr) = 0; // 10
+	virtual bool get_flat (void* = nullptr) const = 0; // 11
+	virtual slider_joint_interface &set_limit (const sxsdk::vec2 &limit_param, void* = nullptr) = 0; // 12
+	virtual sxsdk::vec2 get_limit (void* = nullptr) const = 0; // 13
+#pragma clang diagnostics pop
 	};
 
-	class
-	scale_joint_interface : public unknown_interface {
+	class scale_joint_interface : public unknown_interface {
 	public:
-	virtual scale_joint_interface &set_pivot (const sxsdk::vec3 &pivot_param, void * = 0) = 0; // 0
-	virtual sxsdk::vec3 get_pivot (void * = 0) const = 0; // 1
-	virtual scale_joint_interface &set_direction (const sxsdk::vec3 &direction_param, void * = 0) = 0; // 2
-	virtual sxsdk::vec3 get_direction (void * = 0) const = 0; // 3
-	virtual scale_joint_interface &set_scale (float scale_param, void * = 0) = 0; // 4
-	virtual float get_scale (void * = 0) const = 0; // 5
-	virtual scale_joint_interface &set_range (bool range_param, void * = 0) = 0; // 6
-	virtual bool get_range (void * = 0) const = 0; // 7
-	virtual scale_joint_interface &set_flat (bool flat_param, void * = 0) = 0; // 8
-	virtual bool get_flat (void * = 0) const = 0; // 9
-	virtual scale_joint_interface &set_limit (const sxsdk::vec2 &limit_param, void * = 0) = 0; // 10
-	virtual sxsdk::vec2 get_limit (void * = 0) const = 0; // 11
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	virtual scale_joint_interface &set_pivot (const sxsdk::vec3 &pivot_param, void* = nullptr) = 0; // 0
+	virtual sxsdk::vec3 get_pivot (void* = nullptr) const = 0; // 1
+	virtual scale_joint_interface &set_direction (const sxsdk::vec3 &direction_param, void* = nullptr) = 0; // 2
+	virtual sxsdk::vec3 get_direction (void* = nullptr) const = 0; // 3
+	virtual scale_joint_interface &set_scale (float scale_param, void* = nullptr) = 0; // 4
+	virtual float get_scale (void* = nullptr) const = 0; // 5
+	virtual scale_joint_interface &set_range (bool range_param, void* = nullptr) = 0; // 6
+	virtual bool get_range (void* = nullptr) const = 0; // 7
+	virtual scale_joint_interface &set_flat (bool flat_param, void* = nullptr) = 0; // 8
+	virtual bool get_flat (void* = nullptr) const = 0; // 9
+	virtual scale_joint_interface &set_limit (const sxsdk::vec2 &limit_param, void* = nullptr) = 0; // 10
+	virtual sxsdk::vec2 get_limit (void* = nullptr) const = 0; // 11
+#pragma clang diagnostics pop
 	};
 
-	class
-	uniscale_joint_interface : public unknown_interface {
+	class uniscale_joint_interface : public unknown_interface {
 	public:
-	virtual uniscale_joint_interface &set_pivot (const sxsdk::vec3 &pivot_param, void * = 0) = 0; // 0
-	virtual sxsdk::vec3 get_pivot (void * = 0) const = 0; // 1
-	virtual uniscale_joint_interface &set_scale (float scale_param, void * = 0) = 0; // 2
-	virtual float get_scale (void * = 0) const = 0; // 3
-	virtual uniscale_joint_interface &set_range (bool range_param, void * = 0) = 0; // 4
-	virtual bool get_range (void * = 0) const = 0; // 5
-	virtual uniscale_joint_interface &set_flat (bool flat_param, void * = 0) = 0; // 6
-	virtual bool get_flat (void * = 0) const = 0; // 7
-	virtual uniscale_joint_interface &set_limit (const sxsdk::vec2 &limit_param, void * = 0) = 0; // 8
-	virtual sxsdk::vec2 get_limit (void * = 0) const = 0; // 9
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	virtual uniscale_joint_interface &set_pivot (const sxsdk::vec3 &pivot_param, void* = nullptr) = 0; // 0
+	virtual sxsdk::vec3 get_pivot (void* = nullptr) const = 0; // 1
+	virtual uniscale_joint_interface &set_scale (float scale_param, void* = nullptr) = 0; // 2
+	virtual float get_scale (void* = nullptr) const = 0; // 3
+	virtual uniscale_joint_interface &set_range (bool range_param, void* = nullptr) = 0; // 4
+	virtual bool get_range (void* = nullptr) const = 0; // 5
+	virtual uniscale_joint_interface &set_flat (bool flat_param, void* = nullptr) = 0; // 6
+	virtual bool get_flat (void* = nullptr) const = 0; // 7
+	virtual uniscale_joint_interface &set_limit (const sxsdk::vec2 &limit_param, void* = nullptr) = 0; // 8
+	virtual sxsdk::vec2 get_limit (void* = nullptr) const = 0; // 9
+#pragma clang diagnostics pop
 	};
 
-	class
-	light_effector_interface : public unknown_interface {
+	class light_effector_interface : public unknown_interface {
 	public:
-	virtual light_effector_interface &set_value (float value_param, void * = 0) = 0; // 0
-	virtual float get_value (void * = 0) const = 0; // 1
-	virtual light_effector_interface &set_range (bool range_param, void * = 0) = 0; // 2
-	virtual bool get_range (void * = 0) const = 0; // 3
-	virtual light_effector_interface &set_flat (bool flat_param, void * = 0) = 0; // 4
-	virtual bool get_flat (void * = 0) const = 0; // 5
-	virtual light_effector_interface &set_limit (const sxsdk::vec2 &limit_param, void * = 0) = 0; // 6
-	virtual sxsdk::vec2 get_limit (void * = 0) const = 0; // 7
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	virtual light_effector_interface &set_value (float value_param, void* = nullptr) = 0; // 0
+	virtual float get_value (void* = nullptr) const = 0; // 1
+	virtual light_effector_interface &set_range (bool range_param, void* = nullptr) = 0; // 2
+	virtual bool get_range (void* = nullptr) const = 0; // 3
+	virtual light_effector_interface &set_flat (bool flat_param, void* = nullptr) = 0; // 4
+	virtual bool get_flat (void* = nullptr) const = 0; // 5
+	virtual light_effector_interface &set_limit (const sxsdk::vec2 &limit_param, void* = nullptr) = 0; // 6
+	virtual sxsdk::vec2 get_limit (void* = nullptr) const = 0; // 7
+#pragma clang diagnostics pop
 	};
 
-	class
-	path_joint_interface : public unknown_interface {
+	class path_joint_interface : public unknown_interface {
 	public:
-	virtual path_joint_interface &set_path_position (float path_position_param, void * = 0) = 0; // 0
-	virtual float get_path_position (void * = 0) const = 0; // 1
-	virtual path_joint_interface &set_range (bool range_param, void * = 0) = 0; // 2
-	virtual bool get_range (void * = 0) const = 0; // 3
-	virtual path_joint_interface &set_flat (bool flat_param, void * = 0) = 0; // 4
-	virtual bool get_flat (void * = 0) const = 0; // 5
-	virtual path_joint_interface &set_correction (int correction_param, void * = 0) = 0; // 6
-	virtual int get_correction (void * = 0) const = 0; // 7
-	virtual path_joint_interface &set_limit (const sxsdk::vec2 &limit_param, void * = 0) = 0; // 8
-	virtual sxsdk::vec2 get_limit (void * = 0) const = 0; // 9
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	virtual path_joint_interface &set_path_position (float path_position_param, void* = nullptr) = 0; // 0
+	virtual float get_path_position (void* = nullptr) const = 0; // 1
+	virtual path_joint_interface &set_range (bool range_param, void* = nullptr) = 0; // 2
+	virtual bool get_range (void* = nullptr) const = 0; // 3
+	virtual path_joint_interface &set_flat (bool flat_param, void* = nullptr) = 0; // 4
+	virtual bool get_flat (void* = nullptr) const = 0; // 5
+	virtual path_joint_interface &set_correction (int correction_param, void* = nullptr) = 0; // 6
+	virtual int get_correction (void* = nullptr) const = 0; // 7
+	virtual path_joint_interface &set_limit (const sxsdk::vec2 &limit_param, void* = nullptr) = 0; // 8
+	virtual sxsdk::vec2 get_limit (void* = nullptr) const = 0; // 9
+#pragma clang diagnostics pop
 	};
 
-	class
-	morph_effector_interface : public unknown_interface {
+	class morph_effector_interface : public unknown_interface {
 	public:
-	virtual morph_effector_interface &set_morph (float morph_param, void * = 0) = 0; // 0
-	virtual float get_morph (void * = 0) const = 0; // 1
-	virtual morph_effector_interface &set_range (bool range_param, void * = 0) = 0; // 2
-	virtual bool get_range (void * = 0) const = 0; // 3
-	virtual morph_effector_interface &set_limit (const sxsdk::vec2 &limit_param, void * = 0) = 0; // 4
-	virtual sxsdk::vec2 get_limit (void * = 0) const = 0; // 5
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	virtual morph_effector_interface &set_morph (float morph_param, void* = nullptr) = 0; // 0
+	virtual float get_morph (void* = nullptr) const = 0; // 1
+	virtual morph_effector_interface &set_range (bool range_param, void* = nullptr) = 0; // 2
+	virtual bool get_range (void* = nullptr) const = 0; // 3
+	virtual morph_effector_interface &set_limit (const sxsdk::vec2 &limit_param, void* = nullptr) = 0; // 4
+	virtual sxsdk::vec2 get_limit (void* = nullptr) const = 0; // 5
+#pragma clang diagnostics pop
 	};
 
-	class
-	ball_joint_interface : public unknown_interface {
+	class ball_joint_interface : public unknown_interface {
 	public:
-	virtual ball_joint_interface &set_rotation (const sxsdk::quaternion_class &rotation_param, void * = 0) = 0; // 0
-	virtual sxsdk::quaternion_class get_rotation (void * = 0) const = 0; // 1
-	virtual ball_joint_interface &set_offset (const sxsdk::vec3 &offset_param, void * = 0) = 0; // 2
-	virtual sxsdk::vec3 get_offset (void * = 0) const = 0; // 3
-	virtual ball_joint_interface &set_blend (float blend_param, void * = 0) = 0; // 4
-	virtual float get_blend (void * = 0) const = 0; // 5
-	virtual ball_joint_interface &set_flat (bool flat_param, void * = 0) = 0; // 6
-	virtual bool get_flat (void * = 0) const = 0; // 7
-	virtual ball_joint_interface &set_position (const sxsdk::vec3 &position_param, void * = 0) = 0; // 8
-	virtual sxsdk::vec3 get_position (void * = 0) const = 0; // 9
-	virtual ball_joint_interface &set_size (float size_param, void * = 0) = 0; // 10
-	virtual float get_size (void * = 0) const = 0; // 11
-	virtual ball_joint_interface &set_compatible (bool value_param, void * = 0) = 0; // 12
-	virtual bool get_compatible (void * = 0) const = 0; // 13
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	virtual ball_joint_interface &set_rotation (const sxsdk::quaternion_class &rotation_param, void* = nullptr) = 0; // 0
+	virtual sxsdk::quaternion_class get_rotation (void* = nullptr) const = 0; // 1
+	virtual ball_joint_interface &set_offset (const sxsdk::vec3 &offset_param, void* = nullptr) = 0; // 2
+	virtual sxsdk::vec3 get_offset (void* = nullptr) const = 0; // 3
+	virtual ball_joint_interface &set_blend (float blend_param, void* = nullptr) = 0; // 4
+	virtual float get_blend (void* = nullptr) const = 0; // 5
+	virtual ball_joint_interface &set_flat (bool flat_param, void* = nullptr) = 0; // 6
+	virtual bool get_flat (void* = nullptr) const = 0; // 7
+	virtual ball_joint_interface &set_position (const sxsdk::vec3 &position_param, void* = nullptr) = 0; // 8
+	virtual sxsdk::vec3 get_position (void* = nullptr) const = 0; // 9
+	virtual ball_joint_interface &set_size (float size_param, void* = nullptr) = 0; // 10
+	virtual float get_size (void* = nullptr) const = 0; // 11
+	virtual ball_joint_interface &set_compatible (bool compatible_param, void* = nullptr) = 0; // 12
+	virtual bool get_compatible (void* = nullptr) const = 0; // 13
+#pragma clang diagnostics pop
 	};
 
-	class
-	custom_joint_interface : public unknown_interface {
+	class custom_joint_interface : public unknown_interface {
 	public:
-	virtual custom_joint_interface &set_value (float value_param, void * = 0) = 0; // 0
-	virtual float get_value (void * = 0) const = 0; // 1
-	virtual custom_joint_interface &set_range (bool range_param, void * = 0) = 0; // 2
-	virtual bool get_range (void * = 0) const = 0; // 3
-	virtual custom_joint_interface &set_limit (const sxsdk::vec2 &limit_param, void * = 0) = 0; // 4
-	virtual sxsdk::vec2 get_limit (void * = 0) const = 0; // 5
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	virtual custom_joint_interface &set_value (float value_param, void* = nullptr) = 0; // 0
+	virtual float get_value (void* = nullptr) const = 0; // 1
+	virtual custom_joint_interface &set_range (bool range_param, void* = nullptr) = 0; // 2
+	virtual bool get_range (void* = nullptr) const = 0; // 3
+	virtual custom_joint_interface &set_limit (const sxsdk::vec2 &limit_param, void* = nullptr) = 0; // 4
+	virtual sxsdk::vec2 get_limit (void* = nullptr) const = 0; // 5
+#pragma clang diagnostics pop
 	};
 
-	class
-	sound_track_interface : public unknown_interface {
+	class sound_track_interface : public unknown_interface {
 	public:
-	virtual sound_track_interface &set_value (float value_param, void * = 0) = 0; // 0
-	virtual float get_value (void * = 0) const = 0; // 1
-	virtual sound_track_interface &set_range (bool range_param, void * = 0) = 0; // 2
-	virtual bool get_range (void * = 0) const = 0; // 3
-	virtual sound_track_interface &set_repetition (int repetition_param, void * = 0); sound_track_interface &set_repeat (int repetition_param) { return set_repetition(repetition_param); }  // 4
-	virtual int get_repetition (void * = 0) const; int get_repeat() const { return get_repetition(); }  // 5
-	virtual sound_track_interface &set_sound3d (bool sound3d_param, void * = 0) = 0; // 6
-	virtual bool get_sound3d (void * = 0) const = 0; // 7
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	virtual sound_track_interface &set_value (float value_param, void* = nullptr) = 0; // 0
+	virtual float get_value (void* = nullptr) const = 0; // 1
+	virtual sound_track_interface &set_range (bool range_param, void* = nullptr) = 0; // 2
+	virtual bool get_range (void* = nullptr) const = 0; // 3
+	virtual sound_track_interface &set_repetition (int repetition_param, void* = nullptr); sound_track_interface &set_repeat (int repetition_param) { return set_repetition(repetition_param); }  // 4
+	virtual int get_repetition (void* = nullptr) const; int get_repeat() const { return get_repetition(); }  // 5
+	virtual sound_track_interface &set_sound3d (bool sound3d_param, void* = nullptr) = 0; // 6
+	virtual bool get_sound3d (void* = nullptr) const = 0; // 7
 	virtual void play (int repeat = 0, void* aux = 0) = 0; // 8
 	virtual void stop (void* aux = 0) = 0; // 9
 	virtual bool is_playing (void* aux = 0) = 0; // 10
+#pragma clang diagnostics pop
 	};
 
-	class
-	switch_effector_interface : public unknown_interface {
+	class switch_effector_interface : public unknown_interface {
 	public:
-	virtual switch_effector_interface &set_selection (int selection_param, void * = 0) = 0; // 0
-	virtual int get_selection (void * = 0) const = 0; // 1
-	virtual switch_effector_interface &set_range (bool range_param, void * = 0) = 0; // 2
-	virtual bool get_range (void * = 0) const = 0; // 3
-	virtual switch_effector_interface &set_limit (const sxsdk::vec2 &limit_param, void * = 0) = 0; // 4
-	virtual sxsdk::vec2 get_limit (void * = 0) const = 0; // 5
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	virtual switch_effector_interface &set_selection (int selection_param, void* = nullptr) = 0; // 0
+	virtual int get_selection (void* = nullptr) const = 0; // 1
+	virtual switch_effector_interface &set_range (bool range_param, void* = nullptr) = 0; // 2
+	virtual bool get_range (void* = nullptr) const = 0; // 3
+	virtual switch_effector_interface &set_limit (const sxsdk::vec2 &limit_param, void* = nullptr) = 0; // 4
+	virtual sxsdk::vec2 get_limit (void* = nullptr) const = 0; // 5
+#pragma clang diagnostics pop
 	};
 
-	class
-	path_replicator_interface : public unknown_interface {
+	class path_replicator_interface : public unknown_interface {
 	public:
-	virtual path_replicator_interface &set_replication (float replication_param, void * = 0) = 0; // 0
-	virtual float get_replication (void * = 0) const = 0; // 1
-	virtual path_replicator_interface &set_range (bool range_param, void * = 0) = 0; // 2
-	virtual bool get_range (void * = 0) const = 0; // 3
-	virtual path_replicator_interface &set_mode (int mode_param, void * = 0) = 0; // 4
-	virtual int get_mode (void * = 0) const = 0; // 5
-	virtual path_replicator_interface &set_alignment_type_obsolete (int alignment_type_obsolete_param, void * = 0) = 0; // 6
-	virtual int get_alignment_type_obsolete (void * = 0) const = 0; // 7
-	virtual path_replicator_interface &set_step_rounding_type (int step_rounding_type_param, void * = 0) = 0; // 8
-	virtual int get_step_rounding_type (void * = 0) const = 0; // 9
-	virtual path_replicator_interface &set_skip_head (bool skip_head_param, void * = 0) = 0; // 10
-	virtual bool get_skip_head (void * = 0) const = 0; // 11
-	virtual path_replicator_interface &set_skip_tail (bool skip_tail_param, void * = 0) = 0; // 12
-	virtual bool get_skip_tail (void * = 0) const = 0; // 13
-	virtual path_replicator_interface &set_count (int count_param, void * = 0) = 0; // 14
-	virtual int get_count (void * = 0) const = 0; // 15
-	virtual path_replicator_interface &set_step (float step_param, void * = 0) = 0; // 16
-	virtual float get_step (void * = 0) const = 0; // 17
-	virtual path_replicator_interface &set_limit (const sxsdk::vec2 &limit_param, void * = 0) = 0; // 18
-	virtual sxsdk::vec2 get_limit (void * = 0) const = 0; // 19
-	virtual path_replicator_interface &set_reference_point (int reference_point_param, void * = 0) = 0; // 20
-	virtual int get_reference_point (void * = 0) const = 0; // 21
-	virtual path_replicator_interface &set_preview (int preview_param, void * = 0) = 0; // 22
-	virtual int get_preview (void * = 0) const = 0; // 23
-	virtual path_replicator_interface &set_use_direction_control (bool use_direction_control_param, void * = 0) = 0; // 24
-	virtual bool get_use_direction_control (void * = 0) const = 0; // 25
-	virtual path_replicator_interface &set_upper_direction_type (int upper_direction_type_param, void * = 0) = 0; // 26
-	virtual int get_upper_direction_type (void * = 0) const = 0; // 27
-	virtual path_replicator_interface &set_use_upper_direction_path (bool use_upper_direction_path_param, void * = 0) = 0; // 28
-	virtual bool get_use_upper_direction_path (void * = 0) const = 0; // 29
-	virtual path_replicator_interface &set_front_direction_type (int front_direction_type_param, void * = 0) = 0; // 30
-	virtual int get_front_direction_type (void * = 0) const = 0; // 31
-	virtual path_replicator_interface &set_use_forward_direction_path (bool use_forward_direction_path_param, void * = 0) = 0; // 32
-	virtual bool get_use_forward_direction_path (void * = 0) const = 0; // 33
-	virtual path_replicator_interface &set_show_directions (bool show_directions_param, void * = 0) = 0; // 34
-	virtual bool get_show_directions (void * = 0) const = 0; // 35
-	virtual path_replicator_interface &set_random_replication (bool random_replication_param, void * = 0) = 0; // 36
-	virtual bool get_random_replication (void * = 0) const = 0; // 37
-	virtual path_replicator_interface &set_random_translation (sxsdk::vec3 random_translation_param, void * = 0) = 0; // 38
-	virtual sxsdk::vec3 get_random_translation (void * = 0) const = 0; // 39
-	virtual path_replicator_interface &set_random_translation_mode (int random_translation_mode_param, void * = 0) = 0; // 40
-	virtual int get_random_translation_mode (void * = 0) const = 0; // 41
-	virtual path_replicator_interface &set_random_rotation (sxsdk::vec3 random_rotation_param, void * = 0) = 0; // 42
-	virtual sxsdk::vec3 get_random_rotation (void * = 0) const = 0; // 43
-	virtual path_replicator_interface &set_random_scale (sxsdk::vec3 random_scale_param, void * = 0) = 0; // 44
-	virtual sxsdk::vec3 get_random_scale (void * = 0) const = 0; // 45
-	virtual path_replicator_interface &set_random_uniscale (bool random_uniscale_param, void * = 0) = 0; // 46
-	virtual bool get_random_uniscale (void * = 0) const = 0; // 47
-	virtual path_replicator_interface &set_random_seed (int random_seed_param, void * = 0) = 0; // 48
-	virtual int get_random_seed (void * = 0) const = 0; // 49
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	virtual path_replicator_interface &set_replication (float replication_param, void* = nullptr) = 0; // 0
+	virtual float get_replication (void* = nullptr) const = 0; // 1
+	virtual path_replicator_interface &set_range (bool range_param, void* = nullptr) = 0; // 2
+	virtual bool get_range (void* = nullptr) const = 0; // 3
+	virtual path_replicator_interface &set_mode (int mode_param, void* = nullptr) = 0; // 4
+	virtual int get_mode (void* = nullptr) const = 0; // 5
+	virtual path_replicator_interface &set_alignment_type_obsolete (int alignment_type_obsolete_param, void* = nullptr) = 0; // 6
+	virtual int get_alignment_type_obsolete (void* = nullptr) const = 0; // 7
+	virtual path_replicator_interface &set_step_rounding_type (int step_rounding_type_param, void* = nullptr) = 0; // 8
+	virtual int get_step_rounding_type (void* = nullptr) const = 0; // 9
+	virtual path_replicator_interface &set_skip_head (bool skip_head_param, void* = nullptr) = 0; // 10
+	virtual bool get_skip_head (void* = nullptr) const = 0; // 11
+	virtual path_replicator_interface &set_skip_tail (bool skip_tail_param, void* = nullptr) = 0; // 12
+	virtual bool get_skip_tail (void* = nullptr) const = 0; // 13
+	virtual path_replicator_interface &set_count (int count_param, void* = nullptr) = 0; // 14
+	virtual int get_count (void* = nullptr) const = 0; // 15
+	virtual path_replicator_interface &set_step (float step_param, void* = nullptr) = 0; // 16
+	virtual float get_step (void* = nullptr) const = 0; // 17
+	virtual path_replicator_interface &set_limit (const sxsdk::vec2 &limit_param, void* = nullptr) = 0; // 18
+	virtual sxsdk::vec2 get_limit (void* = nullptr) const = 0; // 19
+	virtual path_replicator_interface &set_reference_point (int reference_point_param, void* = nullptr) = 0; // 20
+	virtual int get_reference_point (void* = nullptr) const = 0; // 21
+	virtual path_replicator_interface &set_preview (int preview_param, void* = nullptr) = 0; // 22
+	virtual int get_preview (void* = nullptr) const = 0; // 23
+	virtual path_replicator_interface &set_use_direction_control (bool use_direction_control_param, void* = nullptr) = 0; // 24
+	virtual bool get_use_direction_control (void* = nullptr) const = 0; // 25
+	virtual path_replicator_interface &set_upper_direction_type (int upper_direction_type_param, void* = nullptr) = 0; // 26
+	virtual int get_upper_direction_type (void* = nullptr) const = 0; // 27
+	virtual path_replicator_interface &set_use_upper_direction_path (bool use_upper_direction_path_param, void* = nullptr) = 0; // 28
+	virtual bool get_use_upper_direction_path (void* = nullptr) const = 0; // 29
+	virtual path_replicator_interface &set_front_direction_type (int front_direction_type_param, void* = nullptr) = 0; // 30
+	virtual int get_front_direction_type (void* = nullptr) const = 0; // 31
+	virtual path_replicator_interface &set_use_forward_direction_path (bool use_forward_direction_path_param, void* = nullptr) = 0; // 32
+	virtual bool get_use_forward_direction_path (void* = nullptr) const = 0; // 33
+	virtual path_replicator_interface &set_show_directions (bool show_directions_param, void* = nullptr) = 0; // 34
+	virtual bool get_show_directions (void* = nullptr) const = 0; // 35
+	virtual path_replicator_interface &set_random_replication (bool random_replication_param, void* = nullptr) = 0; // 36
+	virtual bool get_random_replication (void* = nullptr) const = 0; // 37
+	virtual path_replicator_interface &set_random_translation (sxsdk::vec3 random_translation_param, void* = nullptr) = 0; // 38
+	virtual sxsdk::vec3 get_random_translation (void* = nullptr) const = 0; // 39
+	virtual path_replicator_interface &set_random_translation_mode (int random_translation_mode_param, void* = nullptr) = 0; // 40
+	virtual int get_random_translation_mode (void* = nullptr) const = 0; // 41
+	virtual path_replicator_interface &set_random_rotation (sxsdk::vec3 random_rotation_param, void* = nullptr) = 0; // 42
+	virtual sxsdk::vec3 get_random_rotation (void* = nullptr) const = 0; // 43
+	virtual path_replicator_interface &set_random_scale (sxsdk::vec3 random_scale_param, void* = nullptr) = 0; // 44
+	virtual sxsdk::vec3 get_random_scale (void* = nullptr) const = 0; // 45
+	virtual path_replicator_interface &set_random_uniscale (bool random_uniscale_param, void* = nullptr) = 0; // 46
+	virtual bool get_random_uniscale (void* = nullptr) const = 0; // 47
+	virtual path_replicator_interface &set_random_seed (int random_seed_param, void* = nullptr) = 0; // 48
+	virtual int get_random_seed (void* = nullptr) const = 0; // 49
+#pragma clang diagnostics pop
 	};
 
-	class
-	surface_replicator_interface : public unknown_interface {
+	class surface_replicator_interface : public unknown_interface {
 	public:
-	virtual surface_replicator_interface &set_replication (float replication_param, void * = 0) = 0; // 0
-	virtual float get_replication (void * = 0) const = 0; // 1
-	virtual surface_replicator_interface &set_range (bool range_param, void * = 0) = 0; // 2
-	virtual bool get_range (void * = 0) const = 0; // 3
-	virtual surface_replicator_interface &set_limit (const sxsdk::vec2 &limit_param, void * = 0) = 0; // 4
-	virtual sxsdk::vec2 get_limit (void * = 0) const = 0; // 5
-	virtual surface_replicator_interface &set_distribution (int distribution_param, void * = 0) = 0; // 6
-	virtual int get_distribution (void * = 0) const = 0; // 7
-	virtual surface_replicator_interface &set_subdivision_level (int subdivision_level_param, void * = 0) = 0; // 8
-	virtual int get_subdivision_level (void * = 0) const = 0; // 9
-	virtual surface_replicator_interface &set_preview (int preview_param, void * = 0) = 0; // 10
-	virtual int get_preview (void * = 0) const = 0; // 11
-	virtual surface_replicator_interface &set_count (int count_param, void * = 0) = 0; // 12
-	virtual int get_count (void * = 0) const = 0; // 13
-	virtual surface_replicator_interface &set_direction (int direction_param, void * = 0) = 0; // 14
-	virtual int get_direction (void * = 0) const = 0; // 15
-	virtual surface_replicator_interface &set_random_replication (bool random_replication_param, void * = 0) = 0; // 16
-	virtual bool get_random_replication (void * = 0) const = 0; // 17
-	virtual surface_replicator_interface &set_random_translation (sxsdk::vec3 random_translation_param, void * = 0) = 0; // 18
-	virtual sxsdk::vec3 get_random_translation (void * = 0) const = 0; // 19
-	virtual surface_replicator_interface &set_random_translation_mode (int random_translation_mode_param, void * = 0) = 0; // 20
-	virtual int get_random_translation_mode (void * = 0) const = 0; // 21
-	virtual surface_replicator_interface &set_random_rotation (sxsdk::vec3 random_rotation_param, void * = 0) = 0; // 22
-	virtual sxsdk::vec3 get_random_rotation (void * = 0) const = 0; // 23
-	virtual surface_replicator_interface &set_random_scale (sxsdk::vec3 random_scale_param, void * = 0) = 0; // 24
-	virtual sxsdk::vec3 get_random_scale (void * = 0) const = 0; // 25
-	virtual surface_replicator_interface &set_random_uniscale (bool random_uniscale_param, void * = 0) = 0; // 26
-	virtual bool get_random_uniscale (void * = 0) const = 0; // 27
-	virtual surface_replicator_interface &set_random_seed (int random_seed_param, void * = 0) = 0; // 28
-	virtual int get_random_seed (void * = 0) const = 0; // 29
-	virtual surface_replicator_interface &set_uv_layer (int uv_layer_param, void * = 0) = 0; // 30
-	virtual int get_uv_layer (void * = 0) const = 0; // 31
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	virtual surface_replicator_interface &set_replication (float replication_param, void* = nullptr) = 0; // 0
+	virtual float get_replication (void* = nullptr) const = 0; // 1
+	virtual surface_replicator_interface &set_range (bool range_param, void* = nullptr) = 0; // 2
+	virtual bool get_range (void* = nullptr) const = 0; // 3
+	virtual surface_replicator_interface &set_limit (const sxsdk::vec2 &limit_param, void* = nullptr) = 0; // 4
+	virtual sxsdk::vec2 get_limit (void* = nullptr) const = 0; // 5
+	virtual surface_replicator_interface &set_distribution (int distribution_param, void* = nullptr) = 0; // 6
+	virtual int get_distribution (void* = nullptr) const = 0; // 7
+	virtual surface_replicator_interface &set_subdivision_level (int subdivision_level_param, void* = nullptr) = 0; // 8
+	virtual int get_subdivision_level (void* = nullptr) const = 0; // 9
+	virtual surface_replicator_interface &set_preview (int preview_param, void* = nullptr) = 0; // 10
+	virtual int get_preview (void* = nullptr) const = 0; // 11
+	virtual surface_replicator_interface &set_count (int count_param, void* = nullptr) = 0; // 12
+	virtual int get_count (void* = nullptr) const = 0; // 13
+	virtual surface_replicator_interface &set_direction (int direction_param, void* = nullptr) = 0; // 14
+	virtual int get_direction (void* = nullptr) const = 0; // 15
+	virtual surface_replicator_interface &set_random_replication (bool random_replication_param, void* = nullptr) = 0; // 16
+	virtual bool get_random_replication (void* = nullptr) const = 0; // 17
+	virtual surface_replicator_interface &set_random_translation (sxsdk::vec3 random_translation_param, void* = nullptr) = 0; // 18
+	virtual sxsdk::vec3 get_random_translation (void* = nullptr) const = 0; // 19
+	virtual surface_replicator_interface &set_random_translation_mode (int random_translation_mode_param, void* = nullptr) = 0; // 20
+	virtual int get_random_translation_mode (void* = nullptr) const = 0; // 21
+	virtual surface_replicator_interface &set_random_rotation (sxsdk::vec3 random_rotation_param, void* = nullptr) = 0; // 22
+	virtual sxsdk::vec3 get_random_rotation (void* = nullptr) const = 0; // 23
+	virtual surface_replicator_interface &set_random_scale (sxsdk::vec3 random_scale_param, void* = nullptr) = 0; // 24
+	virtual sxsdk::vec3 get_random_scale (void* = nullptr) const = 0; // 25
+	virtual surface_replicator_interface &set_random_uniscale (bool random_uniscale_param, void* = nullptr) = 0; // 26
+	virtual bool get_random_uniscale (void* = nullptr) const = 0; // 27
+	virtual surface_replicator_interface &set_random_seed (int random_seed_param, void* = nullptr) = 0; // 28
+	virtual int get_random_seed (void* = nullptr) const = 0; // 29
+	virtual surface_replicator_interface &set_uv_layer (int uv_layer_param, void* = nullptr) = 0; // 30
+	virtual int get_uv_layer (void* = nullptr) const = 0; // 31
+#pragma clang diagnostics pop
 	};
 
-	class
-	bone_joint_interface : public unknown_interface {
+	class bone_joint_interface : public unknown_interface {
 	public:
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
 	virtual bone_joint_interface &set_rotation (const sxsdk::quaternion_class &rotation_param, void* = nullptr) = 0; // 0
 	virtual sxsdk::quaternion_class get_rotation (void* = nullptr) const = 0; // 1
 	virtual bone_joint_interface &set_offset (const sxsdk::vec3 &offset_param, void* = nullptr) = 0; // 2
@@ -2044,5 +2219,6 @@ void unlink_master_surface (bool deep, void* aux = 0) { get_implementation().unl
 	virtual sxsdk::vec2 get_limit (int axis, void* aux = 0) const = 0; // 15
 	virtual bone_joint_interface &set_axis_dir (const sxsdk::vec3 &axis_dir_param, void* = nullptr) = 0; // 16
 	virtual sxsdk::vec3 get_axis_dir (void* = nullptr) const = 0; // 17
+#pragma clang diagnostics pop
 	};
 }

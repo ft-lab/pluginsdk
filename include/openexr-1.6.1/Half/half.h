@@ -87,7 +87,11 @@
 
 #include <iostream>
 
-class half
+class
+#if __GNUC__
+	 __attribute__ ((visibility ("default")))
+#endif
+half
 {
   public:
 
@@ -219,24 +223,26 @@ class half
     // Windows dynamic libraries don't like static
     // member variables.
     //---------------------------------------------------
-#ifndef OPENEXR_DLL
-    static const uif	        _toFloat[1 << 16];
-    static const unsigned short _eLut[1 << 9];
-#endif
+//#ifndef OPENEXR_DLL
+//    static const uif	        _toFloat[1 << 16];
+//    static const unsigned short _eLut[1 << 9];
+//#endif
 };
 
-#if defined(OPENEXR_DLL)
-    //--------------------------------------
-    // Lookup tables defined for Windows DLL
-    //--------------------------------------
-    #if defined(HALF_EXPORTS)
-        extern __declspec(dllexport) half::uif		_toFloat[1 << 16];
-        extern __declspec(dllexport) unsigned short	_eLut[1 << 9];
-    #else
-        extern __declspec(dllimport) half::uif		_toFloat[1 << 16];
-        extern __declspec(dllimport) unsigned short	_eLut[1 << 9];
-    #endif
-#endif
+//#if defined(OPENEXR_DLL)
+//    //--------------------------------------
+//    // Lookup tables defined for Windows DLL
+//    //--------------------------------------
+//    #if defined(HALF_EXPORTS)
+//        extern __declspec(dllexport) half::uif		_toFloat[1 << 16];
+//        extern __declspec(dllexport) unsigned short	_eLut[1 << 9];
+//    #else
+//        extern __declspec(dllimport) half::uif		_toFloat[1 << 16];
+//        extern __declspec(dllimport) unsigned short	_eLut[1 << 9];
+//    #endif
+//#endif
+extern half::uif		_toFloat[1 << 16];
+extern unsigned short	_eLut[1 << 9];
 
 
 //-----------
@@ -476,7 +482,7 @@ half::half (float f)
 	// to do the float-to-half conversion.
 	//
 
-	register int e = (x.i >> 23) & 0x000001ff;
+	int e = (x.i >> 23) & 0x000001ff;
 
 	e = _eLut[e];
 
@@ -487,7 +493,7 @@ half::half (float f)
 	    // bits and combine it with the sign and exponent.
 	    //
 
-	    register int m = x.i & 0x007fffff;
+	    int m = x.i & 0x007fffff;
 	    _h = e + ((m + 0x00000fff + ((m >> 13) & 1)) >> 13);
 	}
 	else

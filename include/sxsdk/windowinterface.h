@@ -6,124 +6,126 @@
 	#pragma warning(disable:4355)
 #endif
 
-// error C2653: 'toolboxview' : is not a class or namespace name windowinterface.hpp 395
-namespace toolboxview {
-	class view_class;
+namespace xshade {
+	class scene_class;
+	class window_class;
+	namespace toolboxview {
+		class view_class;
+	}
 }
-
 namespace sxsdk {
 	class window_interface : public plugin_interface {
 	public:
-		/// \en Constant values used for positioning controls.\enden \ja ƒRƒ“ƒgƒ[ƒ‹‚ÌˆÊ’u‚ğİ’è‚·‚é’è”B\endja 
+		/// \en Constant values used for positioning controls.\enden \ja ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ã®ä½ç½®ã‚’è¨­å®šã™ã‚‹å®šæ•°ã€‚\endja 
 		enum positioning_enum { same = 0x10000000, next = 0x20000000 }; 
-		/// \en Constant values for specifying how the window should be invoked or where it should be embedded.\enden \ja ƒEƒCƒ“ƒhƒE‚ğ•\¦‚·‚éƒƒjƒ…[ƒAƒCƒeƒ€‚ğ‚Ç‚±‚Éİ’è‚·‚é‚©A‚¨‚æ‚ÑƒEƒCƒ“ƒhƒE‚ğ‚Ç‚±‚É–„‚ß‚Ş‚©‚ğw’è‚·‚éƒtƒ‰ƒOB\endja 
+		/// \en Constant values for specifying how the window should be invoked or where it should be embedded.\enden \ja ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã‚’è¡¨ç¤ºã™ã‚‹ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã‚¢ã‚¤ãƒ†ãƒ ã‚’ã©ã“ã«è¨­å®šã™ã‚‹ã‹ã€ãŠã‚ˆã³ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã‚’ã©ã“ã«åŸ‹ã‚è¾¼ã‚€ã‹ã‚’æŒ‡å®šã™ã‚‹ãƒ•ãƒ©ã‚°ã€‚\endja 
 		enum placement_enum { 
-		/// \en The window should be invoked from the View menu.\enden \ja •\¦ƒƒjƒ…[‚©‚çƒEƒCƒ“ƒhƒE‚ğ•\¦‚·‚éB\endja 
+		/// \en The window should be invoked from the View menu.\enden \ja è¡¨ç¤ºãƒ¡ãƒ‹ãƒ¥ãƒ¼ã‹ã‚‰ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã‚’è¡¨ç¤ºã™ã‚‹ã€‚\endja 
 			view_menu_placement_flag = 0x01, 
-		/// \en The window should be invoked from the Browser context menu.\enden \ja ƒuƒ‰ƒEƒUƒRƒ“ƒeƒNƒXƒgƒƒjƒ…[‚©‚çƒEƒCƒ“ƒhƒE‚ğ•\¦‚·‚éB\endja 
+		/// \en The window should be invoked from the Browser context menu.\enden \ja ãƒ–ãƒ©ã‚¦ã‚¶ã‚³ãƒ³ãƒ†ã‚¯ã‚¹ãƒˆãƒ¡ãƒ‹ãƒ¥ãƒ¼ã‹ã‚‰ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã‚’è¡¨ç¤ºã™ã‚‹ã€‚\endja 
 			browser_placement_flag = 0x02, 
-		/// \en The window should be invoked from the Image popup menu.\enden \ja ƒCƒ[ƒWƒRƒ“ƒeƒNƒXƒgƒƒjƒ…[‚©‚çƒEƒCƒ“ƒhƒE‚ğ•\¦‚·‚éB\endja 
+		/// \en The window should be invoked from the Image popup menu.\enden \ja ã‚¤ãƒ¡ãƒ¼ã‚¸ã‚³ãƒ³ãƒ†ã‚¯ã‚¹ãƒˆãƒ¡ãƒ‹ãƒ¥ãƒ¼ã‹ã‚‰ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã‚’è¡¨ç¤ºã™ã‚‹ã€‚\endja 
 			image_placement_flag = 0x04, 
-		/// \en The window should be invoked from the Motion popup menu.\enden \ja ƒ‚[ƒVƒ‡ƒ“İ’èƒRƒ“ƒeƒNƒXƒgƒƒjƒ…[‚©‚çƒEƒCƒ“ƒhƒE‚ğ•\¦‚·‚éB\endja 
+		/// \en The window should be invoked from the Motion popup menu.\enden \ja ãƒ¢ãƒ¼ã‚·ãƒ§ãƒ³è¨­å®šã‚³ãƒ³ãƒ†ã‚¯ã‚¹ãƒˆãƒ¡ãƒ‹ãƒ¥ãƒ¼ã‹ã‚‰ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã‚’è¡¨ç¤ºã™ã‚‹ã€‚\endja 
 			motion_placement_flag = 0x08, 
-		/// \en The window should be embedded in the browser window.\enden \ja ƒEƒCƒ“ƒhƒE‚ğƒuƒ‰ƒEƒUƒEƒCƒ“ƒhƒE‚É–„‚ß‚ŞB\endja 
+		/// \en The window should be embedded in the browser window.\enden \ja ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã‚’ãƒ–ãƒ©ã‚¦ã‚¶ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã«åŸ‹ã‚è¾¼ã‚€ã€‚\endja 
 			browser_embedment_flag = 0x010000, 
-		/// \en The window should be embedded in the image window.\enden \ja ƒEƒCƒ“ƒhƒE‚ğƒCƒ[ƒWƒEƒCƒ“ƒhƒE‚É–„‚ß‚ŞB\endja 
+		/// \en The window should be embedded in the image window.\enden \ja ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã‚’ã‚¤ãƒ¡ãƒ¼ã‚¸ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã«åŸ‹ã‚è¾¼ã‚€ã€‚\endja 
 			image_embedment_flag = 0x020000, 
-		/// \en The window should be embedded in the motion window.\enden \ja ƒEƒCƒ“ƒhƒE‚ğƒ‚[ƒVƒ‡ƒ“İ’èƒEƒCƒ“ƒhƒE‚É–„‚ß‚ŞB\endja 
+		/// \en The window should be embedded in the motion window.\enden \ja ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã‚’ãƒ¢ãƒ¼ã‚·ãƒ§ãƒ³è¨­å®šã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã«åŸ‹ã‚è¾¼ã‚€ã€‚\endja 
 			motion_embedment_flag = 0x040000, 
-		/// \en The window should be embedded in the controlbar window. \enden \ja ƒEƒCƒ“ƒhƒE‚ğƒRƒ“ƒgƒ[ƒ‹ƒo[‚É–„‚ß‚ŞB\endja 
+		/// \en The window should be embedded in the controlbar window. \enden \ja ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã‚’ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ãƒãƒ¼ã«åŸ‹ã‚è¾¼ã‚€ã€‚\endja 
 			controlbar_embedment_flag = 0x080000, 
 		}; 
-		/// \en Flags used for set down part of window control. \enden \ja ƒEƒCƒ“ƒhƒEƒRƒ“ƒgƒ[ƒ‹‚Ì”zF‚ğæ“¾‚·‚éÛ‚Ìƒp[ƒg‚ğw’è‚·‚éƒtƒ‰ƒOB\endja 
+		/// \en Flags used for set down part of window control. \enden \ja ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ã®é…è‰²ã‚’å–å¾—ã™ã‚‹éš›ã®ãƒ‘ãƒ¼ãƒˆã‚’æŒ‡å®šã™ã‚‹ãƒ•ãƒ©ã‚°ã€‚\endja 
 		enum window_theme_enum { 
-		/// \en The background of windows.\enden \ja ƒEƒCƒ“ƒhƒE”wŒiB\endja 
+		/// \en The background of windows.\enden \ja ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦èƒŒæ™¯ã€‚\endja 
 			theme_background_flag, 
-		/// \en The top of control faces.\enden \ja ƒRƒ“ƒgƒ[ƒ‹‚ÌƒOƒ‰ƒf[ƒVƒ‡ƒ“ã•”B\endja 
+		/// \en The top of control faces.\enden \ja ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ã®ã‚°ãƒ©ãƒ‡ãƒ¼ã‚·ãƒ§ãƒ³ä¸Šéƒ¨ã€‚\endja 
 			theme_face_top_flag, 
-		/// \en The bottom of control faces.\enden \ja ƒRƒ“ƒgƒ[ƒ‹‚ÌƒOƒ‰ƒf[ƒVƒ‡ƒ“‰º•”B\endja 
+		/// \en The bottom of control faces.\enden \ja ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ã®ã‚°ãƒ©ãƒ‡ãƒ¼ã‚·ãƒ§ãƒ³ä¸‹éƒ¨ã€‚\endja 
 			theme_face_bottom_flag, 
-		/// \en The highlight of controls.\enden \ja ƒRƒ“ƒgƒ[ƒ‹‚ÌƒnƒCƒ‰ƒCƒgB\endja 
+		/// \en The highlight of controls.\enden \ja ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ã®ãƒã‚¤ãƒ©ã‚¤ãƒˆã€‚\endja 
 			theme_highlight_flag, 
-		/// \en The shadow of controls.\enden \ja ƒRƒ“ƒgƒ[ƒ‹‚Ì‰eB\endja 
+		/// \en The shadow of controls.\enden \ja ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ã®å½±ã€‚\endja 
 			theme_shadow_flag, 
-		/// \en The white space of radio button and checkbox.\enden \ja ƒ‰ƒWƒIƒ{ƒ^ƒ“‚Æƒ`ƒFƒbƒNƒ{ƒbƒNƒX‚Ì‹ó”’•”•ªB\endja 
+		/// \en The white space of radio button and checkbox.\enden \ja ãƒ©ã‚¸ã‚ªãƒœã‚¿ãƒ³ã¨ãƒã‚§ãƒƒã‚¯ãƒœãƒƒã‚¯ã‚¹ã®ç©ºç™½éƒ¨åˆ†ã€‚\endja 
 			theme_white_space_flag, 
-		/// \en The active text.\enden \ja ƒAƒNƒeƒBƒuƒeƒLƒXƒgB\endja 
+		/// \en The active text.\enden \ja ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ãƒ†ã‚­ã‚¹ãƒˆã€‚\endja 
 			theme_active_text_flag, 
-		/// \en The inactive text. \enden \ja ”ñƒAƒNƒeƒBƒuƒeƒLƒXƒgB\endja 
+		/// \en The inactive text. \enden \ja éã‚¢ã‚¯ãƒ†ã‚£ãƒ–ãƒ†ã‚­ã‚¹ãƒˆã€‚\endja 
 			theme_inactive_text_flag, 
-		/// \en The selected text. \enden \ja ‘I‘ğ‚³‚ê‚½ƒeƒLƒXƒgB\endja 
+		/// \en The selected text. \enden \ja é¸æŠã•ã‚ŒãŸãƒ†ã‚­ã‚¹ãƒˆã€‚\endja 
 			theme_selected_text_flag, 
-		/// \en The number box.\enden \ja ”’l“ü—Íƒ{ƒbƒNƒXB\endja 
+		/// \en The number box.\enden \ja æ•°å€¤å…¥åŠ›ãƒœãƒƒã‚¯ã‚¹ã€‚\endja 
 			theme_number_box_flag, 
-		/// \en The mouseover.\enden \ja ƒ}ƒEƒXƒI[ƒo[B\endja 
+		/// \en The mouseover.\enden \ja ãƒã‚¦ã‚¹ã‚ªãƒ¼ãƒãƒ¼ã€‚\endja 
 			theme_mouseover_flag, 
-		/// \en The selected controls. \enden \ja ‘I‘ğ‚³‚ê‚½ƒRƒ“ƒgƒ[ƒ‹B\endja 
+		/// \en The selected controls. \enden \ja é¸æŠã•ã‚ŒãŸã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ã€‚\endja 
 			theme_selected_flag, 
-		/// \en The background of dialog. \enden \ja ƒ_ƒCƒAƒƒO‚Ì”wŒiFB\endja 
+		/// \en The background of dialog. \enden \ja ãƒ€ã‚¤ã‚¢ãƒ­ã‚°ã®èƒŒæ™¯è‰²ã€‚\endja 
 			theme_dialog_background_flag, 
 		}; 
-		/// \en Flags used for set down cell type of table control. \enden \ja ƒe[ƒuƒ‹ƒRƒ“ƒgƒ[ƒ‹‚ÌƒZƒ‹‚Ìƒ^ƒCƒv‚ğw’è‚·‚éƒtƒ‰ƒOB\endja 
+		/// \en Flags used for set down cell type of table control. \enden \ja ãƒ†ãƒ¼ãƒ–ãƒ«ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ã®ã‚»ãƒ«ã®ã‚¿ã‚¤ãƒ—ã‚’æŒ‡å®šã™ã‚‹ãƒ•ãƒ©ã‚°ã€‚\endja 
 		enum table_cell_type_enum { 
-		/// \en The none type.\enden \ja ‹ó”’ƒ^ƒCƒvB\endja 
+		/// \en The none type.\enden \ja ç©ºç™½ã‚¿ã‚¤ãƒ—ã€‚\endja 
 			table_none_type_flag = 0, 
-		/// \en The check box type.\enden \ja ƒ`ƒFƒbƒNƒ{ƒbƒNƒXƒ^ƒCƒvB\endja 
+		/// \en The check box type.\enden \ja ãƒã‚§ãƒƒã‚¯ãƒœãƒƒã‚¯ã‚¹ã‚¿ã‚¤ãƒ—ã€‚\endja 
 			table_bool_type_flag = 1, 
-		/// \en The integer box type.\enden \ja ®”’lƒ^ƒCƒvB\endja 
+		/// \en The integer box type.\enden \ja æ•´æ•°å€¤ã‚¿ã‚¤ãƒ—ã€‚\endja 
 			table_int_type_flag = 2, 
-		/// \en The float type.\enden \ja •‚“®¬”“_’lƒ^ƒCƒvB\endja 
+		/// \en The float type.\enden \ja æµ®å‹•å°æ•°ç‚¹å€¤ã‚¿ã‚¤ãƒ—ã€‚\endja 
 			table_float_type_flag = 3, 
-		/// \en The string type.\enden \ja •¶š—ñƒ^ƒCƒvB\endja 
+		/// \en The string type.\enden \ja æ–‡å­—åˆ—ã‚¿ã‚¤ãƒ—ã€‚\endja 
 			table_string_type_flag = 4, 
-		/// \en The color type.\enden \ja ƒJƒ‰[ƒ^ƒCƒvB\endja 
+		/// \en The color type.\enden \ja ã‚«ãƒ©ãƒ¼ã‚¿ã‚¤ãƒ—ã€‚\endja 
 			table_color_type_flag = 5, 
-		/// \en The path type.\enden \ja ƒpƒXƒ^ƒCƒvi•¶š—ñƒ^ƒCƒv‚¾‚ª•\¦‚·‚éÛ‚ÉƒpƒX‚©‚çƒtƒ@ƒCƒ‹–¼‚ğ”²‚«o‚µ‚Ä•\¦‚·‚éjB\endja 
+		/// \en The path type.\enden \ja ãƒ‘ã‚¹ã‚¿ã‚¤ãƒ—ï¼ˆæ–‡å­—åˆ—ã‚¿ã‚¤ãƒ—ã ãŒè¡¨ç¤ºã™ã‚‹éš›ã«ãƒ‘ã‚¹ã‹ã‚‰ãƒ•ã‚¡ã‚¤ãƒ«åã‚’æŠœãå‡ºã—ã¦è¡¨ç¤ºã™ã‚‹ï¼‰ã€‚\endja 
 			table_path_type_flag = 6, 
-		/// \en The time type.\enden \ja ŠÔƒ^ƒCƒvi®”’lƒ^ƒCƒv‚¾‚ª•\¦‚·‚éÛ‚ÉHH:MM:SSŒ`®‚É‚µ‚Ä•\¦‚·‚éjB\endja 
+		/// \en The time type.\enden \ja æ™‚é–“ã‚¿ã‚¤ãƒ—ï¼ˆæ•´æ•°å€¤ã‚¿ã‚¤ãƒ—ã ãŒè¡¨ç¤ºã™ã‚‹éš›ã«HH:MM:SSå½¢å¼ã«ã—ã¦è¡¨ç¤ºã™ã‚‹ï¼‰ã€‚\endja 
 			table_time_type_flag = 7, 
 		}; 
-		/// \en Flags used for set down cell type of table style flags. \enden \ja ƒe[ƒuƒ‹ƒRƒ“ƒgƒ[ƒ‹‚ÌƒXƒ^ƒCƒ‹‚ğw’è‚·‚éƒtƒ‰ƒOB\endja 
+		/// \en Flags used for set down cell type of table style flags. \enden \ja ãƒ†ãƒ¼ãƒ–ãƒ«ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ã®ã‚¹ã‚¿ã‚¤ãƒ«ã‚’æŒ‡å®šã™ã‚‹ãƒ•ãƒ©ã‚°ã€‚\endja 
 		enum table_style_enum { 
-		/// \en The flag of drawing row border.\enden \ja ‰¡Œrü•\¦‚Ìƒtƒ‰ƒOB\endja 
+		/// \en The flag of drawing row border.\enden \ja æ¨ªç½«ç·šè¡¨ç¤ºã®ãƒ•ãƒ©ã‚°ã€‚\endja 
 			table_style_row_border_flag = 0x0001, 
-		/// \en The flag of drawing column border.\enden \ja cŒrü•\¦‚Ìƒtƒ‰ƒOB\endja 
+		/// \en The flag of drawing column border.\enden \ja ç¸¦ç½«ç·šè¡¨ç¤ºã®ãƒ•ãƒ©ã‚°ã€‚\endja 
 			table_style_column_border_flag = 0x0002, 
-		/// \en The flag of header row visibility.\enden \ja ƒwƒbƒ_[”ñ•\¦‚Ìƒtƒ‰ƒOB\endja 
+		/// \en The flag of header row visibility.\enden \ja ãƒ˜ãƒƒãƒ€ãƒ¼éè¡¨ç¤ºã®ãƒ•ãƒ©ã‚°ã€‚\endja 
 			table_style_header_hidden = 0x0004,
-		/// \en The flag of single row selection.\enden \ja ’Pˆês‘I‘ğ‚Ìƒtƒ‰ƒOB\endja 
+		/// \en The flag of single row selection.\enden \ja å˜ä¸€è¡Œé¸æŠã®ãƒ•ãƒ©ã‚°ã€‚\endja 
 			table_style_single_row_selection = 0x0008,
+		/// \en The flag of horizontal scrollable.\enden \ja æ¨ªã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«å¯ãƒ•ãƒ©ã‚°ã€‚\endja 
+			table_style_scroll_horizontal = 0x0010,
+		/// \en The flag of inline number editable.\enden \ja æ•°å­—ã®ã‚¤ãƒ³ãƒ©ã‚¤ãƒ³ç·¨é›†ãƒ•ãƒ©ã‚°ã€‚\endja
+			table_style_inline_number_edit = 0x0020,
+		/// \en The flag of single row selection.\enden \ja é¸æŠãªã—çŠ¶æ…‹ã‚’è¨±ã™ãƒ•ãƒ©ã‚°ã€‚\endja 
+			table_style_allow_no_row_selection = 0x0040,
 		}; 
-		/// \en Flags used for editting of table style flags. \enden \ja ƒe[ƒuƒ‹ƒRƒ“ƒgƒ[ƒ‹‚ÌƒXƒ^ƒCƒ‹‚Ìw’è•û–@B\endja 
-		enum table_style_set_enum {
-		/// \en Clear the flags of the input.\enden \ja w’è‚Ì’l‚Ìƒtƒ‰ƒO‚ğƒNƒŠƒA‚·‚éB\endja 
-			table_style_off = 0,
-		/// \en Set the flags of the input.\enden \ja w’è‚Ì’l‚Ìƒtƒ‰ƒO‚ğƒZƒbƒg‚·‚éB\endja 
-			table_style_on  = 1,
-		/// \en Replace all flags with the input.\enden \ja ƒtƒ‰ƒO‘S‘Ì‚ğw’è’l‚É’u‚«Š·‚¦‚éB\endja 
-			table_style_replace = 2,
-		/// \en Toggle flags of the input.\enden \ja w’è‚Ì’l‚Ìƒtƒ‰ƒO‚ğƒgƒOƒ‹‚·‚éB\endja 
-			tabel_style_toggle = 3,
-		};
 			class mouse_tracker_class : public unknown_interface {
 		public:
 			window_interface &w;
 			sx::mouse_tracker_class &mouse_tracker;
 
 			virtual ~mouse_tracker_class () { }
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
 	mouse_tracker_class ( window_interface &w, const sx::vec<int,2> &where ) : w(w), mouse_tracker(w.create_mouse_tracker(this, where)) { w.set_handler(mouse_tracker, *this); } // -1
 	virtual void mouse_move ( sx::vec<int,2> p ) { } // -1
 	virtual void idle () { } // -1
 	virtual void mouse_release () { } // -1
+#pragma clang diagnostics pop
 		};
 
 		class control_base_class : public handler_interface {
 		public:
 			window_interface *w;
-			xshade::control::control_class &c;
+			xshade::control::control_class& c;
 
-			explicit control_base_class (window_interface &w, xshade::control::control_class &c) : w(&w), c(c) { w.set_handler(c, *this); }
-	virtual void delete_self ( void * = 0 ) { w->delete_control(c); } // -1
+			explicit control_base_class (window_interface &w, xshade::control::control_class& c) : w(&w), c(c) { w.set_handler(c, *this); }
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	virtual void delete_self ( void* = nullptr ) { w->delete_control(c); } // -1
 	int get_shade_version () const { return get_shade_build_number(); } // -1
 	int get_control_id () const { return w->get_control_id(c); } // -1
 	const char* get_control_idname () const { return w->get_control_idname(c); } // -1
@@ -149,59 +151,77 @@ namespace sxsdk {
 	int get_title_width () const { return w->get_title_width(c); } // -1
 	bool select_control ( bool select = true, bool invalidate_flag = true ) { return w->select(c, select, invalidate_flag); } // -1
 	int get_focused () const { return w->get_focused(c); } // -1
+#pragma clang diagnostics pop
 		};
 
 		class push_button_class : public control_base_class {
 		public:
 			plugin_push_button_class &c;
 
-	push_button_class ( window_interface &w, int control_id, int x, int y, int dx, int dy, const char*title ) : control_base_class(w, (xshade::control::control_class &)w.create_button(*this, control_id, x, y, dx, dy, title)), c((plugin_push_button_class &)control_base_class::c) { } // -1
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	push_button_class ( window_interface &w, int control_id, int x, int y, int dx, int dy, const char*title ) : control_base_class(w, (xshade::control::control_class& )w.create_button(*this, control_id, x, y, dx, dy, title)), c((plugin_push_button_class &)control_base_class::c) { } // -1
 	int get_value () const { return w->get_button_int_value(c); } // -1
+#pragma clang diagnostics pop
 		};
 
 		class checkbox_class : public control_base_class {
 		public:
 			plugin_checkbox_class &c;
 
-	checkbox_class ( window_interface &w, int control_id, int x, int y, int dx, int dy, const char*title ) : control_base_class(w, (xshade::control::control_class &)w.create_check_box(*this, control_id, x, y, dx, dy, title)), c((plugin_checkbox_class &)control_base_class::c) { } // -1
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	checkbox_class ( window_interface &w, int control_id, int x, int y, int dx, int dy, const char*title ) : control_base_class(w, (xshade::control::control_class& )w.create_check_box(*this, control_id, x, y, dx, dy, title)), c((plugin_checkbox_class &)control_base_class::c) { } // -1
 	checkbox_class& set_value ( int i ) { w->set_check_box_int_value(c, i); return *this; } // -1
 	int get_value () const { return w->get_check_box_int_value(c); } // -1
+#pragma clang diagnostics pop
 		};
 
 		class disclosure_button_class : public control_base_class {
 		public:
 			plugin_disclosure_button_class &c;
 
-	disclosure_button_class ( window_interface &w, int control_id, int x, int y, bool reversed = false ) : control_base_class(w, (xshade::control::control_class &)w.create_disclosure_button(*this, control_id, x, y, reversed)), c((plugin_disclosure_button_class &)control_base_class::c) { } // -1
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	disclosure_button_class ( window_interface &w, int control_id, int x, int y, bool reversed = false ) : control_base_class(w, (xshade::control::control_class& )w.create_disclosure_button(*this, control_id, x, y, reversed)), c((plugin_disclosure_button_class &)control_base_class::c) { } // -1
 	disclosure_button_class& set_value ( int i ) { w->set_disclosure_button_int_value(c, i); return *this; } // -1
 	int get_value () const { return w->get_disclosure_button_int_value(c); } // -1
+#pragma clang diagnostics pop
 		};
 
 		class flasher_class : public control_base_class {
 		public:
 			plugin_flasher_class &c;
 
-	flasher_class ( window_interface &w, int control_id, int x, int y, int dx, int dy ) : control_base_class(w, (xshade::control::control_class &)w.create_flasher(*this, control_id, x, y, dx, dy)), c((plugin_flasher_class &)control_base_class::c) { } // -1
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	flasher_class ( window_interface &w, int control_id, int x, int y, int dx, int dy ) : control_base_class(w, (xshade::control::control_class& )w.create_flasher(*this, control_id, x, y, dx, dy)), c((plugin_flasher_class &)control_base_class::c) { } // -1
+#pragma clang diagnostics pop
 		};
 
 		class slider_class : public control_base_class {
 		public:
 			plugin_slider_class &c;
 
-	slider_class ( window_interface &w, int control_id, int x, int y, int size, bool vertical, const char*title, bool show_marks ) : control_base_class(w, (xshade::control::control_class &)w.create_slider(*this, control_id, x, y, size, vertical, title, show_marks)), c((plugin_slider_class &)control_base_class::c) { } // -1
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	slider_class ( window_interface &w, int control_id, int x, int y, int size, bool vertical, const char*title, bool show_marks ) : control_base_class(w, (xshade::control::control_class& )w.create_slider(*this, control_id, x, y, size, vertical, title, show_marks)), c((plugin_slider_class &)control_base_class::c) { } // -1
 	slider_class& set_value ( float f ) { w->set_slider_float_value(c, f); return *this; } // -1
 	float get_value () const { return w->get_slider_float_value(c); } // -1
 	slider_class& set_range ( float min, float max ) { w->set_slider_range(c, min, max); return *this; } // -1
 	slider_class& set_integer () { w->set_slider_integer(c); return *this; } // -1
 	slider_class& set_columns ( int columns ) { w->set_slider_columns(c, columns); return *this; } // -1
+#pragma clang diagnostics pop
 		};
 
 		class number_class : public control_base_class {
 		public:
 			plugin_number_class &c;
 
-	number_class ( window_interface &w, int control_id, int x, int y, int dx, int dy, const char*title ) : control_base_class(w, (xshade::control::control_class &)w.create_number(*this, control_id, x, y, dx, dy, title)), c((plugin_number_class &)control_base_class::c) { } // -1
-	number_class ( window_interface &w, int control_id, int x, int y, int dx, int dy, const char*title, const char*unit ) : control_base_class(w, (xshade::control::control_class &)w.create_number_with_unit(*this, control_id, x, y, dx, dy, title, unit)), c((plugin_number_class &)control_base_class::c) { } // -1
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	number_class ( window_interface &w, int control_id, int x, int y, int dx, int dy, const char*title ) : control_base_class(w, (xshade::control::control_class& )w.create_number(*this, control_id, x, y, dx, dy, title)), c((plugin_number_class &)control_base_class::c) { } // -1
+	number_class ( window_interface &w, int control_id, int x, int y, int dx, int dy, const char*title, const char*unit ) : control_base_class(w, (xshade::control::control_class& )w.create_number_with_unit(*this, control_id, x, y, dx, dy, title, unit)), c((plugin_number_class &)control_base_class::c) { } // -1
 	number_class& set_value ( float f ) { w->set_number_float_value(c, f); return *this; } // -1
 	number_class& set_double_value ( double d ) { w->set_number_double_value(c, d); return *this; } // -1
 	float get_value () const { return w->get_number_float_value(c); } // -1
@@ -211,139 +231,184 @@ namespace sxsdk {
 	number_class& set_fraction ( int fraction ) { w->set_number_fraction(c, fraction); return *this; } // -1
 	number_class& set_min ( double min ) { w->set_number_min(c, min); return *this; } // -1
 	number_class& set_max ( double max ) { w->set_number_max(c, max); return *this; } // -1
+#pragma clang diagnostics pop
 		};
 
 		class popup_menu_class : public control_base_class {
 		public:
 			plugin_popup_menu_class &c;
 
-	popup_menu_class ( window_interface &w, int control_id, int x, int y, const char*title, int width, const char*items ) : control_base_class(w, (xshade::control::control_class &)w.create_popup(*this, control_id, x, y, title, width, items)), c((plugin_popup_menu_class &)control_base_class::c) { } // -1
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	popup_menu_class ( window_interface &w, int control_id, int x, int y, const char*title, int width, const char*items ) : control_base_class(w, (xshade::control::control_class& )w.create_popup(*this, control_id, x, y, title, width, items)), c((plugin_popup_menu_class &)control_base_class::c) { } // -1
 	popup_menu_class& set_value ( int i ) { w->set_popup_int_value(c, i); return *this; } // -1
 	int get_value () const { return w->get_popup_int_value(c); } // -1
+#pragma clang diagnostics pop
 		};
 
 		class color_disk_class : public control_base_class {
 		public:
 			plugin_color_disk_class &c;
 
-	color_disk_class ( window_interface &w, int control_id, int x, int y ) : control_base_class(w, (xshade::control::control_class &)w.create_color_disk(*this, control_id, x, y)), c((plugin_color_disk_class &)control_base_class::c) { } // -1
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	color_disk_class ( window_interface &w, int control_id, int x, int y ) : control_base_class(w, (xshade::control::control_class& )w.create_color_disk(*this, control_id, x, y)), c((plugin_color_disk_class &)control_base_class::c) { } // -1
 	color_disk_class& set_value ( const sxsdk::vec2 &v ) { w->set_color_disk_vec2_value(c, v); return *this; } // -1
 	sxsdk::vec2 get_value () const { return w->get_color_disk_vec2_value(c); } // -1
+#pragma clang diagnostics pop
 		};
 
 		class color_box_class : public control_base_class {
 		public:
 			plugin_color_box_class &c;
 
-	color_box_class ( window_interface &w, int control_id, int x, int y, int dx, int dy ) : control_base_class(w, (xshade::control::control_class &)w.create_color_box(*this, control_id, x, y, dx, dy)), c((plugin_color_box_class &)control_base_class::c) { } // -1
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	color_box_class ( window_interface &w, int control_id, int x, int y, int dx, int dy ) : control_base_class(w, (xshade::control::control_class& )w.create_color_box(*this, control_id, x, y, dx, dy)), c((plugin_color_box_class &)control_base_class::c) { } // -1
 	color_box_class& set_value ( const sxsdk::rgb_class&r ) { w->set_color_box_rgb_value(c, r); return *this; } // -1
 	sxsdk::rgb_class get_value () const { return w->get_color_box_rgb_value(c); } // -1
+#pragma clang diagnostics pop
 		};
 
 		class image_box_class : public control_base_class {
 		public:
 			plugin_image_box_class &c;
 
-	image_box_class ( window_interface &w, int control_id, int x, int y, int dx, int dy ) : control_base_class(w, (xshade::control::control_class &)w.create_image_box(*this, control_id, x, y, dx, dy)), c((plugin_image_box_class &)control_base_class::c) { } // -1
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	image_box_class ( window_interface &w, int control_id, int x, int y, int dx, int dy ) : control_base_class(w, (xshade::control::control_class& )w.create_image_box(*this, control_id, x, y, dx, dy)), c((plugin_image_box_class &)control_base_class::c) { } // -1
 	image_box_class& set_value ( image_interface *i ) { w->set_image_box_image_value(c, i); return *this; } // -1
 	sxsdk::image_interface* get_value () const { return w->get_image_box_image_value(c); } // -1
+#pragma clang diagnostics pop
 		};
 
 		class editable_text_class : public control_base_class {
 		public:
 			plugin_editable_text_class &c;
 
-	editable_text_class ( window_interface &w, int control_id, int x, int y, int dx, int dy, const char *title ) : control_base_class(w, (xshade::control::control_class &)w.create_editable_text(*this, control_id, x, y, dx, dy, title)), c((plugin_editable_text_class &)control_base_class::c) { } // -1
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	editable_text_class ( window_interface &w, int control_id, int x, int y, int dx, int dy, const char *title ) : control_base_class(w, (xshade::control::control_class& )w.create_editable_text(*this, control_id, x, y, dx, dy, title)), c((plugin_editable_text_class &)control_base_class::c) { } // -1
 	editable_text_class& set_value ( const char *s ) { w->set_editable_text_string_value(c, s); return *this; } // -1
 	const char * get_value () const { return w->get_editable_text_string_value(c); } // -1
+#pragma clang diagnostics pop
 		};
 
 		class static_text_class : public control_base_class {
 		public:
 			plugin_static_text_class &c;
 
-	static_text_class ( window_interface &w, int control_id, int x, int y, int dx, int dy, const char *title ) : control_base_class(w, (xshade::control::control_class &)w.create_static_text(*this, control_id, x, y, dx, dy, title)), c((plugin_static_text_class &)control_base_class::c) { } // -1
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	static_text_class ( window_interface &w, int control_id, int x, int y, int dx, int dy, const char *title ) : control_base_class(w, (xshade::control::control_class& )w.create_static_text(*this, control_id, x, y, dx, dy, title)), c((plugin_static_text_class &)control_base_class::c) { } // -1
+#pragma clang diagnostics pop
 		};
 
 		class radio_button_class : public control_base_class {
 		public:
 			plugin_radio_button_class &c;
 
-	radio_button_class ( window_interface &w, int control_id, int x, int y, int dx, int dy, const char *title ) : control_base_class(w, (xshade::control::control_class &)w.create_radio_button(*this, control_id, x, y, dx, dy, title)), c((plugin_radio_button_class &)control_base_class::c) { } // -1
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	radio_button_class ( window_interface &w, int control_id, int x, int y, int dx, int dy, const char *title ) : control_base_class(w, (xshade::control::control_class& )w.create_radio_button(*this, control_id, x, y, dx, dy, title)), c((plugin_radio_button_class &)control_base_class::c) { } // -1
 	radio_button_class& set_value ( int i ) { w->set_radio_button_int_value(c, i); return *this; } // -1
 	int get_value () const { return w->get_radio_button_int_value(c); } // -1
+#pragma clang diagnostics pop
 		};
 
 		class tab_class : public control_base_class {
 		public:
 			plugin_tab_class &c;
 
-	tab_class ( window_interface &w, int control_id, int x, int y, int dx, int dy, const char *title ) : control_base_class(w, (xshade::control::control_class &)w.create_tab(*this, control_id, x, y, dx, dy, title)), c((plugin_tab_class &)control_base_class::c) { } // -1
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	tab_class ( window_interface &w, int control_id, int x, int y, int dx, int dy, const char *title ) : control_base_class(w, (xshade::control::control_class& )w.create_tab(*this, control_id, x, y, dx, dy, title)), c((plugin_tab_class &)control_base_class::c) { } // -1
 	tab_class& set_value ( int i ) { w->set_tab_int_value(c, i); return *this; } // -1
 	int get_value () const { return w->get_tab_int_value(c); } // -1
 	tab_class& set_lazy ( bool lazy ) { w->set_tab_lazy(c, lazy); return *this; } // -1
 	bool get_lazy () const { return w->get_tab_lazy(c); } // -1
+#pragma clang diagnostics pop
 		};
 
 		class vec2_control_class : public control_base_class {
 		public:
-			plugin_vec2_control_class &c;
+			plugin_vec2_control_class& c;
 
-	vec2_control_class ( window_interface &w, int control_id, int x, int y, int dx, int dy, const char *title ) : control_base_class(w, (xshade::control::control_class &)w.create_vec2_control(*this, control_id, x, y, dx, dy, title)), c((plugin_vec2_control_class &)control_base_class::c) { } // -1
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	vec2_control_class ( window_interface &w, int control_id, int x, int y, int dx, int dy, const char *title ) : control_base_class(w, (xshade::control::control_class& )w.create_vec2_control(*this, control_id, x, y, dx, dy, title)), c((plugin_vec2_control_class& )control_base_class::c) { } // -1
 	vec2_control_class& set_value (const sxsdk::vec2& v) { w->set_vec2_control_value(c, v); return *this; } // -1
 	sxsdk::vec2 get_value () const { return w->get_vec2_control_value(c); } // -1
+#pragma clang diagnostics pop
 		};
 
 		class vec3_control_class : public control_base_class {
 		public:
-			plugin_vec3_control_class &c;
+			plugin_vec3_control_class& c;
 
-	vec3_control_class ( window_interface &w, int control_id, int x, int y, int dx, int dy, const char *title ) : control_base_class(w, (xshade::control::control_class &)w.create_vec3_control(*this, control_id, x, y, dx, dy, title)), c((plugin_vec3_control_class &)control_base_class::c) { } // -1
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	vec3_control_class ( window_interface &w, int control_id, int x, int y, int dx, int dy, const char *title ) : control_base_class(w, (xshade::control::control_class& )w.create_vec3_control(*this, control_id, x, y, dx, dy, title)), c((plugin_vec3_control_class& )control_base_class::c) { } // -1
 	vec3_control_class& set_value (const sxsdk::vec3& v) { w->set_vec3_control_value(c, v); return *this; } // -1
 	sxsdk::vec3 get_value () const { return w->get_vec3_control_value(c); } // -1
+#pragma clang diagnostics pop
 		};
 
 		class vec4_control_class : public control_base_class {
 		public:
-			plugin_vec4_control_class &c;
+			plugin_vec4_control_class& c;
 
-	vec4_control_class ( window_interface &w, int control_id, int x, int y, int dx, int dy, const char *title ) : control_base_class(w, (xshade::control::control_class &)w.create_vec4_control(*this, control_id, x, y, dx, dy, title)), c((plugin_vec4_control_class &)control_base_class::c) { } // -1
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	vec4_control_class ( window_interface &w, int control_id, int x, int y, int dx, int dy, const char *title ) : control_base_class(w, (xshade::control::control_class& )w.create_vec4_control(*this, control_id, x, y, dx, dy, title)), c((plugin_vec4_control_class& )control_base_class::c) { } // -1
 	vec4_control_class& set_value (const sxsdk::vec4& v) { w->set_vec4_control_value(c, v); return *this; } // -1
 	sxsdk::vec4 get_value () const { return w->get_vec4_control_value(c); } // -1
+#pragma clang diagnostics pop
 		};
 
 		class quaternion_control_class : public control_base_class {
 		public:
-			plugin_quaternion_control_class &c;
+			plugin_quaternion_control_class& c;
 
-	quaternion_control_class ( window_interface &w, int control_id, int x, int y, int dx, int dy, const char *title ) : control_base_class(w, (xshade::control::control_class &)w.create_quaternion_control(*this, control_id, x, y, dx, dy, title)), c((plugin_quaternion_control_class &)control_base_class::c) { } // -1
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	quaternion_control_class ( window_interface &w, int control_id, int x, int y, int dx, int dy, const char *title ) : control_base_class(w, (xshade::control::control_class& )w.create_quaternion_control(*this, control_id, x, y, dx, dy, title)), c((plugin_quaternion_control_class& )control_base_class::c) { } // -1
 	quaternion_control_class& set_value (const sxsdk::quaternion_class& v) { w->set_quaternion_value(c, v); return *this; } // -1
 	sxsdk::quaternion_class get_value () const { return w->get_quaternion_value(c); } // -1
+#pragma clang diagnostics pop
 		};
 
 		class matrix_control_class : public control_base_class {
 		public:
-			plugin_matrix_control_class &c;
+			plugin_matrix_control_class& c;
 
-	matrix_control_class ( window_interface &w, int control_id, int x, int y, int dx, int dy, const char *title ) : control_base_class(w, (xshade::control::control_class &)w.create_matrix_control(*this, control_id, x, y, dx, dy, title)), c((plugin_matrix_control_class &)control_base_class::c) { } // -1
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	matrix_control_class ( window_interface &w, int control_id, int x, int y, int dx, int dy, const char *title ) : control_base_class(w, (xshade::control::control_class& )w.create_matrix_control(*this, control_id, x, y, dx, dy, title)), c((plugin_matrix_control_class& )control_base_class::c) { } // -1
 	matrix_control_class& set_value (const sxsdk::mat4& v) { w->set_matrix_control_value(c, v); return *this; } // -1
 	sxsdk::mat4 get_value () const { return w->get_matrix_control_value(c); } // -1
+#pragma clang diagnostics pop
 		};
 
 		class scale_control_class : public control_base_class {
 		public:
-			plugin_scale_control_class &c;
+			plugin_scale_control_class& c;
 
-	scale_control_class ( window_interface &w, int control_id, int x, int y, const char *title ) : control_base_class(w, (xshade::control::control_class &)w.create_scale_control(*this, control_id, x, y, title)), c((plugin_scale_control_class &)control_base_class::c) { } // -1
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	scale_control_class ( window_interface &w, int control_id, int x, int y, const char *title ) : control_base_class(w, (xshade::control::control_class& )w.create_scale_control(*this, control_id, x, y, title)), c((plugin_scale_control_class& )control_base_class::c) { } // -1
 	scale_control_class& set_value (int s) { w->set_scale_control_value(c, s); return *this; } // -1
 	int get_value () const { return w->get_scale_control_value(c); } // -1
+#pragma clang diagnostics pop
 		};
 
 		class table_control_class : public control_base_class {
 		public:
-			plugin_table_control_class &c;
+			plugin_table_control_class& c;
 
-	table_control_class ( window_interface &w, int control_id, int x, int y, int dx, int dy ) : control_base_class(w, (xshade::control::control_class &)w.create_table_control(*this, control_id, x, y, dx, dy)), c((plugin_table_control_class &)control_base_class::c) { } // -1
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	table_control_class ( window_interface &w, int control_id, int x, int y, int dx, int dy ) : control_base_class(w, (xshade::control::control_class& )w.create_table_control(*this, control_id, x, y, dx, dy)), c((plugin_table_control_class& )control_base_class::c) { } // -1
 	table_control_class& insert_column (table_cell_type_enum type, int width, const char *label, int col = -1) { w->insert_table_column(c, type, width, label, col); return *this; } // -1
 	table_control_class& remove_column (int col = -1) { w->remove_table_column(c, col); return *this; } // -1
 	table_control_class& insert_row (int row = -1) { w->insert_table_row(c, row); return *this; } // -1
@@ -352,7 +417,7 @@ namespace sxsdk {
 	table_control_class& set_bool_value (int row, int col, bool value) { w->set_bool_value(c, row, col, value); return *this; } // -1
 	table_control_class& set_int_value (int row, int col, int value) { w->set_int_value(c, row, col, value); return *this; } // -1
 	table_control_class& set_float_value (int row, int col, int value) { w->set_float_value(c, row, col, value); return *this; } // -1
-	table_control_class& set_string_value_deprecated (int row, int col, const std::string &value) { w->set_string_value_deprecated(c, row, col, value); return *this; } // -1
+	table_control_class& set_string_value_deprecated (int row, int col, const std::string& value) { w->set_string_value_deprecated(c, row, col, value); return *this; } // -1
 	table_control_class& set_string_value (int row, int col, const char* value) { w->set_string_value(c, row, col, value); return *this; } // -1
 	table_control_class& set_color_value (int row, int col, const sxsdk::rgb_class &value) { w->set_color_value(c, row, col, value); return *this; } // -1
 	bool get_bool_value (int row, int col) { return w->get_bool_value(c, row, col); } // -1
@@ -383,9 +448,12 @@ namespace sxsdk {
 	int number_of_columns () { return w->number_of_columns(c); } // -1
 	virtual void table_select_changed ( const int indices[],const int n ) { } // -1
 	virtual bool double_clicked ( const int row_index ) { return false; } // -1
+#pragma clang diagnostics pop
 		};
 
 		virtual ~window_interface () { }
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
 	window_interface (shade_interface& shade) : shade(shade), w(0) { } // -1
 	window_interface (shade_interface& shade, sxsdk::dialog_interface& dialog, dialog_item_class& item, int flags) : shade(shade), w(0) { w = shade.implementation().window_new_dialog_item(*this, dialog, item, flags); } // -1
 	window_interface (sxsdk::window_interface& parent, int flags) : shade(parent.shade), w(0) { w = shade.implementation().window_new(*this, &parent, flags); } // -1
@@ -415,8 +483,8 @@ namespace sxsdk {
 	virtual void deactivate ( void*aux = 0 ) { shade.implementation().window_deactivate(*this); }  // 22
 	virtual void drag_file (const char* path, void* aux = 0) { shade.implementation().window_drag_file(*this, path); }  // 23
 	virtual sxsdk::image_interface* get_image_interface (void* aux = 0) { return shade.implementation().window_get_image_interface(*this); }  // 24
-	virtual sx::vec<int,2> get_frame_position (void * = 0) const { return shade.implementation().window_get_frame_rectangle(*this).min; } // 25
-	virtual window_interface &set_frame_position (sx::vec<int,2> frame_position_param, void * = 0) { sx::rectangle_class r = get_frame_rectangle(); r.max.x += frame_position_param.x - r.min.x; r.max.y += frame_position_param.y - r.min.y; r.min.x = frame_position_param.x; r.min.y = frame_position_param.y; set_frame_rectangle(r); return *this; } // 26
+	virtual sx::vec<int,2> get_frame_position (void* = nullptr) const { return shade.implementation().window_get_frame_rectangle(*this).min; } // 25
+	virtual window_interface &set_frame_position (sx::vec<int,2> frame_position_param, void* = nullptr) { sx::rectangle_class r = get_frame_rectangle(); r.max.x += frame_position_param.x - r.min.x; r.max.y += frame_position_param.y - r.min.y; r.min.x = frame_position_param.x; r.min.y = frame_position_param.y; set_frame_rectangle(r); return *this; } // 26
 	virtual bool should_clear (void* aux = 0) { return true; }  // 27
 	virtual void* get_native_window (void* aux = 0) { return shade.implementation().window_get_native_window(*this); }  // 28
 	virtual void push_button_clicked (sxsdk::window_interface::push_button_class& push_button, void* aux = 0) { }  // 29
@@ -590,28 +658,28 @@ namespace sxsdk {
 	virtual int window_interface_dummy197(void *) { assert(false); throw "invalid interface window_interface"; return 0; } // 197
 	virtual int window_interface_dummy198(void *) { assert(false); throw "invalid interface window_interface"; return 0; } // 198
 	virtual int window_interface_dummy199(void *) { assert(false); throw "invalid interface window_interface"; return 0; } // 199
-float get_horizontal_line_scroll (void * = 0) const { return shade.implementation().window_get_horizontal_line_scroll(*this); }
-window_interface &set_horizontal_line_scroll (float horizontal_line_scroll_param, void * = 0) { shade.implementation().window_set_horizontal_line_scroll(*this, horizontal_line_scroll_param); return *this; }
-float get_vertical_line_scroll (void * = 0) const { return shade.implementation().window_get_vertical_line_scroll(*this); }
-window_interface &set_vertical_line_scroll (float vertical_line_scroll_param, void * = 0) { shade.implementation().window_set_vertical_line_scroll(*this, vertical_line_scroll_param); return *this; }
-float get_horizontal_page_scroll (void * = 0) const { return shade.implementation().window_get_horizontal_page_scroll(*this); }
-window_interface &set_horizontal_page_scroll (float horizontal_page_scroll_param, void * = 0) { shade.implementation().window_set_horizontal_page_scroll(*this, horizontal_page_scroll_param); return *this; }
-float get_vertical_page_scroll (void * = 0) const { return shade.implementation().window_get_vertical_page_scroll(*this); }
-window_interface &set_vertical_page_scroll (float vertical_page_scroll_param, void * = 0) { shade.implementation().window_set_vertical_page_scroll(*this, vertical_page_scroll_param); return *this; }
+float get_horizontal_line_scroll (void* = nullptr) const { return shade.implementation().window_get_horizontal_line_scroll(*this); }
+window_interface &set_horizontal_line_scroll (float horizontal_line_scroll_param, void* = nullptr) { shade.implementation().window_set_horizontal_line_scroll(*this, horizontal_line_scroll_param); return *this; }
+float get_vertical_line_scroll (void* = nullptr) const { return shade.implementation().window_get_vertical_line_scroll(*this); }
+window_interface &set_vertical_line_scroll (float vertical_line_scroll_param, void* = nullptr) { shade.implementation().window_set_vertical_line_scroll(*this, vertical_line_scroll_param); return *this; }
+float get_horizontal_page_scroll (void* = nullptr) const { return shade.implementation().window_get_horizontal_page_scroll(*this); }
+window_interface &set_horizontal_page_scroll (float horizontal_page_scroll_param, void* = nullptr) { shade.implementation().window_set_horizontal_page_scroll(*this, horizontal_page_scroll_param); return *this; }
+float get_vertical_page_scroll (void* = nullptr) const { return shade.implementation().window_get_vertical_page_scroll(*this); }
+window_interface &set_vertical_page_scroll (float vertical_page_scroll_param, void* = nullptr) { shade.implementation().window_set_vertical_page_scroll(*this, vertical_page_scroll_param); return *this; }
 void show_hide (void* aux = 0) { if (is_shown()) hide(); else { show(); bring_to_front(); } }
 void show (void* aux = 0) { shade.implementation().window_show(*this); }
 void hide (void* aux = 0) { shade.implementation().window_hide(*this); }
 void bring_to_front (void* aux = 0) { shade.implementation().window_select(*this); }
-bool is_shown (void * = 0) const { return shade.implementation().window_is_shown(*this); }
-const char* get_title (void * = 0) const { return shade.implementation().window_get_title(*this); }
-window_interface &set_title (const char* title_param, void * = 0) { shade.implementation().window_set_title(*this, title_param); return *this; }
-sx::vec<int,2> get_canvas_size (void * = 0) const { return shade.implementation().window_get_canvas_size(*this); }
-window_interface &set_canvas_size (sx::vec<int,2> canvas_size_param, void * = 0) { shade.implementation().window_set_canvas_size(*this, canvas_size_param); return *this; }
-sx::vec<int,2> get_client_size (void * = 0) const { return shade.implementation().window_get_client_size(*this); }
-window_interface &set_client_size (sx::vec<int,2> client_size_param, void * = 0) { shade.implementation().window_set_client_size(*this, client_size_param); return *this; }
-sx::rectangle_class get_frame_rectangle (void * = 0) const { return shade.implementation().window_get_frame_rectangle(*this); }
-window_interface &set_frame_rectangle (sx::rectangle_class frame_rectangle_param, void * = 0) { shade.implementation().window_set_frame_rectangle(*this, frame_rectangle_param); return *this; }
-sx::rectangle_class get_layout_bounds (void * = 0) const { return shade.implementation().window_get_layout_bounds(*this); }
+bool is_shown (void* = nullptr) const { return shade.implementation().window_is_shown(*this); }
+const char* get_title (void* = nullptr) const { return shade.implementation().window_get_title(*this); }
+window_interface &set_title (const char* title_param, void* = nullptr) { shade.implementation().window_set_title(*this, title_param); return *this; }
+sx::vec<int,2> get_canvas_size (void* = nullptr) const { return shade.implementation().window_get_canvas_size(*this); }
+window_interface &set_canvas_size (sx::vec<int,2> canvas_size_param, void* = nullptr) { shade.implementation().window_set_canvas_size(*this, canvas_size_param); return *this; }
+sx::vec<int,2> get_client_size (void* = nullptr) const { return shade.implementation().window_get_client_size(*this); }
+window_interface &set_client_size (sx::vec<int,2> client_size_param, void* = nullptr) { shade.implementation().window_set_client_size(*this, client_size_param); return *this; }
+sx::rectangle_class get_frame_rectangle (void* = nullptr) const { return shade.implementation().window_get_frame_rectangle(*this); }
+window_interface &set_frame_rectangle (sx::rectangle_class frame_rectangle_param, void* = nullptr) { shade.implementation().window_set_frame_rectangle(*this, frame_rectangle_param); return *this; }
+sx::rectangle_class get_layout_bounds (void* = nullptr) const { return shade.implementation().window_get_layout_bounds(*this); }
 void pump (void* aux = 0) { shade.implementation().window_pump(*this); }
 void paint (void* aux = 0) { shade.implementation().window_paintself(*this); }
 void set_client_rectangle (const sx::rectangle_class& client) { shade.implementation().window_set_client_rectangle(*this, client); }
@@ -638,10 +706,12 @@ void load_sxul (const char* sxul) { shade.implementation().window_load_sxul(*thi
 void load_sxul (sxsdk::stream_interface& stream) { shade.implementation().window_load_sxul_stream(*this, stream); }
 void set_trigger (enums::trigger_enum trigger) { shade.implementation().window_set_trigger(*this, trigger); }
 void begin_opengl (void* aux = 0) { shade.implementation().window_begin_opengl(*this); }
+void opengl_viewport (int x, int y, int width, int height, void* aux = 0) { shade.implementation().window_opengl_viewport(*this, x, y, width, height); }
 void end_opengl (void* aux = 0) { shade.implementation().window_end_opengl(*this); }
 sxsdk::rgb_class get_theme_color (int flags) const { return shade.implementation().get_theme_color(flags); }
 void set_cursor (int cursor_index, void* aux = 0) { shade.implementation().window_set_cursor(*this, cursor_index); }
 int get_string_height () const { return shade.implementation().get_string_height(); }
+#pragma clang diagnostics pop
 	private:
 		plugin_push_button_class &create_button (handler_interface &handler, int control_id, int x, int y, int dx, int dy, const char*title, void* aux =0) { return shade.implementation().window_create_button(*this, handler, control_id, x, y, dx, dy, title); }
 		plugin_checkbox_class &create_check_box (handler_interface &handler, int control_id, int x, int y, int dx, int dy, const char*title, void* aux =0) { return shade.implementation().window_create_check_box(*this, handler, control_id, x, y, dx, dy, title); }
@@ -669,40 +739,40 @@ int get_string_height () const { return shade.implementation().get_string_height
 		int get_popup_int_value (plugin_popup_menu_class &c) { return shade.implementation().window_get_popup_int_value(*this, c); }
 		void set_radio_button_int_value (plugin_radio_button_class &c, int i) { shade.implementation().window_set_radio_button_int_value(*this, c, i); }
 		int get_radio_button_int_value (plugin_radio_button_class &c) { return shade.implementation().window_get_radio_button_int_value(*this, c); }
-		void set_color_disk_vec2_value (plugin_color_disk_class &c, const sx::vec<float,2> &v) { shade.implementation().window_set_color_disk_vec2_value(*this, c, v); }
-		sx::vec<float,2> get_color_disk_vec2_value (plugin_color_disk_class &c) { return shade.implementation().window_get_color_disk_vec2_value(*this, c); }
-		void set_color_box_rgb_value (plugin_color_box_class &c, const sx::rgb<float>&r) { shade.implementation().window_set_color_box_rgb_value(*this, c, r); }
-		sx::rgb<float> get_color_box_rgb_value (plugin_color_box_class &c) { return shade.implementation().window_get_color_box_rgb_value(*this, c); }
+		void set_color_disk_vec2_value (plugin_color_disk_class &c, const sx::vec2 &v) { shade.implementation().window_set_color_disk_vec2_value(*this, c, v); }
+		sx::vec2 get_color_disk_vec2_value (plugin_color_disk_class &c) { return shade.implementation().window_get_color_disk_vec2_value(*this, c); }
+		void set_color_box_rgb_value (plugin_color_box_class &c, const sx::rgb&r) { shade.implementation().window_set_color_box_rgb_value(*this, c, r); }
+		sx::rgb get_color_box_rgb_value (plugin_color_box_class &c) { return shade.implementation().window_get_color_box_rgb_value(*this, c); }
 		void set_image_box_image_value (plugin_image_box_class &c, image_interface *i) { shade.implementation().window_set_image_box_image_value(*this, c, i); }
 		image_interface *get_image_box_image_value (plugin_image_box_class &c) { return shade.implementation().window_get_image_box_image_value(*this, c); }
 		void set_slider_float_value (plugin_slider_class &c, float f) { shade.implementation().window_set_slider_float_value(*this, c, f); }
 		float get_slider_float_value (plugin_slider_class &c) { return shade.implementation().window_get_slider_float_value(*this, c); }
 		void set_slider_range (plugin_slider_class &c, float min, float max) { shade.implementation().window_set_slider_range(*this, c, min, max); }
-		int get_control_id (xshade::control::control_class &c) { return shade.implementation().window_get_control_id(*this, c); }
-		const char *get_control_idname (xshade::control::control_class &c) { return shade.implementation().window_get_control_idname(*this, c); }
-		bool select (xshade::control::control_class &c, bool select = true, bool invalidate_flag = true) { return shade.implementation().control_select(c, select, invalidate_flag); }
-		void set_image (xshade::control::control_class &c, image_interface &image) { shade.implementation().control_set_image(c, image); }
-		void set_handler (xshade::control::control_class &c, unknown_interface &handler) { shade.implementation().control_set_handler_with_uuid(c, handler, uuid()); }
-		void set_popup_menu (xshade::control::control_class &c, const char*titles) { shade.implementation().control_set_popup_menu(c, titles); }
-		void set_tooltip (xshade::control::control_class &c, const char*s) { shade.implementation().control_set_tooltip(c, s); }
-		void set_active (xshade::control::control_class &c, bool active) { shade.implementation().control_set_active(c, active); }
-		bool get_active (xshade::control::control_class &c) { return shade.implementation().control_get_active(c); }
-		void invalidate_control (xshade::control::control_class &c) { shade.implementation().control_invalidate(c); }
-		void show_control (xshade::control::control_class &c) { shade.implementation().control_show(c); }
-		void hide_control (xshade::control::control_class &c) { shade.implementation().control_hide(c); }
-		sx::vec<int,2> get_position (xshade::control::control_class &c) { return shade.implementation().control_get_position(c); }
-		void set_position (xshade::control::control_class &c, const sx::vec<int,2> &position) { shade.implementation().control_set_position(c, position); }
-		sx::vec<int,2> get_size (xshade::control::control_class &c) { return shade.implementation().control_get_size(c); }
-		void set_size (xshade::control::control_class &c, const sx::vec<int,2> &size) { shade.implementation().control_set_size(c, size); }
-		const char*get_title (xshade::control::control_class &c) { return shade.implementation().control_get_title(c); }
-		void set_title (xshade::control::control_class &c, const char*title) { shade.implementation().control_set_title(c, title); }
-		void set_items (xshade::control::control_class &c, const char*items) { shade.implementation().control_set_items(c, items); }
-		sx::mouse_tracker_class &create_mouse_tracker (void *mouse_tracker, const sx::vec<int,2> &where) { return shade.implementation().window_create_mouse_tracker(*this, mouse_tracker, where); }
-		void set_bounds (xshade::control::control_class &c, const sx::bounds<sx::vec<int,2> > &bounds) { shade.implementation().control_set_bounds(c, bounds); }
-		sx::bounds<sx::vec<int,2> > get_bounds (xshade::control::control_class &c) const { return shade.implementation().control_get_bounds(c); }
-		int get_title_width (xshade::control::control_class &c) const { return shade.implementation().control_get_title_width(c); }
+		int get_control_id (xshade::control::control_class& c) { return shade.implementation().window_get_control_id(*this, c); }
+		const char *get_control_idname (xshade::control::control_class& c) { return shade.implementation().window_get_control_idname(*this, c); }
+		bool select (xshade::control::control_class& c, bool select = true, bool invalidate_flag = true) { return shade.implementation().control_select(c, select, invalidate_flag); }
+		void set_image (xshade::control::control_class& c, image_interface &image) { shade.implementation().control_set_image(c, image); }
+		void set_handler (xshade::control::control_class& c, unknown_interface &handler) { shade.implementation().control_set_handler_with_uuid(c, handler, uuid()); }
+		void set_popup_menu (xshade::control::control_class& c, const char*titles) { shade.implementation().control_set_popup_menu(c, titles); }
+		void set_tooltip (xshade::control::control_class& c, const char*s) { shade.implementation().control_set_tooltip(c, s); }
+		void set_active (xshade::control::control_class& c, bool active) { shade.implementation().control_set_active(c, active); }
+		bool get_active (xshade::control::control_class& c) { return shade.implementation().control_get_active(c); }
+		void invalidate_control (xshade::control::control_class& c) { shade.implementation().control_invalidate(c); }
+		void show_control (xshade::control::control_class& c) { shade.implementation().control_show(c); }
+		void hide_control (xshade::control::control_class& c) { shade.implementation().control_hide(c); }
+		sx::ivec2 get_position (xshade::control::control_class& c) { return shade.implementation().control_get_position(c); }
+		void set_position (xshade::control::control_class& c, const sx::ivec2 &position) { shade.implementation().control_set_position(c, position); }
+		sx::ivec2 get_size (xshade::control::control_class& c) { return shade.implementation().control_get_size(c); }
+		void set_size (xshade::control::control_class& c, const sx::ivec2 &size) { shade.implementation().control_set_size(c, size); }
+		const char*get_title (xshade::control::control_class& c) { return shade.implementation().control_get_title(c); }
+		void set_title (xshade::control::control_class& c, const char*title) { shade.implementation().control_set_title(c, title); }
+		void set_items (xshade::control::control_class& c, const char*items) { shade.implementation().control_set_items(c, items); }
+		sx::mouse_tracker_class &create_mouse_tracker (void *mouse_tracker, const sx::ivec2 &where) { return shade.implementation().window_create_mouse_tracker(*this, mouse_tracker, where); }
+		void set_bounds (xshade::control::control_class& c, const sx::ibounds2 &bounds) { shade.implementation().control_set_bounds(c, bounds); }
+		sx::ibounds2 get_bounds (xshade::control::control_class& c) const { return shade.implementation().control_get_bounds(c); }
+		int get_title_width (xshade::control::control_class& c) const { return shade.implementation().control_get_title_width(c); }
 		void set_handler (sx::mouse_tracker_class &m, unknown_interface &handler) { shade.implementation().mousetracker_set_handler(m, handler); }
-		void delete_control (xshade::control::control_class &c) { shade.implementation().control_delete_self(c); }
+		void delete_control (xshade::control::control_class& c) { shade.implementation().control_delete_self(c); }
 		void reset_control_position (void* aux =0) { shade.implementation().window_reset_control_position(*this); } //35029
 		void set_number_integer (plugin_number_class &c) { shade.implementation().window_set_number_integer(*this, c); } //36014
 		void set_number_columns (plugin_number_class &c, int columns) { shade.implementation().window_set_number_columns(*this, c, columns); } //36014
@@ -716,66 +786,66 @@ int get_string_height () const { return shade.implementation().get_string_height
 		int get_tab_int_value (plugin_tab_class &c) { return shade.implementation().window_get_tab_int_value(*this, c); }
 		void set_tab_lazy (plugin_tab_class &c, bool lazy) { shade.implementation().window_set_tab_lazy(*this, c, lazy); }
 		bool get_tab_lazy (plugin_tab_class &c) { return shade.implementation().window_get_tab_lazy(*this, c); }
-		plugin_vec2_control_class &create_vec2_control (handler_interface &handler, int control_id, int x, int y, int dx, int dy, const char*title, void* aux =0) { return shade.implementation().window_create_vec2_control(*this, handler, control_id, x, y, dx, dy, title); }
-		void set_vec2_control_value (plugin_vec2_control_class &c, const sx::vec<float,2> &v) { shade.implementation().window_set_vec2_control_value(*this, c, v); }
-		sx::vec<float,2> get_vec2_control_value (plugin_vec2_control_class &c) { return shade.implementation().window_get_vec2_control_value(*this, c); }
-		plugin_vec3_control_class &create_vec3_control (handler_interface &handler, int control_id, int x, int y, int dx, int dy, const char*title, void* aux =0) { return shade.implementation().window_create_vec3_control(*this, handler, control_id, x, y, dx, dy, title); }
-		void set_vec3_control_value (plugin_vec3_control_class &c, const sx::vec<float,3> &v) { shade.implementation().window_set_vec3_control_value(*this, c, v); }
-		sx::vec<float,3> get_vec3_control_value (plugin_vec3_control_class &c) { return shade.implementation().window_get_vec3_control_value(*this, c); }
-		plugin_vec4_control_class &create_vec4_control (handler_interface &handler, int control_id, int x, int y, int dx, int dy, const char*title, void* aux =0) { return shade.implementation().window_create_vec4_control(*this, handler, control_id, x, y, dx, dy, title); }
-		void set_vec4_control_value (plugin_vec4_control_class &c, const sx::vec<float,4> &v) { shade.implementation().window_set_vec4_control_value(*this, c, v); }
-		sx::vec<float,4> get_vec4_control_value (plugin_vec4_control_class &c) { return shade.implementation().window_get_vec4_control_value(*this, c); }
-		plugin_quaternion_control_class &create_quaternion_control (handler_interface &handler, int control_id, int x, int y, int dx, int dy, const char*title, void* aux =0) { return shade.implementation().window_create_quaternion_control(*this, handler, control_id, x, y, dx, dy, title); }
-		void set_quaternion_value (plugin_quaternion_control_class &c, const quaternion_class &v) { shade.implementation().window_set_quaternion_control_value(*this, c, v); }
-		quaternion_class get_quaternion_value (plugin_quaternion_control_class &c) { return shade.implementation().window_get_quaternion_control_value(*this, c); }
-		plugin_matrix_control_class &create_matrix_control (handler_interface &handler, int control_id, int x, int y, int dx, int dy, const char*title, void* aux =0) { return shade.implementation().window_create_matrix_control(*this, handler, control_id, x, y, dx, dy, title); }
-		void set_matrix_control_value (plugin_matrix_control_class &c, const mat4 &v) { shade.implementation().window_set_matrix_control_value(*this, c, v); }
-		mat4 get_matrix_control_value (plugin_matrix_control_class &c) { return shade.implementation().window_get_matrix_control_value(*this, c); }
-		plugin_scale_control_class &create_scale_control (handler_interface &handler, int control_id, int x, int y, const char*title, void* aux =0) { return shade.implementation().window_create_scale_control(*this, handler, control_id, x, y, title); }
-		void set_scale_control_value (plugin_scale_control_class &c, int s) { shade.implementation().window_set_scale_control_value(*this, c, s); }
-		int get_scale_control_value (plugin_scale_control_class &c) { return shade.implementation().window_get_scale_control_value(*this, c); }
+		plugin_vec2_control_class& create_vec2_control (handler_interface &handler, int control_id, int x, int y, int dx, int dy, const char*title, void* aux =0) { return shade.implementation().window_create_vec2_control(*this, handler, control_id, x, y, dx, dy, title); }
+		void set_vec2_control_value (plugin_vec2_control_class& c, const sx::vec2 &v) { shade.implementation().window_set_vec2_control_value(*this, c, v); }
+		sx::vec2 get_vec2_control_value (plugin_vec2_control_class& c) { return shade.implementation().window_get_vec2_control_value(*this, c); }
+		plugin_vec3_control_class& create_vec3_control (handler_interface &handler, int control_id, int x, int y, int dx, int dy, const char*title, void* aux =0) { return shade.implementation().window_create_vec3_control(*this, handler, control_id, x, y, dx, dy, title); }
+		void set_vec3_control_value (plugin_vec3_control_class& c, const sx::vec3 &v) { shade.implementation().window_set_vec3_control_value(*this, c, v); }
+		sx::vec3 get_vec3_control_value (plugin_vec3_control_class& c) { return shade.implementation().window_get_vec3_control_value(*this, c); }
+		plugin_vec4_control_class& create_vec4_control (handler_interface &handler, int control_id, int x, int y, int dx, int dy, const char*title, void* aux =0) { return shade.implementation().window_create_vec4_control(*this, handler, control_id, x, y, dx, dy, title); }
+		void set_vec4_control_value (plugin_vec4_control_class& c, const sx::vec4 &v) { shade.implementation().window_set_vec4_control_value(*this, c, v); }
+		sx::vec4 get_vec4_control_value (plugin_vec4_control_class& c) { return shade.implementation().window_get_vec4_control_value(*this, c); }
+		plugin_quaternion_control_class& create_quaternion_control (handler_interface &handler, int control_id, int x, int y, int dx, int dy, const char*title, void* aux =0) { return shade.implementation().window_create_quaternion_control(*this, handler, control_id, x, y, dx, dy, title); }
+		void set_quaternion_value (plugin_quaternion_control_class& c, const quaternion_class &v) { shade.implementation().window_set_quaternion_control_value(*this, c, v); }
+		quaternion_class get_quaternion_value (plugin_quaternion_control_class& c) { return shade.implementation().window_get_quaternion_control_value(*this, c); }
+		plugin_matrix_control_class& create_matrix_control (handler_interface &handler, int control_id, int x, int y, int dx, int dy, const char*title, void* aux =0) { return shade.implementation().window_create_matrix_control(*this, handler, control_id, x, y, dx, dy, title); }
+		void set_matrix_control_value (plugin_matrix_control_class& c, const mat4 &v) { shade.implementation().window_set_matrix_control_value(*this, c, v); }
+		mat4 get_matrix_control_value (plugin_matrix_control_class& c) { return shade.implementation().window_get_matrix_control_value(*this, c); }
+		plugin_scale_control_class& create_scale_control (handler_interface &handler, int control_id, int x, int y, const char*title, void* aux =0) { return shade.implementation().window_create_scale_control(*this, handler, control_id, x, y, title); }
+		void set_scale_control_value (plugin_scale_control_class& c, int s) { shade.implementation().window_set_scale_control_value(*this, c, s); }
+		int get_scale_control_value (plugin_scale_control_class& c) { return shade.implementation().window_get_scale_control_value(*this, c); }
 		plugin_flasher_class &create_flasher (handler_interface &handler, int control_id, int x, int y, int dx, int dy, void* aux =0) { return shade.implementation().window_create_flasher(*this, handler, control_id, x, y, dx, dy); }
-		plugin_table_control_class &create_table_control (handler_interface &handler, int control_id, int x, int y, int dx, int dy, void* aux =0) { return shade.implementation().window_create_table_control(*this, handler, control_id, x, y, dx, dy); }
-		void insert_table_column (plugin_table_control_class &c, table_cell_type_enum type, int width, const char *label, int col) { shade.implementation().window_insert_table_column(*this, c, type, width, label, col); }
-		void remove_table_column (plugin_table_control_class &c, int row) { shade.implementation().window_remove_table_column(*this, c, row); }
-		void insert_table_row (plugin_table_control_class &c, int row) { shade.implementation().window_insert_table_row(*this, c, row); }
-		void remove_table_row (plugin_table_control_class &c, int row) { shade.implementation().window_remove_table_row(*this, c, row); }
-		void clear_table (plugin_table_control_class &c) { shade.implementation().window_clear_table(*this, c); }
-		void set_bool_value (plugin_table_control_class &c, int row, int col, bool value) { shade.implementation().window_set_table_bool_value(*this, c, row, col, value); }
-		void set_int_value (plugin_table_control_class &c, int row, int col, int value) { shade.implementation().window_set_table_int_value(*this, c, row, col, value); }
-		void set_float_value (plugin_table_control_class &c, int row, int col, float value) { shade.implementation().window_set_table_float_value(*this, c, row, col, value); }
-		void set_string_value_deprecated (plugin_table_control_class &c, int row, int col, const std::string &value) { shade.implementation().window_set_table_string_value_deprecated(*this, c, row, col, value); }
-		void set_string_value (plugin_table_control_class &c, int row, int col, const char* value) { shade.implementation().window_set_table_string_value(*this, c, row, col, value); }
-		void set_color_value (plugin_table_control_class &c, int row, int col, const sx::rgb<float> &value) { shade.implementation().window_set_table_color_value(*this, c, row, col, value); }
-		bool get_bool_value (plugin_table_control_class &c, int row, int col) { return shade.implementation().window_get_table_bool_value(*this, c, row, col); }
-		int get_int_value (plugin_table_control_class &c, int row, int col) { return shade.implementation().window_get_table_int_value(*this, c, row, col); }
-		float get_float_value (plugin_table_control_class &c, int row, int col) { return shade.implementation().window_get_table_float_value(*this, c, row, col); }
-		std::string get_string_value_deprecated (plugin_table_control_class &c, int row, int col) { return shade.implementation().window_get_table_string_value_deprecated(*this, c, row, col); }
-		const char* get_string_value (plugin_table_control_class &c, int row, int col) { return shade.implementation().window_get_table_string_value(*this, c, row, col); }
-		sx::rgb<float> get_color_value (plugin_table_control_class &c, int row, int col) { return shade.implementation().window_get_table_color_value(*this, c, row, col); }
-		void set_table_style (plugin_table_control_class &c, int mode) { shade.implementation().window_set_table_style(*this, c, mode); }
-		int get_table_style (plugin_table_control_class &c) { return shade.implementation().window_get_table_style(*this, c); }
-		void select (plugin_table_control_class &c, int row) { shade.implementation().window_select_table_item(*this, c, row); }
-		void select_all (plugin_table_control_class &c, bool b) { shade.implementation().window_select_all_table_items(*this, c, b); }
-		int number_of_selected_items (plugin_table_control_class &c) { return shade.implementation().window_number_of_selected_table_items(*this, c); }
-		int first_selected_item (plugin_table_control_class &c) { return shade.implementation().window_get_first_selected_table_item(*this, c); }
-		int next_selected_item (plugin_table_control_class &c, int index) { return shade.implementation().window_get_next_selected_table_item(*this, c,index); }
-		bool has_selection (plugin_table_control_class &c) { return shade.implementation().window_table_has_selection(*this, c); }
-		void check_all (plugin_table_control_class &c, int col, int b) { shade.implementation().window_check_all_table_items(*this, c, col, b); }
-		int first_checked_item (plugin_table_control_class &c, int col) { return shade.implementation().window_get_first_checked_table_item(*this, c, col); }
-		int next_checked_item (plugin_table_control_class &c, int col, int index) { return shade.implementation().window_get_next_checked_table_item(*this, c, col, index); }
-		bool has_checked (plugin_table_control_class &c, int col) { return shade.implementation().window_table_item_has_check(*this, c, col); }
-		bool is_selected (plugin_table_control_class &c, int row) { return shade.implementation().window_get_table_item_selected(*this, c, row); }
-		void set_selected (plugin_table_control_class &c, int row, bool b) { shade.implementation().window_set_table_item_selected(*this, c, row, b); }
-		bool is_active_row (plugin_table_control_class &c, int row) { return shade.implementation().window_get_table_item_active(*this, c, row); }
-		void set_active_row (plugin_table_control_class &c, int row, bool b) { shade.implementation().window_set_table_item_active(*this, c, row, b); }
-		bool is_active_cell (plugin_table_control_class &c, int row, int col) { return shade.implementation().window_get_table_cell_active(*this, c, row, col); }
-		void set_active_cell (plugin_table_control_class &c, int row, int col, bool b) { shade.implementation().window_set_table_cell_active(*this, c, row, col, b); }
-		int number_of_rows (plugin_table_control_class &c) { return shade.implementation().window_get_number_of_table_rows(*this, c); }
-		int number_of_columns (plugin_table_control_class &c) { return shade.implementation().window_get_number_of_table_columns(*this, c); }
+		plugin_table_control_class& create_table_control (handler_interface &handler, int control_id, int x, int y, int dx, int dy, void* aux =0) { return shade.implementation().window_create_table_control(*this, handler, control_id, x, y, dx, dy); }
+		void insert_table_column (plugin_table_control_class& c, table_cell_type_enum type, int width, const char *label, int col) { shade.implementation().window_insert_table_column(*this, c, type, width, label, col); }
+		void remove_table_column (plugin_table_control_class& c, int row) { shade.implementation().window_remove_table_column(*this, c, row); }
+		void insert_table_row (plugin_table_control_class& c, int row) { shade.implementation().window_insert_table_row(*this, c, row); }
+		void remove_table_row (plugin_table_control_class& c, int row) { shade.implementation().window_remove_table_row(*this, c, row); }
+		void clear_table (plugin_table_control_class& c) { shade.implementation().window_clear_table(*this, c); }
+		void set_bool_value (plugin_table_control_class& c, int row, int col, bool value) { shade.implementation().window_set_table_bool_value(*this, c, row, col, value); }
+		void set_int_value (plugin_table_control_class& c, int row, int col, int value) { shade.implementation().window_set_table_int_value(*this, c, row, col, value); }
+		void set_float_value (plugin_table_control_class& c, int row, int col, float value) { shade.implementation().window_set_table_float_value(*this, c, row, col, value); }
+		void set_string_value_deprecated (plugin_table_control_class& c, int row, int col, const std::string& value) { shade.implementation().window_set_table_string_value_deprecated(*this, c, row, col, value); }
+		void set_string_value (plugin_table_control_class& c, int row, int col, const char* value) { shade.implementation().window_set_table_string_value(*this, c, row, col, value); }
+		void set_color_value (plugin_table_control_class& c, int row, int col, const sx::rgb &value) { shade.implementation().window_set_table_color_value(*this, c, row, col, value); }
+		bool get_bool_value (plugin_table_control_class& c, int row, int col) { return shade.implementation().window_get_table_bool_value(*this, c, row, col); }
+		int get_int_value (plugin_table_control_class& c, int row, int col) { return shade.implementation().window_get_table_int_value(*this, c, row, col); }
+		float get_float_value (plugin_table_control_class& c, int row, int col) { return shade.implementation().window_get_table_float_value(*this, c, row, col); }
+		std::string get_string_value_deprecated (plugin_table_control_class& c, int row, int col) { return shade.implementation().window_get_table_string_value_deprecated(*this, c, row, col); }
+		const char* get_string_value (plugin_table_control_class& c, int row, int col) { return shade.implementation().window_get_table_string_value(*this, c, row, col); }
+		sx::rgb get_color_value (plugin_table_control_class& c, int row, int col) { return shade.implementation().window_get_table_color_value(*this, c, row, col); }
+		void set_table_style (plugin_table_control_class& c, int mode) { shade.implementation().window_set_table_style(*this, c, mode); }
+		int get_table_style (plugin_table_control_class& c) { return shade.implementation().window_get_table_style(*this, c); }
+		void select (plugin_table_control_class& c, int row) { shade.implementation().window_select_table_item(*this, c, row); }
+		void select_all (plugin_table_control_class& c, bool b) { shade.implementation().window_select_all_table_items(*this, c, b); }
+		int number_of_selected_items (plugin_table_control_class& c) { return shade.implementation().window_number_of_selected_table_items(*this, c); }
+		int first_selected_item (plugin_table_control_class& c) { return shade.implementation().window_get_first_selected_table_item(*this, c); }
+		int next_selected_item (plugin_table_control_class& c, int index) { return shade.implementation().window_get_next_selected_table_item(*this, c,index); }
+		bool has_selection (plugin_table_control_class& c) { return shade.implementation().window_table_has_selection(*this, c); }
+		void check_all (plugin_table_control_class& c, int col, int b) { shade.implementation().window_check_all_table_items(*this, c, col, b); }
+		int first_checked_item (plugin_table_control_class& c, int col) { return shade.implementation().window_get_first_checked_table_item(*this, c, col); }
+		int next_checked_item (plugin_table_control_class& c, int col, int index) { return shade.implementation().window_get_next_checked_table_item(*this, c, col, index); }
+		bool has_checked (plugin_table_control_class& c, int col) { return shade.implementation().window_table_item_has_check(*this, c, col); }
+		bool is_selected (plugin_table_control_class& c, int row) { return shade.implementation().window_get_table_item_selected(*this, c, row); }
+		void set_selected (plugin_table_control_class& c, int row, bool b) { shade.implementation().window_set_table_item_selected(*this, c, row, b); }
+		bool is_active_row (plugin_table_control_class& c, int row) { return shade.implementation().window_get_table_item_active(*this, c, row); }
+		void set_active_row (plugin_table_control_class& c, int row, bool b) { shade.implementation().window_set_table_item_active(*this, c, row, b); }
+		bool is_active_cell (plugin_table_control_class& c, int row, int col) { return shade.implementation().window_get_table_cell_active(*this, c, row, col); }
+		void set_active_cell (plugin_table_control_class& c, int row, int col, bool b) { shade.implementation().window_set_table_cell_active(*this, c, row, col, b); }
+		int number_of_rows (plugin_table_control_class& c) { return shade.implementation().window_get_number_of_table_rows(*this, c); }
+		int number_of_columns (plugin_table_control_class& c) { return shade.implementation().window_get_number_of_table_columns(*this, c); }
 		void set_editable_text_string_value (plugin_editable_text_class &c, const char *s) { shade.implementation().window_set_editable_text_string_value(*this, c, s); }
 		const char *get_editable_text_string_value (plugin_editable_text_class &c) { return shade.implementation().window_get_editable_text_string_value(*this, c); }
-		int get_focused (xshade::control::control_class &c) { return shade.implementation().control_get_focused(c); }
+		int get_focused (xshade::control::control_class& c) { return shade.implementation().control_get_focused(c); }
 	public:
 		shade_interface &shade;
 		xshade::window_class *w; // xshade::window_class is opaque to plugins
@@ -783,6 +853,8 @@ int get_string_height () const { return shade.implementation().get_string_height
 
 	class aggregate_view_interface : public window_interface {
 	public:
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
 	virtual void eject_all (void* aux = 0) = 0; // 0
 	virtual void uneject_all (void* aux = 0) = 0; // 1
 	virtual void eject_camera (void* aux = 0) = 0; // 2
@@ -806,244 +878,378 @@ int get_string_height () const { return shade.implementation().get_string_height
 	virtual void eject_object_info (void* aux = 0) = 0; // 20
 	virtual void uneject_object_info (void* aux = 0) = 0; // 21
 	virtual void select_object_info (void* aux = 0) = 0; // 22
-	virtual camera_view_interface* get_camera_view_interface (void * = 0) const = 0; // 23
-	virtual distant_light_view_interface* get_distant_light_view_interface (void * = 0) const = 0; // 24
-	virtual background_view_interface* get_background_view_interface (void * = 0) const = 0; // 25
-	virtual surface_view_interface* get_surface_view_interface (void * = 0) const = 0; // 26
+	virtual camera_view_interface* get_camera_view_interface (void* = nullptr) const = 0; // 23
+	virtual distant_light_view_interface* get_distant_light_view_interface (void* = nullptr) const = 0; // 24
+	virtual background_view_interface* get_background_view_interface (void* = nullptr) const = 0; // 25
+	virtual surface_view_interface* get_surface_view_interface (void* = nullptr) const = 0; // 26
 	virtual int aggregate_view_interface_dummy27(void *) { assert(false); throw "invalid interface aggregate_view_interface"; return 0; } // 27
 	virtual int aggregate_view_interface_dummy28(void *) { assert(false); throw "invalid interface aggregate_view_interface"; return 0; } // 28
-	virtual object_info_view_interface* get_object_info_view_interface (void * = 0) const = 0; // 29
+	virtual object_info_view_interface* get_object_info_view_interface (void* = nullptr) const = 0; // 29
+#pragma clang diagnostics pop
 	};
 
 	class rendering_options_view_interface : public window_interface {
 	public:
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
 	virtual void select_basics (void* aux = 0) = 0; // 0
 	virtual void select_image (void* aux = 0) = 0; // 1
 	virtual void select_global_illumination (void* aux = 0) = 0; // 2
 	virtual void select_effects (void* aux = 0) = 0; // 3
 	virtual void select_multipass (void* aux = 0) = 0; // 4
 	virtual void select_misc (void* aux = 0) = 0; // 5
+#pragma clang diagnostics pop
 	};
 
 	class image_view_interface : public window_interface {
 	public:
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
 	virtual void show_options (void* aux = 0) = 0; // 0
 	virtual void hide_options (void* aux = 0) = 0; // 1
-	virtual rendering_options_view_interface* get_rendering_options_view_interface (void * = 0) const = 0; // 2
+	virtual rendering_options_view_interface* get_rendering_options_view_interface (void* = nullptr) const = 0; // 2
+#pragma clang diagnostics pop
 	};
 
 	class tool_box_view_interface : public window_interface {
 	public:
-	virtual tool_box_view_interface &set_memory_disclosed (bool memory_disclosed_param, void * = 0) = 0; // 0
-	virtual bool get_memory_disclosed (void * = 0) const = 0; // 1
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	virtual tool_box_view_interface &set_memory_disclosed (bool memory_disclosed_param, void* = nullptr) = 0; // 0
+	virtual bool get_memory_disclosed (void* = nullptr) const = 0; // 1
+#pragma clang diagnostics pop
 	};
 
 	class color_view_interface : public window_interface {
 	public:
-	virtual color_view_interface &set_hsv_disclosed (bool hsv_disclosed_param, void * = 0) = 0; // 0
-	virtual bool get_hsv_disclosed (void * = 0) const = 0; // 1
-	virtual color_view_interface &set_lists_disclosed (bool lists_disclosed_param, void * = 0) = 0; // 2
-	virtual bool get_lists_disclosed (void * = 0) const = 0; // 3
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	virtual color_view_interface &set_hsv_disclosed (bool hsv_disclosed_param, void* = nullptr) = 0; // 0
+	virtual bool get_hsv_disclosed (void* = nullptr) const = 0; // 1
+	virtual color_view_interface &set_lists_disclosed (bool lists_disclosed_param, void* = nullptr) = 0; // 2
+	virtual bool get_lists_disclosed (void* = nullptr) const = 0; // 3
+#pragma clang diagnostics pop
 	};
 
 	class background_view_interface : public window_interface {
 	public:
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+#pragma clang diagnostics pop
 	};
 
 	class surface_view_interface : public window_interface {
 	public:
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
 	virtual void update_preview_image (void* aux = 0) = 0; // 0
+#pragma clang diagnostics pop
 	};
 
 	class browser_view_interface : public window_interface {
 	public:
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	virtual browser_view_interface &set_auto_show_active_object (bool auto_show_active_object_param, void* = nullptr) = 0; // 0
+	virtual bool get_auto_show_active_object (void* = nullptr) const = 0; // 1
+#pragma clang diagnostics pop
 	};
 
 	class camera_view_interface : public window_interface {
 	public:
-	virtual camera_view_interface &set_disclosed (bool disclosed_param, void * = 0) = 0; // 0
-	virtual bool get_disclosed (void * = 0) const = 0; // 1
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	virtual camera_view_interface &set_disclosed (bool disclosed_param, void* = nullptr) = 0; // 0
+	virtual bool get_disclosed (void* = nullptr) const = 0; // 1
+#pragma clang diagnostics pop
 	};
 
 	class distant_light_view_interface : public window_interface {
 	public:
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+#pragma clang diagnostics pop
 	};
 
 	class correction_view_interface : public window_interface {
 	public:
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+#pragma clang diagnostics pop
 	};
 
 	class ruler_view_interface : public window_interface {
 	public:
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+#pragma clang diagnostics pop
 	};
 
 	class message_view_interface : public window_interface {
 	public:
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
 	virtual void clear_message (void* aux = 0) = 0; // 0
-	virtual message_view_interface &set_message (const char* message_param, void * = 0) = 0; // 1
-	virtual const char* get_message (void * = 0) const = 0; // 2
+	virtual message_view_interface &set_message (const char* message_param, void* = nullptr) = 0; // 1
+	virtual const char* get_message (void* = nullptr) const = 0; // 2
+#pragma clang diagnostics pop
 	};
 
 	class script_view_interface : public window_interface {
 	public:
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+#pragma clang diagnostics pop
 	};
 
 	class shortcut_view_interface : public window_interface {
 	public:
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+#pragma clang diagnostics pop
 	};
 
 	class radiosity_options_view_interface : public window_interface {
 	public:
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
 	virtual void select_exposure (void* aux = 0) = 0; // 0
 	virtual void select_display (void* aux = 0) = 0; // 1
 	virtual void select_solution (void* aux = 0) = 0; // 2
+#pragma clang diagnostics pop
 	};
 
 	class radiosity_view_interface : public window_interface {
 	public:
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
 	virtual void show_options (void* aux = 0) = 0; // 0
 	virtual void hide_options (void* aux = 0) = 0; // 1
-	virtual radiosity_options_view_interface* get_radiosity_options_view_interface (void * = 0) const = 0; // 2
+	virtual radiosity_options_view_interface* get_radiosity_options_view_interface (void* = nullptr) const = 0; // 2
+#pragma clang diagnostics pop
 	};
 
 	class skin_view_interface : public window_interface {
 	public:
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+#pragma clang diagnostics pop
 	};
 
 	class motion_view_interface : public window_interface {
 	public:
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+#pragma clang diagnostics pop
 	};
 
 	class object_info_view_interface : public window_interface {
 	public:
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+#pragma clang diagnostics pop
 	};
 
 	class control_bar_interface : public window_interface {
 	public:
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+#pragma clang diagnostics pop
 	};
 
 	class status_bar_interface : public window_interface {
 	public:
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
 	virtual void add_message (const char* key, const char* message, void* aux = 0) = 0; // 0
 	virtual void remove_message (const char* key, void* aux = 0) = 0; // 1
 	virtual void start_indicator (const char* key, void* aux = 0) = 0; // 2
 	virtual void stop_indicator (const char* key, void* aux = 0) = 0; // 3
+#pragma clang diagnostics pop
 	};
 
 	class figure_view_interface : public window_interface {
 	public:
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
 	virtual void pick (const sx::rectangle_class& area, void* aux = 0) = 0; // 0
 	virtual void wait (void* aux = 0) = 0; // 1
-	virtual int get_redraw_time (void * = 0) const = 0; // 2
-	virtual figure_view_interface &set_redraw_time (int redraw_time_param, void * = 0) = 0; // 3
+	virtual int get_redraw_time (void* = nullptr) const = 0; // 2
+	virtual figure_view_interface &set_redraw_time (int redraw_time_param, void* = nullptr) = 0; // 3
 	virtual void update (int viewmask = 15, void* aux = 0) = 0; // 4
-	virtual int get_redraw_count (void * = 0) const = 0; // 5
+	virtual int get_redraw_count (void* = nullptr) const = 0; // 5
+#pragma clang diagnostics pop
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+#pragma clang diagnostics pop
 	};
 
 	class figure_window_interface : public window_interface {
 	public:
-	virtual sxsdk::control_bar_interface* get_control_bar_interface (void * = 0) const = 0; // 0
-	virtual sxsdk::figure_view_interface* get_figure_view_interface (void * = 0) const = 0; // 1
-	virtual sxsdk::status_bar_interface* get_status_bar_interface (void * = 0) const = 0; // 2
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	virtual sxsdk::control_bar_interface* get_control_bar_interface (void* = nullptr) const = 0; // 0
+	virtual sxsdk::figure_view_interface* get_figure_view_interface (void* = nullptr) const = 0; // 1
+	virtual sxsdk::status_bar_interface* get_status_bar_interface (void* = nullptr) const = 0; // 2
+#pragma clang diagnostics pop
 	};
 
 	class image_window_interface : public window_interface {
 	public:
-	virtual image_view_interface* get_image_view_interface (void * = 0) const = 0; // 0
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	virtual image_view_interface* get_image_view_interface (void* = nullptr) const = 0; // 0
+#pragma clang diagnostics pop
 	};
 
 	class tool_box_window_interface : public window_interface {
 	public:
-	virtual tool_box_view_interface* get_tool_box_view_interface (void * = 0) const = 0; // 0
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	virtual tool_box_view_interface* get_tool_box_view_interface (void* = nullptr) const = 0; // 0
+#pragma clang diagnostics pop
 	};
 
 	class color_window_interface : public window_interface {
 	public:
-	virtual color_view_interface* get_color_view_interface (void * = 0) const = 0; // 0
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	virtual color_view_interface* get_color_view_interface (void* = nullptr) const = 0; // 0
+#pragma clang diagnostics pop
 	};
 
 	class background_window_interface : public window_interface {
 	public:
-	virtual background_view_interface* get_background_view_interface (void * = 0) const = 0; // 0
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	virtual background_view_interface* get_background_view_interface (void* = nullptr) const = 0; // 0
+#pragma clang diagnostics pop
 	};
 
 	class surface_window_interface : public window_interface {
 	public:
-	virtual surface_view_interface* get_surface_view_interface (void * = 0) const = 0; // 0
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	virtual surface_view_interface* get_surface_view_interface (void* = nullptr) const = 0; // 0
+#pragma clang diagnostics pop
 	};
 
 	class browser_window_interface : public window_interface {
 	public:
-	virtual browser_view_interface* get_browser_view_interface (void * = 0) const = 0; // 0
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	virtual browser_view_interface* get_browser_view_interface (void* = nullptr) const = 0; // 0
+#pragma clang diagnostics pop
 	};
 
 	class correction_window_interface : public window_interface {
 	public:
-	virtual correction_view_interface* get_correction_view_interface (void * = 0) const = 0; // 0
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	virtual correction_view_interface* get_correction_view_interface (void* = nullptr) const = 0; // 0
+#pragma clang diagnostics pop
 	};
 
 	class camera_window_interface : public window_interface {
 	public:
-	virtual camera_view_interface* get_camera_view_interface (void * = 0) const = 0; // 0
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	virtual camera_view_interface* get_camera_view_interface (void* = nullptr) const = 0; // 0
+#pragma clang diagnostics pop
 	};
 
 	class distant_light_window_interface : public window_interface {
 	public:
-	virtual distant_light_view_interface* get_distant_light_view_interface (void * = 0) const = 0; // 0
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	virtual distant_light_view_interface* get_distant_light_view_interface (void* = nullptr) const = 0; // 0
+#pragma clang diagnostics pop
 	};
 
 	class ruler_window_interface : public window_interface {
 	public:
-	virtual ruler_view_interface* get_ruler_view_interface (void * = 0) const = 0; // 0
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	virtual ruler_view_interface* get_ruler_view_interface (void* = nullptr) const = 0; // 0
+#pragma clang diagnostics pop
 	};
 
 	class message_window_interface : public window_interface {
 	public:
-	virtual message_view_interface* get_message_view_interface (void * = 0) const = 0; // 0
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	virtual message_view_interface* get_message_view_interface (void* = nullptr) const = 0; // 0
+#pragma clang diagnostics pop
 	};
 
 	class script_window_interface : public window_interface {
 	public:
-	virtual script_view_interface* get_script_view_interface (void * = 0) const = 0; // 0
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	virtual script_view_interface* get_script_view_interface (void* = nullptr) const = 0; // 0
+#pragma clang diagnostics pop
 	};
 
 	class shortcut_window_interface : public window_interface {
 	public:
-	virtual shortcut_view_interface* get_shortcut_view_interface (void * = 0) const = 0; // 0
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	virtual shortcut_view_interface* get_shortcut_view_interface (void* = nullptr) const = 0; // 0
+#pragma clang diagnostics pop
 	};
 
 	class radiosity_window_interface : public window_interface {
 	public:
-	virtual radiosity_view_interface* get_radiosity_view_interface (void * = 0) const = 0; // 0
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	virtual radiosity_view_interface* get_radiosity_view_interface (void* = nullptr) const = 0; // 0
+#pragma clang diagnostics pop
 	};
 
 	class skin_window_interface : public window_interface {
 	public:
-	virtual skin_view_interface* get_skin_view_interface (void * = 0) const = 0; // 0
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	virtual skin_view_interface* get_skin_view_interface (void* = nullptr) const = 0; // 0
+#pragma clang diagnostics pop
 	};
 
 	class motion_window_interface : public window_interface {
 	public:
-	virtual motion_view_interface* get_motion_view_interface (void * = 0) const = 0; // 0
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	virtual motion_view_interface* get_motion_view_interface (void* = nullptr) const = 0; // 0
+#pragma clang diagnostics pop
 	};
 
 	class object_info_window_interface : public window_interface {
 	public:
-	virtual object_info_view_interface* get_object_info_view_interface (void * = 0) const = 0; // 0
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	virtual object_info_view_interface* get_object_info_view_interface (void* = nullptr) const = 0; // 0
+#pragma clang diagnostics pop
 	};
 
 	class aggregate_window_interface : public window_interface {
 	public:
-	virtual aggregate_view_interface* get_aggregate_view_interface (void * = 0) const = 0; // 0
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	virtual aggregate_view_interface* get_aggregate_view_interface (void* = nullptr) const = 0; // 0
+#pragma clang diagnostics pop
 	};
 
 	class meshtools_window_interface : public window_interface {
 	public:
-	virtual meshtools_view_interface* get_meshtools_view_interface (void * = 0) const = 0; // 0
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	virtual meshtools_view_interface* get_meshtools_view_interface (void* = nullptr) const = 0; // 0
+#pragma clang diagnostics pop
 	};
 
 	class gridmanager_view_interface : public window_interface {
 	public:
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
 	virtual int get_server_total (void* aux = 0) = 0; // 0
 	virtual const char * get_server_name (int i, void* aux = 0) = 0; // 1
 	virtual const char * get_server_ip (int i, void* aux = 0) = 0; // 2
@@ -1054,11 +1260,15 @@ int get_string_height () const { return shade.implementation().get_string_height
 	virtual void add_server (const char* name, const char* ip) = 0; // 7
 	virtual const char * get_server_version (int i, void* aux = 0) = 0; // 8
 	virtual const char * get_server_os (int i, void* aux = 0) = 0; // 9
+#pragma clang diagnostics pop
 	};
 
 	class gridmanager_window_interface : public window_interface {
 	public:
-	virtual gridmanager_view_interface* get_gridmanager_view_interface (void * = 0) const = 0; // 0
+#pragma clang diagnostics push
+#pragma clang diagnostic ignored "-Wold-style-cast"
+	virtual gridmanager_view_interface* get_gridmanager_view_interface (void* = nullptr) const = 0; // 0
+#pragma clang diagnostics pop
 	};
 }
 #if _MSC_VER

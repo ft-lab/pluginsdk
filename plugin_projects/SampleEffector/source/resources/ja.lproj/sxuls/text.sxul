@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+	<string id="product_name" value="サンプルエフェクタ"/>
+	<string id="author" value="Shade3D Co.,Ltd."/>
+	<string id="company" value="Shade3D Co.,Ltd."/>
+	<string id="comments" value="サンプルエフェクタには、以下の２つのエフェクタプラグインが含まれています。 ノイズを加える：レンダリング画像にランダムなノイズを加える2Dエフェクタ系の機能です。 階調の反転：レンダリング画像の階調を反転する2Dエフェクタ系の機能です。"/>
+
+	<string id="add_noise_title" value="[サンプル]ノイズを加える"/>
+	<string id="invert_image_title" value="[サンプル]階調の反転"/>
+
+	<string id="error_no_rendered_image" value="画像がありません。"/>
+	<string id="error_opacity_of_noise" value="ノイズの量は0.0～100.0の範囲の数値を入力してください。"/>
+	<string id="error_out_of_memory" value="メモリが足りません。"/>
+	<string id="message_out_of_memory" value="%1% error - メモリが足りません。処理をスキップします。"/>
+</strings>
