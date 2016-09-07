@@ -4,57 +4,90 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <title>構造体 sxsdk::rendering_image_invalidator_interface</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<!-- 作成： Doxygen 1.6.1 -->
-<div class="navigation" id="top">
-  <div class="tabs">
-    <ul>
-      <li><a href="main.html"><span>メインページ</span></a></li>
+<!-- 作成： Doxygen 1.7.4 -->
+<div id="top">
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
       <li><a href="pages.html"><span>関連ページ</span></a></li>
       <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
       <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
       <li><a href="files.html"><span>ファイル</span></a></li>
     </ul>
   </div>
-  <div class="tabs">
-    <ul>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
       <li><a href="annotated.html"><span>構成</span></a></li>
       <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
       <li><a href="functions.html"><span>構成メンバ</span></a></li>
     </ul>
   </div>
-  <div class="navpath"><a class="el" href="namespacesxsdk.html">sxsdk</a>::<a class="el" href="structsxsdk_1_1rendering__image__invalidator__interface.html">rendering_image_invalidator_interface</a>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
   </div>
 </div>
+<script type="text/javascript">
+  initNavTree('structsxsdk_1_1rendering__image__invalidator__interface.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public メソッド</a>  </div>
+  <div class="headertitle">
+<div class="title">構造体 sxsdk::rendering_image_invalidator_interface</div>  </div>
+</div>
 <div class="contents">
-<h1>構造体 sxsdk::rendering_image_invalidator_interface</h1><!-- doxytag: class="sxsdk::rendering_image_invalidator_interface" --><!-- doxytag: inherits="unknown_interface" --><div class="dynheader">
+<!-- doxytag: class="sxsdk::rendering_image_invalidator_interface" --><!-- doxytag: inherits="unknown_interface" -->
+<p>レンダリングの進捗状況を受け取るためのクラス。このクラスを継承して処理を実装する。  
+ <a href="structsxsdk_1_1rendering__image__invalidator__interface.html#details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="renderinginterface_8h_source.html">renderinginterface.h</a>&gt;</code></p>
+<div class="dynheader">
 sxsdk::rendering_image_invalidator_interfaceに対する継承グラフ</div>
-<div class="dynsection">
+<div class="dyncontent">
  <div class="center">
-  <img src="structsxsdk_1_1rendering__image__invalidator__interface.gif" usemap="#sxsdk::rendering_image_invalidator_interface_map" alt=""/>
+  <img src="structsxsdk_1_1rendering__image__invalidator__interface.png" usemap="#sxsdk::rendering_image_invalidator_interface_map" alt=""/>
   <map id="sxsdk::rendering_image_invalidator_interface_map" name="sxsdk::rendering_image_invalidator_interface_map">
 <area href="classunknown__interface.html" alt="unknown_interface" shape="rect" coords="0,0,267,24"/>
 </map>
- </div>
-</div>
+ </div></div>
 
 <p><a href="structsxsdk_1_1rendering__image__invalidator__interface-members.html">すべてのメンバ一覧</a></p>
-<table border="0" cellpadding="0" cellspacing="0">
-<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1rendering__image__invalidator__interface.html#a0045a4964b3c740b37109acca83313ff">block_being_started</a> (const sx::rectangle_class &amp;area, int thread_index, bool server, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オーバライド可。レンダリングスレッド、またはShadeGridサーバに割り当てられたレンダリング領域が通知される。  <a href="#a0045a4964b3c740b37109acca83313ff"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1rendering__image__invalidator__interface.html#a5136b227a5dfe075f741d2922125aa1d">block_finished</a> (const sx::rectangle_class &amp;area, int thread_index, bool server, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オーバライド可。レイトレース処理の完了した領域が通知される。  <a href="#a5136b227a5dfe075f741d2922125aa1d"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1rendering__image__invalidator__interface.html#aed8913234eadb8453b12ab293480c03b">invalidate</a> (const sx::rectangle_class *area=0, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オーバライド可。レンダリングイメージの再描画を通知する。  <a href="#aed8913234eadb8453b12ab293480c03b"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1rendering__image__invalidator__interface.html#aa2ff341b4a0eba9a2228b095276be3d5">rendering_started</a> (void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オーバライド可。レンダリングが開始されたときに呼ばれる。  <a href="#aa2ff341b4a0eba9a2228b095276be3d5"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1rendering__image__invalidator__interface.html#aea0810f25924af93265d0987e14c0269">rendering_finished</a> (void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オーバライド可。レンダリングが終了したときに呼ばれる。  <a href="#aea0810f25924af93265d0987e14c0269"></a><br/></td></tr>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1rendering__image__invalidator__interface.html#a0045a4964b3c740b37109acca83313ff">block_being_started</a> (const sx::rectangle_class &amp;area, int thread_index, bool server, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オーバライド可。レンダリングスレッド、またはShadeGridサーバに割り当てられたレンダリング領域が通知される。  <a href="#a0045a4964b3c740b37109acca83313ff"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1rendering__image__invalidator__interface.html#a5136b227a5dfe075f741d2922125aa1d">block_finished</a> (const sx::rectangle_class &amp;area, int thread_index, bool server, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オーバライド可。レイトレース処理の完了した領域が通知される。  <a href="#a5136b227a5dfe075f741d2922125aa1d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1rendering__image__invalidator__interface.html#aed8913234eadb8453b12ab293480c03b">invalidate</a> (const sx::rectangle_class *area=0, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オーバライド可。レンダリングイメージの再描画を通知する。  <a href="#aed8913234eadb8453b12ab293480c03b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1rendering__image__invalidator__interface.html#aa2ff341b4a0eba9a2228b095276be3d5">rendering_started</a> (void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オーバライド可。レンダリングが開始されたときに呼ばれる。  <a href="#aa2ff341b4a0eba9a2228b095276be3d5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1rendering__image__invalidator__interface.html#aea0810f25924af93265d0987e14c0269">rendering_finished</a> (void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オーバライド可。レンダリングが終了したときに呼ばれる。  <a href="#aea0810f25924af93265d0987e14c0269"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1rendering__image__invalidator__interface.html#a3e9cdba5b648038d8b6b372eeb0bbec0">rendering_progress</a> (float percentage, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オーバライド可。レンダリングの進行状況を通知する。  <a href="#a3e9cdba5b648038d8b6b372eeb0bbec0"></a><br/></td></tr>
 </table>
-<hr/><h2>関数</h2>
+<hr/><a name="details" id="details"></a><h2>説明</h2>
+<div class="textblock"><p>レンダリングの進捗状況を受け取るためのクラス。このクラスを継承して処理を実装する。 </p>
+</div><hr/><h2>関数</h2>
 <a class="anchor" id="a0045a4964b3c740b37109acca83313ff"></a><!-- doxytag: member="sxsdk::rendering_image_invalidator_interface::block_being_started" ref="a0045a4964b3c740b37109acca83313ff" args="(const sx::rectangle_class &amp;area, int thread_index, bool server, void *aux=0)" -->
 <div class="memitem">
 <div class="memproto">
@@ -62,31 +95,31 @@ sxsdk::rendering_image_invalidator_interfaceに対する継承グラフ</div>
         <tr>
           <td class="memname">virtual void sxsdk::rendering_image_invalidator_interface::block_being_started </td>
           <td>(</td>
-          <td class="paramtype">const sx::rectangle_class &amp;&nbsp;</td>
-          <td class="paramname"> <em>area</em>, </td>
+          <td class="paramtype">const sx::rectangle_class &amp;&#160;</td>
+          <td class="paramname"><em>area</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>thread_index</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>thread_index</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&nbsp;</td>
-          <td class="paramname"> <em>server</em>, </td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>server</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [inline, virtual]</code></td>
+          <td></td><td><code> [inline, virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -96,10 +129,10 @@ sxsdk::rendering_image_invalidator_interfaceに対する継承グラフ</div>
 <p>レイトレース処理が行われる前に呼ばれるので、これから計算を開始する場所を表示するときに使用する。同じ領域に対して複数のスレッドが割り当てられる場合がある。</p>
 <p>複数のスレッドから同時に呼ばれるため、必要に応じて排他制御をクライアントコード側で実装する。</p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>area</em>&nbsp;</td><td>レンダリングスレッドに割り当てられた領域 </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>thread_index</em>&nbsp;</td><td>スレッドの番号。<em>server</em> がtrueの場合はShadeGridの番号 </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>server</em>&nbsp;</td><td>ShadeGridサーバに割り当てられた場合はtrueが渡される </td></tr>
+  <table class="params">
+    <tr><td class="paramname">area</td><td>レンダリングスレッドに割り当てられた領域 </td></tr>
+    <tr><td class="paramname">thread_index</td><td>スレッドの番号。<em>server</em> がtrueの場合はShadeGridの番号 </td></tr>
+    <tr><td class="paramname">server</td><td>ShadeGridサーバに割り当てられた場合はtrueが渡される </td></tr>
   </table>
   </dd>
 </dl>
@@ -113,45 +146,45 @@ sxsdk::rendering_image_invalidator_interfaceに対する継承グラフ</div>
         <tr>
           <td class="memname">virtual void sxsdk::rendering_image_invalidator_interface::block_finished </td>
           <td>(</td>
-          <td class="paramtype">const sx::rectangle_class &amp;&nbsp;</td>
-          <td class="paramname"> <em>area</em>, </td>
+          <td class="paramtype">const sx::rectangle_class &amp;&#160;</td>
+          <td class="paramname"><em>area</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>thread_index</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>thread_index</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&nbsp;</td>
-          <td class="paramname"> <em>server</em>, </td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>server</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [inline, virtual]</code></td>
+          <td></td><td><code> [inline, virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
 <p>オーバライド可。レイトレース処理の完了した領域が通知される。 </p>
-<p><code><a class="el" href="structsxsdk_1_1rendering__interface.html#a81a8792f31e69798814461a9ea150f5b" title="レンダリングイメージオブジェクトを取得する。">rendering_interface::get_image_interface</a></code>, <code><a class="el" href="structsxsdk_1_1rendering__interface.html#afc9850b746d978ee3b50c1e6e7e2c933" title="Shade本体で標準定義されているレンダリングイメージレイヤーを取得する...">rendering_interface::get_image_layer_interface</a></code> で取得したイメージのうち、<em>area</em> で渡された領域が更新箇所となる。</p>
+<p><code><a class="el" href="structsxsdk_1_1rendering__interface.html#adb1b42a2a7f5c9df0dc4176b4cf297b1" title="レンダリングイメージオブジェクトを取得する。">rendering_interface::get_image_interface</a></code>, <code><a class="el" href="structsxsdk_1_1rendering__interface.html#afc9850b746d978ee3b50c1e6e7e2c933" title="Shade本体で標準定義されているレンダリングイメージレイヤーを取得する">rendering_interface::get_image_layer_interface</a></code> で取得したイメージのうち、<em>area</em> で渡された領域が更新箇所となる。</p>
 <p>レンダリング完了まで処理を続けた場合、<code>rendering_interface::total_number_of_rendering_blocks</code> で取得できる数と同じ回数が呼び出される。</p>
 <p>複数のスレッドから同時に呼ばれるため、必要に応じて排他制御をクライアントコード側で実装する。</p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>area</em>&nbsp;</td><td>レンダリングの完了した領域 </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>thread_index</em>&nbsp;</td><td>スレッドの番号。<em>server</em> がtrueの場合はShadeGridの番号 </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>server</em>&nbsp;</td><td>ShadeGridサーバに割り当てられた場合はtrueが渡される </td></tr>
+  <table class="params">
+    <tr><td class="paramname">area</td><td>レンダリングの完了した領域 </td></tr>
+    <tr><td class="paramname">thread_index</td><td>スレッドの番号。<em>server</em> がtrueの場合はShadeGridの番号 </td></tr>
+    <tr><td class="paramname">server</td><td>ShadeGridサーバに割り当てられた場合はtrueが渡される </td></tr>
   </table>
   </dd>
 </dl>
@@ -165,19 +198,19 @@ sxsdk::rendering_image_invalidator_interfaceに対する継承グラフ</div>
         <tr>
           <td class="memname">virtual void sxsdk::rendering_image_invalidator_interface::invalidate </td>
           <td>(</td>
-          <td class="paramtype">const sx::rectangle_class *&nbsp;</td>
-          <td class="paramname"> <em>area</em> = <code>0</code>, </td>
+          <td class="paramtype">const sx::rectangle_class *&#160;</td>
+          <td class="paramname"><em>area</em> = <code>0</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [inline, virtual]</code></td>
+          <td></td><td><code> [inline, virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -185,8 +218,8 @@ sxsdk::rendering_image_invalidator_interfaceに対する継承グラフ</div>
 
 <p>オーバライド可。レンダリングイメージの再描画を通知する。 </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>area</em>&nbsp;</td><td>再描画を行う領域を格納したポインタ。0が渡された場合はイメージ全体を再描画。 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">area</td><td>再描画を行う領域を格納したポインタ。0が渡された場合はイメージ全体を再描画。 </td></tr>
   </table>
   </dd>
 </dl>
@@ -200,9 +233,8 @@ sxsdk::rendering_image_invalidator_interfaceに対する継承グラフ</div>
         <tr>
           <td class="memname">virtual void sxsdk::rendering_image_invalidator_interface::rendering_finished </td>
           <td>(</td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td>
-          <td>&nbsp;)&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code></td><td>)</td>
           <td><code> [inline, virtual]</code></td>
         </tr>
       </table>
@@ -210,7 +242,42 @@ sxsdk::rendering_image_invalidator_interfaceに対する継承グラフ</div>
 <div class="memdoc">
 
 <p>オーバライド可。レンダリングが終了したときに呼ばれる。 </p>
-<p>この関数の呼出し前に取得したレンダリングイメージは破棄されるため、<code><a class="el" href="structsxsdk_1_1rendering__interface.html#a81a8792f31e69798814461a9ea150f5b" title="レンダリングイメージオブジェクトを取得する。">rendering_interface::get_image_interface</a></code>, <code><a class="el" href="structsxsdk_1_1rendering__interface.html#afc9850b746d978ee3b50c1e6e7e2c933" title="Shade本体で標準定義されているレンダリングイメージレイヤーを取得する...">rendering_interface::get_image_layer_interface</a></code> で再取得する必要がある。 </p>
+<p>この関数の呼出し前に取得したレンダリングイメージは破棄されるため、<code><a class="el" href="structsxsdk_1_1rendering__interface.html#adb1b42a2a7f5c9df0dc4176b4cf297b1" title="レンダリングイメージオブジェクトを取得する。">rendering_interface::get_image_interface</a></code>, <code><a class="el" href="structsxsdk_1_1rendering__interface.html#afc9850b746d978ee3b50c1e6e7e2c933" title="Shade本体で標準定義されているレンダリングイメージレイヤーを取得する">rendering_interface::get_image_layer_interface</a></code> で再取得する必要がある。 </p>
+
+</div>
+</div>
+<a class="anchor" id="a3e9cdba5b648038d8b6b372eeb0bbec0"></a><!-- doxytag: member="sxsdk::rendering_image_invalidator_interface::rendering_progress" ref="a3e9cdba5b648038d8b6b372eeb0bbec0" args="(float percentage, void *aux=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void sxsdk::rendering_image_invalidator_interface::rendering_progress </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>percentage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>オーバライド可。レンダリングの進行状況を通知する。 </p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">percentage</td><td>レンダリングの進行状況（0.0% - 100.0） </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -221,9 +288,8 @@ sxsdk::rendering_image_invalidator_interfaceに対する継承グラフ</div>
         <tr>
           <td class="memname">virtual void sxsdk::rendering_image_invalidator_interface::rendering_started </td>
           <td>(</td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td>
-          <td>&nbsp;)&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code></td><td>)</td>
           <td><code> [inline, virtual]</code></td>
         </tr>
       </table>
@@ -231,7 +297,7 @@ sxsdk::rendering_image_invalidator_interfaceに対する継承グラフ</div>
 <div class="memdoc">
 
 <p>オーバライド可。レンダリングが開始されたときに呼ばれる。 </p>
-<p>レンダリングイメージが生成された後に呼ばれる。この関数の呼出し前に取得したレンダリングイメージは破棄されるため、<code><a class="el" href="structsxsdk_1_1rendering__interface.html#a81a8792f31e69798814461a9ea150f5b" title="レンダリングイメージオブジェクトを取得する。">rendering_interface::get_image_interface</a></code>, <code><a class="el" href="structsxsdk_1_1rendering__interface.html#afc9850b746d978ee3b50c1e6e7e2c933" title="Shade本体で標準定義されているレンダリングイメージレイヤーを取得する...">rendering_interface::get_image_layer_interface</a></code> で再取得する必要がある。 </p>
+<p>レンダリングイメージが生成された後に呼ばれる。この関数の呼出し前に取得したレンダリングイメージは破棄されるため、<code><a class="el" href="structsxsdk_1_1rendering__interface.html#adb1b42a2a7f5c9df0dc4176b4cf297b1" title="レンダリングイメージオブジェクトを取得する。">rendering_interface::get_image_interface</a></code>, <code><a class="el" href="structsxsdk_1_1rendering__interface.html#afc9850b746d978ee3b50c1e6e7e2c933" title="Shade本体で標準定義されているレンダリングイメージレイヤーを取得する">rendering_interface::get_image_layer_interface</a></code> で再取得する必要がある。 </p>
 
 </div>
 </div>
@@ -239,6 +305,11 @@ sxsdk::rendering_image_invalidator_interfaceに対する継承グラフ</div>
 <li><a class="el" href="renderinginterface_8h_source.html">renderinginterface.h</a></li>
 </ul>
 </div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><b>sxsdk</b>      </li>
+      <li class="navelem"><a class="el" href="structsxsdk_1_1rendering__image__invalidator__interface.html">rendering_image_invalidator_interface</a>      </li>
 <br><br>
 <hr>
 <div align="center">Copyright &copy; e frontier, Inc. All rights reserved.</div>

@@ -4,156 +4,186 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <title>構造体 sxsdk::animation_settings_interface</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<!-- 作成： Doxygen 1.6.1 -->
-<div class="navigation" id="top">
-  <div class="tabs">
-    <ul>
-      <li><a href="main.html"><span>メインページ</span></a></li>
+<!-- 作成： Doxygen 1.7.4 -->
+<div id="top">
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
       <li><a href="pages.html"><span>関連ページ</span></a></li>
       <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
       <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
       <li><a href="files.html"><span>ファイル</span></a></li>
     </ul>
   </div>
-  <div class="tabs">
-    <ul>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
       <li><a href="annotated.html"><span>構成</span></a></li>
       <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
       <li><a href="functions.html"><span>構成メンバ</span></a></li>
     </ul>
   </div>
-  <div class="navpath"><a class="el" href="namespacesxsdk.html">sxsdk</a>::<a class="el" href="structsxsdk_1_1animation__settings__interface.html">animation_settings_interface</a>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
   </div>
 </div>
+<script type="text/javascript">
+  initNavTree('structsxsdk_1_1animation__settings__interface.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public メソッド</a>  </div>
+  <div class="headertitle">
+<div class="title">構造体 sxsdk::animation_settings_interface</div>  </div>
+</div>
 <div class="contents">
-<h1>構造体 sxsdk::animation_settings_interface</h1><!-- doxytag: class="sxsdk::animation_settings_interface" --><!-- doxytag: inherits="sxsdk::shade_interface" --><div class="dynheader">
+<!-- doxytag: class="sxsdk::animation_settings_interface" --><!-- doxytag: inherits="sxsdk::shade_interface" -->
+<p>アニメーション作成に関する各種設定の取得、設定に使用する。  
+ <a href="structsxsdk_1_1animation__settings__interface.html#details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="animationsettingsinterface_8h_source.html">animationsettingsinterface.h</a>&gt;</code></p>
+<div class="dynheader">
 sxsdk::animation_settings_interfaceに対する継承グラフ</div>
-<div class="dynsection">
+<div class="dyncontent">
  <div class="center">
-  <img src="structsxsdk_1_1animation__settings__interface.gif" usemap="#sxsdk::animation_settings_interface_map" alt=""/>
+  <img src="structsxsdk_1_1animation__settings__interface.png" usemap="#sxsdk::animation_settings_interface_map" alt=""/>
   <map id="sxsdk::animation_settings_interface_map" name="sxsdk::animation_settings_interface_map">
-<area href="structsxsdk_1_1shade__interface.html" alt="sxsdk::shade_interface" shape="rect" coords="0,56,208,80"/>
+<area href="structsxsdk_1_1shade__interface.html" title="Shadeの情報へのアクセスの基本となるインターフェイス" alt="sxsdk::shade_interface" shape="rect" coords="0,56,208,80"/>
 <area href="classunknown__interface.html" alt="unknown_interface" shape="rect" coords="0,0,208,24"/>
 </map>
- </div>
-</div>
+ </div></div>
 
 <p><a href="structsxsdk_1_1animation__settings__interface-members.html">すべてのメンバ一覧</a></p>
-<table border="0" cellpadding="0" cellspacing="0">
-<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#a9056a61e87fee468154a8fcfa3d8c5d8">get_timecode_mode</a> (void *=0) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">シーケンス値の表示モードを取得する。  <a href="#a9056a61e87fee468154a8fcfa3d8c5d8"></a><br/></td></tr>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#a31ca6e3f3773fafb224c7309fa92d7ac">get_timecode_mode</a> (void *=nullptr) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">シーケンス値の表示モードを取得する。  <a href="#a31ca6e3f3773fafb224c7309fa92d7ac"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <br class="typebreak"/>
-<a class="el" href="structsxsdk_1_1animation__settings__interface.html">animation_settings_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#a9693b9bb5aac68661639ebf34c44bfb8">set_timecode_mode</a> (bool timecode_mode_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">シーケンス値の表示モードを設定する。  <a href="#a9693b9bb5aac68661639ebf34c44bfb8"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7e0a40f5f03b29a763f4d6ab321e51d1"></a><!-- doxytag: member="sxsdk::animation_settings_interface::get_leading_frames" ref="a7e0a40f5f03b29a763f4d6ab321e51d1" args="(void *=0) const " -->
-virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#a7e0a40f5f03b29a763f4d6ab321e51d1">get_leading_frames</a> (void *=0) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">リーディングフレーム数を取得する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8cda5662c2437660d7289aab4ebee431"></a><!-- doxytag: member="sxsdk::animation_settings_interface::set_leading_frames" ref="a8cda5662c2437660d7289aab4ebee431" args="(int leading_frames_param, void *=0)" -->
+<a class="el" href="structsxsdk_1_1animation__settings__interface.html">animation_settings_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#aa70feec951be6baf15274b9988acf465">set_timecode_mode</a> (bool timecode_mode_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">シーケンス値の表示モードを設定する。  <a href="#aa70feec951be6baf15274b9988acf465"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7c7cb01912b9dc253a8cb19d4da74de3"></a><!-- doxytag: member="sxsdk::animation_settings_interface::get_leading_frames" ref="a7c7cb01912b9dc253a8cb19d4da74de3" args="(void *=nullptr) const " -->
+virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#a7c7cb01912b9dc253a8cb19d4da74de3">get_leading_frames</a> (void *=nullptr) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">リーディングフレーム数を取得する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a57d4e160634ab2ea713a728c208aa7d9"></a><!-- doxytag: member="sxsdk::animation_settings_interface::set_leading_frames" ref="a57d4e160634ab2ea713a728c208aa7d9" args="(int leading_frames_param, void *=nullptr)" -->
 virtual <br class="typebreak"/>
-<a class="el" href="structsxsdk_1_1animation__settings__interface.html">animation_settings_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#a8cda5662c2437660d7289aab4ebee431">set_leading_frames</a> (int leading_frames_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">リーディングフレーム数を設定する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8a57ffb03098f6abf1ceec9666b5c58e"></a><!-- doxytag: member="sxsdk::animation_settings_interface::get_trailing_frames" ref="a8a57ffb03098f6abf1ceec9666b5c58e" args="(void *=0) const " -->
-virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#a8a57ffb03098f6abf1ceec9666b5c58e">get_trailing_frames</a> (void *=0) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">トレーリングフレーム数を取得する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aac59a80f884493febb189ab20ef6422f"></a><!-- doxytag: member="sxsdk::animation_settings_interface::set_trailing_frames" ref="aac59a80f884493febb189ab20ef6422f" args="(int trailing_frames_param, void *=0)" -->
+<a class="el" href="structsxsdk_1_1animation__settings__interface.html">animation_settings_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#a57d4e160634ab2ea713a728c208aa7d9">set_leading_frames</a> (int leading_frames_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">リーディングフレーム数を設定する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae31322a52219e2300b69b65725f8a36d"></a><!-- doxytag: member="sxsdk::animation_settings_interface::get_trailing_frames" ref="ae31322a52219e2300b69b65725f8a36d" args="(void *=nullptr) const " -->
+virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#ae31322a52219e2300b69b65725f8a36d">get_trailing_frames</a> (void *=nullptr) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">トレーリングフレーム数を取得する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afeb50469ecc56b87793b6be6b9defa2f"></a><!-- doxytag: member="sxsdk::animation_settings_interface::set_trailing_frames" ref="afeb50469ecc56b87793b6be6b9defa2f" args="(int trailing_frames_param, void *=nullptr)" -->
 virtual <br class="typebreak"/>
-<a class="el" href="structsxsdk_1_1animation__settings__interface.html">animation_settings_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#aac59a80f884493febb189ab20ef6422f">set_trailing_frames</a> (int trailing_frames_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">トレーリングフレーム数を設定する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaec5bcd8e14c5efc3054ca75013cc297"></a><!-- doxytag: member="sxsdk::animation_settings_interface::get_step" ref="aaec5bcd8e14c5efc3054ca75013cc297" args="(void *=0) const " -->
-virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#aaec5bcd8e14c5efc3054ca75013cc297">get_step</a> (void *=0) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ステップ数を取得する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab8df0251318bd67f7f4bf5028fedc07d"></a><!-- doxytag: member="sxsdk::animation_settings_interface::set_step" ref="ab8df0251318bd67f7f4bf5028fedc07d" args="(int step_param, void *=0)" -->
+<a class="el" href="structsxsdk_1_1animation__settings__interface.html">animation_settings_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#afeb50469ecc56b87793b6be6b9defa2f">set_trailing_frames</a> (int trailing_frames_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">トレーリングフレーム数を設定する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a099b6f2a5ea403ea9cd218d873b47eb2"></a><!-- doxytag: member="sxsdk::animation_settings_interface::get_step" ref="a099b6f2a5ea403ea9cd218d873b47eb2" args="(void *=nullptr) const " -->
+virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#a099b6f2a5ea403ea9cd218d873b47eb2">get_step</a> (void *=nullptr) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">ステップ数を取得する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a98ad67ea85918d26e7fc63b2fadc938f"></a><!-- doxytag: member="sxsdk::animation_settings_interface::set_step" ref="a98ad67ea85918d26e7fc63b2fadc938f" args="(int step_param, void *=nullptr)" -->
 virtual <br class="typebreak"/>
-<a class="el" href="structsxsdk_1_1animation__settings__interface.html">animation_settings_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#ab8df0251318bd67f7f4bf5028fedc07d">set_step</a> (int step_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ステップ数を設定する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#a884dad7ca2808a7cf83ddcd57136e3e7">get_starting_frame</a> (void *=0) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">開始フレームの値を取得する。  <a href="#a884dad7ca2808a7cf83ddcd57136e3e7"></a><br/></td></tr>
+<a class="el" href="structsxsdk_1_1animation__settings__interface.html">animation_settings_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#a98ad67ea85918d26e7fc63b2fadc938f">set_step</a> (int step_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">ステップ数を設定する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#a60939cba35dfefe9d539398399dd8764">get_starting_frame</a> (void *=nullptr) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">開始フレームの値を取得する。  <a href="#a60939cba35dfefe9d539398399dd8764"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <br class="typebreak"/>
-<a class="el" href="structsxsdk_1_1animation__settings__interface.html">animation_settings_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#ac26640b362191f7041ad754bbcfb4b50">set_starting_frame</a> (int starting_frame_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">開始フレームの値を設定する。  <a href="#ac26640b362191f7041ad754bbcfb4b50"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#a0d3f342365bec055547b326b3fb0362f">get_ending_frame</a> (void *=0) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">終了フレームの値を取得する。  <a href="#a0d3f342365bec055547b326b3fb0362f"></a><br/></td></tr>
+<a class="el" href="structsxsdk_1_1animation__settings__interface.html">animation_settings_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#abe94e3e22058a7a1796eda5bdcf61a48">set_starting_frame</a> (int starting_frame_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">開始フレームの値を設定する。  <a href="#abe94e3e22058a7a1796eda5bdcf61a48"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#ae24dead4d901efc4e40648d5e870d7c1">get_ending_frame</a> (void *=nullptr) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">終了フレームの値を取得する。  <a href="#ae24dead4d901efc4e40648d5e870d7c1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <br class="typebreak"/>
-<a class="el" href="structsxsdk_1_1animation__settings__interface.html">animation_settings_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#a196d46279ebf958e85a92fe1728d37a6">set_ending_frame</a> (int ending_frame_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">終了フレームの値を設定する。  <a href="#a196d46279ebf958e85a92fe1728d37a6"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae8d257208ecfaeee1df53bccb003c83f"></a><!-- doxytag: member="sxsdk::animation_settings_interface::get_frame_rate" ref="ae8d257208ecfaeee1df53bccb003c83f" args="(void *=0) const " -->
-virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#ae8d257208ecfaeee1df53bccb003c83f">get_frame_rate</a> (void *=0) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">フレームレートを取得する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a79ab7d459ea6072f5dd6455bd37de2b1"></a><!-- doxytag: member="sxsdk::animation_settings_interface::set_frame_rate" ref="a79ab7d459ea6072f5dd6455bd37de2b1" args="(int frame_rate_param, void *=0)" -->
+<a class="el" href="structsxsdk_1_1animation__settings__interface.html">animation_settings_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#a6bde5b2087f1a474e001553d5e35cb6f">set_ending_frame</a> (int ending_frame_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">終了フレームの値を設定する。  <a href="#a6bde5b2087f1a474e001553d5e35cb6f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aea39811e4fe0a5750fd2ff9a681ab865"></a><!-- doxytag: member="sxsdk::animation_settings_interface::get_frame_rate" ref="aea39811e4fe0a5750fd2ff9a681ab865" args="(void *=nullptr) const " -->
+virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#aea39811e4fe0a5750fd2ff9a681ab865">get_frame_rate</a> (void *=nullptr) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">フレームレートを取得する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9f7f3b904a0b052401a7f06d6dea8628"></a><!-- doxytag: member="sxsdk::animation_settings_interface::set_frame_rate" ref="a9f7f3b904a0b052401a7f06d6dea8628" args="(int frame_rate_param, void *=nullptr)" -->
 virtual <br class="typebreak"/>
-<a class="el" href="structsxsdk_1_1animation__settings__interface.html">animation_settings_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#a79ab7d459ea6072f5dd6455bd37de2b1">set_frame_rate</a> (int frame_rate_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">フレームレートを設定する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab790e764452898839ddf278609e05449"></a><!-- doxytag: member="sxsdk::animation_settings_interface::get_object_movie_mode" ref="ab790e764452898839ddf278609e05449" args="(void *=0) const " -->
-virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#ab790e764452898839ddf278609e05449">get_object_movie_mode</a> (void *=0) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オブジェクトムービーレンダリングモードのオン／オフを取得する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af49b8bc2b2c911afd4a0450a2d82e987"></a><!-- doxytag: member="sxsdk::animation_settings_interface::set_object_movie_mode" ref="af49b8bc2b2c911afd4a0450a2d82e987" args="(bool object_movie_mode_param, void *=0)" -->
+<a class="el" href="structsxsdk_1_1animation__settings__interface.html">animation_settings_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#a9f7f3b904a0b052401a7f06d6dea8628">set_frame_rate</a> (int frame_rate_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">フレームレートを設定する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a34dd966b860e7c26d5b6df4beadbdecd"></a><!-- doxytag: member="sxsdk::animation_settings_interface::get_object_movie_mode" ref="a34dd966b860e7c26d5b6df4beadbdecd" args="(void *=nullptr) const " -->
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#a34dd966b860e7c26d5b6df4beadbdecd">get_object_movie_mode</a> (void *=nullptr) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オブジェクトムービーレンダリングモードのオン／オフを取得する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abd7ac8afed03b5abf53c0e1277da5bcd"></a><!-- doxytag: member="sxsdk::animation_settings_interface::set_object_movie_mode" ref="abd7ac8afed03b5abf53c0e1277da5bcd" args="(bool object_movie_mode_param, void *=nullptr)" -->
 virtual <br class="typebreak"/>
-<a class="el" href="structsxsdk_1_1animation__settings__interface.html">animation_settings_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#af49b8bc2b2c911afd4a0450a2d82e987">set_object_movie_mode</a> (bool object_movie_mode_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オブジェクトムービーレンダリングモードのオン／オフを設定する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5f6ce868ec6bb47a136f0f8479d22b1d"></a><!-- doxytag: member="sxsdk::animation_settings_interface::get_rows" ref="a5f6ce868ec6bb47a136f0f8479d22b1d" args="(void *=0) const " -->
-virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#a5f6ce868ec6bb47a136f0f8479d22b1d">get_rows</a> (void *=0) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オブジェクトムービーレンダリングの行数を取得する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a941e1b68870185ba77aef31d9ad71345"></a><!-- doxytag: member="sxsdk::animation_settings_interface::set_rows" ref="a941e1b68870185ba77aef31d9ad71345" args="(int rows_param, void *=0)" -->
+<a class="el" href="structsxsdk_1_1animation__settings__interface.html">animation_settings_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#abd7ac8afed03b5abf53c0e1277da5bcd">set_object_movie_mode</a> (bool object_movie_mode_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オブジェクトムービーレンダリングモードのオン／オフを設定する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3c48ddbfabf4bebd25703bcdb2724749"></a><!-- doxytag: member="sxsdk::animation_settings_interface::get_rows" ref="a3c48ddbfabf4bebd25703bcdb2724749" args="(void *=nullptr) const " -->
+virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#a3c48ddbfabf4bebd25703bcdb2724749">get_rows</a> (void *=nullptr) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オブジェクトムービーレンダリングの行数を取得する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afa62cdb3960434af6572450decad34fb"></a><!-- doxytag: member="sxsdk::animation_settings_interface::set_rows" ref="afa62cdb3960434af6572450decad34fb" args="(int rows_param, void *=nullptr)" -->
 virtual <br class="typebreak"/>
-<a class="el" href="structsxsdk_1_1animation__settings__interface.html">animation_settings_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#a941e1b68870185ba77aef31d9ad71345">set_rows</a> (int rows_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オブジェクトムービーレンダリングの行数を設定する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af40e25eb2330ea30717283a6776c4ec3"></a><!-- doxytag: member="sxsdk::animation_settings_interface::get_dropframe" ref="af40e25eb2330ea30717283a6776c4ec3" args="(void *=0) const " -->
-virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#af40e25eb2330ea30717283a6776c4ec3">get_dropframe</a> (void *=0) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ドロップフレームのオン／オフを取得する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0e672276e3ce50996318daefc243ffaf"></a><!-- doxytag: member="sxsdk::animation_settings_interface::set_dropframe" ref="a0e672276e3ce50996318daefc243ffaf" args="(bool dropframe_param, void *=0)" -->
+<a class="el" href="structsxsdk_1_1animation__settings__interface.html">animation_settings_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#afa62cdb3960434af6572450decad34fb">set_rows</a> (int rows_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オブジェクトムービーレンダリングの行数を設定する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a21f28aa0be129aeb3d105e7259586f1d"></a><!-- doxytag: member="sxsdk::animation_settings_interface::get_dropframe" ref="a21f28aa0be129aeb3d105e7259586f1d" args="(void *=nullptr) const " -->
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#a21f28aa0be129aeb3d105e7259586f1d">get_dropframe</a> (void *=nullptr) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">ドロップフレームのオン／オフを取得する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae929c008c877bb088015f370ee4724e8"></a><!-- doxytag: member="sxsdk::animation_settings_interface::set_dropframe" ref="ae929c008c877bb088015f370ee4724e8" args="(bool dropframe_param, void *=nullptr)" -->
 virtual <br class="typebreak"/>
-<a class="el" href="structsxsdk_1_1animation__settings__interface.html">animation_settings_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#a0e672276e3ce50996318daefc243ffaf">set_dropframe</a> (bool dropframe_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ドロップフレームのオン／オフを設定する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8844c20487cddaa5fc01e09b49e6a55d"></a><!-- doxytag: member="sxsdk::animation_settings_interface::get_auto_scaling" ref="a8844c20487cddaa5fc01e09b49e6a55d" args="(void *=0) const " -->
-virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#a8844c20487cddaa5fc01e09b49e6a55d">get_auto_scaling</a> (void *=0) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">スケーリングのオン／オフを取得する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9edf139b3bbbb7ef077102e93757d24a"></a><!-- doxytag: member="sxsdk::animation_settings_interface::set_auto_scaling" ref="a9edf139b3bbbb7ef077102e93757d24a" args="(bool auto_scaling_param, void *=0)" -->
+<a class="el" href="structsxsdk_1_1animation__settings__interface.html">animation_settings_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#ae929c008c877bb088015f370ee4724e8">set_dropframe</a> (bool dropframe_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">ドロップフレームのオン／オフを設定する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a07f2a6c4ca020cd9edf0046b8c361136"></a><!-- doxytag: member="sxsdk::animation_settings_interface::get_auto_scaling" ref="a07f2a6c4ca020cd9edf0046b8c361136" args="(void *=nullptr) const " -->
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#a07f2a6c4ca020cd9edf0046b8c361136">get_auto_scaling</a> (void *=nullptr) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">スケーリングのオン／オフを取得する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7c903e5c5a8dd8c2627a6e2b0b8f08fc"></a><!-- doxytag: member="sxsdk::animation_settings_interface::set_auto_scaling" ref="a7c903e5c5a8dd8c2627a6e2b0b8f08fc" args="(bool auto_scaling_param, void *=nullptr)" -->
 virtual <br class="typebreak"/>
-<a class="el" href="structsxsdk_1_1animation__settings__interface.html">animation_settings_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#a9edf139b3bbbb7ef077102e93757d24a">set_auto_scaling</a> (bool auto_scaling_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">スケーリングのオン／オフを設定する。 <br/></td></tr>
+<a class="el" href="structsxsdk_1_1animation__settings__interface.html">animation_settings_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#a7c903e5c5a8dd8c2627a6e2b0b8f08fc">set_auto_scaling</a> (bool auto_scaling_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">スケーリングのオン／オフを設定する。 <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1f54635a82b10e83c78f44c56a4fa387"></a><!-- doxytag: member="sxsdk::animation_settings_interface::make_timecode_string" ref="a1f54635a82b10e83c78f44c56a4fa387" args="(char *s, float frame, bool fraction, void *aux=0)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#a1f54635a82b10e83c78f44c56a4fa387">make_timecode_string</a> (char *s, float frame, bool fraction, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">フレーム番号からタイムコード文字列を作成する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a801aa7fba2950c786694484675fe7a6c"></a><!-- doxytag: member="sxsdk::animation_settings_interface::get_step_float" ref="a801aa7fba2950c786694484675fe7a6c" args="(void *=0) const " -->
-virtual float&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#a801aa7fba2950c786694484675fe7a6c">get_step_float</a> (void *=0) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ステップ数（float型）を取得する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aae38e1d3f98eea20c886e3821d043862"></a><!-- doxytag: member="sxsdk::animation_settings_interface::set_step_float" ref="aae38e1d3f98eea20c886e3821d043862" args="(float step_float_param, void *=0)" -->
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#a1f54635a82b10e83c78f44c56a4fa387">make_timecode_string</a> (char *s, float frame, bool fraction, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">フレーム番号からタイムコード文字列を作成する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1152a6c9dfd9d988a582e14b622dbb0b"></a><!-- doxytag: member="sxsdk::animation_settings_interface::get_step_float" ref="a1152a6c9dfd9d988a582e14b622dbb0b" args="(void *=nullptr) const " -->
+virtual float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#a1152a6c9dfd9d988a582e14b622dbb0b">get_step_float</a> (void *=nullptr) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">ステップ数（float型）を取得する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a934d5b86dc3c6c5c3589530696944135"></a><!-- doxytag: member="sxsdk::animation_settings_interface::set_step_float" ref="a934d5b86dc3c6c5c3589530696944135" args="(float step_float_param, void *=nullptr)" -->
 virtual <br class="typebreak"/>
-<a class="el" href="structsxsdk_1_1animation__settings__interface.html">animation_settings_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#aae38e1d3f98eea20c886e3821d043862">set_step_float</a> (float step_float_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ステップ数（float型）を設定する。 <br/></td></tr>
+<a class="el" href="structsxsdk_1_1animation__settings__interface.html">animation_settings_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#a934d5b86dc3c6c5c3589530696944135">set_step_float</a> (float step_float_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">ステップ数（float型）を設定する。 <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad9d61be21aaab2da349238c851b31ff8"></a><!-- doxytag: member="sxsdk::animation_settings_interface::stream_to_clipboard" ref="ad9d61be21aaab2da349238c851b31ff8" args="(void *aux=0)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#ad9d61be21aaab2da349238c851b31ff8">stream_to_clipboard</a> (void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オブジェクトの内容をテキスト（XML）としてクリップボードにコピーする。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab75ff4a7c184f31b6d028beeb7bbe304"></a><!-- doxytag: member="sxsdk::animation_settings_interface::get_soundpreview" ref="ab75ff4a7c184f31b6d028beeb7bbe304" args="(void *=0) const " -->
-virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#ab75ff4a7c184f31b6d028beeb7bbe304">get_soundpreview</a> (void *=0) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">サウンドプレビューのオン／オフを取得する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5dd881f029eb7a579693f9874b3c0424"></a><!-- doxytag: member="sxsdk::animation_settings_interface::set_soundpreview" ref="a5dd881f029eb7a579693f9874b3c0424" args="(bool soundpreview_param, void *=0)" -->
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#ad9d61be21aaab2da349238c851b31ff8">stream_to_clipboard</a> (void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オブジェクトの内容をテキスト（XML）としてクリップボードにコピーする。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2fb69ad71d1d0ab1be6d64fea2f59783"></a><!-- doxytag: member="sxsdk::animation_settings_interface::get_soundpreview" ref="a2fb69ad71d1d0ab1be6d64fea2f59783" args="(void *=nullptr) const " -->
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#a2fb69ad71d1d0ab1be6d64fea2f59783">get_soundpreview</a> (void *=nullptr) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">サウンドプレビューのオン／オフを取得する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad4c6e519189405c22bc3e5b6591b0c91"></a><!-- doxytag: member="sxsdk::animation_settings_interface::set_soundpreview" ref="ad4c6e519189405c22bc3e5b6591b0c91" args="(bool soundpreview_param, void *=nullptr)" -->
 virtual <br class="typebreak"/>
-<a class="el" href="structsxsdk_1_1animation__settings__interface.html">animation_settings_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#a5dd881f029eb7a579693f9874b3c0424">set_soundpreview</a> (bool soundpreview_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">サウンドプレビューのオン／オフを設定する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae8854de3604d518f82d8ee7895d5ff5e"></a><!-- doxytag: member="sxsdk::animation_settings_interface::get_sound3d" ref="ae8854de3604d518f82d8ee7895d5ff5e" args="(void *=0) const " -->
-virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#ae8854de3604d518f82d8ee7895d5ff5e">get_sound3d</a> (void *=0) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">3Dサウンドのオン／オフを取得する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aabff4792910a2c99230765bb70743676"></a><!-- doxytag: member="sxsdk::animation_settings_interface::set_sound3d" ref="aabff4792910a2c99230765bb70743676" args="(bool sound3d_param, void *=0)" -->
+<a class="el" href="structsxsdk_1_1animation__settings__interface.html">animation_settings_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#ad4c6e519189405c22bc3e5b6591b0c91">set_soundpreview</a> (bool soundpreview_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">サウンドプレビューのオン／オフを設定する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a64ae8f04810aadcc03fc1622d52f2f01"></a><!-- doxytag: member="sxsdk::animation_settings_interface::get_sound3d" ref="a64ae8f04810aadcc03fc1622d52f2f01" args="(void *=nullptr) const " -->
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#a64ae8f04810aadcc03fc1622d52f2f01">get_sound3d</a> (void *=nullptr) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">3Dサウンドのオン／オフを取得する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a56af13d4a9d9486c45b1bfbb409ed442"></a><!-- doxytag: member="sxsdk::animation_settings_interface::set_sound3d" ref="a56af13d4a9d9486c45b1bfbb409ed442" args="(bool sound3d_param, void *=nullptr)" -->
 virtual <br class="typebreak"/>
-<a class="el" href="structsxsdk_1_1animation__settings__interface.html">animation_settings_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#aabff4792910a2c99230765bb70743676">set_sound3d</a> (bool sound3d_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">3Dサウンドのオン／オフを設定する。 <br/></td></tr>
+<a class="el" href="structsxsdk_1_1animation__settings__interface.html">animation_settings_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1animation__settings__interface.html#a56af13d4a9d9486c45b1bfbb409ed442">set_sound3d</a> (bool sound3d_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">3Dサウンドのオン／オフを設定する。 <br/></td></tr>
 </table>
-<hr/><h2>関数</h2>
-<a class="anchor" id="a0d3f342365bec055547b326b3fb0362f"></a><!-- doxytag: member="sxsdk::animation_settings_interface::get_ending_frame" ref="a0d3f342365bec055547b326b3fb0362f" args="(void *=0) const " -->
+<hr/><a name="details" id="details"></a><h2>説明</h2>
+<div class="textblock"><p>アニメーション作成に関する各種設定の取得、設定に使用する。 </p>
+</div><hr/><h2>関数</h2>
+<a class="anchor" id="ae24dead4d901efc4e40648d5e870d7c1"></a><!-- doxytag: member="sxsdk::animation_settings_interface::get_ending_frame" ref="ae24dead4d901efc4e40648d5e870d7c1" args="(void *=nullptr) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">virtual int sxsdk::animation_settings_interface::get_ending_frame </td>
           <td>(</td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> = <code>0</code></td>
-          <td>&nbsp;)&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"> = <code>nullptr</code></td><td>)</td>
           <td> const<code> [virtual]</code></td>
         </tr>
       </table>
@@ -165,16 +195,15 @@ virtual <br class="typebreak"/>
 
 </div>
 </div>
-<a class="anchor" id="a884dad7ca2808a7cf83ddcd57136e3e7"></a><!-- doxytag: member="sxsdk::animation_settings_interface::get_starting_frame" ref="a884dad7ca2808a7cf83ddcd57136e3e7" args="(void *=0) const " -->
+<a class="anchor" id="a60939cba35dfefe9d539398399dd8764"></a><!-- doxytag: member="sxsdk::animation_settings_interface::get_starting_frame" ref="a60939cba35dfefe9d539398399dd8764" args="(void *=nullptr) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">virtual int sxsdk::animation_settings_interface::get_starting_frame </td>
           <td>(</td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> = <code>0</code></td>
-          <td>&nbsp;)&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"> = <code>nullptr</code></td><td>)</td>
           <td> const<code> [virtual]</code></td>
         </tr>
       </table>
@@ -186,16 +215,15 @@ virtual <br class="typebreak"/>
 
 </div>
 </div>
-<a class="anchor" id="a9056a61e87fee468154a8fcfa3d8c5d8"></a><!-- doxytag: member="sxsdk::animation_settings_interface::get_timecode_mode" ref="a9056a61e87fee468154a8fcfa3d8c5d8" args="(void *=0) const " -->
+<a class="anchor" id="a31ca6e3f3773fafb224c7309fa92d7ac"></a><!-- doxytag: member="sxsdk::animation_settings_interface::get_timecode_mode" ref="a31ca6e3f3773fafb224c7309fa92d7ac" args="(void *=nullptr) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">virtual bool sxsdk::animation_settings_interface::get_timecode_mode </td>
           <td>(</td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> = <code>0</code></td>
-          <td>&nbsp;)&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"> = <code>nullptr</code></td><td>)</td>
           <td> const<code> [virtual]</code></td>
         </tr>
       </table>
@@ -207,26 +235,26 @@ virtual <br class="typebreak"/>
 
 </div>
 </div>
-<a class="anchor" id="a196d46279ebf958e85a92fe1728d37a6"></a><!-- doxytag: member="sxsdk::animation_settings_interface::set_ending_frame" ref="a196d46279ebf958e85a92fe1728d37a6" args="(int ending_frame_param, void *=0)" -->
+<a class="anchor" id="a6bde5b2087f1a474e001553d5e35cb6f"></a><!-- doxytag: member="sxsdk::animation_settings_interface::set_ending_frame" ref="a6bde5b2087f1a474e001553d5e35cb6f" args="(int ending_frame_param, void *=nullptr)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">virtual <a class="el" href="structsxsdk_1_1animation__settings__interface.html">animation_settings_interface</a>&amp; sxsdk::animation_settings_interface::set_ending_frame </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>ending_frame_param</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ending_frame_param</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -237,26 +265,26 @@ virtual <br class="typebreak"/>
 
 </div>
 </div>
-<a class="anchor" id="ac26640b362191f7041ad754bbcfb4b50"></a><!-- doxytag: member="sxsdk::animation_settings_interface::set_starting_frame" ref="ac26640b362191f7041ad754bbcfb4b50" args="(int starting_frame_param, void *=0)" -->
+<a class="anchor" id="abe94e3e22058a7a1796eda5bdcf61a48"></a><!-- doxytag: member="sxsdk::animation_settings_interface::set_starting_frame" ref="abe94e3e22058a7a1796eda5bdcf61a48" args="(int starting_frame_param, void *=nullptr)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">virtual <a class="el" href="structsxsdk_1_1animation__settings__interface.html">animation_settings_interface</a>&amp; sxsdk::animation_settings_interface::set_starting_frame </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>starting_frame_param</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>starting_frame_param</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -267,26 +295,26 @@ virtual <br class="typebreak"/>
 
 </div>
 </div>
-<a class="anchor" id="a9693b9bb5aac68661639ebf34c44bfb8"></a><!-- doxytag: member="sxsdk::animation_settings_interface::set_timecode_mode" ref="a9693b9bb5aac68661639ebf34c44bfb8" args="(bool timecode_mode_param, void *=0)" -->
+<a class="anchor" id="aa70feec951be6baf15274b9988acf465"></a><!-- doxytag: member="sxsdk::animation_settings_interface::set_timecode_mode" ref="aa70feec951be6baf15274b9988acf465" args="(bool timecode_mode_param, void *=nullptr)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">virtual <a class="el" href="structsxsdk_1_1animation__settings__interface.html">animation_settings_interface</a>&amp; sxsdk::animation_settings_interface::set_timecode_mode </td>
           <td>(</td>
-          <td class="paramtype">bool&nbsp;</td>
-          <td class="paramname"> <em>timecode_mode_param</em>, </td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>timecode_mode_param</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -301,6 +329,11 @@ virtual <br class="typebreak"/>
 <li><a class="el" href="animationsettingsinterface_8h_source.html">animationsettingsinterface.h</a></li>
 </ul>
 </div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><b>sxsdk</b>      </li>
+      <li class="navelem"><a class="el" href="structsxsdk_1_1animation__settings__interface.html">animation_settings_interface</a>      </li>
 <br><br>
 <hr>
 <div align="center">Copyright &copy; e frontier, Inc. All rights reserved.</div>

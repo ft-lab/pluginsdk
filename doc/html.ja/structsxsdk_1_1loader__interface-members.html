@@ -4,34 +4,60 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <title>メンバ一覧</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<!-- 作成： Doxygen 1.6.1 -->
-<div class="navigation" id="top">
-  <div class="tabs">
-    <ul>
-      <li><a href="main.html"><span>メインページ</span></a></li>
+<!-- 作成： Doxygen 1.7.4 -->
+<div id="top">
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
       <li><a href="pages.html"><span>関連ページ</span></a></li>
       <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
       <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
       <li><a href="files.html"><span>ファイル</span></a></li>
     </ul>
   </div>
-  <div class="tabs">
-    <ul>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
       <li><a href="annotated.html"><span>構成</span></a></li>
       <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
       <li><a href="functions.html"><span>構成メンバ</span></a></li>
     </ul>
   </div>
 </div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+  initNavTree('structsxsdk_1_1loader__interface.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">sxsdk::loader_interface メンバ一覧</div>  </div>
+</div>
 <div class="contents">
-<h1>sxsdk::loader_interface メンバ一覧</h1>これは全メンバの一覧です。<a class="el" href="structsxsdk_1_1loader__interface.html">sxsdk::loader_interface</a>継承メンバも含んでいます。<table>
+これは全メンバの一覧です。<a class="el" href="structsxsdk_1_1loader__interface.html">sxsdk::loader_interface</a>継承メンバも含んでいます。<table>
   <tr bgcolor="#f0f0f0"><td><b>AddRef</b>() (次で定義されています。 <a class="el" href="classunknown__interface.html">unknown_interface</a>)</td><td><a class="el" href="classunknown__interface.html">unknown_interface</a></td><td><code> [virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="structsxsdk_1_1loader__interface.html#a6df2ac97d580de4576b2e8e5745e309b">begin</a>(void *aux=0)</td><td><a class="el" href="structsxsdk_1_1loader__interface.html">sxsdk::loader_interface</a></td><td><code> [inline, virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="structsxsdk_1_1loader__interface.html#aed5c97a5971b559741b3fb4bb0e1372a">begin_polymesh</a>(void *aux=0)</td><td><a class="el" href="structsxsdk_1_1loader__interface.html">sxsdk::loader_interface</a></td><td><code> [inline, virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="structsxsdk_1_1loader__interface.html#a571f3cf06233a0548524fccbff60b99d">begin_polymesh_face</a>(int n, void *aux=0)</td><td><a class="el" href="structsxsdk_1_1loader__interface.html">sxsdk::loader_interface</a></td><td><code> [inline, virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="structsxsdk_1_1loader__interface.html#ad874b2718590a9d25230299292758cb9">begin_polymesh_face2</a>(int n, int number_of_face_groups, void *aux=0)</td><td><a class="el" href="structsxsdk_1_1loader__interface.html">sxsdk::loader_interface</a></td><td><code> [inline, virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="structsxsdk_1_1loader__interface.html#a5c498d94d096749f4f591afbe5a9f186">begin_polymesh_face_group</a>(int face_group_index, void *aux=0)</td><td><a class="el" href="structsxsdk_1_1loader__interface.html">sxsdk::loader_interface</a></td><td><code> [inline, virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="structsxsdk_1_1loader__interface.html#ae05817501bb62de907bd4676d896cfae">begin_polymesh_vertex</a>(int n, void *aux=0)</td><td><a class="el" href="structsxsdk_1_1loader__interface.html">sxsdk::loader_interface</a></td><td><code> [inline, virtual]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>bool_type</b> Enum 値 (次で定義されています。 <a class="el" href="classunknown__interface.html">unknown_interface</a>)</td><td><a class="el" href="classunknown__interface.html">unknown_interface</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>box_end_type</b> Enum 値 (次で定義されています。 <a class="el" href="classunknown__interface.html">unknown_interface</a>)</td><td><a class="el" href="classunknown__interface.html">unknown_interface</a></td><td></td></tr>
@@ -47,6 +73,7 @@
   <tr class="memlist"><td><a class="el" href="structsxsdk_1_1loader__interface.html#a545ed74c2b9b1ac702660dc8c6789408">can_accept_polygon</a>(void *aux=0)</td><td><a class="el" href="structsxsdk_1_1loader__interface.html">sxsdk::loader_interface</a></td><td><code> [inline, virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="structsxsdk_1_1loader__interface.html#a957a760f67046859bfb52e9894c67338">can_accept_polyline</a>(void *aux=0)</td><td><a class="el" href="structsxsdk_1_1loader__interface.html">sxsdk::loader_interface</a></td><td><code> [inline, virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="structsxsdk_1_1loader__interface.html#a23ebdf0226319e7564b4375e721d3ec5">can_accept_polymesh</a>(void *aux=0)</td><td><a class="el" href="structsxsdk_1_1loader__interface.html">sxsdk::loader_interface</a></td><td><code> [inline, virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="structsxsdk_1_1loader__interface.html#a7453f8dd9e03944af111262638e5c430">can_accept_polymesh_face_group</a>(void *aux=0)</td><td><a class="el" href="structsxsdk_1_1loader__interface.html">sxsdk::loader_interface</a></td><td><code> [inline, virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="structsxsdk_1_1loader__interface.html#ae53b0b7842019ca55d2bab0d4ecf7496">can_accept_replicator</a>(void *aux=0)</td><td><a class="el" href="structsxsdk_1_1loader__interface.html">sxsdk::loader_interface</a></td><td><code> [inline, virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="structsxsdk_1_1loader__interface.html#a04aa421a1cabe7776412a06635994fe6">can_accept_sphere</a>(void *aux=0)</td><td><a class="el" href="structsxsdk_1_1loader__interface.html">sxsdk::loader_interface</a></td><td><code> [inline, virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="structsxsdk_1_1loader__interface.html#a7eb69a6743eb8f5d7cfe3160b837f838">can_accept_switch</a>(void *aux=0)</td><td><a class="el" href="structsxsdk_1_1loader__interface.html">sxsdk::loader_interface</a></td><td><code> [inline, virtual]</code></td></tr>
@@ -55,7 +82,7 @@
   <tr bgcolor="#f0f0f0"><td><b>custom_type</b> Enum 値 (次で定義されています。 <a class="el" href="classunknown__interface.html">unknown_interface</a>)</td><td><a class="el" href="classunknown__interface.html">unknown_interface</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="structsxsdk_1_1loader__interface.html#ae9af3fd8ab67ddecf03cf9f4fda82072">do_area_light</a>(sxsdk::points_interface *points, float area, void *aux=0)</td><td><a class="el" href="structsxsdk_1_1loader__interface.html">sxsdk::loader_interface</a></td><td><code> [inline, virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="structsxsdk_1_1loader__interface.html#a40964ea896d79dde78439e29c11f6586">do_bezier_surface</a>(sxsdk::mesh_interface *m, void *aux=0)</td><td><a class="el" href="structsxsdk_1_1loader__interface.html">sxsdk::loader_interface</a></td><td><code> [inline, virtual]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="structsxsdk_1_1loader__interface.html#a3260018122173fbee2a040269b0c76c5">do_disk</a>(const sx::mat&lt; float, 4 &gt; &amp;t, float t0, float t1, bool filled, void *aux=0)</td><td><a class="el" href="structsxsdk_1_1loader__interface.html">sxsdk::loader_interface</a></td><td><code> [inline, virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="structsxsdk_1_1loader__interface.html#ae19fd27c43a40b135e53ce4101c76f42">do_disk</a>(const sxsdk::mat4 &amp;t, float t0, float t1, bool filled, void *aux=0)</td><td><a class="el" href="structsxsdk_1_1loader__interface.html">sxsdk::loader_interface</a></td><td><code> [inline, virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="structsxsdk_1_1loader__interface.html#ad2637f8f7ad443d6d80a5d4113cfd44c">do_light</a>(sxsdk::enums::light_distribution_type points, const sxsdk::vec3 *color, const sxsdk::vec3 *position, const sxsdk::vec3 *direction, float angle, float softness, void *aux=0)</td><td><a class="el" href="structsxsdk_1_1loader__interface.html">sxsdk::loader_interface</a></td><td><code> [inline, virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="structsxsdk_1_1loader__interface.html#a60ac808915b438d639718f95ed1ecb29">do_linear_light</a>(sxsdk::points_interface *points, bool closed, void *aux=0)</td><td><a class="el" href="structsxsdk_1_1loader__interface.html">sxsdk::loader_interface</a></td><td><code> [inline, virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="structsxsdk_1_1loader__interface.html#a0196c0e67bcbd5cb27432a035895d8d3">do_link</a>(sxsdk::part_class &amp;link, void *aux=0)</td><td><a class="el" href="structsxsdk_1_1loader__interface.html">sxsdk::loader_interface</a></td><td><code> [inline, virtual]</code></td></tr>
@@ -65,12 +92,14 @@
   <tr class="memlist"><td><a class="el" href="structsxsdk_1_1loader__interface.html#a28b940cd7fd64b01fc5feb41a13a0937">do_polygon</a>(int n, sxsdk::points_interface **c, void *aux=0)</td><td><a class="el" href="structsxsdk_1_1loader__interface.html">sxsdk::loader_interface</a></td><td><code> [inline, virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="structsxsdk_1_1loader__interface.html#a211c91e222741851d7d50064fc754489">do_polyline</a>(sxsdk::points_interface *points, void *aux=0)</td><td><a class="el" href="structsxsdk_1_1loader__interface.html">sxsdk::loader_interface</a></td><td><code> [inline, virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="structsxsdk_1_1loader__interface.html#afd44d7639e1b5f16924170604570ad96">do_replicator</a>(sxsdk::part_class &amp;replicator, sxsdk::shape_class &amp;shape, const sxsdk::mat4 *trans, void *aux=0)</td><td><a class="el" href="structsxsdk_1_1loader__interface.html">sxsdk::loader_interface</a></td><td><code> [inline, virtual]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="structsxsdk_1_1loader__interface.html#ae40cc89a89cab872eaa1a70cde10661c">do_sphere</a>(const sx::mat&lt; float, 4 &gt; &amp;t, void *aux=0)</td><td><a class="el" href="structsxsdk_1_1loader__interface.html">sxsdk::loader_interface</a></td><td><code> [inline, virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="structsxsdk_1_1loader__interface.html#a640311b1d5bcb4292c0290fbeb07f589">do_sphere</a>(const sxsdk::mat4 &amp;t, void *aux=0)</td><td><a class="el" href="structsxsdk_1_1loader__interface.html">sxsdk::loader_interface</a></td><td><code> [inline, virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="structsxsdk_1_1loader__interface.html#afbe4ef394035f66a1111c66f6191a59f">do_switch</a>(sxsdk::part_class &amp;switch_joint, void *aux=0)</td><td><a class="el" href="structsxsdk_1_1loader__interface.html">sxsdk::loader_interface</a></td><td><code> [inline, virtual]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>double_type</b> Enum 値 (次で定義されています。 <a class="el" href="classunknown__interface.html">unknown_interface</a>)</td><td><a class="el" href="classunknown__interface.html">unknown_interface</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="structsxsdk_1_1loader__interface.html#a8724f0dcb4bb5b9af0054820b044c803">end</a>(void *aux=0)</td><td><a class="el" href="structsxsdk_1_1loader__interface.html">sxsdk::loader_interface</a></td><td><code> [inline, virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="structsxsdk_1_1loader__interface.html#a557bebed2bb900179e31064fc38147b1">end_polymesh</a>(void *aux=0)</td><td><a class="el" href="structsxsdk_1_1loader__interface.html">sxsdk::loader_interface</a></td><td><code> [inline, virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="structsxsdk_1_1loader__interface.html#ab80b8d1c6f7433d858fb1656226fe940">end_polymesh_face</a>(void *aux=0)</td><td><a class="el" href="structsxsdk_1_1loader__interface.html">sxsdk::loader_interface</a></td><td><code> [inline, virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="structsxsdk_1_1loader__interface.html#ad1cc96a6515d0bf71e85481ddace1f84">end_polymesh_face2</a>(void *aux=0)</td><td><a class="el" href="structsxsdk_1_1loader__interface.html">sxsdk::loader_interface</a></td><td><code> [inline, virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="structsxsdk_1_1loader__interface.html#ab065bf4d79fe93cc59952d2687f6dcbc">end_polymesh_face_group</a>(void *aux=0)</td><td><a class="el" href="structsxsdk_1_1loader__interface.html">sxsdk::loader_interface</a></td><td><code> [inline, virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="structsxsdk_1_1loader__interface.html#a2e633af210e06778bc0951c63d8dad7a">end_polymesh_vertex</a>(void *aux=0)</td><td><a class="el" href="structsxsdk_1_1loader__interface.html">sxsdk::loader_interface</a></td><td><code> [inline, virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="structsxsdk_1_1loader__interface.html#a0faf6855f49ca5f7a324a8ede8962a12">finish</a>(void *aux=0)</td><td><a class="el" href="structsxsdk_1_1loader__interface.html">sxsdk::loader_interface</a></td><td><code> [inline, virtual]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>float_type</b> Enum 値 (次で定義されています。 <a class="el" href="classunknown__interface.html">unknown_interface</a>)</td><td><a class="el" href="classunknown__interface.html">unknown_interface</a></td><td></td></tr>
@@ -91,6 +120,7 @@
   <tr class="memlist"><td><a class="el" href="structsxsdk_1_1loader__interface.html#a5c3ebd53a4c1ebc0b6224abceca96b11">must_triangulate_polymesh</a>(void *aux=0)</td><td><a class="el" href="structsxsdk_1_1loader__interface.html">sxsdk::loader_interface</a></td><td><code> [inline, virtual]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>path_type</b> Enum 値 (次で定義されています。 <a class="el" href="classunknown__interface.html">unknown_interface</a>)</td><td><a class="el" href="classunknown__interface.html">unknown_interface</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="structsxsdk_1_1loader__interface.html#a5daaa56a03535e41a8904b52c7c08dc7">polymesh_face</a>(int n_list, const int list[], const sxsdk::vec3 *normals, const sxsdk::vec4 *plane_equation, const sxsdk::vec4 *uvs, void *aux=0)</td><td><a class="el" href="structsxsdk_1_1loader__interface.html">sxsdk::loader_interface</a></td><td><code> [inline, virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="structsxsdk_1_1loader__interface.html#a541cac38cddad242792f8d0074a9ced9">polymesh_face_uvs</a>(int n_list, const int list[], const sxsdk::vec3 *normals, const sxsdk::vec4 *plane_equation, const int n_uvs, const sxsdk::vec2 *uvs, void *aux=0)</td><td><a class="el" href="structsxsdk_1_1loader__interface.html">sxsdk::loader_interface</a></td><td><code> [inline, virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="structsxsdk_1_1loader__interface.html#ac6c9b769179ce4c6d83b6338fec39cd5">polymesh_vertex</a>(int i, const sxsdk::vec3 &amp;v, void *aux=0)</td><td><a class="el" href="structsxsdk_1_1loader__interface.html">sxsdk::loader_interface</a></td><td><code> [inline, virtual]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>progress_type</b> Enum 値 (次で定義されています。 <a class="el" href="classunknown__interface.html">unknown_interface</a>)</td><td><a class="el" href="classunknown__interface.html">unknown_interface</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>property_type_enum</b> Enum (次で定義されています。 <a class="el" href="classunknown__interface.html">unknown_interface</a>)</td><td><a class="el" href="classunknown__interface.html">unknown_interface</a></td><td></td></tr>
@@ -105,7 +135,7 @@
   <tr bgcolor="#f0f0f0"><td><b>secure_short_string_type</b> Enum 値 (次で定義されています。 <a class="el" href="classunknown__interface.html">unknown_interface</a>)</td><td><a class="el" href="classunknown__interface.html">unknown_interface</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>secure_string_type</b> Enum 値 (次で定義されています。 <a class="el" href="classunknown__interface.html">unknown_interface</a>)</td><td><a class="el" href="classunknown__interface.html">unknown_interface</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>selection_type</b> Enum 値 (次で定義されています。 <a class="el" href="classunknown__interface.html">unknown_interface</a>)</td><td><a class="el" href="classunknown__interface.html">unknown_interface</a></td><td></td></tr>
-  <tr class="memlist"><td><a class="el" href="structsxsdk_1_1loader__interface.html#a61c3d57d0734a43eb237764af7ec0d95">set_transformation</a>(const sx::mat&lt; float, 4 &gt; &amp;t, void *aux=0)</td><td><a class="el" href="structsxsdk_1_1loader__interface.html">sxsdk::loader_interface</a></td><td><code> [inline, virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="structsxsdk_1_1loader__interface.html#acbc667f09a8269570caee8c5e37d3ae7">set_transformation</a>(const sxsdk::mat4 &amp;t, void *aux=0)</td><td><a class="el" href="structsxsdk_1_1loader__interface.html">sxsdk::loader_interface</a></td><td><code> [inline, virtual]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>short_string_type</b> Enum 値 (次で定義されています。 <a class="el" href="classunknown__interface.html">unknown_interface</a>)</td><td><a class="el" href="classunknown__interface.html">unknown_interface</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="structsxsdk_1_1loader__interface.html#a821d36e0e2dcf17b66d913c271f977e0">skip_load_objects</a>(void *aux=0)</td><td><a class="el" href="structsxsdk_1_1loader__interface.html">sxsdk::loader_interface</a></td><td><code> [inline, virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="structsxsdk_1_1loader__interface.html#a6441c21eb60b90c9361efb959ddfe982">start</a>(void *aux=0)</td><td><a class="el" href="structsxsdk_1_1loader__interface.html">sxsdk::loader_interface</a></td><td><code> [inline, virtual]</code></td></tr>
@@ -123,6 +153,9 @@
   <tr bgcolor="#f0f0f0"><td><b>window_type</b> Enum 値 (次で定義されています。 <a class="el" href="classunknown__interface.html">unknown_interface</a>)</td><td><a class="el" href="classunknown__interface.html">unknown_interface</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>~unknown_interface</b>() (次で定義されています。 <a class="el" href="classunknown__interface.html">unknown_interface</a>)</td><td><a class="el" href="classunknown__interface.html">unknown_interface</a></td><td><code> [virtual]</code></td></tr>
 </table></div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
 <br><br>
 <hr>
 <div align="center">Copyright &copy; e frontier, Inc. All rights reserved.</div>

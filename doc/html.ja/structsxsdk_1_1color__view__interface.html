@@ -4,52 +4,89 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <title>構造体 sxsdk::color_view_interface</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<!-- 作成： Doxygen 1.6.1 -->
-<div class="navigation" id="top">
-  <div class="tabs">
-    <ul>
-      <li><a href="main.html"><span>メインページ</span></a></li>
+<!-- 作成： Doxygen 1.7.4 -->
+<div id="top">
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
       <li><a href="pages.html"><span>関連ページ</span></a></li>
       <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
       <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
       <li><a href="files.html"><span>ファイル</span></a></li>
     </ul>
   </div>
-  <div class="tabs">
-    <ul>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
       <li><a href="annotated.html"><span>構成</span></a></li>
       <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
       <li><a href="functions.html"><span>構成メンバ</span></a></li>
     </ul>
   </div>
-  <div class="navpath"><a class="el" href="namespacesxsdk.html">sxsdk</a>::<a class="el" href="structsxsdk_1_1color__view__interface.html">color_view_interface</a>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
   </div>
 </div>
+<script type="text/javascript">
+  initNavTree('structsxsdk_1_1color__view__interface.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public メソッド</a>  </div>
+  <div class="headertitle">
+<div class="title">構造体 sxsdk::color_view_interface</div>  </div>
+</div>
 <div class="contents">
-<h1>構造体 sxsdk::color_view_interface</h1><!-- doxytag: class="sxsdk::color_view_interface" -->
+<!-- doxytag: class="sxsdk::color_view_interface" -->
+<p>カラービュー  
+ <a href="structsxsdk_1_1color__view__interface.html#details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="windowinterface_8h_source.html">windowinterface.h</a>&gt;</code></p>
+
 <p><a href="structsxsdk_1_1color__view__interface-members.html">すべてのメンバ一覧</a></p>
-<table border="0" cellpadding="0" cellspacing="0">
-<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a52331f649bdbf0d386d5ca99a9804d81"></a><!-- doxytag: member="sxsdk::color_view_interface::set_hsv_disclosed" ref="a52331f649bdbf0d386d5ca99a9804d81" args="(bool hsv_disclosed_param, void *=0)" -->
-virtual <a class="el" href="structsxsdk_1_1color__view__interface.html">color_view_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1color__view__interface.html#a52331f649bdbf0d386d5ca99a9804d81">set_hsv_disclosed</a> (bool hsv_disclosed_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">HSVディスクロージャの状態を設定する。. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afb59866d906cdc100ec70643c1c6cecc"></a><!-- doxytag: member="sxsdk::color_view_interface::get_hsv_disclosed" ref="afb59866d906cdc100ec70643c1c6cecc" args="(void *=0) const " -->
-virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1color__view__interface.html#afb59866d906cdc100ec70643c1c6cecc">get_hsv_disclosed</a> (void *=0) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">HSVディスクロージャの状態を取得する。. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3bdc11e6dc1888ff0120ee05abffb6c8"></a><!-- doxytag: member="sxsdk::color_view_interface::set_lists_disclosed" ref="a3bdc11e6dc1888ff0120ee05abffb6c8" args="(bool lists_disclosed_param, void *=0)" -->
-virtual <a class="el" href="structsxsdk_1_1color__view__interface.html">color_view_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1color__view__interface.html#a3bdc11e6dc1888ff0120ee05abffb6c8">set_lists_disclosed</a> (bool lists_disclosed_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">カラーリストディスクロージャの状態を設定する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af95c1432606069e62422cecb924381dd"></a><!-- doxytag: member="sxsdk::color_view_interface::get_lists_disclosed" ref="af95c1432606069e62422cecb924381dd" args="(void *=0) const " -->
-virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1color__view__interface.html#af95c1432606069e62422cecb924381dd">get_lists_disclosed</a> (void *=0) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">カラーリストディスクロージャの状態を取得する。 <br/></td></tr>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad4dd64f79cb42b00aed7b8535e58d78b"></a><!-- doxytag: member="sxsdk::color_view_interface::set_hsv_disclosed" ref="ad4dd64f79cb42b00aed7b8535e58d78b" args="(bool hsv_disclosed_param, void *=nullptr)" -->
+virtual <a class="el" href="structsxsdk_1_1color__view__interface.html">color_view_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1color__view__interface.html#ad4dd64f79cb42b00aed7b8535e58d78b">set_hsv_disclosed</a> (bool hsv_disclosed_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">HSVディスクロージャの状態を設定する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af61101a9fe87c173594d4e9de8daed63"></a><!-- doxytag: member="sxsdk::color_view_interface::get_hsv_disclosed" ref="af61101a9fe87c173594d4e9de8daed63" args="(void *=nullptr) const " -->
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1color__view__interface.html#af61101a9fe87c173594d4e9de8daed63">get_hsv_disclosed</a> (void *=nullptr) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">HSVディスクロージャの状態を取得する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a25aab10f5a307d5ca16f9272fbc8cda4"></a><!-- doxytag: member="sxsdk::color_view_interface::set_lists_disclosed" ref="a25aab10f5a307d5ca16f9272fbc8cda4" args="(bool lists_disclosed_param, void *=nullptr)" -->
+virtual <a class="el" href="structsxsdk_1_1color__view__interface.html">color_view_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1color__view__interface.html#a25aab10f5a307d5ca16f9272fbc8cda4">set_lists_disclosed</a> (bool lists_disclosed_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">カラーリストディスクロージャの状態を設定する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a78635d817d4e4c75c403ea87152bdbd1"></a><!-- doxytag: member="sxsdk::color_view_interface::get_lists_disclosed" ref="a78635d817d4e4c75c403ea87152bdbd1" args="(void *=nullptr) const " -->
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1color__view__interface.html#a78635d817d4e4c75c403ea87152bdbd1">get_lists_disclosed</a> (void *=nullptr) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">カラーリストディスクロージャの状態を取得する。 <br/></td></tr>
 </table>
-<hr/>この構造体の説明は次のファイルから生成されました:<ul>
+<hr/><a name="details" id="details"></a><h2>説明</h2>
+<div class="textblock"><p>カラービュー </p>
+</div><hr/>この構造体の説明は次のファイルから生成されました:<ul>
 <li><a class="el" href="windowinterface_8h_source.html">windowinterface.h</a></li>
 </ul>
 </div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><b>sxsdk</b>      </li>
+      <li class="navelem"><a class="el" href="structsxsdk_1_1color__view__interface.html">color_view_interface</a>      </li>
 <br><br>
 <hr>
 <div align="center">Copyright &copy; e frontier, Inc. All rights reserved.</div>

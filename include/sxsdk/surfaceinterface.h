@@ -1,7 +1,8 @@
 #pragma once
 
 namespace sxsdk {
-	class surface_interface : public shade_interface {
+	class
+	surface_interface : public shade_interface {
 	public:
 		enum type_enum { // for R4 compatibility 
 			no_mapping, 
@@ -225,5 +226,15 @@ namespace sxsdk {
 	virtual surface_interface &set_has_ambient (bool has_ambient_param, void * = 0) = 0; // 194
 	virtual bool get_has_ambient (void * = 0) const = 0; // 195
 	virtual float find_ambient (const sxsdk::shape_class& shape, void* aux = 0) = 0; // 196
+	virtual surface_interface &set_dont_reflect_background (bool dont_reflect_background_param, void * = 0) = 0; // 197
+	virtual bool get_dont_reflect_background (void * = 0) const = 0; // 198
+	virtual surface_interface &set_dont_visible_to_camera (bool dont_visible_to_camera_param, void * = 0) = 0; // 199
+	virtual bool get_dont_visible_to_camera (void * = 0) const = 0; // 200
+	virtual surface_interface &set_dont_visible_to_reflection_rays (bool dont_visible_to_reflection_rays_param, void * = 0) = 0; // 201
+	virtual bool get_dont_visible_to_reflection_rays (void * = 0) const = 0; // 202
+	virtual surface_interface &set_dont_visible_to_refraction_rays (bool dont_visible_to_refraction_rays_param, void * = 0) = 0; // 203
+	virtual bool get_dont_visible_to_refraction_rays (void * = 0) const = 0; // 204
+	virtual surface_interface &set_dont_visible_to_indirect_rays (bool dont_visible_to_indirect_rays_param, void * = 0) = 0; // 205
+	virtual bool get_dont_visible_to_indirect_rays (void * = 0) const = 0; // 206
 	};
 }

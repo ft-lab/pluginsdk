@@ -4,78 +4,113 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <title>クラス sxsdk::expression_interface</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<!-- 作成： Doxygen 1.6.1 -->
-<div class="navigation" id="top">
-  <div class="tabs">
-    <ul>
-      <li><a href="main.html"><span>メインページ</span></a></li>
+<!-- 作成： Doxygen 1.7.4 -->
+<div id="top">
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
       <li><a href="pages.html"><span>関連ページ</span></a></li>
       <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
       <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
       <li><a href="files.html"><span>ファイル</span></a></li>
     </ul>
   </div>
-  <div class="tabs">
-    <ul>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
       <li><a href="annotated.html"><span>構成</span></a></li>
       <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
       <li><a href="functions.html"><span>構成メンバ</span></a></li>
     </ul>
   </div>
-  <div class="navpath"><a class="el" href="namespacesxsdk.html">sxsdk</a>::<a class="el" href="classsxsdk_1_1expression__interface.html">expression_interface</a>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
   </div>
 </div>
+<script type="text/javascript">
+  initNavTree('classsxsdk_1_1expression__interface.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 型</a> &#124;
+<a href="#pub-methods">Public メソッド</a>  </div>
+  <div class="headertitle">
+<div class="title">クラス sxsdk::expression_interface</div>  </div>
+</div>
 <div class="contents">
-<h1>クラス sxsdk::expression_interface</h1><!-- doxytag: class="sxsdk::expression_interface" --><!-- doxytag: inherits="unknown_interface" --><div class="dynheader">
+<!-- doxytag: class="sxsdk::expression_interface" --><!-- doxytag: inherits="unknown_interface" -->
+<p>SPEEDのパラメーター演算に関連したインターフェイス。  
+ <a href="classsxsdk_1_1expression__interface.html#details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="expressioninterface_8h_source.html">expressioninterface.h</a>&gt;</code></p>
+<div class="dynheader">
 sxsdk::expression_interfaceに対する継承グラフ</div>
-<div class="dynsection">
+<div class="dyncontent">
  <div class="center">
-  <img src="classsxsdk_1_1expression__interface.gif" usemap="#sxsdk::expression_interface_map" alt=""/>
+  <img src="classsxsdk_1_1expression__interface.png" usemap="#sxsdk::expression_interface_map" alt=""/>
   <map id="sxsdk::expression_interface_map" name="sxsdk::expression_interface_map">
 <area href="classunknown__interface.html" alt="unknown_interface" shape="rect" coords="0,0,167,24"/>
 </map>
- </div>
-</div>
+ </div></div>
 
 <p><a href="classsxsdk_1_1expression__interface-members.html">すべてのメンバ一覧</a></p>
-<table border="0" cellpadding="0" cellspacing="0">
-<tr><td colspan="2"><h2>Public 型</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsxsdk_1_1expression__interface.html#a65a34df6099df125cbe6e19a6293c930">expression_value_types_enum</a> { <a class="el" href="classsxsdk_1_1expression__interface.html#a65a34df6099df125cbe6e19a6293c930ad0beec6ff5738d8cd42548d420130140">type_unknown</a> =  0, 
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-types"></a>
+Public 型</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsxsdk_1_1expression__interface.html#a65a34df6099df125cbe6e19a6293c930">expression_value_types_enum</a> { <a class="el" href="classsxsdk_1_1expression__interface.html#a65a34df6099df125cbe6e19a6293c930ad0beec6ff5738d8cd42548d420130140">type_unknown</a> =  0, 
 <a class="el" href="classsxsdk_1_1expression__interface.html#a65a34df6099df125cbe6e19a6293c930aeef004767c988df965fa4efcaa3bd3a7">type_real</a> =  1, 
 <a class="el" href="classsxsdk_1_1expression__interface.html#a65a34df6099df125cbe6e19a6293c930a791422430dbc6a22f9b881a9a2ca6506">type_string</a> =  2
  }</td></tr>
-<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsxsdk_1_1expression__interface.html#a5998b8c109d52134091447936df5ef40">execute</a> (const char *scripts, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">パラメーターとして渡された計算式を実行する。  <a href="#a5998b8c109d52134091447936df5ef40"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsxsdk_1_1expression__interface.html#a5998b8c109d52134091447936df5ef40">execute</a> (const char *scripts, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">パラメーターとして渡された計算式を実行する。  <a href="#a5998b8c109d52134091447936df5ef40"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8feb421f05ac30be999d924a790a70f6"></a><!-- doxytag: member="sxsdk::expression_interface::get_number_of_lines" ref="a8feb421f05ac30be999d924a790a70f6" args="(void *aux=0)" -->
-virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsxsdk_1_1expression__interface.html#a8feb421f05ac30be999d924a790a70f6">get_number_of_lines</a> (void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">executeで渡された計算式をパースした行の総数。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual const char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsxsdk_1_1expression__interface.html#a275d3af14cb3ca3d351825e9a6cbdde0">get_expression</a> (int line, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">executeで渡された計算式をパースした行の取得。  <a href="#a275d3af14cb3ca3d351825e9a6cbdde0"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual const char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsxsdk_1_1expression__interface.html#a002cba4bfe2c0bdc05fe52805870f647">json_type_result</a> (void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">直前に実行された計算式のリザルトコードをJSON形式の文字列で取得する。  <a href="#a002cba4bfe2c0bdc05fe52805870f647"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual const char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsxsdk_1_1expression__interface.html#aba201ea1895ebe19592c0d532a6d11ac">json_type_value</a> (void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">直前に実行された計算式の計算結果をJSON形式の文字列で取得する。  <a href="#aba201ea1895ebe19592c0d532a6d11ac"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsxsdk_1_1expression__interface.html#a4e29ad6a4c4356bdbdccf25cb0296594">get_result</a> (int line, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">直前に実行された計算式のリザルトコードを行番号を指定して取得する。  <a href="#a4e29ad6a4c4356bdbdccf25cb0296594"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsxsdk_1_1expression__interface.html#a8c40277c4921a274355a63a5d96c3ab7">has_variable</a> (const char *variable, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">引数として渡された変数名が、直前に実行された計算式に含まれているかを返す。  <a href="#a8c40277c4921a274355a63a5d96c3ab7"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsxsdk_1_1expression__interface.html#a87a877f49b2f210858b23a47f3b96f76">get_type</a> (const char *variable, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">引数として渡された変数名が、直前に実行された計算式内でどのような型を保持しているかを返す。  <a href="#a87a877f49b2f210858b23a47f3b96f76"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual float&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsxsdk_1_1expression__interface.html#ae75f98061b0f81c75af16e10d4e2ba30">get_realnumber</a> (const char *variable, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">引数として渡された変数名が、直前に実行された計算式内で計算された実数値を返す。  <a href="#ae75f98061b0f81c75af16e10d4e2ba30"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual const char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsxsdk_1_1expression__interface.html#a0822ea8aa345537b4a3cdc7c2ece88f8">get_string</a> (const char *variable, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">引数として渡された変数名が、直前に実行された計算式内で処理された文字列を返す。  <a href="#a0822ea8aa345537b4a3cdc7c2ece88f8"></a><br/></td></tr>
+virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsxsdk_1_1expression__interface.html#a8feb421f05ac30be999d924a790a70f6">get_number_of_lines</a> (void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">executeで渡された計算式をパースした行の総数。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsxsdk_1_1expression__interface.html#a275d3af14cb3ca3d351825e9a6cbdde0">get_expression</a> (int line, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">executeで渡された計算式をパースした行の取得。  <a href="#a275d3af14cb3ca3d351825e9a6cbdde0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsxsdk_1_1expression__interface.html#a002cba4bfe2c0bdc05fe52805870f647">json_type_result</a> (void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">直前に実行された計算式のリザルトコードをJSON形式の文字列で取得する。  <a href="#a002cba4bfe2c0bdc05fe52805870f647"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsxsdk_1_1expression__interface.html#aba201ea1895ebe19592c0d532a6d11ac">json_type_value</a> (void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">直前に実行された計算式の計算結果をJSON形式の文字列で取得する。  <a href="#aba201ea1895ebe19592c0d532a6d11ac"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsxsdk_1_1expression__interface.html#a4e29ad6a4c4356bdbdccf25cb0296594">get_result</a> (int line, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">直前に実行された計算式のリザルトコードを行番号を指定して取得する。  <a href="#a4e29ad6a4c4356bdbdccf25cb0296594"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsxsdk_1_1expression__interface.html#a8c40277c4921a274355a63a5d96c3ab7">has_variable</a> (const char *variable, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">引数として渡された変数名が、直前に実行された計算式に含まれているかを返す。  <a href="#a8c40277c4921a274355a63a5d96c3ab7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsxsdk_1_1expression__interface.html#a87a877f49b2f210858b23a47f3b96f76">get_type</a> (const char *variable, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">引数として渡された変数名が、直前に実行された計算式内でどのような型を保持しているかを返す。  <a href="#a87a877f49b2f210858b23a47f3b96f76"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsxsdk_1_1expression__interface.html#ae75f98061b0f81c75af16e10d4e2ba30">get_realnumber</a> (const char *variable, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">引数として渡された変数名が、直前に実行された計算式内で計算された実数値を返す。  <a href="#ae75f98061b0f81c75af16e10d4e2ba30"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsxsdk_1_1expression__interface.html#a0822ea8aa345537b4a3cdc7c2ece88f8">get_string</a> (const char *variable, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">引数として渡された変数名が、直前に実行された計算式内で処理された文字列を返す。  <a href="#a0822ea8aa345537b4a3cdc7c2ece88f8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a462a7681787735f839110635caf161b3"></a><!-- doxytag: member="sxsdk::expression_interface::get_number_of_variable" ref="a462a7681787735f839110635caf161b3" args="(void *aux=0)" -->
-virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsxsdk_1_1expression__interface.html#a462a7681787735f839110635caf161b3">get_number_of_variable</a> (void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">executeで渡された計算式から導かれた変数の数を返す。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual const char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsxsdk_1_1expression__interface.html#afcd174aa7e0c632514645dbefd8fff38">get_variable</a> (int number, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">executeで渡された計算式から導かれた変数を返す。  <a href="#afcd174aa7e0c632514645dbefd8fff38"></a><br/></td></tr>
+virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsxsdk_1_1expression__interface.html#a462a7681787735f839110635caf161b3">get_number_of_variable</a> (void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">executeで渡された計算式から導かれた変数の数を返す。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsxsdk_1_1expression__interface.html#afcd174aa7e0c632514645dbefd8fff38">get_variable</a> (int number, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">executeで渡された計算式から導かれた変数を返す。  <a href="#afcd174aa7e0c632514645dbefd8fff38"></a><br/></td></tr>
 </table>
-<hr/><h2>列挙型</h2>
+<hr/><a name="details" id="details"></a><h2>説明</h2>
+<div class="textblock"><p>SPEEDのパラメーター演算に関連したインターフェイス。 </p>
+<p>以下の関数でこのクラスを直接取得する。</p>
+<p><code><a class="el" href="structsxsdk_1_1scene__interface.html#a35f6f1560479bbd318953dde798fb489" title="シーンの speed_interface を取得する。">scene_interface::get_speed_interface()</a></code>.get_expression_interface() </p>
+</div><hr/><h2>列挙型</h2>
 <a class="anchor" id="a65a34df6099df125cbe6e19a6293c930"></a><!-- doxytag: member="sxsdk::expression_interface::expression_value_types_enum" ref="a65a34df6099df125cbe6e19a6293c930" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -111,19 +146,19 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
         <tr>
           <td class="memname">virtual int sxsdk::expression_interface::execute </td>
           <td>(</td>
-          <td class="paramtype">const char *&nbsp;</td>
-          <td class="paramname"> <em>scripts</em>, </td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>scripts</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -133,8 +168,8 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <p>正常に実行された場合、戻り値には0が返る。</p>
 <p>複数の計算式を渡す場合は\nで連結した文字列を使用する。</p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>scripts</em>&nbsp;</td><td>スクリプト </td></tr>
+  <table class="params">
+    <tr><td class="paramname">scripts</td><td>スクリプト </td></tr>
   </table>
   </dd>
 </dl>
@@ -148,19 +183,19 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
         <tr>
           <td class="memname">virtual const char* sxsdk::expression_interface::get_expression </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>line</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>line</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -169,8 +204,8 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <p>executeで渡された計算式をパースした行の取得。 </p>
 <p>最初の行は0から始まる。</p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>line</em>&nbsp;</td><td>行番号 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">line</td><td>行番号 </td></tr>
   </table>
   </dd>
 </dl>
@@ -184,19 +219,19 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
         <tr>
           <td class="memname">virtual float sxsdk::expression_interface::get_realnumber </td>
           <td>(</td>
-          <td class="paramtype">const char *&nbsp;</td>
-          <td class="paramname"> <em>variable</em>, </td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>variable</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -205,8 +240,8 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <p>引数として渡された変数名が、直前に実行された計算式内で計算された実数値を返す。 </p>
 <p>変数名が未定義の場合、また数値として保持されていない場合は、NAN(not a number)を返す。</p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>variable</em>&nbsp;</td><td>変数名 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">variable</td><td>変数名 </td></tr>
   </table>
   </dd>
 </dl>
@@ -220,19 +255,19 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
         <tr>
           <td class="memname">virtual int sxsdk::expression_interface::get_result </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>line</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>line</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -241,8 +276,8 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <p>直前に実行された計算式のリザルトコードを行番号を指定して取得する。 </p>
 <p>行番号は0から始まる。</p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>line</em>&nbsp;</td><td>行番号 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">line</td><td>行番号 </td></tr>
   </table>
   </dd>
 </dl>
@@ -256,19 +291,19 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
         <tr>
           <td class="memname">virtual const char* sxsdk::expression_interface::get_string </td>
           <td>(</td>
-          <td class="paramtype">const char *&nbsp;</td>
-          <td class="paramname"> <em>variable</em>, </td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>variable</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -277,8 +312,8 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <p>引数として渡された変数名が、直前に実行された計算式内で処理された文字列を返す。 </p>
 <p>変数名が未定義の場合、また文字列として保持されていない場合は、NULLを返す。</p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>variable</em>&nbsp;</td><td>変数名 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">variable</td><td>変数名 </td></tr>
   </table>
   </dd>
 </dl>
@@ -292,19 +327,19 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
         <tr>
           <td class="memname">virtual int sxsdk::expression_interface::get_type </td>
           <td>(</td>
-          <td class="paramtype">const char *&nbsp;</td>
-          <td class="paramname"> <em>variable</em>, </td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>variable</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -313,8 +348,8 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <p>引数として渡された変数名が、直前に実行された計算式内でどのような型を保持しているかを返す。 </p>
 <p>返される型は未定義ならtype_unknown、数値としてtype_realを、文字列型としてtype_stringとなる。</p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>variable</em>&nbsp;</td><td>変数名 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">variable</td><td>変数名 </td></tr>
   </table>
   </dd>
 </dl>
@@ -328,19 +363,19 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
         <tr>
           <td class="memname">virtual const char* sxsdk::expression_interface::get_variable </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>number</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>number</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -349,8 +384,8 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <p>executeで渡された計算式から導かれた変数を返す。 </p>
 <p>番号で引く事の出来る変数名はexecute実行時に内部でソートされる可能性があり、順番が変わる可能性があるので注意する事。</p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>number</em>&nbsp;</td><td>番号 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">number</td><td>番号 </td></tr>
   </table>
   </dd>
 </dl>
@@ -364,19 +399,19 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
         <tr>
           <td class="memname">virtual bool sxsdk::expression_interface::has_variable </td>
           <td>(</td>
-          <td class="paramtype">const char *&nbsp;</td>
-          <td class="paramname"> <em>variable</em>, </td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>variable</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -385,8 +420,8 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <p>引数として渡された変数名が、直前に実行された計算式に含まれているかを返す。 </p>
 <p>もし引数として渡された変数名が計算式に含まれていても、計算時にエラーが発生した場合は、falseを返す事があるので注意。</p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>variable</em>&nbsp;</td><td>変数名 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">variable</td><td>変数名 </td></tr>
   </table>
   </dd>
 </dl>
@@ -400,9 +435,8 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
         <tr>
           <td class="memname">virtual const char* sxsdk::expression_interface::json_type_result </td>
           <td>(</td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td>
-          <td>&nbsp;)&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code></td><td>)</td>
           <td><code> [virtual]</code></td>
         </tr>
       </table>
@@ -421,9 +455,8 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
         <tr>
           <td class="memname">virtual const char* sxsdk::expression_interface::json_type_value </td>
           <td>(</td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td>
-          <td>&nbsp;)&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code></td><td>)</td>
           <td><code> [virtual]</code></td>
         </tr>
       </table>
@@ -439,6 +472,11 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <li><a class="el" href="expressioninterface_8h_source.html">expressioninterface.h</a></li>
 </ul>
 </div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><b>sxsdk</b>      </li>
+      <li class="navelem"><a class="el" href="classsxsdk_1_1expression__interface.html">expression_interface</a>      </li>
 <br><br>
 <hr>
 <div align="center">Copyright &copy; e frontier, Inc. All rights reserved.</div>

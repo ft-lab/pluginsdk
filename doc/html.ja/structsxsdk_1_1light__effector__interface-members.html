@@ -4,30 +4,54 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <title>メンバ一覧</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<!-- 作成： Doxygen 1.6.1 -->
-<div class="navigation" id="top">
-  <div class="tabs">
-    <ul>
-      <li><a href="main.html"><span>メインページ</span></a></li>
+<!-- 作成： Doxygen 1.7.4 -->
+<div id="top">
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
       <li><a href="pages.html"><span>関連ページ</span></a></li>
       <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
       <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
       <li><a href="files.html"><span>ファイル</span></a></li>
     </ul>
   </div>
-  <div class="tabs">
-    <ul>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
       <li><a href="annotated.html"><span>構成</span></a></li>
       <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
       <li><a href="functions.html"><span>構成メンバ</span></a></li>
     </ul>
   </div>
 </div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+  initNavTree('structsxsdk_1_1light__effector__interface.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">sxsdk::light_effector_interface メンバ一覧</div>  </div>
+</div>
 <div class="contents">
-<h1>sxsdk::light_effector_interface メンバ一覧</h1>これは全メンバの一覧です。<a class="el" href="structsxsdk_1_1light__effector__interface.html">sxsdk::light_effector_interface</a>継承メンバも含んでいます。<table>
+これは全メンバの一覧です。<a class="el" href="structsxsdk_1_1light__effector__interface.html">sxsdk::light_effector_interface</a>継承メンバも含んでいます。<table>
   <tr bgcolor="#f0f0f0"><td><b>AddRef</b>() (次で定義されています。 <a class="el" href="classunknown__interface.html">unknown_interface</a>)</td><td><a class="el" href="classunknown__interface.html">unknown_interface</a></td><td><code> [virtual]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>bool_type</b> Enum 値 (次で定義されています。 <a class="el" href="classunknown__interface.html">unknown_interface</a>)</td><td><a class="el" href="classunknown__interface.html">unknown_interface</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>box_end_type</b> Enum 値 (次で定義されています。 <a class="el" href="classunknown__interface.html">unknown_interface</a>)</td><td><a class="el" href="classunknown__interface.html">unknown_interface</a></td><td></td></tr>
@@ -35,12 +59,12 @@
   <tr bgcolor="#f0f0f0"><td><b>custom_type</b> Enum 値 (次で定義されています。 <a class="el" href="classunknown__interface.html">unknown_interface</a>)</td><td><a class="el" href="classunknown__interface.html">unknown_interface</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>double_type</b> Enum 値 (次で定義されています。 <a class="el" href="classunknown__interface.html">unknown_interface</a>)</td><td><a class="el" href="classunknown__interface.html">unknown_interface</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>float_type</b> Enum 値 (次で定義されています。 <a class="el" href="classunknown__interface.html">unknown_interface</a>)</td><td><a class="el" href="classunknown__interface.html">unknown_interface</a></td><td></td></tr>
-  <tr class="memlist"><td><a class="el" href="structsxsdk_1_1light__effector__interface.html#a979add90c8a5f473b5de44431b79b1b6">get_flat</a>(void *=0) const </td><td><a class="el" href="structsxsdk_1_1light__effector__interface.html">sxsdk::light_effector_interface</a></td><td><code> [virtual]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="structsxsdk_1_1light__effector__interface.html#a5ecd1be21c9850fa04bb1634051ecd08">get_limit</a>(void *=0) const </td><td><a class="el" href="structsxsdk_1_1light__effector__interface.html">sxsdk::light_effector_interface</a></td><td><code> [virtual]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="structsxsdk_1_1light__effector__interface.html#a1969026e69184cff161165e1209069f1">get_range</a>(void *=0) const </td><td><a class="el" href="structsxsdk_1_1light__effector__interface.html">sxsdk::light_effector_interface</a></td><td><code> [virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="structsxsdk_1_1light__effector__interface.html#ac637ce4e52deaf193161ff984f257ce5">get_flat</a>(void *=nullptr) const </td><td><a class="el" href="structsxsdk_1_1light__effector__interface.html">sxsdk::light_effector_interface</a></td><td><code> [virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="structsxsdk_1_1light__effector__interface.html#af8d8b0b1ff6491a36e9f053e18728285">get_limit</a>(void *=nullptr) const </td><td><a class="el" href="structsxsdk_1_1light__effector__interface.html">sxsdk::light_effector_interface</a></td><td><code> [virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="structsxsdk_1_1light__effector__interface.html#acad95fc8d48350b1daa08d8f9fc42270">get_range</a>(void *=nullptr) const </td><td><a class="el" href="structsxsdk_1_1light__effector__interface.html">sxsdk::light_effector_interface</a></td><td><code> [virtual]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>get_refcount</b>() const  (次で定義されています。 <a class="el" href="classunknown__interface.html">unknown_interface</a>)</td><td><a class="el" href="classunknown__interface.html">unknown_interface</a></td><td><code> [inline]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>get_shade_build_number</b>() const  (次で定義されています。 <a class="el" href="classunknown__interface.html">unknown_interface</a>)</td><td><a class="el" href="classunknown__interface.html">unknown_interface</a></td><td></td></tr>
-  <tr class="memlist"><td><a class="el" href="structsxsdk_1_1light__effector__interface.html#a381152dc66d09894ef4a6029e5d40fc8">get_value</a>(void *=0) const </td><td><a class="el" href="structsxsdk_1_1light__effector__interface.html">sxsdk::light_effector_interface</a></td><td><code> [virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="structsxsdk_1_1light__effector__interface.html#a1fe96f9b1b579d2be0a3710475e3abd8">get_value</a>(void *=nullptr) const </td><td><a class="el" href="structsxsdk_1_1light__effector__interface.html">sxsdk::light_effector_interface</a></td><td><code> [virtual]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>group_begin_type</b> Enum 値 (次で定義されています。 <a class="el" href="classunknown__interface.html">unknown_interface</a>)</td><td><a class="el" href="classunknown__interface.html">unknown_interface</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>group_end_type</b> Enum 値 (次で定義されています。 <a class="el" href="classunknown__interface.html">unknown_interface</a>)</td><td><a class="el" href="classunknown__interface.html">unknown_interface</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>hbox_begin_type</b> Enum 値 (次で定義されています。 <a class="el" href="classunknown__interface.html">unknown_interface</a>)</td><td><a class="el" href="classunknown__interface.html">unknown_interface</a></td><td></td></tr>
@@ -63,10 +87,10 @@
   <tr bgcolor="#f0f0f0"><td><b>secure_short_string_type</b> Enum 値 (次で定義されています。 <a class="el" href="classunknown__interface.html">unknown_interface</a>)</td><td><a class="el" href="classunknown__interface.html">unknown_interface</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>secure_string_type</b> Enum 値 (次で定義されています。 <a class="el" href="classunknown__interface.html">unknown_interface</a>)</td><td><a class="el" href="classunknown__interface.html">unknown_interface</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>selection_type</b> Enum 値 (次で定義されています。 <a class="el" href="classunknown__interface.html">unknown_interface</a>)</td><td><a class="el" href="classunknown__interface.html">unknown_interface</a></td><td></td></tr>
-  <tr class="memlist"><td><a class="el" href="structsxsdk_1_1light__effector__interface.html#a96a98e1d3f33d22ae8f983a395896542">set_flat</a>(bool flat_param, void *=0)</td><td><a class="el" href="structsxsdk_1_1light__effector__interface.html">sxsdk::light_effector_interface</a></td><td><code> [virtual]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="structsxsdk_1_1light__effector__interface.html#afdfb5cd529877b69a80fd069e212b11d">set_limit</a>(const sxsdk::vec2 &amp;limit_param, void *=0)</td><td><a class="el" href="structsxsdk_1_1light__effector__interface.html">sxsdk::light_effector_interface</a></td><td><code> [virtual]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="structsxsdk_1_1light__effector__interface.html#aa66605d9229887c552340d539abdc89c">set_range</a>(bool range_param, void *=0)</td><td><a class="el" href="structsxsdk_1_1light__effector__interface.html">sxsdk::light_effector_interface</a></td><td><code> [virtual]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="structsxsdk_1_1light__effector__interface.html#a606796728e46d680925e94e58f1ebb5d">set_value</a>(float value_param, void *=0)</td><td><a class="el" href="structsxsdk_1_1light__effector__interface.html">sxsdk::light_effector_interface</a></td><td><code> [virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="structsxsdk_1_1light__effector__interface.html#af2a34839428adc6bf14a8439733f8fb6">set_flat</a>(bool flat_param, void *=nullptr)</td><td><a class="el" href="structsxsdk_1_1light__effector__interface.html">sxsdk::light_effector_interface</a></td><td><code> [virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="structsxsdk_1_1light__effector__interface.html#af8f21f15fd60d10196f7cbe13d6ff501">set_limit</a>(const sxsdk::vec2 &amp;limit_param, void *=nullptr)</td><td><a class="el" href="structsxsdk_1_1light__effector__interface.html">sxsdk::light_effector_interface</a></td><td><code> [virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="structsxsdk_1_1light__effector__interface.html#a35a9b291ed2d2e9fbd1d446ab7fbcd5a">set_range</a>(bool range_param, void *=nullptr)</td><td><a class="el" href="structsxsdk_1_1light__effector__interface.html">sxsdk::light_effector_interface</a></td><td><code> [virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="structsxsdk_1_1light__effector__interface.html#a4ad77c7660e1b67a8403553ff1b5c3ab">set_value</a>(float value_param, void *=nullptr)</td><td><a class="el" href="structsxsdk_1_1light__effector__interface.html">sxsdk::light_effector_interface</a></td><td><code> [virtual]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>short_string_type</b> Enum 値 (次で定義されています。 <a class="el" href="classunknown__interface.html">unknown_interface</a>)</td><td><a class="el" href="classunknown__interface.html">unknown_interface</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>string_type</b> Enum 値 (次で定義されています。 <a class="el" href="classunknown__interface.html">unknown_interface</a>)</td><td><a class="el" href="classunknown__interface.html">unknown_interface</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>tab_group_begin_type</b> Enum 値 (次で定義されています。 <a class="el" href="classunknown__interface.html">unknown_interface</a>)</td><td><a class="el" href="classunknown__interface.html">unknown_interface</a></td><td></td></tr>
@@ -81,6 +105,9 @@
   <tr bgcolor="#f0f0f0"><td><b>window_type</b> Enum 値 (次で定義されています。 <a class="el" href="classunknown__interface.html">unknown_interface</a>)</td><td><a class="el" href="classunknown__interface.html">unknown_interface</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>~unknown_interface</b>() (次で定義されています。 <a class="el" href="classunknown__interface.html">unknown_interface</a>)</td><td><a class="el" href="classunknown__interface.html">unknown_interface</a></td><td><code> [virtual]</code></td></tr>
 </table></div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
 <br><br>
 <hr>
 <div align="center">Copyright &copy; e frontier, Inc. All rights reserved.</div>

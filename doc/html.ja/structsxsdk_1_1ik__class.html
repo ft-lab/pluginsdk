@@ -1,0 +1,580 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>構造体 sxsdk::ik_class</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.7.4 -->
+<div id="top">
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="pages.html"><span>関連ページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>構成</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>構成メンバ</span></a></li>
+    </ul>
+  </div>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+  initNavTree('structsxsdk_1_1ik__class.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public メソッド</a>  </div>
+  <div class="headertitle">
+<div class="title">構造体 sxsdk::ik_class</div>  </div>
+</div>
+<div class="contents">
+<!-- doxytag: class="sxsdk::ik_class" --><!-- doxytag: inherits="sxsdk::shade_interface" -->
+<p>シーンに対して1つ持つIK制御クラス  
+ <a href="structsxsdk_1_1ik__class.html#details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="ikclass_8h_source.html">ikclass.h</a>&gt;</code></p>
+<div class="dynheader">
+sxsdk::ik_classに対する継承グラフ</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="structsxsdk_1_1ik__class.png" usemap="#sxsdk::ik_class_map" alt=""/>
+  <map id="sxsdk::ik_class_map" name="sxsdk::ik_class_map">
+<area href="structsxsdk_1_1shade__interface.html" title="Shadeの情報へのアクセスの基本となるインターフェイス" alt="sxsdk::shade_interface" shape="rect" coords="0,56,140,80"/>
+<area href="classunknown__interface.html" alt="unknown_interface" shape="rect" coords="0,0,140,24"/>
+</map>
+ </div></div>
+
+<p><a href="structsxsdk_1_1ik__class-members.html">すべてのメンバ一覧</a></p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1ik__data__class.html">sxsdk::ik_data_class</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1ik__class.html#ae1e8b4e9ae8d63e45ff786b2ce0c992e">find_ik_data</a> (<a class="el" href="structsxsdk_1_1shape__class.html">sxsdk::shape_class</a> &amp;shape, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">指定の形状に近いIKの情報を探す。  <a href="#ae1e8b4e9ae8d63e45ff786b2ce0c992e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1ik__class.html#a8a7379cd175ca95e20be52052df7f46d">set_ik</a> (<a class="el" href="structsxsdk_1_1shape__class.html">sxsdk::shape_class</a> *root_shape, <a class="el" href="structsxsdk_1_1shape__class.html">sxsdk::shape_class</a> *end_shape, <a class="el" href="structsxsdk_1_1shape__class.html">sxsdk::shape_class</a> *goal_shape, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">指定のroot/end/goal形状を与えてIK情報を割り当て。  <a href="#a8a7379cd175ca95e20be52052df7f46d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1ik__class.html#acaa46c40768e60d1ea46b643954270e2">has_ik</a> (<a class="el" href="structsxsdk_1_1shape__class.html">sxsdk::shape_class</a> &amp;shape, bool depth, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">指定の形状でIK情報を持つか調べる。  <a href="#acaa46c40768e60d1ea46b643954270e2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1ik__data__class.html">sxsdk::ik_data_class</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1ik__class.html#aaa23db03e56b15c0c023eb9ab0815c28">get_ik_data</a> (<a class="el" href="structsxsdk_1_1shape__class.html">sxsdk::shape_class</a> &amp;shape, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">IKデータを取得。  <a href="#aaa23db03e56b15c0c023eb9ab0815c28"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1ik__class.html#ae89b1a29ec31d6438aa77e940d692573">set_ik_data</a> (<a class="el" href="structsxsdk_1_1shape__class.html">sxsdk::shape_class</a> &amp;shape, <a class="el" href="structsxsdk_1_1ik__data__class.html">sxsdk::ik_data_class</a> &amp;ik_data, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">IKデータを更新する。  <a href="#ae89b1a29ec31d6438aa77e940d692573"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1ik__class.html#afc59f3749ae52ae096c77f7e2e99dbdb">delete_ik_data</a> (<a class="el" href="structsxsdk_1_1shape__class.html">sxsdk::shape_class</a> &amp;shape, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">IK情報を削除（root/end/goalのいずれかを指定）。  <a href="#afc59f3749ae52ae096c77f7e2e99dbdb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa6e0232254c38f49be39d74dee40dd31"></a><!-- doxytag: member="sxsdk::ik_class::get_number_of_ik" ref="aa6e0232254c38f49be39d74dee40dd31" args="(void *aux=0)" -->
+virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1ik__class.html#aa6e0232254c38f49be39d74dee40dd31">get_number_of_ik</a> (void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">IK情報の数を取得。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1ik__data__class.html">sxsdk::ik_data_class</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1ik__class.html#a3ac00d51b1f20ba3f2dcc501a2b07b03">get_ik_data_index</a> (int index, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">IK情報をIK番号より取得。  <a href="#a3ac00d51b1f20ba3f2dcc501a2b07b03"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual sxsdk::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1ik__class.html#adbd0b437ca3b6c5a5da29ba83d70aac7">get_shape_world_position</a> (<a class="el" href="structsxsdk_1_1shape__class.html">sxsdk::shape_class</a> &amp;shape, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">形状に対応するIKを考慮したワールド座標位置を取得。  <a href="#adbd0b437ca3b6c5a5da29ba83d70aac7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual sxsdk::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1ik__class.html#a9d11ea7b0b0c72f196d5ef0ad6a54a58">get_pole_vector</a> (<a class="el" href="structsxsdk_1_1shape__class.html">sxsdk::shape_class</a> &amp;end_shape, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">IKの持つ3つのジョイントにて屈伸運動する場合の、屈伸の向きに値する「Pole Vector」を取得。  <a href="#a9d11ea7b0b0c72f196d5ef0ad6a54a58"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1ik__class.html#acc792fabff509e84ad6af74659e54e55">get_twist</a> (<a class="el" href="structsxsdk_1_1shape__class.html">sxsdk::shape_class</a> &amp;end_shape, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Twist値を取得。  <a href="#acc792fabff509e84ad6af74659e54e55"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual sxsdk::quaternion_class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1ik__class.html#a289b4bf306327b256d6a3b7c970753a7">get_joint_rotation</a> (<a class="el" href="structsxsdk_1_1shape__class.html">sxsdk::shape_class</a> &amp;shape, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">現在のシーケンス位置でのIKを考慮したジョイントの回転値を取得。  <a href="#a289b4bf306327b256d6a3b7c970753a7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual sxsdk::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1ik__class.html#a12a5d98341b2acd8e2a8a0ef2e333836">get_joint_offset</a> (<a class="el" href="structsxsdk_1_1shape__class.html">sxsdk::shape_class</a> &amp;shape, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">現在のシーケンス位置でのIKを考慮したジョイントのオフセット値を取得。  <a href="#a12a5d98341b2acd8e2a8a0ef2e333836"></a><br/></td></tr>
+</table>
+<hr/><a name="details" id="details"></a><h2>説明</h2>
+<div class="textblock"><p>シーンに対して1つ持つIK制御クラス </p>
+<p><a class="el" href="structsxsdk_1_1scene__interface.html" title="シーンの情報の取得・設定に使用する。">sxsdk::scene_interface</a> から取得できる。</p>
+<p><code><a class="el" href="structsxsdk_1_1scene__interface.html#af51ac2898f6aff8d1f41591f78589519" title="IK管理クラスを取得する。">sxsdk::scene_interface::get_ik</a></code> </p>
+</div><hr/><h2>関数</h2>
+<a class="anchor" id="afc59f3749ae52ae096c77f7e2e99dbdb"></a><!-- doxytag: member="sxsdk::ik_class::delete_ik_data" ref="afc59f3749ae52ae096c77f7e2e99dbdb" args="(sxsdk::shape_class &amp;shape, void *aux=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool sxsdk::ik_class::delete_ik_data </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsxsdk_1_1shape__class.html">sxsdk::shape_class</a> &amp;&#160;</td>
+          <td class="paramname"><em>shape</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>IK情報を削除（root/end/goalのいずれかを指定）。 </p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">shape</td><td>形状情報の参照 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ae1e8b4e9ae8d63e45ff786b2ce0c992e"></a><!-- doxytag: member="sxsdk::ik_class::find_ik_data" ref="ae1e8b4e9ae8d63e45ff786b2ce0c992e" args="(sxsdk::shape_class &amp;shape, void *aux=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="structsxsdk_1_1ik__data__class.html">sxsdk::ik_data_class</a>&amp; sxsdk::ik_class::find_ik_data </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsxsdk_1_1shape__class.html">sxsdk::shape_class</a> &amp;&#160;</td>
+          <td class="paramname"><em>shape</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>指定の形状に近いIKの情報を探す。 </p>
+<p>shapeで示される形状が、IKルート/IKエンド/IKゴールそのものを指す場合はそのときのIKの組に対する情報を <a class="el" href="structsxsdk_1_1ik__data__class.html" title="1組のIK情報を持つクラス">sxsdk::ik_data_class</a> クラスの参照として返す。<br/>
+IKルートからIKエンドの間の形状をshapeで指定した場合は、その属するIK情報の参照を返す。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">shape</td><td>形状情報の参照 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aaa23db03e56b15c0c023eb9ab0815c28"></a><!-- doxytag: member="sxsdk::ik_class::get_ik_data" ref="aaa23db03e56b15c0c023eb9ab0815c28" args="(sxsdk::shape_class &amp;shape, void *aux=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="structsxsdk_1_1ik__data__class.html">sxsdk::ik_data_class</a>&amp; sxsdk::ik_class::get_ik_data </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsxsdk_1_1shape__class.html">sxsdk::shape_class</a> &amp;&#160;</td>
+          <td class="paramname"><em>shape</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>IKデータを取得。 </p>
+<p>shapeで指定された形状は、IKエンドである必要がある。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">shape</td><td>IKエンドを持つ形状情報の参照 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a3ac00d51b1f20ba3f2dcc501a2b07b03"></a><!-- doxytag: member="sxsdk::ik_class::get_ik_data_index" ref="a3ac00d51b1f20ba3f2dcc501a2b07b03" args="(int index, void *aux=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="structsxsdk_1_1ik__data__class.html">sxsdk::ik_data_class</a>&amp; sxsdk::ik_class::get_ik_data_index </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>IK情報をIK番号より取得。 </p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>IK番号 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a12a5d98341b2acd8e2a8a0ef2e333836"></a><!-- doxytag: member="sxsdk::ik_class::get_joint_offset" ref="a12a5d98341b2acd8e2a8a0ef2e333836" args="(sxsdk::shape_class &amp;shape, void *aux=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual sxsdk::vec3 sxsdk::ik_class::get_joint_offset </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsxsdk_1_1shape__class.html">sxsdk::shape_class</a> &amp;&#160;</td>
+          <td class="paramname"><em>shape</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>現在のシーケンス位置でのIKを考慮したジョイントのオフセット値を取得。 </p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">shape</td><td>形状情報の参照 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a289b4bf306327b256d6a3b7c970753a7"></a><!-- doxytag: member="sxsdk::ik_class::get_joint_rotation" ref="a289b4bf306327b256d6a3b7c970753a7" args="(sxsdk::shape_class &amp;shape, void *aux=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual sxsdk::quaternion_class sxsdk::ik_class::get_joint_rotation </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsxsdk_1_1shape__class.html">sxsdk::shape_class</a> &amp;&#160;</td>
+          <td class="paramname"><em>shape</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>現在のシーケンス位置でのIKを考慮したジョイントの回転値を取得。 </p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">shape</td><td>形状情報の参照 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a9d11ea7b0b0c72f196d5ef0ad6a54a58"></a><!-- doxytag: member="sxsdk::ik_class::get_pole_vector" ref="a9d11ea7b0b0c72f196d5ef0ad6a54a58" args="(sxsdk::shape_class &amp;end_shape, void *aux=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual sxsdk::vec3 sxsdk::ik_class::get_pole_vector </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsxsdk_1_1shape__class.html">sxsdk::shape_class</a> &amp;&#160;</td>
+          <td class="paramname"><em>end_shape</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>IKの持つ3つのジョイントにて屈伸運動する場合の、屈伸の向きに値する「Pole Vector」を取得。 </p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">end_shape</td><td>エンド形状情報の参照 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="adbd0b437ca3b6c5a5da29ba83d70aac7"></a><!-- doxytag: member="sxsdk::ik_class::get_shape_world_position" ref="adbd0b437ca3b6c5a5da29ba83d70aac7" args="(sxsdk::shape_class &amp;shape, void *aux=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual sxsdk::vec3 sxsdk::ik_class::get_shape_world_position </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsxsdk_1_1shape__class.html">sxsdk::shape_class</a> &amp;&#160;</td>
+          <td class="paramname"><em>shape</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>形状に対応するIKを考慮したワールド座標位置を取得。 </p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">shape</td><td>形状情報の参照 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="acc792fabff509e84ad6af74659e54e55"></a><!-- doxytag: member="sxsdk::ik_class::get_twist" ref="acc792fabff509e84ad6af74659e54e55" args="(sxsdk::shape_class &amp;end_shape, void *aux=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual float sxsdk::ik_class::get_twist </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsxsdk_1_1shape__class.html">sxsdk::shape_class</a> &amp;&#160;</td>
+          <td class="paramname"><em>end_shape</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Twist値を取得。 </p>
+<p>Shade 13.1段階では、この値は常に0（未使用）。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">end_shape</td><td>エンド形状情報の参照 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="acaa46c40768e60d1ea46b643954270e2"></a><!-- doxytag: member="sxsdk::ik_class::has_ik" ref="acaa46c40768e60d1ea46b643954270e2" args="(sxsdk::shape_class &amp;shape, bool depth, void *aux=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int sxsdk::ik_class::has_ik </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsxsdk_1_1shape__class.html">sxsdk::shape_class</a> &amp;&#160;</td>
+          <td class="paramname"><em>shape</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>depth</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>指定の形状でIK情報を持つか調べる。 </p>
+<p>戻り値が0の場合はIK情報なし。<br/>
+ 1 : IKルートを持つ<br/>
+2 : IKエンドを持つ <br/>
+4 : IKゴールを持つ<br/>
+IKルートとIKエンドを共有する場合は 1 + 2 = 3が返される。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">shape</td><td>形状情報の参照 </td></tr>
+    <tr><td class="paramname">depth</td><td>子要素を検索するか </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a8a7379cd175ca95e20be52052df7f46d"></a><!-- doxytag: member="sxsdk::ik_class::set_ik" ref="a8a7379cd175ca95e20be52052df7f46d" args="(sxsdk::shape_class *root_shape, sxsdk::shape_class *end_shape, sxsdk::shape_class *goal_shape, void *aux=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool sxsdk::ik_class::set_ik </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsxsdk_1_1shape__class.html">sxsdk::shape_class</a> *&#160;</td>
+          <td class="paramname"><em>root_shape</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structsxsdk_1_1shape__class.html">sxsdk::shape_class</a> *&#160;</td>
+          <td class="paramname"><em>end_shape</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structsxsdk_1_1shape__class.html">sxsdk::shape_class</a> *&#160;</td>
+          <td class="paramname"><em>goal_shape</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>指定のroot/end/goal形状を与えてIK情報を割り当て。 </p>
+<p>goalがnullの場合はボールジョイントをroot_shapeの兄弟として生成。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">root_shape</td><td>IKルート形状のポインタ </td></tr>
+    <tr><td class="paramname">end_shape</td><td>IKエンド形状のポインタ </td></tr>
+    <tr><td class="paramname">goal_shape</td><td>IKゴール形状のポインタ。nullを指定すると自動的に生成される。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ae89b1a29ec31d6438aa77e940d692573"></a><!-- doxytag: member="sxsdk::ik_class::set_ik_data" ref="ae89b1a29ec31d6438aa77e940d692573" args="(sxsdk::shape_class &amp;shape, sxsdk::ik_data_class &amp;ik_data, void *aux=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool sxsdk::ik_class::set_ik_data </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsxsdk_1_1shape__class.html">sxsdk::shape_class</a> &amp;&#160;</td>
+          <td class="paramname"><em>shape</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structsxsdk_1_1ik__data__class.html">sxsdk::ik_data_class</a> &amp;&#160;</td>
+          <td class="paramname"><em>ik_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>IKデータを更新する。 </p>
+<p>shapeで指定された形状は、IKエンドである必要がある。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">shape</td><td>IKエンドを持つ形状情報の参照 </td></tr>
+    <tr><td class="paramname">ik_data</td><td>IK情報の参照 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>この構造体の説明は次のファイルから生成されました:<ul>
+<li><a class="el" href="ikclass_8h_source.html">ikclass.h</a></li>
+</ul>
+</div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><b>sxsdk</b>      </li>
+      <li class="navelem"><a class="el" href="structsxsdk_1_1ik__class.html">ik_class</a>      </li>
+<br><br>
+<hr>
+<div align="center">Copyright &copy; e frontier, Inc. All rights reserved.</div>
+</body></html>

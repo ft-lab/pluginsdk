@@ -4,76 +4,106 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <title>radiosityinterface.h ソースファイル</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<!-- 作成： Doxygen 1.6.1 -->
-<div class="navigation" id="top">
-  <div class="tabs">
-    <ul>
-      <li><a href="main.html"><span>メインページ</span></a></li>
+<!-- 作成： Doxygen 1.7.4 -->
+<div id="top">
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
       <li><a href="pages.html"><span>関連ページ</span></a></li>
       <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
       <li><a href="annotated.html"><span>クラス</span></a></li>
       <li class="current"><a href="files.html"><span>ファイル</span></a></li>
     </ul>
   </div>
-  <div class="tabs">
-    <ul>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
       <li><a href="files.html"><span>ファイル一覧</span></a></li>
       <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
     </ul>
   </div>
-<h1>radiosityinterface.h</h1><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// this file has been created by makeheader.py</span>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+  initNavTree('radiosityinterface_8h.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">radiosityinterface.h</div>  </div>
+</div>
+<div class="contents">
+<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// this file has been created by makeheader.py</span>
 <a name="l00002"></a>00002 <span class="comment">// ja utf-8</span>
 <a name="l00003"></a>00003 <span class="preprocessor">#pragma once</span>
-<a name="l00010"></a>00010 <span class="preprocessor">namespace sxsdk {</span>
-<a name="l00011"></a><a class="code" href="structsxsdk_1_1radiosity__interface.html">00011</a> <span class="preprocessor"></span><span class="keyword">struct </span><a class="code" href="structsxsdk_1_1radiosity__interface.html">radiosity_interface</a> : <span class="keyword">public</span> <a class="code" href="structsxsdk_1_1shade__interface.html">shade_interface</a> {
+<a name="l00004"></a>00004 <span class="preprocessor"></span><span class="keyword">namespace </span>sxsdk {
+<a name="l00011"></a><a class="code" href="structsxsdk_1_1radiosity__interface.html">00011</a> <span class="keyword">struct </span><a class="code" href="structsxsdk_1_1radiosity__interface.html" title="ラジオシティの情報の設定、取得に使用する。">radiosity_interface</a> : <span class="keyword">public</span> <a class="code" href="structsxsdk_1_1shade__interface.html" title="Shadeの情報へのアクセスの基本となるインターフェイス">shade_interface</a> {
 <a name="l00012"></a>00012 <span class="keyword">public</span>:
-<a name="l00014"></a>00014     <span class="keyword">virtual</span> <span class="keywordtype">void</span> start (<span class="keywordtype">void</span>* aux = 0);
-<a name="l00016"></a>00016     <span class="keyword">virtual</span> <span class="keywordtype">void</span> stop (<span class="keywordtype">void</span>* aux = 0);
-<a name="l00018"></a>00018     <span class="keyword">virtual</span> <span class="keywordtype">void</span> resume (<span class="keywordtype">void</span>* aux = 0);
-<a name="l00020"></a>00020     <span class="keyword">virtual</span> <span class="keywordtype">void</span> clear (<span class="keywordtype">void</span>* aux = 0);
-<a name="l00022"></a>00022     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> get_solving (<span class="keywordtype">void</span> * = 0) <span class="keyword">const</span>;
-<a name="l00024"></a>00024     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html">radiosity_interface</a> &amp;set_solution_convergence (<span class="keywordtype">float</span> solution_convergence_param, <span class="keywordtype">void</span> * = 0);
-<a name="l00026"></a>00026     <span class="keyword">virtual</span> <span class="keywordtype">float</span> get_solution_convergence (<span class="keywordtype">void</span> * = 0) <span class="keyword">const</span>;
-<a name="l00028"></a>00028     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html">radiosity_interface</a> &amp;set_solution_diffuse (<span class="keywordtype">float</span> solution_diffuse_param, <span class="keywordtype">void</span> * = 0);
-<a name="l00030"></a>00030     <span class="keyword">virtual</span> <span class="keywordtype">float</span> get_solution_diffuse (<span class="keywordtype">void</span> * = 0) <span class="keyword">const</span>;
-<a name="l00032"></a>00032     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html">radiosity_interface</a> &amp;set_solution_initial_mesh_spacing (<span class="keywordtype">float</span> solution_initial_mesh_spacing_param, <span class="keywordtype">void</span> * = 0);
-<a name="l00034"></a>00034     <span class="keyword">virtual</span> <span class="keywordtype">float</span> get_solution_initial_mesh_spacing (<span class="keywordtype">void</span> * = 0) <span class="keyword">const</span>;
-<a name="l00036"></a>00036     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html">radiosity_interface</a> &amp;set_solution_minimum_mesh_spacing (<span class="keywordtype">float</span> solution_minimum_mesh_spacing_param, <span class="keywordtype">void</span> * = 0);
-<a name="l00038"></a>00038     <span class="keyword">virtual</span> <span class="keywordtype">float</span> get_solution_minimum_mesh_spacing (<span class="keywordtype">void</span> * = 0) <span class="keyword">const</span>;
-<a name="l00040"></a>00040     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html">radiosity_interface</a> &amp;set_solution_direct_radiation_mesh_subdivision_sensitivity (<span class="keywordtype">float</span> solution_direct_radiation_mesh_subdivision_sensitivity_param, <span class="keywordtype">void</span> * = 0);
-<a name="l00042"></a>00042     <span class="keyword">virtual</span> <span class="keywordtype">float</span> get_solution_direct_radiation_mesh_subdivision_sensitivity (<span class="keywordtype">void</span> * = 0) <span class="keyword">const</span>;
-<a name="l00044"></a>00044     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html">radiosity_interface</a> &amp;set_solution_indirect_radiation_mesh_subdivision_sensitivity (<span class="keywordtype">float</span> solution_indirect_radiation_mesh_subdivision_sensitivity_param, <span class="keywordtype">void</span> * = 0);
-<a name="l00046"></a>00046     <span class="keyword">virtual</span> <span class="keywordtype">float</span> get_solution_indirect_radiation_mesh_subdivision_sensitivity (<span class="keywordtype">void</span> * = 0) <span class="keyword">const</span>;
-<a name="l00048"></a>00048     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html">radiosity_interface</a> &amp;set_solution_source_subdivision_sensitivity (<span class="keywordtype">int</span> solution_source_subdivision_sensitivity_param, <span class="keywordtype">void</span> * = 0);
-<a name="l00050"></a>00050     <span class="keyword">virtual</span> <span class="keywordtype">int</span> get_solution_source_subdivision_sensitivity (<span class="keywordtype">void</span> * = 0) <span class="keyword">const</span>;
-<a name="l00052"></a>00052     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html">radiosity_interface</a> &amp;set_solution_sky_light_accuracy (<span class="keywordtype">int</span> solution_sky_light_accuracy_param, <span class="keywordtype">void</span> * = 0);
-<a name="l00054"></a>00054     <span class="keyword">virtual</span> <span class="keywordtype">int</span> get_solution_sky_light_accuracy (<span class="keywordtype">void</span> * = 0) <span class="keyword">const</span>;
-<a name="l00056"></a>00056     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html">radiosity_interface</a> &amp;set_display_mesh (<span class="keywordtype">bool</span> display_mesh_param, <span class="keywordtype">void</span> * = 0);
-<a name="l00058"></a>00058     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> get_display_mesh (<span class="keywordtype">void</span> * = 0) <span class="keyword">const</span>;
-<a name="l00060"></a>00060     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html">radiosity_interface</a> &amp;set_display_solid (<span class="keywordtype">bool</span> display_solid_param, <span class="keywordtype">void</span> * = 0);
-<a name="l00062"></a>00062     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> get_display_solid (<span class="keywordtype">void</span> * = 0) <span class="keyword">const</span>;
-<a name="l00064"></a>00064     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html">radiosity_interface</a> &amp;set_display_cull_face (<span class="keywordtype">bool</span> display_cull_face_param, <span class="keywordtype">void</span> * = 0);
-<a name="l00066"></a>00066     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> get_display_cull_face (<span class="keywordtype">void</span> * = 0) <span class="keyword">const</span>;
-<a name="l00068"></a>00068     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html">radiosity_interface</a> &amp;set_display_blend (<span class="keywordtype">bool</span> display_blend_param, <span class="keywordtype">void</span> * = 0);
-<a name="l00070"></a>00070     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> get_display_blend (<span class="keywordtype">void</span> * = 0) <span class="keyword">const</span>;
-<a name="l00072"></a>00072     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html">radiosity_interface</a> &amp;set_display_radiator (<span class="keywordtype">bool</span> display_radiator_param, <span class="keywordtype">void</span> * = 0);
-<a name="l00074"></a>00074     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> get_display_radiator (<span class="keywordtype">void</span> * = 0) <span class="keyword">const</span>;
-<a name="l00076"></a>00076     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html">radiosity_interface</a> &amp;set_display_updates (<span class="keywordtype">int</span> display_updates_param, <span class="keywordtype">void</span> * = 0);
-<a name="l00078"></a>00078     <span class="keyword">virtual</span> <span class="keywordtype">int</span> get_display_updates (<span class="keywordtype">void</span> * = 0) <span class="keyword">const</span>;
-<a name="l00080"></a>00080     <span class="keyword">virtual</span> <span class="keywordtype">void</span> abort (<span class="keywordtype">void</span>* aux = 0);
-<a name="l00082"></a>00082     <span class="keyword">virtual</span> <span class="keywordtype">void</span> solve (<span class="keywordtype">void</span>* aux = 0);
+<a name="l00014"></a>00014     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html#afd059228bad3f68f107195c89e8b59ea" title="ラジオシティ計算を開始する。">start</a> (<span class="keywordtype">void</span>* aux = 0);
+<a name="l00016"></a>00016     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html#accc6b6fd2fe5c8d7dabe269b99461c43" title="ラジオシティ計算を中断する。">stop</a> (<span class="keywordtype">void</span>* aux = 0);
+<a name="l00018"></a>00018     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html#a502f9743d17d25c4fdef6bef1bd34240" title="ラジオシティ計算を再開する。">resume</a> (<span class="keywordtype">void</span>* aux = 0);
+<a name="l00020"></a>00020     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html#a902b485367e0a75927b39d1a40f2c16e" title="ラジオシティ計算の結果を削除する。">clear</a> (<span class="keywordtype">void</span>* aux = 0);
+<a name="l00022"></a>00022     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html#af252c463a073fc208f18d618b101b441" title="ラジオシティ計算中かどうか（取得のみ）を取得する。">get_solving</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00024"></a>00024     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html" title="ラジオシティの情報の設定、取得に使用する。">radiosity_interface</a> &amp;<a class="code" href="structsxsdk_1_1radiosity__interface.html#a40ab3a4c75a35a81723d6e827658e0cb" title="ラジオシティ計算のコンバージェンスの値を設定する。">set_solution_convergence</a> (<span class="keywordtype">float</span> solution_convergence_param, <span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>);
+<a name="l00026"></a>00026     <span class="keyword">virtual</span> <span class="keywordtype">float</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html#ad9b492533ac4395a9800393767a9c446" title="ラジオシティ計算のコンバージェンスの値を取得する。">get_solution_convergence</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00028"></a>00028     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html" title="ラジオシティの情報の設定、取得に使用する。">radiosity_interface</a> &amp;<a class="code" href="structsxsdk_1_1radiosity__interface.html#ab447e4985c353728f1cef2c0f219eeda" title="ラジオシティ計算の拡散反射の値を設定する。">set_solution_diffuse</a> (<span class="keywordtype">float</span> solution_diffuse_param, <span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>);
+<a name="l00030"></a>00030     <span class="keyword">virtual</span> <span class="keywordtype">float</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html#a9ab20dd8640a0ec8caa3f169857adf63" title="ラジオシティ計算の拡散反射の値を取得する。">get_solution_diffuse</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00032"></a>00032     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html" title="ラジオシティの情報の設定、取得に使用する。">radiosity_interface</a> &amp;<a class="code" href="structsxsdk_1_1radiosity__interface.html#ae984c25ec3b9627b7f83830e5d5cdf38" title="ラジオシティ計算の初期メッシュ間隔を設定する。">set_solution_initial_mesh_spacing</a> (<span class="keywordtype">float</span> solution_initial_mesh_spacing_param, <span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>);
+<a name="l00034"></a>00034     <span class="keyword">virtual</span> <span class="keywordtype">float</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html#a936a35080b49b29e9d00404e745451b0" title="ラジオシティ計算の初期メッシュ間隔を取得する。">get_solution_initial_mesh_spacing</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00036"></a>00036     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html" title="ラジオシティの情報の設定、取得に使用する。">radiosity_interface</a> &amp;<a class="code" href="structsxsdk_1_1radiosity__interface.html#a397c0d45c5abf061f2427dc0ceceda6b" title="ラジオシティ計算の最小メッシュ間隔を設定する。">set_solution_minimum_mesh_spacing</a> (<span class="keywordtype">float</span> solution_minimum_mesh_spacing_param, <span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>);
+<a name="l00038"></a>00038     <span class="keyword">virtual</span> <span class="keywordtype">float</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html#a297682d247340f134961cc707ca72287" title="ラジオシティ計算の最小メッシュ間隔を取得する。">get_solution_minimum_mesh_spacing</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00040"></a>00040     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html" title="ラジオシティの情報の設定、取得に使用する。">radiosity_interface</a> &amp;<a class="code" href="structsxsdk_1_1radiosity__interface.html#aad214f00ea708598b6f75d38b76f84da" title="ラジオシティ計算のメッシュ分割感度（直接光）を設定する。">set_solution_direct_radiation_mesh_subdivision_sensitivity</a> (<span class="keywordtype">float</span> solution_direct_radiation_mesh_subdivision_sensitivity_param, <span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>);
+<a name="l00042"></a>00042     <span class="keyword">virtual</span> <span class="keywordtype">float</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html#a0fc3e09ccb43cc441546f58e1d8e5f04" title="ラジオシティ計算のメッシュ分割感度（直接光）を取得する。">get_solution_direct_radiation_mesh_subdivision_sensitivity</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00044"></a>00044     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html" title="ラジオシティの情報の設定、取得に使用する。">radiosity_interface</a> &amp;<a class="code" href="structsxsdk_1_1radiosity__interface.html#a7c1438a736e409bd3ee8eb46b677d552" title="ラジオシティ計算のメッシュ分割感度（間接光）を設定する。">set_solution_indirect_radiation_mesh_subdivision_sensitivity</a> (<span class="keywordtype">float</span> solution_indirect_radiation_mesh_subdivision_sensitivity_param, <span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>);
+<a name="l00046"></a>00046     <span class="keyword">virtual</span> <span class="keywordtype">float</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html#a79b2255fc2139848a6ee573a8438395c" title="ラジオシティ計算のメッシュ分割感度（間接光）を取得する。">get_solution_indirect_radiation_mesh_subdivision_sensitivity</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00048"></a>00048     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html" title="ラジオシティの情報の設定、取得に使用する。">radiosity_interface</a> &amp;<a class="code" href="structsxsdk_1_1radiosity__interface.html#acd65c852333e4b0d27a2816070d079f5" title="光放射面分割感度を設定する。">set_solution_source_subdivision_sensitivity</a> (<span class="keywordtype">int</span> solution_source_subdivision_sensitivity_param, <span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>);
+<a name="l00050"></a>00050     <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html#a1de545a9b462568e4c59e69abab5f83f" title="光放射面分割感度を取得する。">get_solution_source_subdivision_sensitivity</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00052"></a>00052     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html" title="ラジオシティの情報の設定、取得に使用する。">radiosity_interface</a> &amp;<a class="code" href="structsxsdk_1_1radiosity__interface.html#acd829d2f73cf492d4493aae156612acc" title="天空光計算精度を設定する。">set_solution_sky_light_accuracy</a> (<span class="keywordtype">int</span> solution_sky_light_accuracy_param, <span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>);
+<a name="l00054"></a>00054     <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html#a700711c8180edad8fa78aafe313aed8b" title="天空光計算精度を取得する。">get_solution_sky_light_accuracy</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00056"></a>00056     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html" title="ラジオシティの情報の設定、取得に使用する。">radiosity_interface</a> &amp;<a class="code" href="structsxsdk_1_1radiosity__interface.html#ab119eb8781bbf3d345f1ec2fb3058e8a" title="メッシュを表示するかどうかを設定する。">set_display_mesh</a> (<span class="keywordtype">bool</span> display_mesh_param, <span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>);
+<a name="l00058"></a>00058     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html#a3ee2d92a9876a011dc235dc6217696fd" title="メッシュを表示するかどうかを取得する。">get_display_mesh</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00060"></a>00060     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html" title="ラジオシティの情報の設定、取得に使用する。">radiosity_interface</a> &amp;<a class="code" href="structsxsdk_1_1radiosity__interface.html#aeef735ec84ebe645fd1642c5b512e6b5" title="ソリッドを表示するかどうかを設定する。">set_display_solid</a> (<span class="keywordtype">bool</span> display_solid_param, <span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>);
+<a name="l00062"></a>00062     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html#ac96357e5933c18bd6d12d11071ef4aa0" title="ソリッドを表示するかどうかを取得する。">get_display_solid</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00064"></a>00064     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html" title="ラジオシティの情報の設定、取得に使用する。">radiosity_interface</a> &amp;<a class="code" href="structsxsdk_1_1radiosity__interface.html#af507c966a99ed2198a6ffd0ca53181b7" title="カルフェース表示するかどうかを設定する。">set_display_cull_face</a> (<span class="keywordtype">bool</span> display_cull_face_param, <span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>);
+<a name="l00066"></a>00066     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html#a5b7cc6bd8dd642d55ac5cab2925c5418" title="カルフェース表示するかどうかを取得する。">get_display_cull_face</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00068"></a>00068     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html" title="ラジオシティの情報の設定、取得に使用する。">radiosity_interface</a> &amp;<a class="code" href="structsxsdk_1_1radiosity__interface.html#a48fb6a16a58704c977e1073e131b06bb" title="ブレンド表示するかどうかを設定する。">set_display_blend</a> (<span class="keywordtype">bool</span> display_blend_param, <span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>);
+<a name="l00070"></a>00070     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html#a24c660923a71f42ee644a746502d2db7" title="ブレンド表示するかどうかを取得する。">get_display_blend</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00072"></a>00072     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html" title="ラジオシティの情報の設定、取得に使用する。">radiosity_interface</a> &amp;<a class="code" href="structsxsdk_1_1radiosity__interface.html#a4b67d9ce62fe7080302a9674f5dc1a94" title="放射光源／パッチを表示するかどうかを設定する。">set_display_radiator</a> (<span class="keywordtype">bool</span> display_radiator_param, <span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>);
+<a name="l00074"></a>00074     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html#a66810ba6a627c597eb76b493fdac8f84" title="放射光源／パッチを表示するかどうかを取得する。">get_display_radiator</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00076"></a>00076     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html" title="ラジオシティの情報の設定、取得に使用する。">radiosity_interface</a> &amp;<a class="code" href="structsxsdk_1_1radiosity__interface.html#a6f1e0c0b3ae7c49e8c0e4e21b0bb4e99" title="表示更新頻度を設定する。">set_display_updates</a> (<span class="keywordtype">int</span> display_updates_param, <span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>);
+<a name="l00078"></a>00078     <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html#a3f86b0d8a1a747d54a38be9807ad9a9d" title="表示更新頻度を取得する。">get_display_updates</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00080"></a>00080     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html#a34be6e5e196b811f6132bfdb42f554f1" title="ラジオシティ計算を中止する。中途の計算結果は破棄。">abort</a> (<span class="keywordtype">void</span>* aux = 0);
+<a name="l00082"></a>00082     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html#ad5b5a948db134f93f68e156f81c97ef5" title="ラジオシティ計算を行う。">solve</a> (<span class="keywordtype">void</span>* aux = 0);
 <a name="l00083"></a>00083     <span class="keyword">virtual</span> <span class="keywordtype">int</span> radiosity_interface_test_1 ( <span class="keywordtype">void</span>* aux =0 ) { <span class="keywordflow">return</span> 1; }
-<a name="l00085"></a>00085     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html">radiosity_interface</a> &amp;set_auto_exposure (<span class="keywordtype">bool</span> auto_exposure_param, <span class="keywordtype">void</span> * = 0);
-<a name="l00087"></a>00087     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> get_auto_exposure (<span class="keywordtype">void</span> * = 0) <span class="keyword">const</span>;
-<a name="l00089"></a>00089     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html">radiosity_interface</a> &amp;set_exposure (<span class="keywordtype">float</span> exposure_param, <span class="keywordtype">void</span> * = 0);
-<a name="l00091"></a>00091     <span class="keyword">virtual</span> <span class="keywordtype">float</span> get_exposure (<span class="keywordtype">void</span> * = 0) <span class="keyword">const</span>;
-<a name="l00093"></a>00093     <span class="keyword">virtual</span> <span class="keywordtype">void</span> stream_to_clipboard (<span class="keywordtype">void</span>* aux = 0);
+<a name="l00085"></a>00085     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html" title="ラジオシティの情報の設定、取得に使用する。">radiosity_interface</a> &amp;<a class="code" href="structsxsdk_1_1radiosity__interface.html#a7d9406365652e02fa5c10b23db23fc06" title="自動露出調節を設定する。">set_auto_exposure</a> (<span class="keywordtype">bool</span> auto_exposure_param, <span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>);
+<a name="l00087"></a>00087     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html#a1f02092374545240eb06dceae9a0e30f" title="自動露出調節を取得する。">get_auto_exposure</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00089"></a>00089     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html" title="ラジオシティの情報の設定、取得に使用する。">radiosity_interface</a> &amp;<a class="code" href="structsxsdk_1_1radiosity__interface.html#a61f2fba927e5fafb7952b91a14315800" title="露出を設定する。">set_exposure</a> (<span class="keywordtype">float</span> exposure_param, <span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>);
+<a name="l00091"></a>00091     <span class="keyword">virtual</span> <span class="keywordtype">float</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html#a5f5722bc1e143d2654da34fb891e423c" title="露出を取得する。">get_exposure</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00093"></a>00093     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structsxsdk_1_1radiosity__interface.html#a21cf87bad4e20688b8476b476ee32502" title="オブジェクトの内容をテキスト（XML）としてクリップボードにコピーする。">stream_to_clipboard</a> (<span class="keywordtype">void</span>* aux = 0);
 <a name="l00094"></a>00094 };
 <a name="l00095"></a>00095 } <span class="comment">// sxsdk</span>
 </pre></div></div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><b>radiosityinterface.h</b>      </li>
 <br><br>
 <hr>
 <div align="center">Copyright &copy; e frontier, Inc. All rights reserved.</div>

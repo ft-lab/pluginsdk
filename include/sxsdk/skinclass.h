@@ -1,7 +1,8 @@
 #pragma once
 
 namespace sxsdk {
-	class skin_bind_class {
+	class
+	skin_bind_class {
 	public:
 		virtual ~skin_bind_class ();
 		VTABLE_PADDING
@@ -11,7 +12,8 @@ namespace sxsdk {
 	virtual skin_bind_class &set_weight (float weight_param, void * = 0) = 0; // 3
 	};
 
-	class skin_class {
+	class
+	skin_class {
 	public:
 		virtual ~skin_class ();
 		VTABLE_PADDING

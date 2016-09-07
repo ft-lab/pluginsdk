@@ -92,7 +92,9 @@ namespace sxsdk {
 			camera_joint				= 11,	///< \en blah \enden \ja カメラ\endja
 			sound_part					= 12,	///< \en blah \enden \ja サウンド\endja
 			switch_joint				= 13,	///< \en blah \enden \ja スイッチジョイント\endja
-			path_replicator				= 14,	///< \en blah \enden \ja パスリプリケータendja
+			path_replicator				= 14,	///< \en blah \enden \ja パスリプリケータ\endja
+			surface_replicator			= 15,	///< \en blah \enden \ja サーフェスリプリケータ\endja
+			bone_joint					= 16,	///< \en blah \enden \ja ボーンジョイントendja
 			master_surface_part			= 100,	///< \en blah \enden \ja マスターサーフェスパート\endja
 			link_part					= 101,	///< \en blah \enden \ja リンク形状\endja
 			master_image_part			= 102,	///< \en blah \enden \ja イメージパート\endja
@@ -220,6 +222,19 @@ namespace sxsdk {
 			mapping_max_mode,			///< \en blah \enden \ja 比較(明)\endja
 			mapping_min_mode			///< \en blah \enden \ja 比較(暗)\endja
 		};
+		/// \en blah \enden \ja マッピングイメージのアルファチャンネルの合成モード \endja
+		enum mapping_channel_mix_mode {
+			mapping_premultiplied_alpha_mode,	///< \en blah \enden \ja 通常\endja
+			mapping_transparent_alpha_mode,		///< \en blah \enden \ja アルファ透過\endja
+			mapping_multiply_alpha_mode,		///< \en blah \enden \ja アルファ乗算\endja
+			mapping_grayscale_alpha_mode,		///< \en blah \enden \ja グレイスケール(A)\endja
+			mapping_grayscale_red_mode,			///< \en blah \enden \ja グレイスケール(R)\endja
+			mapping_grayscale_green_mode,		///< \en blah \enden \ja グレイスケール(G)\endja
+			mapping_grayscale_blue_mode,		///< \en blah \enden \ja グレイスケール(B)\endja
+			mapping_grayscale_luminance_mode,	///< \en blah \enden \ja グレイスケール(輝度)\endja
+			mapping_grayscale_average_mode,		///< \en blah \enden \ja グレイスケール(平均)\endja
+			last_mapping_channel_mode			///< \en blah \enden \ja 未使用\endja
+		};
 		/// \en blah \enden \ja \c image_interface への描画の合成モード \endja
 		enum image_mix_mode {
 			image_blend_mode,		///< \en blah \enden \ja 通常\endja
@@ -291,16 +306,20 @@ namespace sxsdk {
 			Z_axis = 2,		///< \en blah \enden \ja Z軸 \endja
 			auto_roll = 3,		///< \en blah \enden \ja 自動ロール \endja
 		};
+		/// \en Front direction type of Path joint direction control \enden \ja パスジョイント方向制御の前方向 \endja
+		enum path_front_direction_type {
+			tangent_direction = 0,	///< \en blah \enden \ja 接線 \endja
+			follow_direction = 1,	///< \en blah \enden \ja 追尾 \endja
+		};
 		/// \en Mode of path replicator \enden \ja パスリプリケータのモード \endja
 		enum path_replicator_mode {
 			path_replicator_mode_count = 0,	///< \en Count \enden \ja 個数指定 \endja
 			path_replicator_mode_step = 1,		///< \en Step \enden \ja 間隔指定 \endja
 		};
-		/// \en Replication alignment type of path replicator \enden \ja パスリプリケータの配列タイプ \endja
-		enum path_replicator_alignment_type {
-			path_replicator_alignment_cluster = 0,	///< \en Cluster \enden \ja クラスター \endja
-			path_replicator_alignment_iterate = 1,		///< \en Iterate \enden \ja 反復 \endja
-			path_replicator_alignment_random = 2,		///< \en Random \enden \ja ランダム \endja
+		/// \en Mode of path replicator \enden \ja パスリプリケータの基準点 \endja
+		enum path_replicator_reference_point {
+			path_replicator_reference_point_local_origin = 0,	///< \en Local Origin \enden \ja ローカル原点 \endja
+			path_replicator_reference_point_first_point = 1,	///< \en First Control Point of Path \enden \ja パスの始点 \endja
 		};
 		/// \en Replication rounding type of path replicator \enden \ja パスリプリケータの端数処理タイプ \endja
 		enum path_replicator_step_rounding_type {
@@ -308,6 +327,51 @@ namespace sxsdk {
 			path_replicator_step_rounding_round_down = 1,	///< \en Round Down \enden \ja 切り捨て（均等化） \endja
 			path_replicator_step_rounding_round_up = 2,		///< \en Round Up \enden \ja 切り上げ（均等化） \endja
 			path_replicator_step_rounding_extend = 3,		///< \en Extend \enden \ja 延長 \endja
+		};
+		/// \en Replication preview type of path replicator \enden \ja パスリプリケータのプレビュータイプ \endja
+		enum path_replicator_preview_type {
+			path_replicator_preview_type_none = 0,			///< \en None \enden \ja 無し\endja
+			path_replicator_preview_type_draft_display = 1,	///< \en Draft Display \enden \ja 簡易表示 \endja
+			path_replicator_preview_type_display = 2,		///< \en Display \enden \ja 表示 \endja
+		};
+		/// \en Random translation mode of path replicator \enden \ja パスリプリケータのランダム移動モード \endja
+		enum path_replicator_random_translation_mode {
+			path_replicator_random_translation_mode_offset = 0,			///< \en Offset \enden \ja オフセット \endja
+			path_replicator_random_translation_mode_displacement = 1,	///< \en Displacement \enden \ja 変位 \endja
+		};
+		/// \en Mode of surface replicator distribution \enden \ja サーフェスリプリケータの分布 \endja
+		enum surface_replicator_distribution {
+			surface_replicator_distribution_vertex = 0,		///< \en Vertex \enden \ja 頂点 \endja
+			surface_replicator_distribution_edge = 1,		///< \en Edge \enden \ja 稜線 \endja
+			surface_replicator_distribution_face = 2,		///< \en Face \enden \ja 面 \endja
+			surface_replicator_distribution_surface = 3,	///< \en Surface \enden \ja サーフェス \endja
+			surface_replicator_distribution_surface_uniformity = 4,	///< \en Surface (Uniformity) \enden \ja サーフェス（均一） \endja
+		};
+		/// \en Replication preview type of surface replicator \enden \ja サーフェスリプリケータのプレビュータイプ \endja
+		enum surface_replicator_preview_type {
+			surface_replicator_preview_type_none = 0,			///< \en None \enden \ja 無し\endja
+			surface_replicator_preview_type_draft_display = 1,	///< \en Draft Display \enden \ja 簡易表示 \endja
+			surface_replicator_preview_type_display = 2,		///< \en Display \enden \ja 表示 \endja
+		};
+		/// \en Subdivision level of surface replicator \enden \ja サーフェスリプリケータの分割レベル \endja
+		enum surface_replicator_subdivision_level {
+			surface_replicator_subdivision_no_subdivision = 0,	//< \en None \enden \ja 分割しない \endja
+			surface_replicator_subdivision_coarse = 1,			///< \en Coarse \enden \ja 粗い \endja
+			surface_replicator_subdivision_regular = 2,			///< \en Regular \enden \ja 普通 \endja
+			surface_replicator_subdivision_fine = 3,			///< \en Fine \enden \ja 細かい \endja
+			surface_replicator_subdivision_very_fine = 4,		///< \en Very Fine \enden \ja 最も細かい \endja
+		};
+		/// \en Direction control of surface replicator \enden \ja サーフェスリプリケータの方向制御 \endja
+		enum surface_replicator_direciton {
+			surface_replicator_direction_none = 0,			///< \en None \enden \ja 無し \endja
+			surface_replicator_direction_normal = 1,		///< \en Normal Direction \enden \ja 法線方向 \endja
+			surface_replicator_direction_du = 2,			///< \en U Direction \enden \ja U方向 \endja
+			surface_replicator_direction_dv = 3,			///< \en V Direction \enden \ja V方向 \endja
+		};
+		/// \en Random translation mode of surface replicator \enden \ja サーフェスリプリケータのランダム移動モード \endja
+		enum surface_replicator_random_translation_mode {
+			surface_replicator_random_translation_mode_offset = 0,			///< \en Offset \enden \ja オフセット \endja
+			surface_replicator_random_translation_mode_displacement = 1,	///< \en Displacement \enden \ja 変位 \endja
 		};
 		/// \en blah \enden \ja カメラウインドウの操作のモード \endja
 		enum camera_trackmode_enum {
@@ -506,6 +570,7 @@ namespace sxsdk {
 				light_specular,		///< \en blah \enden \ja 光源: 光沢 \endja
 				light_gi,			///< \en blah \enden \ja 光源: 大域照明 \endja
 				surface_diffuse,	///< \en blah \enden \ja 表面材質: 拡散反射色 \endja
+				gi_sampling,		///< \en blah \enden \ja 大域照明: サンプル点 \endja
 				object_id,			///< \en blah \enden \ja 形状ID \endja
 				surface_id,			///< \en blah \enden \ja 表面材質ID \endja
 				marker,				///< \en blah \enden \ja マーカー色 \endja
@@ -524,6 +589,7 @@ namespace sxsdk {
 				"LightSpecular",
 				"LightGI",
 				"SurfaceDiffuse",
+				"GISampling",
 				"ObjectID",
 				"SurfaceID",
 				"Marker"

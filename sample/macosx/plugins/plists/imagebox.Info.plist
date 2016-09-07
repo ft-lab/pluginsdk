@@ -9,7 +9,7 @@
 	<key>CFBundleIconFile</key>
 	<string>shdplugin.icns</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.apple.yourcocoabundle</string>
+	<string>com.e-frontier.shdplugin.imagebox</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundlePackageType</key>

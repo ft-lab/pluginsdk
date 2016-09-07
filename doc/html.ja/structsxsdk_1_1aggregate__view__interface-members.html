@@ -4,41 +4,65 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <title>メンバ一覧</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<!-- 作成： Doxygen 1.6.1 -->
-<div class="navigation" id="top">
-  <div class="tabs">
-    <ul>
-      <li><a href="main.html"><span>メインページ</span></a></li>
+<!-- 作成： Doxygen 1.7.4 -->
+<div id="top">
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
       <li><a href="pages.html"><span>関連ページ</span></a></li>
       <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
       <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
       <li><a href="files.html"><span>ファイル</span></a></li>
     </ul>
   </div>
-  <div class="tabs">
-    <ul>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
       <li><a href="annotated.html"><span>構成</span></a></li>
       <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
       <li><a href="functions.html"><span>構成メンバ</span></a></li>
     </ul>
   </div>
 </div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+  initNavTree('structsxsdk_1_1aggregate__view__interface.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">sxsdk::aggregate_view_interface メンバ一覧</div>  </div>
+</div>
 <div class="contents">
-<h1>sxsdk::aggregate_view_interface メンバ一覧</h1>これは全メンバの一覧です。<a class="el" href="structsxsdk_1_1aggregate__view__interface.html">sxsdk::aggregate_view_interface</a>継承メンバも含んでいます。<table>
+これは全メンバの一覧です。<a class="el" href="structsxsdk_1_1aggregate__view__interface.html">sxsdk::aggregate_view_interface</a>継承メンバも含んでいます。<table>
   <tr class="memlist"><td><a class="el" href="structsxsdk_1_1aggregate__view__interface.html#a1503adf2a42f8a3592dd7f7475ef24b6">eject_all</a>(void *aux=0)</td><td><a class="el" href="structsxsdk_1_1aggregate__view__interface.html">sxsdk::aggregate_view_interface</a></td><td><code> [virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="structsxsdk_1_1aggregate__view__interface.html#a3928b6e626815251c04356e699d1db1d">eject_background</a>(void *aux=0)</td><td><a class="el" href="structsxsdk_1_1aggregate__view__interface.html">sxsdk::aggregate_view_interface</a></td><td><code> [virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="structsxsdk_1_1aggregate__view__interface.html#a55d350c14ca62fa5fac3bfc5dc080c20">eject_camera</a>(void *aux=0)</td><td><a class="el" href="structsxsdk_1_1aggregate__view__interface.html">sxsdk::aggregate_view_interface</a></td><td><code> [virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="structsxsdk_1_1aggregate__view__interface.html#a60d79137e97ac8a690c5a41b27e4bb40">eject_distant_light</a>(void *aux=0)</td><td><a class="el" href="structsxsdk_1_1aggregate__view__interface.html">sxsdk::aggregate_view_interface</a></td><td><code> [virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="structsxsdk_1_1aggregate__view__interface.html#acb8114aa8e8d988634ad7120cf48fe9e">eject_object_info</a>(void *aux=0)</td><td><a class="el" href="structsxsdk_1_1aggregate__view__interface.html">sxsdk::aggregate_view_interface</a></td><td><code> [virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="structsxsdk_1_1aggregate__view__interface.html#a708251863982b582fa16e2c67a11588d">eject_surface</a>(void *aux=0)</td><td><a class="el" href="structsxsdk_1_1aggregate__view__interface.html">sxsdk::aggregate_view_interface</a></td><td><code> [virtual]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="structsxsdk_1_1aggregate__view__interface.html#a7e8ce890e0bdb767f18883e60f77c23c">get_background_view_interface</a>(void *=0) const </td><td><a class="el" href="structsxsdk_1_1aggregate__view__interface.html">sxsdk::aggregate_view_interface</a></td><td><code> [virtual]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="structsxsdk_1_1aggregate__view__interface.html#aa3fd795ffa7f95dd66c3a2868db4fd7c">get_camera_view_interface</a>(void *=0) const </td><td><a class="el" href="structsxsdk_1_1aggregate__view__interface.html">sxsdk::aggregate_view_interface</a></td><td><code> [virtual]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="structsxsdk_1_1aggregate__view__interface.html#a1144198821e89edf03e2f729b7120e76">get_distant_light_view_interface</a>(void *=0) const </td><td><a class="el" href="structsxsdk_1_1aggregate__view__interface.html">sxsdk::aggregate_view_interface</a></td><td><code> [virtual]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="structsxsdk_1_1aggregate__view__interface.html#a3075b40697f9a19007e51509f199e10b">get_object_info_view_interface</a>(void *=0) const </td><td><a class="el" href="structsxsdk_1_1aggregate__view__interface.html">sxsdk::aggregate_view_interface</a></td><td><code> [virtual]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="structsxsdk_1_1aggregate__view__interface.html#ac5e1c0aa0b3657e278f6ea6012f22410">get_surface_view_interface</a>(void *=0) const </td><td><a class="el" href="structsxsdk_1_1aggregate__view__interface.html">sxsdk::aggregate_view_interface</a></td><td><code> [virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="structsxsdk_1_1aggregate__view__interface.html#ab634f3ac79fd0a8b0b979a40aabdde5f">get_background_view_interface</a>(void *=nullptr) const </td><td><a class="el" href="structsxsdk_1_1aggregate__view__interface.html">sxsdk::aggregate_view_interface</a></td><td><code> [virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="structsxsdk_1_1aggregate__view__interface.html#aa127f728e9a1df0501f203b36248aad1">get_camera_view_interface</a>(void *=nullptr) const </td><td><a class="el" href="structsxsdk_1_1aggregate__view__interface.html">sxsdk::aggregate_view_interface</a></td><td><code> [virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="structsxsdk_1_1aggregate__view__interface.html#ae8fc84c7187d8fe08d6bc1555e16aa0d">get_distant_light_view_interface</a>(void *=nullptr) const </td><td><a class="el" href="structsxsdk_1_1aggregate__view__interface.html">sxsdk::aggregate_view_interface</a></td><td><code> [virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="structsxsdk_1_1aggregate__view__interface.html#aeb1d0e8d39602aeaef8f2912a7b3453d">get_object_info_view_interface</a>(void *=nullptr) const </td><td><a class="el" href="structsxsdk_1_1aggregate__view__interface.html">sxsdk::aggregate_view_interface</a></td><td><code> [virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="structsxsdk_1_1aggregate__view__interface.html#ac0f498681e76a0d41822c698c7b68c67">get_surface_view_interface</a>(void *=nullptr) const </td><td><a class="el" href="structsxsdk_1_1aggregate__view__interface.html">sxsdk::aggregate_view_interface</a></td><td><code> [virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="structsxsdk_1_1aggregate__view__interface.html#aa1dcc06ce9ab5cb520c5f1a6a9864a4e">select_background</a>(void *aux=0)</td><td><a class="el" href="structsxsdk_1_1aggregate__view__interface.html">sxsdk::aggregate_view_interface</a></td><td><code> [virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="structsxsdk_1_1aggregate__view__interface.html#a9b5bb4cbd59b590ab53a57bd23009443">select_camera</a>(void *aux=0)</td><td><a class="el" href="structsxsdk_1_1aggregate__view__interface.html">sxsdk::aggregate_view_interface</a></td><td><code> [virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="structsxsdk_1_1aggregate__view__interface.html#af37b868175bb1530c18f654122e9f63e">select_distant_light</a>(void *aux=0)</td><td><a class="el" href="structsxsdk_1_1aggregate__view__interface.html">sxsdk::aggregate_view_interface</a></td><td><code> [virtual]</code></td></tr>
@@ -51,6 +75,9 @@
   <tr class="memlist"><td><a class="el" href="structsxsdk_1_1aggregate__view__interface.html#a75742a69dc280aab25af898f4b852511">uneject_object_info</a>(void *aux=0)</td><td><a class="el" href="structsxsdk_1_1aggregate__view__interface.html">sxsdk::aggregate_view_interface</a></td><td><code> [virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="structsxsdk_1_1aggregate__view__interface.html#aad8bcb4d46ac23179591ab4551d3b081">uneject_surface</a>(void *aux=0)</td><td><a class="el" href="structsxsdk_1_1aggregate__view__interface.html">sxsdk::aggregate_view_interface</a></td><td><code> [virtual]</code></td></tr>
 </table></div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
 <br><br>
 <hr>
 <div align="center">Copyright &copy; e frontier, Inc. All rights reserved.</div>

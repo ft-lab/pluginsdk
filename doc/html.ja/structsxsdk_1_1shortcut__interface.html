@@ -4,59 +4,92 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <title>構造体 sxsdk::shortcut_interface</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<!-- 作成： Doxygen 1.6.1 -->
-<div class="navigation" id="top">
-  <div class="tabs">
-    <ul>
-      <li><a href="main.html"><span>メインページ</span></a></li>
+<!-- 作成： Doxygen 1.7.4 -->
+<div id="top">
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
       <li><a href="pages.html"><span>関連ページ</span></a></li>
       <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
       <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
       <li><a href="files.html"><span>ファイル</span></a></li>
     </ul>
   </div>
-  <div class="tabs">
-    <ul>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
       <li><a href="annotated.html"><span>構成</span></a></li>
       <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
       <li><a href="functions.html"><span>構成メンバ</span></a></li>
     </ul>
   </div>
-  <div class="navpath"><a class="el" href="namespacesxsdk.html">sxsdk</a>::<a class="el" href="structsxsdk_1_1shortcut__interface.html">shortcut_interface</a>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
   </div>
 </div>
+<script type="text/javascript">
+  initNavTree('structsxsdk_1_1shortcut__interface.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public メソッド</a>  </div>
+  <div class="headertitle">
+<div class="title">構造体 sxsdk::shortcut_interface</div>  </div>
+</div>
 <div class="contents">
-<h1>構造体 sxsdk::shortcut_interface</h1><!-- doxytag: class="sxsdk::shortcut_interface" --><!-- doxytag: inherits="sxsdk::shade_interface" --><div class="dynheader">
+<!-- doxytag: class="sxsdk::shortcut_interface" --><!-- doxytag: inherits="sxsdk::shade_interface" -->
+<p>ショートカットの設定、取得に使用する。  
+ <a href="structsxsdk_1_1shortcut__interface.html#details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="shortcutinterface_8h_source.html">shortcutinterface.h</a>&gt;</code></p>
+<div class="dynheader">
 sxsdk::shortcut_interfaceに対する継承グラフ</div>
-<div class="dynsection">
+<div class="dyncontent">
  <div class="center">
-  <img src="structsxsdk_1_1shortcut__interface.gif" usemap="#sxsdk::shortcut_interface_map" alt=""/>
+  <img src="structsxsdk_1_1shortcut__interface.png" usemap="#sxsdk::shortcut_interface_map" alt=""/>
   <map id="sxsdk::shortcut_interface_map" name="sxsdk::shortcut_interface_map">
-<area href="structsxsdk_1_1shade__interface.html" alt="sxsdk::shade_interface" shape="rect" coords="0,56,151,80"/>
+<area href="structsxsdk_1_1shade__interface.html" title="Shadeの情報へのアクセスの基本となるインターフェイス" alt="sxsdk::shade_interface" shape="rect" coords="0,56,151,80"/>
 <area href="classunknown__interface.html" alt="unknown_interface" shape="rect" coords="0,0,151,24"/>
 </map>
- </div>
-</div>
+ </div></div>
 
 <p><a href="structsxsdk_1_1shortcut__interface-members.html">すべてのメンバ一覧</a></p>
-<table border="0" cellpadding="0" cellspacing="0">
-<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1shortcut__interface.html#a072ab85f6413c129d7095a395944a623">execute</a> (int key, int modifiers=0, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ショートカットを実行する。  <a href="#a072ab85f6413c129d7095a395944a623"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1shortcut__interface.html#aad302f40a8448b596b18dfc1c7c1bdfe">is_assigned</a> (int key, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">キーがショートカットに割り当てられているかどうか判定する。  <a href="#aad302f40a8448b596b18dfc1c7c1bdfe"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual const char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1shortcut__interface.html#ae464bde2f4ad8beb8f486f8f84c04a4d">get_command_string</a> (int key, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">キーに割当られたコマンド名を返す。  <a href="#ae464bde2f4ad8beb8f486f8f84c04a4d"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1shortcut__interface.html#a4627a9d5af8128b3813e64aafaa75826">get_command_id</a> (int key, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">キーに割当られたコマンドIDを返す。  <a href="#a4627a9d5af8128b3813e64aafaa75826"></a><br/></td></tr>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1shortcut__interface.html#a072ab85f6413c129d7095a395944a623">execute</a> (int key, int modifiers=0, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">ショートカットを実行する。  <a href="#a072ab85f6413c129d7095a395944a623"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1shortcut__interface.html#aad302f40a8448b596b18dfc1c7c1bdfe">is_assigned</a> (int key, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">キーがショートカットに割り当てられているかどうか判定する。  <a href="#aad302f40a8448b596b18dfc1c7c1bdfe"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1shortcut__interface.html#ae464bde2f4ad8beb8f486f8f84c04a4d">get_command_string</a> (int key, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">キーに割当られたコマンド名を返す。  <a href="#ae464bde2f4ad8beb8f486f8f84c04a4d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1shortcut__interface.html#a4627a9d5af8128b3813e64aafaa75826">get_command_id</a> (int key, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">キーに割当られたコマンドIDを返す。  <a href="#a4627a9d5af8128b3813e64aafaa75826"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aebe1fa8b66384293687a3f50d42c6a13"></a><!-- doxytag: member="sxsdk::shortcut_interface::stream_to_clipboard" ref="aebe1fa8b66384293687a3f50d42c6a13" args="(void *aux=0)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1shortcut__interface.html#aebe1fa8b66384293687a3f50d42c6a13">stream_to_clipboard</a> (void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オブジェクトの内容をテキスト（XML）としてクリップボードにコピーする。 <br/></td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1shortcut__interface.html#aebe1fa8b66384293687a3f50d42c6a13">stream_to_clipboard</a> (void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オブジェクトの内容をテキスト（XML）としてクリップボードにコピーする。 <br/></td></tr>
 </table>
-<hr/><h2>関数</h2>
+<hr/><a name="details" id="details"></a><h2>説明</h2>
+<div class="textblock"><p>ショートカットの設定、取得に使用する。 </p>
+<p>以下の関数でこのクラスを直接取得する。これ以外に関数の引数として渡される場合がある。</p>
+<p><code><a class="el" href="structsxsdk_1_1shade__interface.html#a150320b3f5d1c20410e08fad8bd31db2" title="shortcut_objectを取得する。">shade_interface::get_shortcut_interface()</a></code> </p>
+</div><hr/><h2>関数</h2>
 <a class="anchor" id="a072ab85f6413c129d7095a395944a623"></a><!-- doxytag: member="sxsdk::shortcut_interface::execute" ref="a072ab85f6413c129d7095a395944a623" args="(int key, int modifiers=0, void *aux=0)" -->
 <div class="memitem">
 <div class="memproto">
@@ -64,25 +97,25 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="memname">virtual bool sxsdk::shortcut_interface::execute </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>key</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>modifiers</em> = <code>0</code>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>modifiers</em> = <code>0</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -90,8 +123,8 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 
 <p>ショートカットを実行する。 </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>key</em>&nbsp;</td><td>キーのインデックス。<code>key_enum</code> を参照。 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>キーのインデックス。<code>key_enum</code> を参照。 </td></tr>
   </table>
   </dd>
 </dl>
@@ -105,19 +138,19 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="memname">virtual int sxsdk::shortcut_interface::get_command_id </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>key</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -125,8 +158,8 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 
 <p>キーに割当られたコマンドIDを返す。 </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>key</em>&nbsp;</td><td>キーのインデックス。<code>key_enum</code> を参照。 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>キーのインデックス。<code>key_enum</code> を参照。 </td></tr>
   </table>
   </dd>
 </dl>
@@ -140,19 +173,19 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="memname">virtual const char* sxsdk::shortcut_interface::get_command_string </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>key</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -160,8 +193,8 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 
 <p>キーに割当られたコマンド名を返す。 </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>key</em>&nbsp;</td><td>キーのインデックス。<code>key_enum</code> を参照。 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>キーのインデックス。<code>key_enum</code> を参照。 </td></tr>
   </table>
   </dd>
 </dl>
@@ -175,19 +208,19 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="memname">virtual bool sxsdk::shortcut_interface::is_assigned </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>key</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -195,8 +228,8 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 
 <p>キーがショートカットに割り当てられているかどうか判定する。 </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>key</em>&nbsp;</td><td>キーのインデックス。<code>key_enum</code> を参照。 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>キーのインデックス。<code>key_enum</code> を参照。 </td></tr>
   </table>
   </dd>
 </dl>
@@ -207,6 +240,11 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <li><a class="el" href="shortcutinterface_8h_source.html">shortcutinterface.h</a></li>
 </ul>
 </div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><b>sxsdk</b>      </li>
+      <li class="navelem"><a class="el" href="structsxsdk_1_1shortcut__interface.html">shortcut_interface</a>      </li>
 <br><br>
 <hr>
 <div align="center">Copyright &copy; e frontier, Inc. All rights reserved.</div>

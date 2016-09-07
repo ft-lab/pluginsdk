@@ -4,34 +4,60 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <title>backgroundinterface.h ソースファイル</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<!-- 作成： Doxygen 1.6.1 -->
-<div class="navigation" id="top">
-  <div class="tabs">
-    <ul>
-      <li><a href="main.html"><span>メインページ</span></a></li>
+<!-- 作成： Doxygen 1.7.4 -->
+<div id="top">
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
       <li><a href="pages.html"><span>関連ページ</span></a></li>
       <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
       <li><a href="annotated.html"><span>クラス</span></a></li>
       <li class="current"><a href="files.html"><span>ファイル</span></a></li>
     </ul>
   </div>
-  <div class="tabs">
-    <ul>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
       <li><a href="files.html"><span>ファイル一覧</span></a></li>
       <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
     </ul>
   </div>
-<h1>backgroundinterface.h</h1><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// this file has been created by makeheader.py</span>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+  initNavTree('backgroundinterface_8h.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">backgroundinterface.h</div>  </div>
+</div>
+<div class="contents">
+<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// this file has been created by makeheader.py</span>
 <a name="l00002"></a>00002 <span class="comment">// ja utf-8</span>
 <a name="l00003"></a>00003 <span class="preprocessor">#pragma once</span>
-<a name="l00012"></a>00012 <span class="preprocessor">namespace sxsdk {</span>
-<a name="l00013"></a><a class="code" href="structsxsdk_1_1background__interface.html">00013</a> <span class="preprocessor"></span><span class="keyword">struct </span><a class="code" href="structsxsdk_1_1background__interface.html">background_interface</a> : <span class="keyword">public</span> <a class="code" href="structsxsdk_1_1shade__interface.html">shade_interface</a> {
+<a name="l00004"></a>00004 <span class="preprocessor"></span><span class="keyword">namespace </span>sxsdk {
+<a name="l00013"></a><a class="code" href="structsxsdk_1_1background__interface.html">00013</a> <span class="keyword">struct </span><a class="code" href="structsxsdk_1_1background__interface.html" title="背景の情報の取得、設定をする。">background_interface</a> : <span class="keyword">public</span> <a class="code" href="structsxsdk_1_1shade__interface.html" title="Shadeの情報へのアクセスの基本となるインターフェイス">shade_interface</a> {
 <a name="l00014"></a>00014 <span class="keyword">public</span>:
-<a name="l00017"></a>00017     <span class="keyword">virtual</span> <span class="keywordtype">void</span> save (<span class="keyword">const</span> <span class="keywordtype">char</span>*<span class="keyword">const</span>&amp; in, <span class="keywordtype">void</span>* aux = 0);
-<a name="l00020"></a>00020     <span class="keyword">virtual</span> <span class="keywordtype">void</span> load (<span class="keyword">const</span> <span class="keywordtype">char</span>*<span class="keyword">const</span>&amp; from, <span class="keywordtype">void</span>* aux = 0);
+<a name="l00017"></a>00017     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structsxsdk_1_1background__interface.html#a9322e02156dfd27dedc4af01a7490724" title="背景設定をファイルに保存する。">save</a> (<span class="keyword">const</span> <span class="keywordtype">char</span>*<span class="keyword">const</span>&amp; in, <span class="keywordtype">void</span>* aux = 0);
+<a name="l00020"></a>00020     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structsxsdk_1_1background__interface.html#ada3663c33b98e13aabe210c8d68589d9" title="背景設定をファイルから読み込む。">load</a> (<span class="keyword">const</span> <span class="keywordtype">char</span>*<span class="keyword">const</span>&amp; from, <span class="keywordtype">void</span>* aux = 0);
 <a name="l00021"></a>00021     <span class="keyword">virtual</span> <span class="keywordtype">void</span> set_color_deprecated (<a class="code" href="namespacesxsdk_1_1enums.html#a5d0f8ad15df8814a1711bd14e17852ee" title="背景レイヤの適用範囲(enums::background_target_mask に移行)">enums::background_part</a> e, <span class="keyword">const</span> sxsdk::rgb_class&amp; color, <span class="keywordtype">void</span>* aux = 0);
 <a name="l00022"></a>00022     <span class="keyword">virtual</span> sxsdk::rgb_class get_color_deprecated (<a class="code" href="namespacesxsdk_1_1enums.html#a5d0f8ad15df8814a1711bd14e17852ee" title="背景レイヤの適用範囲(enums::background_target_mask に移行)">enums::background_part</a> e, <span class="keywordtype">void</span>* aux = 0);
 <a name="l00023"></a>00023     <span class="keyword">virtual</span> <span class="keywordtype">void</span> set_texture_deprecated (<a class="code" href="namespacesxsdk_1_1enums.html#a5d0f8ad15df8814a1711bd14e17852ee" title="背景レイヤの適用範囲(enums::background_target_mask に移行)">enums::background_part</a> p, <span class="keywordtype">int</span> i, <a class="code" href="namespacesxsdk_1_1enums.html#a617228dcf51770d98d44df1837e9ca4a" title="背景マッピングパターンの種類">enums::background_texture</a> e, <span class="keywordtype">void</span>* aux = 0);
@@ -55,25 +81,30 @@
 <a name="l00041"></a>00041     <span class="keyword">virtual</span> <span class="keywordtype">void</span> set_phase_deprecated (<a class="code" href="namespacesxsdk_1_1enums.html#a5d0f8ad15df8814a1711bd14e17852ee" title="背景レイヤの適用範囲(enums::background_target_mask に移行)">enums::background_part</a> p, <span class="keywordtype">int</span> i, <span class="keywordtype">float</span> phase, <span class="keywordtype">void</span>* aux = 0);
 <a name="l00042"></a>00042     <span class="keyword">virtual</span> <span class="keywordtype">float</span> get_phase_deprecated (<a class="code" href="namespacesxsdk_1_1enums.html#a5d0f8ad15df8814a1711bd14e17852ee" title="背景レイヤの適用範囲(enums::background_target_mask に移行)">enums::background_part</a> p, <span class="keywordtype">int</span> i, <span class="keywordtype">void</span>* aux = 0);
 <a name="l00043"></a>00043     <span class="keyword">virtual</span> <span class="keywordtype">int</span> background_interface_test_1 ( <span class="keywordtype">void</span>* aux =0 ) { <span class="keywordflow">return</span> 1; }
-<a name="l00044"></a>00044     <span class="keyword">virtual</span> <span class="keywordtype">void</span> set_image_deprecated (<a class="code" href="namespacesxsdk_1_1enums.html#a5d0f8ad15df8814a1711bd14e17852ee" title="背景レイヤの適用範囲(enums::background_target_mask に移行)">enums::background_part</a> p, <span class="keywordtype">int</span> i, <a class="code" href="structsxsdk_1_1image__interface.html">sxsdk::image_interface</a>* image, <span class="keywordtype">void</span>* aux = 0);
-<a name="l00045"></a>00045     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1image__interface.html">sxsdk::image_interface</a>* get_image_interface_deprecated (<a class="code" href="namespacesxsdk_1_1enums.html#a5d0f8ad15df8814a1711bd14e17852ee" title="背景レイヤの適用範囲(enums::background_target_mask に移行)">enums::background_part</a> p, <span class="keywordtype">int</span> i, <span class="keywordtype">void</span>* aux = 0);
-<a name="l00047"></a>00047     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1background__interface.html">background_interface</a> &amp;set_lighting_intensity_factor (<span class="keywordtype">float</span> lighting_intensity_factor_param, <span class="keywordtype">void</span> * = 0);
-<a name="l00049"></a>00049     <span class="keyword">virtual</span> <span class="keywordtype">float</span> get_lighting_intensity_factor (<span class="keywordtype">void</span> * = 0) <span class="keyword">const</span>;
-<a name="l00055"></a>00055     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1background__layer__class.html">background_layer_class</a>&amp; background_layer (<span class="keywordtype">int</span> i, <span class="keywordtype">void</span>* aux = 0);
-<a name="l00057"></a>00057     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1background__layer__class.html">background_layer_class</a>&amp; append_background_layer (<span class="keywordtype">void</span>* aux = 0);
-<a name="l00059"></a>00059     <span class="keyword">virtual</span> <span class="keywordtype">void</span> stream_to_clipboard (<span class="keywordtype">void</span>* aux = 0);
-<a name="l00061"></a>00061     <span class="keyword">virtual</span> <span class="keywordtype">int</span> get_active_layer (<span class="keywordtype">void</span> * = 0) <span class="keyword">const</span>;
-<a name="l00063"></a>00063     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1background__interface.html">background_interface</a> &amp;set_active_layer (<span class="keywordtype">int</span> active_layer_param, <span class="keywordtype">void</span> * = 0);
-<a name="l00065"></a>00065     <span class="keyword">virtual</span> sxsdk::rgb_class get_upper_base_color (<span class="keywordtype">void</span> * = 0) <span class="keyword">const</span>;
-<a name="l00067"></a>00067     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1background__interface.html">background_interface</a> &amp;set_upper_base_color (<span class="keyword">const</span> sxsdk::rgb_class &amp;upper_base_color_param, <span class="keywordtype">void</span> * = 0);
-<a name="l00069"></a>00069     <span class="keyword">virtual</span> sxsdk::rgb_class get_lower_base_color (<span class="keywordtype">void</span> * = 0) <span class="keyword">const</span>;
-<a name="l00071"></a>00071     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1background__interface.html">background_interface</a> &amp;set_lower_base_color (<span class="keyword">const</span> sxsdk::rgb_class &amp;lower_base_color_param, <span class="keywordtype">void</span> * = 0);
-<a name="l00073"></a>00073     <span class="keyword">virtual</span> <span class="keywordtype">int</span> get_number_of_background_layers (<span class="keywordtype">void</span> * = 0) <span class="keyword">const</span>;
-<a name="l00076"></a>00076     <span class="keyword">virtual</span> <span class="keywordtype">void</span> move_up_background_layer (<span class="keywordtype">int</span> go, <span class="keywordtype">int</span> select = -1, <span class="keywordtype">void</span>* aux = 0);
-<a name="l00079"></a>00079     <span class="keyword">virtual</span> <span class="keywordtype">void</span> move_down_background_layer (<span class="keywordtype">int</span> go, <span class="keywordtype">int</span> select = -1, <span class="keywordtype">void</span>* aux = 0);
-<a name="l00080"></a>00080 };
-<a name="l00081"></a>00081 } <span class="comment">// sxsdk</span>
+<a name="l00044"></a>00044     <span class="keyword">virtual</span> <span class="keywordtype">void</span> set_image_deprecated (<a class="code" href="namespacesxsdk_1_1enums.html#a5d0f8ad15df8814a1711bd14e17852ee" title="背景レイヤの適用範囲(enums::background_target_mask に移行)">enums::background_part</a> p, <span class="keywordtype">int</span> i, <a class="code" href="structsxsdk_1_1image__interface.html" title="１枚のイメージを表すクラス。画像へのアクセスに使用する。">sxsdk::image_interface</a>* image, <span class="keywordtype">void</span>* aux = 0);
+<a name="l00045"></a>00045     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1image__interface.html" title="１枚のイメージを表すクラス。画像へのアクセスに使用する。">sxsdk::image_interface</a>* get_image_interface_deprecated (<a class="code" href="namespacesxsdk_1_1enums.html#a5d0f8ad15df8814a1711bd14e17852ee" title="背景レイヤの適用範囲(enums::background_target_mask に移行)">enums::background_part</a> p, <span class="keywordtype">int</span> i, <span class="keywordtype">void</span>* aux = 0);
+<a name="l00047"></a>00047     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1background__interface.html" title="背景の情報の取得、設定をする。">background_interface</a> &amp;<a class="code" href="structsxsdk_1_1background__interface.html#a902728975112fcaaadfd55ed9b3911ce" title="光源としての明るさ係数を設定する。">set_lighting_intensity_factor</a> (<span class="keywordtype">float</span> lighting_intensity_factor_param, <span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>);
+<a name="l00049"></a>00049     <span class="keyword">virtual</span> <span class="keywordtype">float</span> <a class="code" href="structsxsdk_1_1background__interface.html#a5af6434dfef76727d0ef524628f5a770" title="光源としての明るさ係数を取得する。">get_lighting_intensity_factor</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00055"></a>00055     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1background__layer__class.html" title="一個の背景レイヤを表すクラス。背景レイヤの情報の取得、設定に使用する。">background_layer_class</a>&amp; <a class="code" href="structsxsdk_1_1background__interface.html#a6ec563aa02ab7936ac0f702f62326e3c" title="指定された番号の背景レイヤの参照を取得する。">background_layer</a> (<span class="keywordtype">int</span> i, <span class="keywordtype">void</span>* aux = 0);
+<a name="l00057"></a>00057     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1background__layer__class.html" title="一個の背景レイヤを表すクラス。背景レイヤの情報の取得、設定に使用する。">background_layer_class</a>&amp; <a class="code" href="structsxsdk_1_1background__interface.html#a2bebd972a4959cc2f04d8adbaf1e968b" title="背景レイヤを追加する。">append_background_layer</a> (<span class="keywordtype">void</span>* aux = 0);
+<a name="l00059"></a>00059     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structsxsdk_1_1background__interface.html#a4109db6639f97a2b5c57b2b8cb1f97e1" title="オブジェクトの内容をテキスト（XML）としてクリップボードにコピーする。">stream_to_clipboard</a> (<span class="keywordtype">void</span>* aux = 0);
+<a name="l00061"></a>00061     <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="structsxsdk_1_1background__interface.html#ae4224491f8c38b1b6cc1b82f69d99e9d" title="選択されているレイヤーの番号を取得する。">get_active_layer</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00063"></a>00063     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1background__interface.html" title="背景の情報の取得、設定をする。">background_interface</a> &amp;<a class="code" href="structsxsdk_1_1background__interface.html#a054cc0814a1c5504d17bfbcf33c08489" title="選択されているレイヤーの番号を設定する。">set_active_layer</a> (<span class="keywordtype">int</span> active_layer_param, <span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>);
+<a name="l00065"></a>00065     <span class="keyword">virtual</span> sxsdk::rgb_class <a class="code" href="structsxsdk_1_1background__interface.html#aff9a1855c9d99bd751811b9ba99cfa7c" title="上半球の基本色を取得する。">get_upper_base_color</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00067"></a>00067     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1background__interface.html" title="背景の情報の取得、設定をする。">background_interface</a> &amp;<a class="code" href="structsxsdk_1_1background__interface.html#a8ade53898917d24722602ace1c5ee5dc" title="上半球の基本色を設定する。">set_upper_base_color</a> (<span class="keyword">const</span> sxsdk::rgb_class &amp;upper_base_color_param, <span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>);
+<a name="l00069"></a>00069     <span class="keyword">virtual</span> sxsdk::rgb_class <a class="code" href="structsxsdk_1_1background__interface.html#a657ae2097bf8df13bf50ead8a068f780" title="下半球の基本色を取得する。">get_lower_base_color</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00071"></a>00071     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1background__interface.html" title="背景の情報の取得、設定をする。">background_interface</a> &amp;<a class="code" href="structsxsdk_1_1background__interface.html#a3acf3492df251363d8c6b4bb4da65ec1" title="下半球の基本色を設定する。">set_lower_base_color</a> (<span class="keyword">const</span> sxsdk::rgb_class &amp;lower_base_color_param, <span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>);
+<a name="l00073"></a>00073     <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="structsxsdk_1_1background__interface.html#a5df0fe5181dacf80b1538a5ccb98b2f9" title="背景レイヤの数を取得する。">get_number_of_background_layers</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00076"></a>00076     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structsxsdk_1_1background__interface.html#a6376c2a3539a169a16a0d4a132287a8a">move_up_background_layer</a> (<span class="keywordtype">int</span> go, <span class="keywordtype">int</span> select = -1, <span class="keywordtype">void</span>* aux = 0);
+<a name="l00079"></a>00079     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structsxsdk_1_1background__interface.html#a63a9fbc32684036f2585965e07f33945">move_down_background_layer</a> (<span class="keywordtype">int</span> go, <span class="keywordtype">int</span> select = -1, <span class="keywordtype">void</span>* aux = 0);
+<a name="l00082"></a>00082     <span class="keyword">virtual</span> sxsdk::rgb_class <a class="code" href="structsxsdk_1_1background__interface.html#aaae48ff130fcb4e7964df818f1dedf8c" title="背景の色を計算する">calculate_background_color</a> (<span class="keyword">const</span> sxsdk::vec3&amp; v, <span class="keywordtype">void</span>* aux = 0);
+<a name="l00083"></a>00083 };
+<a name="l00084"></a>00084 } <span class="comment">// sxsdk</span>
 </pre></div></div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><b>backgroundinterface.h</b>      </li>
 <br><br>
 <hr>
 <div align="center">Copyright &copy; e frontier, Inc. All rights reserved.</div>

@@ -5,6 +5,10 @@ namespace {
 
 	class creator_component : public sxsdk::creator_interface {
 	private:
+		sxsdk::vec3 m_center;
+		float m_radius;
+		int m_axis;
+	private:
 		virtual bool undoable (void *) const { return true; }
 		virtual sx::uuid_class get_uuid (void *) { return SIMPLE_CREATOR_ID; }
 		virtual int get_shade_version () const { return SHADE_BUILD_NUMBER; }
@@ -14,14 +18,24 @@ namespace {
 		//virtual bool accepts_translation (void *) const { return true; }
 		//virtual bool set_sphere (const sx::vec<float,3> &center, float radius, int axis) { return true; }
 		//virtual bool set_translation (const mat4 &t, const sx::vec<float,3> &p, int axis) { return true; }
-		//virtual bool set_disk (const sx::vec<float,3> &center, float radius, int axis, void *) { return true; }
 		//virtual bool set_rectangle (const sx::vec<float,3> &p, const sx::vec<float,3> &q, int axis, void *aux = 0) { return true; } 
 		
 		virtual bool create (sxsdk::scene_interface *scene, void *);
+		virtual bool set_disk (const sxsdk::vec3 &center, float radius, int axis, void *);
 	};
+	bool creator_component::set_disk (const sxsdk::vec3 &center, float radius, int axis, void *) {
+		m_center = center;
+		m_radius = radius;
+		m_axis   = axis;
+		return true;
+	}
 	bool creator_component::create (sxsdk::scene_interface *scene, void *) {
 		scene->begin_creating();
-		(scene->create_disk("disk", sx::vec<float,3>(0,0,0), 500, 1)).set_extrude(sx::vec<float,3>(0,200,0));
+		sxsdk::vec3 ext;
+		if (m_axis == 0) ext = sxsdk::vec3(200, 0, 0);
+		else if (m_axis == 1) ext = sxsdk::vec3(0, 200, 0);
+		else ext = sxsdk::vec3(0, 0, 200);
+		(scene->create_disk("disk", m_center, m_radius, m_axis)).set_extrude(ext);
 		scene->end_creating();
 
 		//compointer<dialog_interface>	dialog(scene->get_dialog_interface());

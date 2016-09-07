@@ -4,14 +4,21 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <title>開発環境</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<!-- 作成： Doxygen 1.6.1 -->
-<div class="navigation" id="top">
-  <div class="tabs">
-    <ul>
-      <li><a href="main.html"><span>メインページ</span></a></li>
+<!-- 作成： Doxygen 1.7.4 -->
+<div id="top">
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
       <li class="current"><a href="pages.html"><span>関連ページ</span></a></li>
       <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
       <li><a href="annotated.html"><span>クラス</span></a></li>
@@ -19,14 +26,29 @@
     </ul>
   </div>
 </div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+  initNavTree('devenv.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">開発環境 </div>  </div>
+</div>
 <div class="contents">
-
-
-<h1><a class="anchor" id="devenv">開発環境 </a></h1><h2><a class="anchor" id="devenv_env1">
-■プラグインの開発環境</a></h2>
+<div class="textblock"><h2><a class="anchor" id="devenv_env1"></a>
+■プラグインの開発環境</h2>
 <p>Shade Plugin SDKによるプラグイン開発言語はC++です。プラグインを開発するには以下に示す開発環境が別途必要になります。</p>
-<h3><a class="anchor" id="devenv_win">
-Windows版</a></h3>
+<h3><a class="anchor" id="devenv_win"></a>
+Windows版</h3>
 <p>OS</p>
 <ul>
 <li>Windows 7 32bit / 64bit</li>
@@ -42,6 +64,21 @@ Windows版</a></h3>
 </ul>
 <p>開発ツール</p>
 <ul>
+<li>Visual Studio 2010 Ultimate / Premium / Professional Edition</li>
+</ul>
+<ul>
+<li>Visual C++ 2010 Express Edition</li>
+</ul>
+<p>※ Windows 95 / Me / NT / 2000 には対応していません。<br/>
+※ Visual Studio .NET 2003、Visual C++ .NET 2003、Visual Studio .NET 2002、Visual C++ .NET 2002、Visual C++ 6.0には対応していません。<br/>
+※ Visual Studio 2010の利用言語は、Visual C++ 2010となります。<br/>
+※ Visual C++ 2010 Express Edition単体では、64bit版のプラグインは開発できません。<br/>
+※ Visual Studio 2010およびVisual C++ 2010利用時は、Visual Studio 2010 Service Pack 1の適用を推奨します。</p>
+<p>　 Visual Studio 2010 Service Pack 1<br/>
+　 <a href="http://www.microsoft.com/ja-jp/download/details.aspx?id=23691">http://www.microsoft.com/ja-jp/download/details.aspx?id=23691</a></p>
+<p>※ Visual C++ 2010 Express Editionでの開発については <a class="el" href="devenv.html#about_vc_2010_express_edition">■Visual C++ 2010 Express Editionでのプラグイン開発について</a> を参照してください。</p>
+<p>もしくは</p>
+<ul>
 <li>Visual Studio 2008 Team System / Professional Edition / Standard Edition</li>
 </ul>
 <ul>
@@ -54,26 +91,34 @@ Windows版</a></h3>
 ※ Visual Studio 2008およびVisual C++ 2008利用時は、Visual Studio 2008 Service Pack 1の適用を推奨します。</p>
 <p>　 Visual Studio 2008 Service Pack 1<br/>
 　 <a href="http://www.microsoft.com/japan/msdn/vstudio/downloads/sp/vs2008/sp1/">http://www.microsoft.com/japan/msdn/vstudio/downloads/sp/vs2008/sp1/</a></p>
-<h3><a class="anchor" id="devenv_mac">
-Mac OS X版</a></h3>
+<p>※ Visual C++ 2008 Express Editionでの開発については <a class="el" href="devenv.html#about_vc_2008_express_edition">■Visual C++ 2008 Express Editionでのプラグイン開発について</a> を参照してください。</p>
+<h3><a class="anchor" id="devenv_mac"></a>
+Mac OS X版</h3>
 <p>OS</p>
 <ul>
-<li>Mac OS X 10.5.8以降</li>
+<li>Mac OS X 10.6 以降</li>
 </ul>
 <p>開発ツール</p>
 <ul>
-<li>Xcode 3.1 以降</li>
+<li>Xcode 3.2 以降 / Xcode 4.3 / Xcode 4.4</li>
 </ul>
-<p>※ Classic環境あるいはMac OS 9、MacOSX10.4以前には対応しておりません。 <br/>
- ※ CodeWarrior、Project Bulider、Xcode3.1以前には対応しておりません。 <br/>
-</p>
+<p>※ Classic環境あるいはMac OS 9、MacOSX10.5以前には対応しておりません。 <br/>
+ ※ CodeWarrior、Project Bulider、Xcode3.2以前には対応しておりません。 <br/>
+ ※ Xcode 4.4にてプラグインを作成する際はプロジェクトの設定を変更する必要があります。詳細は <a class="el" href="devenv.html#about_xcode_4_4">■Xcode 4.4でのプラグイン開発について</a> を参照してください。</p>
 <p>　 Apple Developer Connection<br/>
 　 <a href="http://developer.apple.com/jp/">http://developer.apple.com/jp/</a></p>
-<h2><a class="anchor" id="about_vc_express_edition">
-■Visual C++ 2008 Express Editionでのプラグイン開発について</a></h2>
-<p>Visual C++ 2008 Express EditionでShade 12 プラグインの開発を行うには、Microsoft Platform SDKが必要です。<br/>
+<h2><a class="anchor" id="about_vc_2010_express_edition"></a>
+■Visual C++ 2010 Express Editionでのプラグイン開発について</h2>
+<p>Visual Studio 2010 ではExpress / Professional Edition以上にて、Platform SDKは組み込まれていますのでPlatform SDKについての追加設定は不要です。</p>
+<p>・ Visual C++ 2010 Express EditionおよびMicrosoft Platform SDKを以下のWebページからプログラムをダウンロードし、インストールします。</p>
+<p>　 Visual C++ 2010 Express Edition<br/>
+　 <a href="http://www.microsoft.com/japan/msdn/vstudio/express/visualc/">http://www.microsoft.com/japan/msdn/vstudio/express/visualc/</a></p>
+<p>設定が完了するとShade 13 プラグインの開発が行えるようになります。</p>
+<h2><a class="anchor" id="about_vc_2008_express_edition"></a>
+■Visual C++ 2008 Express Editionでのプラグイン開発について</h2>
+<p>Visual C++ 2008 Express EditionでShade 13 プラグインの開発を行うには、Microsoft Platform SDKが必要です。<br/>
 Visual Studio 2008 Standard Edition以上では、Platform SDKは組み込まれていますので設定は不要です。</p>
-<p>・ Visual C++ 2008 Express EditionおよびMicrosoft Platform SDKを以下のWebページからプログラムをダウンロードし、インストールします。</p>
+<p>・ Visual C++ 2008 Express EditionおよびMicrosoft Platform SDKを以下のWebページの下の「過去のバージョン」ページからプログラムをダウンロードし、インストールします。</p>
 <p>　 Visual C++ 2008 Express Edition<br/>
 　 <a href="http://www.microsoft.com/japan/msdn/vstudio/express/visualc/">http://www.microsoft.com/japan/msdn/vstudio/express/visualc/</a></p>
 <p>　 Microsoft Platform SDK (「PSDK-x86.exe」をダウンロード)<br/>
@@ -81,11 +126,21 @@ Visual Studio 2008 Standard Edition以上では、Platform SDKは組み込まれ
 <p>・ インストールが完了したら下記ページの説明に従ってVisual C++ 2008 Express Editionの設定を行ってください。</p>
 <p>　 Visual C++ 2008 Express Edition と Microsoft Platform SDK を一緒に使う<br/>
 　 <a href="http://www.microsoft.com/japan/msdn/vstudio/express/visualc/usingpsdk/">http://www.microsoft.com/japan/msdn/vstudio/express/visualc/usingpsdk/</a></p>
-<p>設定が完了するとShade 12 プラグインの開発が行えるようになります。</p>
-<h2><a class="anchor" id="devenv_env2">
-■プラグインの動作環境</a></h2>
-<p>Shade 12 Plugin SDKで作成したプラグインはShade 12 Professional/Standardで動作します。Basicではプラグインがサポートされていないため動作しません。 </p>
+<p>設定が完了するとShade 13 プラグインの開発が行えるようになります。</p>
+<h2><a class="anchor" id="about_xcode_4_4"></a>
+■Xcode 4.4でのプラグイン開発について</h2>
+<p>Mac OS X 10.8 (Mountain Lion)環境のXcode 4.4にてプラグインを作成する際は、サンプルプロジェクトの設定を変更する必要があります。</p>
+<p>pluginsプロジェクトを選択し、Build Settingsでの ArchitecturesグループにてBase SDKの選択を「OS X 10.7」とします。<br/>
+これで、OS X 10.7/10.8にて動作するプラグインのビルドができるようになります。<br/>
+ただし、Xcode 4.4でビルドしたプラグインはOS X 10.6以前では動作しません。<br/>
+OS X 10.6でも動作するプラグインをビルドするには、OS X 10.7上のXcode 4.3を使用する必要があります。</p>
+<h2><a class="anchor" id="devenv_env2"></a>
+■プラグインの動作環境</h2>
+<p>Shade 13 Plugin SDKで作成したプラグインはShade 13 Professional/Standardで動作します。Basicではプラグインがサポートされていないため動作しません。 </p>
+</div></div>
 </div>
+  <div id="nav-path" class="navpath">
+    <ul>
 <br><br>
 <hr>
 <div align="center">Copyright &copy; e frontier, Inc. All rights reserved.</div>

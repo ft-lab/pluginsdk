@@ -1,7 +1,8 @@
 #pragma once
 
 namespace sxsdk {
-	class vertex_class {
+	class
+	vertex_class {
 	public:
 		virtual ~vertex_class () { }
 		VTABLE_PADDING

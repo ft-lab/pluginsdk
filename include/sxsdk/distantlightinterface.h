@@ -1,7 +1,8 @@
 #pragma once
 
 namespace sxsdk {
-	class distant_light_interface : public shade_interface {
+	class
+	distant_light_interface : public shade_interface {
 	public:
 	virtual void save (const char*const& in, void* aux = 0) = 0; // 0
 	virtual void load (const char*const& from, void* aux = 0) = 0; // 1
@@ -56,5 +57,6 @@ namespace sxsdk {
 	virtual int get_active_item (void * = 0) const = 0; // 48
 	virtual distant_light_interface &set_active_item (int active_item_param, void * = 0) = 0; // 49
 	virtual void remove_light_item (int i, void* aux = 0) = 0; // 50
+	virtual physical_sky_class& physical_sky (void* aux = 0) = 0; // 51
 	};
 }

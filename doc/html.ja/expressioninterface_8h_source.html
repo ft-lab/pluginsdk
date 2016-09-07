@@ -4,52 +4,82 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <title>expressioninterface.h ソースファイル</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<!-- 作成： Doxygen 1.6.1 -->
-<div class="navigation" id="top">
-  <div class="tabs">
-    <ul>
-      <li><a href="main.html"><span>メインページ</span></a></li>
+<!-- 作成： Doxygen 1.7.4 -->
+<div id="top">
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
       <li><a href="pages.html"><span>関連ページ</span></a></li>
       <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
       <li><a href="annotated.html"><span>クラス</span></a></li>
       <li class="current"><a href="files.html"><span>ファイル</span></a></li>
     </ul>
   </div>
-  <div class="tabs">
-    <ul>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
       <li><a href="files.html"><span>ファイル一覧</span></a></li>
       <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
     </ul>
   </div>
-<h1>expressioninterface.h</h1><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// this file has been created by makeheader.py</span>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+  initNavTree('expressioninterface_8h.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">expressioninterface.h</div>  </div>
+</div>
+<div class="contents">
+<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// this file has been created by makeheader.py</span>
 <a name="l00002"></a>00002 <span class="comment">// ja utf-8</span>
 <a name="l00003"></a>00003 <span class="preprocessor">#pragma once</span>
-<a name="l00010"></a>00010 <span class="preprocessor">namespace sxsdk {</span>
-<a name="l00011"></a><a class="code" href="classsxsdk_1_1expression__interface.html">00011</a> <span class="preprocessor"></span><span class="keyword">class </span><a class="code" href="classsxsdk_1_1expression__interface.html">expression_interface</a> : <span class="keyword">public</span> <a class="code" href="classunknown__interface.html">unknown_interface</a> {
+<a name="l00004"></a>00004 <span class="preprocessor"></span><span class="keyword">namespace </span>sxsdk {
+<a name="l00011"></a><a class="code" href="classsxsdk_1_1expression__interface.html">00011</a> <span class="keyword">class </span><a class="code" href="classsxsdk_1_1expression__interface.html" title="SPEEDのパラメーター演算に関連したインターフェイス。">expression_interface</a> : <span class="keyword">public</span> <a class="code" href="classunknown__interface.html">unknown_interface</a> {
 <a name="l00012"></a>00012 <span class="keyword">public</span>:
 <a name="l00013"></a><a class="code" href="classsxsdk_1_1expression__interface.html#a65a34df6099df125cbe6e19a6293c930">00013</a>     <span class="keyword">enum</span> <a class="code" href="classsxsdk_1_1expression__interface.html#a65a34df6099df125cbe6e19a6293c930">expression_value_types_enum</a> {  
-<a name="l00014"></a><a class="code" href="classsxsdk_1_1expression__interface.html#a65a34df6099df125cbe6e19a6293c930ad0beec6ff5738d8cd42548d420130140">00014</a>         type_unknown        = 0,    
-<a name="l00015"></a><a class="code" href="classsxsdk_1_1expression__interface.html#a65a34df6099df125cbe6e19a6293c930aeef004767c988df965fa4efcaa3bd3a7">00015</a>         type_real       = 1,    
-<a name="l00016"></a><a class="code" href="classsxsdk_1_1expression__interface.html#a65a34df6099df125cbe6e19a6293c930a791422430dbc6a22f9b881a9a2ca6506">00016</a>         type_string     = 2,    
+<a name="l00014"></a><a class="code" href="classsxsdk_1_1expression__interface.html#a65a34df6099df125cbe6e19a6293c930ad0beec6ff5738d8cd42548d420130140">00014</a>         <a class="code" href="classsxsdk_1_1expression__interface.html#a65a34df6099df125cbe6e19a6293c930ad0beec6ff5738d8cd42548d420130140" title="値の種類">type_unknown</a>        = 0,    
+<a name="l00015"></a><a class="code" href="classsxsdk_1_1expression__interface.html#a65a34df6099df125cbe6e19a6293c930aeef004767c988df965fa4efcaa3bd3a7">00015</a>         <a class="code" href="classsxsdk_1_1expression__interface.html#a65a34df6099df125cbe6e19a6293c930aeef004767c988df965fa4efcaa3bd3a7" title="実数値">type_real</a>       = 1,    
+<a name="l00016"></a><a class="code" href="classsxsdk_1_1expression__interface.html#a65a34df6099df125cbe6e19a6293c930a791422430dbc6a22f9b881a9a2ca6506">00016</a>         <a class="code" href="classsxsdk_1_1expression__interface.html#a65a34df6099df125cbe6e19a6293c930a791422430dbc6a22f9b881a9a2ca6506" title="文字列">type_string</a>     = 2,    
 <a name="l00017"></a>00017     }; 
-<a name="l00025"></a>00025     <span class="keyword">virtual</span> <span class="keywordtype">int</span> execute (<span class="keyword">const</span> <span class="keywordtype">char</span>* scripts, <span class="keywordtype">void</span>* aux = 0);
-<a name="l00027"></a>00027     <span class="keyword">virtual</span> <span class="keywordtype">int</span> get_number_of_lines (<span class="keywordtype">void</span>* aux = 0);
-<a name="l00033"></a>00033     <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span> * get_expression (<span class="keywordtype">int</span> line, <span class="keywordtype">void</span>* aux = 0);
-<a name="l00038"></a>00038     <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span> * json_type_result (<span class="keywordtype">void</span>* aux = 0);
-<a name="l00043"></a>00043     <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span> * json_type_value (<span class="keywordtype">void</span>* aux = 0);
-<a name="l00049"></a>00049     <span class="keyword">virtual</span> <span class="keywordtype">int</span> get_result (<span class="keywordtype">int</span> line, <span class="keywordtype">void</span>* aux = 0);
-<a name="l00055"></a>00055     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> has_variable (<span class="keyword">const</span> <span class="keywordtype">char</span>* variable, <span class="keywordtype">void</span>* aux = 0);
-<a name="l00061"></a>00061     <span class="keyword">virtual</span> <span class="keywordtype">int</span> get_type (<span class="keyword">const</span> <span class="keywordtype">char</span>* variable, <span class="keywordtype">void</span>* aux = 0);
-<a name="l00067"></a>00067     <span class="keyword">virtual</span> <span class="keywordtype">float</span> get_realnumber (<span class="keyword">const</span> <span class="keywordtype">char</span>* variable, <span class="keywordtype">void</span>* aux = 0);
-<a name="l00073"></a>00073     <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* get_string (<span class="keyword">const</span> <span class="keywordtype">char</span>* variable, <span class="keywordtype">void</span>* aux = 0);
-<a name="l00075"></a>00075     <span class="keyword">virtual</span> <span class="keywordtype">int</span> get_number_of_variable (<span class="keywordtype">void</span>* aux = 0);
-<a name="l00081"></a>00081     <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* get_variable (<span class="keywordtype">int</span> number, <span class="keywordtype">void</span>* aux = 0);
+<a name="l00025"></a>00025     <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="classsxsdk_1_1expression__interface.html#a5998b8c109d52134091447936df5ef40" title="パラメーターとして渡された計算式を実行する。">execute</a> (<span class="keyword">const</span> <span class="keywordtype">char</span>* scripts, <span class="keywordtype">void</span>* aux = 0);
+<a name="l00027"></a>00027     <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="classsxsdk_1_1expression__interface.html#a8feb421f05ac30be999d924a790a70f6" title="executeで渡された計算式をパースした行の総数。">get_number_of_lines</a> (<span class="keywordtype">void</span>* aux = 0);
+<a name="l00033"></a>00033     <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span> * <a class="code" href="classsxsdk_1_1expression__interface.html#a275d3af14cb3ca3d351825e9a6cbdde0" title="executeで渡された計算式をパースした行の取得。">get_expression</a> (<span class="keywordtype">int</span> line, <span class="keywordtype">void</span>* aux = 0);
+<a name="l00038"></a>00038     <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span> * <a class="code" href="classsxsdk_1_1expression__interface.html#a002cba4bfe2c0bdc05fe52805870f647" title="直前に実行された計算式のリザルトコードをJSON形式の文字列で取得する。">json_type_result</a> (<span class="keywordtype">void</span>* aux = 0);
+<a name="l00043"></a>00043     <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span> * <a class="code" href="classsxsdk_1_1expression__interface.html#aba201ea1895ebe19592c0d532a6d11ac" title="直前に実行された計算式の計算結果をJSON形式の文字列で取得する。">json_type_value</a> (<span class="keywordtype">void</span>* aux = 0);
+<a name="l00049"></a>00049     <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="classsxsdk_1_1expression__interface.html#a4e29ad6a4c4356bdbdccf25cb0296594" title="直前に実行された計算式のリザルトコードを行番号を指定して取得する。">get_result</a> (<span class="keywordtype">int</span> line, <span class="keywordtype">void</span>* aux = 0);
+<a name="l00055"></a>00055     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classsxsdk_1_1expression__interface.html#a8c40277c4921a274355a63a5d96c3ab7" title="引数として渡された変数名が、直前に実行された計算式に含まれているかを返す。">has_variable</a> (<span class="keyword">const</span> <span class="keywordtype">char</span>* variable, <span class="keywordtype">void</span>* aux = 0);
+<a name="l00061"></a>00061     <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="classsxsdk_1_1expression__interface.html#a87a877f49b2f210858b23a47f3b96f76" title="引数として渡された変数名が、直前に実行された計算式内でどのような型を保持しているかを返す。">get_type</a> (<span class="keyword">const</span> <span class="keywordtype">char</span>* variable, <span class="keywordtype">void</span>* aux = 0);
+<a name="l00067"></a>00067     <span class="keyword">virtual</span> <span class="keywordtype">float</span> <a class="code" href="classsxsdk_1_1expression__interface.html#ae75f98061b0f81c75af16e10d4e2ba30" title="引数として渡された変数名が、直前に実行された計算式内で計算された実数値を返す。">get_realnumber</a> (<span class="keyword">const</span> <span class="keywordtype">char</span>* variable, <span class="keywordtype">void</span>* aux = 0);
+<a name="l00073"></a>00073     <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="classsxsdk_1_1expression__interface.html#a0822ea8aa345537b4a3cdc7c2ece88f8" title="引数として渡された変数名が、直前に実行された計算式内で処理された文字列を返す。">get_string</a> (<span class="keyword">const</span> <span class="keywordtype">char</span>* variable, <span class="keywordtype">void</span>* aux = 0);
+<a name="l00075"></a>00075     <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="classsxsdk_1_1expression__interface.html#a462a7681787735f839110635caf161b3" title="executeで渡された計算式から導かれた変数の数を返す。">get_number_of_variable</a> (<span class="keywordtype">void</span>* aux = 0);
+<a name="l00081"></a>00081     <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="classsxsdk_1_1expression__interface.html#afcd174aa7e0c632514645dbefd8fff38" title="executeで渡された計算式から導かれた変数を返す。">get_variable</a> (<span class="keywordtype">int</span> number, <span class="keywordtype">void</span>* aux = 0);
 <a name="l00082"></a>00082 };
 <a name="l00083"></a>00083 } <span class="comment">// sxsdk</span>
 </pre></div></div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><b>expressioninterface.h</b>      </li>
 <br><br>
 <hr>
 <div align="center">Copyright &copy; e frontier, Inc. All rights reserved.</div>

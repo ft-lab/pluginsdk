@@ -4,28 +4,54 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <title>com.h ソースファイル</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<!-- 作成： Doxygen 1.6.1 -->
-<div class="navigation" id="top">
-  <div class="tabs">
-    <ul>
-      <li><a href="main.html"><span>メインページ</span></a></li>
+<!-- 作成： Doxygen 1.7.4 -->
+<div id="top">
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
       <li><a href="pages.html"><span>関連ページ</span></a></li>
       <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
       <li><a href="annotated.html"><span>クラス</span></a></li>
       <li class="current"><a href="files.html"><span>ファイル</span></a></li>
     </ul>
   </div>
-  <div class="tabs">
-    <ul>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
       <li><a href="files.html"><span>ファイル一覧</span></a></li>
       <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
     </ul>
   </div>
-<h1>com.h</h1><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#pragma once</span>
-<a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#include &quot;sx/core/com.hpp&quot;</span>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+  initNavTree('com_8h.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">com.h</div>  </div>
+</div>
+<div class="contents">
+<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#pragma once</span>
+<a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#include &quot;sxcore/com.hpp&quot;</span>
 <a name="l00003"></a>00003 
 <a name="l00004"></a>00004 <span class="preprocessor">#if __GNUG__</span>
 <a name="l00005"></a>00005 <span class="preprocessor"></span><span class="preprocessor">    #define VTABLE_PADDING virtual void gcc_dummy0 () { }</span>
@@ -33,7 +59,7 @@
 <a name="l00007"></a>00007 <span class="preprocessor"></span><span class="preprocessor">    #define VTABLE_PADDING</span>
 <a name="l00008"></a>00008 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
 <a name="l00009"></a>00009 <span class="preprocessor"></span>
-<a name="l00010"></a><a class="code" href="classunknown__interface.html">00010</a> <span class="keyword">class </span><a class="code" href="classunknown__interface.html">unknown_interface</a> : <span class="keyword">public</span> IUnknown {
+<a name="l00010"></a><a class="code" href="classunknown__interface.html">00010</a> <span class="keyword">class </span>SXMODEL <a class="code" href="classunknown__interface.html">unknown_interface</a> : <span class="keyword">public</span> IUnknown {
 <a name="l00011"></a>00011 <span class="keyword">public</span>:
 <a name="l00012"></a>00012     <span class="keyword">enum</span> property_type_enum {
 <a name="l00013"></a>00013         void_type, bool_type, selection_type, int_type, float_type, vec3_type, rgb_type, string_type, double_type, group_begin_type, group_end_type, short_string_type, text_type, rgba_type, window_type,
@@ -57,16 +83,16 @@
 <a name="l00031"></a>00031     <span class="keyword">volatile</span> <span class="keywordtype">unsigned</span> ref;
 <a name="l00032"></a>00032 };
 <a name="l00033"></a>00033 
-<a name="l00035"></a><a class="code" href="classcompointer.html">00035</a> <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; <span class="keyword">class </span><a class="code" href="classcompointer.html" title="*_interfaceクラスのオブジェクトを指す参照カウントスマートポインタ。...">compointer</a> {
+<a name="l00035"></a><a class="code" href="classcompointer.html">00035</a> <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; <span class="keyword">class </span><a class="code" href="classcompointer.html" title="*_interfaceクラスのオブジェクトを指す参照カウントスマートポインタ。">compointer</a> {
 <a name="l00036"></a>00036 <span class="keyword">public</span>:
-<a name="l00037"></a>00037     <span class="keyword">explicit</span> <a class="code" href="classcompointer.html" title="*_interfaceクラスのオブジェクトを指す参照カウントスマートポインタ。...">compointer</a> () : ptr(0) { }
+<a name="l00037"></a>00037     <span class="keyword">explicit</span> <a class="code" href="classcompointer.html" title="*_interfaceクラスのオブジェクトを指す参照カウントスマートポインタ。">compointer</a> () : ptr(0) { }
 <a name="l00039"></a><a class="code" href="classcompointer.html#adb298123a893be991761b29c457e69df">00039</a>     <span class="keyword">explicit</span> <a class="code" href="classcompointer.html#adb298123a893be991761b29c457e69df" title="compointerコンストラクタ。">compointer</a> (T *p, <span class="keywordtype">int</span> n = 0) : ptr(p) {
 <a name="l00040"></a>00040         <span class="keywordflow">if</span> (ptr) <span class="keywordflow">while</span> (n--) ptr-&gt;AddRef();
 <a name="l00041"></a>00041     }
-<a name="l00043"></a><a class="code" href="classcompointer.html#aa60d9a9e8e188d2d0bc82261fe313cce">00043</a>     <a class="code" href="classcompointer.html#aa60d9a9e8e188d2d0bc82261fe313cce" title="compointerコンストラクタ。">compointer</a> (<span class="keyword">const</span> <a class="code" href="classcompointer.html" title="*_interfaceクラスのオブジェクトを指す参照カウントスマートポインタ。...">compointer&lt;T&gt;</a> &amp;p) : ptr(p.ptr) {
+<a name="l00043"></a><a class="code" href="classcompointer.html#aa60d9a9e8e188d2d0bc82261fe313cce">00043</a>     <a class="code" href="classcompointer.html#aa60d9a9e8e188d2d0bc82261fe313cce" title="compointerコンストラクタ。">compointer</a> (<span class="keyword">const</span> <a class="code" href="classcompointer.html" title="*_interfaceクラスのオブジェクトを指す参照カウントスマートポインタ。">compointer&lt;T&gt;</a> &amp;p) : ptr(p.ptr) {
 <a name="l00044"></a>00044         <span class="keywordflow">if</span> (ptr) ptr-&gt;AddRef();
 <a name="l00045"></a>00045     }
-<a name="l00046"></a>00046     ~<a class="code" href="classcompointer.html" title="*_interfaceクラスのオブジェクトを指す参照カウントスマートポインタ。...">compointer</a> () {
+<a name="l00046"></a>00046     ~<a class="code" href="classcompointer.html" title="*_interfaceクラスのオブジェクトを指す参照カウントスマートポインタ。">compointer</a> () {
 <a name="l00047"></a>00047         <span class="keywordflow">if</span> (ptr) ptr-&gt;Release();
 <a name="l00048"></a>00048     }
 <a name="l00050"></a><a class="code" href="classcompointer.html#ac8de18a726ce63be87e7c49c646e3ee8">00050</a>     T *<span class="keyword">get</span> () <span class="keyword">const</span> {
@@ -78,25 +104,25 @@
 <a name="l00058"></a><a class="code" href="classcompointer.html#aac6be8511338afb8cda1caf593bbe49f">00058</a>     T *<a class="code" href="classcompointer.html#aac6be8511338afb8cda1caf593bbe49f" title="compointerが管理しているオブジェクトのメンバを呼び出す。">operator-&gt; </a>()<span class="keyword"> const </span>{
 <a name="l00059"></a>00059         <span class="keywordflow">return</span> ptr;
 <a name="l00060"></a>00060     }
-<a name="l00062"></a><a class="code" href="classcompointer.html#a9f31ce16341b0287df02076ae6f9aebf">00062</a>     <a class="code" href="classcompointer.html#a9f31ce16341b0287df02076ae6f9aebf" title="キャストによりcompointerが管理しているオブジェクトのポインタを取得する...">operator T * </a>()<span class="keyword"> const </span>{
+<a name="l00062"></a><a class="code" href="classcompointer.html#a9f31ce16341b0287df02076ae6f9aebf">00062</a>     <a class="code" href="classcompointer.html#a9f31ce16341b0287df02076ae6f9aebf" title="キャストによりcompointerが管理しているオブジェクトのポインタを取得する。">operator T * </a>()<span class="keyword"> const </span>{
 <a name="l00063"></a>00063         <span class="keywordflow">return</span> ptr;
 <a name="l00064"></a>00064     }
-<a name="l00066"></a><a class="code" href="classcompointer.html#af608df5ca607e9623df0c3aa4c637ac5">00066</a>     <a class="code" href="classcompointer.html" title="*_interfaceクラスのオブジェクトを指す参照カウントスマートポインタ。...">compointer&lt;T&gt;</a> &amp;<a class="code" href="classcompointer.html#af608df5ca607e9623df0c3aa4c637ac5" title="compointerが管理するオブジェクトをpに変更する。それまで管理していたオ�...">operator= </a>(T *p) {
+<a name="l00066"></a><a class="code" href="classcompointer.html#af608df5ca607e9623df0c3aa4c637ac5">00066</a>     <a class="code" href="classcompointer.html" title="*_interfaceクラスのオブジェクトを指す参照カウントスマートポインタ。">compointer&lt;T&gt;</a> &amp;<a class="code" href="classcompointer.html#af608df5ca607e9623df0c3aa4c637ac5" title="compointerが管理するオブジェクトをpに変更する。それまで管理していたオブジェクトには Release() が呼ばれる。">operator= </a>(T *p) {
 <a name="l00067"></a>00067         <span class="keywordflow">if</span> (ptr != p &amp;&amp; ptr != 0) ptr-&gt;Release();
 <a name="l00068"></a>00068         ptr = p;
 <a name="l00069"></a>00069         <span class="keywordflow">return</span> *<span class="keyword">this</span>;
 <a name="l00070"></a>00070     }
-<a name="l00072"></a><a class="code" href="classcompointer.html#a000bc73a66ef52662d8a5d2495855c62">00072</a>     <a class="code" href="classcompointer.html" title="*_interfaceクラスのオブジェクトを指す参照カウントスマートポインタ。...">compointer&lt;T&gt;</a> &amp;<a class="code" href="classcompointer.html#af608df5ca607e9623df0c3aa4c637ac5" title="compointerが管理するオブジェクトをpに変更する。それまで管理していたオ�...">operator= </a>(<span class="keyword">const</span> <a class="code" href="classcompointer.html" title="*_interfaceクラスのオブジェクトを指す参照カウントスマートポインタ。...">compointer&lt;T&gt;</a> &amp;p) {
+<a name="l00072"></a><a class="code" href="classcompointer.html#a000bc73a66ef52662d8a5d2495855c62">00072</a>     <a class="code" href="classcompointer.html" title="*_interfaceクラスのオブジェクトを指す参照カウントスマートポインタ。">compointer&lt;T&gt;</a> &amp;<a class="code" href="classcompointer.html#af608df5ca607e9623df0c3aa4c637ac5" title="compointerが管理するオブジェクトをpに変更する。それまで管理していたオブジェクトには Release() が呼ばれる。">operator= </a>(<span class="keyword">const</span> <a class="code" href="classcompointer.html" title="*_interfaceクラスのオブジェクトを指す参照カウントスマートポインタ。">compointer&lt;T&gt;</a> &amp;p) {
 <a name="l00073"></a>00073         <span class="keywordflow">if</span> (ptr != p.<a class="code" href="classcompointer.html#ac8de18a726ce63be87e7c49c646e3ee8" title="compointerが管理しているオブジェクトのポインタを返す。">get</a>() &amp;&amp; ptr != 0) ptr-&gt;Release();
 <a name="l00074"></a>00074         ptr = p.<a class="code" href="classcompointer.html#ac8de18a726ce63be87e7c49c646e3ee8" title="compointerが管理しているオブジェクトのポインタを返す。">get</a>();
 <a name="l00075"></a>00075         <span class="keywordflow">if</span> (ptr != 0) ptr-&gt;AddRef();
 <a name="l00076"></a>00076         <span class="keywordflow">return</span> *<span class="keyword">this</span>;
 <a name="l00077"></a>00077     }
-<a name="l00079"></a><a class="code" href="classcompointer.html#a1f23c35d017e8d08628d4ff33dd287fe">00079</a>     T *<a class="code" href="classcompointer.html#a1f23c35d017e8d08628d4ff33dd287fe" title="compointerが管理するオブジェクトのAddRef()を呼び出して参照カウントを増や�...">retain</a> () {
+<a name="l00079"></a><a class="code" href="classcompointer.html#a1f23c35d017e8d08628d4ff33dd287fe">00079</a>     T *<a class="code" href="classcompointer.html#a1f23c35d017e8d08628d4ff33dd287fe" title="compointerが管理するオブジェクトのAddRef()を呼び出して参照カウントを増やす。">retain</a> () {
 <a name="l00080"></a>00080         ptr-&gt;AddRef();
 <a name="l00081"></a>00081         <span class="keywordflow">return</span> ptr;
 <a name="l00082"></a>00082     }
-<a name="l00084"></a><a class="code" href="classcompointer.html#aaa6b4a2192e16eb35017fa5563707e4c">00084</a>     T *<a class="code" href="classcompointer.html#aaa6b4a2192e16eb35017fa5563707e4c" title="オブジェクトの管理を破棄する。このとき、Release() は呼び出されないので...">release</a> () { <span class="comment">// note that release() is NOT the reverse operation of retatin().</span>
+<a name="l00084"></a><a class="code" href="classcompointer.html#aaa6b4a2192e16eb35017fa5563707e4c">00084</a>     T *<a class="code" href="classcompointer.html#aaa6b4a2192e16eb35017fa5563707e4c" title="オブジェクトの管理を破棄する。このとき、Release() は呼び出されないので、オブジェクトの破棄を別途行う必要がある。">release</a> () { <span class="comment">// note that release() is NOT the reverse operation of retatin().</span>
 <a name="l00085"></a>00085         T *p = ptr; ptr = 0; <span class="keywordflow">return</span> p;
 <a name="l00086"></a>00086     }
 <a name="l00087"></a>00087     <span class="keywordtype">void</span> check_invariant ()<span class="keyword"> const </span>{ }
@@ -104,6 +130,10 @@
 <a name="l00089"></a>00089     T *ptr;
 <a name="l00090"></a>00090 };
 </pre></div></div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><b>com.h</b>      </li>
 <br><br>
 <hr>
 <div align="center">Copyright &copy; e frontier, Inc. All rights reserved.</div>

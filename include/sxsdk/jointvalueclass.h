@@ -1,7 +1,8 @@
 #pragma once
 
 namespace sxsdk {
-	class joint_value_class {
+	class
+	joint_value_class {
 	public:
 		virtual ~joint_value_class () { }
 		VTABLE_PADDING

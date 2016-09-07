@@ -5,7 +5,8 @@ namespace model {
 }
 
 namespace sxsdk {
-	class face_class  {
+	class
+	face_class  {
 	public:
 		virtual ~face_class () { }
 		VTABLE_PADDING

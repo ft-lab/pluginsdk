@@ -1,7 +1,8 @@
 #pragma once
 
 namespace sxsdk {
-	class shape_saver_interface : public unknown_interface {
+	class
+	shape_saver_interface : public unknown_interface {
 	public:
 	virtual void release (void* aux = 0) = 0; // 0
 	virtual void set_undo (void* aux = 0) const = 0; // 1

@@ -1,7 +1,8 @@
 #pragma once
 
 namespace sxsdk {
-	class mapping_layer_class {
+	class
+	mapping_layer_class {
 	public:
 		virtual ~mapping_layer_class () { }
 		VTABLE_PADDING
@@ -74,7 +75,9 @@ namespace sxsdk {
 	virtual sxsdk::vec2 get_actual_size (void * = 0) const = 0; // 66
 	virtual mapping_layer_class &set_repeat_image (bool repeat_image_param, void * = 0) = 0; // 67
 	virtual bool get_repeat_image (void * = 0) const = 0; // 68
-	virtual mapping_layer_class &set_uv_mapping (int uv_mapping_param, void * = 0) = 0; // 69
-	virtual int get_uv_mapping (void * = 0) const = 0; // 70
+	virtual mapping_layer_class &set_uv_mapping (int uv_mapping_param, void* = 0) = 0; // 69
+	virtual int get_uv_mapping (void* = 0) const = 0; // 70
+	virtual mapping_layer_class &set_channel_mix (sxsdk::enums::mapping_channel_mix_mode channel_mix_param, void* = 0) = 0; // 71
+	virtual sxsdk::enums::mapping_channel_mix_mode get_channel_mix (void* = 0) const = 0; // 72
 	};
 }

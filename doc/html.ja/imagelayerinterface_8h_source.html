@@ -4,51 +4,81 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <title>imagelayerinterface.h ソースファイル</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<!-- 作成： Doxygen 1.6.1 -->
-<div class="navigation" id="top">
-  <div class="tabs">
-    <ul>
-      <li><a href="main.html"><span>メインページ</span></a></li>
+<!-- 作成： Doxygen 1.7.4 -->
+<div id="top">
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
       <li><a href="pages.html"><span>関連ページ</span></a></li>
       <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
       <li><a href="annotated.html"><span>クラス</span></a></li>
       <li class="current"><a href="files.html"><span>ファイル</span></a></li>
     </ul>
   </div>
-  <div class="tabs">
-    <ul>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
       <li><a href="files.html"><span>ファイル一覧</span></a></li>
       <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
     </ul>
   </div>
-<h1>imagelayerinterface.h</h1><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// this file has been created by makeheader.py</span>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+  initNavTree('imagelayerinterface_8h.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">imagelayerinterface.h</div>  </div>
+</div>
+<div class="contents">
+<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// this file has been created by makeheader.py</span>
 <a name="l00002"></a>00002 <span class="comment">// ja utf-8</span>
 <a name="l00003"></a>00003 <span class="preprocessor">#pragma once</span>
-<a name="l00005"></a>00005 <span class="preprocessor">namespace sxsdk {</span>
-<a name="l00006"></a><a class="code" href="structsxsdk_1_1image__layer__interface.html">00006</a> <span class="preprocessor"></span><span class="keyword">struct </span><a class="code" href="structsxsdk_1_1image__layer__interface.html">image_layer_interface</a> {
+<a name="l00004"></a>00004 <span class="preprocessor"></span><span class="keyword">namespace </span>sxsdk {
+<a name="l00006"></a><a class="code" href="structsxsdk_1_1image__layer__interface.html">00006</a> <span class="keyword">struct </span><a class="code" href="structsxsdk_1_1image__layer__interface.html" title="１枚のイメージレイヤーを表すクラス。１枚のイメージと、レイヤー名、チャンネル名を保持する。">image_layer_interface</a> {
 <a name="l00007"></a>00007 <span class="keyword">public</span>:
-<a name="l00014"></a>00014     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1image__interface.html">sxsdk::image_interface</a>* get_image_interface (<span class="keywordtype">void</span> * = 0) <span class="keyword">const</span>;
-<a name="l00019"></a>00019     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1image__layer__interface.html">image_layer_interface</a> &amp;set_name (<span class="keyword">const</span> <span class="keywordtype">char</span>* name_param, <span class="keywordtype">void</span> * = 0);
-<a name="l00024"></a>00024     <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="dllentries_8h.html#a6f2ba000248080d52ec51c4260586bc0" title="プラグインの名前を返す。">get_name</a> (<span class="keywordtype">void</span> * = 0) <span class="keyword">const</span>;
-<a name="l00031"></a>00031     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1image__layer__interface.html">image_layer_interface</a> &amp;set_id_name (<span class="keyword">const</span> <span class="keywordtype">char</span>* id_name_param, <span class="keywordtype">void</span> * = 0);
-<a name="l00038"></a>00038     <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* get_id_name (<span class="keywordtype">void</span> * = 0) <span class="keyword">const</span>;
-<a name="l00047"></a>00047     <span class="keyword">virtual</span> <span class="keywordtype">void</span> set_channel_name (<span class="keywordtype">int</span> index, <span class="keyword">const</span> <span class="keywordtype">char</span>* name, <span class="keywordtype">void</span>* aux = 0);
-<a name="l00055"></a>00055     <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* get_channel_name (<span class="keywordtype">int</span> index, <span class="keywordtype">void</span>* aux = 0) <span class="keyword">const</span>;
-<a name="l00060"></a>00060     <span class="keyword">virtual</span> <span class="keywordtype">int</span> get_number_of_channels (<span class="keywordtype">void</span> * = 0) <span class="keyword">const</span>;
-<a name="l00065"></a>00065     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1image__layer__interface.html">image_layer_interface</a> &amp;set_pixel_depth (<span class="keywordtype">int</span> pixel_depth_param, <span class="keywordtype">void</span> * = 0);
-<a name="l00070"></a>00070     <span class="keyword">virtual</span> <span class="keywordtype">int</span> get_pixel_depth (<span class="keywordtype">void</span> * = 0) <span class="keyword">const</span>;
-<a name="l00075"></a>00075     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1image__layer__interface.html">image_layer_interface</a> &amp;set_mix_mode (sx::image::mix_mode mix_mode_param, <span class="keywordtype">void</span> * = 0);
-<a name="l00080"></a>00080     <span class="keyword">virtual</span> sx::image::mix_mode get_mix_mode (<span class="keywordtype">void</span> * = 0) <span class="keyword">const</span>;
-<a name="l00085"></a>00085     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1image__layer__interface.html">image_layer_interface</a> &amp;set_maximum_value (sxsdk::rgba_class maximum_value_param, <span class="keywordtype">void</span> * = 0);
-<a name="l00090"></a>00090     <span class="keyword">virtual</span> sxsdk::rgba_class get_maximum_value (<span class="keywordtype">void</span> * = 0) <span class="keyword">const</span>;
-<a name="l00095"></a>00095     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1image__layer__interface.html">image_layer_interface</a> &amp;set_minimum_value (sxsdk::rgba_class minimum_value_param, <span class="keywordtype">void</span> * = 0);
-<a name="l00100"></a>00100     <span class="keyword">virtual</span> sxsdk::rgba_class get_minimum_value (<span class="keywordtype">void</span> * = 0) <span class="keyword">const</span>;
+<a name="l00014"></a>00014     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1image__interface.html" title="１枚のイメージを表すクラス。画像へのアクセスに使用する。">sxsdk::image_interface</a>* <a class="code" href="structsxsdk_1_1image__layer__interface.html#a8603e20c53bfd7fdd09232d7626d02b4" title="レイヤーのイメージを取得する。">get_image_interface</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00019"></a>00019     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1image__layer__interface.html" title="１枚のイメージレイヤーを表すクラス。１枚のイメージと、レイヤー名、チャンネル名を保持する。">image_layer_interface</a> &amp;<a class="code" href="structsxsdk_1_1image__layer__interface.html#abbaea373fd20a5ffbbf000fbd82ea3c7" title="レイヤーの名前を設定する。">set_name</a> (<span class="keyword">const</span> <span class="keywordtype">char</span>* name_param, <span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>);
+<a name="l00024"></a>00024     <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="structsxsdk_1_1image__layer__interface.html#a2ac6701a63c5b3c260f1674bd2c5d8d7" title="レイヤーの名前を取得する。">get_name</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00031"></a>00031     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1image__layer__interface.html" title="１枚のイメージレイヤーを表すクラス。１枚のイメージと、レイヤー名、チャンネル名を保持する。">image_layer_interface</a> &amp;<a class="code" href="structsxsdk_1_1image__layer__interface.html#a1ae3fdf4cb36c35d91bce4460b56fe43" title="レイヤーの識別名を設定する。">set_id_name</a> (<span class="keyword">const</span> <span class="keywordtype">char</span>* id_name_param, <span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>);
+<a name="l00038"></a>00038     <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="structsxsdk_1_1image__layer__interface.html#ac1502cb6196b67c5a700c9789b548530" title="レイヤーの識別名を取得する。">get_id_name</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00047"></a>00047     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structsxsdk_1_1image__layer__interface.html#a58c5465883b0b7d5c81206c2142a12d0" title="イメージの各チャンネルの名前を設定する。デフォルトではRGBAが割り当てられるが、XYZ、UVなど、特別な名前を設定する場合に使用する。">set_channel_name</a> (<span class="keywordtype">int</span> index, <span class="keyword">const</span> <span class="keywordtype">char</span>* name, <span class="keywordtype">void</span>* aux = 0);
+<a name="l00055"></a>00055     <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="structsxsdk_1_1image__layer__interface.html#a1aef2a7ed192584799279cba57fe9995" title="イメージの各チャンネルの名前を取得する。1バイト文字のみで構成される。Shadeの表示言語に関わらず同じ名称となる。">get_channel_name</a> (<span class="keywordtype">int</span> index, <span class="keywordtype">void</span>* aux = 0) <span class="keyword">const</span>;
+<a name="l00060"></a>00060     <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="structsxsdk_1_1image__layer__interface.html#a5e9f909f578ddcd52bccdf3dd7bb8a8f" title="イメージのチャンネルの数を取得する。">get_number_of_channels</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00065"></a>00065     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1image__layer__interface.html" title="１枚のイメージレイヤーを表すクラス。１枚のイメージと、レイヤー名、チャンネル名を保持する。">image_layer_interface</a> &amp;<a class="code" href="structsxsdk_1_1image__layer__interface.html#a65d837a50dc45e93fc53f90f7650bf52" title="イメージの色深度を設定する。">set_pixel_depth</a> (<span class="keywordtype">int</span> pixel_depth_param, <span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>);
+<a name="l00070"></a>00070     <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="structsxsdk_1_1image__layer__interface.html#acc13dd6c846c53265f3722009fa582db" title="イメージの色深度を取得する。">get_pixel_depth</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00075"></a>00075     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1image__layer__interface.html" title="１枚のイメージレイヤーを表すクラス。１枚のイメージと、レイヤー名、チャンネル名を保持する。">image_layer_interface</a> &amp;<a class="code" href="structsxsdk_1_1image__layer__interface.html#a4e17c92ff4a683fdd8751b3c9952be12" title="イメージの合成モードを設定する。">set_mix_mode</a> (sx::image::mix_mode mix_mode_param, <span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>);
+<a name="l00080"></a>00080     <span class="keyword">virtual</span> sx::image::mix_mode <a class="code" href="structsxsdk_1_1image__layer__interface.html#a621cdf99caf3940364ba0612bb8a4723" title="イメージの合成モードを取得する。">get_mix_mode</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00085"></a>00085     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1image__layer__interface.html" title="１枚のイメージレイヤーを表すクラス。１枚のイメージと、レイヤー名、チャンネル名を保持する。">image_layer_interface</a> &amp;<a class="code" href="structsxsdk_1_1image__layer__interface.html#abcaf109ed68806616b98909d17363847" title="イメージで使用する明度の最大値(RGBA)を設定する。">set_maximum_value</a> (sxsdk::rgba_class maximum_value_param, <span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>);
+<a name="l00090"></a>00090     <span class="keyword">virtual</span> sxsdk::rgba_class <a class="code" href="structsxsdk_1_1image__layer__interface.html#a511a1329d0956f37eae0de09dda38411" title="イメージで使用する明度の最大値(RGBA)を取得する。">get_maximum_value</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00095"></a>00095     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1image__layer__interface.html" title="１枚のイメージレイヤーを表すクラス。１枚のイメージと、レイヤー名、チャンネル名を保持する。">image_layer_interface</a> &amp;<a class="code" href="structsxsdk_1_1image__layer__interface.html#aef21633cb77c26a4ade3b5460ed7316b" title="イメージで使用する明度の最小値(RGBA)を設定する。">set_minimum_value</a> (sxsdk::rgba_class minimum_value_param, <span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>);
+<a name="l00100"></a>00100     <span class="keyword">virtual</span> sxsdk::rgba_class <a class="code" href="structsxsdk_1_1image__layer__interface.html#a10b8bf4795ca090be6c5c6162f5decb1" title="イメージで使用する明度の最小値(RGBA)を取得する。">get_minimum_value</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
 <a name="l00101"></a>00101 };
 <a name="l00102"></a>00102 } <span class="comment">// sxsdk</span>
 </pre></div></div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><b>imagelayerinterface.h</b>      </li>
 <br><br>
 <hr>
 <div align="center">Copyright &copy; e frontier, Inc. All rights reserved.</div>

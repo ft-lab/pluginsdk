@@ -1,7 +1,8 @@
 #pragma once
 
 namespace sxsdk {
-	class background_layer_class {
+	class
+	background_layer_class {
 	public:
 		virtual ~background_layer_class () { }
 		VTABLE_PADDING

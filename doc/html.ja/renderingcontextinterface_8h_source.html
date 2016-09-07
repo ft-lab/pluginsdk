@@ -4,88 +4,122 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <title>renderingcontextinterface.h ソースファイル</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<!-- 作成： Doxygen 1.6.1 -->
-<div class="navigation" id="top">
-  <div class="tabs">
-    <ul>
-      <li><a href="main.html"><span>メインページ</span></a></li>
+<!-- 作成： Doxygen 1.7.4 -->
+<div id="top">
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
       <li><a href="pages.html"><span>関連ページ</span></a></li>
       <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
       <li><a href="annotated.html"><span>クラス</span></a></li>
       <li class="current"><a href="files.html"><span>ファイル</span></a></li>
     </ul>
   </div>
-  <div class="tabs">
-    <ul>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
       <li><a href="files.html"><span>ファイル一覧</span></a></li>
       <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
     </ul>
   </div>
-<h1>renderingcontextinterface.h</h1><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// this file has been created by makeheader.py</span>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+  initNavTree('renderingcontextinterface_8h.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">renderingcontextinterface.h</div>  </div>
+</div>
+<div class="contents">
+<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// this file has been created by makeheader.py</span>
 <a name="l00002"></a>00002 <span class="comment">// ja utf-8</span>
 <a name="l00003"></a>00003 <span class="preprocessor">#pragma once</span>
-<a name="l00012"></a>00012 <span class="preprocessor">namespace sxsdk {</span>
-<a name="l00013"></a><a class="code" href="structsxsdk_1_1rendering__context__interface.html">00013</a> <span class="preprocessor"></span><span class="keyword">struct </span><a class="code" href="structsxsdk_1_1rendering__context__interface.html">rendering_context_interface</a> : <span class="keyword">public</span> <a class="code" href="structsxsdk_1_1shade__interface.html">shade_interface</a> {
+<a name="l00004"></a>00004 <span class="preprocessor"></span><span class="keyword">namespace </span>sxsdk {
+<a name="l00013"></a><a class="code" href="structsxsdk_1_1rendering__context__interface.html">00013</a> <span class="keyword">struct </span><a class="code" href="structsxsdk_1_1rendering__context__interface.html" title="レンダリングに関する（レンダリングの最中にのみ有効な）各種情報を保持する。">rendering_context_interface</a> : <span class="keyword">public</span> <a class="code" href="structsxsdk_1_1shade__interface.html" title="Shadeの情報へのアクセスの基本となるインターフェイス">shade_interface</a> {
 <a name="l00014"></a>00014 <span class="keyword">public</span>:
-<a name="l00016"></a>00016     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1scene__interface.html">sxsdk::scene_interface</a>* get_scene_interface (<span class="keywordtype">void</span> * = 0) <span class="keyword">const</span>;
-<a name="l00021"></a>00021     <span class="keyword">virtual</span> <span class="keywordtype">float</span> get_zoom (<span class="keywordtype">void</span> * = 0) <span class="keyword">const</span>;
-<a name="l00026"></a>00026     <span class="keyword">virtual</span> sx::vec&lt;int,2&gt; get_whole_image_size (<span class="keywordtype">void</span> * = 0) <span class="keyword">const</span>;
-<a name="l00028"></a>00028     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1image__interface.html">sxsdk::image_interface</a>* get_image_interface (<span class="keywordtype">void</span> * = 0) <span class="keyword">const</span>;
-<a name="l00035"></a>00035     <span class="keyword">virtual</span> sxsdk::mat4 get_world_to_device_matrix (<span class="keywordtype">void</span> * = 0) <span class="keyword">const</span>;
-<a name="l00042"></a>00042     <span class="keyword">virtual</span> sxsdk::mat4 get_world_to_view_matrix (<span class="keywordtype">void</span> * = 0) <span class="keyword">const</span>;
-<a name="l00051"></a>00051     <span class="keyword">virtual</span> <span class="keywordtype">int</span> get_number_of_lights (<span class="keywordtype">void</span> * = 0) <span class="keyword">const</span>;
-<a name="l00052"></a>00052     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1rendering__light__class.html">rendering_light_class</a>&amp; get_light_compatible (<span class="keywordtype">int</span> i, <span class="keywordtype">void</span>* aux = 0);
-<a name="l00062"></a>00062     <span class="keyword">virtual</span> <span class="keywordtype">void</span> convert (<a class="code" href="structsxsdk_1_1renderer__interface.html">renderer_interface</a>* renderer, <span class="keywordtype">void</span>* aux = 0);
-<a name="l00067"></a>00067     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1plugin__exporter__interface.html">plugin_exporter_interface</a>&amp; get_plugin_exporter_interface (<span class="keywordtype">void</span> * = 0) <span class="keyword">const</span>;
+<a name="l00016"></a>00016     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1scene__interface.html" title="シーンの情報の取得・設定に使用する。">sxsdk::scene_interface</a>* <a class="code" href="structsxsdk_1_1rendering__context__interface.html#a41281e90c2fe4522addbb3005d245595" title="レンダリングの対象となっているシーンを取得する。">get_scene_interface</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00021"></a>00021     <span class="keyword">virtual</span> <span class="keywordtype">float</span> <a class="code" href="structsxsdk_1_1rendering__context__interface.html#a0b74a97a45f1091f40acd1120668f64f" title="カメラのズーム値を取得する。">get_zoom</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00026"></a>00026     <span class="keyword">virtual</span> sx::vec&lt;int,2&gt; <a class="code" href="structsxsdk_1_1rendering__context__interface.html#aec5ad3f73ea0d08632cc7e174f666ddd" title="レンダリングイメージ全体のサイズを取得する。">get_whole_image_size</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00028"></a>00028     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1image__interface.html" title="１枚のイメージを表すクラス。画像へのアクセスに使用する。">sxsdk::image_interface</a>* <a class="code" href="structsxsdk_1_1rendering__context__interface.html#a9ec44715df74a6344f8518127c1b1bfa" title="レンダリングイメージを取得する。">get_image_interface</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00035"></a>00035     <span class="keyword">virtual</span> sxsdk::mat4 <a class="code" href="structsxsdk_1_1rendering__context__interface.html#a8a1e666f2564489e0181db0b4938e144" title="ワールド座標系からデバイス座標系に変換するマトリクスを取得する。">get_world_to_device_matrix</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00042"></a>00042     <span class="keyword">virtual</span> sxsdk::mat4 <a class="code" href="structsxsdk_1_1rendering__context__interface.html#a35c406469ad57ea07a23711ccb619a37" title="ワールド座標系からビュー座標系に変換するマトリクスを取得する。">get_world_to_view_matrix</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00051"></a>00051     <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="structsxsdk_1_1rendering__context__interface.html#a9411c5d0e3109c9750524dea1bbb585f" title="光源の数を取得する。">get_number_of_lights</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00052"></a>00052     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1rendering__light__class.html" title="レンダリング時に使用される光源の情報を取得する。">rendering_light_class</a>&amp; get_light_compatible (<span class="keywordtype">int</span> i, <span class="keywordtype">void</span>* aux = 0);
+<a name="l00062"></a>00062     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structsxsdk_1_1rendering__context__interface.html#a23980a62f0e7685e3187e2a812b243a9" title="シーン内の形状ツリーを辿り、適切に変換しつつコールバック関数を呼ぶ。">convert</a> (<a class="code" href="structsxsdk_1_1renderer__interface.html" title="レンダラプラグインの基本クラス">renderer_interface</a>* renderer, <span class="keywordtype">void</span>* aux = 0);
+<a name="l00067"></a>00067     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1plugin__exporter__interface.html" title="エクスポートに関する（エクスポートの最中にのみ有効な）各種情報を保持する。">plugin_exporter_interface</a>&amp; <a class="code" href="structsxsdk_1_1rendering__context__interface.html#aea80c975a4dc570d3d656fe1c35c0f01" title="上記convert()を実行する実体のオブジェクトの参照を取得する。">get_plugin_exporter_interface</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
 <a name="l00068"></a>00068 <span class="preprocessor">#ifndef DOXYGEN_SKIP</span>
 <a name="l00069"></a>00069 <span class="preprocessor"></span>    <span class="keyword">virtual</span> <span class="keywordtype">int</span> rendering_context_interface_dummy9(<span class="keywordtype">void</span> *) { assert(<span class="keyword">false</span>); <span class="keywordflow">throw</span> <span class="stringliteral">&quot;invalid interface rendering_context_interface&quot;</span>; <span class="keywordflow">return</span> 0; } <span class="comment">// 9</span>
 <a name="l00070"></a>00070 <span class="preprocessor">#endif</span>
-<a name="l00071"></a>00071 <span class="preprocessor"></span>    <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1shape__class.html">sxsdk::shape_class</a>** get_shapes_obsolete (<span class="keywordtype">void</span>* aux = 0);
-<a name="l00078"></a>00078     <span class="keyword">virtual</span> sxsdk::mat4 get_world_to_perspective_matrix (<span class="keywordtype">void</span> * = 0) <span class="keyword">const</span>;
-<a name="l00083"></a>00083     <span class="keyword">virtual</span> <span class="keywordtype">int</span> get_current_frame (<span class="keywordtype">void</span> * = 0) <span class="keyword">const</span>;
-<a name="l00090"></a>00090     <span class="keyword">virtual</span> <span class="keywordtype">void</span> yield (<span class="keywordtype">void</span>* aux = 0);
-<a name="l00093"></a>00093     <span class="keyword">virtual</span> <span class="keywordtype">void</span> update_image (<span class="keyword">const</span> sx::rectangle_class* area = 0);
-<a name="l00096"></a>00096     <span class="keyword">virtual</span> <span class="keywordtype">void</span> begin_progress (<span class="keyword">const</span> <span class="keywordtype">char</span>* title, <span class="keywordtype">void</span>* aux = 0);
-<a name="l00103"></a>00103     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1rendering__context__interface.html">rendering_context_interface</a> &amp;set_progress (<span class="keywordtype">float</span> progress_param, <span class="keywordtype">void</span> * = 0);
-<a name="l00105"></a>00105     <span class="keyword">virtual</span> <span class="keywordtype">void</span> end_progress (<span class="keywordtype">void</span>* aux = 0);
-<a name="l00108"></a>00108     <span class="keyword">virtual</span> sxsdk::rgb_class correct (<span class="keyword">const</span> sxsdk::rgb_class&amp; color, <span class="keywordtype">void</span>* aux = 0);
-<a name="l00110"></a>00110     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> is_animation (<span class="keywordtype">void</span> * = 0) <span class="keyword">const</span>;
-<a name="l00115"></a>00115     <span class="keyword">virtual</span> <span class="keywordtype">void</span> update_joint_values (<span class="keywordtype">void</span>* aux = 0);
-<a name="l00116"></a>00116     <span class="keyword">virtual</span> shape_interface* get_current_shape_interface (<span class="keywordtype">void</span>* aux = 0);
-<a name="l00121"></a>00121     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1shape__class.html">sxsdk::shape_class</a>&amp; get_current_shape (<span class="keywordtype">void</span> * = 0) <span class="keyword">const</span>;
-<a name="l00126"></a>00126     <span class="keyword">virtual</span> sxsdk::vec3 get_eye (<span class="keywordtype">void</span> * = 0) <span class="keyword">const</span>;
-<a name="l00131"></a>00131     <span class="keyword">virtual</span> sxsdk::vec3 get_target (<span class="keywordtype">void</span> * = 0) <span class="keyword">const</span>;
-<a name="l00140"></a>00140     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> get_sight (sxsdk::vec3&amp; eye, sxsdk::vec3&amp; direction, <span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">void</span>* aux = 0);
-<a name="l00142"></a>00142     <span class="keyword">virtual</span> <span class="keywordtype">int</span> get_total_blocks (<span class="keywordtype">void</span> * = 0) <span class="keyword">const</span>;
-<a name="l00143"></a>00143 <span class="preprocessor">#ifndef DOXYGEN_SKIP</span>
-<a name="l00144"></a>00144 <span class="preprocessor"></span>    <span class="keyword">virtual</span> <span class="keywordtype">int</span> rendering_context_interface_dummy27(<span class="keywordtype">void</span> *) { assert(<span class="keyword">false</span>); <span class="keywordflow">throw</span> <span class="stringliteral">&quot;invalid interface rendering_context_interface&quot;</span>; <span class="keywordflow">return</span> 0; } <span class="comment">// 27</span>
-<a name="l00145"></a>00145 <span class="preprocessor">#endif</span>
-<a name="l00150"></a>00150 <span class="preprocessor">    virtual sxsdk::mat4 get_camera_to_world_matrix (void * = 0) const;</span>
-<a name="l00152"></a>00152 <span class="preprocessor">    virtual bool is_partial_rendering (void * = 0) const;</span>
-<a name="l00160"></a>00160 <span class="preprocessor">    virtual rendering_light_class&amp; get_light (int i, void* aux = 0);</span>
-<a name="l00165"></a>00165 <span class="preprocessor">    virtual bool get_flip_face (void * = 0) const;</span>
-<a name="l00167"></a>00167 <span class="preprocessor">    virtual bool get_flip_face_shade (void * = 0) const;</span>
-<a name="l00170"></a>00170 <span class="preprocessor">    virtual sxsdk::rgb_class calculate_background_color ( const sxsdk::vec3&amp; v, void* aux = 0);</span>
-<a name="l00175"></a>00175 <span class="preprocessor">    virtual bool get_render (void * = 0) const;</span>
-<a name="l00177"></a>00177 <span class="preprocessor">    virtual int get_interlace (void * = 0) const;</span>
-<a name="l00179"></a>00179 <span class="preprocessor">    virtual proxy_shape_class&amp; get_current_proxy_shape (void * = 0) const;</span>
-<a name="l00184"></a>00184 <span class="preprocessor">    virtual proxy_shape_class&amp; get_root_proxy_shape (void * = 0) const;</span>
-<a name="l00190"></a>00190 <span class="preprocessor">    virtual bool get_rendering_flag ( const sxsdk::shape_class&amp; shape, void* aux = 0);</span>
-<a name="l00192"></a>00192 <span class="preprocessor">    virtual sxsdk::background_interface* get_background_interface (void * = 0) const;</span>
-<a name="l00194"></a>00194 <span class="preprocessor">    virtual sxsdk::camera_class&amp; get_camera (void * = 0) const;</span>
-<a name="l00195"></a>00195 <span class="preprocessor"></span>    <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1image__interface.html">sxsdk::image_interface</a>* get_image_layer_image_interface_obsolete (<span class="keyword">const</span> sx::uuid_class&amp; uuid, <span class="keywordtype">void</span>* aux = 0) <span class="keyword">const</span>;
-<a name="l00198"></a>00198     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1image__layer__interface.html">sxsdk::image_layer_interface</a>* get_image_layer_interface (<span class="keyword">const</span> <span class="keywordtype">char</span>* id_name, <span class="keywordtype">void</span>* aux = 0) <span class="keyword">const</span>;
-<a name="l00202"></a>00202     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1image__layer__interface.html">sxsdk::image_layer_interface</a>* get_custom_image_layer_interface (<span class="keyword">const</span> sx::uuid_class&amp; layer_uuid, <span class="keyword">const</span> <span class="keywordtype">char</span>* id_name, <span class="keywordtype">void</span>* aux = 0) <span class="keyword">const</span>;
-<a name="l00205"></a>00205     <span class="keyword">virtual</span> <span class="keywordtype">int</span> get_number_of_image_layers (<span class="keywordtype">int</span> type = -1, <span class="keywordtype">void</span>* aux = 0) <span class="keyword">const</span>;
-<a name="l00214"></a>00214     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1image__layer__interface.html">sxsdk::image_layer_interface</a>* get_image_layer_interface_by_index (<span class="keywordtype">unsigned</span> index, <span class="keywordtype">int</span> type = -1, <span class="keywordtype">void</span>* aux = 0) <span class="keyword">const</span>;
-<a name="l00219"></a>00219     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> get_active (<span class="keywordtype">void</span> * = 0) <span class="keyword">const</span>;
-<a name="l00224"></a>00224     <span class="keyword">virtual</span> <span class="keywordtype">float</span> get_current_frame_float (<span class="keywordtype">void</span> * = 0) <span class="keyword">const</span>;
-<a name="l00225"></a>00225 };
-<a name="l00226"></a>00226 } <span class="comment">// sxsdk</span>
+<a name="l00071"></a>00071 <span class="preprocessor"></span>    <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1shape__class.html" title="すべての種類の形状に共通する操作を扱う基本クラス">sxsdk::shape_class</a>** get_shapes_obsolete (<span class="keywordtype">void</span>* aux = 0);
+<a name="l00078"></a>00078     <span class="keyword">virtual</span> sxsdk::mat4 <a class="code" href="structsxsdk_1_1rendering__context__interface.html#a0269ea80fc57e97c5a03b3983a878e05" title="ワールド座標系から透視座標系に変換するマトリクスを取得する。">get_world_to_perspective_matrix</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00085"></a>00085     <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="structsxsdk_1_1rendering__context__interface.html#aa9c9c5cb2cfded8d65bcf3d850e58f3e" title="カレントのフレーム値を取得する。">get_current_frame_deprecated</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00092"></a>00092     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structsxsdk_1_1rendering__context__interface.html#a18aecb458cb501c29968b2b1019c053d" title="プログラムの制御をShadeに渡す。">yield</a> (<span class="keywordtype">void</span>* aux = 0);
+<a name="l00095"></a>00095     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structsxsdk_1_1rendering__context__interface.html#a6dc2b9e9145424e412a8286f8c64e021" title="レンダリングイメージの表示を更新する。">update_image</a> (<span class="keyword">const</span> sx::rectangle_class* area = 0);
+<a name="l00098"></a>00098     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structsxsdk_1_1rendering__context__interface.html#ad771f6e8e90e28414f0b623634f04634" title="プログレスバーの表示を開始する。">begin_progress</a> (<span class="keyword">const</span> <span class="keywordtype">char</span>* title, <span class="keywordtype">void</span>* aux = 0);
+<a name="l00105"></a>00105     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1rendering__context__interface.html" title="レンダリングに関する（レンダリングの最中にのみ有効な）各種情報を保持する。">rendering_context_interface</a> &amp;<a class="code" href="structsxsdk_1_1rendering__context__interface.html#af536feb7ced7e3229111dd61f4f8cf8a" title="プログレスバーを設定する。">set_progress</a> (<span class="keywordtype">float</span> progress_param, <span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>);
+<a name="l00107"></a>00107     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structsxsdk_1_1rendering__context__interface.html#a863f30536bf923fdd8548d13f04574cf" title="プログレスバーの表示を終了する。">end_progress</a> (<span class="keywordtype">void</span>* aux = 0);
+<a name="l00110"></a>00110     <span class="keyword">virtual</span> sxsdk::rgb_class <a class="code" href="structsxsdk_1_1rendering__context__interface.html#a4f9a87d5351874ffe3d821e9d0553a63" title="色補正を計算する。色補正の設定は色補正ウインドウ(correction_interface)で行う。">correct</a> (<span class="keyword">const</span> sxsdk::rgb_class&amp; color, <span class="keywordtype">void</span>* aux = 0);
+<a name="l00112"></a>00112     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="structsxsdk_1_1rendering__context__interface.html#abbc78ebc6ccf758250f1a6d42d708754" title="アニメーション作成モードかどうかか判定する。">is_animation</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00117"></a>00117     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structsxsdk_1_1rendering__context__interface.html#ae64e28f131fd223f6a7371b29799c222" title="ジョイント値を強制的に更新する。">update_joint_values</a> (<span class="keywordtype">void</span>* aux = 0);
+<a name="l00118"></a>00118     <span class="keyword">virtual</span> shape_interface* get_current_shape_interface (<span class="keywordtype">void</span>* aux = 0);
+<a name="l00123"></a>00123     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1shape__class.html" title="すべての種類の形状に共通する操作を扱う基本クラス">sxsdk::shape_class</a>&amp; <a class="code" href="structsxsdk_1_1rendering__context__interface.html#a0230112b3a09647b5a39179779cc23b3" title="convert() 中のカレントの形状を取得する。">get_current_shape</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00128"></a>00128     <span class="keyword">virtual</span> sxsdk::vec3 <a class="code" href="structsxsdk_1_1rendering__context__interface.html#a6f67c252caefd7ada586214aa8bbd7c9" title="カメラの視点の位置を取得する。">get_eye</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00133"></a>00133     <span class="keyword">virtual</span> sxsdk::vec3 <a class="code" href="structsxsdk_1_1rendering__context__interface.html#a793d07135b006096b4bcc1f7f0a6a867" title="カメラの注視点の位置を取得する。">get_target</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00142"></a>00142     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="structsxsdk_1_1rendering__context__interface.html#a86b2d2f35dc1891a8207a217f6456ad0" title="デバイス（イメージ）座標系の点(x, y)を通過する視線ベクトルを計算する">get_sight</a> (sxsdk::vec3&amp; eye, sxsdk::vec3&amp; direction, <span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">void</span>* aux = 0);
+<a name="l00144"></a>00144     <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="structsxsdk_1_1rendering__context__interface.html#a92354258acd9f9544c3ed641ac40b04a" title="を取得する。">get_total_blocks</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00145"></a>00145 <span class="preprocessor">#ifndef DOXYGEN_SKIP</span>
+<a name="l00146"></a>00146 <span class="preprocessor"></span>    <span class="keyword">virtual</span> <span class="keywordtype">int</span> rendering_context_interface_dummy27(<span class="keywordtype">void</span> *) { assert(<span class="keyword">false</span>); <span class="keywordflow">throw</span> <span class="stringliteral">&quot;invalid interface rendering_context_interface&quot;</span>; <span class="keywordflow">return</span> 0; } <span class="comment">// 27</span>
+<a name="l00147"></a>00147 <span class="preprocessor">#endif</span>
+<a name="l00148"></a>00148 <span class="preprocessor"></span>
+<a name="l00149"></a>00149 
+<a name="l00150"></a>00150 
+<a name="l00151"></a>00151 
+<a name="l00152"></a>00152     <span class="keyword">virtual</span> sxsdk::mat4 <a class="code" href="structsxsdk_1_1rendering__context__interface.html#af4bd1811b5a77be2bf3f6b0ed9092cd4" title="カメラ形状があるパート階層のローカル座標系からワールド座標系に変換するマトリクスを取得する。">get_camera_to_world_matrix</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00154"></a>00154     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="structsxsdk_1_1rendering__context__interface.html#a82df3922998ba5d9401a89b828e86a01" title="部分レンダリングモードかどうかか判定する。">is_partial_rendering</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00162"></a>00162     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1rendering__light__class.html" title="レンダリング時に使用される光源の情報を取得する。">rendering_light_class</a>&amp; <a class="code" href="structsxsdk_1_1rendering__context__interface.html#aceef9f2c3043a4c3b7930efc1a76869f" title="i番目の光源の参照を取得する">get_light</a> (<span class="keywordtype">int</span> i, <span class="keywordtype">void</span>* aux = 0);
+<a name="l00167"></a>00167     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="structsxsdk_1_1rendering__context__interface.html#aa16e3810425aaffbca4d4a328182c875" title="convert() 中のカレント形状の裏返しモードの（ルートから累計した）値を取得する。">get_flip_face</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00169"></a>00169     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="structsxsdk_1_1rendering__context__interface.html#a7c3cb3581dc2f862b0dfc1ccd4a0d8aa" title="convert() 中のカレント形状の裏返しモード調整フラグの値を取得する。">get_flip_face_shade</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00172"></a>00172     <span class="keyword">virtual</span> sxsdk::rgb_class <a class="code" href="structsxsdk_1_1rendering__context__interface.html#aaf9930622e1e2e8c422421e82785f2d9" title="背景の色を計算する">calculate_background_color</a> ( <span class="keyword">const</span> sxsdk::vec3&amp; v, <span class="keywordtype">void</span>* aux = 0);
+<a name="l00177"></a>00177     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="structsxsdk_1_1rendering__context__interface.html#ac4ed1c5cef2e085f5c087c0c20460a95" title="convert() 中のカレント形状がレンダリングの対象となっているかどうかを取得する。">get_render</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00179"></a>00179     <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="structsxsdk_1_1rendering__context__interface.html#aa15bae18b3d3236a13157fe275662e19" title="0:インターレース無し, 1:上フィールド, 2:下フィールドを取得する。">get_interlace</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00181"></a>00181     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1proxy__shape__class.html" title="プロクシ形状に関する操作を扱うクラス">proxy_shape_class</a>&amp; <a class="code" href="structsxsdk_1_1rendering__context__interface.html#aee745af8f61c78709db3b8a8a3a328f0" title="convert() 中のカレントのプロクシ形状を取得する。">get_current_proxy_shape</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00186"></a>00186     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1proxy__shape__class.html" title="プロクシ形状に関する操作を扱うクラス">proxy_shape_class</a>&amp; <a class="code" href="structsxsdk_1_1rendering__context__interface.html#a909846a14bf8b4a4a38aed419c1b439c" title="ルートのプロクシ形状を取得する。">get_root_proxy_shape</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00192"></a>00192     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="structsxsdk_1_1rendering__context__interface.html#adab29b0b1b7f3855c0b26508fceec02c" title="形状がレンダリングの対象となっているかどうかを返す。">get_rendering_flag</a> ( <span class="keyword">const</span> <a class="code" href="structsxsdk_1_1shape__class.html" title="すべての種類の形状に共通する操作を扱う基本クラス">sxsdk::shape_class</a>&amp; shape, <span class="keywordtype">void</span>* aux = 0);
+<a name="l00194"></a>00194     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1background__interface.html" title="背景の情報の取得、設定をする。">sxsdk::background_interface</a>* <a class="code" href="structsxsdk_1_1rendering__context__interface.html#a96210d829c89367d3286ffa0620480d9" title="レンダリングコンテクストのbackground_interfaceを取得する。 ">get_background_interface</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00196"></a>00196     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1camera__class.html" title="一個のカメラを表すクラス。カメラの情報の取得、設定に使用する。">sxsdk::camera_class</a>&amp; <a class="code" href="structsxsdk_1_1rendering__context__interface.html#ac12258e301d0f99e5d88089920cdbe70" title="カメラを取得する。">get_camera</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00197"></a>00197     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1image__interface.html" title="１枚のイメージを表すクラス。画像へのアクセスに使用する。">sxsdk::image_interface</a>* get_image_layer_image_interface_obsolete (<span class="keyword">const</span> sx::uuid_class&amp; uuid, <span class="keywordtype">void</span>* aux = 0) <span class="keyword">const</span>;
+<a name="l00200"></a>00200     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1image__layer__interface.html" title="１枚のイメージレイヤーを表すクラス。１枚のイメージと、レイヤー名、チャンネル名を保持する。">sxsdk::image_layer_interface</a>* <a class="code" href="structsxsdk_1_1rendering__context__interface.html#a099f5271e93ff9d37076b54e7c631440" title="id_name で指定したレンダリングイメージレイヤー">get_image_layer_interface</a> (<span class="keyword">const</span> <span class="keywordtype">char</span>* id_name, <span class="keywordtype">void</span>* aux = 0) <span class="keyword">const</span>;
+<a name="l00204"></a>00204     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1image__layer__interface.html" title="１枚のイメージレイヤーを表すクラス。１枚のイメージと、レイヤー名、チャンネル名を保持する。">sxsdk::image_layer_interface</a>* <a class="code" href="structsxsdk_1_1rendering__context__interface.html#a911d23b25c22b292250725764047ceef" title="プラグイン、スクリプトで独自に生成したレンダリングイメージレイヤーを取得する">get_custom_image_layer_interface</a> (<span class="keyword">const</span> sx::uuid_class&amp; layer_uuid, <span class="keyword">const</span> <span class="keywordtype">char</span>* id_name, <span class="keywordtype">void</span>* aux = 0) <span class="keyword">const</span>;
+<a name="l00207"></a>00207     <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="structsxsdk_1_1rendering__context__interface.html#a39b507e13254a043d974bbe15ecc5ffe" title="レンダリングイメージレイヤーの数を取得する">get_number_of_image_layers</a> (<span class="keywordtype">int</span> type = -1, <span class="keywordtype">void</span>* aux = 0) <span class="keyword">const</span>;
+<a name="l00216"></a>00216     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1image__layer__interface.html" title="１枚のイメージレイヤーを表すクラス。１枚のイメージと、レイヤー名、チャンネル名を保持する。">sxsdk::image_layer_interface</a>* <a class="code" href="structsxsdk_1_1rendering__context__interface.html#a93153bb7ec2ee56468de727d40023428" title="index, type からレンダリングイメージレイヤーを取得する。">get_image_layer_interface_by_index</a> (<span class="keywordtype">unsigned</span> index, <span class="keywordtype">int</span> type = -1, <span class="keywordtype">void</span>* aux = 0) <span class="keyword">const</span>;
+<a name="l00221"></a>00221     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="structsxsdk_1_1rendering__context__interface.html#ad801f4f7320546a75447c2495b48c956" title="convert() 中のカレント形状が選択されているかどうかを取得する。">get_active</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00226"></a>00226     <span class="keyword">virtual</span> <span class="keywordtype">float</span> <a class="code" href="structsxsdk_1_1rendering__context__interface.html#a94eddeedce0239b07de255329fb57d4a" title="カレントのフレーム値(float)を取得する。">get_current_frame</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00227"></a>00227 };
+<a name="l00228"></a>00228 } <span class="comment">// sxsdk</span>
 </pre></div></div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><b>renderingcontextinterface.h</b>      </li>
 <br><br>
 <hr>
 <div align="center">Copyright &copy; e frontier, Inc. All rights reserved.</div>

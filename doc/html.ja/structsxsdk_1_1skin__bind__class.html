@@ -4,52 +4,91 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <title>構造体 sxsdk::skin_bind_class</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<!-- 作成： Doxygen 1.6.1 -->
-<div class="navigation" id="top">
-  <div class="tabs">
-    <ul>
-      <li><a href="main.html"><span>メインページ</span></a></li>
+<!-- 作成： Doxygen 1.7.4 -->
+<div id="top">
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
       <li><a href="pages.html"><span>関連ページ</span></a></li>
       <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
       <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
       <li><a href="files.html"><span>ファイル</span></a></li>
     </ul>
   </div>
-  <div class="tabs">
-    <ul>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
       <li><a href="annotated.html"><span>構成</span></a></li>
       <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
       <li><a href="functions.html"><span>構成メンバ</span></a></li>
     </ul>
   </div>
-  <div class="navpath"><a class="el" href="namespacesxsdk.html">sxsdk</a>::<a class="el" href="structsxsdk_1_1skin__bind__class.html">skin_bind_class</a>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
   </div>
 </div>
+<script type="text/javascript">
+  initNavTree('structsxsdk_1_1skin__bind__class.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public メソッド</a>  </div>
+  <div class="headertitle">
+<div class="title">構造体 sxsdk::skin_bind_class</div>  </div>
+</div>
 <div class="contents">
-<h1>構造体 sxsdk::skin_bind_class</h1><!-- doxytag: class="sxsdk::skin_bind_class" -->
+<!-- doxytag: class="sxsdk::skin_bind_class" -->
+<p>スキンにバインドされたジョイントの情報と荷重の取得と設定に使用する。  
+ <a href="structsxsdk_1_1skin__bind__class.html#details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="skinclass_8h_source.html">skinclass.h</a>&gt;</code></p>
+
 <p><a href="structsxsdk_1_1skin__bind__class-members.html">すべてのメンバ一覧</a></p>
-<table border="0" cellpadding="0" cellspacing="0">
-<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad97c0d7e0303dafec6b3b8adecdca41d"></a><!-- doxytag: member="sxsdk::skin_bind_class::get_shape" ref="ad97c0d7e0303dafec6b3b8adecdca41d" args="(void *=0) const " -->
-virtual <a class="el" href="structsxsdk_1_1shape__class.html">sxsdk::shape_class</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1skin__bind__class.html#ad97c0d7e0303dafec6b3b8adecdca41d">get_shape</a> (void *=0) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">スキンがバインドされた対象のジョイント形状を取得する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a053575061809ba1bdbf7a8b90deb06de"></a><!-- doxytag: member="sxsdk::skin_bind_class::set_shape" ref="a053575061809ba1bdbf7a8b90deb06de" args="(sxsdk::shape_class *shape_param, void *=0)" -->
-virtual <a class="el" href="structsxsdk_1_1skin__bind__class.html">skin_bind_class</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1skin__bind__class.html#a053575061809ba1bdbf7a8b90deb06de">set_shape</a> (<a class="el" href="structsxsdk_1_1shape__class.html">sxsdk::shape_class</a> *shape_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">スキンがバインドされた対象のジョイント形状を設定する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a35f7ef91e1e7dd2382dd0792f827dbbc"></a><!-- doxytag: member="sxsdk::skin_bind_class::get_weight" ref="a35f7ef91e1e7dd2382dd0792f827dbbc" args="(void *=0) const " -->
-virtual float&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1skin__bind__class.html#a35f7ef91e1e7dd2382dd0792f827dbbc">get_weight</a> (void *=0) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">バインディングの荷重を取得する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad2898d072a9d8f7eca7e59d9ae7c174b"></a><!-- doxytag: member="sxsdk::skin_bind_class::set_weight" ref="ad2898d072a9d8f7eca7e59d9ae7c174b" args="(float weight_param, void *=0)" -->
-virtual <a class="el" href="structsxsdk_1_1skin__bind__class.html">skin_bind_class</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1skin__bind__class.html#ad2898d072a9d8f7eca7e59d9ae7c174b">set_weight</a> (float weight_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">バインディングの荷重を設定する。 <br/></td></tr>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1ff8ebfcdf17ee7929f8378f16e506b9"></a><!-- doxytag: member="sxsdk::skin_bind_class::get_shape" ref="a1ff8ebfcdf17ee7929f8378f16e506b9" args="(void *=nullptr) const " -->
+virtual <a class="el" href="structsxsdk_1_1shape__class.html">sxsdk::shape_class</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1skin__bind__class.html#a1ff8ebfcdf17ee7929f8378f16e506b9">get_shape</a> (void *=nullptr) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">スキンがバインドされた対象のジョイント形状を取得する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af945c3562a50bef94dbc0949c6d3cd02"></a><!-- doxytag: member="sxsdk::skin_bind_class::set_shape" ref="af945c3562a50bef94dbc0949c6d3cd02" args="(sxsdk::shape_class *shape_param, void *=nullptr)" -->
+virtual <a class="el" href="structsxsdk_1_1skin__bind__class.html">skin_bind_class</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1skin__bind__class.html#af945c3562a50bef94dbc0949c6d3cd02">set_shape</a> (<a class="el" href="structsxsdk_1_1shape__class.html">sxsdk::shape_class</a> *shape_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">スキンがバインドされた対象のジョイント形状を設定する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0602490f31d1f9c59cf0356d944b8172"></a><!-- doxytag: member="sxsdk::skin_bind_class::get_weight" ref="a0602490f31d1f9c59cf0356d944b8172" args="(void *=nullptr) const " -->
+virtual float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1skin__bind__class.html#a0602490f31d1f9c59cf0356d944b8172">get_weight</a> (void *=nullptr) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">バインディングの荷重を取得する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afcaaf4e7cbe052112f5fc5e7f8ef77a6"></a><!-- doxytag: member="sxsdk::skin_bind_class::set_weight" ref="afcaaf4e7cbe052112f5fc5e7f8ef77a6" args="(float weight_param, void *=nullptr)" -->
+virtual <a class="el" href="structsxsdk_1_1skin__bind__class.html">skin_bind_class</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1skin__bind__class.html#afcaaf4e7cbe052112f5fc5e7f8ef77a6">set_weight</a> (float weight_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">バインディングの荷重を設定する。 <br/></td></tr>
 </table>
-<hr/>この構造体の説明は次のファイルから生成されました:<ul>
+<hr/><a name="details" id="details"></a><h2>説明</h2>
+<div class="textblock"><p>スキンにバインドされたジョイントの情報と荷重の取得と設定に使用する。 </p>
+<p>以下の関数でこのクラスを直接取得する。これ以外に関数の引数として渡される場合がある。</p>
+<p><code><a class="el" href="structsxsdk_1_1skin__class.html#ab857fdabe5aa020da6a09704fcdb9397" title="指定されたバインドを取得する。">skin_class::get_bind()</a></code> </p>
+</div><hr/>この構造体の説明は次のファイルから生成されました:<ul>
 <li><a class="el" href="skinclass_8h_source.html">skinclass.h</a></li>
 </ul>
 </div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><b>sxsdk</b>      </li>
+      <li class="navelem"><a class="el" href="structsxsdk_1_1skin__bind__class.html">skin_bind_class</a>      </li>
 <br><br>
 <hr>
 <div align="center">Copyright &copy; e frontier, Inc. All rights reserved.</div>

@@ -4,61 +4,92 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <title>pluginexporterinterface.h ソースファイル</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<!-- 作成： Doxygen 1.6.1 -->
-<div class="navigation" id="top">
-  <div class="tabs">
-    <ul>
-      <li><a href="main.html"><span>メインページ</span></a></li>
+<!-- 作成： Doxygen 1.7.4 -->
+<div id="top">
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
       <li><a href="pages.html"><span>関連ページ</span></a></li>
       <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
       <li><a href="annotated.html"><span>クラス</span></a></li>
       <li class="current"><a href="files.html"><span>ファイル</span></a></li>
     </ul>
   </div>
-  <div class="tabs">
-    <ul>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
       <li><a href="files.html"><span>ファイル一覧</span></a></li>
       <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
     </ul>
   </div>
-<h1>pluginexporterinterface.h</h1><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// this file has been created by makeheader.py</span>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+  initNavTree('pluginexporterinterface_8h.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">pluginexporterinterface.h</div>  </div>
+</div>
+<div class="contents">
+<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// this file has been created by makeheader.py</span>
 <a name="l00002"></a>00002 <span class="comment">// ja utf-8</span>
 <a name="l00003"></a>00003 <span class="preprocessor">#pragma once</span>
-<a name="l00014"></a>00014 <span class="preprocessor">namespace sxsdk {</span>
-<a name="l00015"></a><a class="code" href="structsxsdk_1_1plugin__exporter__interface.html">00015</a> <span class="preprocessor"></span><span class="keyword">struct </span><a class="code" href="structsxsdk_1_1plugin__exporter__interface.html">plugin_exporter_interface</a> : <span class="keyword">public</span> <a class="code" href="structsxsdk_1_1shade__interface.html">shade_interface</a> {
+<a name="l00004"></a>00004 <span class="preprocessor"></span><span class="keyword">namespace </span>sxsdk {
+<a name="l00015"></a><a class="code" href="structsxsdk_1_1plugin__exporter__interface.html">00015</a> <span class="keyword">struct </span><a class="code" href="structsxsdk_1_1plugin__exporter__interface.html" title="エクスポートに関する（エクスポートの最中にのみ有効な）各種情報を保持する。">plugin_exporter_interface</a> : <span class="keyword">public</span> <a class="code" href="structsxsdk_1_1shade__interface.html" title="Shadeの情報へのアクセスの基本となるインターフェイス">shade_interface</a> {
 <a name="l00016"></a>00016 <span class="keyword">public</span>:
-<a name="l00021"></a>00021     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1scene__interface.html">sxsdk::scene_interface</a>* get_scene_interface (<span class="keywordtype">void</span> * = 0) <span class="keyword">const</span>;
-<a name="l00026"></a>00026     <span class="keyword">virtual</span> <span class="keywordtype">void</span> do_export (<span class="keywordtype">void</span>* aux = 0);
-<a name="l00031"></a>00031     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1stream__interface.html">sxsdk::stream_interface</a>* get_stream_interface (<span class="keywordtype">void</span>* aux = 0);
-<a name="l00036"></a>00036     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1text__stream__interface.html">text_stream_interface</a>* get_text_stream_interface (<span class="keywordtype">void</span>* aux = 0);
+<a name="l00021"></a>00021     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1scene__interface.html" title="シーンの情報の取得・設定に使用する。">sxsdk::scene_interface</a>* <a class="code" href="structsxsdk_1_1plugin__exporter__interface.html#adf868801bb56e19920965f946c249d89" title="エクスポートするシーンを取得する。">get_scene_interface</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00026"></a>00026     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structsxsdk_1_1plugin__exporter__interface.html#a0140ac2dc4df0fa8c4d3bd0b7995602d" title="エクスポート処理を開始する。この関数の呼び出しはexporter_interface::do_export() 内で行う。">do_export</a> (<span class="keywordtype">void</span>* aux = 0);
+<a name="l00031"></a>00031     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1stream__interface.html" title="属性ストリームやファイルの読み込み、書き込みに使用します。">sxsdk::stream_interface</a>* <a class="code" href="structsxsdk_1_1plugin__exporter__interface.html#af5fea325af10e34b6681f93d12066e6a" title="エクスポートするファイルのストリームを取得する。">get_stream_interface</a> (<span class="keywordtype">void</span>* aux = 0);
+<a name="l00036"></a>00036     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1text__stream__interface.html" title="テキストファイルの読み込み、書き込みに使用するストリーム">text_stream_interface</a>* <a class="code" href="structsxsdk_1_1plugin__exporter__interface.html#abd5c998fb27d221a50893d4742b103ba" title="エクスポートするファイルのテキストストリームを取得する。">get_text_stream_interface</a> (<span class="keywordtype">void</span>* aux = 0);
 <a name="l00037"></a>00037     <span class="keyword">virtual</span> shape_interface* get_current_shape_interface (<span class="keywordtype">void</span>* aux = 0);
-<a name="l00039"></a>00039     <span class="keyword">virtual</span> sxsdk::mat4 get_transformation (<span class="keywordtype">void</span>* aux = 0);
-<a name="l00041"></a>00041     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> get_all_objects (<span class="keywordtype">void</span>* aux = 0);
-<a name="l00043"></a>00043     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1shade__interface.html">shade_interface</a>* get_shade_interface (<span class="keywordtype">void</span>* aux = 0);
-<a name="l00048"></a>00048     <span class="keyword">virtual</span> <span class="keywordtype">void</span> yield (<span class="keywordtype">void</span>* aux = 0);
-<a name="l00050"></a>00050     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> get_flip_face_shade (<span class="keywordtype">void</span>* aux = 0);
-<a name="l00052"></a>00052     <span class="keyword">virtual</span> <span class="keywordtype">int</span> get_fnum (<span class="keywordtype">void</span>* aux = 0);
-<a name="l00057"></a>00057     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> get_binary (<span class="keywordtype">void</span>* aux = 0);
+<a name="l00039"></a>00039     <span class="keyword">virtual</span> sxsdk::mat4 <a class="code" href="structsxsdk_1_1plugin__exporter__interface.html#af456762d402b05d8111e8470128f0563" title="変換マトリクスを取得する。">get_transformation</a> (<span class="keywordtype">void</span>* aux = 0);
+<a name="l00041"></a>00041     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="structsxsdk_1_1plugin__exporter__interface.html#aba30158017e120b85c113f4fd21e76df" title="エクスポートの設定ダイアログで「すべての形状」を出力が選択されているかを返す。">get_all_objects</a> (<span class="keywordtype">void</span>* aux = 0);
+<a name="l00043"></a>00043     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1shade__interface.html" title="Shadeの情報へのアクセスの基本となるインターフェイス">shade_interface</a>* <a class="code" href="structsxsdk_1_1plugin__exporter__interface.html#acac543b739ae2342d848796d9d602ab8" title="shade_interfaceを取得する。">get_shade_interface</a> (<span class="keywordtype">void</span>* aux = 0);
+<a name="l00048"></a>00048     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structsxsdk_1_1plugin__exporter__interface.html#a97e586e1cacbd10b8d139149a3ae38b7" title="プログラムの制御をShadeに渡す。">yield</a> (<span class="keywordtype">void</span>* aux = 0);
+<a name="l00050"></a>00050     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="structsxsdk_1_1plugin__exporter__interface.html#a1bbd79f9e99db81cb7c4de13ecfa6905" title="面を裏返すかどうかを取得する。">get_flip_face_shade</a> (<span class="keywordtype">void</span>* aux = 0);
+<a name="l00052"></a>00052     <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="structsxsdk_1_1plugin__exporter__interface.html#a2328c6522f58e74a74e4776da455fec7" title="出力先のファイル識別番号を取得する。">get_fnum</a> (<span class="keywordtype">void</span>* aux = 0);
+<a name="l00057"></a>00057     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="structsxsdk_1_1plugin__exporter__interface.html#a70a95959ed4fdb823d8ab273dcafc893" title="バイナリデータで出力するかどうかを取得を取得する。">get_binary</a> (<span class="keywordtype">void</span>* aux = 0);
 <a name="l00058"></a>00058     <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* get_file_spec_obsolete (<span class="keywordtype">void</span>* aux = 0);
-<a name="l00060"></a>00060     <span class="keyword">virtual</span> <span class="keywordtype">void</span> delete_file (<span class="keywordtype">void</span>* aux = 0);
-<a name="l00062"></a>00062     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1shape__class.html">sxsdk::shape_class</a>* get_current_shape (<span class="keywordtype">void</span>* aux = 0);
-<a name="l00064"></a>00064     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> get_flip_face (<span class="keywordtype">void</span>* aux = 0);
-<a name="l00069"></a>00069     <span class="keyword">virtual</span> <span class="keywordtype">int</span> get_subdivision_level (<span class="keywordtype">void</span>* aux = 0);
+<a name="l00060"></a>00060     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structsxsdk_1_1plugin__exporter__interface.html#aa5ad5eccdf9d9db2c5f0e1e689ef13c8" title="出力先のファイルを削除する。必ず、exporter_interface::clean_up() で呼び出す。">delete_file</a> (<span class="keywordtype">void</span>* aux = 0);
+<a name="l00062"></a>00062     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1shape__class.html" title="すべての種類の形状に共通する操作を扱う基本クラス">sxsdk::shape_class</a>* <a class="code" href="structsxsdk_1_1plugin__exporter__interface.html#ad5751a564f67bff6aa46a936240f436a" title="現在処理中の形状を取得する。">get_current_shape</a> (<span class="keywordtype">void</span>* aux = 0);
+<a name="l00064"></a>00064     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="structsxsdk_1_1plugin__exporter__interface.html#a60f844a8bd91c5c0d642e39b01ded97b" title="面が反転されているかどうかを取得する。">get_flip_face</a> (<span class="keywordtype">void</span>* aux = 0);
+<a name="l00069"></a>00069     <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="structsxsdk_1_1plugin__exporter__interface.html#a87a4d1ba5bcaa4a98d09e8ea85c818c6" title="再分割のレベルを返す。0:分割しない（または最低限の分割）、1:荒い分割、2:普通の分割、3:細かい分割....">get_subdivision_level</a> (<span class="keywordtype">void</span>* aux = 0);
 <a name="l00070"></a>00070 <span class="preprocessor">#ifndef DOXYGEN_SKIP</span>
 <a name="l00071"></a>00071 <span class="preprocessor"></span>    <span class="keyword">virtual</span> <span class="keywordtype">int</span> plugin_exporter_interface_dummy16(<span class="keywordtype">void</span> *) { assert(<span class="keyword">false</span>); <span class="keywordflow">throw</span> <span class="stringliteral">&quot;invalid interface plugin_exporter_interface&quot;</span>; <span class="keywordflow">return</span> 0; } <span class="comment">// 16</span>
 <a name="l00072"></a>00072 <span class="preprocessor">#endif</span>
-<a name="l00074"></a>00074 <span class="preprocessor">    virtual bool get_render (void* aux = 0);</span>
-<a name="l00079"></a>00079 <span class="preprocessor">    virtual proxy_shape_class* get_current_proxy_shape (void* aux = 0);</span>
-<a name="l00084"></a>00084 <span class="preprocessor">    virtual proxy_shape_class* get_root_proxy_shape (void* aux = 0);</span>
-<a name="l00089"></a>00089 <span class="preprocessor">    virtual const char* get_file_path (void* aux = 0);</span>
-<a name="l00094"></a>00094 <span class="preprocessor">    virtual bool get_active (void * = 0) const;</span>
-<a name="l00099"></a>00099 <span class="preprocessor">    virtual int get_rendering_flag (void * = 0) const;</span>
-<a name="l00100"></a>00100 <span class="preprocessor"></span>};
+<a name="l00073"></a>00073 <span class="preprocessor"></span>
+<a name="l00074"></a>00074     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="structsxsdk_1_1plugin__exporter__interface.html#a84749f940d9df0f82da48d168af5ba90" title="レンダリング対象の形状かどうかを返す。">get_render</a> (<span class="keywordtype">void</span>* aux = 0);
+<a name="l00079"></a>00079     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1proxy__shape__class.html" title="プロクシ形状に関する操作を扱うクラス">proxy_shape_class</a>* <a class="code" href="structsxsdk_1_1plugin__exporter__interface.html#a393954c2e5cb319c72390efd0d4a21b5" title="現在処理中の形状のプロクシ形状を取得する。">get_current_proxy_shape</a> (<span class="keywordtype">void</span>* aux = 0);
+<a name="l00084"></a>00084     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1proxy__shape__class.html" title="プロクシ形状に関する操作を扱うクラス">proxy_shape_class</a>* <a class="code" href="structsxsdk_1_1plugin__exporter__interface.html#a659501fe48f01435fa44c12875904b81" title="ルートパートのプロクシ形状を取得する。">get_root_proxy_shape</a> (<span class="keywordtype">void</span>* aux = 0);
+<a name="l00089"></a>00089     <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="structsxsdk_1_1plugin__exporter__interface.html#aec13fb59656d9242dcf618124d3c3c9e" title="出力先のファイルのパスを取得する。">get_file_path</a> (<span class="keywordtype">void</span>* aux = 0);
+<a name="l00094"></a>00094     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="structsxsdk_1_1plugin__exporter__interface.html#ac895d21845b3861d8fba588b28f6bed4" title="カレントの形状が選択されているかどうかかどうかを返す。を取得する。">get_active</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00099"></a>00099     <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="structsxsdk_1_1plugin__exporter__interface.html#a6bf79f11092306790c97c0041ac82725" title="カレントの形状の「レンダリング」チェックボックスの継承結果(1: オン, 0: オフ, -1: 継承)を取得する。">get_rendering_flag</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00100"></a>00100 };
 <a name="l00101"></a>00101 } <span class="comment">// sxsdk</span>
 </pre></div></div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><b>pluginexporterinterface.h</b>      </li>
 <br><br>
 <hr>
 <div align="center">Copyright &copy; e frontier, Inc. All rights reserved.</div>

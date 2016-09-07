@@ -1,7 +1,8 @@
 #pragma once
 
 namespace sxsdk {
-	class image_layer_interface : public shade_interface {
+	class
+	image_layer_interface : public shade_interface {
 	public:
 	virtual sxsdk::image_interface* get_image_interface (void * = 0) const = 0; // 0
 	virtual image_layer_interface &set_name (const char* name_param, void * = 0) = 0; // 1

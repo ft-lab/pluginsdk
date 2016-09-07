@@ -424,7 +424,7 @@ namespace sxsdk {
 	virtual void set_tag_stringValue (sxsdk::shape_class& shape, const char* tagName, const char* value) = 0; // 381
 	virtual void set_tag_boolValue (sxsdk::shape_class& shape, const char* tagName, bool value) = 0; // 382
 	virtual int tag_value_type (sxsdk::shape_class& shape, const char* tagName) = 0; // 383
-	virtual std::vector<const char*> tags (sxsdk::shape_class& shape) = 0; // 384
+	virtual std::vector<const char*> tags_obsolete (sxsdk::shape_class& shape) = 0; // 384
 	virtual bool has_tag (sxsdk::shape_class& shape, const char* tagName) = 0; // 385
 	virtual void remove_tag (sxsdk::shape_class& shape, const char* tagName) = 0; // 386
 	virtual const sx::uuid_class uuid (const sxsdk::shape_class& shape) = 0; // 387
@@ -473,7 +473,8 @@ namespace sxsdk {
 	virtual bool open_backup (const char * file_path, const char * output_folder, int flags) = 0; // 430
 	virtual void window_set_table_string_value (sxsdk::window_interface& w, plugin_table_control_class& c, int row, int col, const char* value) = 0; // 431
 	virtual const char* window_get_table_string_value (window_interface& w, plugin_table_control_class& c, int row, int col) = 0; // 432
-	virtual int get_numof_file_paths () = 0; // 433
+	virtual int get_number_of_file_paths () = 0; // 433
+		int get_numof_file_paths () { return get_number_of_file_paths(); }
 	virtual sxsdk::image_interface* create_image_interface_from_index (int file_index) = 0; // 434
 	virtual void set_bounding_box_size (sxsdk::shape_class& shape, sxsdk::vec3 bounding_box_size) = 0; // 435
 	virtual sxsdk::vec3 get_bounding_box_size (const sxsdk::shape_class& shape) const = 0; // 436
@@ -491,7 +492,7 @@ namespace sxsdk {
 	virtual bool control_get_active (xshade::control::control_class& control) = 0; // 448
 	virtual int control_get_focused (xshade::control::control_class& control) = 0; // 449
 	virtual int implementation_interface_dummy450(void *) { assert(false); throw "invalid interface implementation_interface"; return 0; } // 450
-	virtual int implementation_interface_dummy451(void *) { assert(false); throw "invalid interface implementation_interface"; return 0; } // 451
+	virtual int get_tags (const sxsdk::shape_class& shape, const char ** list) = 0; // 451
 	virtual int implementation_interface_dummy452(void *) { assert(false); throw "invalid interface implementation_interface"; return 0; } // 452
 	virtual int implementation_interface_dummy453(void *) { assert(false); throw "invalid interface implementation_interface"; return 0; } // 453
 	virtual int implementation_interface_dummy454(void *) { assert(false); throw "invalid interface implementation_interface"; return 0; } // 454
@@ -549,5 +550,23 @@ namespace sxsdk {
 	virtual void view_set_gridmanager_window_shown (bool view_set_gridmanager_window_shown_param) = 0; // 506
 	virtual bool view_get_gridmanager_window_shown () = 0; // 507
 	virtual gridmanager_view_interface* view_get_gridmanager_view_interface () = 0; // 508
+	virtual bool is_appstore_version () = 0; // 509
+	virtual bool is_full () = 0; // 510
+	virtual bool is_surface_replicator (const sxsdk::shape_class& shape) = 0; // 511
+	virtual sxsdk::surface_replicator_interface* get_surface_replicator_interface (const sxsdk::shape_class& shape) = 0; // 512
+	virtual int get_skin_type (const sxsdk::shape_class& shape) const = 0; // 513
+	virtual void set_skin_type (sxsdk::shape_class& shape_, int method) = 0; // 514
+	virtual sxsdk::bone_joint_interface* get_bone_joint_interface (const sxsdk::shape_class& shape) = 0; // 515
+	virtual bool is_bone_joint (const sxsdk::shape_class& shape) = 0; // 516
+	virtual void unlink_master_surface (const sxsdk::shape_class& shape, bool deep) = 0; // 517
+	virtual bool is_unity_version () = 0; // 518
+	virtual bool is_game_kit_version () = 0; // 519
+	virtual sxsdk::batch_rendering_interface* get_batch_rendering_interface () = 0; // 520
+	virtual sxsdk::rendering_history_interface* get_rendering_history_interface () = 0; // 521
+	virtual const char* get_user_shade_doc_path () = 0; // 522
+	virtual void move_file (const char * move_path, const char * to_path) = 0; // 523
+	virtual void copy_file (const char * copy_path, const char * to_path) = 0; // 524
+	virtual void delete_file (const char * file_path) = 0; // 525
+	virtual void remove_directory_and_files (const char * file_path) = 0; // 526
 	};
 }

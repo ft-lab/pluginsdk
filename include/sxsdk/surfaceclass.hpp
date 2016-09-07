@@ -6,7 +6,11 @@ namespace model {
 // end
 
 namespace sxsdk {
-	class surface_class {
+	class
+	// implementation
+	SXMODEL
+	// end
+	surface_class {
 	public:
 		virtual ~surface_class () { }
 		VTABLE_PADDING

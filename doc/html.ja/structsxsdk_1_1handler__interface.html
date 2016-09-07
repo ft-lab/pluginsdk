@@ -4,85 +4,116 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <title>構造体 sxsdk::handler_interface</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<!-- 作成： Doxygen 1.6.1 -->
-<div class="navigation" id="top">
-  <div class="tabs">
-    <ul>
-      <li><a href="main.html"><span>メインページ</span></a></li>
+<!-- 作成： Doxygen 1.7.4 -->
+<div id="top">
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
       <li><a href="pages.html"><span>関連ページ</span></a></li>
       <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
       <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
       <li><a href="files.html"><span>ファイル</span></a></li>
     </ul>
   </div>
-  <div class="tabs">
-    <ul>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
       <li><a href="annotated.html"><span>構成</span></a></li>
       <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
       <li><a href="functions.html"><span>構成メンバ</span></a></li>
     </ul>
   </div>
-  <div class="navpath"><a class="el" href="namespacesxsdk.html">sxsdk</a>::<a class="el" href="structsxsdk_1_1handler__interface.html">handler_interface</a>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
   </div>
 </div>
-<div class="contents">
-<h1>構造体 sxsdk::handler_interface</h1><!-- doxytag: class="sxsdk::handler_interface" --><!-- doxytag: inherits="sxsdk::plugin_interface" --><div class="dynheader">
-sxsdk::handler_interfaceに対する継承グラフ</div>
-<div class="dynsection">
- <div class="center">
-  <img src="structsxsdk_1_1handler__interface.gif" usemap="#sxsdk::handler_interface_map" alt=""/>
-  <map id="sxsdk::handler_interface_map" name="sxsdk::handler_interface_map">
-<area href="structsxsdk_1_1plugin__interface.html" alt="sxsdk::plugin_interface" shape="rect" coords="0,56,295,80"/>
-<area href="classunknown__interface.html" alt="unknown_interface" shape="rect" coords="0,0,295,24"/>
-<area href="structsxsdk_1_1window__interface_1_1control__base__class.html" alt="sxsdk::window_interface::control_base_class" shape="rect" coords="0,168,295,192"/>
-<area href="structsxsdk_1_1window__interface_1_1checkbox__class.html" alt="sxsdk::window_interface::checkbox_class" shape="rect" coords="305,224,600,248"/>
-<area href="structsxsdk_1_1window__interface_1_1color__box__class.html" alt="sxsdk::window_interface::color_box_class" shape="rect" coords="305,280,600,304"/>
-<area href="structsxsdk_1_1window__interface_1_1color__disk__class.html" alt="sxsdk::window_interface::color_disk_class" shape="rect" coords="305,336,600,360"/>
-<area href="structsxsdk_1_1window__interface_1_1disclosure__button__class.html" alt="sxsdk::window_interface::disclosure_button_class" shape="rect" coords="305,392,600,416"/>
-<area href="structsxsdk_1_1window__interface_1_1editable__text__class.html" alt="sxsdk::window_interface::editable_text_class" shape="rect" coords="305,448,600,472"/>
-<area href="structsxsdk_1_1window__interface_1_1flasher__class.html" alt="sxsdk::window_interface::flasher_class" shape="rect" coords="305,504,600,528"/>
-<area href="structsxsdk_1_1window__interface_1_1image__box__class.html" alt="sxsdk::window_interface::image_box_class" shape="rect" coords="305,560,600,584"/>
-<area href="structsxsdk_1_1window__interface_1_1matrix__control__class.html" alt="sxsdk::window_interface::matrix_control_class" shape="rect" coords="305,616,600,640"/>
-<area href="structsxsdk_1_1window__interface_1_1number__class.html" alt="sxsdk::window_interface::number_class" shape="rect" coords="305,672,600,696"/>
-<area href="structsxsdk_1_1window__interface_1_1popup__menu__class.html" alt="sxsdk::window_interface::popup_menu_class" shape="rect" coords="305,728,600,752"/>
-<area href="structsxsdk_1_1window__interface_1_1push__button__class.html" alt="sxsdk::window_interface::push_button_class" shape="rect" coords="305,784,600,808"/>
-<area href="structsxsdk_1_1window__interface_1_1quaternion__control__class.html" alt="sxsdk::window_interface::quaternion_control_class" shape="rect" coords="305,840,600,864"/>
-<area href="structsxsdk_1_1window__interface_1_1radio__button__class.html" alt="sxsdk::window_interface::radio_button_class" shape="rect" coords="305,896,600,920"/>
-<area href="structsxsdk_1_1window__interface_1_1scale__control__class.html" alt="sxsdk::window_interface::scale_control_class" shape="rect" coords="305,952,600,976"/>
-<area href="structsxsdk_1_1window__interface_1_1slider__class.html" alt="sxsdk::window_interface::slider_class" shape="rect" coords="305,1008,600,1032"/>
-<area href="structsxsdk_1_1window__interface_1_1static__text__class.html" alt="sxsdk::window_interface::static_text_class" shape="rect" coords="305,1064,600,1088"/>
-<area href="structsxsdk_1_1window__interface_1_1tab__class.html" alt="sxsdk::window_interface::tab_class" shape="rect" coords="305,1120,600,1144"/>
-<area href="structsxsdk_1_1window__interface_1_1table__control__class.html" alt="sxsdk::window_interface::table_control_class" shape="rect" coords="305,1176,600,1200"/>
-<area href="structsxsdk_1_1window__interface_1_1vec2__control__class.html" alt="sxsdk::window_interface::vec2_control_class" shape="rect" coords="305,1232,600,1256"/>
-<area href="structsxsdk_1_1window__interface_1_1vec3__control__class.html" alt="sxsdk::window_interface::vec3_control_class" shape="rect" coords="305,1288,600,1312"/>
-<area href="structsxsdk_1_1window__interface_1_1vec4__control__class.html" alt="sxsdk::window_interface::vec4_control_class" shape="rect" coords="305,1344,600,1368"/>
-</map>
- </div>
+<script type="text/javascript">
+  initNavTree('structsxsdk_1_1handler__interface.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public メソッド</a>  </div>
+  <div class="headertitle">
+<div class="title">構造体 sxsdk::handler_interface</div>  </div>
 </div>
+<div class="contents">
+<!-- doxytag: class="sxsdk::handler_interface" --><!-- doxytag: inherits="sxsdk::plugin_interface" -->
+<p><code><a class="el" href="structsxsdk_1_1window__interface.html" title="ウインドウプラグインの基本クラス">window_interface</a></code> のコントロールの基本クラス。コントロールへのハンドリングを扱う。  
+ <a href="structsxsdk_1_1handler__interface.html#details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="handlerinterface_8h_source.html">handlerinterface.h</a>&gt;</code></p>
+<div class="dynheader">
+sxsdk::handler_interfaceに対する継承グラフ</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="structsxsdk_1_1handler__interface.png" usemap="#sxsdk::handler_interface_map" alt=""/>
+  <map id="sxsdk::handler_interface_map" name="sxsdk::handler_interface_map">
+<area href="structsxsdk_1_1plugin__interface.html" title="プラグインの基本クラス" alt="sxsdk::plugin_interface" shape="rect" coords="0,56,295,80"/>
+<area href="classunknown__interface.html" alt="unknown_interface" shape="rect" coords="0,0,295,24"/>
+<area href="structsxsdk_1_1window__interface_1_1control__base__class.html" title="コントロール基底クラス" alt="sxsdk::window_interface::control_base_class" shape="rect" coords="0,168,295,192"/>
+<area href="structsxsdk_1_1window__interface_1_1checkbox__class.html" title="チェックボックス" alt="sxsdk::window_interface::checkbox_class" shape="rect" coords="305,224,600,248"/>
+<area href="structsxsdk_1_1window__interface_1_1color__box__class.html" title="カラーボックス" alt="sxsdk::window_interface::color_box_class" shape="rect" coords="305,280,600,304"/>
+<area href="structsxsdk_1_1window__interface_1_1color__disk__class.html" title="カラーディスクコントロール" alt="sxsdk::window_interface::color_disk_class" shape="rect" coords="305,336,600,360"/>
+<area href="structsxsdk_1_1window__interface_1_1disclosure__button__class.html" title="ディスクロージャボタン" alt="sxsdk::window_interface::disclosure_button_class" shape="rect" coords="305,392,600,416"/>
+<area href="structsxsdk_1_1window__interface_1_1editable__text__class.html" title="テキストコントロール" alt="sxsdk::window_interface::editable_text_class" shape="rect" coords="305,448,600,472"/>
+<area href="structsxsdk_1_1window__interface_1_1flasher__class.html" title="フラッシャー" alt="sxsdk::window_interface::flasher_class" shape="rect" coords="305,504,600,528"/>
+<area href="structsxsdk_1_1window__interface_1_1image__box__class.html" title="イメージボックス" alt="sxsdk::window_interface::image_box_class" shape="rect" coords="305,560,600,584"/>
+<area href="structsxsdk_1_1window__interface_1_1matrix__control__class.html" title="matrixコントロール" alt="sxsdk::window_interface::matrix_control_class" shape="rect" coords="305,616,600,640"/>
+<area href="structsxsdk_1_1window__interface_1_1number__class.html" title="数値コントロール" alt="sxsdk::window_interface::number_class" shape="rect" coords="305,672,600,696"/>
+<area href="structsxsdk_1_1window__interface_1_1popup__menu__class.html" title="ポップアップメニューコントロール" alt="sxsdk::window_interface::popup_menu_class" shape="rect" coords="305,728,600,752"/>
+<area href="structsxsdk_1_1window__interface_1_1push__button__class.html" title="プッシュボタン" alt="sxsdk::window_interface::push_button_class" shape="rect" coords="305,784,600,808"/>
+<area href="structsxsdk_1_1window__interface_1_1quaternion__control__class.html" title="クォータニオンコントロール" alt="sxsdk::window_interface::quaternion_control_class" shape="rect" coords="305,840,600,864"/>
+<area href="structsxsdk_1_1window__interface_1_1radio__button__class.html" title="ラジオボタン" alt="sxsdk::window_interface::radio_button_class" shape="rect" coords="305,896,600,920"/>
+<area href="structsxsdk_1_1window__interface_1_1scale__control__class.html" title="スケールコントロール" alt="sxsdk::window_interface::scale_control_class" shape="rect" coords="305,952,600,976"/>
+<area href="structsxsdk_1_1window__interface_1_1slider__class.html" title="スライダコントロール" alt="sxsdk::window_interface::slider_class" shape="rect" coords="305,1008,600,1032"/>
+<area href="structsxsdk_1_1window__interface_1_1static__text__class.html" title="スタティックテクスト" alt="sxsdk::window_interface::static_text_class" shape="rect" coords="305,1064,600,1088"/>
+<area href="structsxsdk_1_1window__interface_1_1tab__class.html" title="タブコントロール" alt="sxsdk::window_interface::tab_class" shape="rect" coords="305,1120,600,1144"/>
+<area href="structsxsdk_1_1window__interface_1_1table__control__class.html" title="テーブルコントロール" alt="sxsdk::window_interface::table_control_class" shape="rect" coords="305,1176,600,1200"/>
+<area href="structsxsdk_1_1window__interface_1_1vec2__control__class.html" title="sxsdk::vec2コントロール" alt="sxsdk::window_interface::vec2_control_class" shape="rect" coords="305,1232,600,1256"/>
+<area href="structsxsdk_1_1window__interface_1_1vec3__control__class.html" title="sxsdk::vec3コントロール" alt="sxsdk::window_interface::vec3_control_class" shape="rect" coords="305,1288,600,1312"/>
+<area href="structsxsdk_1_1window__interface_1_1vec4__control__class.html" title="sxsdk::vec4コントロール" alt="sxsdk::window_interface::vec4_control_class" shape="rect" coords="305,1344,600,1368"/>
+</map>
+ </div></div>
 
 <p><a href="structsxsdk_1_1handler__interface-members.html">すべてのメンバ一覧</a></p>
-<table border="0" cellpadding="0" cellspacing="0">
-<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1handler__interface.html#ad58d67d45e0d68505f1c663162f51396">clicked</a> (int key_flags, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オーバライド可。コントロールがクリックされた時に呼ばれる。  <a href="#ad58d67d45e0d68505f1c663162f51396"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1handler__interface.html#a7dad26149eb13ce28a2861a0ff20229f">draw</a> (<a class="el" href="structsxsdk_1_1graphic__context__interface.html">sxsdk::graphic_context_interface</a> &amp;gc, const sx::rectangle_class &amp;r, bool selected, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オーバライド可。コントロールを描画する時に呼ばれる。  <a href="#a7dad26149eb13ce28a2861a0ff20229f"></a><br/></td></tr>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1handler__interface.html#ad58d67d45e0d68505f1c663162f51396">clicked</a> (int key_flags, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オーバライド可。コントロールがクリックされた時に呼ばれる。  <a href="#ad58d67d45e0d68505f1c663162f51396"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1handler__interface.html#a7dad26149eb13ce28a2861a0ff20229f">draw</a> (<a class="el" href="structsxsdk_1_1graphic__context__interface.html">sxsdk::graphic_context_interface</a> &amp;gc, const sx::rectangle_class &amp;r, bool selected, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オーバライド可。コントロールを描画する時に呼ばれる。  <a href="#a7dad26149eb13ce28a2861a0ff20229f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa5f03b0b0243ac1e8861be18b2069ee6"></a><!-- doxytag: member="sxsdk::handler_interface::focused" ref="aa5f03b0b0243ac1e8861be18b2069ee6" args="(void *aux=0)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1handler__interface.html#aa5f03b0b0243ac1e8861be18b2069ee6">focused</a> (void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オーバライド可。コントロールがフォーカスされたときに呼ばれる。 <br/></td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1handler__interface.html#aa5f03b0b0243ac1e8861be18b2069ee6">focused</a> (void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オーバライド可。コントロールがフォーカスされたときに呼ばれる。 <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a46dea0a5914852f8f2f12009adb0349b"></a><!-- doxytag: member="sxsdk::handler_interface::unfocused" ref="a46dea0a5914852f8f2f12009adb0349b" args="(void *aux=0)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1handler__interface.html#a46dea0a5914852f8f2f12009adb0349b">unfocused</a> (void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オーバライド可。コントロールがフォーカスを失ったときに呼ばれる。 <br/></td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1handler__interface.html#a46dea0a5914852f8f2f12009adb0349b">unfocused</a> (void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オーバライド可。コントロールがフォーカスを失ったときに呼ばれる。 <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5ff1f6c9bfac97663fe31b8c2fd9cdb0"></a><!-- doxytag: member="sxsdk::handler_interface::setup" ref="a5ff1f6c9bfac97663fe31b8c2fd9cdb0" args="(void *aux=0)" -->
-virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1handler__interface.html#a5ff1f6c9bfac97663fe31b8c2fd9cdb0">setup</a> (void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オーバライド可。コントロールの設定時にこの関数が呼ばれる。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1handler__interface.html#a9737d8971ea0a2b8f00cbe10e854f824">value_changed</a> (int key_flags, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オーバライド可。コントロールの値が変更されるとこの関数が呼ばれる。  <a href="#a9737d8971ea0a2b8f00cbe10e854f824"></a><br/></td></tr>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1handler__interface.html#a5ff1f6c9bfac97663fe31b8c2fd9cdb0">setup</a> (void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オーバライド可。コントロールの設定時にこの関数が呼ばれる。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1handler__interface.html#a9737d8971ea0a2b8f00cbe10e854f824">value_changed</a> (int key_flags, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オーバライド可。コントロールの値が変更されるとこの関数が呼ばれる。  <a href="#a9737d8971ea0a2b8f00cbe10e854f824"></a><br/></td></tr>
 </table>
-<hr/><h2>関数</h2>
+<hr/><a name="details" id="details"></a><h2>説明</h2>
+<div class="textblock"><p><code><a class="el" href="structsxsdk_1_1window__interface.html" title="ウインドウプラグインの基本クラス">window_interface</a></code> のコントロールの基本クラス。コントロールへのハンドリングを扱う。 </p>
+</div><hr/><h2>関数</h2>
 <a class="anchor" id="ad58d67d45e0d68505f1c663162f51396"></a><!-- doxytag: member="sxsdk::handler_interface::clicked" ref="ad58d67d45e0d68505f1c663162f51396" args="(int key_flags, void *aux=0)" -->
 <div class="memitem">
 <div class="memproto">
@@ -90,19 +121,19 @@ virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="memname">virtual void sxsdk::handler_interface::clicked </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>key_flags</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>key_flags</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [inline, virtual]</code></td>
+          <td></td><td><code> [inline, virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -110,8 +141,8 @@ virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 
 <p>オーバライド可。コントロールがクリックされた時に呼ばれる。 </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>key_flags</em>&nbsp;</td><td>クリックと同時に押されているキー(option, CTRLなど)を判定するフラグ。<code><a class="el" href="namespacesxsdk_1_1enums.html#affce04a0b4688fe96b878c95e99d3880" title="キーフラグ (過去互換定義： sx::key::key_flag の使用を推奨)">enums::key_flag</a></code> を参照。 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">key_flags</td><td>クリックと同時に押されているキー(option, CTRLなど)を判定するフラグ。<code><a class="el" href="namespacesxsdk_1_1enums.html#affce04a0b4688fe96b878c95e99d3880" title="キーフラグ (過去互換定義： sx::key::key_flag の使用を推奨)">enums::key_flag</a></code> を参照。 </td></tr>
   </table>
   </dd>
 </dl>
@@ -125,31 +156,31 @@ virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="memname">virtual bool sxsdk::handler_interface::draw </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structsxsdk_1_1graphic__context__interface.html">sxsdk::graphic_context_interface</a> &amp;&nbsp;</td>
-          <td class="paramname"> <em>gc</em>, </td>
+          <td class="paramtype"><a class="el" href="structsxsdk_1_1graphic__context__interface.html">sxsdk::graphic_context_interface</a> &amp;&#160;</td>
+          <td class="paramname"><em>gc</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const sx::rectangle_class &amp;&nbsp;</td>
-          <td class="paramname"> <em>r</em>, </td>
+          <td class="paramtype">const sx::rectangle_class &amp;&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&nbsp;</td>
-          <td class="paramname"> <em>selected</em>, </td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>selected</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [inline, virtual]</code></td>
+          <td></td><td><code> [inline, virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -157,10 +188,10 @@ virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 
 <p>オーバライド可。コントロールを描画する時に呼ばれる。 </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>gc</em>&nbsp;</td><td><code><a class="el" href="structsxsdk_1_1graphic__context__interface.html">graphic_context_interface</a></code> の参照型オブジェクト </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>r</em>&nbsp;</td><td>再描画領域 </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>selected</em>&nbsp;</td><td>コントロールの選択状態 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">gc</td><td><code><a class="el" href="structsxsdk_1_1graphic__context__interface.html" title="画像やウィンドウに対する線や図形の描画に使用する。">graphic_context_interface</a></code> の参照型オブジェクト </td></tr>
+    <tr><td class="paramname">r</td><td>再描画領域 </td></tr>
+    <tr><td class="paramname">selected</td><td>コントロールの選択状態 </td></tr>
   </table>
   </dd>
 </dl>
@@ -174,19 +205,19 @@ virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="memname">virtual void sxsdk::handler_interface::value_changed </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>key_flags</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>key_flags</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [inline, virtual]</code></td>
+          <td></td><td><code> [inline, virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -194,8 +225,8 @@ virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 
 <p>オーバライド可。コントロールの値が変更されるとこの関数が呼ばれる。 </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>key_flags</em>&nbsp;</td><td>押されているキー(option, CTRLなど)を判定するフラグ。<code><a class="el" href="namespacesxsdk_1_1enums.html#affce04a0b4688fe96b878c95e99d3880" title="キーフラグ (過去互換定義： sx::key::key_flag の使用を推奨)">enums::key_flag</a></code> を参照。 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">key_flags</td><td>押されているキー(option, CTRLなど)を判定するフラグ。<code><a class="el" href="namespacesxsdk_1_1enums.html#affce04a0b4688fe96b878c95e99d3880" title="キーフラグ (過去互換定義： sx::key::key_flag の使用を推奨)">enums::key_flag</a></code> を参照。 </td></tr>
   </table>
   </dd>
 </dl>
@@ -206,6 +237,11 @@ virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <li><a class="el" href="handlerinterface_8h_source.html">handlerinterface.h</a></li>
 </ul>
 </div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><b>sxsdk</b>      </li>
+      <li class="navelem"><a class="el" href="structsxsdk_1_1handler__interface.html">handler_interface</a>      </li>
 <br><br>
 <hr>
 <div align="center">Copyright &copy; e frontier, Inc. All rights reserved.</div>

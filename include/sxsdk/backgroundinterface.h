@@ -1,7 +1,8 @@
 #pragma once
 
 namespace sxsdk {
-	class background_interface : public shade_interface {
+	class
+	background_interface : public shade_interface {
 	public:
 	virtual void save (const char*const& in, void* aux = 0) = 0; // 0
 	virtual void load (const char*const& from, void* aux = 0) = 0; // 1
@@ -44,5 +45,6 @@ namespace sxsdk {
 	virtual int get_number_of_background_layers (void * = 0) const = 0; // 38
 	virtual void move_up_background_layer (int go, int select = -1, void* aux = 0) = 0; // 39
 	virtual void move_down_background_layer (int go, int select = -1, void* aux = 0) = 0; // 40
+	virtual sxsdk::rgb_class calculate_background_color (const sxsdk::vec3& v, void* aux = 0) = 0; // 41
 	};
 }

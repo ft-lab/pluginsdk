@@ -102,16 +102,26 @@ void lensflare_effector::do_post_effect (void *) {
 	flare_function_class func;
 	const sx::bounds<sx::vec<int,2> > bounds = sx::bounds<sx::vec<int,2> >(rc.get_whole_image_size());
 	const int n = rc.get_number_of_lights();
+
+	// \en Get Multipass Z Buffer \enden  \ja マルチパスのZバッファを取得 \endja
+	compointer<sxsdk::image_layer_interface> image_layer_z(rc.get_image_layer_interface(get_name(sxsdk::multipass::parameter::z_depth)));
+	if (!image_layer_z) return;
+	compointer<sxsdk::image_interface> image_z(image_layer_z->get_image_interface());
+	if (!image_z) return;
 	for (int i = 0; i < n; ++i) {
 		sxsdk::rendering_light_class &light = rc.get_light(i);
 		const sx::vec<float,4> p = light.get_position() * rc.get_world_to_device_matrix();
 		
-		if (0.0f < p.w && 0.0f < p.z && p.z <= p.z) { //  \en Process only the points on the yonder side of the eye point. \enden  \ja 視点より向こう側にある点だけ処理する。 \endja 
+		if (0.0f < p.w && 0.0f < p.z && p.z < p.w) { //  \en Process only the points on the yonder side of the eye point. \enden  \ja 視点より向こう側にある点だけ処理する。 \endja 
 			const sx::vec<float,3> r(p.x/p.w, p.y/p.w, p.z/p.w); //  \en Convert from homogeneous coordinates to normal coordinates. \enden  \ja 斉次座標を通常座標に変換する。 \endja 
 			if (bounds.min.x <= r.x && r.x < bounds.max.x && bounds.min.y <= r.y && r.y < bounds.max.y) {
 				if (image->has_z()) {
 					//  \en Compare the Z values and skip if the light source is hidden. \enden  \ja Z値を比較し、光源が隠れている場合にはスキップする。 \endja 
-					float z; image->get_z(int(r.x+0.5f), int(r.y+0.5f), z);
+					float z;
+					//image->get_z(int(r.x+0.5f), int(r.y+0.5f), z);
+					sxsdk::rgba_class rgba;
+					image_z->get_pixel_rgba_float(int(r.x + 0.5f), int(r.y + 0.5f), rgba);
+					z = rgba.red;
 					if (z < p.z) continue;
 				}
 				image->draw_smudge(sx::vec<float,2>(r), sx::vec<float,2>(size, size), func, false);

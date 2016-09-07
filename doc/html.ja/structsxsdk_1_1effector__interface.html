@@ -4,88 +4,121 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <title>構造体 sxsdk::effector_interface</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<!-- 作成： Doxygen 1.6.1 -->
-<div class="navigation" id="top">
-  <div class="tabs">
-    <ul>
-      <li><a href="main.html"><span>メインページ</span></a></li>
+<!-- 作成： Doxygen 1.7.4 -->
+<div id="top">
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
       <li><a href="pages.html"><span>関連ページ</span></a></li>
       <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
       <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
       <li><a href="files.html"><span>ファイル</span></a></li>
     </ul>
   </div>
-  <div class="tabs">
-    <ul>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
       <li><a href="annotated.html"><span>構成</span></a></li>
       <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
       <li><a href="functions.html"><span>構成メンバ</span></a></li>
     </ul>
   </div>
-  <div class="navpath"><a class="el" href="namespacesxsdk.html">sxsdk</a>::<a class="el" href="structsxsdk_1_1effector__interface.html">effector_interface</a>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
   </div>
 </div>
+<script type="text/javascript">
+  initNavTree('structsxsdk_1_1effector__interface.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public メソッド</a>  </div>
+  <div class="headertitle">
+<div class="title">構造体 sxsdk::effector_interface</div>  </div>
+</div>
 <div class="contents">
-<h1>構造体 sxsdk::effector_interface</h1><!-- doxytag: class="sxsdk::effector_interface" --><!-- doxytag: inherits="sxsdk::plugin_interface" --><div class="dynheader">
+<!-- doxytag: class="sxsdk::effector_interface" --><!-- doxytag: inherits="sxsdk::plugin_interface" -->
+<p>エフェクタプラグインの基本クラス  
+ <a href="structsxsdk_1_1effector__interface.html#details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="effectorinterface_8h_source.html">effectorinterface.h</a>&gt;</code></p>
+<div class="dynheader">
 sxsdk::effector_interfaceに対する継承グラフ</div>
-<div class="dynsection">
+<div class="dyncontent">
  <div class="center">
-  <img src="structsxsdk_1_1effector__interface.gif" usemap="#sxsdk::effector_interface_map" alt=""/>
+  <img src="structsxsdk_1_1effector__interface.png" usemap="#sxsdk::effector_interface_map" alt=""/>
   <map id="sxsdk::effector_interface_map" name="sxsdk::effector_interface_map">
-<area href="structsxsdk_1_1plugin__interface.html" alt="sxsdk::plugin_interface" shape="rect" coords="0,56,150,80"/>
+<area href="structsxsdk_1_1plugin__interface.html" title="プラグインの基本クラス" alt="sxsdk::plugin_interface" shape="rect" coords="0,56,150,80"/>
 <area href="classunknown__interface.html" alt="unknown_interface" shape="rect" coords="0,0,150,24"/>
 </map>
- </div>
-</div>
+ </div></div>
 
 <p><a href="structsxsdk_1_1effector__interface-members.html">すべてのメンバ一覧</a></p>
-<table border="0" cellpadding="0" cellspacing="0">
-<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1effector__interface.html#a45549a04a5ec4b5c2d8da549d297f795">begin</a> (<a class="el" href="structsxsdk_1_1rendering__context__interface.html">rendering_context_interface</a> *rendering_context, <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> *stream, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オーバライド可。レンダリングセッションが開始される時に一度だけ呼ばれる。  <a href="#a45549a04a5ec4b5c2d8da549d297f795"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1effector__interface.html#a275134a791df441f7f90d48363184ba8">ask</a> (<a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> *stream, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オーバライド可。ユーザがエフェクタの設定ボタンをすると、この関数が呼ばれる。  <a href="#a275134a791df441f7f90d48363184ba8"></a><br/></td></tr>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1effector__interface.html#a45549a04a5ec4b5c2d8da549d297f795">begin</a> (<a class="el" href="structsxsdk_1_1rendering__context__interface.html">rendering_context_interface</a> *rendering_context, <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> *stream, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オーバライド可。レンダリングセッションが開始される時に一度だけ呼ばれる。  <a href="#a45549a04a5ec4b5c2d8da549d297f795"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1effector__interface.html#a275134a791df441f7f90d48363184ba8">ask</a> (<a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> *stream, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オーバライド可。ユーザがエフェクタの設定ボタンをすると、この関数が呼ばれる。  <a href="#a275134a791df441f7f90d48363184ba8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a451b719387f1eedef65225fbbc539e7a"></a><!-- doxytag: member="sxsdk::effector_interface::do_post_effect" ref="a451b719387f1eedef65225fbbc539e7a" args="(void *aux=0)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1effector__interface.html#a451b719387f1eedef65225fbbc539e7a">do_post_effect</a> (void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オーバライド可。各フレームのレンダリングが完了する度に呼ばれる。 <br/></td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1effector__interface.html#a451b719387f1eedef65225fbbc539e7a">do_post_effect</a> (void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オーバライド可。各フレームのレンダリングが完了する度に呼ばれる。 <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a50645e6febf15909234fbf164953c384"></a><!-- doxytag: member="sxsdk::effector_interface::end" ref="a50645e6febf15909234fbf164953c384" args="()" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1effector__interface.html#a50645e6febf15909234fbf164953c384">end</a> ()</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オーバライド可。レンダリングセッションが終了する時に呼ばれる。 <br/></td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1effector__interface.html#a50645e6febf15909234fbf164953c384">end</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オーバライド可。レンダリングセッションが終了する時に呼ばれる。 <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4bace81d75c3eaf1a0f4e90d246eaaa3"></a><!-- doxytag: member="sxsdk::effector_interface::do_pre_effect" ref="a4bace81d75c3eaf1a0f4e90d246eaaa3" args="(void *aux=0)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1effector__interface.html#a4bace81d75c3eaf1a0f4e90d246eaaa3">do_pre_effect</a> (void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オーバライド可。各フレームのレンダリングが開始される前に呼ばれる。 <br/></td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1effector__interface.html#a4bace81d75c3eaf1a0f4e90d246eaaa3">do_pre_effect</a> (void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オーバライド可。各フレームのレンダリングが開始される前に呼ばれる。 <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6d2eaf624884093cff6dc554ce2a8a1f"></a><!-- doxytag: member="sxsdk::effector_interface::needs_light_visibility" ref="a6d2eaf624884093cff6dc554ce2a8a1f" args="(void *aux=0)" -->
-virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1effector__interface.html#a6d2eaf624884093cff6dc554ce2a8a1f">needs_light_visibility</a> (void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オーバライド可。エフェクタプラグインが光源可視度情報を必要とする場合、この関数をオーバライドしてtrueを返す。 <br/></td></tr>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1effector__interface.html#a6d2eaf624884093cff6dc554ce2a8a1f">needs_light_visibility</a> (void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オーバライド可。エフェクタプラグインが光源可視度情報を必要とする場合、この関数をオーバライドしてtrueを返す。 <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab1983c495e05f4790944428048680f8f"></a><!-- doxytag: member="sxsdk::effector_interface::needs_z" ref="ab1983c495e05f4790944428048680f8f" args="(void *aux=0)" -->
-virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1effector__interface.html#ab1983c495e05f4790944428048680f8f">needs_z</a> (void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オーバライド可。エフェクタプラグインがZ値を必要とする場合、この関数をオーバライドしてtrueを返す。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1effector__interface.html#a31f50ee4436d9b9f3676542eda37a281">needs_real_color</a> (void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オーバライド可。エフェクタプラグインが64bits以上の色深度を必要とする場合、この関数をオーバライドしてtrueを返す。  <a href="#a31f50ee4436d9b9f3676542eda37a281"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1effector__interface.html#a9648f9b474ee1647062bec35ce78fed8">do_mid_effect</a> (void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オーバライド可。各フレームの各種変換マトリクスが設定された後に呼ばれる。  <a href="#a9648f9b474ee1647062bec35ce78fed8"></a><br/></td></tr>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1effector__interface.html#ab1983c495e05f4790944428048680f8f">needs_z</a> (void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オーバライド可。エフェクタプラグインがZ値を必要とする場合、この関数をオーバライドしてtrueを返す。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1effector__interface.html#a31f50ee4436d9b9f3676542eda37a281">needs_real_color</a> (void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オーバライド可。エフェクタプラグインが64bits以上の色深度を必要とする場合、この関数をオーバライドしてtrueを返す。  <a href="#a31f50ee4436d9b9f3676542eda37a281"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1effector__interface.html#a9648f9b474ee1647062bec35ce78fed8">do_mid_effect</a> (void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オーバライド可。各フレームの各種変換マトリクスが設定された後に呼ばれる。  <a href="#a9648f9b474ee1647062bec35ce78fed8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a42076562b9c526cb64c24c31020a9743"></a><!-- doxytag: member="sxsdk::effector_interface::skip_animation" ref="a42076562b9c526cb64c24c31020a9743" args="(void *aux=0)" -->
-virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1effector__interface.html#a42076562b9c526cb64c24c31020a9743">skip_animation</a> (void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オーバライド可。オーバーライドしてtrueを返すと、アニメーションのレンダリングをスキップする。 <br/></td></tr>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1effector__interface.html#a42076562b9c526cb64c24c31020a9743">skip_animation</a> (void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オーバライド可。オーバーライドしてtrueを返すと、アニメーションのレンダリングをスキップする。 <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a10d5531c59fa181ca4adf8ca53e924a0"></a><!-- doxytag: member="sxsdk::effector_interface::supports_background_effect" ref="a10d5531c59fa181ca4adf8ca53e924a0" args="(void *aux=0)" -->
-virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1effector__interface.html#a10d5531c59fa181ca4adf8ca53e924a0">supports_background_effect</a> (void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オーバライド可。バックグラウンド色のカスタマイズする場合には、この関数をオーバーライドしてtrueを返す。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1effector__interface.html#a7a6bc8dd1225f21df06ab0e02482ad6e">do_background_effect</a> (sxsdk::rgb_class &amp;color, const sxsdk::vec3 &amp;direction, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オーバライド可。オーバーライドしてcolor引数に値を設定すると、背景の色をカスタマイズする。  <a href="#a7a6bc8dd1225f21df06ab0e02482ad6e"></a><br/></td></tr>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1effector__interface.html#a10d5531c59fa181ca4adf8ca53e924a0">supports_background_effect</a> (void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オーバライド可。バックグラウンド色のカスタマイズする場合には、この関数をオーバーライドしてtrueを返す。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1effector__interface.html#a7a6bc8dd1225f21df06ab0e02482ad6e">do_background_effect</a> (sxsdk::rgb_class &amp;color, const sxsdk::vec3 &amp;direction, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オーバライド可。オーバーライドしてcolor引数に値を設定すると、背景の色をカスタマイズする。  <a href="#a7a6bc8dd1225f21df06ab0e02482ad6e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab132642d5ff60b6c4f0a1b3a0d4ac2f6"></a><!-- doxytag: member="sxsdk::effector_interface::supports_volume_effect" ref="ab132642d5ff60b6c4f0a1b3a0d4ac2f6" args="(void *aux=0)" -->
-virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1effector__interface.html#ab132642d5ff60b6c4f0a1b3a0d4ac2f6">supports_volume_effect</a> (void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オーバライド可。ボリュームエフェクトを使用する場合には、この関数をオーバーライドしてtrueを返す。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1effector__interface.html#aeb389ddc5835ce8a271118cee7360d52">do_volume_effect</a> (sxsdk::rgb_class &amp;color, const sxsdk::vec3 &amp;direction, float distance, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オーバライド可。オーバーライドしてcolor引数に値を設定すると、ボリュームエフェクトの色をカスタマイズする。  <a href="#aeb389ddc5835ce8a271118cee7360d52"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1effector__interface.html#a08248c5a5deb0501afc23000b717957c">set_layer</a> (int i, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オーバライド可。エフェクタを設定しているレイヤー番号を取得するにはこの関数をオーバーライドする。  <a href="#a08248c5a5deb0501afc23000b717957c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1effector__interface.html#a95b884f62636c6ef86e3864f73df25c1">can_ask</a> (void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オーバライド可。ask()関数呼び出しに対応するかどうかを返す。  <a href="#a95b884f62636c6ef86e3864f73df25c1"></a><br/></td></tr>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1effector__interface.html#ab132642d5ff60b6c4f0a1b3a0d4ac2f6">supports_volume_effect</a> (void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オーバライド可。ボリュームエフェクトを使用する場合には、この関数をオーバーライドしてtrueを返す。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1effector__interface.html#aeb389ddc5835ce8a271118cee7360d52">do_volume_effect</a> (sxsdk::rgb_class &amp;color, const sxsdk::vec3 &amp;direction, float distance, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オーバライド可。オーバーライドしてcolor引数に値を設定すると、ボリュームエフェクトの色をカスタマイズする。  <a href="#aeb389ddc5835ce8a271118cee7360d52"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1effector__interface.html#a08248c5a5deb0501afc23000b717957c">set_layer</a> (int i, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オーバライド可。エフェクタを設定しているレイヤー番号を取得するにはこの関数をオーバーライドする。  <a href="#a08248c5a5deb0501afc23000b717957c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1effector__interface.html#a95b884f62636c6ef86e3864f73df25c1">can_ask</a> (void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オーバライド可。ask()関数呼び出しに対応するかどうかを返す。  <a href="#a95b884f62636c6ef86e3864f73df25c1"></a><br/></td></tr>
 </table>
-<hr/><h2>関数</h2>
+<hr/><a name="details" id="details"></a><h2>説明</h2>
+<div class="textblock"><p>エフェクタプラグインの基本クラス </p>
+<p>effector_interfaceから派生させたクラスを定義することによって、エフェクタプラグインを実装する。</p>
+<p>典型的な使い方としては、レンダリング計算後にコールバック関数が呼ばれ、そのコールバック関数内でレンダリングイメージに対して操作することになる。 </p>
+</div><hr/><h2>関数</h2>
 <a class="anchor" id="a275134a791df441f7f90d48363184ba8"></a><!-- doxytag: member="sxsdk::effector_interface::ask" ref="a275134a791df441f7f90d48363184ba8" args="(stream_interface *stream, void *aux=0)" -->
 <div class="memitem">
 <div class="memproto">
@@ -93,29 +126,29 @@ virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="memname">virtual void sxsdk::effector_interface::ask </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> *&nbsp;</td>
-          <td class="paramname"> <em>stream</em>, </td>
+          <td class="paramtype"><a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> *&#160;</td>
+          <td class="paramname"><em>stream</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [inline, virtual]</code></td>
+          <td></td><td><code> [inline, virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
 <p>オーバライド可。ユーザがエフェクタの設定ボタンをすると、この関数が呼ばれる。 </p>
-<p><a class="el" href="structsxsdk_1_1effector__interface.html#a95b884f62636c6ef86e3864f73df25c1" title="オーバライド可。ask()関数呼び出しに対応するかどうかを返す。...">can_ask()</a> をオーバーライドしてtrueを返すと設定ボタンがアクティブになる。エフェクタの設定ダイアログはこの関数内で作成する。</p>
+<p><a class="el" href="structsxsdk_1_1effector__interface.html#a95b884f62636c6ef86e3864f73df25c1" title="オーバライド可。ask()関数呼び出しに対応するかどうかを返す。">can_ask()</a> をオーバーライドしてtrueを返すと設定ボタンがアクティブになる。エフェクタの設定ダイアログはこの関数内で作成する。</p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>stream</em>&nbsp;</td><td>エフェクタプラグイン独自の属性情報として読み書きできるストリーム </td></tr>
+  <table class="params">
+    <tr><td class="paramname">stream</td><td>エフェクタプラグイン独自の属性情報として読み書きできるストリーム </td></tr>
   </table>
   </dd>
 </dl>
@@ -129,25 +162,25 @@ virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="memname">virtual void sxsdk::effector_interface::begin </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structsxsdk_1_1rendering__context__interface.html">rendering_context_interface</a> *&nbsp;</td>
-          <td class="paramname"> <em>rendering_context</em>, </td>
+          <td class="paramtype"><a class="el" href="structsxsdk_1_1rendering__context__interface.html">rendering_context_interface</a> *&#160;</td>
+          <td class="paramname"><em>rendering_context</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> *&nbsp;</td>
-          <td class="paramname"> <em>stream</em>, </td>
+          <td class="paramtype"><a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> *&#160;</td>
+          <td class="paramname"><em>stream</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [inline, virtual]</code></td>
+          <td></td><td><code> [inline, virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -156,9 +189,9 @@ virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <p>オーバライド可。レンダリングセッションが開始される時に一度だけ呼ばれる。 </p>
 <p>通常時とレンダリング時ではシーンの情報が異なる場合があるので、必ずrendering_context_interfaceから取得した情報を使用する。</p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>rendering_context</em>&nbsp;</td><td>レンダリングの情報。レンダリングされるシーンの情報の取得に使用します（カメラ設定、scene_interface など）。 </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>stream</em>&nbsp;</td><td>エフェクタプラグイン独自の属性情報として読み書きできるストリーム </td></tr>
+  <table class="params">
+    <tr><td class="paramname">rendering_context</td><td>レンダリングの情報。レンダリングされるシーンの情報の取得に使用します（カメラ設定、scene_interface など）。 </td></tr>
+    <tr><td class="paramname">stream</td><td>エフェクタプラグイン独自の属性情報として読み書きできるストリーム </td></tr>
   </table>
   </dd>
 </dl>
@@ -172,9 +205,8 @@ virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="memname">virtual bool sxsdk::effector_interface::can_ask </td>
           <td>(</td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td>
-          <td>&nbsp;)&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code></td><td>)</td>
           <td><code> [inline, virtual]</code></td>
         </tr>
       </table>
@@ -193,25 +225,25 @@ virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="memname">virtual void sxsdk::effector_interface::do_background_effect </td>
           <td>(</td>
-          <td class="paramtype">sxsdk::rgb_class &amp;&nbsp;</td>
-          <td class="paramname"> <em>color</em>, </td>
+          <td class="paramtype">sxsdk::rgb_class &amp;&#160;</td>
+          <td class="paramname"><em>color</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const sxsdk::vec3 &amp;&nbsp;</td>
-          <td class="paramname"> <em>direction</em>, </td>
+          <td class="paramtype">const sxsdk::vec3 &amp;&#160;</td>
+          <td class="paramname"><em>direction</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [inline, virtual]</code></td>
+          <td></td><td><code> [inline, virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -219,9 +251,9 @@ virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 
 <p>オーバライド可。オーバーライドしてcolor引数に値を設定すると、背景の色をカスタマイズする。 </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>color</em>&nbsp;</td><td>背景の色 </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>direction</em>&nbsp;</td><td>視線の方向 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">color</td><td>背景の色 </td></tr>
+    <tr><td class="paramname">direction</td><td>視線の方向 </td></tr>
   </table>
   </dd>
 </dl>
@@ -235,9 +267,8 @@ virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="memname">virtual void sxsdk::effector_interface::do_mid_effect </td>
           <td>(</td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td>
-          <td>&nbsp;)&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code></td><td>)</td>
           <td><code> [inline, virtual]</code></td>
         </tr>
       </table>
@@ -256,31 +287,31 @@ virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="memname">virtual void sxsdk::effector_interface::do_volume_effect </td>
           <td>(</td>
-          <td class="paramtype">sxsdk::rgb_class &amp;&nbsp;</td>
-          <td class="paramname"> <em>color</em>, </td>
+          <td class="paramtype">sxsdk::rgb_class &amp;&#160;</td>
+          <td class="paramname"><em>color</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const sxsdk::vec3 &amp;&nbsp;</td>
-          <td class="paramname"> <em>direction</em>, </td>
+          <td class="paramtype">const sxsdk::vec3 &amp;&#160;</td>
+          <td class="paramname"><em>direction</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">float&nbsp;</td>
-          <td class="paramname"> <em>distance</em>, </td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>distance</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [inline, virtual]</code></td>
+          <td></td><td><code> [inline, virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -288,10 +319,10 @@ virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 
 <p>オーバライド可。オーバーライドしてcolor引数に値を設定すると、ボリュームエフェクトの色をカスタマイズする。 </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>color</em>&nbsp;</td><td>レンダリング対象となっている画素の色 </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>direction</em>&nbsp;</td><td>視線の方向 </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>distance</em>&nbsp;</td><td>視線の進む距離 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">color</td><td>レンダリング対象となっている画素の色 </td></tr>
+    <tr><td class="paramname">direction</td><td>視線の方向 </td></tr>
+    <tr><td class="paramname">distance</td><td>視線の進む距離 </td></tr>
   </table>
   </dd>
 </dl>
@@ -305,9 +336,8 @@ virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="memname">virtual bool sxsdk::effector_interface::needs_real_color </td>
           <td>(</td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td>
-          <td>&nbsp;)&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code></td><td>)</td>
           <td><code> [inline, virtual]</code></td>
         </tr>
       </table>
@@ -326,19 +356,19 @@ virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="memname">virtual void sxsdk::effector_interface::set_layer </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>i</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [inline, virtual]</code></td>
+          <td></td><td><code> [inline, virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -347,8 +377,8 @@ virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <p>オーバライド可。エフェクタを設定しているレイヤー番号を取得するにはこの関数をオーバーライドする。 </p>
 <p>エフェクタの設定ボタンが押されてaskが呼ばれる前、レンダリング中にbegin、do_mid_effect、do_post_effect、endの直前に呼よばれる。</p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>i</em>&nbsp;</td><td>エフェクタのレイヤー番号 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>エフェクタのレイヤー番号 </td></tr>
   </table>
   </dd>
 </dl>
@@ -359,6 +389,11 @@ virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <li><a class="el" href="effectorinterface_8h_source.html">effectorinterface.h</a></li>
 </ul>
 </div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><b>sxsdk</b>      </li>
+      <li class="navelem"><a class="el" href="structsxsdk_1_1effector__interface.html">effector_interface</a>      </li>
 <br><br>
 <hr>
 <div align="center">Copyright &copy; e frontier, Inc. All rights reserved.</div>

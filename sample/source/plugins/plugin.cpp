@@ -12,6 +12,7 @@ namespace {
 }
 void simple_plugin_interface::do_it (sxsdk::shade_interface *shade, sxsdk::scene_interface *scene, void *) {
 	std::cerr << "simple_plugin_interface::do_it\n";
+	shade->message("do_it : simple plugin");
 	//shape_class &shape = scene->active_shape();
 	//std::cout << shape.get_part().get_transformation_matrix() << std::endl;
 	/*

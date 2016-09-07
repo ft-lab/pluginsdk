@@ -23,7 +23,7 @@ namespace sxsdk {
 	virtual void do_bezier_surface (mesh_interface* m, void* aux = 0) { }  // 17
 	virtual void begin_polymesh ( void* aux =0 ) { }  // 18
 	virtual void begin_polymesh_vertex (int n, void* aux = 0) { }  // 19
-	virtual void polymesh_vertex (int i, const sxsdk::vec3& v, void* aux = 0) { }  // 20
+	virtual void polymesh_vertex (int i, const sxsdk::vec3& v, const sxsdk::skin_class* skin) { }  // 20
 	virtual void end_polymesh_vertex ( void* aux =0 ) { }  // 21
 	virtual void begin_polymesh_face (int n, void* aux = 0) { }  // 22
 	virtual void polymesh_face (int n_list, const int list[], const sxsdk::vec3* normals, const sxsdk::vec4* plane_equation, void* aux = 0) { }  // 23
@@ -67,12 +67,12 @@ namespace sxsdk {
 	virtual bool can_accept_skip ( void* aux =0 ) { return false; }  // 61
 	virtual bool can_accept_mirror ( void* aux =0 ) { return false; }  // 62
 	virtual void do_mirror (shape_class& shape, void* aux = 0) { }  // 63
-	virtual int exporter_interface_dummy64(void *) { assert(false); throw "invalid interface exporter_interface"; return 0; } // 64
-	virtual int exporter_interface_dummy65(void *) { assert(false); throw "invalid interface exporter_interface"; return 0; } // 65
-	virtual int exporter_interface_dummy66(void *) { assert(false); throw "invalid interface exporter_interface"; return 0; } // 66
-	virtual int exporter_interface_dummy67(void *) { assert(false); throw "invalid interface exporter_interface"; return 0; } // 67
-	virtual int exporter_interface_dummy68(void *) { assert(false); throw "invalid interface exporter_interface"; return 0; } // 68
-	virtual int exporter_interface_dummy69(void *) { assert(false); throw "invalid interface exporter_interface"; return 0; } // 69
+	virtual bool must_round_polymesh ( void* aux =0 ) { return true; }  // 64
+	virtual bool must_transform_skin ( void* aux =0 ) { return true; }  // 65
+	virtual bool can_select_filter_objects ( void* aux =0 ) { return false; }  // 66
+	virtual bool can_access_external_sandbox ( void* aux =0 ) { return false; }  // 67
+	virtual int get_number_of_access_files_outside_sandbox ( void* aux =0 ) { return 0; }  // 68
+	virtual const char *get_access_file_path_outside_sandbox (int i, void* aux = 0) { return 0; }  // 69
 	virtual int exporter_interface_dummy70(void *) { assert(false); throw "invalid interface exporter_interface"; return 0; } // 70
 	virtual int exporter_interface_dummy71(void *) { assert(false); throw "invalid interface exporter_interface"; return 0; } // 71
 	virtual int exporter_interface_dummy72(void *) { assert(false); throw "invalid interface exporter_interface"; return 0; } // 72

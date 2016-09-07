@@ -1,7 +1,8 @@
 #pragma once
 
 namespace sxsdk {
-	class stream_interface : public shade_interface {
+	class
+	stream_interface : public shade_interface {
 	public:
 	virtual sxsdk::scene_interface* get_scene_interface (void * = 0) const = 0; // -1
 	#if SXWINDOWS 

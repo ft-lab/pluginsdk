@@ -430,17 +430,6 @@ namespace sx {
 		return (p.x*p.x + p.y*p.y + p.z*p.z + p.w*p.w);
 	}
 
-	template<typename T> inline const T normalize_self (vec<T,2> &p) {
-		T d = sqrabsolute2(p);
-		if (denormalized_min < d) {
-			d = sx::sqrt(d);
-			const T r = 1.0f / d;
-			p.x *= r;
-			p.y *= r;
-		}
-		return d;
-	}
-
 	template<typename T, int N> inline sx::vec<T,N> round (const sx::vec<T,N> &p) {
 		vec<T,N> v;
 		for (int i = 0; i < N; ++i) v[i] = std::floor(p[i]+0.5f);
@@ -762,14 +751,23 @@ template<typename T, int N> inline sx::vec<T,N> &operator/= (sx::vec<T,N> &a, co
 }
 
 namespace sx {
-
 	template<typename T, int N> inline const sx::vec<T,N> normalize (const sx::vec<T,N> &p) {
 		T d = sqrabsolute3(p);
 		if (denormalized_min < d) {
-			d = sx::sqrt(d);
-			return (p / d);
+			return (p / sx::sqrt(d));
 		}
 		return p;
+	}
+
+	template<typename T> inline const T normalize_self (vec<T,2> &p) {
+		T d = sqrabsolute2(p);
+		if (denormalized_min < d) {
+			d = sx::sqrt(d);
+			const T r = 1.0f / d;
+			p.x *= r;
+			p.y *= r;
+		}
+		return d;
 	}
 
 	template<typename T> inline const T normalize_self (vec<T,3> &p) {

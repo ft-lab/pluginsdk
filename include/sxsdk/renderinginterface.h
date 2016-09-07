@@ -248,6 +248,7 @@ namespace sxsdk {
 	virtual void add_style (const char* name, void* aux = 0) = 0; // 233
 	virtual bool get_own_image (void * = 0) const = 0; // 234
 	virtual rendering_interface &set_own_image (bool own_image_param, void * = 0) = 0; // 235
+	virtual void previewrender (void* aux = 0) = 0; // 236
 	};
 
 	class rendering_image_invalidator_interface : public unknown_interface {

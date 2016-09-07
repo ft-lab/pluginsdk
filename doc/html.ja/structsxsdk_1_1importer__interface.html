@@ -4,70 +4,109 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <title>構造体 sxsdk::importer_interface</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<!-- 作成： Doxygen 1.6.1 -->
-<div class="navigation" id="top">
-  <div class="tabs">
-    <ul>
-      <li><a href="main.html"><span>メインページ</span></a></li>
+<!-- 作成： Doxygen 1.7.4 -->
+<div id="top">
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
       <li><a href="pages.html"><span>関連ページ</span></a></li>
       <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
       <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
       <li><a href="files.html"><span>ファイル</span></a></li>
     </ul>
   </div>
-  <div class="tabs">
-    <ul>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
       <li><a href="annotated.html"><span>構成</span></a></li>
       <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
       <li><a href="functions.html"><span>構成メンバ</span></a></li>
     </ul>
   </div>
-  <div class="navpath"><a class="el" href="namespacesxsdk.html">sxsdk</a>::<a class="el" href="structsxsdk_1_1importer__interface.html">importer_interface</a>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
   </div>
 </div>
+<script type="text/javascript">
+  initNavTree('structsxsdk_1_1importer__interface.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public メソッド</a>  </div>
+  <div class="headertitle">
+<div class="title">構造体 sxsdk::importer_interface</div>  </div>
+</div>
 <div class="contents">
-<h1>構造体 sxsdk::importer_interface</h1><!-- doxytag: class="sxsdk::importer_interface" --><!-- doxytag: inherits="sxsdk::plugin_interface" --><div class="dynheader">
+<!-- doxytag: class="sxsdk::importer_interface" --><!-- doxytag: inherits="sxsdk::plugin_interface" -->
+<p>インポータプラグインの基本クラス  
+ <a href="structsxsdk_1_1importer__interface.html#details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="importerinterface_8h_source.html">importerinterface.h</a>&gt;</code></p>
+<div class="dynheader">
 sxsdk::importer_interfaceに対する継承グラフ</div>
-<div class="dynsection">
+<div class="dyncontent">
  <div class="center">
-  <img src="structsxsdk_1_1importer__interface.gif" usemap="#sxsdk::importer_interface_map" alt=""/>
+  <img src="structsxsdk_1_1importer__interface.png" usemap="#sxsdk::importer_interface_map" alt=""/>
   <map id="sxsdk::importer_interface_map" name="sxsdk::importer_interface_map">
-<area href="structsxsdk_1_1plugin__interface.html" alt="sxsdk::plugin_interface" shape="rect" coords="0,56,152,80"/>
+<area href="structsxsdk_1_1plugin__interface.html" title="プラグインの基本クラス" alt="sxsdk::plugin_interface" shape="rect" coords="0,56,152,80"/>
 <area href="classunknown__interface.html" alt="unknown_interface" shape="rect" coords="0,0,152,24"/>
 </map>
- </div>
-</div>
+ </div></div>
 
 <p><a href="structsxsdk_1_1importer__interface-members.html">すべてのメンバ一覧</a></p>
-<table border="0" cellpadding="0" cellspacing="0">
-<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Public メソッド</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a876569413b47f1aa0e5df6f12a50ab7b"></a><!-- doxytag: member="sxsdk::importer_interface::get_number_of_file_types" ref="a876569413b47f1aa0e5df6f12a50ab7b" args="(void *aux=0)" -->
-virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><b>get_number_of_file_types</b> (void *aux=0)</td></tr>
+virtual int&#160;</td><td class="memItemRight" valign="bottom"><b>get_number_of_file_types</b> (void *aux=0)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7800e867fd5dbf90db188b57c69c3220"></a><!-- doxytag: member="sxsdk::importer_interface::get_file_type" ref="a7800e867fd5dbf90db188b57c69c3220" args="(int i, void *aux=0)" -->
-virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><b>get_file_type</b> (int i, void *aux=0)</td></tr>
+virtual int&#160;</td><td class="memItemRight" valign="bottom"><b>get_file_type</b> (int i, void *aux=0)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1e0e395d53b0fbcf95429784ad8cfb63"></a><!-- doxytag: member="sxsdk::importer_interface::get_file_type_description" ref="a1e0e395d53b0fbcf95429784ad8cfb63" args="(int i, void *aux=0)" -->
-virtual const char *&nbsp;</td><td class="memItemRight" valign="bottom"><b>get_file_type_description</b> (int i, void *aux=0)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1importer__interface.html#a65977f1d94435df084f78c25a37ef0da">get_number_of_file_extensions</a> (void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オーバライド可。サポートするファイルの拡張子の数を返す。  <a href="#a65977f1d94435df084f78c25a37ef0da"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual const char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1importer__interface.html#a2c4151596d51fa2151130fc7e4efa049">get_file_extension</a> (int i, void *aux=0)=0</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オーバライド可。ファイルの拡張子を返す。  <a href="#a2c4151596d51fa2151130fc7e4efa049"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual const char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1importer__interface.html#a3e86be834666bfa2ec10173c6471ceea">get_file_extension_description</a> (int i, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オーバライド可。ファイル形式の説明を返す。  <a href="#a3e86be834666bfa2ec10173c6471ceea"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1importer__interface.html#a88a98ae7f2cb2aab0e4f771e6197123b">accepts_text_stream</a> (void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オーバライド可。テキストファイルを扱うかどうかを返す。  <a href="#a88a98ae7f2cb2aab0e4f771e6197123b"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1importer__interface.html#a517167f8a232ba30d15337a7523e402f">do_import</a> (<a class="el" href="structsxsdk_1_1scene__interface.html">sxsdk::scene_interface</a> *scene, <a class="el" href="structsxsdk_1_1stream__interface.html">sxsdk::stream_interface</a> *stream, <a class="el" href="structsxsdk_1_1text__stream__interface.html">sxsdk::text_stream_interface</a> *text_stream, void *aux=0)=0</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オーバライド可。インポート時に呼び出される。  <a href="#a517167f8a232ba30d15337a7523e402f"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1importer__interface.html#a682c07fb1187496e2f35680a3f9d2829">can_import_from_stream</a> (void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オーバライド可。ストリームからインポートするかどうかを返す。  <a href="#a682c07fb1187496e2f35680a3f9d2829"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1importer__interface.html#a2b9e95fb4c1060b49c43fd772b00a642">skips_dialog</a> (void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オーバライド可。オーバライドしてtrueを返すと、インポートダイアログの表示が省略される。  <a href="#a2b9e95fb4c1060b49c43fd772b00a642"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1importer__interface.html#aa3e2a6b7cb721741069b7e83e784e141">do_pre_import</a> (const sxsdk::mat4 &amp;t, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オーバライド可。インポート処理が開始される前に呼ばれる。  <a href="#aa3e2a6b7cb721741069b7e83e784e141"></a><br/></td></tr>
+virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><b>get_file_type_description</b> (int i, void *aux=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1importer__interface.html#a65977f1d94435df084f78c25a37ef0da">get_number_of_file_extensions</a> (void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オーバライド可。サポートするファイルの拡張子の数を返す。  <a href="#a65977f1d94435df084f78c25a37ef0da"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1importer__interface.html#a2c4151596d51fa2151130fc7e4efa049">get_file_extension</a> (int i, void *aux=0)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オーバライド可。ファイルの拡張子を返す。  <a href="#a2c4151596d51fa2151130fc7e4efa049"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1importer__interface.html#a3e86be834666bfa2ec10173c6471ceea">get_file_extension_description</a> (int i, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オーバライド可。ファイル形式の説明を返す。  <a href="#a3e86be834666bfa2ec10173c6471ceea"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1importer__interface.html#a88a98ae7f2cb2aab0e4f771e6197123b">accepts_text_stream</a> (void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オーバライド可。テキストファイルを扱うかどうかを返す。  <a href="#a88a98ae7f2cb2aab0e4f771e6197123b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1importer__interface.html#a517167f8a232ba30d15337a7523e402f">do_import</a> (<a class="el" href="structsxsdk_1_1scene__interface.html">sxsdk::scene_interface</a> *scene, <a class="el" href="structsxsdk_1_1stream__interface.html">sxsdk::stream_interface</a> *stream, <a class="el" href="structsxsdk_1_1text__stream__interface.html">sxsdk::text_stream_interface</a> *text_stream, void *aux=0)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オーバライド可。インポート時に呼び出される。  <a href="#a517167f8a232ba30d15337a7523e402f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1importer__interface.html#a682c07fb1187496e2f35680a3f9d2829">can_import_from_stream</a> (void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オーバライド可。ストリームからインポートするかどうかを返す。  <a href="#a682c07fb1187496e2f35680a3f9d2829"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1importer__interface.html#a2b9e95fb4c1060b49c43fd772b00a642">skips_dialog</a> (void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オーバライド可。オーバライドしてtrueを返すと、インポートダイアログの表示が省略される。  <a href="#a2b9e95fb4c1060b49c43fd772b00a642"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1importer__interface.html#af5b3236c6306ce5186610edff42e6fbf">do_pre_import</a> (const sxsdk::mat4 &amp;t, void *path)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オーバライド可。インポート処理が開始される前に呼ばれる。  <a href="#af5b3236c6306ce5186610edff42e6fbf"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1importer__interface.html#aedd28e0986838818c133797accfa926a">can_access_external_sandbox</a> (void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オーバライド可。Override and return true in order to access file path outside sandbox.  <a href="#aedd28e0986838818c133797accfa926a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1importer__interface.html#af5560a08c439aa9d4cbb56ad668a8c57">get_number_of_access_files_outside_sandbox</a> (void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オーバライド可。Returns the number of files that will access outside the sandbox.  <a href="#af5560a08c439aa9d4cbb56ad668a8c57"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5e1da826d63a878b622dbe578f2d87e1"></a><!-- doxytag: member="sxsdk::importer_interface::get_access_file_path_outside_sandbox" ref="a5e1da826d63a878b622dbe578f2d87e1" args="(int i, void *aux=0)" -->
+virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><b>get_access_file_path_outside_sandbox</b> (int i, void *aux=0)</td></tr>
 </table>
-<hr/><h2>関数</h2>
+<hr/><a name="details" id="details"></a><h2>説明</h2>
+<div class="textblock"><p>インポータプラグインの基本クラス </p>
+<p>importer_interfaceから派生させたクラスを定義することによって、インポータプラグインを実装する。</p>
+<p>インポータプラグインは、インポートメニューから起動される。 </p>
+</div><hr/><h2>関数</h2>
 <a class="anchor" id="a88a98ae7f2cb2aab0e4f771e6197123b"></a><!-- doxytag: member="sxsdk::importer_interface::accepts_text_stream" ref="a88a98ae7f2cb2aab0e4f771e6197123b" args="(void *aux=0)" -->
 <div class="memitem">
 <div class="memproto">
@@ -75,9 +114,8 @@ virtual const char *&nbsp;</td><td class="memItemRight" valign="bottom"><b>get_f
         <tr>
           <td class="memname">virtual bool sxsdk::importer_interface::accepts_text_stream </td>
           <td>(</td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td>
-          <td>&nbsp;)&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code></td><td>)</td>
           <td><code> [inline, virtual]</code></td>
         </tr>
       </table>
@@ -85,7 +123,27 @@ virtual const char *&nbsp;</td><td class="memItemRight" valign="bottom"><b>get_f
 <div class="memdoc">
 
 <p>オーバライド可。テキストファイルを扱うかどうかを返す。 </p>
-<p><code>true</code> を返すと、<code><a class="el" href="structsxsdk_1_1importer__interface.html#a517167f8a232ba30d15337a7523e402f" title="オーバライド可。インポート時に呼び出される。">do_import()</a></code> 関数の引数として<code><a class="el" href="structsxsdk_1_1text__stream__interface.html">text_stream_interface</a></code> が渡される。 </p>
+<p><code>true</code> を返すと、<code><a class="el" href="structsxsdk_1_1importer__interface.html#a517167f8a232ba30d15337a7523e402f" title="オーバライド可。インポート時に呼び出される。">do_import()</a></code> 関数の引数として<code><a class="el" href="structsxsdk_1_1text__stream__interface.html" title="テキストファイルの読み込み、書き込みに使用するストリーム">text_stream_interface</a></code> が渡される。 </p>
+
+</div>
+</div>
+<a class="anchor" id="aedd28e0986838818c133797accfa926a"></a><!-- doxytag: member="sxsdk::importer_interface::can_access_external_sandbox" ref="aedd28e0986838818c133797accfa926a" args="(void *aux=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool sxsdk::importer_interface::can_access_external_sandbox </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code></td><td>)</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>オーバライド可。Override and return true in order to access file path outside sandbox. </p>
+<p>Once this returns true, need to tell the importer how many files and the location need to access. </p>
 
 </div>
 </div>
@@ -96,9 +154,8 @@ virtual const char *&nbsp;</td><td class="memItemRight" valign="bottom"><b>get_f
         <tr>
           <td class="memname">virtual bool sxsdk::importer_interface::can_import_from_stream </td>
           <td>(</td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td>
-          <td>&nbsp;)&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code></td><td>)</td>
           <td><code> [inline, virtual]</code></td>
         </tr>
       </table>
@@ -118,31 +175,31 @@ virtual const char *&nbsp;</td><td class="memItemRight" valign="bottom"><b>get_f
         <tr>
           <td class="memname">virtual void sxsdk::importer_interface::do_import </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structsxsdk_1_1scene__interface.html">sxsdk::scene_interface</a> *&nbsp;</td>
-          <td class="paramname"> <em>scene</em>, </td>
+          <td class="paramtype"><a class="el" href="structsxsdk_1_1scene__interface.html">sxsdk::scene_interface</a> *&#160;</td>
+          <td class="paramname"><em>scene</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structsxsdk_1_1stream__interface.html">sxsdk::stream_interface</a> *&nbsp;</td>
-          <td class="paramname"> <em>stream</em>, </td>
+          <td class="paramtype"><a class="el" href="structsxsdk_1_1stream__interface.html">sxsdk::stream_interface</a> *&#160;</td>
+          <td class="paramname"><em>stream</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structsxsdk_1_1text__stream__interface.html">sxsdk::text_stream_interface</a> *&nbsp;</td>
-          <td class="paramname"> <em>text_stream</em>, </td>
+          <td class="paramtype"><a class="el" href="structsxsdk_1_1text__stream__interface.html">sxsdk::text_stream_interface</a> *&#160;</td>
+          <td class="paramname"><em>text_stream</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [pure virtual]</code></td>
+          <td></td><td><code> [pure virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -150,36 +207,36 @@ virtual const char *&nbsp;</td><td class="memItemRight" valign="bottom"><b>get_f
 
 <p>オーバライド可。インポート時に呼び出される。 </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>scene</em>&nbsp;</td><td>インポート先のシーン </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>stream</em>&nbsp;</td><td>インポート元のストリーム </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>text_stream</em>&nbsp;</td><td>インポート元のテキストストリーム。<code><a class="el" href="structsxsdk_1_1importer__interface.html#a88a98ae7f2cb2aab0e4f771e6197123b" title="オーバライド可。テキストファイルを扱うかどうかを返す。...">accepts_text_stream()</a></code> が<code>true</code> を返す場合にのみ、渡される。 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">scene</td><td>インポート先のシーン </td></tr>
+    <tr><td class="paramname">stream</td><td>インポート元のストリーム </td></tr>
+    <tr><td class="paramname">text_stream</td><td>インポート元のテキストストリーム。<code><a class="el" href="structsxsdk_1_1importer__interface.html#a88a98ae7f2cb2aab0e4f771e6197123b" title="オーバライド可。テキストファイルを扱うかどうかを返す。">accepts_text_stream()</a></code> が<code>true</code> を返す場合にのみ、渡される。 </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="aa3e2a6b7cb721741069b7e83e784e141"></a><!-- doxytag: member="sxsdk::importer_interface::do_pre_import" ref="aa3e2a6b7cb721741069b7e83e784e141" args="(const sxsdk::mat4 &amp;t, void *aux=0)" -->
+<a class="anchor" id="af5b3236c6306ce5186610edff42e6fbf"></a><!-- doxytag: member="sxsdk::importer_interface::do_pre_import" ref="af5b3236c6306ce5186610edff42e6fbf" args="(const sxsdk::mat4 &amp;t, void *path)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">virtual void sxsdk::importer_interface::do_pre_import </td>
           <td>(</td>
-          <td class="paramtype">const sxsdk::mat4 &amp;&nbsp;</td>
-          <td class="paramname"> <em>t</em>, </td>
+          <td class="paramtype">const sxsdk::mat4 &amp;&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>path</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [inline, virtual]</code></td>
+          <td></td><td><code> [inline, virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -187,8 +244,9 @@ virtual const char *&nbsp;</td><td class="memItemRight" valign="bottom"><b>get_f
 
 <p>オーバライド可。インポート処理が開始される前に呼ばれる。 </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>t</em>&nbsp;</td><td>インポートダイアログで設定された座標変換マトリクス。 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>インポートダイアログで設定された座標変換マトリクス。 </td></tr>
+    <tr><td class="paramname">path</td><td>The file path from import dialog. Type void for backward compatibility. Please cast it to const char pointer. </td></tr>
   </table>
   </dd>
 </dl>
@@ -202,19 +260,19 @@ virtual const char *&nbsp;</td><td class="memItemRight" valign="bottom"><b>get_f
         <tr>
           <td class="memname">virtual const char* sxsdk::importer_interface::get_file_extension </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>i</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [pure virtual]</code></td>
+          <td></td><td><code> [pure virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -222,8 +280,8 @@ virtual const char *&nbsp;</td><td class="memItemRight" valign="bottom"><b>get_f
 
 <p>オーバライド可。ファイルの拡張子を返す。 </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>i</em>&nbsp;</td><td>インデクス値 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>インデクス値 </td></tr>
   </table>
   </dd>
 </dl>
@@ -237,19 +295,19 @@ virtual const char *&nbsp;</td><td class="memItemRight" valign="bottom"><b>get_f
         <tr>
           <td class="memname">virtual const char* sxsdk::importer_interface::get_file_extension_description </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>i</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [inline, virtual]</code></td>
+          <td></td><td><code> [inline, virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -258,11 +316,31 @@ virtual const char *&nbsp;</td><td class="memItemRight" valign="bottom"><b>get_f
 <p>オーバライド可。ファイル形式の説明を返す。 </p>
 <p>この関数で指定した名称は、ファイル選択ダイアログのファイルの種類ポップアップメニューに表示される。</p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>i</em>&nbsp;</td><td>インデクス値 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>インデクス値 </td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a class="anchor" id="af5560a08c439aa9d4cbb56ad668a8c57"></a><!-- doxytag: member="sxsdk::importer_interface::get_number_of_access_files_outside_sandbox" ref="af5560a08c439aa9d4cbb56ad668a8c57" args="(void *aux=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int sxsdk::importer_interface::get_number_of_access_files_outside_sandbox </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code></td><td>)</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>オーバライド可。Returns the number of files that will access outside the sandbox. </p>
+<p>Use this function to tell Shade that the number of access files will need to handle outside the sandbox. </p>
 
 </div>
 </div>
@@ -273,9 +351,8 @@ virtual const char *&nbsp;</td><td class="memItemRight" valign="bottom"><b>get_f
         <tr>
           <td class="memname">virtual int sxsdk::importer_interface::get_number_of_file_extensions </td>
           <td>(</td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td>
-          <td>&nbsp;)&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code></td><td>)</td>
           <td><code> [inline, virtual]</code></td>
         </tr>
       </table>
@@ -294,9 +371,8 @@ virtual const char *&nbsp;</td><td class="memItemRight" valign="bottom"><b>get_f
         <tr>
           <td class="memname">virtual bool sxsdk::importer_interface::skips_dialog </td>
           <td>(</td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td>
-          <td>&nbsp;)&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code></td><td>)</td>
           <td><code> [inline, virtual]</code></td>
         </tr>
       </table>
@@ -312,6 +388,11 @@ virtual const char *&nbsp;</td><td class="memItemRight" valign="bottom"><b>get_f
 <li><a class="el" href="importerinterface_8h_source.html">importerinterface.h</a></li>
 </ul>
 </div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><b>sxsdk</b>      </li>
+      <li class="navelem"><a class="el" href="structsxsdk_1_1importer__interface.html">importer_interface</a>      </li>
 <br><br>
 <hr>
 <div align="center">Copyright &copy; e frontier, Inc. All rights reserved.</div>

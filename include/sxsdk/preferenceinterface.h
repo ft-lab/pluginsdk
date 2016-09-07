@@ -1,7 +1,8 @@
 #pragma once
 
 namespace sxsdk {
-	class preference_interface : public shade_interface {
+	class
+	preference_interface : public shade_interface {
 	public:
 	virtual bool get_backward_compatible_file_obsolete (void * = 0) const = 0; // 0
 	virtual preference_interface &set_backward_compatible_file_obsolete (bool backward_compatible_file_obsolete_param, void * = 0) = 0; // 1

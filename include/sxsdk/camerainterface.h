@@ -1,7 +1,8 @@
 #pragma once
 
 namespace sxsdk {
-	class camera_interface : public shade_interface {
+	class
+	camera_interface : public shade_interface {
 	public:
 	virtual void save (const char*const& path, void* aux = 0) = 0; // 0
 	virtual void load (const char*const& path, void* aux = 0) = 0; // 1

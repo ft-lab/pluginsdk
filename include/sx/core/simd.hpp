@@ -140,7 +140,7 @@ namespace sx {
 		inline const __m128 _mm_set_ss (const float f) {
 			vectorx v; v[0] = f; v[1] = v[2] = v[3] = 0.0f; return v;
 		}
-		inline const __m128 _mm_loadu_ps (const float const *p) {
+		inline const __m128 _mm_loadu_ps (const float /*const*/ *p) {
 			vectorx v; v[0] = p[0]; v[1] = p[1]; v[2] = p[2]; v[3] = p[3]; return v;
 		}
 		inline const __m128 _mm_mul_ps (const __m128 &a, const __m128 &b) {

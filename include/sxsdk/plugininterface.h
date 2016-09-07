@@ -1,7 +1,8 @@
 #pragma once
 
 namespace sxsdk {
-	class plugin_interface : public unknown_interface {
+	class
+	plugin_interface : public unknown_interface {
 	public:
 		  enum {
 			flag_mask = 0xf0000000,

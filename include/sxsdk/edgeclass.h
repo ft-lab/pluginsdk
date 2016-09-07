@@ -1,7 +1,8 @@
 #pragma once
 
 namespace sxsdk {
-	class edge_class {
+	class
+	edge_class {
 	public:
 		virtual ~edge_class () { }
 		VTABLE_PADDING

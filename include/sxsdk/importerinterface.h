@@ -13,10 +13,10 @@ namespace sxsdk {
 	virtual void do_import (sxsdk::scene_interface* scene, sxsdk::stream_interface* stream, sxsdk::text_stream_interface* text_stream, void* aux = 0) = 0; // 7
 	virtual bool can_import_from_stream ( void* aux =0 ) { return true; }  // 8
 	virtual bool skips_dialog ( void* aux =0 ) { return true; }  // 9
-	virtual void do_pre_import (const sxsdk::mat4 & t, void* aux = 0) { }  // 10
-	virtual int importer_interface_dummy11(void *) { assert(false); throw "invalid interface importer_interface"; return 0; } // 11
-	virtual int importer_interface_dummy12(void *) { assert(false); throw "invalid interface importer_interface"; return 0; } // 12
-	virtual int importer_interface_dummy13(void *) { assert(false); throw "invalid interface importer_interface"; return 0; } // 13
+	virtual void do_pre_import (const sxsdk::mat4 & t, void* path) { }  // 10
+	virtual bool can_access_external_sandbox ( void* aux =0 ) { return false; }  // 11
+	virtual int get_number_of_access_files_outside_sandbox ( void* aux =0 ) { return 0; }  // 12
+	virtual const char *get_access_file_path_outside_sandbox (int i, void* aux = 0) { return 0; }  // 13
 	virtual int importer_interface_dummy14(void *) { assert(false); throw "invalid interface importer_interface"; return 0; } // 14
 	virtual int importer_interface_dummy15(void *) { assert(false); throw "invalid interface importer_interface"; return 0; } // 15
 	virtual int importer_interface_dummy16(void *) { assert(false); throw "invalid interface importer_interface"; return 0; } // 16

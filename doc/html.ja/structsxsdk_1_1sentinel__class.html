@@ -4,49 +4,86 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <title>構造体 sxsdk::sentinel_class</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<!-- 作成： Doxygen 1.6.1 -->
-<div class="navigation" id="top">
-  <div class="tabs">
-    <ul>
-      <li><a href="main.html"><span>メインページ</span></a></li>
+<!-- 作成： Doxygen 1.7.4 -->
+<div id="top">
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
       <li><a href="pages.html"><span>関連ページ</span></a></li>
       <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
       <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
       <li><a href="files.html"><span>ファイル</span></a></li>
     </ul>
   </div>
-  <div class="tabs">
-    <ul>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
       <li><a href="annotated.html"><span>構成</span></a></li>
       <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
       <li><a href="functions.html"><span>構成メンバ</span></a></li>
     </ul>
   </div>
-  <div class="navpath"><a class="el" href="namespacesxsdk.html">sxsdk</a>::<a class="el" href="structsxsdk_1_1sentinel__class.html">sentinel_class</a>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
   </div>
 </div>
-<div class="contents">
-<h1>構造体 sxsdk::sentinel_class</h1><!-- doxytag: class="sxsdk::sentinel_class" --><!-- doxytag: inherits="sxsdk::shape_class" --><div class="dynheader">
-sxsdk::sentinel_classに対する継承グラフ</div>
-<div class="dynsection">
- <div class="center">
-  <img src="structsxsdk_1_1sentinel__class.gif" usemap="#sxsdk::sentinel_class_map" alt=""/>
-  <map id="sxsdk::sentinel_class_map" name="sxsdk::sentinel_class_map">
-<area href="structsxsdk_1_1shape__class.html" alt="sxsdk::shape_class" shape="rect" coords="0,0,128,24"/>
-</map>
- </div>
+<script type="text/javascript">
+  initNavTree('structsxsdk_1_1sentinel__class.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">構造体 sxsdk::sentinel_class</div>  </div>
 </div>
+<div class="contents">
+<!-- doxytag: class="sxsdk::sentinel_class" --><!-- doxytag: inherits="sxsdk::shape_class" -->
+<p>パートの終端を表す番兵形状を扱うクラス  
+ <a href="structsxsdk_1_1sentinel__class.html#details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="shapeclass_8h_source.html">shapeclass.h</a>&gt;</code></p>
+<div class="dynheader">
+sxsdk::sentinel_classに対する継承グラフ</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="structsxsdk_1_1sentinel__class.png" usemap="#sxsdk::sentinel_class_map" alt=""/>
+  <map id="sxsdk::sentinel_class_map" name="sxsdk::sentinel_class_map">
+<area href="structsxsdk_1_1shape__class.html" title="すべての種類の形状に共通する操作を扱う基本クラス" alt="sxsdk::shape_class" shape="rect" coords="0,0,128,24"/>
+</map>
+ </div></div>
 
 <p><a href="structsxsdk_1_1sentinel__class-members.html">すべてのメンバ一覧</a></p>
-<table border="0" cellpadding="0" cellspacing="0">
+<table class="memberdecls">
 </table>
-<hr/>この構造体の説明は次のファイルから生成されました:<ul>
+<hr/><a name="details" id="details"></a><h2>説明</h2>
+<div class="textblock"><p>パートの終端を表す番兵形状を扱うクラス </p>
+<p>番兵形状はパートの終端を表し、すべてのパートに必ず存在する(空のパートであっても同様)。</p>
+<p>番兵形状のbroはパートの一番上の形状、sisはパートの一番下の形状になる。</p>
+<p><code><a class="el" href="structsxsdk_1_1shape__class.html#ae4ffd8afc5813a6d747169a60549bdff" title="次の形状を持っているか判定する。">has_bro()</a></code>, <code><a class="el" href="structsxsdk_1_1shape__class.html#af9131eb7831002c8eaf4bf34732eb860" title="前の形状を持っているか判定する。">has_sis()</a></code>, <code><a class="el" href="structsxsdk_1_1shape__class.html#a253a41f4ca8ae15d430640d2f01d0997" title="（番兵でない）子の形状を持っているか判定する。">has_son()</a></code> で、確認する形状が番兵だった場合はfalseを返す。</p>
+<p><code>sentinel_classは内部的に使用するクラスのため、プラグイン側からの取得をしない。</code> </p>
+</div><hr/>この構造体の説明は次のファイルから生成されました:<ul>
 <li><a class="el" href="shapeclass_8h_source.html">shapeclass.h</a></li>
 </ul>
 </div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><b>sxsdk</b>      </li>
+      <li class="navelem"><a class="el" href="structsxsdk_1_1sentinel__class.html">sentinel_class</a>      </li>
 <br><br>
 <hr>
 <div align="center">Copyright &copy; e frontier, Inc. All rights reserved.</div>

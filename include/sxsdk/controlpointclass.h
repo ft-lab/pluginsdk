@@ -1,7 +1,8 @@
 #pragma once
 
 namespace sxsdk {
-	class control_point_class {
+	class
+	control_point_class {
 	public:
 		virtual ~control_point_class ();
 		VTABLE_PADDING

@@ -353,7 +353,7 @@
 				</xsd:element>
 				<xsd:element name="marker_index">
 					<xsd:annotation>
-						<xsd:documentation> \en marker_index \enden  \ja マーカインデクス \endja </xsd:documentation>
+						<xsd:documentation> \en marker_index \enden  \ja マーカーインデクス \endja </xsd:documentation>
 						<xsd:documentation> \en blah \enden  \ja ブラウザ表示色のインデクス値 \endja </xsd:documentation>
 					</xsd:annotation>
 				</xsd:element>

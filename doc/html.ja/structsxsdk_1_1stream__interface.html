@@ -4,163 +4,196 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <title>構造体 sxsdk::stream_interface</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<!-- 作成： Doxygen 1.6.1 -->
-<div class="navigation" id="top">
-  <div class="tabs">
-    <ul>
-      <li><a href="main.html"><span>メインページ</span></a></li>
+<!-- 作成： Doxygen 1.7.4 -->
+<div id="top">
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
       <li><a href="pages.html"><span>関連ページ</span></a></li>
       <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
       <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
       <li><a href="files.html"><span>ファイル</span></a></li>
     </ul>
   </div>
-  <div class="tabs">
-    <ul>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
       <li><a href="annotated.html"><span>構成</span></a></li>
       <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
       <li><a href="functions.html"><span>構成メンバ</span></a></li>
     </ul>
   </div>
-  <div class="navpath"><a class="el" href="namespacesxsdk.html">sxsdk</a>::<a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
   </div>
 </div>
+<script type="text/javascript">
+  initNavTree('structsxsdk_1_1stream__interface.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public メソッド</a>  </div>
+  <div class="headertitle">
+<div class="title">構造体 sxsdk::stream_interface</div>  </div>
+</div>
 <div class="contents">
-<h1>構造体 sxsdk::stream_interface</h1><!-- doxytag: class="sxsdk::stream_interface" --><!-- doxytag: inherits="sxsdk::shade_interface" --><div class="dynheader">
+<!-- doxytag: class="sxsdk::stream_interface" --><!-- doxytag: inherits="sxsdk::shade_interface" -->
+<p>属性ストリームやファイルの読み込み、書き込みに使用します。  
+ <a href="structsxsdk_1_1stream__interface.html#details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="streaminterface_8h_source.html">streaminterface.h</a>&gt;</code></p>
+<div class="dynheader">
 sxsdk::stream_interfaceに対する継承グラフ</div>
-<div class="dynsection">
+<div class="dyncontent">
  <div class="center">
-  <img src="structsxsdk_1_1stream__interface.gif" usemap="#sxsdk::stream_interface_map" alt=""/>
+  <img src="structsxsdk_1_1stream__interface.png" usemap="#sxsdk::stream_interface_map" alt=""/>
   <map id="sxsdk::stream_interface_map" name="sxsdk::stream_interface_map">
-<area href="structsxsdk_1_1shade__interface.html" alt="sxsdk::shade_interface" shape="rect" coords="0,56,143,80"/>
+<area href="structsxsdk_1_1shade__interface.html" title="Shadeの情報へのアクセスの基本となるインターフェイス" alt="sxsdk::shade_interface" shape="rect" coords="0,56,143,80"/>
 <area href="classunknown__interface.html" alt="unknown_interface" shape="rect" coords="0,0,143,24"/>
 </map>
- </div>
-</div>
+ </div></div>
 
 <p><a href="structsxsdk_1_1stream__interface-members.html">すべてのメンバ一覧</a></p>
-<table border="0" cellpadding="0" cellspacing="0">
-<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a73af8482f1c4f62b875432d17e455b58"></a><!-- doxytag: member="sxsdk::stream_interface::get_scene_interface" ref="a73af8482f1c4f62b875432d17e455b58" args="(void *=0) const " -->
-virtual <a class="el" href="structsxsdk_1_1scene__interface.html">sxsdk::scene_interface</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a73af8482f1c4f62b875432d17e455b58">get_scene_interface</a> (void *=0) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">シーンインターフェイスを取得する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#acdd49815089b7bc72ff35fbbd32c2c8c">set_swap_endian</a> (bool b, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">エンディアンの変換を行うかどうか  <a href="#acdd49815089b7bc72ff35fbbd32c2c8c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#ae2a3825155fcdf9c0438914d57ffee0f">get_swap_endian</a> (void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">エンディアンの変換を行うかどうか  <a href="#ae2a3825155fcdf9c0438914d57ffee0f"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a32bb0d1d3f8f55a6af3466627465606e">read</a> (int n, void *buff, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ストリームから読み込む。  <a href="#a32bb0d1d3f8f55a6af3466627465606e"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a71bfbb325d2fecd5b52e2628ae37c313">skip</a> (int n, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">読み飛ばす。  <a href="#a71bfbb325d2fecd5b52e2628ae37c313"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a8e4cb85f9c74bf875548fa430242993b">write</a> (int n, const void *buff, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ストリームに書き出す。  <a href="#a8e4cb85f9c74bf875548fa430242993b"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a9dc2fbd8e0291b27410d55de43ac9ba9">set_pointer</a> (int n, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ポインタの位置を設定する。  <a href="#a9dc2fbd8e0291b27410d55de43ac9ba9"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#af1a03927869e2208c5e5acdb234fbc04">set_size</a> (int n, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ストリームのサイズを設定する。  <a href="#af1a03927869e2208c5e5acdb234fbc04"></a><br/></td></tr>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aad884ed4a509214ae4948e6e5cb43ab2"></a><!-- doxytag: member="sxsdk::stream_interface::get_scene_interface" ref="aad884ed4a509214ae4948e6e5cb43ab2" args="(void *=nullptr) const " -->
+virtual <a class="el" href="structsxsdk_1_1scene__interface.html">sxsdk::scene_interface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#aad884ed4a509214ae4948e6e5cb43ab2">get_scene_interface</a> (void *=nullptr) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">シーンインターフェイスを取得する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#acdd49815089b7bc72ff35fbbd32c2c8c">set_swap_endian</a> (bool b, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">エンディアンの変換を行うかどうか  <a href="#acdd49815089b7bc72ff35fbbd32c2c8c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#ae2a3825155fcdf9c0438914d57ffee0f">get_swap_endian</a> (void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">エンディアンの変換を行うかどうか  <a href="#ae2a3825155fcdf9c0438914d57ffee0f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a32bb0d1d3f8f55a6af3466627465606e">read</a> (int n, void *buff, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">ストリームから読み込む。  <a href="#a32bb0d1d3f8f55a6af3466627465606e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a71bfbb325d2fecd5b52e2628ae37c313">skip</a> (int n, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">読み飛ばす。  <a href="#a71bfbb325d2fecd5b52e2628ae37c313"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a8e4cb85f9c74bf875548fa430242993b">write</a> (int n, const void *buff, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">ストリームに書き出す。  <a href="#a8e4cb85f9c74bf875548fa430242993b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a9dc2fbd8e0291b27410d55de43ac9ba9">set_pointer</a> (int n, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">ポインタの位置を設定する。  <a href="#a9dc2fbd8e0291b27410d55de43ac9ba9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#af1a03927869e2208c5e5acdb234fbc04">set_size</a> (int n, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">ストリームのサイズを設定する。  <a href="#af1a03927869e2208c5e5acdb234fbc04"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3b4abd122182ff30740a413a298c1e9b"></a><!-- doxytag: member="sxsdk::stream_interface::get_pointer" ref="a3b4abd122182ff30740a413a298c1e9b" args="(void *aux=0) const " -->
-virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a3b4abd122182ff30740a413a298c1e9b">get_pointer</a> (void *aux=0) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ストリームのポインタの位置を取得する。 <br/></td></tr>
+virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a3b4abd122182ff30740a413a298c1e9b">get_pointer</a> (void *aux=0) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">ストリームのポインタの位置を取得する。 <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9b65991886bfd895bd72869db7df4280"></a><!-- doxytag: member="sxsdk::stream_interface::get_size" ref="a9b65991886bfd895bd72869db7df4280" args="(void *aux=0) const " -->
-virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a9b65991886bfd895bd72869db7df4280">get_size</a> (void *aux=0) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ストリームのサイズを取得する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a47bc98877bf9bc2aaf306420ce8e6c0a">read_char</a> (char &amp;c, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ストリームからデータをchar型として読み込む。  <a href="#a47bc98877bf9bc2aaf306420ce8e6c0a"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a4d610e1742af1bb78ec1698dd8854a64">read_short</a> (short &amp;i, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ストリームからデータをchar型として読み込む。  <a href="#a4d610e1742af1bb78ec1698dd8854a64"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a7b262c30ad95b2bb6246b431f7e73d90">read_int</a> (int &amp;i, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ストリームからデータをint型として読み込む。  <a href="#a7b262c30ad95b2bb6246b431f7e73d90"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#abe6d300c5d39f35fe48b1cb59a4ad577">read_float</a> (float &amp;f, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ストリームからデータをfloat型として読み込む。  <a href="#abe6d300c5d39f35fe48b1cb59a4ad577"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#af693375658da3a7683842164a99415b2">operator&gt;&gt;</a> (char &amp;c)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ストリームからデータをchar型として読み込む。  <a href="#af693375658da3a7683842164a99415b2"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a1f0153a389a5ed083acfb9ff99fcdbdb">operator&gt;&gt;</a> (int &amp;i)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ストリームからデータをint型として読み込む。  <a href="#a1f0153a389a5ed083acfb9ff99fcdbdb"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a9e35f0b531bbcfb2f2fd4727395aa993">operator&gt;&gt;</a> (float &amp;f)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ストリームからデータをfloat型として読み込む。  <a href="#a9e35f0b531bbcfb2f2fd4727395aa993"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a303f538c4c9357a758def97311861641">write_str</a> (const char *s, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">C文字列データをストリームに書き出す。.  <a href="#a303f538c4c9357a758def97311861641"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a81f89feb9897025a9943dedfa1d2305c">write_char</a> (const char &amp;c, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">char型データをストリームに書き出す。  <a href="#a81f89feb9897025a9943dedfa1d2305c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a5bda9d46a2b816cf94ce9a24793998ee">write_int</a> (const int &amp;i, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">int型データをストリームに書き出す。  <a href="#a5bda9d46a2b816cf94ce9a24793998ee"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a0bc879a7fcab6304674191b770bb65aa">write_float</a> (const float &amp;f, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">float型データをストリームに書き出す。  <a href="#a0bc879a7fcab6304674191b770bb65aa"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a8b2b65c44596238dee498714e356b3b4">operator&lt;&lt;</a> (const char *s)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">C文字列データをストリームに書き出す。.  <a href="#a8b2b65c44596238dee498714e356b3b4"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#ac2589cf45a95127cdfd90bc0eb9b177a">operator&lt;&lt;</a> (const char &amp;c)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">char型データをストリームに書き出す。  <a href="#ac2589cf45a95127cdfd90bc0eb9b177a"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#ab35b80b21093b4ad85387ffde8258c6c">operator&lt;&lt;</a> (const int &amp;i)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">int型データをストリームに書き出す。  <a href="#ab35b80b21093b4ad85387ffde8258c6c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#adab3248fb06401e6e44ddaa48fc9cdbe">operator&lt;&lt;</a> (const float &amp;f)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">float型データをストリームに書き出す。  <a href="#adab3248fb06401e6e44ddaa48fc9cdbe"></a><br/></td></tr>
+virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a9b65991886bfd895bd72869db7df4280">get_size</a> (void *aux=0) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">ストリームのサイズを取得する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a47bc98877bf9bc2aaf306420ce8e6c0a">read_char</a> (char &amp;c, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">ストリームからデータをchar型として読み込む。  <a href="#a47bc98877bf9bc2aaf306420ce8e6c0a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a4d610e1742af1bb78ec1698dd8854a64">read_short</a> (short &amp;i, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">ストリームからデータをchar型として読み込む。  <a href="#a4d610e1742af1bb78ec1698dd8854a64"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a7b262c30ad95b2bb6246b431f7e73d90">read_int</a> (int &amp;i, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">ストリームからデータをint型として読み込む。  <a href="#a7b262c30ad95b2bb6246b431f7e73d90"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#abe6d300c5d39f35fe48b1cb59a4ad577">read_float</a> (float &amp;f, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">ストリームからデータをfloat型として読み込む。  <a href="#abe6d300c5d39f35fe48b1cb59a4ad577"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#af693375658da3a7683842164a99415b2">operator&gt;&gt;</a> (char &amp;c)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">ストリームからデータをchar型として読み込む。  <a href="#af693375658da3a7683842164a99415b2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a1f0153a389a5ed083acfb9ff99fcdbdb">operator&gt;&gt;</a> (int &amp;i)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">ストリームからデータをint型として読み込む。  <a href="#a1f0153a389a5ed083acfb9ff99fcdbdb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a9e35f0b531bbcfb2f2fd4727395aa993">operator&gt;&gt;</a> (float &amp;f)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">ストリームからデータをfloat型として読み込む。  <a href="#a9e35f0b531bbcfb2f2fd4727395aa993"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a303f538c4c9357a758def97311861641">write_str</a> (const char *s, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">C文字列データをストリームに書き出す。  <a href="#a303f538c4c9357a758def97311861641"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a81f89feb9897025a9943dedfa1d2305c">write_char</a> (const char &amp;c, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">char型データをストリームに書き出す。  <a href="#a81f89feb9897025a9943dedfa1d2305c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a5bda9d46a2b816cf94ce9a24793998ee">write_int</a> (const int &amp;i, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">int型データをストリームに書き出す。  <a href="#a5bda9d46a2b816cf94ce9a24793998ee"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a0bc879a7fcab6304674191b770bb65aa">write_float</a> (const float &amp;f, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">float型データをストリームに書き出す。  <a href="#a0bc879a7fcab6304674191b770bb65aa"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a8b2b65c44596238dee498714e356b3b4">operator&lt;&lt;</a> (const char *s)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">C文字列データをストリームに書き出す。  <a href="#a8b2b65c44596238dee498714e356b3b4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#ac2589cf45a95127cdfd90bc0eb9b177a">operator&lt;&lt;</a> (const char &amp;c)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">char型データをストリームに書き出す。  <a href="#ac2589cf45a95127cdfd90bc0eb9b177a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#ab35b80b21093b4ad85387ffde8258c6c">operator&lt;&lt;</a> (const int &amp;i)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">int型データをストリームに書き出す。  <a href="#ab35b80b21093b4ad85387ffde8258c6c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#adab3248fb06401e6e44ddaa48fc9cdbe">operator&lt;&lt;</a> (const float &amp;f)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">float型データをストリームに書き出す。  <a href="#adab3248fb06401e6e44ddaa48fc9cdbe"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a99c81b5a09604fa2017b01384e8f50fe"></a><!-- doxytag: member="sxsdk::stream_interface::get_name" ref="a99c81b5a09604fa2017b01384e8f50fe" args="()" -->
-virtual const char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a99c81b5a09604fa2017b01384e8f50fe">get_name</a> ()</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">名前を取得する。 <br/></td></tr>
+virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a99c81b5a09604fa2017b01384e8f50fe">get_name</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">名前を取得する。 <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6d4f3dc9c70d6807ed51de478ab99109"></a><!-- doxytag: member="sxsdk::stream_interface::eof" ref="a6d4f3dc9c70d6807ed51de478ab99109" args="()" -->
-virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a6d4f3dc9c70d6807ed51de478ab99109">eof</a> ()</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">End Of Fileかどうかを返す。. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual const char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a29ecb335d6f753b04aebd3c870076195">get_label</a> (void *=0) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ストリームのラベル名を取得する。  <a href="#a29ecb335d6f753b04aebd3c870076195"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a5fe76c11cb9ff19e268bb501e39dc114">set_label</a> (const char *label_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ストリームのラベル名を設定する。  <a href="#a5fe76c11cb9ff19e268bb501e39dc114"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0a79ccc6ee4c5db014fcb9e1fd08e297"></a><!-- doxytag: member="sxsdk::stream_interface::get_file_path" ref="a0a79ccc6ee4c5db014fcb9e1fd08e297" args="(void *=0) const " -->
-virtual const char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a0a79ccc6ee4c5db014fcb9e1fd08e297">get_file_path</a> (void *=0) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">フルパス名(ストリームがファイルの場合にのみ有効)を取得する。 <br/></td></tr>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a6d4f3dc9c70d6807ed51de478ab99109">eof</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">End Of Fileかどうかを返す。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a6b1fb20c931a4b1c335cabc0bcea9d4c">get_label</a> (void *=nullptr) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">ストリームのラベル名を取得する。  <a href="#a6b1fb20c931a4b1c335cabc0bcea9d4c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#af811d3feb4687c7a616008bd5bd107c7">set_label</a> (const char *label_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">ストリームのラベル名を設定する。  <a href="#af811d3feb4687c7a616008bd5bd107c7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1d1e53f74be743ae99fdf3e7e443b639"></a><!-- doxytag: member="sxsdk::stream_interface::get_file_path" ref="a1d1e53f74be743ae99fdf3e7e443b639" args="(void *=nullptr) const " -->
+virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a1d1e53f74be743ae99fdf3e7e443b639">get_file_path</a> (void *=nullptr) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">フルパス名(ストリームがファイルの場合にのみ有効)を取得する。 <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6e26f83579d1ecf03de5981abe8761a3"></a><!-- doxytag: member="sxsdk::stream_interface::get_file_spec" ref="a6e26f83579d1ecf03de5981abe8761a3" args="(void *aux=0)" -->
-const char *&nbsp;</td><td class="memItemRight" valign="bottom"><b>get_file_spec</b> (void *aux=0)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#aa28f989f69149d36e34d98775a0903a5">read_vec3</a> (sxsdk::vec3 &amp;v, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ストリームからデータをsxsdkvec3型として読み込む。  <a href="#aa28f989f69149d36e34d98775a0903a5"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#af1bf6c4ba4fd43d90fba5a5afc3fc601">write_vec3</a> (const sxsdk::vec3 &amp;v, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">sxsdk::vec3型データをストリームに書き出す。  <a href="#af1bf6c4ba4fd43d90fba5a5afc3fc601"></a><br/></td></tr>
+const char *&#160;</td><td class="memItemRight" valign="bottom"><b>get_file_spec</b> (void *aux=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#aa28f989f69149d36e34d98775a0903a5">read_vec3</a> (sxsdk::vec3 &amp;v, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">ストリームからデータをsxsdk::vec3型として読み込む。  <a href="#aa28f989f69149d36e34d98775a0903a5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#af1bf6c4ba4fd43d90fba5a5afc3fc601">write_vec3</a> (const sxsdk::vec3 &amp;v, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sxsdk::vec3型データをストリームに書き出す。  <a href="#af1bf6c4ba4fd43d90fba5a5afc3fc601"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a235b890fdcd20716b15e7c47f879f534"></a><!-- doxytag: member="sxsdk::stream_interface::enter_critical_section" ref="a235b890fdcd20716b15e7c47f879f534" args="(void *aux=0)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a235b890fdcd20716b15e7c47f879f534">enter_critical_section</a> (void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">クリティカルセクションに入る。 <br/></td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a235b890fdcd20716b15e7c47f879f534">enter_critical_section</a> (void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">クリティカルセクションに入る。 <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad16b86124622cdfa72e27bd7122029e6"></a><!-- doxytag: member="sxsdk::stream_interface::leave_critical_section" ref="ad16b86124622cdfa72e27bd7122029e6" args="(void *aux=0)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#ad16b86124622cdfa72e27bd7122029e6">leave_critical_section</a> (void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">クリティカルセクションから抜ける。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a5783bd471894a9e68848ea034e939fe8">read_shape</a> (<a class="el" href="structsxsdk_1_1scene__interface.html">sxsdk::scene_interface</a> *scene, <a class="el" href="structsxsdk_1_1shape__class.html">sxsdk::shape_class</a> *&amp;shape, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ストリームから形状データを読み込む。  <a href="#a5783bd471894a9e68848ea034e939fe8"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#ac2f2189f83e52cd6b9995b3465db736b">write_shape</a> (<a class="el" href="structsxsdk_1_1shape__class.html">sxsdk::shape_class</a> *shape, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">形状データをストリームに書き出す。  <a href="#ac2f2189f83e52cd6b9995b3465db736b"></a><br/></td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#ad16b86124622cdfa72e27bd7122029e6">leave_critical_section</a> (void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">クリティカルセクションから抜ける。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a5783bd471894a9e68848ea034e939fe8">read_shape</a> (<a class="el" href="structsxsdk_1_1scene__interface.html">sxsdk::scene_interface</a> *scene, <a class="el" href="structsxsdk_1_1shape__class.html">sxsdk::shape_class</a> *&amp;shape, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">ストリームから形状データを読み込む。  <a href="#a5783bd471894a9e68848ea034e939fe8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#ac2f2189f83e52cd6b9995b3465db736b">write_shape</a> (<a class="el" href="structsxsdk_1_1shape__class.html">sxsdk::shape_class</a> *shape, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">形状データをストリームに書き出す。  <a href="#ac2f2189f83e52cd6b9995b3465db736b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abcd94223adadec498a7f351c3e997f9d"></a><!-- doxytag: member="sxsdk::stream_interface::stream_to_clipboard" ref="abcd94223adadec498a7f351c3e997f9d" args="(void *aux=0)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#abcd94223adadec498a7f351c3e997f9d">stream_to_clipboard</a> (void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ストリームオブジェクトの内容をテキスト（XML）としてクリップボードにコピーする。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#adaa118ae11c162774b0826edb0bbda91">write_short</a> (const short &amp;i, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">short型データをストリームに書き出す。  <a href="#adaa118ae11c162774b0826edb0bbda91"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a5b470083b8a7f1fbbf7c927fe727853a">read</a> (char &amp;i)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ストリームからデータをchar型として読み込む。  <a href="#a5b470083b8a7f1fbbf7c927fe727853a"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#ab43702c444b28e3334de4e00fc0ca28c">read</a> (short &amp;i)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ストリームからデータをshort型として読み込む。  <a href="#ab43702c444b28e3334de4e00fc0ca28c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#ace3f9e26520145dc3e4fc0b8f0a20405">read</a> (int &amp;i)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ストリームからデータをint型として読み込む。  <a href="#ace3f9e26520145dc3e4fc0b8f0a20405"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a7cd9d48c72e86bf9e8d583da37106f96">read</a> (float &amp;f)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ストリームからデータをfloat型として読み込む。  <a href="#a7cd9d48c72e86bf9e8d583da37106f96"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#ab093c08cf1bbc57d576e4d904c7f0d2f">write</a> (const char *s)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">C文字列データをストリームに書き出す。.  <a href="#ab093c08cf1bbc57d576e4d904c7f0d2f"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a52573bd0aecbbc237a2c8381b2e02065">write</a> (const char &amp;c)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">char型データをストリームに書き出す。  <a href="#a52573bd0aecbbc237a2c8381b2e02065"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#ae25f84ac492efa2f8b7f7ea852dbbcd5">write</a> (const short &amp;i)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">short型データをストリームに書き出す。  <a href="#ae25f84ac492efa2f8b7f7ea852dbbcd5"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a8d0d4179936669da6507fa42003a09dd">write</a> (const int &amp;i)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">int型データをストリームに書き出す。  <a href="#a8d0d4179936669da6507fa42003a09dd"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a99c8496100386cb0f468b3e1e72ac9cd">write</a> (const float &amp;f)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">float型データをストリームに書き出す。  <a href="#a99c8496100386cb0f468b3e1e72ac9cd"></a><br/></td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#abcd94223adadec498a7f351c3e997f9d">stream_to_clipboard</a> (void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">ストリームオブジェクトの内容をテキスト（XML）としてクリップボードにコピーする。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#adaa118ae11c162774b0826edb0bbda91">write_short</a> (const short &amp;i, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">short型データをストリームに書き出す。  <a href="#adaa118ae11c162774b0826edb0bbda91"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a5b470083b8a7f1fbbf7c927fe727853a">read</a> (char &amp;i)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">ストリームからデータをchar型として読み込む。  <a href="#a5b470083b8a7f1fbbf7c927fe727853a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#ab43702c444b28e3334de4e00fc0ca28c">read</a> (short &amp;i)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">ストリームからデータをshort型として読み込む。  <a href="#ab43702c444b28e3334de4e00fc0ca28c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#ace3f9e26520145dc3e4fc0b8f0a20405">read</a> (int &amp;i)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">ストリームからデータをint型として読み込む。  <a href="#ace3f9e26520145dc3e4fc0b8f0a20405"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a7cd9d48c72e86bf9e8d583da37106f96">read</a> (float &amp;f)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">ストリームからデータをfloat型として読み込む。  <a href="#a7cd9d48c72e86bf9e8d583da37106f96"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#ab093c08cf1bbc57d576e4d904c7f0d2f">write</a> (const char *s)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">C文字列データをストリームに書き出す。  <a href="#ab093c08cf1bbc57d576e4d904c7f0d2f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a52573bd0aecbbc237a2c8381b2e02065">write</a> (const char &amp;c)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">char型データをストリームに書き出す。  <a href="#a52573bd0aecbbc237a2c8381b2e02065"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#ae25f84ac492efa2f8b7f7ea852dbbcd5">write</a> (const short &amp;i)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">short型データをストリームに書き出す。  <a href="#ae25f84ac492efa2f8b7f7ea852dbbcd5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a8d0d4179936669da6507fa42003a09dd">write</a> (const int &amp;i)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">int型データをストリームに書き出す。  <a href="#a8d0d4179936669da6507fa42003a09dd"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1stream__interface.html#a99c8496100386cb0f468b3e1e72ac9cd">write</a> (const float &amp;f)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">float型データをストリームに書き出す。  <a href="#a99c8496100386cb0f468b3e1e72ac9cd"></a><br/></td></tr>
 </table>
-<hr/><h2>関数</h2>
-<a class="anchor" id="a29ecb335d6f753b04aebd3c870076195"></a><!-- doxytag: member="sxsdk::stream_interface::get_label" ref="a29ecb335d6f753b04aebd3c870076195" args="(void *=0) const " -->
+<hr/><a name="details" id="details"></a><h2>説明</h2>
+<div class="textblock"><p>属性ストリームやファイルの読み込み、書き込みに使用します。 </p>
+<p>属性ストリームはプラグインで使用するデータの記憶領域で、形状を始めとしたShadeのオブジェクトに付随させることができる。アクセスには<code><a class="el" href="structsxsdk_1_1stream__interface.html" title="属性ストリームやファイルの読み込み、書き込みに使用します。">stream_interface</a></code> を用い、ファイルへの読み書きと同じように使用できる。</p>
+<p>以下の関数でこのクラスを直接取得する。これ以外に関数の引数として渡される場合がある。</p>
+<p><code><a class="el" href="structsxsdk_1_1surface__interface.html">surface_interface</a></code>, <code><a class="el" href="structsxsdk_1_1surface__class.html" title="表面材質の情報の設定、取得に使用する。">surface_class</a></code>, <code><a class="el" href="structsxsdk_1_1shape__class.html" title="すべての種類の形状に共通する操作を扱う基本クラス">sxsdk::shape_class</a></code>, <code><a class="el" href="structsxsdk_1_1shader__node__class.html" title="シェーダーノード（未実装）">shader_node_class</a></code>, <code><a class="el" href="structsxsdk_1_1scene__interface.html" title="シーンの情報の取得・設定に使用する。">scene_interface</a></code>, <code><a class="el" href="structsxsdk_1_1rendering__interface.html" title="レンダリング設定、開始に使用する。">rendering_interface</a></code>, <code><a class="el" href="structsxsdk_1_1preference__interface.html" title="環境設定の情報の設定、取得に使用する。">preference_interface</a></code>, <code><a class="el" href="structsxsdk_1_1mapping__layer__class.html" title="表面材質のマッピングの１つのレイヤを表すクラス。マッピングの情報の取得・設定に使用する。">mapping_layer_class</a></code>, <code><a class="el" href="structsxsdk_1_1distant__light__item__class.html" title="一つの無限遠光源アイテムを表すクラス。無限遠光源の光源ごとの情報の取得、設定に使用する。">distant_light_item_class</a></code>, <code><a class="el" href="structsxsdk_1_1camera__class.html" title="一個のカメラを表すクラス。カメラの情報の取得、設定に使用する。">camera_class</a></code> の <code>create_attribute_stream_interface_with_uuid()</code>, <code>get_attribute_stream_interface_with_uuid()</code> </p>
+</div><hr/><h2>関数</h2>
+<a class="anchor" id="a6b1fb20c931a4b1c335cabc0bcea9d4c"></a><!-- doxytag: member="sxsdk::stream_interface::get_label" ref="a6b1fb20c931a4b1c335cabc0bcea9d4c" args="(void *=nullptr) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">virtual const char* sxsdk::stream_interface::get_label </td>
           <td>(</td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> = <code>0</code></td>
-          <td>&nbsp;)&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"> = <code>nullptr</code></td><td>)</td>
           <td> const<code> [virtual]</code></td>
         </tr>
       </table>
@@ -179,9 +212,8 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="memname">virtual bool sxsdk::stream_interface::get_swap_endian </td>
           <td>(</td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td>
-          <td>&nbsp;)&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code></td><td>)</td>
           <td><code> [virtual]</code></td>
         </tr>
       </table>
@@ -193,54 +225,26 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 
 </div>
 </div>
-<a class="anchor" id="adab3248fb06401e6e44ddaa48fc9cdbe"></a><!-- doxytag: member="sxsdk::stream_interface::operator&lt;&lt;" ref="adab3248fb06401e6e44ddaa48fc9cdbe" args="(const float &amp;f)" -->
+<a class="anchor" id="a8b2b65c44596238dee498714e356b3b4"></a><!-- doxytag: member="sxsdk::stream_interface::operator&lt;&lt;" ref="a8b2b65c44596238dee498714e356b3b4" args="(const char *s)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a>&amp; sxsdk::stream_interface::operator&lt;&lt; </td>
           <td>(</td>
-          <td class="paramtype">const float &amp;&nbsp;</td>
-          <td class="paramname"> <em>f</em></td>
-          <td>&nbsp;)&nbsp;</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
           <td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>float型データをストリームに書き出す。 </p>
-<p>ポインタが4バイト進む。</p>
+<p>C文字列データをストリームに書き出す。 </p>
+<p>C文字列データのサイズだけポインタが進む。</p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>f</em>&nbsp;</td><td>バッファ </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="ab35b80b21093b4ad85387ffde8258c6c"></a><!-- doxytag: member="sxsdk::stream_interface::operator&lt;&lt;" ref="ab35b80b21093b4ad85387ffde8258c6c" args="(const int &amp;i)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a>&amp; sxsdk::stream_interface::operator&lt;&lt; </td>
-          <td>(</td>
-          <td class="paramtype">const int &amp;&nbsp;</td>
-          <td class="paramname"> <em>i</em></td>
-          <td>&nbsp;)&nbsp;</td>
-          <td><code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>int型データをストリームに書き出す。 </p>
-<p>ポインタが4バイト進む。</p>
-<dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>i</em>&nbsp;</td><td>バッファ </td></tr>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>バッファ </td></tr>
   </table>
   </dd>
 </dl>
@@ -254,9 +258,8 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="memname">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a>&amp; sxsdk::stream_interface::operator&lt;&lt; </td>
           <td>(</td>
-          <td class="paramtype">const char &amp;&nbsp;</td>
-          <td class="paramname"> <em>c</em></td>
-          <td>&nbsp;)&nbsp;</td>
+          <td class="paramtype">const char &amp;&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
           <td><code> [virtual]</code></td>
         </tr>
       </table>
@@ -266,62 +269,60 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <p>char型データをストリームに書き出す。 </p>
 <p>ポインタが1バイト進む。</p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>c</em>&nbsp;</td><td>バッファ </td></tr>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>バッファ </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="a8b2b65c44596238dee498714e356b3b4"></a><!-- doxytag: member="sxsdk::stream_interface::operator&lt;&lt;" ref="a8b2b65c44596238dee498714e356b3b4" args="(const char *s)" -->
+<a class="anchor" id="adab3248fb06401e6e44ddaa48fc9cdbe"></a><!-- doxytag: member="sxsdk::stream_interface::operator&lt;&lt;" ref="adab3248fb06401e6e44ddaa48fc9cdbe" args="(const float &amp;f)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a>&amp; sxsdk::stream_interface::operator&lt;&lt; </td>
           <td>(</td>
-          <td class="paramtype">const char *&nbsp;</td>
-          <td class="paramname"> <em>s</em></td>
-          <td>&nbsp;)&nbsp;</td>
+          <td class="paramtype">const float &amp;&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
           <td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>C文字列データをストリームに書き出す。. </p>
-<p>C文字列データのサイズだけポインタが進む。</p>
+<p>float型データをストリームに書き出す。 </p>
+<p>ポインタが4バイト進む。</p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>s</em>&nbsp;</td><td>バッファ </td></tr>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>バッファ </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="a9e35f0b531bbcfb2f2fd4727395aa993"></a><!-- doxytag: member="sxsdk::stream_interface::operator&gt;&gt;" ref="a9e35f0b531bbcfb2f2fd4727395aa993" args="(float &amp;f)" -->
+<a class="anchor" id="ab35b80b21093b4ad85387ffde8258c6c"></a><!-- doxytag: member="sxsdk::stream_interface::operator&lt;&lt;" ref="ab35b80b21093b4ad85387ffde8258c6c" args="(const int &amp;i)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a>&amp; sxsdk::stream_interface::operator&gt;&gt; </td>
+          <td class="memname">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a>&amp; sxsdk::stream_interface::operator&lt;&lt; </td>
           <td>(</td>
-          <td class="paramtype">float &amp;&nbsp;</td>
-          <td class="paramname"> <em>f</em></td>
-          <td>&nbsp;)&nbsp;</td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
           <td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>ストリームからデータをfloat型として読み込む。 </p>
-<p>ポインタが4バイト進む。EOFの場合は例外を投げる。</p>
+<p>int型データをストリームに書き出す。 </p>
+<p>ポインタが4バイト進む。</p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>f</em>&nbsp;</td><td>バッファ </td></tr>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>バッファ </td></tr>
   </table>
   </dd>
 </dl>
@@ -335,9 +336,8 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="memname">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a>&amp; sxsdk::stream_interface::operator&gt;&gt; </td>
           <td>(</td>
-          <td class="paramtype">int &amp;&nbsp;</td>
-          <td class="paramname"> <em>i</em></td>
-          <td>&nbsp;)&nbsp;</td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
           <td><code> [virtual]</code></td>
         </tr>
       </table>
@@ -347,8 +347,34 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <p>ストリームからデータをint型として読み込む。 </p>
 <p>ポインタが1バイト進む。EOFの場合は例外を投げる。</p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>i</em>&nbsp;</td><td>バッファ </td></tr>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>バッファ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a9e35f0b531bbcfb2f2fd4727395aa993"></a><!-- doxytag: member="sxsdk::stream_interface::operator&gt;&gt;" ref="a9e35f0b531bbcfb2f2fd4727395aa993" args="(float &amp;f)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a>&amp; sxsdk::stream_interface::operator&gt;&gt; </td>
+          <td>(</td>
+          <td class="paramtype">float &amp;&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ストリームからデータをfloat型として読み込む。 </p>
+<p>ポインタが4バイト進む。EOFの場合は例外を投げる。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>バッファ </td></tr>
   </table>
   </dd>
 </dl>
@@ -362,9 +388,8 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="memname">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a>&amp; sxsdk::stream_interface::operator&gt;&gt; </td>
           <td>(</td>
-          <td class="paramtype">char &amp;&nbsp;</td>
-          <td class="paramname"> <em>c</em></td>
-          <td>&nbsp;)&nbsp;</td>
+          <td class="paramtype">char &amp;&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
           <td><code> [virtual]</code></td>
         </tr>
       </table>
@@ -374,116 +399,8 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <p>ストリームからデータをchar型として読み込む。 </p>
 <p>ポインタが1バイト進む。EOFの場合は例外を投げる。</p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>c</em>&nbsp;</td><td>バッファ </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="a7cd9d48c72e86bf9e8d583da37106f96"></a><!-- doxytag: member="sxsdk::stream_interface::read" ref="a7cd9d48c72e86bf9e8d583da37106f96" args="(float &amp;f)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a>&amp; sxsdk::stream_interface::read </td>
-          <td>(</td>
-          <td class="paramtype">float &amp;&nbsp;</td>
-          <td class="paramname"> <em>f</em></td>
-          <td>&nbsp;)&nbsp;</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>ストリームからデータをfloat型として読み込む。 </p>
-<p>ポインタが4バイト進む。EOFの場合は例外を投げる。</p>
-<dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>f</em>&nbsp;</td><td>バッファ </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="ace3f9e26520145dc3e4fc0b8f0a20405"></a><!-- doxytag: member="sxsdk::stream_interface::read" ref="ace3f9e26520145dc3e4fc0b8f0a20405" args="(int &amp;i)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a>&amp; sxsdk::stream_interface::read </td>
-          <td>(</td>
-          <td class="paramtype">int &amp;&nbsp;</td>
-          <td class="paramname"> <em>i</em></td>
-          <td>&nbsp;)&nbsp;</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>ストリームからデータをint型として読み込む。 </p>
-<p>ポインタが4バイト進む。EOFの場合は例外を投げる。</p>
-<dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>i</em>&nbsp;</td><td>バッファ </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="ab43702c444b28e3334de4e00fc0ca28c"></a><!-- doxytag: member="sxsdk::stream_interface::read" ref="ab43702c444b28e3334de4e00fc0ca28c" args="(short &amp;i)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a>&amp; sxsdk::stream_interface::read </td>
-          <td>(</td>
-          <td class="paramtype">short &amp;&nbsp;</td>
-          <td class="paramname"> <em>i</em></td>
-          <td>&nbsp;)&nbsp;</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>ストリームからデータをshort型として読み込む。 </p>
-<p>ポインタが1バイト進む。EOFの場合は例外を投げる。</p>
-<dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>i</em>&nbsp;</td><td>バッファ </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="a5b470083b8a7f1fbbf7c927fe727853a"></a><!-- doxytag: member="sxsdk::stream_interface::read" ref="a5b470083b8a7f1fbbf7c927fe727853a" args="(char &amp;i)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a>&amp; sxsdk::stream_interface::read </td>
-          <td>(</td>
-          <td class="paramtype">char &amp;&nbsp;</td>
-          <td class="paramname"> <em>i</em></td>
-          <td>&nbsp;)&nbsp;</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>ストリームからデータをchar型として読み込む。 </p>
-<p>ポインタが1バイト進む。EOFの場合は例外を投げる。</p>
-<dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>i</em>&nbsp;</td><td>バッファ </td></tr>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>バッファ </td></tr>
   </table>
   </dd>
 </dl>
@@ -497,25 +414,25 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="memname">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a>&amp; sxsdk::stream_interface::read </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>n</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>buff</em>, </td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>buff</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -524,12 +441,124 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <p>ストリームから読み込む。 </p>
 <p>ポインタが<em>n</em> バイト進む。EOFの場合は例外を投げる。</p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>n</em>&nbsp;</td><td>読み込むバイト数 </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>buff</em>&nbsp;</td><td>バッファ </td></tr>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>読み込むバイト数 </td></tr>
+    <tr><td class="paramname">buff</td><td>バッファ </td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a class="anchor" id="a5b470083b8a7f1fbbf7c927fe727853a"></a><!-- doxytag: member="sxsdk::stream_interface::read" ref="a5b470083b8a7f1fbbf7c927fe727853a" args="(char &amp;i)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a>&amp; sxsdk::stream_interface::read </td>
+          <td>(</td>
+          <td class="paramtype">char &amp;&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ストリームからデータをchar型として読み込む。 </p>
+<p>ポインタが1バイト進む。EOFの場合は例外を投げる。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>バッファ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>参照先 <a class="el" href="structsxsdk_1_1stream__interface.html#a47bc98877bf9bc2aaf306420ce8e6c0a">read_char()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab43702c444b28e3334de4e00fc0ca28c"></a><!-- doxytag: member="sxsdk::stream_interface::read" ref="ab43702c444b28e3334de4e00fc0ca28c" args="(short &amp;i)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a>&amp; sxsdk::stream_interface::read </td>
+          <td>(</td>
+          <td class="paramtype">short &amp;&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ストリームからデータをshort型として読み込む。 </p>
+<p>ポインタが1バイト進む。EOFの場合は例外を投げる。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>バッファ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>参照先 <a class="el" href="structsxsdk_1_1stream__interface.html#a4d610e1742af1bb78ec1698dd8854a64">read_short()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ace3f9e26520145dc3e4fc0b8f0a20405"></a><!-- doxytag: member="sxsdk::stream_interface::read" ref="ace3f9e26520145dc3e4fc0b8f0a20405" args="(int &amp;i)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a>&amp; sxsdk::stream_interface::read </td>
+          <td>(</td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ストリームからデータをint型として読み込む。 </p>
+<p>ポインタが4バイト進む。EOFの場合は例外を投げる。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>バッファ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>参照先 <a class="el" href="structsxsdk_1_1stream__interface.html#a7b262c30ad95b2bb6246b431f7e73d90">read_int()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7cd9d48c72e86bf9e8d583da37106f96"></a><!-- doxytag: member="sxsdk::stream_interface::read" ref="a7cd9d48c72e86bf9e8d583da37106f96" args="(float &amp;f)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a>&amp; sxsdk::stream_interface::read </td>
+          <td>(</td>
+          <td class="paramtype">float &amp;&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ストリームからデータをfloat型として読み込む。 </p>
+<p>ポインタが4バイト進む。EOFの場合は例外を投げる。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>バッファ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>参照先 <a class="el" href="structsxsdk_1_1stream__interface.html#abe6d300c5d39f35fe48b1cb59a4ad577">read_float()</a>.</p>
 
 </div>
 </div>
@@ -540,19 +569,19 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="memname">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a>&amp; sxsdk::stream_interface::read_char </td>
           <td>(</td>
-          <td class="paramtype">char &amp;&nbsp;</td>
-          <td class="paramname"> <em>c</em>, </td>
+          <td class="paramtype">char &amp;&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -561,11 +590,13 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <p>ストリームからデータをchar型として読み込む。 </p>
 <p>ポインタが1バイト進む。EOFの場合は例外を投げる。</p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>c</em>&nbsp;</td><td>バッファ </td></tr>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>バッファ </td></tr>
   </table>
   </dd>
 </dl>
+
+<p>参照元 <a class="el" href="structsxsdk_1_1stream__interface.html#a5b470083b8a7f1fbbf7c927fe727853a">read()</a>.</p>
 
 </div>
 </div>
@@ -576,19 +607,19 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="memname">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a>&amp; sxsdk::stream_interface::read_float </td>
           <td>(</td>
-          <td class="paramtype">float &amp;&nbsp;</td>
-          <td class="paramname"> <em>f</em>, </td>
+          <td class="paramtype">float &amp;&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -597,11 +628,13 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <p>ストリームからデータをfloat型として読み込む。 </p>
 <p>ポインタが4バイト進む。EOFの場合は例外を投げる。</p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>f</em>&nbsp;</td><td>バッファ </td></tr>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>バッファ </td></tr>
   </table>
   </dd>
 </dl>
+
+<p>参照元 <a class="el" href="structsxsdk_1_1stream__interface.html#a7cd9d48c72e86bf9e8d583da37106f96">read()</a>.</p>
 
 </div>
 </div>
@@ -612,19 +645,19 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="memname">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a>&amp; sxsdk::stream_interface::read_int </td>
           <td>(</td>
-          <td class="paramtype">int &amp;&nbsp;</td>
-          <td class="paramname"> <em>i</em>, </td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -633,11 +666,13 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <p>ストリームからデータをint型として読み込む。 </p>
 <p>ポインタが4バイト進む。EOFの場合は例外を投げる。</p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>i</em>&nbsp;</td><td>バッファ </td></tr>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>バッファ </td></tr>
   </table>
   </dd>
 </dl>
+
+<p>参照元 <a class="el" href="structsxsdk_1_1stream__interface.html#ace3f9e26520145dc3e4fc0b8f0a20405">read()</a>.</p>
 
 </div>
 </div>
@@ -648,25 +683,25 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="memname">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a>&amp; sxsdk::stream_interface::read_shape </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structsxsdk_1_1scene__interface.html">sxsdk::scene_interface</a> *&nbsp;</td>
-          <td class="paramname"> <em>scene</em>, </td>
+          <td class="paramtype"><a class="el" href="structsxsdk_1_1scene__interface.html">sxsdk::scene_interface</a> *&#160;</td>
+          <td class="paramname"><em>scene</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structsxsdk_1_1shape__class.html">sxsdk::shape_class</a> *&amp;&nbsp;</td>
-          <td class="paramname"> <em>shape</em>, </td>
+          <td class="paramtype"><a class="el" href="structsxsdk_1_1shape__class.html">sxsdk::shape_class</a> *&amp;&#160;</td>
+          <td class="paramname"><em>shape</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -674,9 +709,9 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 
 <p>ストリームから形状データを読み込む。 </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>scene</em>&nbsp;</td><td>読み込むシーン </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>shape</em>&nbsp;</td><td>読み込まれた形状のポインタが格納される。 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">scene</td><td>読み込むシーン </td></tr>
+    <tr><td class="paramname">shape</td><td>読み込まれた形状のポインタが格納される。 </td></tr>
   </table>
   </dd>
 </dl>
@@ -690,19 +725,19 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="memname">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a>&amp; sxsdk::stream_interface::read_short </td>
           <td>(</td>
-          <td class="paramtype">short &amp;&nbsp;</td>
-          <td class="paramname"> <em>i</em>, </td>
+          <td class="paramtype">short &amp;&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -711,11 +746,13 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <p>ストリームからデータをchar型として読み込む。 </p>
 <p>ポインタが1バイト進む。EOFの場合は例外を投げる。</p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>i</em>&nbsp;</td><td>バッファ </td></tr>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>バッファ </td></tr>
   </table>
   </dd>
 </dl>
+
+<p>参照元 <a class="el" href="structsxsdk_1_1stream__interface.html#ab43702c444b28e3334de4e00fc0ca28c">read()</a>.</p>
 
 </div>
 </div>
@@ -726,49 +763,49 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="memname">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a>&amp; sxsdk::stream_interface::read_vec3 </td>
           <td>(</td>
-          <td class="paramtype">sxsdk::vec3 &amp;&nbsp;</td>
-          <td class="paramname"> <em>v</em>, </td>
+          <td class="paramtype">sxsdk::vec3 &amp;&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>ストリームからデータをsxsdkvec3型として読み込む。 </p>
+<p>ストリームからデータをsxsdk::vec3型として読み込む。 </p>
 <p>ポインタが12バイト進む。EOFの場合は例外を投げる。 </p>
 
 </div>
 </div>
-<a class="anchor" id="a5fe76c11cb9ff19e268bb501e39dc114"></a><!-- doxytag: member="sxsdk::stream_interface::set_label" ref="a5fe76c11cb9ff19e268bb501e39dc114" args="(const char *label_param, void *=0)" -->
+<a class="anchor" id="af811d3feb4687c7a616008bd5bd107c7"></a><!-- doxytag: member="sxsdk::stream_interface::set_label" ref="af811d3feb4687c7a616008bd5bd107c7" args="(const char *label_param, void *=nullptr)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a>&amp; sxsdk::stream_interface::set_label </td>
           <td>(</td>
-          <td class="paramtype">const char *&nbsp;</td>
-          <td class="paramname"> <em>label_param</em>, </td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>label_param</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -786,19 +823,19 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="memname">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a>&amp; sxsdk::stream_interface::set_pointer </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>n</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -806,8 +843,8 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 
 <p>ポインタの位置を設定する。 </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>n</em>&nbsp;</td><td>位置 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>位置 </td></tr>
   </table>
   </dd>
 </dl>
@@ -821,19 +858,19 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="memname">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a>&amp; sxsdk::stream_interface::set_size </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>n</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -841,8 +878,8 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 
 <p>ストリームのサイズを設定する。 </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>n</em>&nbsp;</td><td>サイズ </td></tr>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>サイズ </td></tr>
   </table>
   </dd>
 </dl>
@@ -856,19 +893,19 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="memname">virtual void sxsdk::stream_interface::set_swap_endian </td>
           <td>(</td>
-          <td class="paramtype">bool&nbsp;</td>
-          <td class="paramname"> <em>b</em>, </td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -886,19 +923,19 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="memname">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a>&amp; sxsdk::stream_interface::skip </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>n</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -907,8 +944,8 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <p>読み飛ばす。 </p>
 <p>ポインタが<em>n</em> バイト進む。EOFの場合は例外を投げる。</p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>n</em>&nbsp;</td><td>読み飛ばすバイト数 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>読み飛ばすバイト数 </td></tr>
   </table>
   </dd>
 </dl>
@@ -922,9 +959,8 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="memname"><a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a>&amp; sxsdk::stream_interface::write </td>
           <td>(</td>
-          <td class="paramtype">const float &amp;&nbsp;</td>
-          <td class="paramname"> <em>f</em></td>
-          <td>&nbsp;)&nbsp;</td>
+          <td class="paramtype">const float &amp;&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
           <td><code> [inline]</code></td>
         </tr>
       </table>
@@ -934,11 +970,13 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <p>float型データをストリームに書き出す。 </p>
 <p>ポインタが4バイト進む。</p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>f</em>&nbsp;</td><td>バッファ </td></tr>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>バッファ </td></tr>
   </table>
   </dd>
 </dl>
+
+<p>参照先 <a class="el" href="structsxsdk_1_1stream__interface.html#a0bc879a7fcab6304674191b770bb65aa">write_float()</a>.</p>
 
 </div>
 </div>
@@ -949,9 +987,8 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="memname"><a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a>&amp; sxsdk::stream_interface::write </td>
           <td>(</td>
-          <td class="paramtype">const int &amp;&nbsp;</td>
-          <td class="paramname"> <em>i</em></td>
-          <td>&nbsp;)&nbsp;</td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
           <td><code> [inline]</code></td>
         </tr>
       </table>
@@ -961,11 +998,13 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <p>int型データをストリームに書き出す。 </p>
 <p>ポインタが4バイト進む。</p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>i</em>&nbsp;</td><td>バッファ </td></tr>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>バッファ </td></tr>
   </table>
   </dd>
 </dl>
+
+<p>参照先 <a class="el" href="structsxsdk_1_1stream__interface.html#a5bda9d46a2b816cf94ce9a24793998ee">write_int()</a>.</p>
 
 </div>
 </div>
@@ -976,9 +1015,8 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="memname"><a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a>&amp; sxsdk::stream_interface::write </td>
           <td>(</td>
-          <td class="paramtype">const short &amp;&nbsp;</td>
-          <td class="paramname"> <em>i</em></td>
-          <td>&nbsp;)&nbsp;</td>
+          <td class="paramtype">const short &amp;&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
           <td><code> [inline]</code></td>
         </tr>
       </table>
@@ -988,11 +1026,13 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <p>short型データをストリームに書き出す。 </p>
 <p>ポインタが1バイト進む。</p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>i</em>&nbsp;</td><td>バッファ </td></tr>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>バッファ </td></tr>
   </table>
   </dd>
 </dl>
+
+<p>参照先 <a class="el" href="structsxsdk_1_1stream__interface.html#adaa118ae11c162774b0826edb0bbda91">write_short()</a>.</p>
 
 </div>
 </div>
@@ -1003,9 +1043,8 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="memname"><a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a>&amp; sxsdk::stream_interface::write </td>
           <td>(</td>
-          <td class="paramtype">const char &amp;&nbsp;</td>
-          <td class="paramname"> <em>c</em></td>
-          <td>&nbsp;)&nbsp;</td>
+          <td class="paramtype">const char &amp;&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
           <td><code> [inline]</code></td>
         </tr>
       </table>
@@ -1015,8 +1054,53 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <p>char型データをストリームに書き出す。 </p>
 <p>ポインタが1バイト進む。</p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>c</em>&nbsp;</td><td>バッファ </td></tr>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>バッファ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>参照先 <a class="el" href="structsxsdk_1_1stream__interface.html#a81f89feb9897025a9943dedfa1d2305c">write_char()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8e4cb85f9c74bf875548fa430242993b"></a><!-- doxytag: member="sxsdk::stream_interface::write" ref="a8e4cb85f9c74bf875548fa430242993b" args="(int n, const void *buff, void *aux=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a>&amp; sxsdk::stream_interface::write </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>buff</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ストリームに書き出す。 </p>
+<p>ポインタが<em>n</em> バイト進む。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>書き出すバイト数 </td></tr>
+    <tr><td class="paramname">buff</td><td>バッファ </td></tr>
   </table>
   </dd>
 </dl>
@@ -1030,66 +1114,24 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="memname"><a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a>&amp; sxsdk::stream_interface::write </td>
           <td>(</td>
-          <td class="paramtype">const char *&nbsp;</td>
-          <td class="paramname"> <em>s</em></td>
-          <td>&nbsp;)&nbsp;</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
           <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>C文字列データをストリームに書き出す。. </p>
+<p>C文字列データをストリームに書き出す。 </p>
 <p>C文字列データのサイズだけポインタが進む。</p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>s</em>&nbsp;</td><td>バッファ </td></tr>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>バッファ </td></tr>
   </table>
   </dd>
 </dl>
 
-</div>
-</div>
-<a class="anchor" id="a8e4cb85f9c74bf875548fa430242993b"></a><!-- doxytag: member="sxsdk::stream_interface::write" ref="a8e4cb85f9c74bf875548fa430242993b" args="(int n, const void *buff, void *aux=0)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a>&amp; sxsdk::stream_interface::write </td>
-          <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>n</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const void *&nbsp;</td>
-          <td class="paramname"> <em>buff</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>ストリームに書き出す。 </p>
-<p>ポインタが<em>n</em> バイト進む。</p>
-<dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>n</em>&nbsp;</td><td>書き出すバイト数 </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>buff</em>&nbsp;</td><td>バッファ </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>参照先 <a class="el" href="structsxsdk_1_1stream__interface.html#a303f538c4c9357a758def97311861641">write_str()</a>.</p>
 
 </div>
 </div>
@@ -1100,19 +1142,19 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="memname">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a>&amp; sxsdk::stream_interface::write_char </td>
           <td>(</td>
-          <td class="paramtype">const char &amp;&nbsp;</td>
-          <td class="paramname"> <em>c</em>, </td>
+          <td class="paramtype">const char &amp;&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -1121,11 +1163,13 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <p>char型データをストリームに書き出す。 </p>
 <p>ポインタが1バイト進む。</p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>c</em>&nbsp;</td><td>バッファ </td></tr>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>バッファ </td></tr>
   </table>
   </dd>
 </dl>
+
+<p>参照元 <a class="el" href="structsxsdk_1_1stream__interface.html#a52573bd0aecbbc237a2c8381b2e02065">write()</a>.</p>
 
 </div>
 </div>
@@ -1136,19 +1180,19 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="memname">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a>&amp; sxsdk::stream_interface::write_float </td>
           <td>(</td>
-          <td class="paramtype">const float &amp;&nbsp;</td>
-          <td class="paramname"> <em>f</em>, </td>
+          <td class="paramtype">const float &amp;&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -1156,11 +1200,13 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 
 <p>float型データをストリームに書き出す。 </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>f</em>&nbsp;</td><td>バッファ </td></tr>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>バッファ </td></tr>
   </table>
   </dd>
 </dl>
+
+<p>参照元 <a class="el" href="structsxsdk_1_1stream__interface.html#a99c8496100386cb0f468b3e1e72ac9cd">write()</a>.</p>
 
 </div>
 </div>
@@ -1171,19 +1217,19 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="memname">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a>&amp; sxsdk::stream_interface::write_int </td>
           <td>(</td>
-          <td class="paramtype">const int &amp;&nbsp;</td>
-          <td class="paramname"> <em>i</em>, </td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -1192,11 +1238,13 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <p>int型データをストリームに書き出す。 </p>
 <p>ポインタが4バイト進む。</p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>i</em>&nbsp;</td><td>バッファ </td></tr>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>バッファ </td></tr>
   </table>
   </dd>
 </dl>
+
+<p>参照元 <a class="el" href="structsxsdk_1_1stream__interface.html#a8d0d4179936669da6507fa42003a09dd">write()</a>.</p>
 
 </div>
 </div>
@@ -1207,19 +1255,19 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="memname">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a>&amp; sxsdk::stream_interface::write_shape </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structsxsdk_1_1shape__class.html">sxsdk::shape_class</a> *&nbsp;</td>
-          <td class="paramname"> <em>shape</em>, </td>
+          <td class="paramtype"><a class="el" href="structsxsdk_1_1shape__class.html">sxsdk::shape_class</a> *&#160;</td>
+          <td class="paramname"><em>shape</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -1227,8 +1275,8 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 
 <p>形状データをストリームに書き出す。 </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>shape</em>&nbsp;</td><td>書き出す形状 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">shape</td><td>書き出す形状 </td></tr>
   </table>
   </dd>
 </dl>
@@ -1242,19 +1290,19 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="memname">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a>&amp; sxsdk::stream_interface::write_short </td>
           <td>(</td>
-          <td class="paramtype">const short &amp;&nbsp;</td>
-          <td class="paramname"> <em>i</em>, </td>
+          <td class="paramtype">const short &amp;&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -1263,11 +1311,13 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <p>short型データをストリームに書き出す。 </p>
 <p>ポインタが1バイト進む。</p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>i</em>&nbsp;</td><td>バッファ </td></tr>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>バッファ </td></tr>
   </table>
   </dd>
 </dl>
+
+<p>参照元 <a class="el" href="structsxsdk_1_1stream__interface.html#ae25f84ac492efa2f8b7f7ea852dbbcd5">write()</a>.</p>
 
 </div>
 </div>
@@ -1278,32 +1328,34 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="memname">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a>&amp; sxsdk::stream_interface::write_str </td>
           <td>(</td>
-          <td class="paramtype">const char *&nbsp;</td>
-          <td class="paramname"> <em>s</em>, </td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>C文字列データをストリームに書き出す。. </p>
+<p>C文字列データをストリームに書き出す。 </p>
 <p>C文字列データのサイズだけポインタが進む。</p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>s</em>&nbsp;</td><td>バッファ </td></tr>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>バッファ </td></tr>
   </table>
   </dd>
 </dl>
+
+<p>参照元 <a class="el" href="structsxsdk_1_1stream__interface.html#ab093c08cf1bbc57d576e4d904c7f0d2f">write()</a>.</p>
 
 </div>
 </div>
@@ -1314,19 +1366,19 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="memname">virtual <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a>&amp; sxsdk::stream_interface::write_vec3 </td>
           <td>(</td>
-          <td class="paramtype">const sxsdk::vec3 &amp;&nbsp;</td>
-          <td class="paramname"> <em>v</em>, </td>
+          <td class="paramtype">const sxsdk::vec3 &amp;&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -1341,6 +1393,11 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <li><a class="el" href="streaminterface_8h_source.html">streaminterface.h</a></li>
 </ul>
 </div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><b>sxsdk</b>      </li>
+      <li class="navelem"><a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a>      </li>
 <br><br>
 <hr>
 <div align="center">Copyright &copy; e frontier, Inc. All rights reserved.</div>

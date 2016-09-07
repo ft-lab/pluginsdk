@@ -1,7 +1,8 @@
 #pragma once
 
 namespace sxsdk {
-	class image_interface : public shade_interface {
+	class
+	image_interface : public shade_interface {
 	public:
 		struct smudge_function_class {
 			virtual ~smudge_function_class () { }
@@ -85,5 +86,7 @@ namespace sxsdk {
 	virtual int get_pixel_format (void * = 0) const = 0; // 63
 	virtual image_interface &set_pixel_format (int pixel_format_param, void * = 0) = 0; // 64
 	virtual sxsdk::image_interface* create_duplicate_image_interface_square (const sx::vec<int,2>* size = 0, bool fit = true, int depth = 32, void* aux = 0) = 0; // 65
+	virtual void convert_rgb_to_grayscale (void* aux = 0) = 0; // 66
+	virtual void convert_bump_to_normalmap (float weight, void* aux = 0) = 0; // 67
 	};
 }

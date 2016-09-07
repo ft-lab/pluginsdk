@@ -1,7 +1,8 @@
 #pragma once
 
 namespace sxsdk {
-	class distant_light_item_class {
+	class
+	distant_light_item_class {
 	public:
 		virtual ~distant_light_item_class () { }
 		VTABLE_PADDING

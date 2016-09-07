@@ -4,92 +4,135 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <title>構造体 sxsdk::exporter_settings_interface</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<!-- 作成： Doxygen 1.6.1 -->
-<div class="navigation" id="top">
-  <div class="tabs">
-    <ul>
-      <li><a href="main.html"><span>メインページ</span></a></li>
+<!-- 作成： Doxygen 1.7.4 -->
+<div id="top">
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
       <li><a href="pages.html"><span>関連ページ</span></a></li>
       <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
       <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
       <li><a href="files.html"><span>ファイル</span></a></li>
     </ul>
   </div>
-  <div class="tabs">
-    <ul>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
       <li><a href="annotated.html"><span>構成</span></a></li>
       <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
       <li><a href="functions.html"><span>構成メンバ</span></a></li>
     </ul>
   </div>
-  <div class="navpath"><a class="el" href="namespacesxsdk.html">sxsdk</a>::<a class="el" href="structsxsdk_1_1exporter__settings__interface.html">exporter_settings_interface</a>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
   </div>
 </div>
+<script type="text/javascript">
+  initNavTree('structsxsdk_1_1exporter__settings__interface.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public メソッド</a>  </div>
+  <div class="headertitle">
+<div class="title">構造体 sxsdk::exporter_settings_interface</div>  </div>
+</div>
 <div class="contents">
-<h1>構造体 sxsdk::exporter_settings_interface</h1><!-- doxytag: class="sxsdk::exporter_settings_interface" --><!-- doxytag: inherits="unknown_interface" --><div class="dynheader">
+<!-- doxytag: class="sxsdk::exporter_settings_interface" --><!-- doxytag: inherits="unknown_interface" -->
+<p>エクスポータをサイレントモードで使用するときに渡すパラメータのインターフェイス  
+ <a href="structsxsdk_1_1exporter__settings__interface.html#details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="exportersettingsinterface_8h_source.html">exportersettingsinterface.h</a>&gt;</code></p>
+<div class="dynheader">
 sxsdk::exporter_settings_interfaceに対する継承グラフ</div>
-<div class="dynsection">
+<div class="dyncontent">
  <div class="center">
-  <img src="structsxsdk_1_1exporter__settings__interface.gif" usemap="#sxsdk::exporter_settings_interface_map" alt=""/>
+  <img src="structsxsdk_1_1exporter__settings__interface.png" usemap="#sxsdk::exporter_settings_interface_map" alt=""/>
   <map id="sxsdk::exporter_settings_interface_map" name="sxsdk::exporter_settings_interface_map">
 <area href="classunknown__interface.html" alt="unknown_interface" shape="rect" coords="0,0,236,24"/>
-<area href="classsxsdk_1_1__3ds__exporter__settings__interface.html" alt="sxsdk::_3ds_exporter_settings_interface" shape="rect" coords="0,112,236,136"/>
+<area href="classsxsdk_1_1__3ds__exporter__settings__interface.html" title="3DSエクスポータをサイレントモードで使用するときに渡すパラメータのインターフェイス" alt="sxsdk::_3ds_exporter_settings_interface" shape="rect" coords="0,112,236,136"/>
 </map>
- </div>
-</div>
+ </div></div>
 
 <p><a href="structsxsdk_1_1exporter__settings__interface-members.html">すべてのメンバ一覧</a></p>
-<table border="0" cellpadding="0" cellspacing="0">
-<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8e461042b864b95c531a0fe3716bc53c"></a><!-- doxytag: member="sxsdk::exporter_settings_interface::get_shadeversion" ref="a8e461042b864b95c531a0fe3716bc53c" args="(void *=0) const " -->
-virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1exporter__settings__interface.html#a8e461042b864b95c531a0fe3716bc53c">get_shadeversion</a> (void *=0) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">shadeのビルドナンバーを取得する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a97d9c0d94dfb82da09690466a73c13fe"></a><!-- doxytag: member="sxsdk::exporter_settings_interface::get_uuid" ref="a97d9c0d94dfb82da09690466a73c13fe" args="(void *=0) const " -->
-virtual sx::uuid_class&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1exporter__settings__interface.html#a97d9c0d94dfb82da09690466a73c13fe">get_uuid</a> (void *=0) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">設定対象のエクスポータuuidを取得する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8f8a9aab19d7727e29a2931bdc319459"></a><!-- doxytag: member="sxsdk::exporter_settings_interface::set_eol" ref="a8f8a9aab19d7727e29a2931bdc319459" args="(int eol_param, void *=0)" -->
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9235c58f2d77df106671243958600dda"></a><!-- doxytag: member="sxsdk::exporter_settings_interface::get_shadeversion" ref="a9235c58f2d77df106671243958600dda" args="(void *=nullptr) const " -->
+virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1exporter__settings__interface.html#a9235c58f2d77df106671243958600dda">get_shadeversion</a> (void *=nullptr) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">shadeのビルドナンバーを取得する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af27bdef6de8882d22f11380945ae6874"></a><!-- doxytag: member="sxsdk::exporter_settings_interface::get_uuid" ref="af27bdef6de8882d22f11380945ae6874" args="(void *=nullptr) const " -->
+virtual sx::uuid_class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1exporter__settings__interface.html#af27bdef6de8882d22f11380945ae6874">get_uuid</a> (void *=nullptr) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">設定対象のエクスポータuuidを取得する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2df13c9494effe313eaa61c7a1fcbb9d"></a><!-- doxytag: member="sxsdk::exporter_settings_interface::set_eol" ref="a2df13c9494effe313eaa61c7a1fcbb9d" args="(int eol_param, void *=nullptr)" -->
 virtual <br class="typebreak"/>
-<a class="el" href="structsxsdk_1_1exporter__settings__interface.html">exporter_settings_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1exporter__settings__interface.html#a8f8a9aab19d7727e29a2931bdc319459">set_eol</a> (int eol_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">改行コードの設定を設定する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4debba27e2775ab9f7c1830d1c55989d"></a><!-- doxytag: member="sxsdk::exporter_settings_interface::get_eol" ref="a4debba27e2775ab9f7c1830d1c55989d" args="(void *=0) const " -->
-virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1exporter__settings__interface.html#a4debba27e2775ab9f7c1830d1c55989d">get_eol</a> (void *=0) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">改行コードの設定を取得する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a32608322a9dd1e3b704350542b7fe132"></a><!-- doxytag: member="sxsdk::exporter_settings_interface::set_export_all_objects" ref="a32608322a9dd1e3b704350542b7fe132" args="(bool export_all_objects_param, void *=0)" -->
+<a class="el" href="structsxsdk_1_1exporter__settings__interface.html">exporter_settings_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1exporter__settings__interface.html#a2df13c9494effe313eaa61c7a1fcbb9d">set_eol</a> (int eol_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">改行コードの設定を設定する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a92e1415731383d8f54dd711a7a139909"></a><!-- doxytag: member="sxsdk::exporter_settings_interface::get_eol" ref="a92e1415731383d8f54dd711a7a139909" args="(void *=nullptr) const " -->
+virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1exporter__settings__interface.html#a92e1415731383d8f54dd711a7a139909">get_eol</a> (void *=nullptr) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">改行コードの設定を取得する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a905a8f8d16d3beae943a71cec8399e9e"></a><!-- doxytag: member="sxsdk::exporter_settings_interface::set_export_all_objects" ref="a905a8f8d16d3beae943a71cec8399e9e" args="(bool export_all_objects_param, void *=nullptr)" -->
 virtual <br class="typebreak"/>
-<a class="el" href="structsxsdk_1_1exporter__settings__interface.html">exporter_settings_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1exporter__settings__interface.html#a32608322a9dd1e3b704350542b7fe132">set_export_all_objects</a> (bool export_all_objects_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">出力の設定を設定する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a31d4a32f854361c2f1dd93e7a393baa5"></a><!-- doxytag: member="sxsdk::exporter_settings_interface::get_export_all_objects" ref="a31d4a32f854361c2f1dd93e7a393baa5" args="(void *=0) const " -->
-virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1exporter__settings__interface.html#a31d4a32f854361c2f1dd93e7a393baa5">get_export_all_objects</a> (void *=0) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">出力の設定を取得する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aacafb31495f7721728388b55e381dcca"></a><!-- doxytag: member="sxsdk::exporter_settings_interface::set_subdivision_level" ref="aacafb31495f7721728388b55e381dcca" args="(int subdivision_level_param, void *=0)" -->
+<a class="el" href="structsxsdk_1_1exporter__settings__interface.html">exporter_settings_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1exporter__settings__interface.html#a905a8f8d16d3beae943a71cec8399e9e">set_export_all_objects</a> (bool export_all_objects_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">出力の設定を設定する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4e7af92e074d62a705110e4c4e3ccb53"></a><!-- doxytag: member="sxsdk::exporter_settings_interface::get_export_all_objects" ref="a4e7af92e074d62a705110e4c4e3ccb53" args="(void *=nullptr) const " -->
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1exporter__settings__interface.html#a4e7af92e074d62a705110e4c4e3ccb53">get_export_all_objects</a> (void *=nullptr) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">出力の設定を取得する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2223a0319b01eba9f29227527d8bce0c"></a><!-- doxytag: member="sxsdk::exporter_settings_interface::set_subdivision_level" ref="a2223a0319b01eba9f29227527d8bce0c" args="(int subdivision_level_param, void *=nullptr)" -->
 virtual <br class="typebreak"/>
-<a class="el" href="structsxsdk_1_1exporter__settings__interface.html">exporter_settings_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1exporter__settings__interface.html#aacafb31495f7721728388b55e381dcca">set_subdivision_level</a> (int subdivision_level_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">曲面の分割レベルの設定を設定する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4ce474a8c65b8bf06a53711981c63e16"></a><!-- doxytag: member="sxsdk::exporter_settings_interface::get_subdivision_level" ref="a4ce474a8c65b8bf06a53711981c63e16" args="(void *=0) const " -->
-virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1exporter__settings__interface.html#a4ce474a8c65b8bf06a53711981c63e16">get_subdivision_level</a> (void *=0) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">曲面の分割レベルの設定を取得する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab0ac9823fcfc61a55e917ac27061ccec"></a><!-- doxytag: member="sxsdk::exporter_settings_interface::set_export_binary" ref="ab0ac9823fcfc61a55e917ac27061ccec" args="(bool export_binary_param, void *=0)" -->
+<a class="el" href="structsxsdk_1_1exporter__settings__interface.html">exporter_settings_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1exporter__settings__interface.html#a2223a0319b01eba9f29227527d8bce0c">set_subdivision_level</a> (int subdivision_level_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">曲面の分割レベルの設定を設定する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab9a3422c2d9c0aed38bf661354e33132"></a><!-- doxytag: member="sxsdk::exporter_settings_interface::get_subdivision_level" ref="ab9a3422c2d9c0aed38bf661354e33132" args="(void *=nullptr) const " -->
+virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1exporter__settings__interface.html#ab9a3422c2d9c0aed38bf661354e33132">get_subdivision_level</a> (void *=nullptr) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">曲面の分割レベルの設定を取得する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6c22ce4869d03e61b6b515c7a7f259e2"></a><!-- doxytag: member="sxsdk::exporter_settings_interface::set_export_binary" ref="a6c22ce4869d03e61b6b515c7a7f259e2" args="(bool export_binary_param, void *=nullptr)" -->
 virtual <br class="typebreak"/>
-<a class="el" href="structsxsdk_1_1exporter__settings__interface.html">exporter_settings_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1exporter__settings__interface.html#ab0ac9823fcfc61a55e917ac27061ccec">set_export_binary</a> (bool export_binary_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">バイナリ／テキスト形式の設定を設定する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a199fba7f039943f817b02929fcc28d74"></a><!-- doxytag: member="sxsdk::exporter_settings_interface::get_export_binary" ref="a199fba7f039943f817b02929fcc28d74" args="(void *=0) const " -->
-virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1exporter__settings__interface.html#a199fba7f039943f817b02929fcc28d74">get_export_binary</a> (void *=0) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">バイナリ／テキスト形式の設定を取得する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1217027c56a611974a8f661c3d238e45"></a><!-- doxytag: member="sxsdk::exporter_settings_interface::set_export_surface_attributes" ref="a1217027c56a611974a8f661c3d238e45" args="(bool export_surface_attributes_param, void *=0)" -->
+<a class="el" href="structsxsdk_1_1exporter__settings__interface.html">exporter_settings_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1exporter__settings__interface.html#a6c22ce4869d03e61b6b515c7a7f259e2">set_export_binary</a> (bool export_binary_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">バイナリ／テキスト形式の設定を設定する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8bb3a5eccce3f29b5d694fffcb636010"></a><!-- doxytag: member="sxsdk::exporter_settings_interface::get_export_binary" ref="a8bb3a5eccce3f29b5d694fffcb636010" args="(void *=nullptr) const " -->
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1exporter__settings__interface.html#a8bb3a5eccce3f29b5d694fffcb636010">get_export_binary</a> (void *=nullptr) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">バイナリ／テキスト形式の設定を取得する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a06b783e1b9c5aa080b588d599b58d2ef"></a><!-- doxytag: member="sxsdk::exporter_settings_interface::set_export_surface_attributes" ref="a06b783e1b9c5aa080b588d599b58d2ef" args="(bool export_surface_attributes_param, void *=nullptr)" -->
 virtual <br class="typebreak"/>
-<a class="el" href="structsxsdk_1_1exporter__settings__interface.html">exporter_settings_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1exporter__settings__interface.html#a1217027c56a611974a8f661c3d238e45">set_export_surface_attributes</a> (bool export_surface_attributes_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">表面材質属性の設定を設定する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a31cd155118089867e5e2b37b62b728a6"></a><!-- doxytag: member="sxsdk::exporter_settings_interface::get_export_surface_attributes" ref="a31cd155118089867e5e2b37b62b728a6" args="(void *=0) const " -->
-virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1exporter__settings__interface.html#a31cd155118089867e5e2b37b62b728a6">get_export_surface_attributes</a> (void *=0) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">表面材質属性の設定を取得する。 <br/></td></tr>
+<a class="el" href="structsxsdk_1_1exporter__settings__interface.html">exporter_settings_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1exporter__settings__interface.html#a06b783e1b9c5aa080b588d599b58d2ef">set_export_surface_attributes</a> (bool export_surface_attributes_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">表面材質属性の設定を設定する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1146afe6883dc368e03dadb1b61f04ef"></a><!-- doxytag: member="sxsdk::exporter_settings_interface::get_export_surface_attributes" ref="a1146afe6883dc368e03dadb1b61f04ef" args="(void *=nullptr) const " -->
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1exporter__settings__interface.html#a1146afe6883dc368e03dadb1b61f04ef">get_export_surface_attributes</a> (void *=nullptr) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">表面材質属性の設定を取得する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa5e936e18a595b9fbf49bbef9df5ad00"></a><!-- doxytag: member="sxsdk::exporter_settings_interface::set_export_filter_objects" ref="aa5e936e18a595b9fbf49bbef9df5ad00" args="(int export_filter_objects_param, void *=nullptr)" -->
+virtual <br class="typebreak"/>
+<a class="el" href="structsxsdk_1_1exporter__settings__interface.html">exporter_settings_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1exporter__settings__interface.html#aa5e936e18a595b9fbf49bbef9df5ad00">set_export_filter_objects</a> (int export_filter_objects_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">制限の設定を設定する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a046f7983f6744abe0f2cd1b51012e482"></a><!-- doxytag: member="sxsdk::exporter_settings_interface::get_export_filter_objects" ref="a046f7983f6744abe0f2cd1b51012e482" args="(void *=nullptr) const " -->
+virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1exporter__settings__interface.html#a046f7983f6744abe0f2cd1b51012e482">get_export_filter_objects</a> (void *=nullptr) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">制限の設定を取得する。 <br/></td></tr>
 </table>
-<hr/>この構造体の説明は次のファイルから生成されました:<ul>
+<hr/><a name="details" id="details"></a><h2>説明</h2>
+<div class="textblock"><p>エクスポータをサイレントモードで使用するときに渡すパラメータのインターフェイス </p>
+</div><hr/>この構造体の説明は次のファイルから生成されました:<ul>
 <li><a class="el" href="exportersettingsinterface_8h_source.html">exportersettingsinterface.h</a></li>
 </ul>
 </div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><b>sxsdk</b>      </li>
+      <li class="navelem"><a class="el" href="structsxsdk_1_1exporter__settings__interface.html">exporter_settings_interface</a>      </li>
 <br><br>
 <hr>
 <div align="center">Copyright &copy; e frontier, Inc. All rights reserved.</div>

@@ -4,93 +4,127 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <title>構造体 sxsdk::loader_info_interface</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<!-- 作成： Doxygen 1.6.1 -->
-<div class="navigation" id="top">
-  <div class="tabs">
-    <ul>
-      <li><a href="main.html"><span>メインページ</span></a></li>
+<!-- 作成： Doxygen 1.7.4 -->
+<div id="top">
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
       <li><a href="pages.html"><span>関連ページ</span></a></li>
       <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
       <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
       <li><a href="files.html"><span>ファイル</span></a></li>
     </ul>
   </div>
-  <div class="tabs">
-    <ul>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
       <li><a href="annotated.html"><span>構成</span></a></li>
       <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
       <li><a href="functions.html"><span>構成メンバ</span></a></li>
     </ul>
   </div>
-  <div class="navpath"><a class="el" href="namespacesxsdk.html">sxsdk</a>::<a class="el" href="structsxsdk_1_1loader__info__interface.html">loader_info_interface</a>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
   </div>
 </div>
+<script type="text/javascript">
+  initNavTree('structsxsdk_1_1loader__info__interface.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public メソッド</a>  </div>
+  <div class="headertitle">
+<div class="title">構造体 sxsdk::loader_info_interface</div>  </div>
+</div>
 <div class="contents">
-<h1>構造体 sxsdk::loader_info_interface</h1><!-- doxytag: class="sxsdk::loader_info_interface" --><!-- doxytag: inherits="sxsdk::shade_interface" --><div class="dynheader">
+<!-- doxytag: class="sxsdk::loader_info_interface" --><!-- doxytag: inherits="sxsdk::shade_interface" -->
+<p>loaderinfointerface...  
+ <a href="structsxsdk_1_1loader__info__interface.html#details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="loaderinfointerface_8h_source.html">loaderinfointerface.h</a>&gt;</code></p>
+<div class="dynheader">
 sxsdk::loader_info_interfaceに対する継承グラフ</div>
-<div class="dynsection">
+<div class="dyncontent">
  <div class="center">
-  <img src="structsxsdk_1_1loader__info__interface.gif" usemap="#sxsdk::loader_info_interface_map" alt=""/>
+  <img src="structsxsdk_1_1loader__info__interface.png" usemap="#sxsdk::loader_info_interface_map" alt=""/>
   <map id="sxsdk::loader_info_interface_map" name="sxsdk::loader_info_interface_map">
-<area href="structsxsdk_1_1shade__interface.html" alt="sxsdk::shade_interface" shape="rect" coords="0,56,170,80"/>
+<area href="structsxsdk_1_1shade__interface.html" title="Shadeの情報へのアクセスの基本となるインターフェイス" alt="sxsdk::shade_interface" shape="rect" coords="0,56,170,80"/>
 <area href="classunknown__interface.html" alt="unknown_interface" shape="rect" coords="0,0,170,24"/>
 </map>
- </div>
-</div>
+ </div></div>
 
 <p><a href="structsxsdk_1_1loader__info__interface-members.html">すべてのメンバ一覧</a></p>
-<table border="0" cellpadding="0" cellspacing="0">
-<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acc7a65b7465b0cc7aa94d36cb1c7b2ad"></a><!-- doxytag: member="sxsdk::loader_info_interface::is_same_as" ref="acc7a65b7465b0cc7aa94d36cb1c7b2ad" args="(shade_interface *i, void *aux=0)" -->
-virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>is_same_as</b> (<a class="el" href="structsxsdk_1_1shade__interface.html">shade_interface</a> *i, void *aux=0)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1loader__info__interface.html#adfa11015e4124a52b85744bd4027de48">get_subdivision_level</a> (void *=0) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">曲面の分割レベルを取得する。  <a href="#adfa11015e4124a52b85744bd4027de48"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1loader__info__interface.html">loader_info_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1loader__info__interface.html#afee0329a99caed0886d83187d2996f40">set_subdivision_level</a> (int subdivision_level_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">曲面の分割レベルを設定する。  <a href="#afee0329a99caed0886d83187d2996f40"></a><br/></td></tr>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1loader__info__interface.html#acc7a65b7465b0cc7aa94d36cb1c7b2ad">is_same_as</a> (<a class="el" href="structsxsdk_1_1shade__interface.html">shade_interface</a> *i, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オブジェクトが同一かどうかを判定する。  <a href="#acc7a65b7465b0cc7aa94d36cb1c7b2ad"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1loader__info__interface.html#a94456813f406a114eee701c2e536d20f">get_subdivision_level</a> (void *=nullptr) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">曲面の分割レベルを取得する。  <a href="#a94456813f406a114eee701c2e536d20f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1loader__info__interface.html">loader_info_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1loader__info__interface.html#a645136a3b7d0e2742b63084d207fd2e9">set_subdivision_level</a> (int subdivision_level_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">曲面の分割レベルを設定する。  <a href="#a645136a3b7d0e2742b63084d207fd2e9"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4fb5ccc717a8aef2c281adab1f8a2c9d"></a><!-- doxytag: member="sxsdk::loader_info_interface::get_current_shape" ref="a4fb5ccc717a8aef2c281adab1f8a2c9d" args="(void *aux=0)" -->
-virtual <a class="el" href="structsxsdk_1_1shape__class.html">sxsdk::shape_class</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1loader__info__interface.html#a4fb5ccc717a8aef2c281adab1f8a2c9d">get_current_shape</a> (void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">現在処理中の形状を取得する。 <br/></td></tr>
+virtual <a class="el" href="structsxsdk_1_1shape__class.html">sxsdk::shape_class</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1loader__info__interface.html#a4fb5ccc717a8aef2c281adab1f8a2c9d">get_current_shape</a> (void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">現在処理中の形状を取得する。 <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a38982c5b0bae5c0f65b4d1530bd94a22"></a><!-- doxytag: member="sxsdk::loader_info_interface::get_surface_shape" ref="a38982c5b0bae5c0f65b4d1530bd94a22" args="(void *aux=0)" -->
-virtual const <a class="el" href="structsxsdk_1_1shape__class.html">sxsdk::shape_class</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1loader__info__interface.html#a38982c5b0bae5c0f65b4d1530bd94a22">get_surface_shape</a> (void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">現在処理中の表面材質を実際に持つ形状。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1proxy__shape__class.html">sxsdk::proxy_shape_class</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1loader__info__interface.html#a116aeaaa51bafdb25263f26143ab704d">get_current_proxy_shape</a> (void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">現在処理中の形状のプロクシ形状を取得する。  <a href="#a116aeaaa51bafdb25263f26143ab704d"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1proxy__shape__class.html">sxsdk::proxy_shape_class</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1loader__info__interface.html#a48049bf3a90e54fa6733fca150f4517b">get_root_proxy_shape</a> (void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ルートパートのプロクシ形状を取得する。  <a href="#a48049bf3a90e54fa6733fca150f4517b"></a><br/></td></tr>
+virtual const <a class="el" href="structsxsdk_1_1shape__class.html">sxsdk::shape_class</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1loader__info__interface.html#a38982c5b0bae5c0f65b4d1530bd94a22">get_surface_shape</a> (void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">現在処理中の表面材質を実際に持つ形状。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1proxy__shape__class.html">sxsdk::proxy_shape_class</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1loader__info__interface.html#a116aeaaa51bafdb25263f26143ab704d">get_current_proxy_shape</a> (void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">現在処理中の形状のプロクシ形状を取得する。  <a href="#a116aeaaa51bafdb25263f26143ab704d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1proxy__shape__class.html">sxsdk::proxy_shape_class</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1loader__info__interface.html#a48049bf3a90e54fa6733fca150f4517b">get_root_proxy_shape</a> (void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">ルートパートのプロクシ形状を取得する。  <a href="#a48049bf3a90e54fa6733fca150f4517b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aae16e073ac89d6029f55a32530f5ffb3"></a><!-- doxytag: member="sxsdk::loader_info_interface::get_transformation" ref="aae16e073ac89d6029f55a32530f5ffb3" args="(void *aux=0)" -->
-virtual sxsdk::mat4&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1loader__info__interface.html#aae16e073ac89d6029f55a32530f5ffb3">get_transformation</a> (void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">変換マトリクスを取得する。 <br/></td></tr>
+virtual sxsdk::mat4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1loader__info__interface.html#aae16e073ac89d6029f55a32530f5ffb3">get_transformation</a> (void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">変換マトリクスを取得する。 <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a133c6778278eaca807c91324f4d3d1fa"></a><!-- doxytag: member="sxsdk::loader_info_interface::get_inverse_texture_transformation" ref="a133c6778278eaca807c91324f4d3d1fa" args="(void *aux=0)" -->
-virtual sxsdk::mat4&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1loader__info__interface.html#a133c6778278eaca807c91324f4d3d1fa">get_inverse_texture_transformation</a> (void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">変換マトリクスを取得する。 <br/></td></tr>
+virtual sxsdk::mat4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1loader__info__interface.html#a133c6778278eaca807c91324f4d3d1fa">get_inverse_texture_transformation</a> (void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">変換マトリクスを取得する。 <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a40da7166a67d2164dc01894824e61db4"></a><!-- doxytag: member="sxsdk::loader_info_interface::get_flip_face" ref="a40da7166a67d2164dc01894824e61db4" args="(void *aux=0)" -->
-virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1loader__info__interface.html#a40da7166a67d2164dc01894824e61db4">get_flip_face</a> (void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">面が反転されているかどうかを取得する。 <br/></td></tr>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1loader__info__interface.html#a40da7166a67d2164dc01894824e61db4">get_flip_face</a> (void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">面が反転されているかどうかを取得する。 <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7c10293a4393518d3f21b3d804fa46b8"></a><!-- doxytag: member="sxsdk::loader_info_interface::get_flip_face_shade" ref="a7c10293a4393518d3f21b3d804fa46b8" args="(void *aux=0)" -->
-virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1loader__info__interface.html#a7c10293a4393518d3f21b3d804fa46b8">get_flip_face_shade</a> (void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">面を裏返すかどうかを取得する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1loader__info__interface.html#aea7210b0fae582bbc8afa845b720f3ad">get_active</a> (void *=0) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">カレントの形状が選択されているかどうかかどうかを返す。を取得する。  <a href="#aea7210b0fae582bbc8afa845b720f3ad"></a><br/></td></tr>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1loader__info__interface.html#a7c10293a4393518d3f21b3d804fa46b8">get_flip_face_shade</a> (void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">面を裏返すかどうかを取得する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1loader__info__interface.html#a7aad48915ce7d301f20b73d1662ec5de">get_active</a> (void *=nullptr) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">カレントの形状が選択されているかどうかかどうかを返す。を取得する。  <a href="#a7aad48915ce7d301f20b73d1662ec5de"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acf87b3334e05458ff00d5f449c148441"></a><!-- doxytag: member="sxsdk::loader_info_interface::get_render" ref="acf87b3334e05458ff00d5f449c148441" args="(void *aux=0)" -->
-virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1loader__info__interface.html#acf87b3334e05458ff00d5f449c148441">get_render</a> (void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">レンダリング対象の形状かどうかを返す。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1loader__info__interface.html#a7d39cd895ee7ac2e16397ed8d2f27f22">get_rendering_flag</a> (void *=0) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">カレントの形状の「レンダリング」チェックボックスの継承結果(1: オン, 0: オフ, -1: 継承)を取得する。  <a href="#a7d39cd895ee7ac2e16397ed8d2f27f22"></a><br/></td></tr>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1loader__info__interface.html#acf87b3334e05458ff00d5f449c148441">get_render</a> (void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">レンダリング対象の形状かどうかを返す。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1loader__info__interface.html#a06d8623be43055cc371da3469309ce22">get_rendering_flag</a> (void *=nullptr) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">カレントの形状の「レンダリング」チェックボックスの継承結果(1: オン, 0: オフ, -1: 継承)を取得する。  <a href="#a06d8623be43055cc371da3469309ce22"></a><br/></td></tr>
 </table>
-<hr/><h2>関数</h2>
-<a class="anchor" id="aea7210b0fae582bbc8afa845b720f3ad"></a><!-- doxytag: member="sxsdk::loader_info_interface::get_active" ref="aea7210b0fae582bbc8afa845b720f3ad" args="(void *=0) const " -->
+<hr/><a name="details" id="details"></a><h2>説明</h2>
+<div class="textblock"><p>loaderinfointerface... </p>
+<p><code>loaderinfointerface</code>...</p>
+<p><code>loaderinfointerface</code>...</p>
+<p>loaderinfointerface...</p>
+<p><code>loaderinfointerface</code>... </p>
+</div><hr/><h2>関数</h2>
+<a class="anchor" id="a7aad48915ce7d301f20b73d1662ec5de"></a><!-- doxytag: member="sxsdk::loader_info_interface::get_active" ref="a7aad48915ce7d301f20b73d1662ec5de" args="(void *=nullptr) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">virtual bool sxsdk::loader_info_interface::get_active </td>
           <td>(</td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> = <code>0</code></td>
-          <td>&nbsp;)&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"> = <code>nullptr</code></td><td>)</td>
           <td> const<code> [virtual]</code></td>
         </tr>
       </table>
@@ -109,9 +143,8 @@ virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="memname">virtual <a class="el" href="structsxsdk_1_1proxy__shape__class.html">sxsdk::proxy_shape_class</a>* sxsdk::loader_info_interface::get_current_proxy_shape </td>
           <td>(</td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td>
-          <td>&nbsp;)&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code></td><td>)</td>
           <td><code> [virtual]</code></td>
         </tr>
       </table>
@@ -119,20 +152,19 @@ virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <div class="memdoc">
 
 <p>現在処理中の形状のプロクシ形状を取得する。 </p>
-<p><code><a class="el" href="structsxsdk_1_1proxy__shape__class.html">proxy_shape_class</a></code> を使用すると、リンク形状を展開した状態のシーンの階層構造を取得できる。 </p>
+<p><code><a class="el" href="structsxsdk_1_1proxy__shape__class.html" title="プロクシ形状に関する操作を扱うクラス">proxy_shape_class</a></code> を使用すると、リンク形状を展開した状態のシーンの階層構造を取得できる。 </p>
 
 </div>
 </div>
-<a class="anchor" id="a7d39cd895ee7ac2e16397ed8d2f27f22"></a><!-- doxytag: member="sxsdk::loader_info_interface::get_rendering_flag" ref="a7d39cd895ee7ac2e16397ed8d2f27f22" args="(void *=0) const " -->
+<a class="anchor" id="a06d8623be43055cc371da3469309ce22"></a><!-- doxytag: member="sxsdk::loader_info_interface::get_rendering_flag" ref="a06d8623be43055cc371da3469309ce22" args="(void *=nullptr) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">virtual int sxsdk::loader_info_interface::get_rendering_flag </td>
           <td>(</td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> = <code>0</code></td>
-          <td>&nbsp;)&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"> = <code>nullptr</code></td><td>)</td>
           <td> const<code> [virtual]</code></td>
         </tr>
       </table>
@@ -151,9 +183,8 @@ virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="memname">virtual <a class="el" href="structsxsdk_1_1proxy__shape__class.html">sxsdk::proxy_shape_class</a>* sxsdk::loader_info_interface::get_root_proxy_shape </td>
           <td>(</td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td>
-          <td>&nbsp;)&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code></td><td>)</td>
           <td><code> [virtual]</code></td>
         </tr>
       </table>
@@ -161,20 +192,19 @@ virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <div class="memdoc">
 
 <p>ルートパートのプロクシ形状を取得する。 </p>
-<p><code><a class="el" href="structsxsdk_1_1proxy__shape__class.html">proxy_shape_class</a></code> を使用すると、リンク形状を展開した状態のシーンの階層構造を取得できる。 </p>
+<p><code><a class="el" href="structsxsdk_1_1proxy__shape__class.html" title="プロクシ形状に関する操作を扱うクラス">proxy_shape_class</a></code> を使用すると、リンク形状を展開した状態のシーンの階層構造を取得できる。 </p>
 
 </div>
 </div>
-<a class="anchor" id="adfa11015e4124a52b85744bd4027de48"></a><!-- doxytag: member="sxsdk::loader_info_interface::get_subdivision_level" ref="adfa11015e4124a52b85744bd4027de48" args="(void *=0) const " -->
+<a class="anchor" id="a94456813f406a114eee701c2e536d20f"></a><!-- doxytag: member="sxsdk::loader_info_interface::get_subdivision_level" ref="a94456813f406a114eee701c2e536d20f" args="(void *=nullptr) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">virtual int sxsdk::loader_info_interface::get_subdivision_level </td>
           <td>(</td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> = <code>0</code></td>
-          <td>&nbsp;)&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"> = <code>nullptr</code></td><td>)</td>
           <td> const<code> [virtual]</code></td>
         </tr>
       </table>
@@ -186,26 +216,64 @@ virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 
 </div>
 </div>
-<a class="anchor" id="afee0329a99caed0886d83187d2996f40"></a><!-- doxytag: member="sxsdk::loader_info_interface::set_subdivision_level" ref="afee0329a99caed0886d83187d2996f40" args="(int subdivision_level_param, void *=0)" -->
+<a class="anchor" id="acc7a65b7465b0cc7aa94d36cb1c7b2ad"></a><!-- doxytag: member="sxsdk::loader_info_interface::is_same_as" ref="acc7a65b7465b0cc7aa94d36cb1c7b2ad" args="(shade_interface *i, void *aux=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool sxsdk::loader_info_interface::is_same_as </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsxsdk_1_1shade__interface.html">shade_interface</a> *&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>オブジェクトが同一かどうかを判定する。 </p>
+<p><code>xxx_interface</code> はプラグインとShade内部のオブジェクトの橋渡しをするインターフェイスのため、ポインタでShade内部のオブジェクトが同一かの判定をすることはできない。<code><a class="el" href="structsxsdk_1_1shade__interface.html" title="Shadeの情報へのアクセスの基本となるインターフェイス">shade_interface</a></code> から派生したオブジェクトはこの関数が定義されており、Shade内部のオブジェクトが同一かの判定を行うことができる。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>オブジェクト </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><a class="el" href="structsxsdk_1_1shade__interface.html#a82d5bf7713d146216727d17baaf9532a">sxsdk::shade_interface</a>を再定義しています。</p>
+
+</div>
+</div>
+<a class="anchor" id="a645136a3b7d0e2742b63084d207fd2e9"></a><!-- doxytag: member="sxsdk::loader_info_interface::set_subdivision_level" ref="a645136a3b7d0e2742b63084d207fd2e9" args="(int subdivision_level_param, void *=nullptr)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">virtual <a class="el" href="structsxsdk_1_1loader__info__interface.html">loader_info_interface</a>&amp; sxsdk::loader_info_interface::set_subdivision_level </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>subdivision_level_param</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>subdivision_level_param</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -220,6 +288,11 @@ virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <li><a class="el" href="loaderinfointerface_8h_source.html">loaderinfointerface.h</a></li>
 </ul>
 </div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><b>sxsdk</b>      </li>
+      <li class="navelem"><a class="el" href="structsxsdk_1_1loader__info__interface.html">loader_info_interface</a>      </li>
 <br><br>
 <hr>
 <div align="center">Copyright &copy; e frontier, Inc. All rights reserved.</div>

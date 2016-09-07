@@ -1,7 +1,8 @@
 #pragma once
 
 namespace sxsdk {
-	class scene_interface : public shade_interface {
+	class
+	scene_interface : public shade_interface {
 	public:
 	virtual sxsdk::rendering_interface* get_rendering_interface (void * = 0) const = 0; // 0
 	virtual camera_interface* get_camera_interface (void * = 0) const = 0; // 1
@@ -232,8 +233,8 @@ namespace sxsdk {
 	virtual sxsdk::shape_class* get_shape_by_handle (void* h, void* aux = 0) = 0; // 208
 	virtual sxsdk::shape_class* get_shape_by_ordinal (int n, void* aux = 0) = 0; // 209
 	virtual sxsdk::shape_class* get_shape_by_attribute (int id, int n, void* attribute, void* aux = 0) = 0; // 210
-	virtual int get_step_frames (void * = 0) const = 0; // 211
-	virtual scene_interface &set_step_frames (int step_frames_param, void * = 0) = 0; // 212
+	virtual int get_step_frames_deprecated (void * = 0) const = 0; // 211
+	virtual scene_interface &set_step_frames_deprecated (int step_frames_deprecated_param, void * = 0) = 0; // 212
 	virtual sxsdk::shape_class& active_shape (int i = 0, void* aux = 0) = 0; // 213
 	virtual sxsdk::shape_class& first_active_shape (void* aux = 0) = 0; // 214
 	virtual sxsdk::shape_class& next_active_shape (void* aux = 0) = 0; // 215
@@ -479,7 +480,18 @@ std::vector<sxsdk::shape_class*> get_shapes_by_name_scriptimplementation (const 
 	virtual sxsdk::shape_class& create_primitive_torus (const char* as, int type, bool set_uv, int du, int dv, const sxsdk::vec3& at, float r, float r2, int axis, void* aux = 0) = 0; // 450
 	virtual void save_XVL (const char*const& in, const sxsdk::exporter_settings_interface* settings = 0) = 0; // 451
 	virtual void draw_select_edges (bool draw = true, void* aux = 0) = 0; // 452
-	virtual float get_step_frames_float (void * = 0) const = 0; // 453
-	virtual scene_interface &set_step_frames_float (float step_frames_float_param, void * = 0) = 0; // 454
+	virtual float get_step_frames (void * = 0) const = 0; // 453
+	virtual scene_interface &set_step_frames (float step_frames_param, void * = 0) = 0; // 454
+	virtual void export_scene_with_loader (sxsdk::loader_interface* i, sxsdk::shape_class* starting_shape = 0, void* aux = 0) = 0; // 455
+	virtual part_class& begin_surface_replicator (const char* as = 0, void* aux = 0) = 0; // 456
+	virtual void end_surface_replicator (void* aux = 0) = 0; // 457
+	virtual part_class& create_surface_replicator (const char* as = 0, void* aux = 0) = 0; // 458
+	virtual sxsdk::ik_class& get_ik (void* aux = 0) = 0; // 459
+	virtual part_class& begin_bone_joint (const sxsdk::vec3& at, float r, bool auto_direction, const sxsdk::vec3& axis_dir, const char* as = 0, void* aux = 0) = 0; // 460
+	virtual void end_bone_joint (void* aux = 0) = 0; // 461
+	virtual part_class& create_bone_joint (const sxsdk::vec3& at, float r, bool auto_direction, const sxsdk::vec3& axis_dir, const char* as = 0, void* aux = 0) = 0; // 462
+	virtual sxsdk::shape_class& create_primitive_text (const char* as, int type, bool set_uv, const sxsdk::vec3& at, int axis, int flip, const sxsdk::vec3& edir, const char* text, const char* fontname, float fontsize, float space, int weight, bool italic, void* aux = 0) = 0; // 463
+	virtual void save_FBX (const char*const& in, const sxsdk::exporter_settings_interface* settings = 0, void* aux = 0) = 0; // 464
+	virtual void save_DAE (const char*const& in, const sxsdk::exporter_settings_interface* settings = 0, void* aux = 0) = 0; // 465
 	};
 }

@@ -1,7 +1,8 @@
 #pragma once
 
 namespace sxsdk {
-	class color_list_interface : public shade_interface {
+	class
+	color_list_interface : public shade_interface {
 	public:
 	virtual int get_number_of_items (int i, void* aux = 0) = 0; // 0
 	virtual sxsdk::rgb_class get_color (int i, int j, void* aux = 0) = 0; // 1

@@ -4,58 +4,91 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <title>構造体 sxsdk::color_list_interface</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<!-- 作成： Doxygen 1.6.1 -->
-<div class="navigation" id="top">
-  <div class="tabs">
-    <ul>
-      <li><a href="main.html"><span>メインページ</span></a></li>
+<!-- 作成： Doxygen 1.7.4 -->
+<div id="top">
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
       <li><a href="pages.html"><span>関連ページ</span></a></li>
       <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
       <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
       <li><a href="files.html"><span>ファイル</span></a></li>
     </ul>
   </div>
-  <div class="tabs">
-    <ul>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
       <li><a href="annotated.html"><span>構成</span></a></li>
       <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
       <li><a href="functions.html"><span>構成メンバ</span></a></li>
     </ul>
   </div>
-  <div class="navpath"><a class="el" href="namespacesxsdk.html">sxsdk</a>::<a class="el" href="structsxsdk_1_1color__list__interface.html">color_list_interface</a>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
   </div>
 </div>
+<script type="text/javascript">
+  initNavTree('structsxsdk_1_1color__list__interface.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public メソッド</a>  </div>
+  <div class="headertitle">
+<div class="title">構造体 sxsdk::color_list_interface</div>  </div>
+</div>
 <div class="contents">
-<h1>構造体 sxsdk::color_list_interface</h1><!-- doxytag: class="sxsdk::color_list_interface" --><!-- doxytag: inherits="sxsdk::shade_interface" --><div class="dynheader">
+<!-- doxytag: class="sxsdk::color_list_interface" --><!-- doxytag: inherits="sxsdk::shade_interface" -->
+<p>カラーウィンドウのカラーリストの情報の取得・設定に使用する。  
+ <a href="structsxsdk_1_1color__list__interface.html#details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="colorlistinterface_8h_source.html">colorlistinterface.h</a>&gt;</code></p>
+<div class="dynheader">
 sxsdk::color_list_interfaceに対する継承グラフ</div>
-<div class="dynsection">
+<div class="dyncontent">
  <div class="center">
-  <img src="structsxsdk_1_1color__list__interface.gif" usemap="#sxsdk::color_list_interface_map" alt=""/>
+  <img src="structsxsdk_1_1color__list__interface.png" usemap="#sxsdk::color_list_interface_map" alt=""/>
   <map id="sxsdk::color_list_interface_map" name="sxsdk::color_list_interface_map">
-<area href="structsxsdk_1_1shade__interface.html" alt="sxsdk::shade_interface" shape="rect" coords="0,56,157,80"/>
+<area href="structsxsdk_1_1shade__interface.html" title="Shadeの情報へのアクセスの基本となるインターフェイス" alt="sxsdk::shade_interface" shape="rect" coords="0,56,157,80"/>
 <area href="classunknown__interface.html" alt="unknown_interface" shape="rect" coords="0,0,157,24"/>
 </map>
- </div>
-</div>
+ </div></div>
 
 <p><a href="structsxsdk_1_1color__list__interface-members.html">すべてのメンバ一覧</a></p>
-<table border="0" cellpadding="0" cellspacing="0">
-<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1color__list__interface.html#a602f349599e35548f19332d76546159d">get_number_of_items</a> (int i, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定されたカラーリストのアイテムの数を取得する。  <a href="#a602f349599e35548f19332d76546159d"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual sxsdk::rgb_class&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1color__list__interface.html#aa7494350fdf98d5e73cded16bdfcb55d">get_color</a> (int i, int j, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定されたカラーリストのアイテムの色を取得する。  <a href="#aa7494350fdf98d5e73cded16bdfcb55d"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1color__list__interface.html#a98f80abe1ba5d70caa126ee90f0f4812">set_color</a> (int i, int j, const sxsdk::rgb_class &amp;color, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定したカラーリストアイテムの色を設定する。  <a href="#a98f80abe1ba5d70caa126ee90f0f4812"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1color__list__interface.html#a263f2a06cf786a55f4f035288896bcd4">append_color</a> (int i, const sxsdk::rgb_class &amp;color, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定されたカラーリストにカラーアイテムを追加する。  <a href="#a263f2a06cf786a55f4f035288896bcd4"></a><br/></td></tr>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1color__list__interface.html#a602f349599e35548f19332d76546159d">get_number_of_items</a> (int i, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">指定されたカラーリストのアイテムの数を取得する。  <a href="#a602f349599e35548f19332d76546159d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual sxsdk::rgb_class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1color__list__interface.html#aa7494350fdf98d5e73cded16bdfcb55d">get_color</a> (int i, int j, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">指定されたカラーリストのアイテムの色を取得する。  <a href="#aa7494350fdf98d5e73cded16bdfcb55d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1color__list__interface.html#a98f80abe1ba5d70caa126ee90f0f4812">set_color</a> (int i, int j, const sxsdk::rgb_class &amp;color, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">指定したカラーリストアイテムの色を設定する。  <a href="#a98f80abe1ba5d70caa126ee90f0f4812"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1color__list__interface.html#a263f2a06cf786a55f4f035288896bcd4">append_color</a> (int i, const sxsdk::rgb_class &amp;color, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">指定されたカラーリストにカラーアイテムを追加する。  <a href="#a263f2a06cf786a55f4f035288896bcd4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a649ea1c8b0de6170a59617e6b5954acb"></a><!-- doxytag: member="sxsdk::color_list_interface::color_list_interface_test_1" ref="a649ea1c8b0de6170a59617e6b5954acb" args="(void *aux=0)" -->
-virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><b>color_list_interface_test_1</b> (void *aux=0)</td></tr>
+virtual int&#160;</td><td class="memItemRight" valign="bottom"><b>color_list_interface_test_1</b> (void *aux=0)</td></tr>
 </table>
-<hr/><h2>関数</h2>
+<hr/><a name="details" id="details"></a><h2>説明</h2>
+<div class="textblock"><p>カラーウィンドウのカラーリストの情報の取得・設定に使用する。 </p>
+<p>以下の関数でこのクラスを直接取得する。これ以外に関数の引数として渡される場合がある。</p>
+<p><code><a class="el" href="structsxsdk_1_1shade__interface.html#a4e84b5ef64e99bd818e876be69e5c921" title="カラーリストインターフェイスを取得する。">shade_interface::get_color_list_interface()</a></code> </p>
+</div><hr/><h2>関数</h2>
 <a class="anchor" id="a263f2a06cf786a55f4f035288896bcd4"></a><!-- doxytag: member="sxsdk::color_list_interface::append_color" ref="a263f2a06cf786a55f4f035288896bcd4" args="(int i, const sxsdk::rgb_class &amp;color, void *aux=0)" -->
 <div class="memitem">
 <div class="memproto">
@@ -63,25 +96,25 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><b>color_list_int
         <tr>
           <td class="memname">virtual void sxsdk::color_list_interface::append_color </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>i</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const sxsdk::rgb_class &amp;&nbsp;</td>
-          <td class="paramname"> <em>color</em>, </td>
+          <td class="paramtype">const sxsdk::rgb_class &amp;&#160;</td>
+          <td class="paramname"><em>color</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -89,9 +122,9 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><b>color_list_int
 
 <p>指定されたカラーリストにカラーアイテムを追加する。 </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>i</em>&nbsp;</td><td>カラーリストの番号 </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>color</em>&nbsp;</td><td>設定する色 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>カラーリストの番号 </td></tr>
+    <tr><td class="paramname">color</td><td>設定する色 </td></tr>
   </table>
   </dd>
 </dl>
@@ -105,25 +138,25 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><b>color_list_int
         <tr>
           <td class="memname">virtual sxsdk::rgb_class sxsdk::color_list_interface::get_color </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>i</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>j</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>j</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -131,9 +164,9 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><b>color_list_int
 
 <p>指定されたカラーリストのアイテムの色を取得する。 </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>i</em>&nbsp;</td><td>カラーリストの番号 </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>j</em>&nbsp;</td><td>アイテムの番号 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>カラーリストの番号 </td></tr>
+    <tr><td class="paramname">j</td><td>アイテムの番号 </td></tr>
   </table>
   </dd>
 </dl>
@@ -147,19 +180,19 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><b>color_list_int
         <tr>
           <td class="memname">virtual int sxsdk::color_list_interface::get_number_of_items </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>i</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -167,8 +200,8 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><b>color_list_int
 
 <p>指定されたカラーリストのアイテムの数を取得する。 </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>i</em>&nbsp;</td><td>カラーリストの番号 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>カラーリストの番号 </td></tr>
   </table>
   </dd>
 </dl>
@@ -182,31 +215,31 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><b>color_list_int
         <tr>
           <td class="memname">virtual void sxsdk::color_list_interface::set_color </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>i</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>j</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>j</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const sxsdk::rgb_class &amp;&nbsp;</td>
-          <td class="paramname"> <em>color</em>, </td>
+          <td class="paramtype">const sxsdk::rgb_class &amp;&#160;</td>
+          <td class="paramname"><em>color</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -214,10 +247,10 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><b>color_list_int
 
 <p>指定したカラーリストアイテムの色を設定する。 </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>i</em>&nbsp;</td><td>カラーリストの番号 </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>j</em>&nbsp;</td><td>アイテムの番号 </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>color</em>&nbsp;</td><td>設定する色 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>カラーリストの番号 </td></tr>
+    <tr><td class="paramname">j</td><td>アイテムの番号 </td></tr>
+    <tr><td class="paramname">color</td><td>設定する色 </td></tr>
   </table>
   </dd>
 </dl>
@@ -228,6 +261,11 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><b>color_list_int
 <li><a class="el" href="colorlistinterface_8h_source.html">colorlistinterface.h</a></li>
 </ul>
 </div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><b>sxsdk</b>      </li>
+      <li class="navelem"><a class="el" href="structsxsdk_1_1color__list__interface.html">color_list_interface</a>      </li>
 <br><br>
 <hr>
 <div align="center">Copyright &copy; e frontier, Inc. All rights reserved.</div>

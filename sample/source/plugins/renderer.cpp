@@ -1,5 +1,10 @@
 #include "sxsdk.cxx"
-#include "sx/gl/opengl.hpp"
+//#include "sx/gl/opengl.hpp"
+#include "sx/opengl.h"
+
+#define glNormal(n) (glNormal3f(n.x, n.y, n.z))
+#define glVertex(v) (glVertex3f(v.x, v.y, v.z))
+#define glTexCoord(uv) (glTexCoord2f(uv.x, uv.y))
 
 namespace {
 	const sx::uuid_class OPENGL_RENDERER_ID("B20C39CA-549E-11D9-8E2C-000A95BACEB2");
@@ -24,7 +29,7 @@ namespace {
 		virtual bool can_accept_polymesh (void *);
 		virtual void begin_polymesh (void *);
 		virtual void begin_polymesh_vertex (int n, void *);
-		virtual void polymesh_vertex (int i, const sx::vec<float,3> &v, void *);
+		virtual void polymesh_vertex (int i, const sxsdk::vec3& v, const sxsdk::skin_class* skin);
 		virtual void end_polymesh_vertex (void *);
 		virtual void begin_polymesh_face (int n, void *);
 		virtual void polymesh_face (int n, const int list[], const sx::vec<float,3> *normals, const sx::vec<float,4> *plane_equation, void *);
@@ -46,52 +51,52 @@ void opengl_renderer::ask ( sxsdk::stream_interface *stream, void *) {
 } 
 void opengl_renderer::render (sxsdk::image_interface &image, const sxsdk::mat4 &world_to_perspective, sxsdk::rendering_context_interface &rc) {
 	//rc.convert(this); return;
-//	t = sxsdk::mat4::identity;
-//	image.begin_opengl();
-//	glViewport(0, 0, image.get_size().x, image.get_size().y);
-//	glClearColor(1.0f, 0.0f, 0.0f, 0.0f);
-//	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-//
-//	glFlush();
-//
-//	glMatrixMode(GL_PROJECTION);
-//	glLoadIdentity();
-//	
-//	glOrtho(-1.0f, 1.0f, -1.0f, 1.0f, 0.0f, -1.0f);
-//	glMultMatrixf((GLfloat *)(&world_to_perspective));
-//
-//	GLfloat light_direction[4] = { 0.7f, 0.7f, 0.2f, 0.0f };
-//	{	int n = rc.get_number_of_lights();
-//		if (0 < n) {
-//			sxsdk::rendering_light_class &light = rc.get_light(0);
-//			if (light.is_distant_light()) {
-//				const sx::vec<float,4> d = light.get_position();
-//				light_direction[0] = d[0];
-//				light_direction[1] = d[1];
-//				light_direction[2] = d[2];
-//			}
-//		}
-//	}
-//	glLightfv(GL_LIGHT0, GL_POSITION, light_direction);
-//	glEnable(GL_LIGHT0);
-//	glDepthFunc(GL_LEQUAL);
-//	glEnable(GL_DEPTH_TEST);
-//	glLightModeli(GL_LIGHT_MODEL_TWO_SIDE, 1);
-//	glEnable(GL_LIGHTING);
-//	glEnable(GL_NORMALIZE);
-//	glShadeModel(GL_FLAT);
-//	glEnable(GL_CULL_FACE);
-//	
-//	glEnable(GL_TEXTURE_2D);
-//	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-//	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-//
-//	glMatrixMode(GL_MODELVIEW);
-//	glLoadIdentity();
-//	
-//	rc.convert(this);
-//
-//	image.end_opengl();
+	t = sxsdk::mat4::identity;
+	image.begin_opengl();
+	glViewport(0, 0, image.get_size().x, image.get_size().y);
+	glClearColor(1.0f, 0.0f, 0.0f, 0.0f);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+	glFlush();
+
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+
+	glOrtho(-1.0f, 1.0f, -1.0f, 1.0f, 0.0f, -1.0f);
+	glMultMatrixf((GLfloat *)(&world_to_perspective));
+
+	GLfloat light_direction[4] = { 0.7f, 0.7f, 0.2f, 0.0f };
+	{	int n = rc.get_number_of_lights();
+		if (0 < n) {
+			sxsdk::rendering_light_class &light = rc.get_light(0);
+			if (light.is_distant_light()) {
+				const sx::vec<float,4> d = light.get_position();
+				light_direction[0] = d[0];
+				light_direction[1] = d[1];
+				light_direction[2] = d[2];
+			}
+		}
+	}
+	glLightfv(GL_LIGHT0, GL_POSITION, light_direction);
+	glEnable(GL_LIGHT0);
+	glDepthFunc(GL_LEQUAL);
+	glEnable(GL_DEPTH_TEST);
+	glLightModeli(GL_LIGHT_MODEL_TWO_SIDE, 1);
+	glEnable(GL_LIGHTING);
+	glEnable(GL_NORMALIZE);
+	glShadeModel(GL_FLAT);
+	glEnable(GL_CULL_FACE);
+	
+	glEnable(GL_TEXTURE_2D);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
+	
+	rc.convert(this);
+
+	image.end_opengl();
 	//image.begin_opengl();
 	//for (int i = 0; i < 1000; i++) {
 	//	sx::thread::sleep(10);
@@ -141,15 +146,16 @@ void opengl_renderer::do_polygon (int n, sxsdk::points_interface **c, void *) {
 		rendering_context->plane_equation(k, &(p[0]), eq); //  \ja ポリゴンの法線ベクトルを求める。 \endja 
 		if (flip) eq = -eq;
 
-//		glBegin(GL_POLYGON);
-//		glNormal((const sx::vec<float,3> &)(eq));
-//		if (flip) {
-//			for (int i = 0; i < k; i++) glVertex(p[k-i-1]);
-//		}
-//		else {
-//			for (int i = 0; i < k; i++) glVertex(p[i]);
-//		}
-//		glEnd();
+		glBegin(GL_POLYGON);
+		const sxsdk::vec3 eq2(eq.x, eq.y, eq.z);
+		glNormal(eq2);
+		if (flip) {
+			for (int i = 0; i < k; i++) glVertex(p[k-i-1]);
+		}
+		else {
+			for (int i = 0; i < k; i++) glVertex(p[i]);
+		}
+		glEnd();
 	}
 }
 void opengl_renderer::do_meshes (sxsdk::meshes_interface *m_, void *) {
@@ -165,61 +171,61 @@ void opengl_renderer::do_meshes (sxsdk::meshes_interface *m_, void *) {
 		}
 	}
 	const bool flip = rendering_context->get_flip_face() ^ rendering_context->get_flip_face_shade();
-//	glBegin(GL_QUADS);
-//	sxsdk::meshes_interface &mesh = *m_;
-//	for (int i = 0; i < mesh.get_m_number(); i++) for (int j = 0; j < mesh.get_n_number(); j++) {
-//		if (mesh.is_submesh(i, j)) {
-//			sxsdk::meshes_interface::submesh_class submesh(mesh, i, j);
-//			for (int i = 0; i < submesh.m-1; i++) for (int j = 0; j < submesh.n-1; j++) {
-//				std::array<sx::vec<float,3>, 4> p;
-//				p[0] = submesh(i,   j  ).p;
-//				p[1] = submesh(i,   j+1).p;
-//				p[2] = submesh(i+1, j+1).p;
-//				p[3] = submesh(i+1, j  ).p;
-//				sx::vec<float,4> eq;
-//				try { rendering_context->plane_equation(4, &p[0], eq); } catch (...) { continue; }//  \ja 法線ベクトルを求める。 \endja 
-//				if (flip) eq = -eq;
-//				sx::vec<float,2> uv;
-//				glNormal3fv(&eq.x);
-//				
-//				if (flip) {
-//					uv = submesh.get_uv(i+1, j);
-//					glTexCoord(uv);
-//					glVertex(p[3]);
-//
-//					uv = submesh.get_uv(i+1, j+1);
-//					glTexCoord(uv);
-//					glVertex(p[2]);
-//
-//					uv = submesh.get_uv(i, j+1);
-//					glTexCoord(uv);
-//					glVertex(p[1]);
-//
-//					uv = submesh.get_uv(i, j);
-//					glTexCoord(uv);
-//					glVertex(p[0]);
-//				}
-//				else {
-//					uv = submesh.get_uv(i, j);
-//					glTexCoord(uv);
-//					glVertex(p[0]);
-//					
-//					uv = submesh.get_uv(i, j+1);
-//					glTexCoord(uv);
-//					glVertex(p[1]);
-//					
-//					uv = submesh.get_uv(i+1, j+1);
-//					glTexCoord(uv);
-//					glVertex(p[2]);
-//		
-//					uv = submesh.get_uv(i+1, j);
-//					glTexCoord(uv);
-//					glVertex(p[3]);
-//				}
-//			}
-//		}
-//	}
-//	glEnd();
+	glBegin(GL_QUADS);
+	sxsdk::meshes_interface &mesh = *m_;
+	for (int i = 0; i < mesh.get_m_number(); i++) for (int j = 0; j < mesh.get_n_number(); j++) {
+		if (mesh.is_submesh(i, j)) {
+			sxsdk::meshes_interface::submesh_class submesh(mesh, i, j);
+			for (int i = 0; i < submesh.m-1; i++) for (int j = 0; j < submesh.n-1; j++) {
+				std::array<sx::vec<float,3>, 4> p;
+				p[0] = submesh(i,   j  ).p;
+				p[1] = submesh(i,   j+1).p;
+				p[2] = submesh(i+1, j+1).p;
+				p[3] = submesh(i+1, j  ).p;
+				sx::vec<float,4> eq;
+				try { rendering_context->plane_equation(4, &p[0], eq); } catch (...) { continue; }//  \ja 法線ベクトルを求める。 \endja 
+				if (flip) eq = -eq;
+				sx::vec<float,2> uv;
+				glNormal3fv(&eq.x);
+				
+				if (flip) {
+					uv = submesh.get_uv(i+1, j);
+					glTexCoord(uv);
+					glVertex(p[3]);
+
+					uv = submesh.get_uv(i+1, j+1);
+					glTexCoord(uv);
+					glVertex(p[2]);
+
+					uv = submesh.get_uv(i, j+1);
+					glTexCoord(uv);
+					glVertex(p[1]);
+
+					uv = submesh.get_uv(i, j);
+					glTexCoord(uv);
+					glVertex(p[0]);
+				}
+				else {
+					uv = submesh.get_uv(i, j);
+					glTexCoord(uv);
+					glVertex(p[0]);
+					
+					uv = submesh.get_uv(i, j+1);
+					glTexCoord(uv);
+					glVertex(p[1]);
+					
+					uv = submesh.get_uv(i+1, j+1);
+					glTexCoord(uv);
+					glVertex(p[2]);
+		
+					uv = submesh.get_uv(i+1, j);
+					glTexCoord(uv);
+					glVertex(p[3]);
+				}
+			}
+		}
+	}
+	glEnd();
 }
 bool opengl_renderer::can_accept_polymesh (void *) {
 	return true;
@@ -230,7 +236,7 @@ void opengl_renderer::begin_polymesh (void *) {
 void opengl_renderer::begin_polymesh_vertex (int n, void *) {
 	vertices.resize(n);
 }
-void opengl_renderer::polymesh_vertex (int i, const sx::vec<float,3> &v, void *) {
+void opengl_renderer::polymesh_vertex (int i, const sxsdk::vec3& v, const sxsdk::skin_class* skin) {
 	vertices[i] = v;
 }
 void opengl_renderer::end_polymesh_vertex (void *) {
@@ -239,20 +245,20 @@ void opengl_renderer::begin_polymesh_face (int n, void *) {
 }
 void opengl_renderer::polymesh_face (int n, const int list[], const sx::vec<float,3> *normals, const sx::vec<float,4> *plane_equation, void *) {
 	const bool flip = rendering_context->get_flip_face() ^ rendering_context->get_flip_face_shade();
-//	glBegin(GL_POLYGON);
-//	if (flip) {
-//		for (int i = n-1; 0 <= i; --i) {
-//			if (normals) { sx::vec<float,3> n(-normals[i]); glNormal(n); }
-//			glVertex(vertices[list[i]]);
-//		}
-//	}
-//	else {
-//		for (int i = 0; i < n; ++i) {
-//			if (normals) glNormal(normals[i]);
-//			glVertex(vertices[list[i]]);
-//		}
-//	}
-//	glEnd();
+	glBegin(GL_POLYGON);
+	if (flip) {
+		for (int i = n-1; 0 <= i; --i) {
+			if (normals) { sx::vec<float,3> n(-normals[i]); glNormal(n); }
+			glVertex(vertices[list[i]]);
+		}
+	}
+	else {
+		for (int i = 0; i < n; ++i) {
+			if (normals) glNormal(normals[i]);
+			glVertex(vertices[list[i]]);
+		}
+	}
+	glEnd();
 }
 void opengl_renderer::end_polymesh_face (void *) {
 }
@@ -262,11 +268,11 @@ void opengl_renderer::end_polymesh (void *) {
 void opengl_renderer::begin (void *) {
 //	rendering_context->yield();
 //	rendering_context->update_image();
-//	glPushMatrix();
-//	glMultMatrixf(&(rendering_context->get_current_shape().get_transformation())[0][0]); //  \ja 変換マトリクスを設定する。 \endja 
+	glPushMatrix();
+	glMultMatrixf(&(rendering_context->get_current_shape().get_transformation())[0][0]); //  \ja 変換マトリクスを設定する。 \endja 
 }
 void opengl_renderer::end (void *) {
-//	glPopMatrix(); //  \ja 変換マトリクスを元に戻す。 \endja 
+	glPopMatrix(); //  \ja 変換マトリクスを元に戻す。 \endja 
 }
 
 //  \ja accepts_walkthroughがtrueを返すと、視野が変わった時にwalkthroughが呼ばれる。 \endja 

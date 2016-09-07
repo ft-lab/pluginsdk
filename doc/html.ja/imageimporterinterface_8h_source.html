@@ -4,37 +4,63 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <title>imageimporterinterface.h ソースファイル</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<!-- 作成： Doxygen 1.6.1 -->
-<div class="navigation" id="top">
-  <div class="tabs">
-    <ul>
-      <li><a href="main.html"><span>メインページ</span></a></li>
+<!-- 作成： Doxygen 1.7.4 -->
+<div id="top">
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
       <li><a href="pages.html"><span>関連ページ</span></a></li>
       <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
       <li><a href="annotated.html"><span>クラス</span></a></li>
       <li class="current"><a href="files.html"><span>ファイル</span></a></li>
     </ul>
   </div>
-  <div class="tabs">
-    <ul>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
       <li><a href="files.html"><span>ファイル一覧</span></a></li>
       <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
     </ul>
   </div>
-<h1>imageimporterinterface.h</h1><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// this file has been created by makeheader.py</span>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+  initNavTree('imageimporterinterface_8h.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">imageimporterinterface.h</div>  </div>
+</div>
+<div class="contents">
+<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// this file has been created by makeheader.py</span>
 <a name="l00002"></a>00002 <span class="comment">// ja utf-8</span>
 <a name="l00003"></a>00003 <span class="preprocessor">#pragma once</span>
-<a name="l00010"></a>00010 <span class="preprocessor">namespace sxsdk {</span>
-<a name="l00011"></a><a class="code" href="structsxsdk_1_1image__importer__interface.html">00011</a> <span class="preprocessor"></span><span class="keyword">struct </span><a class="code" href="structsxsdk_1_1image__importer__interface.html">image_importer_interface</a> : <span class="keyword">public</span> <a class="code" href="structsxsdk_1_1plugin__interface.html">plugin_interface</a> {
+<a name="l00004"></a>00004 <span class="preprocessor"></span><span class="keyword">namespace </span>sxsdk {
+<a name="l00011"></a><a class="code" href="structsxsdk_1_1image__importer__interface.html">00011</a> <span class="keyword">struct </span><a class="code" href="structsxsdk_1_1image__importer__interface.html" title="イメージインポータプラグインの基本クラス">image_importer_interface</a> : <span class="keyword">public</span> <a class="code" href="structsxsdk_1_1plugin__interface.html" title="プラグインの基本クラス">plugin_interface</a> {
 <a name="l00012"></a>00012 <span class="keyword">public</span>:
-<a name="l00020"></a><a class="code" href="structsxsdk_1_1image__importer__interface.html#a32c06df3067875639da13ace184fa70d">00020</a>     <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="structsxsdk_1_1image__importer__interface.html#a32c06df3067875639da13ace184fa70d" title="オーバライド可。対応する画像ファイルの拡張子を登録する。複数の拡張�...">get_file_extension</a> (<span class="keywordtype">int</span> index, <span class="keywordtype">void</span>* aux = 0) { <span class="keywordflow">return</span> 0; } 
-<a name="l00028"></a><a class="code" href="structsxsdk_1_1image__importer__interface.html#a2d54aa8ede37ecde2341c91faf5b2f65">00028</a>     <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="structsxsdk_1_1image__importer__interface.html#a2d54aa8ede37ecde2341c91faf5b2f65" title="オーバライド可。ファイルの種類ポップアップメニューに表示する画像フ�...">get_file_description</a> (<span class="keywordtype">int</span> index, <span class="keywordtype">void</span>* aux = 0) { <span class="keywordflow">return</span> 0; } 
-<a name="l00032"></a><a class="code" href="structsxsdk_1_1image__importer__interface.html#a2ab9c266472468f6c3b7935a05e6dd33">00032</a>     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1image__interface.html">sxsdk::image_interface</a>* <a class="code" href="structsxsdk_1_1image__importer__interface.html#a2ab9c266472468f6c3b7935a05e6dd33" title="オーバライド可。イメージのインポートを行うときに呼ばれる。この関数�...">do_import</a> (<span class="keywordtype">int</span> index, <a class="code" href="structsxsdk_1_1stream__interface.html">stream_interface</a>* stream, <span class="keywordtype">void</span>* aux = 0) { <span class="keywordflow">return</span> 0; } 
+<a name="l00020"></a><a class="code" href="structsxsdk_1_1image__importer__interface.html#a32c06df3067875639da13ace184fa70d">00020</a>     <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="structsxsdk_1_1image__importer__interface.html#a32c06df3067875639da13ace184fa70d" title="オーバライド可。対応する画像ファイルの拡張子を登録する。複数の拡張子を登録可能。">get_file_extension</a> (<span class="keywordtype">int</span> index, <span class="keywordtype">void</span>* aux = 0) { <span class="keywordflow">return</span> 0; } 
+<a name="l00028"></a><a class="code" href="structsxsdk_1_1image__importer__interface.html#a2d54aa8ede37ecde2341c91faf5b2f65">00028</a>     <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="structsxsdk_1_1image__importer__interface.html#a2d54aa8ede37ecde2341c91faf5b2f65" title="オーバライド可。ファイルの種類ポップアップメニューに表示する画像ファイル形式の名称を登録する。">get_file_description</a> (<span class="keywordtype">int</span> index, <span class="keywordtype">void</span>* aux = 0) { <span class="keywordflow">return</span> 0; } 
+<a name="l00032"></a><a class="code" href="structsxsdk_1_1image__importer__interface.html#a2ab9c266472468f6c3b7935a05e6dd33">00032</a>     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1image__interface.html" title="１枚のイメージを表すクラス。画像へのアクセスに使用する。">sxsdk::image_interface</a>* <a class="code" href="structsxsdk_1_1image__importer__interface.html#a2ab9c266472468f6c3b7935a05e6dd33" title="オーバライド可。イメージのインポートを行うときに呼ばれる。この関数でファイルからの読み込みを行う。">do_import</a> (<span class="keywordtype">int</span> index, <a class="code" href="structsxsdk_1_1stream__interface.html" title="属性ストリームやファイルの読み込み、書き込みに使用します。">stream_interface</a>* stream, <span class="keywordtype">void</span>* aux = 0) { <span class="keywordflow">return</span> 0; } 
 <a name="l00035"></a><a class="code" href="structsxsdk_1_1image__importer__interface.html#af8b2d85e9f0701993ade1f9e0b3c074a">00035</a>     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="structsxsdk_1_1image__importer__interface.html#af8b2d85e9f0701993ade1f9e0b3c074a" title="オーバライド可。インポート処理を行う前に呼ばれる。">do_pre_import</a> (<span class="keywordtype">int</span> index, <span class="keywordtype">void</span>* aux = 0) { <span class="keywordflow">return</span> <span class="keyword">true</span>; } 
-<a name="l00039"></a><a class="code" href="structsxsdk_1_1image__importer__interface.html#a405c86bd5a7425aaed048036dfa99829">00039</a>     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="structsxsdk_1_1image__importer__interface.html#a405c86bd5a7425aaed048036dfa99829" title="オーバライド可。インポート処理を行った後に呼ばれる。">do_post_import</a> (<span class="keywordtype">int</span> index, <a class="code" href="structsxsdk_1_1image__interface.html">sxsdk::image_interface</a>* image, <span class="keywordtype">void</span>* aux = 0) { <span class="keywordflow">return</span> <span class="keyword">true</span>; } 
+<a name="l00039"></a><a class="code" href="structsxsdk_1_1image__importer__interface.html#a405c86bd5a7425aaed048036dfa99829">00039</a>     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="structsxsdk_1_1image__importer__interface.html#a405c86bd5a7425aaed048036dfa99829" title="オーバライド可。インポート処理を行った後に呼ばれる。">do_post_import</a> (<span class="keywordtype">int</span> index, <a class="code" href="structsxsdk_1_1image__interface.html" title="１枚のイメージを表すクラス。画像へのアクセスに使用する。">sxsdk::image_interface</a>* image, <span class="keywordtype">void</span>* aux = 0) { <span class="keywordflow">return</span> <span class="keyword">true</span>; } 
 <a name="l00040"></a>00040 <span class="preprocessor">#ifndef DOXYGEN_SKIP</span>
 <a name="l00041"></a>00041 <span class="preprocessor"></span>    <span class="keyword">virtual</span> <span class="keywordtype">int</span> image_importer_interface_dummy5(<span class="keywordtype">void</span> *) { assert(<span class="keyword">false</span>); <span class="keywordflow">throw</span> <span class="stringliteral">&quot;invalid interface image_importer_interface&quot;</span>; <span class="keywordflow">return</span> 0; } <span class="comment">// 5</span>
 <a name="l00042"></a>00042     <span class="keyword">virtual</span> <span class="keywordtype">int</span> image_importer_interface_dummy6(<span class="keywordtype">void</span> *) { assert(<span class="keyword">false</span>); <span class="keywordflow">throw</span> <span class="stringliteral">&quot;invalid interface image_importer_interface&quot;</span>; <span class="keywordflow">return</span> 0; } <span class="comment">// 6</span>
@@ -235,6 +261,10 @@
 <a name="l00237"></a>00237 <span class="preprocessor"></span>};
 <a name="l00238"></a>00238 } <span class="comment">// sxsdk</span>
 </pre></div></div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><b>imageimporterinterface.h</b>      </li>
 <br><br>
 <hr>
 <div align="center">Copyright &copy; e frontier, Inc. All rights reserved.</div>

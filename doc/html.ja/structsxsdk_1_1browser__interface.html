@@ -4,50 +4,83 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <title>構造体 sxsdk::browser_interface</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<!-- 作成： Doxygen 1.6.1 -->
-<div class="navigation" id="top">
-  <div class="tabs">
-    <ul>
-      <li><a href="main.html"><span>メインページ</span></a></li>
+<!-- 作成： Doxygen 1.7.4 -->
+<div id="top">
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
       <li><a href="pages.html"><span>関連ページ</span></a></li>
       <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
       <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
       <li><a href="files.html"><span>ファイル</span></a></li>
     </ul>
   </div>
-  <div class="tabs">
-    <ul>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
       <li><a href="annotated.html"><span>構成</span></a></li>
       <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
       <li><a href="functions.html"><span>構成メンバ</span></a></li>
     </ul>
   </div>
-  <div class="navpath"><a class="el" href="namespacesxsdk.html">sxsdk</a>::<a class="el" href="structsxsdk_1_1browser__interface.html">browser_interface</a>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
   </div>
 </div>
+<script type="text/javascript">
+  initNavTree('structsxsdk_1_1browser__interface.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public メソッド</a>  </div>
+  <div class="headertitle">
+<div class="title">構造体 sxsdk::browser_interface</div>  </div>
+</div>
 <div class="contents">
-<h1>構造体 sxsdk::browser_interface</h1><!-- doxytag: class="sxsdk::browser_interface" --><!-- doxytag: inherits="sxsdk::plugin_interface" --><div class="dynheader">
+<!-- doxytag: class="sxsdk::browser_interface" --><!-- doxytag: inherits="sxsdk::plugin_interface" -->
+<p>ブラウザプラグインの基本クラス  
+ <a href="structsxsdk_1_1browser__interface.html#details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="browserinterface_8h_source.html">browserinterface.h</a>&gt;</code></p>
+<div class="dynheader">
 sxsdk::browser_interfaceに対する継承グラフ</div>
-<div class="dynsection">
+<div class="dyncontent">
  <div class="center">
-  <img src="structsxsdk_1_1browser__interface.gif" usemap="#sxsdk::browser_interface_map" alt=""/>
+  <img src="structsxsdk_1_1browser__interface.png" usemap="#sxsdk::browser_interface_map" alt=""/>
   <map id="sxsdk::browser_interface_map" name="sxsdk::browser_interface_map">
-<area href="structsxsdk_1_1plugin__interface.html" alt="sxsdk::plugin_interface" shape="rect" coords="0,56,152,80"/>
+<area href="structsxsdk_1_1plugin__interface.html" title="プラグインの基本クラス" alt="sxsdk::plugin_interface" shape="rect" coords="0,56,152,80"/>
 <area href="classunknown__interface.html" alt="unknown_interface" shape="rect" coords="0,0,152,24"/>
 </map>
- </div>
-</div>
+ </div></div>
 
 <p><a href="structsxsdk_1_1browser__interface-members.html">すべてのメンバ一覧</a></p>
-<table border="0" cellpadding="0" cellspacing="0">
-<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1browser__interface.html#a149b691e90576f63b967dee3c8a04d06">do_browser</a> (<a class="el" href="structsxsdk_1_1scene__interface.html">sxsdk::scene_interface</a> *scene, void *aux=0)=0</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オーバライド可。ブラウザコンテクストメニューから選択されると呼ばれる。  <a href="#a149b691e90576f63b967dee3c8a04d06"></a><br/></td></tr>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1browser__interface.html#a149b691e90576f63b967dee3c8a04d06">do_browser</a> (<a class="el" href="structsxsdk_1_1scene__interface.html">sxsdk::scene_interface</a> *scene, void *aux=0)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オーバライド可。ブラウザコンテクストメニューから選択されると呼ばれる。  <a href="#a149b691e90576f63b967dee3c8a04d06"></a><br/></td></tr>
 </table>
-<hr/><h2>関数</h2>
+<hr/><a name="details" id="details"></a><h2>説明</h2>
+<div class="textblock"><p>ブラウザプラグインの基本クラス </p>
+<p>browser_interfaceの派生クラスを定義することによって、ブラウザプラグインを実装する。</p>
+<p>ブラウザプラグインは、ブラウザウインドウのコンテクストメニューから選択することによって実行される。 </p>
+</div><hr/><h2>関数</h2>
 <a class="anchor" id="a149b691e90576f63b967dee3c8a04d06"></a><!-- doxytag: member="sxsdk::browser_interface::do_browser" ref="a149b691e90576f63b967dee3c8a04d06" args="(sxsdk::scene_interface *scene, void *aux=0)=0" -->
 <div class="memitem">
 <div class="memproto">
@@ -55,19 +88,19 @@ sxsdk::browser_interfaceに対する継承グラフ</div>
         <tr>
           <td class="memname">virtual bool sxsdk::browser_interface::do_browser </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structsxsdk_1_1scene__interface.html">sxsdk::scene_interface</a> *&nbsp;</td>
-          <td class="paramname"> <em>scene</em>, </td>
+          <td class="paramtype"><a class="el" href="structsxsdk_1_1scene__interface.html">sxsdk::scene_interface</a> *&#160;</td>
+          <td class="paramname"><em>scene</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [pure virtual]</code></td>
+          <td></td><td><code> [pure virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -75,8 +108,8 @@ sxsdk::browser_interfaceに対する継承グラフ</div>
 
 <p>オーバライド可。ブラウザコンテクストメニューから選択されると呼ばれる。 </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>scene</em>&nbsp;</td><td>対象となっているシーンの<code><a class="el" href="structsxsdk_1_1scene__interface.html">scene_interface</a></code> が渡される。選択している形状を取得するには<code><a class="el" href="structsxsdk_1_1scene__interface.html#a9acb167a81b2469fc1ffa02fac141f30" title="i番目の選択されている形状を返す。">scene_interface::active_shape()</a></code> や<code><a class="el" href="structsxsdk_1_1scene__interface.html#a4d7a60ca9e1430028264099a3c970f3b" title="現在選択されている形状のリスト。を取得する。">scene_interface::get_active_shapes()</a></code> を使用する。 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">scene</td><td>対象となっているシーンの<code><a class="el" href="structsxsdk_1_1scene__interface.html" title="シーンの情報の取得・設定に使用する。">scene_interface</a></code> が渡される。選択している形状を取得するには<code><a class="el" href="structsxsdk_1_1scene__interface.html#a9acb167a81b2469fc1ffa02fac141f30" title="i番目の選択されている形状を返す。">scene_interface::active_shape()</a></code> や<code><a class="el" href="structsxsdk_1_1scene__interface.html#a77a6df7ccd6489af17e98958dfa1a9ea" title="現在選択されている形状のリスト。を取得する。">scene_interface::get_active_shapes()</a></code> を使用する。 </td></tr>
   </table>
   </dd>
 </dl>
@@ -87,6 +120,11 @@ sxsdk::browser_interfaceに対する継承グラフ</div>
 <li><a class="el" href="browserinterface_8h_source.html">browserinterface.h</a></li>
 </ul>
 </div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><b>sxsdk</b>      </li>
+      <li class="navelem"><a class="el" href="structsxsdk_1_1browser__interface.html">browser_interface</a>      </li>
 <br><br>
 <hr>
 <div align="center">Copyright &copy; e frontier, Inc. All rights reserved.</div>

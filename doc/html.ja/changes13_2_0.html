@@ -1,0 +1,803 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Shade 13.2.0 SDKの変更点</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.7.4 -->
+<div id="top">
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li class="current"><a href="pages.html"><span>関連ページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+  initNavTree('changes13_2_0.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">Shade 13.2.0 SDKの変更点 </div>  </div>
+</div>
+<div class="contents">
+<div class="textblock"><h2><a class="anchor" id="summary"></a>
+■概要</h2>
+<p>Shade 12.0.3 SDKからShade 13.2.0 SDKで追加/変更された項目を列挙します。</p>
+<h2><a class="anchor" id="changed"></a>
+■変更された関数</h2>
+<h3><a class="anchor" id="changed_exporter_interface"></a>
+sxsdk::exporter_interface</h3>
+<ul>
+<li><a class="el" href="structsxsdk_1_1exporter__interface.html#aecdd5afb35e4b75d1120af00593854c3" title="オーバライド可。ポリゴンメッシュの個々の頂点ごとに呼ばれる。">sxsdk::exporter_interface::polymesh_vertex</a></li>
+</ul>
+<p>第三引数が変更されたため、Shade 13.2.0 プラグインSDKでコンパイルする際はpolymesh_vertex関数をオーバーライドしている記述を変更する必要があります。</p>
+<h3><a class="anchor" id="changed_rendering_context_interface"></a>
+sxsdk::rendering_context_interface</h3>
+<ul>
+<li><a class="el" href="structsxsdk_1_1rendering__context__interface.html#a94eddeedce0239b07de255329fb57d4a" title="カレントのフレーム値(float)を取得する。">sxsdk::rendering_context_interface::get_current_frame</a></li>
+</ul>
+<p>return値をint型からfloat型に変更。</p>
+<h3><a class="anchor" id="changed_scene_interface"></a>
+sxsdk::scene_interface</h3>
+<ul>
+<li><a class="el" href="structsxsdk_1_1scene__interface.html#a0a26ba7288691ed6d0724046c1abccb0" title="アニメーション作成のステップフレーム数(float)を取得する。">sxsdk::scene_interface::get_step_frames</a></li>
+</ul>
+<p>return値をint型からfloat型に変更。</p>
+<ul>
+<li><a class="el" href="structsxsdk_1_1scene__interface.html#a735f713aa7b36027a0704f95abf504b5" title="アニメーション作成のステップフレーム数(float)を設定する。">sxsdk::scene_interface::set_step_frames</a></li>
+</ul>
+<p>第一引数をint型からfloat型に変更。</p>
+<h2><a class="anchor" id="add_class_obsolete"></a>
+■非推奨関数</h2>
+<p>互換性のために残していますが、推奨されなくなった関数です。</p>
+<ul>
+<li><a class="el" href="structsxsdk_1_1rendering__context__interface.html#aa9c9c5cb2cfded8d65bcf3d850e58f3e" title="カレントのフレーム値を取得する。">sxsdk::rendering_context_interface::get_current_frame_deprecated</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1scene__interface.html#adda599215033cfea4960dd384633d41e" title="アニメーション作成のステップフレーム数を取得する。">sxsdk::scene_interface::get_step_frames_deprecated</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1scene__interface.html#a4dc5f606ab4fe4606628e749e8282f01" title="アニメーション作成のステップフレーム数を設定する。">sxsdk::scene_interface::set_step_frames_deprecated</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1shape__class.html#a6b603004b0d3f94c3ca60c1b3bc1223b" title="形状に設定されたtag名称一覧">sxsdk::shape_class::tags_obsolete</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1path__replicator__interface.html#a1f69913b863ebf9cd537fb9f7c693261" title="配列タイプを設定する。">sxsdk::path_replicator_interface::set_alignment_type_obsolete</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1path__replicator__interface.html#a2c21f15b509dea6984f7baa842c47ed1" title="配列タイプを取得する。">sxsdk::path_replicator_interface::get_alignment_type_obsolete</a></li>
+</ul>
+<h2><a class="anchor" id="add_class_interface"></a>
+■新規追加クラス/インターフェイス</h2>
+<ul>
+<li><a class="el" href="structsxsdk_1_1ik__class.html" title="シーンに対して1つ持つIK制御クラス">sxsdk::ik_class</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1ik__data__class.html" title="1組のIK情報を持つクラス">sxsdk::ik_data_class</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html" title="無限遠光源の第一レイヤにて割り当てられているフィジカルスカイ処理クラス。">sxsdk::physical_sky_class</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__replicator__interface.html" title="サーフェスリプリケータにアクセスするためのインターフェイス">sxsdk::surface_replicator_interface</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1bone__joint__interface.html" title="ボーンにアクセスするためのインターフェース。">sxsdk::bone_joint_interface</a></li>
+</ul>
+<h2><a class="anchor" id="add_function"></a>
+■追加関数</h2>
+<h3><a class="anchor" id="add_function_background_interface"></a>
+sxsdk::background_interface</h3>
+<ul>
+<li><a class="el" href="structsxsdk_1_1background__interface.html#aaae48ff130fcb4e7964df818f1dedf8c" title="背景の色を計算する">sxsdk::background_interface::calculate_background_color</a></li>
+</ul>
+<h3><a class="anchor" id="add_function_distant_light_interface"></a>
+sxsdk::distant_light_interface</h3>
+<ul>
+<li><a class="el" href="structsxsdk_1_1distant__light__interface.html#ab4eb875b2217321af0ee3da90790754c" title="フィジカルスカイ操作クラスの参照を取得する。">sxsdk::distant_light_interface::physical_sky</a></li>
+</ul>
+<h3><a class="anchor" id="add_function_ik_class"></a>
+sxsdk::ik_class</h3>
+<ul>
+<li><a class="el" href="structsxsdk_1_1ik__class.html#ae1e8b4e9ae8d63e45ff786b2ce0c992e" title="指定の形状に近いIKの情報を探す。">sxsdk::ik_class::find_ik_data</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1ik__class.html#a8a7379cd175ca95e20be52052df7f46d" title="指定のroot/end/goal形状を与えてIK情報を割り当て。">sxsdk::ik_class::set_ik</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1ik__class.html#acaa46c40768e60d1ea46b643954270e2" title="指定の形状でIK情報を持つか調べる。">sxsdk::ik_class::has_ik</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1ik__class.html#aaa23db03e56b15c0c023eb9ab0815c28" title="IKデータを取得。">sxsdk::ik_class::get_ik_data</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1ik__class.html#ae89b1a29ec31d6438aa77e940d692573" title="IKデータを更新する。">sxsdk::ik_class::set_ik_data</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1ik__class.html#afc59f3749ae52ae096c77f7e2e99dbdb" title="IK情報を削除（root/end/goalのいずれかを指定）。">sxsdk::ik_class::delete_ik_data</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1ik__class.html#aa6e0232254c38f49be39d74dee40dd31" title="IK情報の数を取得。">sxsdk::ik_class::get_number_of_ik</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1ik__class.html#a3ac00d51b1f20ba3f2dcc501a2b07b03" title="IK情報をIK番号より取得。">sxsdk::ik_class::get_ik_data_index</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1ik__class.html#adbd0b437ca3b6c5a5da29ba83d70aac7" title="形状に対応するIKを考慮したワールド座標位置を取得。">sxsdk::ik_class::get_shape_world_position</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1ik__class.html#a9d11ea7b0b0c72f196d5ef0ad6a54a58" title="IKの持つ3つのジョイントにて屈伸運動する場合の、屈伸の向きに値する「Pole Vector」を取得。">sxsdk::ik_class::get_pole_vector</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1ik__class.html#acc792fabff509e84ad6af74659e54e55" title="Twist値を取得。">sxsdk::ik_class::get_twist</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1ik__class.html#a289b4bf306327b256d6a3b7c970753a7" title="現在のシーケンス位置でのIKを考慮したジョイントの回転値を取得。">sxsdk::ik_class::get_joint_rotation</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1ik__class.html#a12a5d98341b2acd8e2a8a0ef2e333836" title="現在のシーケンス位置でのIKを考慮したジョイントのオフセット値を取得。">sxsdk::ik_class::get_joint_offset</a></li>
+</ul>
+<h3><a class="anchor" id="add_function_ik_data_class"></a>
+sxsdk::ik_data_class</h3>
+<ul>
+<li><a class="el" href="structsxsdk_1_1ik__data__class.html#a01d94fb96410f7a4c994ef93890122c7" title="IKルートのジョイントを設定する。">sxsdk::ik_data_class::set_root_shape</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1ik__data__class.html#a7581d6225b0e8027b617aaf05a93642e" title="IKルートのジョイントを取得する。">sxsdk::ik_data_class::get_root_shape</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1ik__data__class.html#a6e13e624383d722b5dcf76bf73f9d510" title="IKエンドのジョイントを設定する。">sxsdk::ik_data_class::set_end_shape</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1ik__data__class.html#a299c058cb5588d1e52032bf011bfab8d" title="IKエンドのジョイントを取得する。">sxsdk::ik_data_class::get_end_shape</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1ik__data__class.html#a07c36eec7da274104f42751bbb901d84" title="IKゴールのジョイントを設定する。">sxsdk::ik_data_class::set_goal_shape</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1ik__data__class.html#a309ff65bd2f32fb8c6ff489c6fb18fd1" title="IKゴールのジョイントを取得する。">sxsdk::ik_data_class::get_goal_shape</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1ik__data__class.html#a8b62aa9387b359a320c6a7b6920f9f04" title="IKが有効かどうかを設定する。">sxsdk::ik_data_class::set_enable</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1ik__data__class.html#a95e17ba1730e8481c83023963bed3ff6" title="IKが有効かどうかを取得する。">sxsdk::ik_data_class::get_enable</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1ik__data__class.html#a48a6315dc3f9e9e99d96d6ead9ea2a42" title="角度制限を行うかどうかを設定する。">sxsdk::ik_data_class::set_angle_lock</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1ik__data__class.html#ab65b247d8c4ede1919042671cfaa0fad" title="角度制限を行うかどうかを取得する。">sxsdk::ik_data_class::get_angle_lock</a></li>
+</ul>
+<h3><a class="anchor" id="add_function_physical_sky_class"></a>
+sxsdk::physical_sky_class</h3>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#a9263684219963a1bf2e4711b5a3cf86c" title="光源の方向を設定する。">sxsdk::physical_sky_class::set_direction</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#ae2c861fc70d57aa8980986e1327d0987" title="光源の方向を取得する。">sxsdk::physical_sky_class::get_direction</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#a7fac7e6b01ea57ac521db466f4cf46ab" title="光源の色を設定する。">sxsdk::physical_sky_class::set_color</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#a791cf6e176ad8893562a912bdc45fb0d" title="光源の色を取得する。">sxsdk::physical_sky_class::get_color</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#a9543f9a8587b5ca308b07f9b3efa5699" title="北向きを示す回転角度を設定する。">sxsdk::physical_sky_class::set_north_angle</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#a885c7ab181a6087fc7a520f35fbf872e" title="北向きを示す回転角度を取得する。">sxsdk::physical_sky_class::get_north_angle</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#a60431a10907a46cf8489bcda178e6921" title="明るさの調整値を設定する。">sxsdk::physical_sky_class::set_intensity</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#a33fb8ef9736e4899db1e60d9bd4305f0" title="明るさの調整値を取得する。">sxsdk::physical_sky_class::get_intensity</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#acdb2af4e4fd6cd00647aeff71b434cc4" title="UTC（タイムゾーン）を設定する。">sxsdk::physical_sky_class::set_utc</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#a1d7897912bc6f709beb4e37441cc4ab3" title="UTC（タイムゾーン）を取得する。">sxsdk::physical_sky_class::get_utc</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#a124b66e636c3d420ed18bf6144065545" title="日時を指定する">sxsdk::physical_sky_class::set_datetime</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#a37f9ac4829f2c8cc634ca39f0f5455fa" title="アニメーション時の終了日時を指定する">sxsdk::physical_sky_class::set_datetime_end</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#a4f141bd30c8b19cc3f6a393aba68e1a3" title="日付時間の月 (1 - 12)を設定する。">sxsdk::physical_sky_class::set_datetime_month</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#adb5fb86d05560bd4c93e84589a7e9cbd" title="日付時間の月 (1 - 12)を取得する。">sxsdk::physical_sky_class::get_datetime_month</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#a10587666ef292f71cd00b6e462f5c96d" title="日付時間の日 (1 - 31)を設定する。">sxsdk::physical_sky_class::set_datetime_day</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#a5d83412a8561b97005f3f7ad58c79e97" title="日付時間の日 (1 - 31)を取得する。">sxsdk::physical_sky_class::get_datetime_day</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#ac5f460ccc79f43446b950833c9498b63" title="日付時間の時 (0 - 23)を設定する。">sxsdk::physical_sky_class::set_datetime_hour</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#a3d8f214b99ad21563a7bd071ee3dc409" title="日付時間の時 (0 - 23)を取得する。">sxsdk::physical_sky_class::get_datetime_hour</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#abf8b75e94e358f8f6bbf8372dfec2610" title="日付時間の分 (0 - 59)を設定する。">sxsdk::physical_sky_class::set_datetime_minutes</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#a965890f087d57031fb926aab76594cf8" title="日付時間の分 (0 - 59)を取得する。">sxsdk::physical_sky_class::get_datetime_minutes</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#a0b8752d0afce262947d28911b9abfe2f" title="日付時間の秒 (0 - 59)を設定する。">sxsdk::physical_sky_class::set_datetime_second</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#a8aa55fc03a5f308f93e10e0e75aed64e" title="日付時間の秒 (0 - 59)を取得する。">sxsdk::physical_sky_class::get_datetime_second</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#a07fd96240faf7095c2102fdb40500cde" title="無限遠光源の1番目を太陽光計算にて使用を設定する。">sxsdk::physical_sky_class::set_use_sun</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#a4a5cce7fbd1dde5f1114597adb4be763" title="無限遠光源の1番目を太陽光計算にて使用を取得する。">sxsdk::physical_sky_class::get_use_sun</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#a8c8f11694e7b722b4c0ad35a5203c64f" title="無限遠光源の向きを自動更新するかどうかを設定する。">sxsdk::physical_sky_class::set_update_light_direction</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#a39af1f9c89bec8427dbad164b10e97a6" title="無限遠光源の向きを自動更新するかどうかを取得する。">sxsdk::physical_sky_class::get_update_light_direction</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#a94be8764d1efc5127bb8ab5ae91a5ecd" title="無限遠光源の色を自動更新するかどうかを設定する。">sxsdk::physical_sky_class::set_update_light_color</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#ae1782e2a6f68df90ebb3691caf78f0a4" title="無限遠光源の色を自動更新するかどうかを取得する。">sxsdk::physical_sky_class::get_update_light_color</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#a54091d60fe4b90805fb933cb4af3d308" title="背景での上半球基本色で、無限遠光源の向きにより空模様の描画を行うかどうかを設定する。">sxsdk::physical_sky_class::set_use_background</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#a08b66041c88f1ff2e0fd44dfc6545a3d" title="背景での上半球基本色で、無限遠光源の向きにより空模様の描画を行うかどうかを取得する。">sxsdk::physical_sky_class::get_use_background</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#af49535a3bd51348e9bfceda49cf23789" title="終了フレームを指定してのアニメーションを行うかどうかを設定する。">sxsdk::physical_sky_class::set_enable_animation_end</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#a0afc3875d616f29c7694d9f17b13fc37" title="終了フレームを指定してのアニメーションを行うかどうかを取得する。">sxsdk::physical_sky_class::get_enable_animation_end</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#a961da41cf4004d535d08f446b5f4387c" title="背景の色の自動調整を設定する。">sxsdk::physical_sky_class::set_background_auto_color</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#ad1b1ae67eb776aa903552bcfd4e21d8a" title="背景の色の自動調整を取得する。">sxsdk::physical_sky_class::get_background_auto_color</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#a0ccdb036f868dbab4797ddd01701615b" title="終了フレームでの日付時間の月 (1 - 12)を設定する。">sxsdk::physical_sky_class::set_datetime_month_end</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#aed4edb1ca5f603754543a2c1ab938c08" title="終了フレームでの日付時間の月 (1 - 12)を取得する。">sxsdk::physical_sky_class::get_datetime_month_end</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#ab521f40327fee60d39a5da4b252e1bc0" title="終了フレームでの日付時間の日 (1 - 31)を設定する。">sxsdk::physical_sky_class::set_datetime_day_end</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#ab22a9bf1fd80222296ecfa92bb57f78c" title="終了フレームでの日付時間の日 (1 - 31)を取得する。">sxsdk::physical_sky_class::get_datetime_day_end</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#a7a01955991e3cecb2b8dba2d42041502" title="終了フレームでの日付時間の時 (0 - 23)を設定する。">sxsdk::physical_sky_class::set_datetime_hour_end</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#a89182731483dadeb5d691307ebe5a36a" title="終了フレームでの日付時間の時 (0 - 23)を取得する。">sxsdk::physical_sky_class::get_datetime_hour_end</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#a22c7c5a14d609613db8770f5bccaac87" title="終了フレームでの日付時間の分 (0 - 59)を設定する。">sxsdk::physical_sky_class::set_datetime_minutes_end</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#a6c6e57f277a9364dc189f4a01ab28a2b" title="終了フレームでの日付時間の分 (0 - 59)を取得する。">sxsdk::physical_sky_class::get_datetime_minutes_end</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#a328890527800af329d58fe27878d3781" title="終了フレームでの日付時間の秒 (0 - 59)を設定する。">sxsdk::physical_sky_class::set_datetime_second_end</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#aa189815cf21d391749eb498463682d98" title="終了フレームでの日付時間の秒 (0 - 59)を取得する。">sxsdk::physical_sky_class::get_datetime_second_end</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#a89dddeae4e69265917544b15ab150dbb" title="大気（濁り）を設定する。">sxsdk::physical_sky_class::set_turbidity</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#a744c4a47567cf34259a18524eee749c7" title="大気（濁り）を取得する。">sxsdk::physical_sky_class::get_turbidity</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#a64fd495681ee77735873f540240a499c" title="緯度を設定する。">sxsdk::physical_sky_class::set_latitude</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#a90083e4f465a8d3c6a69d44af596f7c2" title="緯度を取得する。">sxsdk::physical_sky_class::get_latitude</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#abdb7dcdac4a75e2ccbb7af3d09ad7779" title="経度を設定する。">sxsdk::physical_sky_class::set_longitude</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#a9cccb7dfdf337ab258e9b571493f7f75" title="経度を取得する。">sxsdk::physical_sky_class::get_longitude</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#a648a40192c66918b3f6194f38faaa13b" title="視点から天空方向に向かうベクトルを指定することによる空での色を取得">sxsdk::physical_sky_class::get_sky_color</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#a92e67b03f262b7ed906369b49663417c" title="現在日時を指定する">sxsdk::physical_sky_class::set_now_datetime</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#ac38bec9a5a846f4bfb5491b40f13bfbf" title="アニメーションの終了時の日時を、現在日時として指定する">sxsdk::physical_sky_class::set_now_datetime_end</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#ac517bcbaab7e7c90d365bc38040fcef9" title="背景と光源色のガンマ値を設定する。">sxsdk::physical_sky_class::set_gamma</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1physical__sky__class.html#a21a6661eba3e990c0b9bf4d689728c37" title="背景と光源色のガンマ値を取得する。">sxsdk::physical_sky_class::get_gamma</a></li>
+</ul>
+<h3><a class="anchor" id="add_function_scene_interface"></a>
+sxsdk::scene_interface</h3>
+<ul>
+<li><a class="el" href="structsxsdk_1_1scene__interface.html#a0d8114286468bf0fcee77e07a86abf48" title="シーンデータをエクスポートし、loader_interface を使用して形状の読み込みを制御することができる。">sxsdk::scene_interface::export_scene_with_loader</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1scene__interface.html#a3531a35ca80313cd898faa9278d459b4" title="サーフェスリプリケータの作成を開始する。">sxsdk::scene_interface::begin_surface_replicator</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1scene__interface.html#a7762cf47098b832a58450623f76ff5f9" title="サーフェスリプリケータの作成を終了する。">sxsdk::scene_interface::end_surface_replicator</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1scene__interface.html#a0c906dd9ed07476c8e7aaac2f615a8bf" title="サーフェスリプリケータを新規作成する。">sxsdk::scene_interface::create_surface_replicator</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1scene__interface.html#af51ac2898f6aff8d1f41591f78589519" title="IK管理クラスを取得する。">sxsdk::scene_interface::get_ik</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1scene__interface.html#afe619b1021f14156f736ca71e70308c9" title="ボーンの作成を開始する。">sxsdk::scene_interface::begin_bone_joint</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1scene__interface.html#a6b795de4d8ef58b1a3526e5b1ea618c8" title="ボーンの作成を終了する。">sxsdk::scene_interface::end_bone_joint</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1scene__interface.html#a26d6e1018ab47618c701189aa00056b7" title="ボーンを作成する。">sxsdk::scene_interface::create_bone_joint</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1scene__interface.html#a46e9aa3bd4f4d69cebaba9fd22ce537c" title="輪郭のテキストを作成する。">sxsdk::scene_interface::create_primitive_text</a></li>
+</ul>
+<h3><a class="anchor" id="add_function_shade_interface"></a>
+sxsdk::shade_interface</h3>
+<ul>
+<li><a class="el" href="structsxsdk_1_1shade__interface.html#a67e5ab2140b7e3b1ae481c5a5291b4c3" title="AppStoreビルドかどうかを取得する。">sxsdk::shade_interface::is_appstore_version</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1shade__interface.html#a84aa968dbc5fba4eec417710c9948fb4" title="fullビルドかどうかを取得する。">sxsdk::shade_interface::is_full</a></li>
+</ul>
+<h3><a class="anchor" id="add_function_shape_class"></a>
+sxsdk::shape_class</h3>
+<ul>
+<li><a class="el" href="structsxsdk_1_1shape__class.html#a41abc2bf4af86cb8bab96cb192577a3b" title="形状に設定されたタグ名称リストを取得する。">sxsdk::shape_class::get_tags</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1shape__class.html#a3762c40560071819f1c25f67568344a3" title="テクスチャ計算を行うためのtexture_interfaceを作成する。複数UVを扱う場合はcreate_texture_interface2を使用。">sxsdk::shape_class::create_texture_interface2</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1shape__class.html#a647e70fae7bb5fcb85cd9a250d398ec7" title="サーフェスリプリケータを取得する。">sxsdk::shape_class::get_surface_replicator_interface</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1shape__class.html#af64c2d4deed40e7f3b010269ed38393d" title="スキン方式を取得する。">sxsdk::shape_class::get_skin_type</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1shape__class.html#af3368e15e4f291fb9a255b9dab786008" title="スキン方式を設定する。">sxsdk::shape_class::set_skin_type</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1shape__class.html#a7c8a47a52ecae91bfa03b4184429c8f1" title="ボーンを取得する。">sxsdk::shape_class::get_bone_joint_interface</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1shape__class.html#ab128c076deac78d5f2bf4e93b34e29c8" title="ボーンか判定する。">sxsdk::shape_class::is_bone_joint</a></li>
+</ul>
+<h3><a class="anchor" id="add_function_part_class"></a>
+sxsdk::part_class</h3>
+<ul>
+<li><a class="el" href="structsxsdk_1_1part__class.html#a59b7cfa1fa51c76944927e50bf54aeb5" title="リンクを実体化する。">sxsdk::part_class::realize_link</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1part__class.html#aa46c17f3d56c4e9a01f6336e09789af5" title="リプリケータを実体化する。">sxsdk::part_class::realize_replicator</a></li>
+</ul>
+<h3><a class="anchor" id="add_function_ball_joint_interface"></a>
+sxsdk::ball_joint_interface</h3>
+<ul>
+<li><a class="el" href="structsxsdk_1_1ball__joint__interface.html#a5961e1defbda7f8659d5b6f983c4afcc" title="Shade12 互換を設定する。">sxsdk::ball_joint_interface::set_compatible</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1ball__joint__interface.html#a27e6a1c0cea2456b98b8e0c0325146cc" title="Shade12 互換を取得する。">sxsdk::ball_joint_interface::get_compatible</a></li>
+</ul>
+<h3><a class="anchor" id="add_function_path_replicator_interface"></a>
+sxsdk::path_replicator_interface</h3>
+<ul>
+<li><a class="el" href="structsxsdk_1_1path__replicator__interface.html#a787b095e95f9c007c328c195d8f99c18" title="基準点を設定する。">sxsdk::path_replicator_interface::set_reference_point</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1path__replicator__interface.html#ad17ed42b6765fc05a46b55a6f4bcc404" title="基準点を取得する。">sxsdk::path_replicator_interface::get_reference_point</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1path__replicator__interface.html#af37c4bb5510a5e4f607852de3c58655c" title="プレビューを設定する。">sxsdk::path_replicator_interface::set_preview</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1path__replicator__interface.html#a6bc0d752c5dc01fe3d3ba983292714f5" title="プレビューを取得する。">sxsdk::path_replicator_interface::get_preview</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1path__replicator__interface.html#a4206c2ccf67bd8f7780cebe874350da2" title="方向制御するを設定する。">sxsdk::path_replicator_interface::set_use_direction_control</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1path__replicator__interface.html#a004722ecf8440022b2a5579f2a4bd72d" title="方向制御するを取得する。">sxsdk::path_replicator_interface::get_use_direction_control</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1path__replicator__interface.html#ab9eb739f9f02ede95a719139907f6d91" title="上方向を設定する。">sxsdk::path_replicator_interface::set_upper_direction_type</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1path__replicator__interface.html#af831d13b95ed7938e1f64b68c28251ef" title="上方向を取得する。">sxsdk::path_replicator_interface::get_upper_direction_type</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1path__replicator__interface.html#a345b411629a2e0079b0340e9dbe24250" title="上方向パスがあれば使用するを設定する。">sxsdk::path_replicator_interface::set_use_upper_direction_path</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1path__replicator__interface.html#aaf5430ab60102cc778ea4a24ed5eae0a" title="上方向パスがあれば使用するを取得する。">sxsdk::path_replicator_interface::get_use_upper_direction_path</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1path__replicator__interface.html#a694f90b564c935a983c4cf230827ede5" title="前方向を設定する。">sxsdk::path_replicator_interface::set_front_direction_type</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1path__replicator__interface.html#a4935e93f0b06ba78b798cd7c6af07d79" title="前方向を取得する。">sxsdk::path_replicator_interface::get_front_direction_type</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1path__replicator__interface.html#a0ae8624f449882b7b15e1f27b959c7ec" title="前方向パスがあれば使用するを設定する。">sxsdk::path_replicator_interface::set_use_forward_direction_path</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1path__replicator__interface.html#a85d44637f67f31e567f05bfd765d7757" title="前方向パスがあれば使用するを取得する。">sxsdk::path_replicator_interface::get_use_forward_direction_path</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1path__replicator__interface.html#a2de10edd5847a16220f56c7c4b0f9e7b" title="方向の表示を設定する。">sxsdk::path_replicator_interface::set_show_directions</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1path__replicator__interface.html#a7e7f6b328d040a2f15b06487cd886f48" title="方向の表示を取得する。">sxsdk::path_replicator_interface::get_show_directions</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1path__replicator__interface.html#adad251fda44825f8e4ced3b39a2e6835" title="形状をランダムに複製を設定する。">sxsdk::path_replicator_interface::set_random_replication</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1path__replicator__interface.html#a244616df6bd8dbee813577e40e02f4c5" title="形状をランダムに複製を取得する。">sxsdk::path_replicator_interface::get_random_replication</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1path__replicator__interface.html#a88dae1b4147492db828d3c47a5d0d0b5" title="ランダム移動を取得する。">sxsdk::path_replicator_interface::get_random_translation</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1path__replicator__interface.html#abfad2d1f5c0cb9039d9d8e4c7a5b6d3f" title="ランダム移動モードを設定する。">sxsdk::path_replicator_interface::set_random_translation_mode</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1path__replicator__interface.html#a383713c57d5468bbb26bfa30963d3a8f" title="ランダム移動モードを取得する。">sxsdk::path_replicator_interface::get_random_translation_mode</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1path__replicator__interface.html#a0cb0928dc6450664acc393ddf2398652" title="ランダム回転を設定する。">sxsdk::path_replicator_interface::set_random_rotation</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1path__replicator__interface.html#ac13a4a2756ae4df98572728480c333ac" title="ランダム回転を取得する。">sxsdk::path_replicator_interface::get_random_rotation</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1path__replicator__interface.html#ab961b09f9c74c86877352f308453cae6" title="ランダム拡大縮小を設定する。">sxsdk::path_replicator_interface::set_random_scale</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1path__replicator__interface.html#a21b66364b018437ae3f45919cbbdef04" title="ランダム均等拡大縮小を設定する。">sxsdk::path_replicator_interface::set_random_uniscale</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1path__replicator__interface.html#a00be97e24968641c491f02d1e1192ef7" title="ランダム均等拡大縮小を取得する。">sxsdk::path_replicator_interface::get_random_uniscale</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1path__replicator__interface.html#acc7fc40a0fc9c1a2977c9efbd2a8e3e6" title="ランダムシードを設定する。">sxsdk::path_replicator_interface::set_random_seed</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1path__replicator__interface.html#accd2fa06c27a535a59b6360321e2afc7" title="ランダムシードを取得する。">sxsdk::path_replicator_interface::get_random_seed</a></li>
+</ul>
+<h3><a class="anchor" id="add_function_surface_replicator_interface"></a>
+sxsdk::surface_replicator_interface</h3>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__replicator__interface.html#a77090a9a229a16ec73d8de3e0eafaa11" title="リプリケーションを設定する。">sxsdk::surface_replicator_interface::set_replication</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__replicator__interface.html#a714a78e77fec0558a0959d9d55446c6e" title="リプリケーションを取得する。">sxsdk::surface_replicator_interface::get_replication</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__replicator__interface.html#a23c9d0cef8584dc4ecba7bd8c627f8be" title="範囲制限を設定する。">sxsdk::surface_replicator_interface::set_range</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__replicator__interface.html#a6cd5dffa06b1f5e75ceea87441456e65" title="範囲制限を取得する。">sxsdk::surface_replicator_interface::get_range</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__replicator__interface.html#accdb0f1867003a6f845aed05191a8e52" title="リミットを設定する。">sxsdk::surface_replicator_interface::set_limit</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__replicator__interface.html#a9ec8692859e048c88ef1e304513dfff5" title="リミットを取得する。">sxsdk::surface_replicator_interface::get_limit</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__replicator__interface.html#a3b2962d37be36a82cf3213baf5d1d2de" title="分布を設定する。">sxsdk::surface_replicator_interface::set_distribution</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__replicator__interface.html#aad685d4879fe92a7497669f1f112de15" title="分布を取得する。">sxsdk::surface_replicator_interface::get_distribution</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__replicator__interface.html#a8be4194d1ad7cfcf8f27215f8205aef5" title="分割を設定する。">sxsdk::surface_replicator_interface::set_subdivision_level</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__replicator__interface.html#ad6da2dd75e7b8b653488adf16f559170" title="分割を取得する。">sxsdk::surface_replicator_interface::get_subdivision_level</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__replicator__interface.html#a3925d1f50429d8f2a1b9e85eb2348065" title="プレビューを設定する。">sxsdk::surface_replicator_interface::set_preview</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__replicator__interface.html#a48bcc9a12e809cd2a5fd4a4cdcee7e1d" title="プレビューを取得する。">sxsdk::surface_replicator_interface::get_preview</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__replicator__interface.html#a0e4f19ab74b3acde25e60d18a78e6844" title="個数を設定する。">sxsdk::surface_replicator_interface::set_count</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__replicator__interface.html#a445e49ec5147f0fb90584f477ae77f68" title="個数を取得する。">sxsdk::surface_replicator_interface::get_count</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__replicator__interface.html#a7dcc4796882a45cda4d517a0398746a2" title="方向制御を設定する。">sxsdk::surface_replicator_interface::set_direction</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__replicator__interface.html#a84ae4617a8088595f27966bfd4505732" title="方向制御を取得する。">sxsdk::surface_replicator_interface::get_direction</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__replicator__interface.html#a891593b3a165416d61b5fbc559d98e6b" title="形状をランダムに複製を設定する。">sxsdk::surface_replicator_interface::set_random_replication</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__replicator__interface.html#a257a658b9ce63818c8aa0f105ba669ba" title="形状をランダムに複製を取得する。">sxsdk::surface_replicator_interface::get_random_replication</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__replicator__interface.html#a617dc9d4addfdaf8d23b96dd7f3865f1" title="ランダム移動を設定する。">sxsdk::surface_replicator_interface::set_random_translation</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__replicator__interface.html#a5d9bd02614ca79c1405810e7919e770e" title="ランダム移動を取得する。">sxsdk::surface_replicator_interface::get_random_translation</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__replicator__interface.html#acf6bbd368027196c72b9bf32e4bc06a0" title="ランダム移動モードを設定する。">sxsdk::surface_replicator_interface::set_random_translation_mode</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__replicator__interface.html#ab53f0bb87a55935956775cd017e4775e" title="ランダム移動モードを取得する。">sxsdk::surface_replicator_interface::get_random_translation_mode</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__replicator__interface.html#a019a131604214ee015cc2233fb78d28c" title="ランダム回転を設定する。">sxsdk::surface_replicator_interface::set_random_rotation</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__replicator__interface.html#a8894942a85732768d5e0ba0eda5abad5" title="ランダム回転を取得する。">sxsdk::surface_replicator_interface::get_random_rotation</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__replicator__interface.html#ad3162e0341de50ae08a4c174310efd9f" title="ランダム拡大縮小を設定する。">sxsdk::surface_replicator_interface::set_random_scale</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__replicator__interface.html#a7bba9ae7911c776c157c440e153d7632" title="ランダム拡大縮小を取得する。">sxsdk::surface_replicator_interface::get_random_scale</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__replicator__interface.html#aec1e5aa5d84e196531f6d0732008d44e" title="ランダム均等拡大縮小を設定する。">sxsdk::surface_replicator_interface::set_random_uniscale</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__replicator__interface.html#afddc1b93bdfcc5d57719e6f71d793c03" title="ランダム均等拡大縮小を取得する。">sxsdk::surface_replicator_interface::get_random_uniscale</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__replicator__interface.html#a5797ce19625d11db76219b2b3b40bac1" title="ランダムシードを設定する。">sxsdk::surface_replicator_interface::set_random_seed</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__replicator__interface.html#afb3877d7c766ea5ba5b09bf061db0892" title="ランダムシードを取得する。">sxsdk::surface_replicator_interface::get_random_seed</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__replicator__interface.html#adff24100ba5604ec13ce151dd790eb69" title="UV層を設定する。">sxsdk::surface_replicator_interface::set_uv_layer</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__replicator__interface.html#a7c5646a2f650043faeae1b1ea294e0e3" title="UV層を取得する。">sxsdk::surface_replicator_interface::get_uv_layer</a></li>
+</ul>
+<h3><a class="anchor" id="add_function_bone_joint_interface"></a>
+sxsdk::bone_joint_interface</h3>
+<ul>
+<li><a class="el" href="structsxsdk_1_1bone__joint__interface.html#aa9b650e455db01fd754a5aae7b8c7532" title="回転(quaternion)を設定する。">sxsdk::bone_joint_interface::set_rotation</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1bone__joint__interface.html#a1d9a579819debdf8a502c3a1cb0c328a" title="回転(quaternion)を取得する。">sxsdk::bone_joint_interface::get_rotation</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1bone__joint__interface.html#a4b1693d8ed2a3487fdf7c151f71e24d6" title="ボーンの位置のオフセット値を設定する。">sxsdk::bone_joint_interface::set_offset</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1bone__joint__interface.html#ae02542a53fda2ec7a131dc1076486201" title="ボーンの位置のオフセット値を取得する。">sxsdk::bone_joint_interface::get_offset</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1bone__joint__interface.html#a87c97361e59b5fae377284ab38896ec6" title="ボーンの中心位置を設定する。">sxsdk::bone_joint_interface::set_position</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1bone__joint__interface.html#a98c134d054cd6bdde0b8e616511a07d3" title="ボーンの中心位置を取得する。">sxsdk::bone_joint_interface::get_position</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1bone__joint__interface.html#a4926298c4aaab55be969f1ea1295c51e" title="ボーンの大きさを設定する。">sxsdk::bone_joint_interface::set_size</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1bone__joint__interface.html#a41efaad52b6e586b8360d3266d039266" title="ボーンの大きさを取得する。">sxsdk::bone_joint_interface::get_size</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1bone__joint__interface.html#a509b6e0f35806811c534162e721c9c58" title="自動軸合わせを設定する。">sxsdk::bone_joint_interface::set_auto_direction</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1bone__joint__interface.html#ae04a08feb8dca579c7c449eeff9abaa6" title="自動軸合わせを取得する。">sxsdk::bone_joint_interface::get_auto_direction</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1bone__joint__interface.html#a4e7c4b655972047ea8efc4e4874eb020" title="ボーンの変換行列を設定する。">sxsdk::bone_joint_interface::set_matrix</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1bone__joint__interface.html#a905e706a7433e1184d0947857c12e587" title="ボーンの変換行列を取得する。">sxsdk::bone_joint_interface::get_matrix</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1bone__joint__interface.html#ad00b0dad9ba36f610bbfce179ea729d8" title="ローカルのXYZ軸ごとの回転角度の範囲制限を設定する。">sxsdk::bone_joint_interface::set_range</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1bone__joint__interface.html#a5cbebb7d00eb7cee05a19f2372cfb1d8" title="ローカルのXYZ軸ごとの回転角度の範囲制限を取得する。">sxsdk::bone_joint_interface::get_range</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1bone__joint__interface.html#a6e22c5efdd9cfd905c9e73b86b9e379d" title="指定の軸での稼動角度の最小値と最大値を指定する。">sxsdk::bone_joint_interface::set_limit</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1bone__joint__interface.html#a137bcb1c6cb2d3b4405ab11271ba9b11" title="指定の軸での稼動角度の最小値と最大値を取得する。">sxsdk::bone_joint_interface::get_limit</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1bone__joint__interface.html#aa685271338e9796a4d682227d72241de" title="自動軸合わせの軸方向を設定する。">sxsdk::bone_joint_interface::set_axis_dir</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1bone__joint__interface.html#a5a9952c9a35b7763f3323bb19d43b923" title="自動軸合わせの軸方向を取得する。">sxsdk::bone_joint_interface::get_axis_dir</a></li>
+</ul>
+<h3><a class="anchor" id="add_function_surface_class"></a>
+sxsdk::surface_class</h3>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__class.html#a7962b4b80cbd70de65359f592495b2e1" title="「その他・背景を反射しない」を設定する。">sxsdk::surface_class::set_dont_reflect_background</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__class.html#a0025400524a3bdcc8d6da57f233058cf" title="「その他・背景を反射しない」を取得する。">sxsdk::surface_class::get_dont_reflect_background</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__class.html#ab47752cda2dde895c7f3878a3571dda7" title="「その他・カメラに表示しない」を設定する。">sxsdk::surface_class::set_dont_visible_to_camera</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__class.html#afc109f1678f7113fa1da7a396c263106" title="「その他・カメラに表示しない」を取得する。">sxsdk::surface_class::get_dont_visible_to_camera</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__class.html#a585f32c878ce35ff196c908f22fad01d" title="「その他・反射レイに表示しない」を設定する。">sxsdk::surface_class::set_dont_visible_to_reflection_rays</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__class.html#a8e60fd7962210a61835103caf556fb84" title="「その他・反射レイに表示しない」を取得する。">sxsdk::surface_class::get_dont_visible_to_reflection_rays</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__class.html#a245dc97827edf77eb1fb4c2583ae01dd" title="「その他・透明レイに表示しない」を設定する。">sxsdk::surface_class::set_dont_visible_to_refraction_rays</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__class.html#a9d3bfbc2f378ce71712e821f6e71c43e" title="「その他・透明レイに表示しない」を取得する。">sxsdk::surface_class::get_dont_visible_to_refraction_rays</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__class.html#a8f047054d3f41efd6b8725b918fea320" title="「その他・間接レイに表示しない」を設定する。">sxsdk::surface_class::set_dont_visible_to_indirect_rays</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__class.html#a480c099f098c004e5885531d2b2588fc" title="「その他・間接レイに表示しない」を取得する。">sxsdk::surface_class::get_dont_visible_to_indirect_rays</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__class.html#a2d60bd0f48530e4b62a56782eb4f6df3" title="「その他・背景を反射しない」のオン／オフを取得する。">sxsdk::surface_class::find_dont_reflect_background</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__class.html#af0f928651b9d82964377c05238c55655" title="「その他・カメラに表示しない」のオン／オフを取得する。">sxsdk::surface_class::find_dont_visible_to_camera</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__class.html#ae1c61eea42a6cc077294b2a50725fe15" title="「その他・反射レイに表示しない」のオン／オフを取得する。">sxsdk::surface_class::find_dont_visible_to_reflection_rays</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__class.html#ad723e65133ceb26088bbd363e3e6dec2" title="「その他・透明レイに表示しない」のオン／オフを取得する。">sxsdk::surface_class::find_dont_visible_to_refraction_rays</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__class.html#a42c4d2122ac13a5a20bab47db9e2277d" title="「その他・間接レイに表示しない」のオン／オフを取得する。">sxsdk::surface_class::find_dont_visible_to_indirect_rays</a></li>
+</ul>
+<h3><a class="anchor" id="add_function_surface_interface"></a>
+sxsdk::surface_interface</h3>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__interface.html#a1168d6018cc67d1af94f3f4c021a9ce9" title="「その他・背景を反射しない」を設定する。">sxsdk::surface_interface::set_dont_reflect_background</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__interface.html#a405cc12dfba2df4edd4289ba6be9781b" title="「その他・背景を反射しない」を取得する。">sxsdk::surface_interface::get_dont_reflect_background</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__interface.html#a64d0219b047167f9562b54e7c78755c9" title="「その他・カメラに表示しない」を設定する。">sxsdk::surface_interface::set_dont_visible_to_camera</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__interface.html#af57033e0e3011295e8af20cef53450c9" title="「その他・カメラに表示しない」を取得する。">sxsdk::surface_interface::get_dont_visible_to_camera</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__interface.html#a9aced129bc01474407739089a2a45118" title="「その他・反射レイに表示しない」を設定する。">sxsdk::surface_interface::set_dont_visible_to_reflection_rays</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__interface.html#acd6d106af65aa8a224f9be7fbedb9dde" title="「その他・反射レイに表示しない」を取得する。">sxsdk::surface_interface::get_dont_visible_to_reflection_rays</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__interface.html#a071329d6372f93f86943264ab43fe9ee" title="「その他・透明レイに表示しない」を設定する。">sxsdk::surface_interface::set_dont_visible_to_refraction_rays</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__interface.html#a3ba986da981cc7193d50d0db884d7df8" title="「その他・透明レイに表示しない」を取得する。">sxsdk::surface_interface::get_dont_visible_to_refraction_rays</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__interface.html#a2689b2815580dc3f97a65caf6d5c3c6a" title="「その他・間接レイに表示しない」を設定する。">sxsdk::surface_interface::set_dont_visible_to_indirect_rays</a></li>
+</ul>
+<ul>
+<li><a class="el" href="structsxsdk_1_1surface__interface.html#a0e8f1c3a51640c72a013fd50942e3e6b" title="「その他・間接レイに表示しない」を取得する。">sxsdk::surface_interface::get_dont_visible_to_indirect_rays</a></li>
+</ul>
+<h2><a class="anchor" id="add_namespace"></a>
+■追加ネームスペース</h2>
+<ul>
+<li><a class="el" href="namespacesxsdk_1_1enums.html#acc8288bf264e01c188717d174485f0d6" title="パスジョイント方向制御の前方向">sxsdk::enums::path_front_direction_type</a></li>
+</ul>
+<ul>
+<li><a class="el" href="namespacesxsdk_1_1enums.html#ac0c44439f5d3ec73cb5f4dc63b36e842" title="パスリプリケータの基準点">sxsdk::enums::path_replicator_reference_point</a></li>
+</ul>
+<ul>
+<li><a class="el" href="namespacesxsdk_1_1enums.html#a146850f9f9be3fef2fce235144e0dbc8" title="パスリプリケータのプレビュータイプ">sxsdk::enums::path_replicator_preview_type</a></li>
+</ul>
+<ul>
+<li><a class="el" href="namespacesxsdk_1_1enums.html#aff284da663953841f02c5ba2fb1785fa" title="パスリプリケータのランダム移動モード">sxsdk::enums::path_replicator_random_translation_mode</a></li>
+</ul>
+<ul>
+<li><a class="el" href="namespacesxsdk_1_1enums.html#aec72ff1506ffe1e9fd82f54727fa4f9e" title="サーフェスリプリケータの分布">sxsdk::enums::surface_replicator_distribution</a></li>
+</ul>
+<ul>
+<li><a class="el" href="namespacesxsdk_1_1enums.html#ae38a554f6e97a2d74cc29b477a93bd47" title="サーフェスリプリケータのプレビュータイプ">sxsdk::enums::surface_replicator_preview_type</a></li>
+</ul>
+<ul>
+<li><a class="el" href="namespacesxsdk_1_1enums.html#a1a643ed2ed70ef133dbf11006e5a93e0" title="サーフェスリプリケータの分割レベル">sxsdk::enums::surface_replicator_subdivision_level</a></li>
+</ul>
+<ul>
+<li><a class="el" href="namespacesxsdk_1_1enums.html#a85d076689cf07bec7b3e7d7d3e090a25" title="サーフェスリプリケータの方向制御">sxsdk::enums::surface_replicator_direciton</a></li>
+</ul>
+<ul>
+<li><a class="el" href="namespacesxsdk_1_1enums.html#a85d076689cf07bec7b3e7d7d3e090a25" title="サーフェスリプリケータの方向制御">sxsdk::enums::surface_replicator_direciton</a></li>
+</ul>
+<ul>
+<li><a class="el" href="namespacesxsdk_1_1enums.html#a57c459128836f14bee9493fa2bf67794" title="サーフェスリプリケータのランダム移動モード">sxsdk::enums::surface_replicator_random_translation_mode</a></li>
+</ul>
+<h2><a class="anchor" id="add_namespace_item"></a>
+■追加されたネームスペースの項目</h2>
+<ul>
+<li><a class="el" href="namespacesxsdk_1_1multipass_1_1parameter.html#a932d20d309ec5f153f98f6402fe4ad07a71bfa50267f36900533c27fff5ce9145" title="大域照明: サンプル点">sxsdk::multipass::parameter::gi_sampling</a> </li>
+</ul>
+</div></div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+<br><br>
+<hr>
+<div align="center">Copyright &copy; e frontier, Inc. All rights reserved.</div>
+</body></html>

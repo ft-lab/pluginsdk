@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>ボールジョイントとボーン</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.7.4 -->
+<div id="top">
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li class="current"><a href="pages.html"><span>関連ページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+  initNavTree('balljoint_and_bonejoint.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">ボールジョイントとボーン </div>  </div>
+</div>
+<div class="contents">
+<div class="textblock"><p>ボールジョイントとボーンでの計算方法の違いについて説明します。<br/>
+ボーンはボールジョイントと比べると、以下のような違いがあります。</p>
+<ul>
+<li>フラットやブレンド値は持たない。<br/>
+</li>
+<li>パート行列（ <a class="el" href="structsxsdk_1_1part__class.html#aefcefccfebaddcce5aff438be153f1b1" title="形状の変換マトリクスを取得する。">sxsdk::part_class::get_transformation_matrix</a> で取得できる行列 ）は常に単位行列。<br/>
+</li>
+<li>ボーンの姿勢用行列（ <a class="el" href="structsxsdk_1_1bone__joint__interface.html#a905e706a7433e1184d0947857c12e587" title="ボーンの変換行列を取得する。">sxsdk::bone_joint_interface::get_matrix</a> で取得できる行列 ）を持つ。<br/>
+</li>
+<li>ローカル座標でのXYZ軸ごとの角度制限を行える。</li>
+</ul>
+<p>ボーンの階層構造は、「ジョイントとしての回転行列 * ボーン行列 * ジョイントとしてのオフセット」を単純に累積することで中心位置が求まる構造になっています。</p>
+<p>また、 <a class="el" href="structsxsdk_1_1bone__joint__interface.html#a98c134d054cd6bdde0b8e616511a07d3" title="ボーンの中心位置を取得する。">sxsdk::bone_joint_interface::get_position</a> で取得する位置については、 <a class="el" href="structsxsdk_1_1bone__joint__interface.html#a905e706a7433e1184d0947857c12e587" title="ボーンの変換行列を取得する。">sxsdk::bone_joint_interface::get_matrix</a> で取得される行列の移動要素と同じものになり、これらは値を格納すると互いに値が変更されます。</p>
+<h2><a class="anchor" id="balljoint"></a>
+■ボールジョイント</h2>
+<p>ボールジョイントのワールド座標での中心座標を求める計算は、shapeを <a class="el" href="structsxsdk_1_1shape__class.html" title="すべての種類の形状に共通する操作を扱う基本クラス">sxsdk::shape_class</a> の参照とした場合は以下の処理で求まります。</p>
+<div class="fragment"><pre class="fragment"> <span class="keyword">const</span> sxsdk::mat4 lw_mat = <a class="code" href="namespacesxsdk_1_1enums.html#aa6cc70b74636bfbf63bbfb8a2da2ce52a99454471eedb51f26cee16cf284688bc" title="未使用">shape</a>.get_local_to_world_matrix();
+ sxsdk::vec3 w_pos;
+ <span class="keywordflow">if</span> (<a class="code" href="namespacesxsdk_1_1enums.html#aa6cc70b74636bfbf63bbfb8a2da2ce52a99454471eedb51f26cee16cf284688bc" title="未使用">shape</a>.get_type() == <a class="code" href="namespacesxsdk_1_1enums.html#aa6cc70b74636bfbf63bbfb8a2da2ce52a91e88b88c3d3a05405aed358be231335" title="パート">sxsdk::enums::part</a>) {
+   <a class="code" href="structsxsdk_1_1part__class.html" title="パートに関する操作を扱うクラス">sxsdk::part_class</a> &amp;<a class="code" href="namespacesxsdk_1_1enums.html#aa6cc70b74636bfbf63bbfb8a2da2ce52a91e88b88c3d3a05405aed358be231335" title="パート">part</a> = <a class="code" href="namespacesxsdk_1_1enums.html#aa6cc70b74636bfbf63bbfb8a2da2ce52a99454471eedb51f26cee16cf284688bc" title="未使用">shape</a>.get_part();
+   <span class="keywordflow">if</span> (part.<a class="code" href="structsxsdk_1_1shape__class.html#ade60842becfb8560dd8d047fd6f43e3e" title="ボールジョイントか判定する。">is_ball_joint</a>()) {
+     <a class="code" href="classcompointer.html" title="*_interfaceクラスのオブジェクトを指す参照カウントスマートポインタ。">compointer&lt;sxsdk::ball_joint_interface&gt;</a> <a class="code" href="namespacesxsdk_1_1enums.html#a6a30562e7449f2bab30d894a98327868a1da82907a3a8ebace23ae5f2c9019692" title="ボールジョイント">ball_joint</a>(part.<a class="code" href="structsxsdk_1_1shape__class.html#a73d0dd5b7cd1e8be9ee8067a246b5058" title="ボールジョイントを取得する。">get_ball_joint_interface</a>());
+     <span class="keyword">const</span> sxsdk::vec3 pos          = <a class="code" href="namespacesxsdk_1_1enums.html#a6a30562e7449f2bab30d894a98327868a1da82907a3a8ebace23ae5f2c9019692" title="ボールジョイント">ball_joint</a>-&gt;get_position();
+     <span class="keyword">const</span> sxsdk::vec3 joint_offset = <a class="code" href="namespacesxsdk_1_1enums.html#a6a30562e7449f2bab30d894a98327868a1da82907a3a8ebace23ae5f2c9019692" title="ボールジョイント">ball_joint</a>-&gt;get_offset();
+     <span class="keyword">const</span> sxsdk::mat4 joint_rotate = sxsdk::mat4(<a class="code" href="namespacesxsdk_1_1enums.html#a6a30562e7449f2bab30d894a98327868a1da82907a3a8ebace23ae5f2c9019692" title="ボールジョイント">ball_joint</a>-&gt;get_rotation());
+     <span class="keyword">const</span> sxsdk::vec4 v4 = sxsdk::vec4(0, 0, 0, 1) * (joint_rotate * sxsdk::mat4::translate(joint_offset + pos)) * lw_mat;
+     w_pos = sxsdk::vec3(v4.x, v4.y, v4.z);
+   }
+ }
+</pre></div><p>このときに計算されたw_posがボールジョイントのワールド座標上での中心位置となります。</p>
+<p>ボールジョイントの場合は、ジョイントとしてのオフセット/回転/ポジションと ボールジョイント形状のローカル-ワールド変換行列を乗算することで変換行列が求まります。<br/>
+ローカル-ワールド変換行列は、対象の形状の1つ親までの変換行列を累積したものになります（自身の行列は含まれません）。</p>
+<p>また、上記のv4での計算を以下のようにしても同じ結果になります。</p>
+<div class="fragment"><pre class="fragment"> <span class="keyword">const</span> sxsdk::mat4 m2 = inv(part.<a class="code" href="structsxsdk_1_1part__class.html#aefcefccfebaddcce5aff438be153f1b1" title="形状の変換マトリクスを取得する。">get_transformation_matrix</a>()) * part.<a class="code" href="structsxsdk_1_1shape__class.html#accec615cd2d33a212a8d946076fb33fa" title="形状の変換マトリクスを取得する。">get_transformation</a>();
+ <span class="keyword">const</span> sxsdk::vec4 v4 = sxsdk::vec4(pos, 1) * m2 * lw_mat;
+</pre></div><p>これは自身が持つパートの行列は除いて、ジョイントのオフセット/回転を考慮した行列をm2として計算していることになります。</p>
+<h2><a class="anchor" id="bonejoint"></a>
+■ボーンジョイント</h2>
+<p>ボーンはボールジョイントと似た構造ですが少し計算方法が異なります。ワールド座標での中心座標を求める計算は、shapeを <a class="el" href="structsxsdk_1_1shape__class.html" title="すべての種類の形状に共通する操作を扱う基本クラス">sxsdk::shape_class</a> の参照とした場合は以下の処理で求まります。</p>
+<div class="fragment"><pre class="fragment"> <span class="keyword">const</span> sxsdk::mat4 lw_mat = <a class="code" href="namespacesxsdk_1_1enums.html#aa6cc70b74636bfbf63bbfb8a2da2ce52a99454471eedb51f26cee16cf284688bc" title="未使用">shape</a>.get_local_to_world_matrix();
+ sxsdk::vec3 w_pos;
+ <span class="keywordflow">if</span> (<a class="code" href="namespacesxsdk_1_1enums.html#aa6cc70b74636bfbf63bbfb8a2da2ce52a99454471eedb51f26cee16cf284688bc" title="未使用">shape</a>.get_type() == <a class="code" href="namespacesxsdk_1_1enums.html#aa6cc70b74636bfbf63bbfb8a2da2ce52a91e88b88c3d3a05405aed358be231335" title="パート">sxsdk::enums::part</a>) {
+   <a class="code" href="structsxsdk_1_1part__class.html" title="パートに関する操作を扱うクラス">sxsdk::part_class</a> &amp;part = <a class="code" href="namespacesxsdk_1_1enums.html#aa6cc70b74636bfbf63bbfb8a2da2ce52a99454471eedb51f26cee16cf284688bc" title="未使用">shape</a>.get_part();
+   <span class="keywordflow">if</span> (part.<a class="code" href="structsxsdk_1_1shape__class.html#ab128c076deac78d5f2bf4e93b34e29c8" title="ボーンか判定する。">is_bone_joint</a>()) {
+     <a class="code" href="classcompointer.html" title="*_interfaceクラスのオブジェクトを指す参照カウントスマートポインタ。">compointer&lt;sxsdk::bone_joint_interface&gt;</a> <a class="code" href="namespacesxsdk_1_1enums.html#a6a30562e7449f2bab30d894a98327868aff44245b1dc3b6e72aff64f92fc4ebc4" title="ボーンジョイントendja">bone_joint</a>(part.<a class="code" href="structsxsdk_1_1shape__class.html#a7c8a47a52ecae91bfa03b4184429c8f1" title="ボーンを取得する。">get_bone_joint_interface</a>());
+     <span class="keyword">const</span> sxsdk::vec3 joint_offset = <a class="code" href="namespacesxsdk_1_1enums.html#a6a30562e7449f2bab30d894a98327868aff44245b1dc3b6e72aff64f92fc4ebc4" title="ボーンジョイントendja">bone_joint</a>-&gt;get_offset();
+     <span class="keyword">const</span> sxsdk::mat4 joint_rotate = sxsdk::mat4(<a class="code" href="namespacesxsdk_1_1enums.html#a6a30562e7449f2bab30d894a98327868aff44245b1dc3b6e72aff64f92fc4ebc4" title="ボーンジョイントendja">bone_joint</a>-&gt;get_rotation());
+     <span class="keyword">const</span> sxsdk::mat4 m2 = <a class="code" href="namespacesxsdk_1_1enums.html#a6a30562e7449f2bab30d894a98327868aff44245b1dc3b6e72aff64f92fc4ebc4" title="ボーンジョイントendja">bone_joint</a>-&gt;get_matrix();
+     <span class="keyword">const</span> sxsdk::vec4 v4 = sxsdk::vec4(0, 0, 0, 1) * joint_rotate * m2 * sxsdk::mat4::translate(joint_offset) * lw_mat;
+     w_pos = sxsdk::vec3(v4.x, v4.y, v4.z);
+   }
+ }
+</pre></div><p>このときに計算されたw_posがボーンのワールド座標上での中心位置となります。</p>
+<p>ボーンの場合は、自身の変換行列（bone_joint-&gt;get_matrix()で取得できる行列）とジョイントのオフセット、 ボーン形状のローカル-ワールド変換行列を乗算することで変換行列が求まります。</p>
+<p>また、上記のv4での計算を以下のようにしても同じ結果になります。</p>
+<div class="fragment"><pre class="fragment"> <span class="keyword">const</span> sxsdk::vec4 v4 = sxsdk::vec4(0, 0, 0, 1) * part.<a class="code" href="structsxsdk_1_1shape__class.html#accec615cd2d33a212a8d946076fb33fa" title="形状の変換マトリクスを取得する。">get_transformation</a>() * lw_mat;
+</pre></div> </div></div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+<br><br>
+<hr>
+<div align="center">Copyright &copy; e frontier, Inc. All rights reserved.</div>
+</body></html>

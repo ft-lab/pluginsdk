@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>ikdataclass.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.7.4 -->
+<div id="top">
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="pages.html"><span>関連ページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+  initNavTree('ikdataclass_8h.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">ikdataclass.h</div>  </div>
+</div>
+<div class="contents">
+<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// this file has been created by makeheader.py</span>
+<a name="l00002"></a>00002 <span class="comment">// ja utf-8</span>
+<a name="l00003"></a>00003 <span class="preprocessor">#pragma once</span>
+<a name="l00004"></a>00004 <span class="preprocessor"></span><span class="keyword">namespace </span>sxsdk {
+<a name="l00011"></a><a class="code" href="structsxsdk_1_1ik__data__class.html">00011</a> <span class="keyword">struct </span><a class="code" href="structsxsdk_1_1ik__data__class.html" title="1組のIK情報を持つクラス">ik_data_class</a> : <span class="keyword">public</span> <a class="code" href="structsxsdk_1_1shade__interface.html" title="Shadeの情報へのアクセスの基本となるインターフェイス">shade_interface</a> {
+<a name="l00012"></a>00012 <span class="keyword">public</span>:
+<a name="l00014"></a>00014     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1ik__data__class.html" title="1組のIK情報を持つクラス">ik_data_class</a> &amp;<a class="code" href="structsxsdk_1_1ik__data__class.html#a01d94fb96410f7a4c994ef93890122c7" title="IKルートのジョイントを設定する。">set_root_shape</a> (<a class="code" href="structsxsdk_1_1shape__class.html" title="すべての種類の形状に共通する操作を扱う基本クラス">sxsdk::shape_class</a>* root_shape_param, <span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>);
+<a name="l00016"></a>00016     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1shape__class.html" title="すべての種類の形状に共通する操作を扱う基本クラス">sxsdk::shape_class</a>* <a class="code" href="structsxsdk_1_1ik__data__class.html#a7581d6225b0e8027b617aaf05a93642e" title="IKルートのジョイントを取得する。">get_root_shape</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00018"></a>00018     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1ik__data__class.html" title="1組のIK情報を持つクラス">ik_data_class</a> &amp;<a class="code" href="structsxsdk_1_1ik__data__class.html#a6e13e624383d722b5dcf76bf73f9d510" title="IKエンドのジョイントを設定する。">set_end_shape</a> (<a class="code" href="structsxsdk_1_1shape__class.html" title="すべての種類の形状に共通する操作を扱う基本クラス">sxsdk::shape_class</a>* end_shape_param, <span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>);
+<a name="l00020"></a>00020     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1shape__class.html" title="すべての種類の形状に共通する操作を扱う基本クラス">sxsdk::shape_class</a>* <a class="code" href="structsxsdk_1_1ik__data__class.html#a299c058cb5588d1e52032bf011bfab8d" title="IKエンドのジョイントを取得する。">get_end_shape</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00022"></a>00022     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1ik__data__class.html" title="1組のIK情報を持つクラス">ik_data_class</a> &amp;<a class="code" href="structsxsdk_1_1ik__data__class.html#a07c36eec7da274104f42751bbb901d84" title="IKゴールのジョイントを設定する。">set_goal_shape</a> (<a class="code" href="structsxsdk_1_1shape__class.html" title="すべての種類の形状に共通する操作を扱う基本クラス">sxsdk::shape_class</a>* goal_shape_param, <span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>);
+<a name="l00024"></a>00024     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1shape__class.html" title="すべての種類の形状に共通する操作を扱う基本クラス">sxsdk::shape_class</a>* <a class="code" href="structsxsdk_1_1ik__data__class.html#a309ff65bd2f32fb8c6ff489c6fb18fd1" title="IKゴールのジョイントを取得する。">get_goal_shape</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00026"></a>00026     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1ik__data__class.html" title="1組のIK情報を持つクラス">ik_data_class</a> &amp;<a class="code" href="structsxsdk_1_1ik__data__class.html#a8b62aa9387b359a320c6a7b6920f9f04" title="IKが有効かどうかを設定する。">set_enable</a> (<span class="keywordtype">bool</span> enable_param, <span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>);
+<a name="l00028"></a>00028     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="structsxsdk_1_1ik__data__class.html#a95e17ba1730e8481c83023963bed3ff6" title="IKが有効かどうかを取得する。">get_enable</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00030"></a>00030     <span class="keyword">virtual</span> <a class="code" href="structsxsdk_1_1ik__data__class.html" title="1組のIK情報を持つクラス">ik_data_class</a> &amp;<a class="code" href="structsxsdk_1_1ik__data__class.html#a48a6315dc3f9e9e99d96d6ead9ea2a42" title="角度制限を行うかどうかを設定する。">set_angle_lock</a> (<span class="keywordtype">bool</span> angle_lock_param, <span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>);
+<a name="l00032"></a>00032     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="structsxsdk_1_1ik__data__class.html#ab65b247d8c4ede1919042671cfaa0fad" title="角度制限を行うかどうかを取得する。">get_angle_lock</a> (<span class="keywordtype">void</span>* = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;
+<a name="l00033"></a>00033 };
+<a name="l00034"></a>00034 } <span class="comment">// sxsdk</span>
+</pre></div></div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><b>ikdataclass.h</b>      </li>
+<br><br>
+<hr>
+<div align="center">Copyright &copy; e frontier, Inc. All rights reserved.</div>
+</body></html>

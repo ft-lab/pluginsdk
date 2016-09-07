@@ -4,37 +4,44 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <title>構成メンバ - 関数</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<!-- 作成： Doxygen 1.6.1 -->
-<div class="navigation" id="top">
-  <div class="tabs">
-    <ul>
-      <li><a href="main.html"><span>メインページ</span></a></li>
+<!-- 作成： Doxygen 1.7.4 -->
+<div id="top">
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
       <li><a href="pages.html"><span>関連ページ</span></a></li>
       <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
       <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
       <li><a href="files.html"><span>ファイル</span></a></li>
     </ul>
   </div>
-  <div class="tabs">
-    <ul>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
       <li><a href="annotated.html"><span>構成</span></a></li>
       <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
       <li class="current"><a href="functions.html"><span>構成メンバ</span></a></li>
     </ul>
   </div>
-  <div class="tabs">
-    <ul>
+  <div id="navrow3" class="tabs2">
+    <ul class="tablist">
       <li><a href="functions.html"><span>全て</span></a></li>
       <li class="current"><a href="functions_func.html"><span>関数</span></a></li>
       <li><a href="functions_enum.html"><span>列挙型</span></a></li>
       <li><a href="functions_eval.html"><span>列挙型の値</span></a></li>
     </ul>
   </div>
-  <div class="tabs">
-    <ul>
+  <div id="navrow4" class="tabs3">
+    <ul class="tablist">
       <li><a href="functions_func.html#index_a"><span>a</span></a></li>
       <li><a href="functions_func_0x62.html#index_b"><span>b</span></a></li>
       <li><a href="functions_func_0x63.html#index_c"><span>c</span></a></li>
@@ -62,10 +69,23 @@
     </ul>
   </div>
 </div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+  initNavTree('functions.html','');
+</script>
+<div id="doc-content">
 <div class="contents">
-&nbsp;
+&#160;
 
-<h3><a class="anchor" id="index_i">- i -</a></h3><ul>
+<h3><a class="anchor" id="index_i"></a>- i -</h3><ul>
 <li>idle()
 : <a class="el" href="structsxsdk_1_1shade__interface.html#a8895816b674ee66157138bb1cf2e24a8">sxsdk::shade_interface</a>
 , <a class="el" href="structsxsdk_1_1window__interface_1_1mouse__tracker__class.html#a542d989770bf58174545d768974390a6">sxsdk::window_interface::mouse_tracker_class</a>
@@ -200,66 +220,78 @@
 : <a class="el" href="structsxsdk_1_1window__interface_1_1table__control__class.html#a82cb4aa0816ab0e3926afc8c35bb4995">sxsdk::window_interface::table_control_class</a>
 </li>
 <li>is_animation()
-: <a class="el" href="structsxsdk_1_1rendering__context__interface.html#a1c69663e6ba9b82e91dadc57f147f880">sxsdk::rendering_context_interface</a>
+: <a class="el" href="structsxsdk_1_1rendering__context__interface.html#abbc78ebc6ccf758250f1a6d42d708754">sxsdk::rendering_context_interface</a>
+</li>
+<li>is_appstore_version()
+: <a class="el" href="structsxsdk_1_1shade__interface.html#a67e5ab2140b7e3b1ae481c5a5291b4c3">sxsdk::shade_interface</a>
 </li>
 <li>is_area_light()
-: <a class="el" href="structsxsdk_1_1rendering__light__class.html#a59d3faf60bba2c5245aa75b29e911ae9">sxsdk::rendering_light_class</a>
+: <a class="el" href="structsxsdk_1_1rendering__light__class.html#a8a3d2be844a4e8a67fe2470555aebd1c">sxsdk::rendering_light_class</a>
 </li>
 <li>is_assigned()
 : <a class="el" href="structsxsdk_1_1shortcut__interface.html#aad302f40a8448b596b18dfc1c7c1bdfe">sxsdk::shortcut_interface</a>
 </li>
 <li>is_ball_joint()
-: <a class="el" href="structsxsdk_1_1shape__class.html#a4f69f44e1a8be7c9d18cbd992cd2b2c1">sxsdk::shape_class</a>
+: <a class="el" href="structsxsdk_1_1shape__class.html#ade60842becfb8560dd8d047fd6f43e3e">sxsdk::shape_class</a>
 </li>
 <li>is_big_endian()
-: <a class="el" href="structsxsdk_1_1shade__interface.html#afd30159bc759921eded4487784975cd6">sxsdk::shade_interface</a>
+: <a class="el" href="structsxsdk_1_1shade__interface.html#a65f2654230949ff7c2fd2c619a907b47">sxsdk::shade_interface</a>
+</li>
+<li>is_bone_joint()
+: <a class="el" href="structsxsdk_1_1shape__class.html#ab128c076deac78d5f2bf4e93b34e29c8">sxsdk::shape_class</a>
 </li>
 <li>is_container()
-: <a class="el" href="structsxsdk_1_1shape__class.html#ab260b76a73175803efa58300bb8cb56e">sxsdk::shape_class</a>
+: <a class="el" href="structsxsdk_1_1shape__class.html#a269f736ea243eb2271355df10b12b946">sxsdk::shape_class</a>
 </li>
 <li>is_control_point_selected()
 : <a class="el" href="structsxsdk_1_1shape__class.html#a5591bef90d736888f698d072c1264b3c">sxsdk::shape_class</a>
 </li>
 <li>is_create_line_mode()
-: <a class="el" href="structsxsdk_1_1scene__interface.html#ac7ea1a651b89e53b9929c6740f8d7503">sxsdk::scene_interface</a>
+: <a class="el" href="structsxsdk_1_1scene__interface.html#a3d4551959c270f7a44d4349f2a151e2b">sxsdk::scene_interface</a>
 </li>
 <li>is_custom_joint()
-: <a class="el" href="structsxsdk_1_1shape__class.html#a2897eddc1f7505a5b5e2cc80cd58d36f">sxsdk::shape_class</a>
+: <a class="el" href="structsxsdk_1_1shape__class.html#aa8e0f5ab799ea1f1943dfcafef7216c1">sxsdk::shape_class</a>
 </li>
 <li>is_database()
 : <a class="el" href="structsxsdk_1_1scene__interface.html#ad7af90e5225fcb2467ee701e52f6d993">sxsdk::scene_interface</a>
 , <a class="el" href="structsxsdk_1_1shade__interface.html#a0bbba7b0322441a2fc6caea14fd156bf">sxsdk::shade_interface</a>
 </li>
 <li>is_database_statement()
-: <a class="el" href="structsxsdk_1_1scene__interface.html#a94b5b2ebbfc904ea462d33f953408017">sxsdk::scene_interface</a>
-, <a class="el" href="structsxsdk_1_1shade__interface.html#ade8b5164770912e96a176ce61a58c4e6">sxsdk::shade_interface</a>
+: <a class="el" href="structsxsdk_1_1shade__interface.html#ade8b5164770912e96a176ce61a58c4e6">sxsdk::shade_interface</a>
+, <a class="el" href="structsxsdk_1_1scene__interface.html#a94b5b2ebbfc904ea462d33f953408017">sxsdk::scene_interface</a>
 </li>
 <li>is_demo()
-: <a class="el" href="structsxsdk_1_1shade__interface.html#a5d556637d962074a5be97c2ba20299bb">sxsdk::shade_interface</a>
+: <a class="el" href="structsxsdk_1_1shade__interface.html#a12a28842b190f501b651d47434a520b8">sxsdk::shade_interface</a>
 </li>
 <li>is_distant_light()
-: <a class="el" href="structsxsdk_1_1rendering__light__class.html#af21fedfd631449eba28fe350f01b2255">sxsdk::rendering_light_class</a>
+: <a class="el" href="structsxsdk_1_1rendering__light__class.html#a2f35185e4235185e533b32a6c03812a7">sxsdk::rendering_light_class</a>
 </li>
 <li>is_distribution_light()
-: <a class="el" href="structsxsdk_1_1rendering__light__class.html#a91fff06dddc515d9f2fb26c91bb9efca">sxsdk::rendering_light_class</a>
+: <a class="el" href="structsxsdk_1_1rendering__light__class.html#a28db87073b9ac91aae1e88479f3d0ecc">sxsdk::rendering_light_class</a>
 </li>
 <li>is_english_build()
 : <a class="el" href="structsxsdk_1_1shade__interface.html#a1b8a400a66911092f5cdd904f53ef151">sxsdk::shade_interface</a>
 </li>
 <li>is_extruded()
-: <a class="el" href="structsxsdk_1_1shape__class.html#aa42b478384b94d85bc3fdc180878387d">sxsdk::shape_class</a>
+: <a class="el" href="structsxsdk_1_1shape__class.html#a8af879721e4b8e73901047c3f4ca12bb">sxsdk::shape_class</a>
 </li>
 <li>is_fake()
-: <a class="el" href="structsxsdk_1_1image__interface.html#a35347d234f7cbbe5d8302b6888e92a17">sxsdk::image_interface</a>
+: <a class="el" href="structsxsdk_1_1image__interface.html#a5e80b67728181028036f73e4c6bbc044">sxsdk::image_interface</a>
 </li>
 <li>is_french_build()
 : <a class="el" href="structsxsdk_1_1shade__interface.html#a1757bb95dbd946f24aef9a609635a464">sxsdk::shade_interface</a>
 </li>
 <li>is_french_mode()
-: <a class="el" href="structsxsdk_1_1shade__interface.html#a772bc8f061d4792ddb25d13b9f0904d2">sxsdk::shade_interface</a>
+: <a class="el" href="structsxsdk_1_1shade__interface.html#a569c380656e8ae73bd32b1aeb78f4450">sxsdk::shade_interface</a>
+</li>
+<li>is_full()
+: <a class="el" href="structsxsdk_1_1shade__interface.html#a84aa968dbc5fba4eec417710c9948fb4">sxsdk::shade_interface</a>
+</li>
+<li>is_game_kit_version()
+: <a class="el" href="structsxsdk_1_1shade__interface.html#a58f819314b9ea1c31f1c8d29d2f68ebb">sxsdk::shade_interface</a>
 </li>
 <li>is_heap_ok()
-: <a class="el" href="structsxsdk_1_1shade__interface.html#a53be2db1a9bbc6b069843202d5275f42">sxsdk::shade_interface</a>
+: <a class="el" href="structsxsdk_1_1shade__interface.html#ae36806f2f7050bda83d5805eb087f090">sxsdk::shade_interface</a>
 </li>
 <li>is_interpolated()
 : <a class="el" href="structsxsdk_1_1meshes__interface.html#a78036ae0292e7a0fc61ff2ed8c7d1ef2">sxsdk::meshes_interface</a>
@@ -268,166 +300,176 @@
 : <a class="el" href="structsxsdk_1_1shade__interface.html#a66339e9edfc103036fe2394a9a485167">sxsdk::shade_interface</a>
 </li>
 <li>is_japanese_mode()
-: <a class="el" href="structsxsdk_1_1shade__interface.html#a2e9c1853b06a7343faba7b1231ff041b">sxsdk::shade_interface</a>
+: <a class="el" href="structsxsdk_1_1shade__interface.html#af72bcc87a6bbb9d8d023f3ddfbfb2aee">sxsdk::shade_interface</a>
 </li>
 <li>is_japanese_system()
-: <a class="el" href="structsxsdk_1_1shade__interface.html#a2d91cec09e5470b6aba0ae9e2d28b82e">sxsdk::shade_interface</a>
+: <a class="el" href="structsxsdk_1_1shade__interface.html#a212d991038f3856acdd668e74e7efa17">sxsdk::shade_interface</a>
 </li>
 <li>is_key_down()
 : <a class="el" href="structsxsdk_1_1shade__interface.html#a8530b3dadc4f383e3e1e9c4fb3103fff">sxsdk::shade_interface</a>
 </li>
 <li>is_korean_mode()
-: <a class="el" href="structsxsdk_1_1shade__interface.html#a44e68abf68a200685d93ae720fb53ce5">sxsdk::shade_interface</a>
+: <a class="el" href="structsxsdk_1_1shade__interface.html#a8204505082cdfe6efa15f8c97c38017a">sxsdk::shade_interface</a>
 </li>
 <li>is_korean_system()
-: <a class="el" href="structsxsdk_1_1shade__interface.html#a6880716c46bcab864f4068d1d28ac396">sxsdk::shade_interface</a>
+: <a class="el" href="structsxsdk_1_1shade__interface.html#a26c466f24ff4c9e88d087270c00e7895">sxsdk::shade_interface</a>
 </li>
 <li>is_light_effector()
-: <a class="el" href="structsxsdk_1_1shape__class.html#a5e1b3d5fb0c8070510e4c5007ed64c92">sxsdk::shape_class</a>
+: <a class="el" href="structsxsdk_1_1shape__class.html#a92c759a80d50c6604e355f641f84fb01">sxsdk::shape_class</a>
 </li>
 <li>is_little_endian()
-: <a class="el" href="structsxsdk_1_1shade__interface.html#a71e29bdf6ba810f42d1a97f02eadd275">sxsdk::shade_interface</a>
+: <a class="el" href="structsxsdk_1_1shade__interface.html#ae118e7bc5a7d1af899a851620bb9745d">sxsdk::shade_interface</a>
 </li>
 <li>is_locked()
-: <a class="el" href="structsxsdk_1_1scene__interface.html#a23d1838df8abf7e5acb8acc1bf9014ce">sxsdk::scene_interface</a>
+: <a class="el" href="structsxsdk_1_1scene__interface.html#a7d1d7b861faf914b5ab957f8aed1b40b">sxsdk::scene_interface</a>
 </li>
 <li>is_master_image()
-: <a class="el" href="structsxsdk_1_1part__class.html#a38a722664e221f11e83b9a01e83da125">sxsdk::part_class</a>
+: <a class="el" href="structsxsdk_1_1part__class.html#a95fc7347e871413d09cc9c206ecc419a">sxsdk::part_class</a>
 </li>
 <li>is_master_image_being_used()
 : <a class="el" href="structsxsdk_1_1master__image__class.html#a78c70ff1f3b18a2b3e3b2123f58db0a1">sxsdk::master_image_class</a>
 </li>
 <li>is_master_shape()
-: <a class="el" href="structsxsdk_1_1part__class.html#ab6bc50e8bf7a1b9aaccc718db5c37c25">sxsdk::part_class</a>
+: <a class="el" href="structsxsdk_1_1part__class.html#a7a2268b8a9a3d0d347e4ea15fe9470f1">sxsdk::part_class</a>
 </li>
 <li>is_master_surface()
-: <a class="el" href="structsxsdk_1_1part__class.html#a06cdf81cc49e03161156b77ed6850f77">sxsdk::part_class</a>
-, <a class="el" href="structsxsdk_1_1surface__class.html#abe4248908c76ca4566b4be57cfc5ebbd">sxsdk::surface_class</a>
+: <a class="el" href="structsxsdk_1_1part__class.html#a752cb53dbd2ba9ec84987d947e541723">sxsdk::part_class</a>
+, <a class="el" href="structsxsdk_1_1surface__class.html#a7475bb4a1f9d3ea43ea58a6dc95b1fab">sxsdk::surface_class</a>
 </li>
 <li>is_modify_mode()
-: <a class="el" href="structsxsdk_1_1scene__interface.html#aa2da838077f72077faff78f83ed9be62">sxsdk::scene_interface</a>
+: <a class="el" href="structsxsdk_1_1scene__interface.html#a08a6eddc7ea5a9a924721bb85f28989a">sxsdk::scene_interface</a>
 </li>
 <li>is_morph_effector()
-: <a class="el" href="structsxsdk_1_1shape__class.html#a24cb0c1234561af1e321d9748c5ffe74">sxsdk::shape_class</a>
+: <a class="el" href="structsxsdk_1_1shape__class.html#aea5c95953dd295ed7ca2b3ebc20c2674">sxsdk::shape_class</a>
 </li>
 <li>is_motion_playing()
-: <a class="el" href="structsxsdk_1_1scene__interface.html#a7ec944c296666b103cfa5d37fc55aa5e">sxsdk::scene_interface</a>
+: <a class="el" href="structsxsdk_1_1scene__interface.html#a950c33b38c3af3dee9d61ef0587dab57">sxsdk::scene_interface</a>
 </li>
 <li>is_movie()
-: <a class="el" href="structsxsdk_1_1image__interface.html#a9621d0481f3969fa10eeb5a677816e8d">sxsdk::image_interface</a>
+: <a class="el" href="structsxsdk_1_1image__interface.html#aaa7ec1e506660d5dc5b914a5264e5dd7">sxsdk::image_interface</a>
 </li>
 <li>is_multilayer_only()
 : <a class="el" href="structsxsdk_1_1image__exporter__interface.html#a458e5c065bfa12ba034eb5de75d63dc3">sxsdk::image_exporter_interface</a>
 </li>
 <li>is_one_of_active_shapes()
-: <a class="el" href="structsxsdk_1_1shape__class.html#a5607aa247b827c049952933673bc41a2">sxsdk::shape_class</a>
+: <a class="el" href="structsxsdk_1_1shape__class.html#ab70f5fe01b6c378e42968f6a466ee84e">sxsdk::shape_class</a>
 </li>
 <li>is_part()
 : <a class="el" href="structsxsdk_1_1creator__interface.html#a1f5122d8f42dd5653e6a6197154b0dd1">sxsdk::creator_interface</a>
 </li>
 <li>is_partial_rendering()
-: <a class="el" href="structsxsdk_1_1rendering__context__interface.html#a0766d4dbcae851da7a221614db0adecd">sxsdk::rendering_context_interface</a>
+: <a class="el" href="structsxsdk_1_1rendering__context__interface.html#a82df3922998ba5d9401a89b828e86a01">sxsdk::rendering_context_interface</a>
 </li>
 <li>is_path_joint()
-: <a class="el" href="structsxsdk_1_1shape__class.html#ad3caa269982ad931fb5a8097401f1642">sxsdk::shape_class</a>
+: <a class="el" href="structsxsdk_1_1shape__class.html#a0e3e593e6157b8e2f21d59878adf7a16">sxsdk::shape_class</a>
 </li>
 <li>is_path_replicator()
-: <a class="el" href="structsxsdk_1_1shape__class.html#a6e6c3edc8837fd5d71293ab589caca62">sxsdk::shape_class</a>
+: <a class="el" href="structsxsdk_1_1shape__class.html#a95b6dcd1422e88dcd3eed00ea0f1f45d">sxsdk::shape_class</a>
 </li>
 <li>is_personal()
-: <a class="el" href="structsxsdk_1_1shade__interface.html#a658888d2af9f88243574716ac31d10ba">sxsdk::shade_interface</a>
+: <a class="el" href="structsxsdk_1_1shade__interface.html#ab8cb9ffd5664e2267a9927cd5572ef94">sxsdk::shade_interface</a>
 </li>
 <li>is_playing()
-: <a class="el" href="structsxsdk_1_1shade__interface.html#a981f868b9be46bacdd3196047b63f173">sxsdk::shade_interface</a>
-, <a class="el" href="structsxsdk_1_1sound__track__interface.html#ae9a2849ae72d26d063201bf92bba610e">sxsdk::sound_track_interface</a>
+: <a class="el" href="structsxsdk_1_1sound__track__interface.html#ae9a2849ae72d26d063201bf92bba610e">sxsdk::sound_track_interface</a>
+, <a class="el" href="structsxsdk_1_1shade__interface.html#a7aa0a02c62e4a3d0f2658be98a7065ee">sxsdk::shade_interface</a>
 </li>
 <li>is_point_light()
-: <a class="el" href="structsxsdk_1_1rendering__light__class.html#a6e775414c5bc0d451cc5112bb87d842d">sxsdk::rendering_light_class</a>
+: <a class="el" href="structsxsdk_1_1rendering__light__class.html#a46c8e53d47fdce0cf5f0fa69df96a12a">sxsdk::rendering_light_class</a>
 </li>
 <li>is_pose_joint()
-: <a class="el" href="structsxsdk_1_1part__class.html#a6bc94e675ba1572d150b8cc3ed2c01bf">sxsdk::part_class</a>
+: <a class="el" href="structsxsdk_1_1part__class.html#ab3de8e0db5d16a22f069fde6a970c06b">sxsdk::part_class</a>
 </li>
 <li>is_professional()
-: <a class="el" href="structsxsdk_1_1shade__interface.html#a7ae1bcc6f0a5c2c7cfa43fae1b719fd6">sxsdk::shade_interface</a>
+: <a class="el" href="structsxsdk_1_1shade__interface.html#ada61af837644b8ddd722db4d442eba44">sxsdk::shade_interface</a>
 </li>
 <li>is_redo_mode()
-: <a class="el" href="structsxsdk_1_1scene__interface.html#a715fa30b1bbe202867294252e2dbcf04">sxsdk::scene_interface</a>
+: <a class="el" href="structsxsdk_1_1scene__interface.html#a2cab6cc55f05dbb0e55e2e0b0c6dcc9d">sxsdk::scene_interface</a>
 </li>
 <li>is_registration()
 : <a class="el" href="structsxsdk_1_1plugin__interface.html#ac65b32d8adc5a5ac82b70ec1feb3b5b8">sxsdk::plugin_interface</a>
 </li>
 <li>is_rendering_server()
-: <a class="el" href="structsxsdk_1_1shade__interface.html#a3a0f22f232e5e780caf5c794e2cb77ee">sxsdk::shade_interface</a>
+: <a class="el" href="structsxsdk_1_1shade__interface.html#a43d0e70d9ee87c9fb255ab40846b5175">sxsdk::shade_interface</a>
 </li>
 <li>is_rendering_thread()
-: <a class="el" href="structsxsdk_1_1scene__interface.html#a1ee7c10ca9d82631dfab62bf18aafaff">sxsdk::scene_interface</a>
+: <a class="el" href="structsxsdk_1_1scene__interface.html#a8ad74533a398a0ab54fe8ba5c5126918">sxsdk::scene_interface</a>
 </li>
 <li>is_resizable()
 : <a class="el" href="structsxsdk_1_1window__interface.html#a11254be32efd412e86122dbf34919046">sxsdk::window_interface</a>
 </li>
 <li>is_revolved()
-: <a class="el" href="structsxsdk_1_1shape__class.html#a5efe1dfae7d7d5e55c70c1e9ea0f95d2">sxsdk::shape_class</a>
+: <a class="el" href="structsxsdk_1_1shape__class.html#a13b0069d1b43ae119762f1b31a6b2e03">sxsdk::shape_class</a>
 </li>
 <li>is_rotator_joint()
-: <a class="el" href="structsxsdk_1_1shape__class.html#a85aa6bd010fae4c66e8ad62458a15e13">sxsdk::shape_class</a>
+: <a class="el" href="structsxsdk_1_1shape__class.html#a38de7f613c9e610eea6303f22cd90bb7">sxsdk::shape_class</a>
 </li>
 <li>is_same_as()
-: <a class="el" href="structsxsdk_1_1shade__interface.html#a82d5bf7713d146216727d17baaf9532a">sxsdk::shade_interface</a>
+: <a class="el" href="structsxsdk_1_1loader__info__interface.html#acc7a65b7465b0cc7aa94d36cb1c7b2ad">sxsdk::loader_info_interface</a>
+, <a class="el" href="structsxsdk_1_1shade__interface.html#a82d5bf7713d146216727d17baaf9532a">sxsdk::shade_interface</a>
 </li>
 <li>is_scale_joint()
-: <a class="el" href="structsxsdk_1_1shape__class.html#afce36bb0a81286c7819a6a86d54cd574">sxsdk::shape_class</a>
+: <a class="el" href="structsxsdk_1_1shape__class.html#a84a8bee21bf81e8dc2c6735d3b5b7268">sxsdk::shape_class</a>
 </li>
 <li>is_selected()
 : <a class="el" href="structsxsdk_1_1window__interface_1_1table__control__class.html#a8e6def8d63b0047e3b000e485bc0f217">sxsdk::window_interface::table_control_class</a>
 </li>
 <li>is_shown()
-: <a class="el" href="structsxsdk_1_1window__interface.html#abf288de8da88d95b7d156e6818d100d3">sxsdk::window_interface</a>
-, <a class="el" href="structsxsdk_1_1shape__class.html#ac24c5fb2a55241e535e9c77ac807a255">sxsdk::shape_class</a>
+: <a class="el" href="structsxsdk_1_1window__interface.html#a27c47e87f698e5cc35941a29a1af0a8c">sxsdk::window_interface</a>
+, <a class="el" href="structsxsdk_1_1shape__class.html#ae6f39d250d2fb0b980fdf91080732153">sxsdk::shape_class</a>
 </li>
 <li>is_simplified_chinese_build()
 : <a class="el" href="structsxsdk_1_1shade__interface.html#a96d38f8dcc00cb7119380a83e73bbca1">sxsdk::shade_interface</a>
 </li>
 <li>is_simplified_chinese_mode()
-: <a class="el" href="structsxsdk_1_1shade__interface.html#ae6f4153ad4ded798d4c959656b9b619f">sxsdk::shade_interface</a>
+: <a class="el" href="structsxsdk_1_1shade__interface.html#ab19a7d06275f222e5fed05752fe87e77">sxsdk::shade_interface</a>
 </li>
 <li>is_slider_joint()
-: <a class="el" href="structsxsdk_1_1shape__class.html#a2792ff3ba5b83c0730401f57fa7bd1dc">sxsdk::shape_class</a>
+: <a class="el" href="structsxsdk_1_1shape__class.html#a7badb50acf1ce2fc30c20a61216be7dc">sxsdk::shape_class</a>
 </li>
 <li>is_sound_track()
-: <a class="el" href="structsxsdk_1_1shape__class.html#af4a78750260df55613c020d54f77f397">sxsdk::shape_class</a>
+: <a class="el" href="structsxsdk_1_1shape__class.html#a8ba209893ef7f1ce408291bf24cdcec5">sxsdk::shape_class</a>
 </li>
 <li>is_speed_build()
 : <a class="el" href="structsxsdk_1_1shade__interface.html#a1527c37ec883b04eb022c71f2ab36af6">sxsdk::shade_interface</a>
 </li>
 <li>is_spotlight()
-: <a class="el" href="structsxsdk_1_1rendering__light__class.html#a6324589469299e50f9c6e0a231e2fea7">sxsdk::rendering_light_class</a>
+: <a class="el" href="structsxsdk_1_1rendering__light__class.html#a266fa9323d9c2361a55de1ef6aa60300">sxsdk::rendering_light_class</a>
 </li>
 <li>is_still_rendering()
-: <a class="el" href="structsxsdk_1_1rendering__interface.html#a2327629d6e874a5dccfe6ed8ec943086">sxsdk::rendering_interface</a>
+: <a class="el" href="structsxsdk_1_1rendering__interface.html#a00f6f473e967d799582d3397bb7120a4">sxsdk::rendering_interface</a>
 </li>
 <li>is_submesh()
 : <a class="el" href="structsxsdk_1_1meshes__interface.html#ae3675a031b874b22bfc538f22ed05c1b">sxsdk::meshes_interface</a>
 </li>
+<li>is_surface_replicator()
+: <a class="el" href="structsxsdk_1_1shape__class.html#a245ec203dc88aca089de80795dfbd635">sxsdk::shape_class</a>
+</li>
 <li>is_switch_effector()
-: <a class="el" href="structsxsdk_1_1shape__class.html#ae89c7c293f5ce74677b4135af447f958">sxsdk::shape_class</a>
+: <a class="el" href="structsxsdk_1_1shape__class.html#a2b3f402ea72b1fe90dff235b20395ecd">sxsdk::shape_class</a>
 </li>
 <li>is_switched()
-: <a class="el" href="structsxsdk_1_1shape__class.html#aba1ec18d79aae7e730d39fde6724d7c3">sxsdk::shape_class</a>
+: <a class="el" href="structsxsdk_1_1shape__class.html#a86c36d8d93a5c92995e7307d437e867d">sxsdk::shape_class</a>
 </li>
 <li>is_traditional_chinese_build()
 : <a class="el" href="structsxsdk_1_1shade__interface.html#ab7ca3d77d923060dd487914203a965c1">sxsdk::shade_interface</a>
 </li>
 <li>is_traditional_chinese_mode()
-: <a class="el" href="structsxsdk_1_1shade__interface.html#a9e3c8e14a5f6c670ce02fb50430b8211">sxsdk::shade_interface</a>
+: <a class="el" href="structsxsdk_1_1shade__interface.html#a7ddbeb7d64d9ca2ea8bc5fbd38019377">sxsdk::shade_interface</a>
 </li>
 <li>is_undo_mode()
-: <a class="el" href="structsxsdk_1_1scene__interface.html#abf96d5281b93d31d8ac69bda13f84442">sxsdk::scene_interface</a>
+: <a class="el" href="structsxsdk_1_1scene__interface.html#a7573044495376a6a61ed6a834c2e7e0a">sxsdk::scene_interface</a>
 </li>
 <li>is_uniscale_joint()
-: <a class="el" href="structsxsdk_1_1shape__class.html#a385b49bb4ff2b427fd42bfaf0d16005f">sxsdk::shape_class</a>
+: <a class="el" href="structsxsdk_1_1shape__class.html#a7f4090c4cfe4aa5e43482c40f049d4f4">sxsdk::shape_class</a>
+</li>
+<li>is_unity_version()
+: <a class="el" href="structsxsdk_1_1shade__interface.html#a8c5a5dcda5367235b4b21213be361256">sxsdk::shade_interface</a>
 </li>
 </ul>
 </div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
 <br><br>
 <hr>
 <div align="center">Copyright &copy; e frontier, Inc. All rights reserved.</div>

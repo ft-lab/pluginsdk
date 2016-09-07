@@ -4,58 +4,91 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <title>構造体 sxsdk::image_importer_interface</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<!-- 作成： Doxygen 1.6.1 -->
-<div class="navigation" id="top">
-  <div class="tabs">
-    <ul>
-      <li><a href="main.html"><span>メインページ</span></a></li>
+<!-- 作成： Doxygen 1.7.4 -->
+<div id="top">
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
       <li><a href="pages.html"><span>関連ページ</span></a></li>
       <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
       <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
       <li><a href="files.html"><span>ファイル</span></a></li>
     </ul>
   </div>
-  <div class="tabs">
-    <ul>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
       <li><a href="annotated.html"><span>構成</span></a></li>
       <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
       <li><a href="functions.html"><span>構成メンバ</span></a></li>
     </ul>
   </div>
-  <div class="navpath"><a class="el" href="namespacesxsdk.html">sxsdk</a>::<a class="el" href="structsxsdk_1_1image__importer__interface.html">image_importer_interface</a>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
   </div>
 </div>
+<script type="text/javascript">
+  initNavTree('structsxsdk_1_1image__importer__interface.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public メソッド</a>  </div>
+  <div class="headertitle">
+<div class="title">構造体 sxsdk::image_importer_interface</div>  </div>
+</div>
 <div class="contents">
-<h1>構造体 sxsdk::image_importer_interface</h1><!-- doxytag: class="sxsdk::image_importer_interface" --><!-- doxytag: inherits="sxsdk::plugin_interface" --><div class="dynheader">
+<!-- doxytag: class="sxsdk::image_importer_interface" --><!-- doxytag: inherits="sxsdk::plugin_interface" -->
+<p>イメージインポータプラグインの基本クラス  
+ <a href="structsxsdk_1_1image__importer__interface.html#details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="imageimporterinterface_8h_source.html">imageimporterinterface.h</a>&gt;</code></p>
+<div class="dynheader">
 sxsdk::image_importer_interfaceに対する継承グラフ</div>
-<div class="dynsection">
+<div class="dyncontent">
  <div class="center">
-  <img src="structsxsdk_1_1image__importer__interface.gif" usemap="#sxsdk::image_importer_interface_map" alt=""/>
+  <img src="structsxsdk_1_1image__importer__interface.png" usemap="#sxsdk::image_importer_interface_map" alt=""/>
   <map id="sxsdk::image_importer_interface_map" name="sxsdk::image_importer_interface_map">
-<area href="structsxsdk_1_1plugin__interface.html" alt="sxsdk::plugin_interface" shape="rect" coords="0,56,192,80"/>
+<area href="structsxsdk_1_1plugin__interface.html" title="プラグインの基本クラス" alt="sxsdk::plugin_interface" shape="rect" coords="0,56,192,80"/>
 <area href="classunknown__interface.html" alt="unknown_interface" shape="rect" coords="0,0,192,24"/>
 </map>
- </div>
-</div>
+ </div></div>
 
 <p><a href="structsxsdk_1_1image__importer__interface-members.html">すべてのメンバ一覧</a></p>
-<table border="0" cellpadding="0" cellspacing="0">
-<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual const char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1image__importer__interface.html#a32c06df3067875639da13ace184fa70d">get_file_extension</a> (int index, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オーバライド可。対応する画像ファイルの拡張子を登録する。複数の拡張子を登録可能。  <a href="#a32c06df3067875639da13ace184fa70d"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual const char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1image__importer__interface.html#a2d54aa8ede37ecde2341c91faf5b2f65">get_file_description</a> (int index, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オーバライド可。ファイルの種類ポップアップメニューに表示する画像ファイル形式の名称を登録する。  <a href="#a2d54aa8ede37ecde2341c91faf5b2f65"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1image__interface.html">sxsdk::image_interface</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1image__importer__interface.html#a2ab9c266472468f6c3b7935a05e6dd33">do_import</a> (int index, <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> *stream, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オーバライド可。イメージのインポートを行うときに呼ばれる。この関数でファイルからの読み込みを行う。  <a href="#a2ab9c266472468f6c3b7935a05e6dd33"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1image__importer__interface.html#af8b2d85e9f0701993ade1f9e0b3c074a">do_pre_import</a> (int index, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オーバライド可。インポート処理を行う前に呼ばれる。  <a href="#af8b2d85e9f0701993ade1f9e0b3c074a"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1image__importer__interface.html#a405c86bd5a7425aaed048036dfa99829">do_post_import</a> (int index, <a class="el" href="structsxsdk_1_1image__interface.html">sxsdk::image_interface</a> *image, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オーバライド可。インポート処理を行った後に呼ばれる。  <a href="#a405c86bd5a7425aaed048036dfa99829"></a><br/></td></tr>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1image__importer__interface.html#a32c06df3067875639da13ace184fa70d">get_file_extension</a> (int index, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オーバライド可。対応する画像ファイルの拡張子を登録する。複数の拡張子を登録可能。  <a href="#a32c06df3067875639da13ace184fa70d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1image__importer__interface.html#a2d54aa8ede37ecde2341c91faf5b2f65">get_file_description</a> (int index, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オーバライド可。ファイルの種類ポップアップメニューに表示する画像ファイル形式の名称を登録する。  <a href="#a2d54aa8ede37ecde2341c91faf5b2f65"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1image__interface.html">sxsdk::image_interface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1image__importer__interface.html#a2ab9c266472468f6c3b7935a05e6dd33">do_import</a> (int index, <a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> *stream, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オーバライド可。イメージのインポートを行うときに呼ばれる。この関数でファイルからの読み込みを行う。  <a href="#a2ab9c266472468f6c3b7935a05e6dd33"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1image__importer__interface.html#af8b2d85e9f0701993ade1f9e0b3c074a">do_pre_import</a> (int index, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オーバライド可。インポート処理を行う前に呼ばれる。  <a href="#af8b2d85e9f0701993ade1f9e0b3c074a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1image__importer__interface.html#a405c86bd5a7425aaed048036dfa99829">do_post_import</a> (int index, <a class="el" href="structsxsdk_1_1image__interface.html">sxsdk::image_interface</a> *image, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">オーバライド可。インポート処理を行った後に呼ばれる。  <a href="#a405c86bd5a7425aaed048036dfa99829"></a><br/></td></tr>
 </table>
-<hr/><h2>関数</h2>
+<hr/><a name="details" id="details"></a><h2>説明</h2>
+<div class="textblock"><p>イメージインポータプラグインの基本クラス </p>
+<p>image_importer_interfaceから派生させたクラスを定義することによって、イメージインポータプラグインを実装する。</p>
+<p>イメージインポータプラグインにより、Shadeが読み込める画像形式を追加することができる。 </p>
+</div><hr/><h2>関数</h2>
 <a class="anchor" id="a2ab9c266472468f6c3b7935a05e6dd33"></a><!-- doxytag: member="sxsdk::image_importer_interface::do_import" ref="a2ab9c266472468f6c3b7935a05e6dd33" args="(int index, stream_interface *stream, void *aux=0)" -->
 <div class="memitem">
 <div class="memproto">
@@ -63,25 +96,25 @@ sxsdk::image_importer_interfaceに対する継承グラフ</div>
         <tr>
           <td class="memname">virtual <a class="el" href="structsxsdk_1_1image__interface.html">sxsdk::image_interface</a>* sxsdk::image_importer_interface::do_import </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>index</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> *&nbsp;</td>
-          <td class="paramname"> <em>stream</em>, </td>
+          <td class="paramtype"><a class="el" href="structsxsdk_1_1stream__interface.html">stream_interface</a> *&#160;</td>
+          <td class="paramname"><em>stream</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [inline, virtual]</code></td>
+          <td></td><td><code> [inline, virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -89,9 +122,9 @@ sxsdk::image_importer_interfaceに対する継承グラフ</div>
 
 <p>オーバライド可。イメージのインポートを行うときに呼ばれる。この関数でファイルからの読み込みを行う。 </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>index</em>&nbsp;</td><td>インデックス値。複数の画像形式に対応するときに種類を判別するために使用する。 </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>stream</em>&nbsp;</td><td>インポート元のストリーム </td></tr>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>インデックス値。複数の画像形式に対応するときに種類を判別するために使用する。 </td></tr>
+    <tr><td class="paramname">stream</td><td>インポート元のストリーム </td></tr>
   </table>
   </dd>
 </dl>
@@ -105,25 +138,25 @@ sxsdk::image_importer_interfaceに対する継承グラフ</div>
         <tr>
           <td class="memname">virtual bool sxsdk::image_importer_interface::do_post_import </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>index</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structsxsdk_1_1image__interface.html">sxsdk::image_interface</a> *&nbsp;</td>
-          <td class="paramname"> <em>image</em>, </td>
+          <td class="paramtype"><a class="el" href="structsxsdk_1_1image__interface.html">sxsdk::image_interface</a> *&#160;</td>
+          <td class="paramname"><em>image</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [inline, virtual]</code></td>
+          <td></td><td><code> [inline, virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -131,9 +164,9 @@ sxsdk::image_importer_interfaceに対する継承グラフ</div>
 
 <p>オーバライド可。インポート処理を行った後に呼ばれる。 </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>index</em>&nbsp;</td><td>インデックス値。複数の画像形式に対応するときに種類を判別するために使用する。 </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>image</em>&nbsp;</td><td>インポートしたイメージ </td></tr>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>インデックス値。複数の画像形式に対応するときに種類を判別するために使用する。 </td></tr>
+    <tr><td class="paramname">image</td><td>インポートしたイメージ </td></tr>
   </table>
   </dd>
 </dl>
@@ -147,19 +180,19 @@ sxsdk::image_importer_interfaceに対する継承グラフ</div>
         <tr>
           <td class="memname">virtual bool sxsdk::image_importer_interface::do_pre_import </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>index</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [inline, virtual]</code></td>
+          <td></td><td><code> [inline, virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -167,8 +200,8 @@ sxsdk::image_importer_interfaceに対する継承グラフ</div>
 
 <p>オーバライド可。インポート処理を行う前に呼ばれる。 </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>index</em>&nbsp;</td><td>インデックス値。複数の画像形式に対応するときに種類を判別するために使用する。 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>インデックス値。複数の画像形式に対応するときに種類を判別するために使用する。 </td></tr>
   </table>
   </dd>
 </dl>
@@ -182,19 +215,19 @@ sxsdk::image_importer_interfaceに対する継承グラフ</div>
         <tr>
           <td class="memname">virtual const char* sxsdk::image_importer_interface::get_file_description </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>index</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [inline, virtual]</code></td>
+          <td></td><td><code> [inline, virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -204,8 +237,8 @@ sxsdk::image_importer_interfaceに対する継承グラフ</div>
 <p>0を返すまで<em>indexの値を繰り上げつつ繰り返し呼び出される。すべての画像ファイル形式を登録した後で必ず0を返す。</em> </p>
 <p>対応する画像ファイル形式が1種類だけのときは、<em>indexが0の時に名称を返し、1以上の場合には0を返す。</em> </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>index</em>&nbsp;</td><td>インデクス値。複数の画像形式に対応するときに種類を判別するために使用する。 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>インデクス値。複数の画像形式に対応するときに種類を判別するために使用する。 </td></tr>
   </table>
   </dd>
 </dl>
@@ -219,19 +252,19 @@ sxsdk::image_importer_interfaceに対する継承グラフ</div>
         <tr>
           <td class="memname">virtual const char* sxsdk::image_importer_interface::get_file_extension </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>index</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [inline, virtual]</code></td>
+          <td></td><td><code> [inline, virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -241,8 +274,8 @@ sxsdk::image_importer_interfaceに対する継承グラフ</div>
 <p>0を返すまで<em>indexの値を繰り上げつつ繰り返し呼び出される。すべての拡張子を登録した後で必ず0を返す。</em> </p>
 <p>対応する画像ファイル形式が1種類だけのときは、<em>indexが0の時に拡張子を返し、1以上の場合には0を返す。</em> </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>index</em>&nbsp;</td><td>インデクス値。複数の画像形式に対応するときに種類を判別するために使用する。 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>インデクス値。複数の画像形式に対応するときに種類を判別するために使用する。 </td></tr>
   </table>
   </dd>
 </dl>
@@ -253,6 +286,11 @@ sxsdk::image_importer_interfaceに対する継承グラフ</div>
 <li><a class="el" href="imageimporterinterface_8h_source.html">imageimporterinterface.h</a></li>
 </ul>
 </div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><b>sxsdk</b>      </li>
+      <li class="navelem"><a class="el" href="structsxsdk_1_1image__importer__interface.html">image_importer_interface</a>      </li>
 <br><br>
 <hr>
 <div align="center">Copyright &copy; e frontier, Inc. All rights reserved.</div>

@@ -4,89 +4,128 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <title>構造体 sxsdk::ball_joint_interface</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<!-- 作成： Doxygen 1.6.1 -->
-<div class="navigation" id="top">
-  <div class="tabs">
-    <ul>
-      <li><a href="main.html"><span>メインページ</span></a></li>
+<!-- 作成： Doxygen 1.7.4 -->
+<div id="top">
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
       <li><a href="pages.html"><span>関連ページ</span></a></li>
       <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
       <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
       <li><a href="files.html"><span>ファイル</span></a></li>
     </ul>
   </div>
-  <div class="tabs">
-    <ul>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
       <li><a href="annotated.html"><span>構成</span></a></li>
       <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
       <li><a href="functions.html"><span>構成メンバ</span></a></li>
     </ul>
   </div>
-  <div class="navpath"><a class="el" href="namespacesxsdk.html">sxsdk</a>::<a class="el" href="structsxsdk_1_1ball__joint__interface.html">ball_joint_interface</a>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
   </div>
 </div>
+<script type="text/javascript">
+  initNavTree('structsxsdk_1_1ball__joint__interface.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public メソッド</a>  </div>
+  <div class="headertitle">
+<div class="title">構造体 sxsdk::ball_joint_interface</div>  </div>
+</div>
 <div class="contents">
-<h1>構造体 sxsdk::ball_joint_interface</h1><!-- doxytag: class="sxsdk::ball_joint_interface" --><!-- doxytag: inherits="unknown_interface" --><div class="dynheader">
+<!-- doxytag: class="sxsdk::ball_joint_interface" --><!-- doxytag: inherits="unknown_interface" -->
+<p>ボールジョイントにアクセスするためのインターフェース。  
+ <a href="structsxsdk_1_1ball__joint__interface.html#details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="shapeclass_8h_source.html">shapeclass.h</a>&gt;</code></p>
+<div class="dynheader">
 sxsdk::ball_joint_interfaceに対する継承グラフ</div>
-<div class="dynsection">
+<div class="dyncontent">
  <div class="center">
-  <img src="structsxsdk_1_1ball__joint__interface.gif" usemap="#sxsdk::ball_joint_interface_map" alt=""/>
+  <img src="structsxsdk_1_1ball__joint__interface.png" usemap="#sxsdk::ball_joint_interface_map" alt=""/>
   <map id="sxsdk::ball_joint_interface_map" name="sxsdk::ball_joint_interface_map">
 <area href="classunknown__interface.html" alt="unknown_interface" shape="rect" coords="0,0,156,24"/>
 </map>
- </div>
-</div>
+ </div></div>
 
 <p><a href="structsxsdk_1_1ball__joint__interface-members.html">すべてのメンバ一覧</a></p>
-<table border="0" cellpadding="0" cellspacing="0">
-<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a204b08e4b914ce0b45a940a849d15e6e"></a><!-- doxytag: member="sxsdk::ball_joint_interface::set_rotation" ref="a204b08e4b914ce0b45a940a849d15e6e" args="(const sxsdk::quaternion_class &amp;rotation_param, void *=0)" -->
-virtual <a class="el" href="structsxsdk_1_1ball__joint__interface.html">ball_joint_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1ball__joint__interface.html#a204b08e4b914ce0b45a940a849d15e6e">set_rotation</a> (const sxsdk::quaternion_class &amp;rotation_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">回転(quaternion)を設定する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a672d7331496d5542c2cb163972cc0bd4"></a><!-- doxytag: member="sxsdk::ball_joint_interface::get_rotation" ref="a672d7331496d5542c2cb163972cc0bd4" args="(void *=0) const " -->
-virtual sxsdk::quaternion_class&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1ball__joint__interface.html#a672d7331496d5542c2cb163972cc0bd4">get_rotation</a> (void *=0) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">回転(quaternion)を取得する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a71b226d0a118847b429d00ef1e2cd081"></a><!-- doxytag: member="sxsdk::ball_joint_interface::set_offset" ref="a71b226d0a118847b429d00ef1e2cd081" args="(const sxsdk::vec3 &amp;offset_param, void *=0)" -->
-virtual <a class="el" href="structsxsdk_1_1ball__joint__interface.html">ball_joint_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1ball__joint__interface.html#a71b226d0a118847b429d00ef1e2cd081">set_offset</a> (const sxsdk::vec3 &amp;offset_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ボールジョイントの位置のオフセット値を設定する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7a37c61d0df4d1516cec7eb3ec42f514"></a><!-- doxytag: member="sxsdk::ball_joint_interface::get_offset" ref="a7a37c61d0df4d1516cec7eb3ec42f514" args="(void *=0) const " -->
-virtual sxsdk::vec3&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1ball__joint__interface.html#a7a37c61d0df4d1516cec7eb3ec42f514">get_offset</a> (void *=0) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ボールジョイントの位置のオフセット値を取得する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1ball__joint__interface.html">ball_joint_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1ball__joint__interface.html#a717feeb4a9c4566e51beb53c07950f39">set_blend</a> (float blend_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ブレンドの値を設定する。  <a href="#a717feeb4a9c4566e51beb53c07950f39"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual float&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1ball__joint__interface.html#a474a8373eb3e199a6a10075c124f1605">get_blend</a> (void *=0) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ブレンドの値を取得する。  <a href="#a474a8373eb3e199a6a10075c124f1605"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1ball__joint__interface.html">ball_joint_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1ball__joint__interface.html#a6c45d1307ff273d3c864932ef18accc6">set_flat</a> (bool flat_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">フラットフラグを設定する。  <a href="#a6c45d1307ff273d3c864932ef18accc6"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1ball__joint__interface.html#a901763878af5416f2535219d15b65967">get_flat</a> (void *=0) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">フラットフラグを取得する。  <a href="#a901763878af5416f2535219d15b65967"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7a3354ef7e12a5e4dc714da91e8a4a16"></a><!-- doxytag: member="sxsdk::ball_joint_interface::set_position" ref="a7a3354ef7e12a5e4dc714da91e8a4a16" args="(const sxsdk::vec3 &amp;position_param, void *=0)" -->
-virtual <a class="el" href="structsxsdk_1_1ball__joint__interface.html">ball_joint_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1ball__joint__interface.html#a7a3354ef7e12a5e4dc714da91e8a4a16">set_position</a> (const sxsdk::vec3 &amp;position_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ボールジョイントの中心位置を設定する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acd9b710c1645c05733a617b4ee64d237"></a><!-- doxytag: member="sxsdk::ball_joint_interface::get_position" ref="acd9b710c1645c05733a617b4ee64d237" args="(void *=0) const " -->
-virtual sxsdk::vec3&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1ball__joint__interface.html#acd9b710c1645c05733a617b4ee64d237">get_position</a> (void *=0) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ボールジョイントの中心位置を取得する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5156c3142df63b3c8cd11b5e0cc6252e"></a><!-- doxytag: member="sxsdk::ball_joint_interface::set_size" ref="a5156c3142df63b3c8cd11b5e0cc6252e" args="(float size_param, void *=0)" -->
-virtual <a class="el" href="structsxsdk_1_1ball__joint__interface.html">ball_joint_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1ball__joint__interface.html#a5156c3142df63b3c8cd11b5e0cc6252e">set_size</a> (float size_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ボールジョイントの大きさを設定する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae3ee0bfcfafcc0567509aa3c8c66b149"></a><!-- doxytag: member="sxsdk::ball_joint_interface::get_size" ref="ae3ee0bfcfafcc0567509aa3c8c66b149" args="(void *=0) const " -->
-virtual float&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1ball__joint__interface.html#ae3ee0bfcfafcc0567509aa3c8c66b149">get_size</a> (void *=0) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ボールジョイントの大きさを取得する。 <br/></td></tr>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a92af06443a8afe53d5b6cd228dbb72ce"></a><!-- doxytag: member="sxsdk::ball_joint_interface::set_rotation" ref="a92af06443a8afe53d5b6cd228dbb72ce" args="(const sxsdk::quaternion_class &amp;rotation_param, void *=nullptr)" -->
+virtual <a class="el" href="structsxsdk_1_1ball__joint__interface.html">ball_joint_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1ball__joint__interface.html#a92af06443a8afe53d5b6cd228dbb72ce">set_rotation</a> (const sxsdk::quaternion_class &amp;rotation_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">回転(quaternion)を設定する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a248a45f036150dc9fe7e0cef24d37a80"></a><!-- doxytag: member="sxsdk::ball_joint_interface::get_rotation" ref="a248a45f036150dc9fe7e0cef24d37a80" args="(void *=nullptr) const " -->
+virtual sxsdk::quaternion_class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1ball__joint__interface.html#a248a45f036150dc9fe7e0cef24d37a80">get_rotation</a> (void *=nullptr) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">回転(quaternion)を取得する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9589cc52c7c0576ec70f807a1647795f"></a><!-- doxytag: member="sxsdk::ball_joint_interface::set_offset" ref="a9589cc52c7c0576ec70f807a1647795f" args="(const sxsdk::vec3 &amp;offset_param, void *=nullptr)" -->
+virtual <a class="el" href="structsxsdk_1_1ball__joint__interface.html">ball_joint_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1ball__joint__interface.html#a9589cc52c7c0576ec70f807a1647795f">set_offset</a> (const sxsdk::vec3 &amp;offset_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">ボールジョイントの位置のオフセット値を設定する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aff35d05267eb1e5103515f13bfa4adea"></a><!-- doxytag: member="sxsdk::ball_joint_interface::get_offset" ref="aff35d05267eb1e5103515f13bfa4adea" args="(void *=nullptr) const " -->
+virtual sxsdk::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1ball__joint__interface.html#aff35d05267eb1e5103515f13bfa4adea">get_offset</a> (void *=nullptr) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">ボールジョイントの位置のオフセット値を取得する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1ball__joint__interface.html">ball_joint_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1ball__joint__interface.html#a27ac8cb3e4a587d89262ac58f87ad796">set_blend</a> (float blend_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">ブレンドの値を設定する。  <a href="#a27ac8cb3e4a587d89262ac58f87ad796"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1ball__joint__interface.html#adaa10c3e808782bd6d84a9d8d8ab6122">get_blend</a> (void *=nullptr) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">ブレンドの値を取得する。  <a href="#adaa10c3e808782bd6d84a9d8d8ab6122"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1ball__joint__interface.html">ball_joint_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1ball__joint__interface.html#a0aca56fe2d188f88fb71cf69069ac73c">set_flat</a> (bool flat_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">フラットフラグを設定する。  <a href="#a0aca56fe2d188f88fb71cf69069ac73c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1ball__joint__interface.html#a8892e5708e6762be4182d06fc9031447">get_flat</a> (void *=nullptr) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">フラットフラグを取得する。  <a href="#a8892e5708e6762be4182d06fc9031447"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a34dde8f554c0dfe09ab23a4f4218b6e8"></a><!-- doxytag: member="sxsdk::ball_joint_interface::set_position" ref="a34dde8f554c0dfe09ab23a4f4218b6e8" args="(const sxsdk::vec3 &amp;position_param, void *=nullptr)" -->
+virtual <a class="el" href="structsxsdk_1_1ball__joint__interface.html">ball_joint_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1ball__joint__interface.html#a34dde8f554c0dfe09ab23a4f4218b6e8">set_position</a> (const sxsdk::vec3 &amp;position_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">ボールジョイントの中心位置を設定する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aadb02b71b09142746f8b806991030b81"></a><!-- doxytag: member="sxsdk::ball_joint_interface::get_position" ref="aadb02b71b09142746f8b806991030b81" args="(void *=nullptr) const " -->
+virtual sxsdk::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1ball__joint__interface.html#aadb02b71b09142746f8b806991030b81">get_position</a> (void *=nullptr) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">ボールジョイントの中心位置を取得する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aae4cbcea97da45792ea1853834d5c8a1"></a><!-- doxytag: member="sxsdk::ball_joint_interface::set_size" ref="aae4cbcea97da45792ea1853834d5c8a1" args="(float size_param, void *=nullptr)" -->
+virtual <a class="el" href="structsxsdk_1_1ball__joint__interface.html">ball_joint_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1ball__joint__interface.html#aae4cbcea97da45792ea1853834d5c8a1">set_size</a> (float size_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">ボールジョイントの大きさを設定する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae12675a62190caca86081bbcaf8598c8"></a><!-- doxytag: member="sxsdk::ball_joint_interface::get_size" ref="ae12675a62190caca86081bbcaf8598c8" args="(void *=nullptr) const " -->
+virtual float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1ball__joint__interface.html#ae12675a62190caca86081bbcaf8598c8">get_size</a> (void *=nullptr) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">ボールジョイントの大きさを取得する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5961e1defbda7f8659d5b6f983c4afcc"></a><!-- doxytag: member="sxsdk::ball_joint_interface::set_compatible" ref="a5961e1defbda7f8659d5b6f983c4afcc" args="(bool compatible_param, void *=nullptr)" -->
+virtual <a class="el" href="structsxsdk_1_1ball__joint__interface.html">ball_joint_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1ball__joint__interface.html#a5961e1defbda7f8659d5b6f983c4afcc">set_compatible</a> (bool compatible_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Shade12 互換を設定する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a27e6a1c0cea2456b98b8e0c0325146cc"></a><!-- doxytag: member="sxsdk::ball_joint_interface::get_compatible" ref="a27e6a1c0cea2456b98b8e0c0325146cc" args="(void *=nullptr) const " -->
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1ball__joint__interface.html#a27e6a1c0cea2456b98b8e0c0325146cc">get_compatible</a> (void *=nullptr) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Shade12 互換を取得する。 <br/></td></tr>
 </table>
-<hr/><h2>関数</h2>
-<a class="anchor" id="a474a8373eb3e199a6a10075c124f1605"></a><!-- doxytag: member="sxsdk::ball_joint_interface::get_blend" ref="a474a8373eb3e199a6a10075c124f1605" args="(void *=0) const " -->
+<hr/><a name="details" id="details"></a><h2>説明</h2>
+<div class="textblock"><p>ボールジョイントにアクセスするためのインターフェース。 </p>
+<p>ボールジョイントに関する設定値は形状の属性の一部として保持されているが、プラグイン／スクリプトからのアクセスを容易にするため、別途インターフェイスを介して値の取得／設定を行う。</p>
+<p>以下の関数でこのクラスを直接取得する。これ以外に関数の引数として渡される場合がある。</p>
+<p><code><a class="el" href="structsxsdk_1_1shape__class.html#a73d0dd5b7cd1e8be9ee8067a246b5058" title="ボールジョイントを取得する。">sxsdk::shape_class::get_ball_joint_interface()</a></code> </p>
+</div><hr/><h2>関数</h2>
+<a class="anchor" id="adaa10c3e808782bd6d84a9d8d8ab6122"></a><!-- doxytag: member="sxsdk::ball_joint_interface::get_blend" ref="adaa10c3e808782bd6d84a9d8d8ab6122" args="(void *=nullptr) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">virtual float sxsdk::ball_joint_interface::get_blend </td>
           <td>(</td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> = <code>0</code></td>
-          <td>&nbsp;)&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"> = <code>nullptr</code></td><td>)</td>
           <td> const<code> [virtual]</code></td>
         </tr>
       </table>
@@ -98,16 +137,15 @@ virtual float&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" h
 
 </div>
 </div>
-<a class="anchor" id="a901763878af5416f2535219d15b65967"></a><!-- doxytag: member="sxsdk::ball_joint_interface::get_flat" ref="a901763878af5416f2535219d15b65967" args="(void *=0) const " -->
+<a class="anchor" id="a8892e5708e6762be4182d06fc9031447"></a><!-- doxytag: member="sxsdk::ball_joint_interface::get_flat" ref="a8892e5708e6762be4182d06fc9031447" args="(void *=nullptr) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">virtual bool sxsdk::ball_joint_interface::get_flat </td>
           <td>(</td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> = <code>0</code></td>
-          <td>&nbsp;)&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"> = <code>nullptr</code></td><td>)</td>
           <td> const<code> [virtual]</code></td>
         </tr>
       </table>
@@ -119,26 +157,26 @@ virtual float&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" h
 
 </div>
 </div>
-<a class="anchor" id="a717feeb4a9c4566e51beb53c07950f39"></a><!-- doxytag: member="sxsdk::ball_joint_interface::set_blend" ref="a717feeb4a9c4566e51beb53c07950f39" args="(float blend_param, void *=0)" -->
+<a class="anchor" id="a27ac8cb3e4a587d89262ac58f87ad796"></a><!-- doxytag: member="sxsdk::ball_joint_interface::set_blend" ref="a27ac8cb3e4a587d89262ac58f87ad796" args="(float blend_param, void *=nullptr)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">virtual <a class="el" href="structsxsdk_1_1ball__joint__interface.html">ball_joint_interface</a>&amp; sxsdk::ball_joint_interface::set_blend </td>
           <td>(</td>
-          <td class="paramtype">float&nbsp;</td>
-          <td class="paramname"> <em>blend_param</em>, </td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>blend_param</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -149,26 +187,26 @@ virtual float&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" h
 
 </div>
 </div>
-<a class="anchor" id="a6c45d1307ff273d3c864932ef18accc6"></a><!-- doxytag: member="sxsdk::ball_joint_interface::set_flat" ref="a6c45d1307ff273d3c864932ef18accc6" args="(bool flat_param, void *=0)" -->
+<a class="anchor" id="a0aca56fe2d188f88fb71cf69069ac73c"></a><!-- doxytag: member="sxsdk::ball_joint_interface::set_flat" ref="a0aca56fe2d188f88fb71cf69069ac73c" args="(bool flat_param, void *=nullptr)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">virtual <a class="el" href="structsxsdk_1_1ball__joint__interface.html">ball_joint_interface</a>&amp; sxsdk::ball_joint_interface::set_flat </td>
           <td>(</td>
-          <td class="paramtype">bool&nbsp;</td>
-          <td class="paramname"> <em>flat_param</em>, </td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>flat_param</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -183,6 +221,11 @@ virtual float&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" h
 <li><a class="el" href="shapeclass_8h_source.html">shapeclass.h</a></li>
 </ul>
 </div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><b>sxsdk</b>      </li>
+      <li class="navelem"><a class="el" href="structsxsdk_1_1ball__joint__interface.html">ball_joint_interface</a>      </li>
 <br><br>
 <hr>
 <div align="center">Copyright &copy; e frontier, Inc. All rights reserved.</div>

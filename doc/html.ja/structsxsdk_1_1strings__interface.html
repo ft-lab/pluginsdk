@@ -4,54 +4,138 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <title>構造体 sxsdk::strings_interface</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<!-- 作成： Doxygen 1.6.1 -->
-<div class="navigation" id="top">
-  <div class="tabs">
-    <ul>
-      <li><a href="main.html"><span>メインページ</span></a></li>
+<!-- 作成： Doxygen 1.7.4 -->
+<div id="top">
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
       <li><a href="pages.html"><span>関連ページ</span></a></li>
       <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
       <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
       <li><a href="files.html"><span>ファイル</span></a></li>
     </ul>
   </div>
-  <div class="tabs">
-    <ul>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
       <li><a href="annotated.html"><span>構成</span></a></li>
       <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
       <li><a href="functions.html"><span>構成メンバ</span></a></li>
     </ul>
   </div>
-  <div class="navpath"><a class="el" href="namespacesxsdk.html">sxsdk</a>::<a class="el" href="structsxsdk_1_1strings__interface.html">strings_interface</a>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
   </div>
 </div>
+<script type="text/javascript">
+  initNavTree('structsxsdk_1_1strings__interface.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public メソッド</a>  </div>
+  <div class="headertitle">
+<div class="title">構造体 sxsdk::strings_interface</div>  </div>
+</div>
 <div class="contents">
-<h1>構造体 sxsdk::strings_interface</h1><!-- doxytag: class="sxsdk::strings_interface" --><!-- doxytag: inherits="sxsdk::shade_interface" --><div class="dynheader">
+<!-- doxytag: class="sxsdk::strings_interface" --><!-- doxytag: inherits="sxsdk::shade_interface" -->
+<p>テキストリソースから文字列を取得する。  
+ <a href="structsxsdk_1_1strings__interface.html#details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="stringsinterface_8h_source.html">stringsinterface.h</a>&gt;</code></p>
+<div class="dynheader">
 sxsdk::strings_interfaceに対する継承グラフ</div>
-<div class="dynsection">
+<div class="dyncontent">
  <div class="center">
-  <img src="structsxsdk_1_1strings__interface.gif" usemap="#sxsdk::strings_interface_map" alt=""/>
+  <img src="structsxsdk_1_1strings__interface.png" usemap="#sxsdk::strings_interface_map" alt=""/>
   <map id="sxsdk::strings_interface_map" name="sxsdk::strings_interface_map">
-<area href="structsxsdk_1_1shade__interface.html" alt="sxsdk::shade_interface" shape="rect" coords="0,56,143,80"/>
+<area href="structsxsdk_1_1shade__interface.html" title="Shadeの情報へのアクセスの基本となるインターフェイス" alt="sxsdk::shade_interface" shape="rect" coords="0,56,143,80"/>
 <area href="classunknown__interface.html" alt="unknown_interface" shape="rect" coords="0,0,143,24"/>
 </map>
- </div>
-</div>
+ </div></div>
 
 <p><a href="structsxsdk_1_1strings__interface-members.html">すべてのメンバ一覧</a></p>
-<table border="0" cellpadding="0" cellspacing="0">
-<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Public メソッド</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a129b9cb5c464bfd28f68e370508f2cf3"></a><!-- doxytag: member="sxsdk::strings_interface::get_string" ref="a129b9cb5c464bfd28f68e370508f2cf3" args="(int at, void *aux=0)" -->
-virtual const char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1strings__interface.html#a129b9cb5c464bfd28f68e370508f2cf3">get_string</a> (int at, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">atで指定された文字を返す。 <br/></td></tr>
+virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1strings__interface.html#a129b9cb5c464bfd28f68e370508f2cf3">get_string</a> (int at, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">atで指定された文字を返す。 <br/></td></tr>
 </table>
-<hr/>この構造体の説明は次のファイルから生成されました:<ul>
+<hr/><a name="details" id="details"></a><h2>説明</h2>
+<div class="textblock"><p>テキストリソースから文字列を取得する。 </p>
+<html><head><meta charset="utf-8"></head><body>
+<ul type="disc">
+<li><b>strings</b></li><p>    文字列  </p>
+<ul type="disc">
+<li><b>string</b></li><ul type="none">
+<li><b>value</b>	type = xsd:string</li><p>    文字列  </p>
+</ul>
+<ul type="none">
+<li><b>id</b>	type = xsd:string</li><p></p>
+</ul>
+</ul>
+<ul type="disc">
+<li><b>item</b></li><p>    文字列アイテム  </p>
+<ul type="disc">
+<li><b>string</b></li><p>    文字列  </p>
+<ul type="none">
+<li><b>lang</b>	type = xsd:string</li><p>    言語コード  </p>
+</ul>
+</ul>
+<ul type="none">
+<li><b>tag</b>	type = xsd:string</li><p></p>
+</ul>
+<ul type="none">
+<li><b>en</b>	type = xsd:string</li><p></p>
+</ul>
+<ul type="none">
+<li><b>ja</b>	type = xsd:string</li><p></p>
+</ul>
+<ul type="none">
+<li><b>fr</b>	type = xsd:string</li><p></p>
+</ul>
+<ul type="none">
+<li><b>zh_CN</b>	type = xsd:string</li><p></p>
+</ul>
+<ul type="none">
+<li><b>de</b>	type = xsd:string</li><p></p>
+</ul>
+<ul type="none">
+<li><b>es</b>	type = xsd:string</li><p></p>
+</ul>
+<ul type="none">
+<li><b>ko</b>	type = xsd:string</li><p></p>
+</ul>
+</ul>
+</ul>
+</body></html>
+<p>以下の関数でこのクラスを直接取得する。これ以外に関数の引数として渡される場合がある。</p>
+<p><code><a class="el" href="structsxsdk_1_1shade__interface.html#ac04faa4c474134c6ca59fde8d4eb3ae0" title="指定したリソースから文字列リストを作成する。">shade_interface::create_strings_interface()</a></code> </p>
+</div><hr/>この構造体の説明は次のファイルから生成されました:<ul>
 <li><a class="el" href="stringsinterface_8h_source.html">stringsinterface.h</a></li>
 </ul>
 </div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><b>sxsdk</b>      </li>
+      <li class="navelem"><a class="el" href="structsxsdk_1_1strings__interface.html">strings_interface</a>      </li>
 <br><br>
 <hr>
 <div align="center">Copyright &copy; e frontier, Inc. All rights reserved.</div>

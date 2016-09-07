@@ -4,80 +4,119 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <title>構造体 sxsdk::path_joint_interface</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<!-- 作成： Doxygen 1.6.1 -->
-<div class="navigation" id="top">
-  <div class="tabs">
-    <ul>
-      <li><a href="main.html"><span>メインページ</span></a></li>
+<!-- 作成： Doxygen 1.7.4 -->
+<div id="top">
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
       <li><a href="pages.html"><span>関連ページ</span></a></li>
       <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
       <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
       <li><a href="files.html"><span>ファイル</span></a></li>
     </ul>
   </div>
-  <div class="tabs">
-    <ul>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
       <li><a href="annotated.html"><span>構成</span></a></li>
       <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
       <li><a href="functions.html"><span>構成メンバ</span></a></li>
     </ul>
   </div>
-  <div class="navpath"><a class="el" href="namespacesxsdk.html">sxsdk</a>::<a class="el" href="structsxsdk_1_1path__joint__interface.html">path_joint_interface</a>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
   </div>
 </div>
+<script type="text/javascript">
+  initNavTree('structsxsdk_1_1path__joint__interface.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public メソッド</a>  </div>
+  <div class="headertitle">
+<div class="title">構造体 sxsdk::path_joint_interface</div>  </div>
+</div>
 <div class="contents">
-<h1>構造体 sxsdk::path_joint_interface</h1><!-- doxytag: class="sxsdk::path_joint_interface" --><!-- doxytag: inherits="unknown_interface" --><div class="dynheader">
+<!-- doxytag: class="sxsdk::path_joint_interface" --><!-- doxytag: inherits="unknown_interface" -->
+<p>パスジョイントにアクセスするためのインターフェイス  
+ <a href="structsxsdk_1_1path__joint__interface.html#details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="shapeclass_8h_source.html">shapeclass.h</a>&gt;</code></p>
+<div class="dynheader">
 sxsdk::path_joint_interfaceに対する継承グラフ</div>
-<div class="dynsection">
+<div class="dyncontent">
  <div class="center">
-  <img src="structsxsdk_1_1path__joint__interface.gif" usemap="#sxsdk::path_joint_interface_map" alt=""/>
+  <img src="structsxsdk_1_1path__joint__interface.png" usemap="#sxsdk::path_joint_interface_map" alt=""/>
   <map id="sxsdk::path_joint_interface_map" name="sxsdk::path_joint_interface_map">
 <area href="classunknown__interface.html" alt="unknown_interface" shape="rect" coords="0,0,160,24"/>
 </map>
- </div>
-</div>
+ </div></div>
 
 <p><a href="structsxsdk_1_1path__joint__interface-members.html">すべてのメンバ一覧</a></p>
-<table border="0" cellpadding="0" cellspacing="0">
-<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3ee0eebbac042ca92d1a84ca964ca0c9"></a><!-- doxytag: member="sxsdk::path_joint_interface::set_path_position" ref="a3ee0eebbac042ca92d1a84ca964ca0c9" args="(float path_position_param, void *=0)" -->
-virtual <a class="el" href="structsxsdk_1_1path__joint__interface.html">path_joint_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1path__joint__interface.html#a3ee0eebbac042ca92d1a84ca964ca0c9">set_path_position</a> (float path_position_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">パスを設定する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afebaadd46a03c5c206e1596e25ad5117"></a><!-- doxytag: member="sxsdk::path_joint_interface::get_path_position" ref="afebaadd46a03c5c206e1596e25ad5117" args="(void *=0) const " -->
-virtual float&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1path__joint__interface.html#afebaadd46a03c5c206e1596e25ad5117">get_path_position</a> (void *=0) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">パスを取得する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa94f275a58353839fed6b1fd0dbf3f6b"></a><!-- doxytag: member="sxsdk::path_joint_interface::set_range" ref="aa94f275a58353839fed6b1fd0dbf3f6b" args="(bool range_param, void *=0)" -->
-virtual <a class="el" href="structsxsdk_1_1path__joint__interface.html">path_joint_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1path__joint__interface.html#aa94f275a58353839fed6b1fd0dbf3f6b">set_range</a> (bool range_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">範囲制限を設定する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae884e09df8f2776d24104a2e5902ac75"></a><!-- doxytag: member="sxsdk::path_joint_interface::get_range" ref="ae884e09df8f2776d24104a2e5902ac75" args="(void *=0) const " -->
-virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1path__joint__interface.html#ae884e09df8f2776d24104a2e5902ac75">get_range</a> (void *=0) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">範囲制限を取得する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1ebc4e979927d0b74d91754bfc5cfcd4"></a><!-- doxytag: member="sxsdk::path_joint_interface::set_flat" ref="a1ebc4e979927d0b74d91754bfc5cfcd4" args="(bool flat_param, void *=0)" -->
-virtual <a class="el" href="structsxsdk_1_1path__joint__interface.html">path_joint_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1path__joint__interface.html#a1ebc4e979927d0b74d91754bfc5cfcd4">set_flat</a> (bool flat_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">フラットを設定する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a533896d61fb65de44a6815205517fd00"></a><!-- doxytag: member="sxsdk::path_joint_interface::get_flat" ref="a533896d61fb65de44a6815205517fd00" args="(void *=0) const " -->
-virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1path__joint__interface.html#a533896d61fb65de44a6815205517fd00">get_flat</a> (void *=0) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">フラットを取得する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad8adb2ebb8a288c8e2cb4b1857574cac"></a><!-- doxytag: member="sxsdk::path_joint_interface::set_correction" ref="ad8adb2ebb8a288c8e2cb4b1857574cac" args="(int correction_param, void *=0)" -->
-virtual <a class="el" href="structsxsdk_1_1path__joint__interface.html">path_joint_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1path__joint__interface.html#ad8adb2ebb8a288c8e2cb4b1857574cac">set_correction</a> (int correction_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">パス補正を設定する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0a506538a6667d7b5a11281b41d3cc98"></a><!-- doxytag: member="sxsdk::path_joint_interface::get_correction" ref="a0a506538a6667d7b5a11281b41d3cc98" args="(void *=0) const " -->
-virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1path__joint__interface.html#a0a506538a6667d7b5a11281b41d3cc98">get_correction</a> (void *=0) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">パス補正を取得する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae2f1b0e8d35df32de12de3f196e47885"></a><!-- doxytag: member="sxsdk::path_joint_interface::set_limit" ref="ae2f1b0e8d35df32de12de3f196e47885" args="(const sxsdk::vec2 &amp;limit_param, void *=0)" -->
-virtual <a class="el" href="structsxsdk_1_1path__joint__interface.html">path_joint_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1path__joint__interface.html#ae2f1b0e8d35df32de12de3f196e47885">set_limit</a> (const sxsdk::vec2 &amp;limit_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">リミットを設定する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac748c8b3923509d08314cf1274aeeb1a"></a><!-- doxytag: member="sxsdk::path_joint_interface::get_limit" ref="ac748c8b3923509d08314cf1274aeeb1a" args="(void *=0) const " -->
-virtual sxsdk::vec2&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1path__joint__interface.html#ac748c8b3923509d08314cf1274aeeb1a">get_limit</a> (void *=0) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">リミットを取得する。 <br/></td></tr>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7a27b39aa498a29b525d1765b2aa2ca6"></a><!-- doxytag: member="sxsdk::path_joint_interface::set_path_position" ref="a7a27b39aa498a29b525d1765b2aa2ca6" args="(float path_position_param, void *=nullptr)" -->
+virtual <a class="el" href="structsxsdk_1_1path__joint__interface.html">path_joint_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1path__joint__interface.html#a7a27b39aa498a29b525d1765b2aa2ca6">set_path_position</a> (float path_position_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">パスを設定する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adaee084b3dec75cf321268734e6d173c"></a><!-- doxytag: member="sxsdk::path_joint_interface::get_path_position" ref="adaee084b3dec75cf321268734e6d173c" args="(void *=nullptr) const " -->
+virtual float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1path__joint__interface.html#adaee084b3dec75cf321268734e6d173c">get_path_position</a> (void *=nullptr) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">パスを取得する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab14c613d9c5be7af931e5c61c65e4c3c"></a><!-- doxytag: member="sxsdk::path_joint_interface::set_range" ref="ab14c613d9c5be7af931e5c61c65e4c3c" args="(bool range_param, void *=nullptr)" -->
+virtual <a class="el" href="structsxsdk_1_1path__joint__interface.html">path_joint_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1path__joint__interface.html#ab14c613d9c5be7af931e5c61c65e4c3c">set_range</a> (bool range_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">範囲制限を設定する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac9e16ecdf96961b173ec832c57d7553b"></a><!-- doxytag: member="sxsdk::path_joint_interface::get_range" ref="ac9e16ecdf96961b173ec832c57d7553b" args="(void *=nullptr) const " -->
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1path__joint__interface.html#ac9e16ecdf96961b173ec832c57d7553b">get_range</a> (void *=nullptr) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">範囲制限を取得する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a643aebd1c8b0386749a13878fc3127ee"></a><!-- doxytag: member="sxsdk::path_joint_interface::set_flat" ref="a643aebd1c8b0386749a13878fc3127ee" args="(bool flat_param, void *=nullptr)" -->
+virtual <a class="el" href="structsxsdk_1_1path__joint__interface.html">path_joint_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1path__joint__interface.html#a643aebd1c8b0386749a13878fc3127ee">set_flat</a> (bool flat_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">フラットを設定する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae1e1b324e5022b87d08823b1e072a9e7"></a><!-- doxytag: member="sxsdk::path_joint_interface::get_flat" ref="ae1e1b324e5022b87d08823b1e072a9e7" args="(void *=nullptr) const " -->
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1path__joint__interface.html#ae1e1b324e5022b87d08823b1e072a9e7">get_flat</a> (void *=nullptr) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">フラットを取得する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6e7e46ec42a517c2c4bd270eaf15f829"></a><!-- doxytag: member="sxsdk::path_joint_interface::set_correction" ref="a6e7e46ec42a517c2c4bd270eaf15f829" args="(int correction_param, void *=nullptr)" -->
+virtual <a class="el" href="structsxsdk_1_1path__joint__interface.html">path_joint_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1path__joint__interface.html#a6e7e46ec42a517c2c4bd270eaf15f829">set_correction</a> (int correction_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">パス補正を設定する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9be00c259b9f9fd944cdedb99613c3e1"></a><!-- doxytag: member="sxsdk::path_joint_interface::get_correction" ref="a9be00c259b9f9fd944cdedb99613c3e1" args="(void *=nullptr) const " -->
+virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1path__joint__interface.html#a9be00c259b9f9fd944cdedb99613c3e1">get_correction</a> (void *=nullptr) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">パス補正を取得する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a367615c62dfc80a923f65733b6c19e60"></a><!-- doxytag: member="sxsdk::path_joint_interface::set_limit" ref="a367615c62dfc80a923f65733b6c19e60" args="(const sxsdk::vec2 &amp;limit_param, void *=nullptr)" -->
+virtual <a class="el" href="structsxsdk_1_1path__joint__interface.html">path_joint_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1path__joint__interface.html#a367615c62dfc80a923f65733b6c19e60">set_limit</a> (const sxsdk::vec2 &amp;limit_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">リミットを設定する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab763bcb0468aa1f5efda88dddecff1f1"></a><!-- doxytag: member="sxsdk::path_joint_interface::get_limit" ref="ab763bcb0468aa1f5efda88dddecff1f1" args="(void *=nullptr) const " -->
+virtual sxsdk::vec2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1path__joint__interface.html#ab763bcb0468aa1f5efda88dddecff1f1">get_limit</a> (void *=nullptr) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">リミットを取得する。 <br/></td></tr>
 </table>
-<hr/>この構造体の説明は次のファイルから生成されました:<ul>
+<hr/><a name="details" id="details"></a><h2>説明</h2>
+<div class="textblock"><p>パスジョイントにアクセスするためのインターフェイス </p>
+<p>パスジョイントに関する設定値は形状の属性の一部として保持されているが、プラグイン／スクリプトからのアクセスを容易にするため、別途インターフェイスを介して値の取得／設定を行う。</p>
+<p>以下の関数でこのクラスを直接取得する。これ以外に関数の引数として渡される場合がある。</p>
+<p><code><a class="el" href="structsxsdk_1_1shape__class.html#abecf8c61e15a7104578f003894bd5989" title="パスジョイントを取得する。">sxsdk::shape_class::get_path_joint_interface()</a></code> </p>
+</div><hr/>この構造体の説明は次のファイルから生成されました:<ul>
 <li><a class="el" href="shapeclass_8h_source.html">shapeclass.h</a></li>
 </ul>
 </div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><b>sxsdk</b>      </li>
+      <li class="navelem"><a class="el" href="structsxsdk_1_1path__joint__interface.html">path_joint_interface</a>      </li>
 <br><br>
 <hr>
 <div align="center">Copyright &copy; e frontier, Inc. All rights reserved.</div>

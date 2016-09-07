@@ -16,7 +16,7 @@ namespace sxsdk {
 	virtual int rendering_context_interface_dummy9(void *) { assert(false); throw "invalid interface rendering_context_interface"; return 0; } // 9
 	virtual sxsdk::shape_class** get_shapes_obsolete (void* aux = 0) = 0; // 10
 	virtual sxsdk::mat4 get_world_to_perspective_matrix (void * = 0) const = 0; // 11
-	virtual int get_current_frame (void * = 0) const = 0; // 12
+	virtual int get_current_frame_deprecated (void * = 0) const = 0; // 12
 	virtual void yield (void* aux = 0) = 0; // 13
 	virtual void update_image (const sx::rectangle_class* area = 0) = 0; // 14
 	virtual void begin_progress (const char* title, void* aux = 0) = 0; // 15
@@ -51,6 +51,6 @@ namespace sxsdk {
 	virtual int get_number_of_image_layers (int type = -1, void* aux = 0) const = 0; // 44
 	virtual sxsdk::image_layer_interface* get_image_layer_interface_by_index (unsigned index, int type = -1, void* aux = 0) const = 0; // 45
 	virtual bool get_active (void * = 0) const = 0; // 46
-	virtual float get_current_frame_float (void * = 0) const = 0; // 47
+	virtual float get_current_frame (void * = 0) const = 0; // 47
 	};
 }

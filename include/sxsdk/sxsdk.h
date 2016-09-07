@@ -23,8 +23,13 @@
 		#include <ImageCompression.h>
 	#endif
 #else
-	typedef void CodecType;
-	typedef void CodecQ;
+	#if __LP64__
+		typedef unsigned int CodecType;
+		typedef unsigned int CodecQ;
+	#else
+		typedef unsigned long CodecType;
+		typedef unsigned long CodecQ;
+	#endif
 #endif
 
 #if USE_PYTHON
@@ -44,11 +49,7 @@
 	#if SXWINDOWS
 		#define DLLEXPORT __declspec(dllexport)
 	#else
-		#if 4 <= __GNUC__
-			#define DLLEXPORT __attribute__((visibility("default")))
-		#else
-			#define DLLEXPORT
-		#endif
+		#define DLLEXPORT
 	#endif
 #else
 	#define SXPLUGINNAMESPACEBEGIN(NAME) namespace NAME {
@@ -209,6 +210,8 @@ namespace sxsdk {
 	class figure_view_interface;
 	class display_interface;
 	class path_replicator_interface;
+	class surface_replicator_interface;
+	class bone_joint_interface;
 	class speed_interface;
 	class loader_interface;
 	class loader_info_interface;
@@ -217,6 +220,8 @@ namespace sxsdk {
 	class implementation_interface;
 	class gridmanager_window_interface;
 	class gridmanager_view_interface;
+	class batch_rendering_interface;
+	class rendering_history_interface;
 
 	class output_function_class;
 	class shader_info_base_class;
@@ -255,6 +260,9 @@ namespace sxsdk {
 	class proxy_shape_mix_class;
 	class intersection_class;
 	class custom_element_info_base_class;
+	class physical_sky_class;
+	class ik_class;
+	class ik_data_class;
 }
 #define DEFINE_DYNAMIC_CAST(class_name, base_name, shape_type) static class_name &cast (base_name &s) { if (s.get_type() != shape_type) throw std::bad_cast(); return static_cast<class_name &>(s); } static const class_name &cast (const base_name &s) { if (s.get_type() != shape_type) throw std::bad_cast(); return static_cast<const class_name &>(s); } static class_name *cast (base_name *s) { if (s && s->get_type() != shape_type) return 0; return static_cast<class_name *>(s); } static const class_name *cast (const base_name *s) { if (s && s->get_type() != shape_type) return 0; return static_cast<const class_name *>(s); } 
 
@@ -339,3 +347,8 @@ namespace sxsdk {
 #include "sxsdk/skinclass.h"
 #include "sxsdk/speedinterface.h"
 #include "sxsdk/surfaceclass.h"
+#include "sxsdk/physicalskyclass.h"
+#include "sxsdk/ikclass.h"
+#include "sxsdk/ikdataclass.h"
+#include "sxsdk/batchrenderinginterface.h"
+#include "sxsdk/renderinghistoryinterface.h"

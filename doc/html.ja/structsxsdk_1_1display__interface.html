@@ -4,226 +4,259 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <title>構造体 sxsdk::display_interface</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<!-- 作成： Doxygen 1.6.1 -->
-<div class="navigation" id="top">
-  <div class="tabs">
-    <ul>
-      <li><a href="main.html"><span>メインページ</span></a></li>
+<!-- 作成： Doxygen 1.7.4 -->
+<div id="top">
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
       <li><a href="pages.html"><span>関連ページ</span></a></li>
       <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
       <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
       <li><a href="files.html"><span>ファイル</span></a></li>
     </ul>
   </div>
-  <div class="tabs">
-    <ul>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
       <li><a href="annotated.html"><span>構成</span></a></li>
       <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
       <li><a href="functions.html"><span>構成メンバ</span></a></li>
     </ul>
   </div>
-  <div class="navpath"><a class="el" href="namespacesxsdk.html">sxsdk</a>::<a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
   </div>
 </div>
+<script type="text/javascript">
+  initNavTree('structsxsdk_1_1display__interface.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public メソッド</a>  </div>
+  <div class="headertitle">
+<div class="title">構造体 sxsdk::display_interface</div>  </div>
+</div>
 <div class="contents">
-<h1>構造体 sxsdk::display_interface</h1><!-- doxytag: class="sxsdk::display_interface" --><!-- doxytag: inherits="sxsdk::shade_interface" --><div class="dynheader">
+<!-- doxytag: class="sxsdk::display_interface" --><!-- doxytag: inherits="sxsdk::shade_interface" -->
+<p>図形ウインドウの表示モードの設定と取得を行う。  
+ <a href="structsxsdk_1_1display__interface.html#details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="displayinterface_8h_source.html">displayinterface.h</a>&gt;</code></p>
+<div class="dynheader">
 sxsdk::display_interfaceに対する継承グラフ</div>
-<div class="dynsection">
+<div class="dyncontent">
  <div class="center">
-  <img src="structsxsdk_1_1display__interface.gif" usemap="#sxsdk::display_interface_map" alt=""/>
+  <img src="structsxsdk_1_1display__interface.png" usemap="#sxsdk::display_interface_map" alt=""/>
   <map id="sxsdk::display_interface_map" name="sxsdk::display_interface_map">
-<area href="structsxsdk_1_1shade__interface.html" alt="sxsdk::shade_interface" shape="rect" coords="0,56,146,80"/>
+<area href="structsxsdk_1_1shade__interface.html" title="Shadeの情報へのアクセスの基本となるインターフェイス" alt="sxsdk::shade_interface" shape="rect" coords="0,56,146,80"/>
 <area href="classunknown__interface.html" alt="unknown_interface" shape="rect" coords="0,0,146,24"/>
 </map>
- </div>
-</div>
+ </div></div>
 
 <p><a href="structsxsdk_1_1display__interface-members.html">すべてのメンバ一覧</a></p>
-<table border="0" cellpadding="0" cellspacing="0">
-<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2628ace984ab917d45551d1156e5820e"></a><!-- doxytag: member="sxsdk::display_interface::set_shading_side_view_deprecated" ref="a2628ace984ab917d45551d1156e5820e" args="(bool shading_side_view_deprecated_param, void *=0)" -->
-virtual test <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><b>set_shading_side_view_deprecated</b> (bool shading_side_view_deprecated_param, void *=0)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abf627bb51ad9dd26eff66011bc8f165b"></a><!-- doxytag: member="sxsdk::display_interface::get_shading_side_view_deprecated" ref="abf627bb51ad9dd26eff66011bc8f165b" args="(void *=0) const " -->
-virtual test bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>get_shading_side_view_deprecated</b> (void *=0) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab521b08b2b176d0b7c9cff6b1e19d3d9"></a><!-- doxytag: member="sxsdk::display_interface::set_shading_top_view_deprecated" ref="ab521b08b2b176d0b7c9cff6b1e19d3d9" args="(bool shading_top_view_deprecated_param, void *=0)" -->
-virtual test <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><b>set_shading_top_view_deprecated</b> (bool shading_top_view_deprecated_param, void *=0)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa5f9634dc1838353374fc4f2bbcb6fee"></a><!-- doxytag: member="sxsdk::display_interface::get_shading_top_view_deprecated" ref="aa5f9634dc1838353374fc4f2bbcb6fee" args="(void *=0) const " -->
-virtual test bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>get_shading_top_view_deprecated</b> (void *=0) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab6242c24698f519818c32108bd78bc3e"></a><!-- doxytag: member="sxsdk::display_interface::set_shading_front_view_deprecated" ref="ab6242c24698f519818c32108bd78bc3e" args="(bool shading_front_view_deprecated_param, void *=0)" -->
-virtual test <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><b>set_shading_front_view_deprecated</b> (bool shading_front_view_deprecated_param, void *=0)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aadcad51bb98691d239d2bd8e09c30bca"></a><!-- doxytag: member="sxsdk::display_interface::get_shading_front_view_deprecated" ref="aadcad51bb98691d239d2bd8e09c30bca" args="(void *=0) const " -->
-virtual test bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>get_shading_front_view_deprecated</b> (void *=0) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a209138628d5cceb08698128998b45050"></a><!-- doxytag: member="sxsdk::display_interface::set_shading_pers_view_deprecated" ref="a209138628d5cceb08698128998b45050" args="(bool shading_pers_view_deprecated_param, void *=0)" -->
-virtual test <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><b>set_shading_pers_view_deprecated</b> (bool shading_pers_view_deprecated_param, void *=0)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af69557c972eeaca27fe2db7edfb2c60b"></a><!-- doxytag: member="sxsdk::display_interface::get_shading_pers_view_deprecated" ref="af69557c972eeaca27fe2db7edfb2c60b" args="(void *=0) const " -->
-virtual test bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>get_shading_pers_view_deprecated</b> (void *=0) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6af9fce259db03e49e89bd213a7f60cf"></a><!-- doxytag: member="sxsdk::display_interface::set_shading_all_views_deprecated" ref="a6af9fce259db03e49e89bd213a7f60cf" args="(bool shading_all_views_deprecated_param, void *=0)" -->
-virtual test <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><b>set_shading_all_views_deprecated</b> (bool shading_all_views_deprecated_param, void *=0)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af1f20b824e53cf9ef956836f5ac98358"></a><!-- doxytag: member="sxsdk::display_interface::set_visiblelines_side_view_deprecated" ref="af1f20b824e53cf9ef956836f5ac98358" args="(bool visiblelines_side_view_deprecated_param, void *=0)" -->
-virtual test <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><b>set_visiblelines_side_view_deprecated</b> (bool visiblelines_side_view_deprecated_param, void *=0)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5fa2573fd04acd58306054c7f10d1051"></a><!-- doxytag: member="sxsdk::display_interface::get_visiblelines_side_view_deprecated" ref="a5fa2573fd04acd58306054c7f10d1051" args="(void *=0) const " -->
-virtual test bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>get_visiblelines_side_view_deprecated</b> (void *=0) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3e0d412cd4603d03ce1a8ae93a1fbd1b"></a><!-- doxytag: member="sxsdk::display_interface::set_visiblelines_top_view_deprecated" ref="a3e0d412cd4603d03ce1a8ae93a1fbd1b" args="(bool visiblelines_top_view_deprecated_param, void *=0)" -->
-virtual test <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><b>set_visiblelines_top_view_deprecated</b> (bool visiblelines_top_view_deprecated_param, void *=0)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6466a343d1912c90c31a8780c7d7409d"></a><!-- doxytag: member="sxsdk::display_interface::get_visiblelines_top_view_deprecated" ref="a6466a343d1912c90c31a8780c7d7409d" args="(void *=0) const " -->
-virtual test bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>get_visiblelines_top_view_deprecated</b> (void *=0) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6956d86c99f16cb2c22e4852ae9e9ef3"></a><!-- doxytag: member="sxsdk::display_interface::set_visiblelines_front_view_deprecated" ref="a6956d86c99f16cb2c22e4852ae9e9ef3" args="(bool visiblelines_front_view_deprecated_param, void *=0)" -->
-virtual test <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><b>set_visiblelines_front_view_deprecated</b> (bool visiblelines_front_view_deprecated_param, void *=0)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad9fd3a6ab6738feeb7ab5603fa8c4b46"></a><!-- doxytag: member="sxsdk::display_interface::get_visiblelines_front_view_deprecated" ref="ad9fd3a6ab6738feeb7ab5603fa8c4b46" args="(void *=0) const " -->
-virtual test bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>get_visiblelines_front_view_deprecated</b> (void *=0) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a306a932690bfa8986db9502196fd74bf"></a><!-- doxytag: member="sxsdk::display_interface::set_visiblelines_pers_view_deprecated" ref="a306a932690bfa8986db9502196fd74bf" args="(bool visiblelines_pers_view_deprecated_param, void *=0)" -->
-virtual test <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><b>set_visiblelines_pers_view_deprecated</b> (bool visiblelines_pers_view_deprecated_param, void *=0)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae157ed07bd3aff43d93025f765186cf0"></a><!-- doxytag: member="sxsdk::display_interface::get_visiblelines_pers_view_deprecated" ref="ae157ed07bd3aff43d93025f765186cf0" args="(void *=0) const " -->
-virtual test bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>get_visiblelines_pers_view_deprecated</b> (void *=0) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a98e487921f6316b418faa6cd8acf960c"></a><!-- doxytag: member="sxsdk::display_interface::set_visiblelines_all_views_deprecated" ref="a98e487921f6316b418faa6cd8acf960c" args="(bool visiblelines_all_views_deprecated_param, void *=0)" -->
-virtual test <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><b>set_visiblelines_all_views_deprecated</b> (bool visiblelines_all_views_deprecated_param, void *=0)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a93b8d9dae302453ae7af8d245d36246d"></a><!-- doxytag: member="sxsdk::display_interface::set_singlesided_obsolete" ref="a93b8d9dae302453ae7af8d245d36246d" args="(bool singlesided_obsolete_param, void *=0)" -->
-virtual test <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><b>set_singlesided_obsolete</b> (bool singlesided_obsolete_param, void *=0)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5de960665ef150f63851a6030912975d"></a><!-- doxytag: member="sxsdk::display_interface::get_singlesided_obsolete" ref="a5de960665ef150f63851a6030912975d" args="(void *=0) const " -->
-virtual test bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>get_singlesided_obsolete</b> (void *=0) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a73501cb38a500e0d8b58ee89bb0bdf8a">update_solid_texture</a> (int viewpane, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ソリッドテクスチャの更新を行う。  <a href="#a73501cb38a500e0d8b58ee89bb0bdf8a"></a><br/></td></tr>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a45e2e3503fec12260be43f92c77096ec"></a><!-- doxytag: member="sxsdk::display_interface::set_shading_side_view_deprecated" ref="a45e2e3503fec12260be43f92c77096ec" args="(bool shading_side_view_deprecated_param, void *=nullptr)" -->
+virtual test <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>set_shading_side_view_deprecated</b> (bool shading_side_view_deprecated_param, void *=nullptr)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0fe11ad6e527aa98a0148294cfbba7d0"></a><!-- doxytag: member="sxsdk::display_interface::get_shading_side_view_deprecated" ref="a0fe11ad6e527aa98a0148294cfbba7d0" args="(void *=nullptr) const " -->
+virtual test bool&#160;</td><td class="memItemRight" valign="bottom"><b>get_shading_side_view_deprecated</b> (void *=nullptr) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae7d788459947547823a07ecfa668b243"></a><!-- doxytag: member="sxsdk::display_interface::set_shading_top_view_deprecated" ref="ae7d788459947547823a07ecfa668b243" args="(bool shading_top_view_deprecated_param, void *=nullptr)" -->
+virtual test <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>set_shading_top_view_deprecated</b> (bool shading_top_view_deprecated_param, void *=nullptr)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afdee50e2a455f1732d98aab1cac8e7b1"></a><!-- doxytag: member="sxsdk::display_interface::get_shading_top_view_deprecated" ref="afdee50e2a455f1732d98aab1cac8e7b1" args="(void *=nullptr) const " -->
+virtual test bool&#160;</td><td class="memItemRight" valign="bottom"><b>get_shading_top_view_deprecated</b> (void *=nullptr) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5f0963df26a08b0acf1a3acbb66e1d8f"></a><!-- doxytag: member="sxsdk::display_interface::set_shading_front_view_deprecated" ref="a5f0963df26a08b0acf1a3acbb66e1d8f" args="(bool shading_front_view_deprecated_param, void *=nullptr)" -->
+virtual test <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>set_shading_front_view_deprecated</b> (bool shading_front_view_deprecated_param, void *=nullptr)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3df9081e3b8742665e9f7018165a7d78"></a><!-- doxytag: member="sxsdk::display_interface::get_shading_front_view_deprecated" ref="a3df9081e3b8742665e9f7018165a7d78" args="(void *=nullptr) const " -->
+virtual test bool&#160;</td><td class="memItemRight" valign="bottom"><b>get_shading_front_view_deprecated</b> (void *=nullptr) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5ca70f231cb25f201c2f3c628ededf28"></a><!-- doxytag: member="sxsdk::display_interface::set_shading_pers_view_deprecated" ref="a5ca70f231cb25f201c2f3c628ededf28" args="(bool shading_pers_view_deprecated_param, void *=nullptr)" -->
+virtual test <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>set_shading_pers_view_deprecated</b> (bool shading_pers_view_deprecated_param, void *=nullptr)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aebb9d35580c70519c18482607080370e"></a><!-- doxytag: member="sxsdk::display_interface::get_shading_pers_view_deprecated" ref="aebb9d35580c70519c18482607080370e" args="(void *=nullptr) const " -->
+virtual test bool&#160;</td><td class="memItemRight" valign="bottom"><b>get_shading_pers_view_deprecated</b> (void *=nullptr) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abe363533e30f8ef79bfc868f528f28ae"></a><!-- doxytag: member="sxsdk::display_interface::set_shading_all_views_deprecated" ref="abe363533e30f8ef79bfc868f528f28ae" args="(bool shading_all_views_deprecated_param, void *=nullptr)" -->
+virtual test <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>set_shading_all_views_deprecated</b> (bool shading_all_views_deprecated_param, void *=nullptr)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae3c98f8775d7fc8ca4e534fc8c3aabf8"></a><!-- doxytag: member="sxsdk::display_interface::set_visiblelines_side_view_deprecated" ref="ae3c98f8775d7fc8ca4e534fc8c3aabf8" args="(bool visiblelines_side_view_deprecated_param, void *=nullptr)" -->
+virtual test <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>set_visiblelines_side_view_deprecated</b> (bool visiblelines_side_view_deprecated_param, void *=nullptr)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac830a6006ed7a24779f48855b3c4848b"></a><!-- doxytag: member="sxsdk::display_interface::get_visiblelines_side_view_deprecated" ref="ac830a6006ed7a24779f48855b3c4848b" args="(void *=nullptr) const " -->
+virtual test bool&#160;</td><td class="memItemRight" valign="bottom"><b>get_visiblelines_side_view_deprecated</b> (void *=nullptr) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9af007e77aedea307ac78405d0beb19f"></a><!-- doxytag: member="sxsdk::display_interface::set_visiblelines_top_view_deprecated" ref="a9af007e77aedea307ac78405d0beb19f" args="(bool visiblelines_top_view_deprecated_param, void *=nullptr)" -->
+virtual test <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>set_visiblelines_top_view_deprecated</b> (bool visiblelines_top_view_deprecated_param, void *=nullptr)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad0f4ba7fe8c20b1230ee4082ceb1dde9"></a><!-- doxytag: member="sxsdk::display_interface::get_visiblelines_top_view_deprecated" ref="ad0f4ba7fe8c20b1230ee4082ceb1dde9" args="(void *=nullptr) const " -->
+virtual test bool&#160;</td><td class="memItemRight" valign="bottom"><b>get_visiblelines_top_view_deprecated</b> (void *=nullptr) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1ecf3a7c1742a94b42fe433688200ae7"></a><!-- doxytag: member="sxsdk::display_interface::set_visiblelines_front_view_deprecated" ref="a1ecf3a7c1742a94b42fe433688200ae7" args="(bool visiblelines_front_view_deprecated_param, void *=nullptr)" -->
+virtual test <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>set_visiblelines_front_view_deprecated</b> (bool visiblelines_front_view_deprecated_param, void *=nullptr)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abeb6cf11c99c3341d94ecd2bf7982421"></a><!-- doxytag: member="sxsdk::display_interface::get_visiblelines_front_view_deprecated" ref="abeb6cf11c99c3341d94ecd2bf7982421" args="(void *=nullptr) const " -->
+virtual test bool&#160;</td><td class="memItemRight" valign="bottom"><b>get_visiblelines_front_view_deprecated</b> (void *=nullptr) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5baaeabda9b35ddb8b7edf433a7595f1"></a><!-- doxytag: member="sxsdk::display_interface::set_visiblelines_pers_view_deprecated" ref="a5baaeabda9b35ddb8b7edf433a7595f1" args="(bool visiblelines_pers_view_deprecated_param, void *=nullptr)" -->
+virtual test <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>set_visiblelines_pers_view_deprecated</b> (bool visiblelines_pers_view_deprecated_param, void *=nullptr)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a70a3fd3e682de30b815da1f850dccedd"></a><!-- doxytag: member="sxsdk::display_interface::get_visiblelines_pers_view_deprecated" ref="a70a3fd3e682de30b815da1f850dccedd" args="(void *=nullptr) const " -->
+virtual test bool&#160;</td><td class="memItemRight" valign="bottom"><b>get_visiblelines_pers_view_deprecated</b> (void *=nullptr) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a55cd8ced64284d4c101eb044b11d66bb"></a><!-- doxytag: member="sxsdk::display_interface::set_visiblelines_all_views_deprecated" ref="a55cd8ced64284d4c101eb044b11d66bb" args="(bool visiblelines_all_views_deprecated_param, void *=nullptr)" -->
+virtual test <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>set_visiblelines_all_views_deprecated</b> (bool visiblelines_all_views_deprecated_param, void *=nullptr)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a16d76094f7afaab4132c06099af8abfe"></a><!-- doxytag: member="sxsdk::display_interface::set_singlesided_obsolete" ref="a16d76094f7afaab4132c06099af8abfe" args="(bool singlesided_obsolete_param, void *=nullptr)" -->
+virtual test <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>set_singlesided_obsolete</b> (bool singlesided_obsolete_param, void *=nullptr)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aadf751259a4fc54c7643367821666da7"></a><!-- doxytag: member="sxsdk::display_interface::get_singlesided_obsolete" ref="aadf751259a4fc54c7643367821666da7" args="(void *=nullptr) const " -->
+virtual test bool&#160;</td><td class="memItemRight" valign="bottom"><b>get_singlesided_obsolete</b> (void *=nullptr) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a73501cb38a500e0d8b58ee89bb0bdf8a">update_solid_texture</a> (int viewpane, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">ソリッドテクスチャの更新を行う。  <a href="#a73501cb38a500e0d8b58ee89bb0bdf8a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a61b55a6e65d207d4175aed305f744fb2"></a><!-- doxytag: member="sxsdk::display_interface::clear_texture_obsolete" ref="a61b55a6e65d207d4175aed305f744fb2" args="(void *aux=0)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>clear_texture_obsolete</b> (void *aux=0)</td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>clear_texture_obsolete</b> (void *aux=0)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a93d767e0fd2f6d13cac51b3e03f3c085"></a><!-- doxytag: member="sxsdk::display_interface::clear_cache_deprecated" ref="a93d767e0fd2f6d13cac51b3e03f3c085" args="(void *aux=0)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>clear_cache_deprecated</b> (void *aux=0)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7c62f4036b8354254657b1e1d999400a"></a><!-- doxytag: member="sxsdk::display_interface::set_all_lights_deprecated" ref="a7c62f4036b8354254657b1e1d999400a" args="(bool all_lights_deprecated_param, void *=0)" -->
-virtual test <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><b>set_all_lights_deprecated</b> (bool all_lights_deprecated_param, void *=0)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afbad58adb9b934a98b3162098b99b2e8"></a><!-- doxytag: member="sxsdk::display_interface::get_all_lights_deprecated" ref="afbad58adb9b934a98b3162098b99b2e8" args="(void *=0) const " -->
-virtual test bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>get_all_lights_deprecated</b> (void *=0) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#ae85b17d48832167a5f79b11ea07393fe">set_texture_size</a> (int texture_size_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">背景のプレビューで使用するテクスチャイメージのサイズ(初期値は256)を設定する。  <a href="#ae85b17d48832167a5f79b11ea07393fe"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#addbf6cb0160a859fa05b9e76a1340a39">get_texture_size</a> (void *=0) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">背景のプレビューで使用するテクスチャイメージのサイズ(初期値は256)を取得する。  <a href="#addbf6cb0160a859fa05b9e76a1340a39"></a><br/></td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>clear_cache_deprecated</b> (void *aux=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aab10a82b3fc10169903bf4484cda8339"></a><!-- doxytag: member="sxsdk::display_interface::set_all_lights_deprecated" ref="aab10a82b3fc10169903bf4484cda8339" args="(bool all_lights_deprecated_param, void *=nullptr)" -->
+virtual test <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>set_all_lights_deprecated</b> (bool all_lights_deprecated_param, void *=nullptr)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7c7f04b2f26d35963e4131a591c90c14"></a><!-- doxytag: member="sxsdk::display_interface::get_all_lights_deprecated" ref="a7c7f04b2f26d35963e4131a591c90c14" args="(void *=nullptr) const " -->
+virtual test bool&#160;</td><td class="memItemRight" valign="bottom"><b>get_all_lights_deprecated</b> (void *=nullptr) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#aa4d4f5a8d9d07b5c167e016914ec1dea">set_texture_size</a> (int texture_size_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">背景のプレビューで使用するテクスチャイメージのサイズ(初期値は256)を設定する。  <a href="#aa4d4f5a8d9d07b5c167e016914ec1dea"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a5a9779503736fbe195bcd4416f3cfd08">get_texture_size</a> (void *=nullptr) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">背景のプレビューで使用するテクスチャイメージのサイズ(初期値は256)を取得する。  <a href="#a5a9779503736fbe195bcd4416f3cfd08"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2b308b8ed8e2feb58143456d28462d3a"></a><!-- doxytag: member="sxsdk::display_interface::update_uv_texture_obsolete" ref="a2b308b8ed8e2feb58143456d28462d3a" args="(void *aux=0)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>update_uv_texture_obsolete</b> (void *aux=0)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#abcd0857a3b7318e2489edf8a25b582e6">update_background</a> (int viewpane, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">背景表示の表示、更新を行う。  <a href="#abcd0857a3b7318e2489edf8a25b582e6"></a><br/></td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>update_uv_texture_obsolete</b> (void *aux=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#abcd0857a3b7318e2489edf8a25b582e6">update_background</a> (int viewpane, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">背景表示の表示、更新を行う。  <a href="#abcd0857a3b7318e2489edf8a25b582e6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac4113a9bcf1eb267adaff313c7343915"></a><!-- doxytag: member="sxsdk::display_interface::clear_background_obsolete" ref="ac4113a9bcf1eb267adaff313c7343915" args="(void *aux=0)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>clear_background_obsolete</b> (void *aux=0)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a74fd6d989ab8f4a281add2a20d614ea4"></a><!-- doxytag: member="sxsdk::display_interface::set_colored_shading_obsolete" ref="a74fd6d989ab8f4a281add2a20d614ea4" args="(bool colored_shading_obsolete_param, void *=0)" -->
-virtual test <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><b>set_colored_shading_obsolete</b> (bool colored_shading_obsolete_param, void *=0)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a263b7a56be61427e254da7751bc06ee4"></a><!-- doxytag: member="sxsdk::display_interface::get_colored_shading_obsolete" ref="a263b7a56be61427e254da7751bc06ee4" args="(void *=0) const " -->
-virtual test bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>get_colored_shading_obsolete</b> (void *=0) const </td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>clear_background_obsolete</b> (void *aux=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a01df400748a9237ff07371b46da5cf54"></a><!-- doxytag: member="sxsdk::display_interface::set_colored_shading_obsolete" ref="a01df400748a9237ff07371b46da5cf54" args="(bool colored_shading_obsolete_param, void *=nullptr)" -->
+virtual test <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>set_colored_shading_obsolete</b> (bool colored_shading_obsolete_param, void *=nullptr)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac962203281192f9d0284c4147f5cdd47"></a><!-- doxytag: member="sxsdk::display_interface::get_colored_shading_obsolete" ref="ac962203281192f9d0284c4147f5cdd47" args="(void *=nullptr) const " -->
+virtual test bool&#160;</td><td class="memItemRight" valign="bottom"><b>get_colored_shading_obsolete</b> (void *=nullptr) const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7db2f2f21a095b390aea2651c334891f"></a><!-- doxytag: member="sxsdk::display_interface::setup_shading" ref="a7db2f2f21a095b390aea2651c334891f" args="(void *aux=0)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a7db2f2f21a095b390aea2651c334891f">setup_shading</a> (void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">for benchmarking <br/></td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a7db2f2f21a095b390aea2651c334891f">setup_shading</a> (void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">for benchmarking <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a071a3cf8ea5c7094af0dd2decdc37341"></a><!-- doxytag: member="sxsdk::display_interface::setup_normals" ref="a071a3cf8ea5c7094af0dd2decdc37341" args="(void *aux=0)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a071a3cf8ea5c7094af0dd2decdc37341">setup_normals</a> (void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">for benchmarking <br/></td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a071a3cf8ea5c7094af0dd2decdc37341">setup_normals</a> (void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">for benchmarking <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5e69150c082bdac3f6048c537d0a8f28"></a><!-- doxytag: member="sxsdk::display_interface::setup_wireframe" ref="a5e69150c082bdac3f6048c537d0a8f28" args="(void *aux=0)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a5e69150c082bdac3f6048c537d0a8f28">setup_wireframe</a> (void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">for benchmarking <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa13f90827615c09dad649f326d6ec202"></a><!-- doxytag: member="sxsdk::display_interface::set_highlight_preview_obsolete" ref="aa13f90827615c09dad649f326d6ec202" args="(bool highlight_preview_obsolete_param, void *=0)" -->
-virtual test <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><b>set_highlight_preview_obsolete</b> (bool highlight_preview_obsolete_param, void *=0)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8464316bade929ac9f7df3c48d706ce2"></a><!-- doxytag: member="sxsdk::display_interface::get_highlight_preview_obsolete" ref="a8464316bade929ac9f7df3c48d706ce2" args="(void *=0) const " -->
-virtual test bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>get_highlight_preview_obsolete</b> (void *=0) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a982eb0db86c60e938643192ed0d69873"></a><!-- doxytag: member="sxsdk::display_interface::set_envmap_preview_obsolete" ref="a982eb0db86c60e938643192ed0d69873" args="(bool envmap_preview_obsolete_param, void *=0)" -->
-virtual test <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><b>set_envmap_preview_obsolete</b> (bool envmap_preview_obsolete_param, void *=0)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a83dcc51bf23bdc730bfbb61b4efcea22"></a><!-- doxytag: member="sxsdk::display_interface::get_envmap_preview_obsolete" ref="a83dcc51bf23bdc730bfbb61b4efcea22" args="(void *=0) const " -->
-virtual test bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>get_envmap_preview_obsolete</b> (void *=0) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#ae76c3fa538567529e76e723ca6be4722">set_shading_mode</a> (int viewpane, int shading_mode, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定したビューのシェーディングモードを設定する。  <a href="#ae76c3fa538567529e76e723ca6be4722"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#ac91d5512b2ed8c5959e92c300cfdfb1b">get_shading_mode</a> (int viewpane, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定したビューのシェーディングモードを取得する  <a href="#ac91d5512b2ed8c5959e92c300cfdfb1b"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a1904698406df57f54ccc1d001d738471">set_lighting_mode</a> (int viewpane, int lighting_mode, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定したビューのライティングモードを設定する。  <a href="#a1904698406df57f54ccc1d001d738471"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#aab883ddf48d864198b9e6bc0a191c37a">get_lighting_mode</a> (int viewpane, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定したビューのライティングモードを取得する。  <a href="#aab883ddf48d864198b9e6bc0a191c37a"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a955aa416c21255887be2d7cc36a80c43">set_show_normal</a> (int viewpane, bool show_normal_param, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">blah  <a href="#a955aa416c21255887be2d7cc36a80c43"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#aca3c98de8877f74451b377ccae0a5c38">get_show_normal</a> (int viewpane, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定したビューの法線表示のオン/オフを取得する。  <a href="#aca3c98de8877f74451b377ccae0a5c38"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#aff9ae640ce0ac452891189167e02d85b">set_show_bbox</a> (int viewpane, bool show_bbox_param, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定したビューのバウンディングボックス表示のオン/オフを設定する。  <a href="#aff9ae640ce0ac452891189167e02d85b"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a90440747672caf85c6f0ac9b1f055ad5">get_show_bbox</a> (int viewpane, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定したビューのバウンディングボックス表示のオン/オフを取得する。  <a href="#a90440747672caf85c6f0ac9b1f055ad5"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a9e99cdc19b61c7a1752599c16ca361c6">set_show_highlight</a> (int viewpane, bool show_highlight_param, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定したビューのハイライト表示のオン/オフを設定する。  <a href="#a9e99cdc19b61c7a1752599c16ca361c6"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#aeb4637e6068e00c2ab8eda2e638d1fb1">get_show_highlight</a> (int viewpane, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定したビューのハイライト表示のオン/オフを取得する。  <a href="#aeb4637e6068e00c2ab8eda2e638d1fb1"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#abe972782b58eb636bbf27159a0009984">set_show_envmap</a> (int viewpane, bool show_envmap_param, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定したビューの環境マップ表示のオン/オフを設定する。  <a href="#abe972782b58eb636bbf27159a0009984"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a5ea84bfe803196bf6174f502d0c6769f">get_show_envmap</a> (int viewpane, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定したビューの環境マップ表示のオン/オフを取得する。  <a href="#a5ea84bfe803196bf6174f502d0c6769f"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a825546dffb9f9e6f1a6acbc0b0182d69">set_show_singlesided</a> (int viewpane, bool show_singlesided_param, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定したビューの片面表示のオン/オフを設定する。  <a href="#a825546dffb9f9e6f1a6acbc0b0182d69"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a7df11aa1c4b8c101aed2dba19e184372">get_show_singlesided</a> (int viewpane, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定したビューの片面表示のオン/オフを取得する。  <a href="#a7df11aa1c4b8c101aed2dba19e184372"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#ab838622e705ea6a28a32ce5e81a20e86">set_show_colored_shading</a> (int viewpane, bool show_colored_shading_param, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定したビューのシェーディングカラー表示のオン/オフを設定する。  <a href="#ab838622e705ea6a28a32ce5e81a20e86"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a6033fa9e9eabad3541723b84790155c8">get_show_colored_shading</a> (int viewpane, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定したビューのシェーディングカラー表示のオン/オフを取得する。  <a href="#a6033fa9e9eabad3541723b84790155c8"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#ab215637352d1b29d3ca2d306359648a6">set_show_grid</a> (int viewpane, bool show_grid_param, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定したビューのグリッド表示のオン/オフを設定する。  <a href="#ab215637352d1b29d3ca2d306359648a6"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a2e141ce8e9a605e7f9e5e61358b5609c">get_show_grid</a> (int viewpane, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定したビューのグリッド表示のオン/オフを取得する。  <a href="#a2e141ce8e9a605e7f9e5e61358b5609c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a36f7468a75686a5c2f9ff543bb74f1f2">set_show_background</a> (int viewpane, bool show_background_param, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定したビューの背景表示のオン/オフを設定する。  <a href="#a36f7468a75686a5c2f9ff543bb74f1f2"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a3054c205051db56dccc6d7656e51607d">get_show_background</a> (int viewpane, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定したビューの背景表示のオン/オフを取得する。  <a href="#a3054c205051db56dccc6d7656e51607d"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#ab36a443ef09b253756cf9ea8ddad06fc">load_template_image</a> (int viewpane, const char *const &amp;file_path, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">blah  <a href="#ab36a443ef09b253756cf9ea8ddad06fc"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a38f9f435758f0cd8e7cd627c1539566b">display_template_image</a> (int viewpane, bool display_template_image_param, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">blah  <a href="#a38f9f435758f0cd8e7cd627c1539566b"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a4b0ddf1d8d20e467755715ccabec6bac">clear_template_image</a> (int viewpane, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">blah  <a href="#a4b0ddf1d8d20e467755715ccabec6bac"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aff8e94e67a78c3af1e3fc4eaa632011c"></a><!-- doxytag: member="sxsdk::display_interface::set_colored_shading" ref="aff8e94e67a78c3af1e3fc4eaa632011c" args="(bool colored_shading_param, void *=0)" -->
-virtual <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#aff8e94e67a78c3af1e3fc4eaa632011c">set_colored_shading</a> (bool colored_shading_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">全てのビューのシェーディングカラー表示のオン／オフを設定する。を設定する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8b826b3974b60f835386364033018898"></a><!-- doxytag: member="sxsdk::display_interface::set_envmap_preview" ref="a8b826b3974b60f835386364033018898" args="(bool envmap_preview_param, void *=0)" -->
-virtual <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a8b826b3974b60f835386364033018898">set_envmap_preview</a> (bool envmap_preview_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">全てのビューの環境マップの表示のオン／オフを設定する。を設定する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3ea2f2b7e5feecc80ced274c2c83fa83"></a><!-- doxytag: member="sxsdk::display_interface::set_highlight_preview" ref="a3ea2f2b7e5feecc80ced274c2c83fa83" args="(bool highlight_preview_param, void *=0)" -->
-virtual <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a3ea2f2b7e5feecc80ced274c2c83fa83">set_highlight_preview</a> (bool highlight_preview_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">全てのビューのハイライトの表示のオン／オフを設定する。を設定する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9e83b763f2b0d4147badf2d826a05805"></a><!-- doxytag: member="sxsdk::display_interface::set_singlesided" ref="a9e83b763f2b0d4147badf2d826a05805" args="(bool singlesided_param, void *=0)" -->
-virtual <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a9e83b763f2b0d4147badf2d826a05805">set_singlesided</a> (bool singlesided_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">全てのビューの片面表示のオン／オフを設定する。を設定する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac6c3ccdfc2b2b4ccc08d9b159cf7d7d5"></a><!-- doxytag: member="sxsdk::display_interface::set_all_shading_mode" ref="ac6c3ccdfc2b2b4ccc08d9b159cf7d7d5" args="(int all_shading_mode_param, void *=0)" -->
-virtual <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#ac6c3ccdfc2b2b4ccc08d9b159cf7d7d5">set_all_shading_mode</a> (int all_shading_mode_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">全てのビューのシェーディングモードを設定する。を設定する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8113c5b874d2ad758469004f818fd4e2"></a><!-- doxytag: member="sxsdk::display_interface::set_all_lighting_mode" ref="a8113c5b874d2ad758469004f818fd4e2" args="(int all_lighting_mode_param, void *=0)" -->
-virtual <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a8113c5b874d2ad758469004f818fd4e2">set_all_lighting_mode</a> (int all_lighting_mode_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">全てのビューのライティングモードを設定する。を設定する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8e055435230c6a3516899033746d7e7d"></a><!-- doxytag: member="sxsdk::display_interface::set_flat" ref="a8e055435230c6a3516899033746d7e7d" args="(bool flat_param, void *=0)" -->
-virtual <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a8e055435230c6a3516899033746d7e7d">set_flat</a> (bool flat_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">全てのビューのフラットシェーディング表示のオン／オフを設定する。を設定する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a99af145d5d646ff065e4df45f7de999a"></a><!-- doxytag: member="sxsdk::display_interface::set_normal" ref="a99af145d5d646ff065e4df45f7de999a" args="(bool normal_param, void *=0)" -->
-virtual <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a99af145d5d646ff065e4df45f7de999a">set_normal</a> (bool normal_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">全てのビューの法線表示のオン／オフを設定する。を設定する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a03db0901004e6d162861d2d482262cea"></a><!-- doxytag: member="sxsdk::display_interface::set_bbox" ref="a03db0901004e6d162861d2d482262cea" args="(bool bbox_param, void *=0)" -->
-virtual <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a03db0901004e6d162861d2d482262cea">set_bbox</a> (bool bbox_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">全てのビューのバウンディングボックス表示のオン／オフを設定する。を設定する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aceb06e687206646476298a62f442ec11"></a><!-- doxytag: member="sxsdk::display_interface::set_grid" ref="aceb06e687206646476298a62f442ec11" args="(bool grid_param, void *=0)" -->
-virtual <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#aceb06e687206646476298a62f442ec11">set_grid</a> (bool grid_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">全てのビューのグリッド表示のオン／オフを設定する。を設定する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a3d525400c4555ae6122857c6f858428e">set_uv_shading</a> (int viewpane, bool uv_shading_param, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定したUVビューのシェーディング表示のオン/オフを設定する。  <a href="#a3d525400c4555ae6122857c6f858428e"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a7d8b1d84eef0c6ac00d7fc538356485f">set_uv_display_image</a> (int viewpane, bool uv_display_image_param, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定したUVビューの画像表示のオン/オフを設定する。  <a href="#a7d8b1d84eef0c6ac00d7fc538356485f"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5f53135cb299eb65ca5487061234fb36"></a><!-- doxytag: member="sxsdk::display_interface::set_uv_mode" ref="a5f53135cb299eb65ca5487061234fb36" args="(int uv_mode_param, void *=0)" -->
-virtual <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a5f53135cb299eb65ca5487061234fb36">set_uv_mode</a> (int uv_mode_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">編集するUVを設定する。を設定する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9b1cd253760b23bfb11eb24b5bcba373"></a><!-- doxytag: member="sxsdk::display_interface::get_uv_mode" ref="a9b1cd253760b23bfb11eb24b5bcba373" args="(void *=0) const " -->
-virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a9b1cd253760b23bfb11eb24b5bcba373">get_uv_mode</a> (void *=0) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">編集するUVを設定する。を取得する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a8a8bc7ea922939bea7ec7d3beebbcc07">set_uv_image_brightness</a> (int viewpane, bool uv_image_brightness_param, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">画像の明るさを設定する。  <a href="#a8a8bc7ea922939bea7ec7d3beebbcc07"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a75660d465efe57a5496f31b16592fe6e">set_camera_type</a> (int viewpane, int camera_type, int camera_index=0, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">blah  <a href="#a75660d465efe57a5496f31b16592fe6e"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a44a070cb3ec27d576c8b0c51caa80417">get_camera_type</a> (int viewpane, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">blah  <a href="#a44a070cb3ec27d576c8b0c51caa80417"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a6f433cd69a4081ef5745ff86ada6ff8c">set_stereo_type</a> (int stereo_type, void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">成功したらtrue、失敗したらfalseを返す.  <a href="#a6f433cd69a4081ef5745ff86ada6ff8c"></a><br/></td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a5e69150c082bdac3f6048c537d0a8f28">setup_wireframe</a> (void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">for benchmarking <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6d2f83694089d745d270d1ad4e8b72bb"></a><!-- doxytag: member="sxsdk::display_interface::set_highlight_preview_obsolete" ref="a6d2f83694089d745d270d1ad4e8b72bb" args="(bool highlight_preview_obsolete_param, void *=nullptr)" -->
+virtual test <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>set_highlight_preview_obsolete</b> (bool highlight_preview_obsolete_param, void *=nullptr)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5b02654297278c2e4435fe9b8054a700"></a><!-- doxytag: member="sxsdk::display_interface::get_highlight_preview_obsolete" ref="a5b02654297278c2e4435fe9b8054a700" args="(void *=nullptr) const " -->
+virtual test bool&#160;</td><td class="memItemRight" valign="bottom"><b>get_highlight_preview_obsolete</b> (void *=nullptr) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af367c2e1447639a6c96d152a2b1ccf1a"></a><!-- doxytag: member="sxsdk::display_interface::set_envmap_preview_obsolete" ref="af367c2e1447639a6c96d152a2b1ccf1a" args="(bool envmap_preview_obsolete_param, void *=nullptr)" -->
+virtual test <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>set_envmap_preview_obsolete</b> (bool envmap_preview_obsolete_param, void *=nullptr)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac742c5d817997fa2364da74762fd6c4b"></a><!-- doxytag: member="sxsdk::display_interface::get_envmap_preview_obsolete" ref="ac742c5d817997fa2364da74762fd6c4b" args="(void *=nullptr) const " -->
+virtual test bool&#160;</td><td class="memItemRight" valign="bottom"><b>get_envmap_preview_obsolete</b> (void *=nullptr) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#ae76c3fa538567529e76e723ca6be4722">set_shading_mode</a> (int viewpane, int shading_mode, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">指定したビューのシェーディングモードを設定する。  <a href="#ae76c3fa538567529e76e723ca6be4722"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#ac91d5512b2ed8c5959e92c300cfdfb1b">get_shading_mode</a> (int viewpane, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">指定したビューのシェーディングモードを取得する  <a href="#ac91d5512b2ed8c5959e92c300cfdfb1b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a1904698406df57f54ccc1d001d738471">set_lighting_mode</a> (int viewpane, int lighting_mode, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">指定したビューのライティングモードを設定する。  <a href="#a1904698406df57f54ccc1d001d738471"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#aab883ddf48d864198b9e6bc0a191c37a">get_lighting_mode</a> (int viewpane, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">指定したビューのライティングモードを取得する。  <a href="#aab883ddf48d864198b9e6bc0a191c37a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a955aa416c21255887be2d7cc36a80c43">set_show_normal</a> (int viewpane, bool show_normal_param, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">blah  <a href="#a955aa416c21255887be2d7cc36a80c43"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#aca3c98de8877f74451b377ccae0a5c38">get_show_normal</a> (int viewpane, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">指定したビューの法線表示のオン/オフを取得する。  <a href="#aca3c98de8877f74451b377ccae0a5c38"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#aff9ae640ce0ac452891189167e02d85b">set_show_bbox</a> (int viewpane, bool show_bbox_param, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">指定したビューのバウンディングボックス表示のオン/オフを設定する。  <a href="#aff9ae640ce0ac452891189167e02d85b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a90440747672caf85c6f0ac9b1f055ad5">get_show_bbox</a> (int viewpane, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">指定したビューのバウンディングボックス表示のオン/オフを取得する。  <a href="#a90440747672caf85c6f0ac9b1f055ad5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a9e99cdc19b61c7a1752599c16ca361c6">set_show_highlight</a> (int viewpane, bool show_highlight_param, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">指定したビューのハイライト表示のオン/オフを設定する。  <a href="#a9e99cdc19b61c7a1752599c16ca361c6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#aeb4637e6068e00c2ab8eda2e638d1fb1">get_show_highlight</a> (int viewpane, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">指定したビューのハイライト表示のオン/オフを取得する。  <a href="#aeb4637e6068e00c2ab8eda2e638d1fb1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#abe972782b58eb636bbf27159a0009984">set_show_envmap</a> (int viewpane, bool show_envmap_param, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">指定したビューの環境マップ表示のオン/オフを設定する。  <a href="#abe972782b58eb636bbf27159a0009984"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a5ea84bfe803196bf6174f502d0c6769f">get_show_envmap</a> (int viewpane, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">指定したビューの環境マップ表示のオン/オフを取得する。  <a href="#a5ea84bfe803196bf6174f502d0c6769f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a825546dffb9f9e6f1a6acbc0b0182d69">set_show_singlesided</a> (int viewpane, bool show_singlesided_param, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">指定したビューの片面表示のオン/オフを設定する。  <a href="#a825546dffb9f9e6f1a6acbc0b0182d69"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a7df11aa1c4b8c101aed2dba19e184372">get_show_singlesided</a> (int viewpane, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">指定したビューの片面表示のオン/オフを取得する。  <a href="#a7df11aa1c4b8c101aed2dba19e184372"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#ab838622e705ea6a28a32ce5e81a20e86">set_show_colored_shading</a> (int viewpane, bool show_colored_shading_param, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">指定したビューのシェーディングカラー表示のオン/オフを設定する。  <a href="#ab838622e705ea6a28a32ce5e81a20e86"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a6033fa9e9eabad3541723b84790155c8">get_show_colored_shading</a> (int viewpane, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">指定したビューのシェーディングカラー表示のオン/オフを取得する。  <a href="#a6033fa9e9eabad3541723b84790155c8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#ab215637352d1b29d3ca2d306359648a6">set_show_grid</a> (int viewpane, bool show_grid_param, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">指定したビューのグリッド表示のオン/オフを設定する。  <a href="#ab215637352d1b29d3ca2d306359648a6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a2e141ce8e9a605e7f9e5e61358b5609c">get_show_grid</a> (int viewpane, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">指定したビューのグリッド表示のオン/オフを取得する。  <a href="#a2e141ce8e9a605e7f9e5e61358b5609c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a36f7468a75686a5c2f9ff543bb74f1f2">set_show_background</a> (int viewpane, bool show_background_param, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">指定したビューの背景表示のオン/オフを設定する。  <a href="#a36f7468a75686a5c2f9ff543bb74f1f2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a3054c205051db56dccc6d7656e51607d">get_show_background</a> (int viewpane, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">指定したビューの背景表示のオン/オフを取得する。  <a href="#a3054c205051db56dccc6d7656e51607d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#ab36a443ef09b253756cf9ea8ddad06fc">load_template_image</a> (int viewpane, const char *const &amp;file_path, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">blah  <a href="#ab36a443ef09b253756cf9ea8ddad06fc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a38f9f435758f0cd8e7cd627c1539566b">display_template_image</a> (int viewpane, bool display_template_image_param, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">blah  <a href="#a38f9f435758f0cd8e7cd627c1539566b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a4b0ddf1d8d20e467755715ccabec6bac">clear_template_image</a> (int viewpane, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">blah  <a href="#a4b0ddf1d8d20e467755715ccabec6bac"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac364dd16475ec65945cc2166ae44744a"></a><!-- doxytag: member="sxsdk::display_interface::set_colored_shading" ref="ac364dd16475ec65945cc2166ae44744a" args="(bool colored_shading_param, void *=nullptr)" -->
+virtual <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#ac364dd16475ec65945cc2166ae44744a">set_colored_shading</a> (bool colored_shading_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">全てのビューのシェーディングカラー表示のオン／オフを設定する。を設定する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa52f35e8a06a2ad6ba8f46b8fa9da4b4"></a><!-- doxytag: member="sxsdk::display_interface::set_envmap_preview" ref="aa52f35e8a06a2ad6ba8f46b8fa9da4b4" args="(bool envmap_preview_param, void *=nullptr)" -->
+virtual <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#aa52f35e8a06a2ad6ba8f46b8fa9da4b4">set_envmap_preview</a> (bool envmap_preview_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">全てのビューの環境マップの表示のオン／オフを設定する。を設定する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a10b83138a4d9925ceaac0e7c4b44db21"></a><!-- doxytag: member="sxsdk::display_interface::set_highlight_preview" ref="a10b83138a4d9925ceaac0e7c4b44db21" args="(bool highlight_preview_param, void *=nullptr)" -->
+virtual <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a10b83138a4d9925ceaac0e7c4b44db21">set_highlight_preview</a> (bool highlight_preview_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">全てのビューのハイライトの表示のオン／オフを設定する。を設定する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af755f45944110e150d81438eefb3b1c5"></a><!-- doxytag: member="sxsdk::display_interface::set_singlesided" ref="af755f45944110e150d81438eefb3b1c5" args="(bool singlesided_param, void *=nullptr)" -->
+virtual <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#af755f45944110e150d81438eefb3b1c5">set_singlesided</a> (bool singlesided_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">全てのビューの片面表示のオン／オフを設定する。を設定する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a359c76a9530a17125e9e2e8c553bdf51"></a><!-- doxytag: member="sxsdk::display_interface::set_all_shading_mode" ref="a359c76a9530a17125e9e2e8c553bdf51" args="(int all_shading_mode_param, void *=nullptr)" -->
+virtual <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a359c76a9530a17125e9e2e8c553bdf51">set_all_shading_mode</a> (int all_shading_mode_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">全てのビューのシェーディングモードを設定する。を設定する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad7918113d6e8c80f995e84aa6293d61b"></a><!-- doxytag: member="sxsdk::display_interface::set_all_lighting_mode" ref="ad7918113d6e8c80f995e84aa6293d61b" args="(int all_lighting_mode_param, void *=nullptr)" -->
+virtual <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#ad7918113d6e8c80f995e84aa6293d61b">set_all_lighting_mode</a> (int all_lighting_mode_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">全てのビューのライティングモードを設定する。を設定する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a422b261061767ffa6f601027da902eaa"></a><!-- doxytag: member="sxsdk::display_interface::set_flat" ref="a422b261061767ffa6f601027da902eaa" args="(bool flat_param, void *=nullptr)" -->
+virtual <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a422b261061767ffa6f601027da902eaa">set_flat</a> (bool flat_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">全てのビューのフラットシェーディング表示のオン／オフを設定する。を設定する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2db9c3c2d2451847f3142f168115ed9d"></a><!-- doxytag: member="sxsdk::display_interface::set_normal" ref="a2db9c3c2d2451847f3142f168115ed9d" args="(bool normal_param, void *=nullptr)" -->
+virtual <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a2db9c3c2d2451847f3142f168115ed9d">set_normal</a> (bool normal_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">全てのビューの法線表示のオン／オフを設定する。を設定する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa92f5542801f0e509592f954e5866ba4"></a><!-- doxytag: member="sxsdk::display_interface::set_bbox" ref="aa92f5542801f0e509592f954e5866ba4" args="(bool bbox_param, void *=nullptr)" -->
+virtual <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#aa92f5542801f0e509592f954e5866ba4">set_bbox</a> (bool bbox_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">全てのビューのバウンディングボックス表示のオン／オフを設定する。を設定する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab1f91379ed034445df6f87ac99ad92c6"></a><!-- doxytag: member="sxsdk::display_interface::set_grid" ref="ab1f91379ed034445df6f87ac99ad92c6" args="(bool grid_param, void *=nullptr)" -->
+virtual <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#ab1f91379ed034445df6f87ac99ad92c6">set_grid</a> (bool grid_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">全てのビューのグリッド表示のオン／オフを設定する。を設定する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a3d525400c4555ae6122857c6f858428e">set_uv_shading</a> (int viewpane, bool uv_shading_param, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">指定したUVビューのシェーディング表示のオン/オフを設定する。  <a href="#a3d525400c4555ae6122857c6f858428e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a7d8b1d84eef0c6ac00d7fc538356485f">set_uv_display_image</a> (int viewpane, bool uv_display_image_param, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">指定したUVビューの画像表示のオン/オフを設定する。  <a href="#a7d8b1d84eef0c6ac00d7fc538356485f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa53c9f5ce1654d888f4e8abaf034e5b1"></a><!-- doxytag: member="sxsdk::display_interface::set_uv_mode" ref="aa53c9f5ce1654d888f4e8abaf034e5b1" args="(int uv_mode_param, void *=nullptr)" -->
+virtual <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#aa53c9f5ce1654d888f4e8abaf034e5b1">set_uv_mode</a> (int uv_mode_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">編集するUVを設定する。を設定する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6ca12d5f09a8184de8075ba375a974d7"></a><!-- doxytag: member="sxsdk::display_interface::get_uv_mode" ref="a6ca12d5f09a8184de8075ba375a974d7" args="(void *=nullptr) const " -->
+virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a6ca12d5f09a8184de8075ba375a974d7">get_uv_mode</a> (void *=nullptr) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">編集するUVを設定する。を取得する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a8a8bc7ea922939bea7ec7d3beebbcc07">set_uv_image_brightness</a> (int viewpane, bool uv_image_brightness_param, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">画像の明るさを設定する。  <a href="#a8a8bc7ea922939bea7ec7d3beebbcc07"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a75660d465efe57a5496f31b16592fe6e">set_camera_type</a> (int viewpane, int camera_type, int camera_index=0, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">blah  <a href="#a75660d465efe57a5496f31b16592fe6e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a44a070cb3ec27d576c8b0c51caa80417">get_camera_type</a> (int viewpane, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">blah  <a href="#a44a070cb3ec27d576c8b0c51caa80417"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#a6f433cd69a4081ef5745ff86ada6ff8c">set_stereo_type</a> (int stereo_type, void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">成功したらtrue、失敗したらfalseを返す.  <a href="#a6f433cd69a4081ef5745ff86ada6ff8c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab4f5a11d7d7e9f7f1a44cf18d8d81d84"></a><!-- doxytag: member="sxsdk::display_interface::get_stereo_type" ref="ab4f5a11d7d7e9f7f1a44cf18d8d81d84" args="(void *aux=0)" -->
-virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#ab4f5a11d7d7e9f7f1a44cf18d8d81d84">get_stereo_type</a> (void *aux=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">figure window stereo type. 0: none, 1: anaglyph, 2: opengl quad buffer. (enum) <br/></td></tr>
+virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1display__interface.html#ab4f5a11d7d7e9f7f1a44cf18d8d81d84">get_stereo_type</a> (void *aux=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">figure window stereo type. 0: none, 1: anaglyph, 2: opengl quad buffer. (enum) <br/></td></tr>
 </table>
-<hr/><h2>関数</h2>
+<hr/><a name="details" id="details"></a><h2>説明</h2>
+<div class="textblock"><p>図形ウインドウの表示モードの設定と取得を行う。 </p>
+<p>以下の関数でこのクラスを直接取得する。これ以外に関数の引数として渡される場合がある。</p>
+<p><code><a class="el" href="structsxsdk_1_1scene__interface.html#aac04d44ae480fe717ff22394b1291436" title="図形ウインドウのdisplay_interface を取得する。">scene_interface::get_display_interface()</a></code> </p>
+</div><hr/><h2>関数</h2>
 <a class="anchor" id="a4b0ddf1d8d20e467755715ccabec6bac"></a><!-- doxytag: member="sxsdk::display_interface::clear_template_image" ref="a4b0ddf1d8d20e467755715ccabec6bac" args="(int viewpane, void *aux=0)" -->
 <div class="memitem">
 <div class="memproto">
@@ -231,19 +264,19 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
         <tr>
           <td class="memname">virtual void sxsdk::display_interface::clear_template_image </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>viewpane</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>viewpane</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -251,8 +284,8 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 
 <p>blah </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>viewpane</em>&nbsp;</td><td>ビューを指定 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">viewpane</td><td>ビューを指定 </td></tr>
   </table>
   </dd>
 </dl>
@@ -266,25 +299,25 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
         <tr>
           <td class="memname">virtual void sxsdk::display_interface::display_template_image </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>viewpane</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>viewpane</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&nbsp;</td>
-          <td class="paramname"> <em>display_template_image_param</em>, </td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>display_template_image_param</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -292,9 +325,9 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 
 <p>blah </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>viewpane</em>&nbsp;</td><td>ビューを指定 </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>display_template_image_param</em>&nbsp;</td><td>blah </td></tr>
+  <table class="params">
+    <tr><td class="paramname">viewpane</td><td>ビューを指定 </td></tr>
+    <tr><td class="paramname">display_template_image_param</td><td>blah </td></tr>
   </table>
   </dd>
 </dl>
@@ -308,19 +341,19 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
         <tr>
           <td class="memname">virtual int sxsdk::display_interface::get_camera_type </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>viewpane</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>viewpane</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -328,8 +361,8 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 
 <p>blah </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>viewpane</em>&nbsp;</td><td>ビューを指定 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">viewpane</td><td>ビューを指定 </td></tr>
   </table>
   </dd>
 </dl>
@@ -343,19 +376,19 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
         <tr>
           <td class="memname">virtual int sxsdk::display_interface::get_lighting_mode </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>viewpane</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>viewpane</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -363,8 +396,8 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 
 <p>指定したビューのライティングモードを取得する。 </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>viewpane</em>&nbsp;</td><td>ビューを指定 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">viewpane</td><td>ビューを指定 </td></tr>
   </table>
   </dd>
 </dl>
@@ -378,19 +411,19 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
         <tr>
           <td class="memname">virtual int sxsdk::display_interface::get_shading_mode </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>viewpane</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>viewpane</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -398,8 +431,8 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 
 <p>指定したビューのシェーディングモードを取得する </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>viewpane</em>&nbsp;</td><td>ビューを指定 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">viewpane</td><td>ビューを指定 </td></tr>
   </table>
   </dd>
 </dl>
@@ -413,19 +446,19 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
         <tr>
           <td class="memname">virtual bool sxsdk::display_interface::get_show_background </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>viewpane</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>viewpane</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -433,8 +466,8 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 
 <p>指定したビューの背景表示のオン/オフを取得する。 </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>viewpane</em>&nbsp;</td><td>ビューを指定 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">viewpane</td><td>ビューを指定 </td></tr>
   </table>
   </dd>
 </dl>
@@ -448,19 +481,19 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
         <tr>
           <td class="memname">virtual bool sxsdk::display_interface::get_show_bbox </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>viewpane</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>viewpane</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -468,8 +501,8 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 
 <p>指定したビューのバウンディングボックス表示のオン/オフを取得する。 </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>viewpane</em>&nbsp;</td><td>ビューを指定 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">viewpane</td><td>ビューを指定 </td></tr>
   </table>
   </dd>
 </dl>
@@ -483,19 +516,19 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
         <tr>
           <td class="memname">virtual bool sxsdk::display_interface::get_show_colored_shading </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>viewpane</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>viewpane</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -503,8 +536,8 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 
 <p>指定したビューのシェーディングカラー表示のオン/オフを取得する。 </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>viewpane</em>&nbsp;</td><td>ビューを指定 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">viewpane</td><td>ビューを指定 </td></tr>
   </table>
   </dd>
 </dl>
@@ -518,19 +551,19 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
         <tr>
           <td class="memname">virtual bool sxsdk::display_interface::get_show_envmap </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>viewpane</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>viewpane</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -538,8 +571,8 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 
 <p>指定したビューの環境マップ表示のオン/オフを取得する。 </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>viewpane</em>&nbsp;</td><td>ビューを指定 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">viewpane</td><td>ビューを指定 </td></tr>
   </table>
   </dd>
 </dl>
@@ -553,19 +586,19 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
         <tr>
           <td class="memname">virtual bool sxsdk::display_interface::get_show_grid </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>viewpane</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>viewpane</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -573,8 +606,8 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 
 <p>指定したビューのグリッド表示のオン/オフを取得する。 </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>viewpane</em>&nbsp;</td><td>ビューを指定 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">viewpane</td><td>ビューを指定 </td></tr>
   </table>
   </dd>
 </dl>
@@ -588,19 +621,19 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
         <tr>
           <td class="memname">virtual bool sxsdk::display_interface::get_show_highlight </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>viewpane</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>viewpane</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -608,8 +641,8 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 
 <p>指定したビューのハイライト表示のオン/オフを取得する。 </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>viewpane</em>&nbsp;</td><td>ビューを指定 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">viewpane</td><td>ビューを指定 </td></tr>
   </table>
   </dd>
 </dl>
@@ -623,19 +656,19 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
         <tr>
           <td class="memname">virtual bool sxsdk::display_interface::get_show_normal </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>viewpane</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>viewpane</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -643,8 +676,8 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 
 <p>指定したビューの法線表示のオン/オフを取得する。 </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>viewpane</em>&nbsp;</td><td>ビューを指定 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">viewpane</td><td>ビューを指定 </td></tr>
   </table>
   </dd>
 </dl>
@@ -658,19 +691,19 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
         <tr>
           <td class="memname">virtual bool sxsdk::display_interface::get_show_singlesided </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>viewpane</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>viewpane</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -678,24 +711,23 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 
 <p>指定したビューの片面表示のオン/オフを取得する。 </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>viewpane</em>&nbsp;</td><td>ビューを指定 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">viewpane</td><td>ビューを指定 </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="addbf6cb0160a859fa05b9e76a1340a39"></a><!-- doxytag: member="sxsdk::display_interface::get_texture_size" ref="addbf6cb0160a859fa05b9e76a1340a39" args="(void *=0) const " -->
+<a class="anchor" id="a5a9779503736fbe195bcd4416f3cfd08"></a><!-- doxytag: member="sxsdk::display_interface::get_texture_size" ref="a5a9779503736fbe195bcd4416f3cfd08" args="(void *=nullptr) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">virtual int sxsdk::display_interface::get_texture_size </td>
           <td>(</td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> = <code>0</code></td>
-          <td>&nbsp;)&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"> = <code>nullptr</code></td><td>)</td>
           <td> const<code> [virtual]</code></td>
         </tr>
       </table>
@@ -714,25 +746,25 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
         <tr>
           <td class="memname">virtual void sxsdk::display_interface::load_template_image </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>viewpane</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>viewpane</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char *const &amp;&nbsp;</td>
-          <td class="paramname"> <em>file_path</em>, </td>
+          <td class="paramtype">const char *const &amp;&#160;</td>
+          <td class="paramname"><em>file_path</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -740,9 +772,9 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 
 <p>blah </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>viewpane</em>&nbsp;</td><td>ビューを指定 </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>file_path</em>&nbsp;</td><td>blah </td></tr>
+  <table class="params">
+    <tr><td class="paramname">viewpane</td><td>ビューを指定 </td></tr>
+    <tr><td class="paramname">file_path</td><td>blah </td></tr>
   </table>
   </dd>
 </dl>
@@ -756,31 +788,31 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
         <tr>
           <td class="memname">virtual void sxsdk::display_interface::set_camera_type </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>viewpane</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>viewpane</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>camera_type</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>camera_type</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>camera_index</em> = <code>0</code>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>camera_index</em> = <code>0</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -788,10 +820,10 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 
 <p>blah </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>viewpane</em>&nbsp;</td><td>ビューを指定 </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>camera_type</em>&nbsp;</td><td>blah </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>camera_index</em>&nbsp;</td><td>blah </td></tr>
+  <table class="params">
+    <tr><td class="paramname">viewpane</td><td>ビューを指定 </td></tr>
+    <tr><td class="paramname">camera_type</td><td>blah </td></tr>
+    <tr><td class="paramname">camera_index</td><td>blah </td></tr>
   </table>
   </dd>
 </dl>
@@ -805,25 +837,25 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
         <tr>
           <td class="memname">virtual void sxsdk::display_interface::set_lighting_mode </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>viewpane</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>viewpane</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>lighting_mode</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>lighting_mode</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -831,9 +863,9 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 
 <p>指定したビューのライティングモードを設定する。 </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>viewpane</em>&nbsp;</td><td>ビューを指定 </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>lighting_mode</em>&nbsp;</td><td>ライティングモードを指定。<code>lighting_mode_enum</code> を参照 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">viewpane</td><td>ビューを指定 </td></tr>
+    <tr><td class="paramname">lighting_mode</td><td>ライティングモードを指定。<code>lighting_mode_enum</code> を参照 </td></tr>
   </table>
   </dd>
 </dl>
@@ -847,25 +879,25 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
         <tr>
           <td class="memname">virtual void sxsdk::display_interface::set_shading_mode </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>viewpane</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>viewpane</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>shading_mode</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>shading_mode</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -873,9 +905,9 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 
 <p>指定したビューのシェーディングモードを設定する。 </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>viewpane</em>&nbsp;</td><td>ビューを指定 </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>shading_mode</em>&nbsp;</td><td>シェーディングモードを指定。<code>shading_mode_enum</code> を参照 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">viewpane</td><td>ビューを指定 </td></tr>
+    <tr><td class="paramname">shading_mode</td><td>シェーディングモードを指定。<code>shading_mode_enum</code> を参照 </td></tr>
   </table>
   </dd>
 </dl>
@@ -889,25 +921,25 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
         <tr>
           <td class="memname">virtual void sxsdk::display_interface::set_show_background </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>viewpane</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>viewpane</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&nbsp;</td>
-          <td class="paramname"> <em>show_background_param</em>, </td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>show_background_param</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -915,9 +947,9 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 
 <p>指定したビューの背景表示のオン/オフを設定する。 </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>viewpane</em>&nbsp;</td><td>ビューを指定 </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>show_background_param</em>&nbsp;</td><td>blah </td></tr>
+  <table class="params">
+    <tr><td class="paramname">viewpane</td><td>ビューを指定 </td></tr>
+    <tr><td class="paramname">show_background_param</td><td>blah </td></tr>
   </table>
   </dd>
 </dl>
@@ -931,25 +963,25 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
         <tr>
           <td class="memname">virtual void sxsdk::display_interface::set_show_bbox </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>viewpane</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>viewpane</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&nbsp;</td>
-          <td class="paramname"> <em>show_bbox_param</em>, </td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>show_bbox_param</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -957,9 +989,9 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 
 <p>指定したビューのバウンディングボックス表示のオン/オフを設定する。 </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>viewpane</em>&nbsp;</td><td>ビューを指定 </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>show_bbox_param</em>&nbsp;</td><td>blah </td></tr>
+  <table class="params">
+    <tr><td class="paramname">viewpane</td><td>ビューを指定 </td></tr>
+    <tr><td class="paramname">show_bbox_param</td><td>blah </td></tr>
   </table>
   </dd>
 </dl>
@@ -973,25 +1005,25 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
         <tr>
           <td class="memname">virtual void sxsdk::display_interface::set_show_colored_shading </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>viewpane</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>viewpane</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&nbsp;</td>
-          <td class="paramname"> <em>show_colored_shading_param</em>, </td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>show_colored_shading_param</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -999,9 +1031,9 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 
 <p>指定したビューのシェーディングカラー表示のオン/オフを設定する。 </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>viewpane</em>&nbsp;</td><td>ビューを指定 </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>show_colored_shading_param</em>&nbsp;</td><td>blah </td></tr>
+  <table class="params">
+    <tr><td class="paramname">viewpane</td><td>ビューを指定 </td></tr>
+    <tr><td class="paramname">show_colored_shading_param</td><td>blah </td></tr>
   </table>
   </dd>
 </dl>
@@ -1015,25 +1047,25 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
         <tr>
           <td class="memname">virtual void sxsdk::display_interface::set_show_envmap </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>viewpane</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>viewpane</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&nbsp;</td>
-          <td class="paramname"> <em>show_envmap_param</em>, </td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>show_envmap_param</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -1041,9 +1073,9 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 
 <p>指定したビューの環境マップ表示のオン/オフを設定する。 </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>viewpane</em>&nbsp;</td><td>ビューを指定 </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>show_envmap_param</em>&nbsp;</td><td>blah </td></tr>
+  <table class="params">
+    <tr><td class="paramname">viewpane</td><td>ビューを指定 </td></tr>
+    <tr><td class="paramname">show_envmap_param</td><td>blah </td></tr>
   </table>
   </dd>
 </dl>
@@ -1057,25 +1089,25 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
         <tr>
           <td class="memname">virtual void sxsdk::display_interface::set_show_grid </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>viewpane</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>viewpane</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&nbsp;</td>
-          <td class="paramname"> <em>show_grid_param</em>, </td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>show_grid_param</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -1083,9 +1115,9 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 
 <p>指定したビューのグリッド表示のオン/オフを設定する。 </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>viewpane</em>&nbsp;</td><td>ビューを指定 </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>show_grid_param</em>&nbsp;</td><td>blah </td></tr>
+  <table class="params">
+    <tr><td class="paramname">viewpane</td><td>ビューを指定 </td></tr>
+    <tr><td class="paramname">show_grid_param</td><td>blah </td></tr>
   </table>
   </dd>
 </dl>
@@ -1099,25 +1131,25 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
         <tr>
           <td class="memname">virtual void sxsdk::display_interface::set_show_highlight </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>viewpane</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>viewpane</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&nbsp;</td>
-          <td class="paramname"> <em>show_highlight_param</em>, </td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>show_highlight_param</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -1125,9 +1157,9 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 
 <p>指定したビューのハイライト表示のオン/オフを設定する。 </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>viewpane</em>&nbsp;</td><td>ビューを指定 </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>show_highlight_param</em>&nbsp;</td><td>blah </td></tr>
+  <table class="params">
+    <tr><td class="paramname">viewpane</td><td>ビューを指定 </td></tr>
+    <tr><td class="paramname">show_highlight_param</td><td>blah </td></tr>
   </table>
   </dd>
 </dl>
@@ -1141,25 +1173,25 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
         <tr>
           <td class="memname">virtual void sxsdk::display_interface::set_show_normal </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>viewpane</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>viewpane</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&nbsp;</td>
-          <td class="paramname"> <em>show_normal_param</em>, </td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>show_normal_param</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -1167,9 +1199,9 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 
 <p>blah </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>viewpane</em>&nbsp;</td><td>ビューを指定 </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>show_normal_param</em>&nbsp;</td><td>指定したビューの法線表示のオン/オフを設定する。 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">viewpane</td><td>ビューを指定 </td></tr>
+    <tr><td class="paramname">show_normal_param</td><td>指定したビューの法線表示のオン/オフを設定する。 </td></tr>
   </table>
   </dd>
 </dl>
@@ -1183,25 +1215,25 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
         <tr>
           <td class="memname">virtual void sxsdk::display_interface::set_show_singlesided </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>viewpane</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>viewpane</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&nbsp;</td>
-          <td class="paramname"> <em>show_singlesided_param</em>, </td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>show_singlesided_param</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -1209,9 +1241,9 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 
 <p>指定したビューの片面表示のオン/オフを設定する。 </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>viewpane</em>&nbsp;</td><td>ビューを指定 </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>show_singlesided_param</em>&nbsp;</td><td>blah </td></tr>
+  <table class="params">
+    <tr><td class="paramname">viewpane</td><td>ビューを指定 </td></tr>
+    <tr><td class="paramname">show_singlesided_param</td><td>blah </td></tr>
   </table>
   </dd>
 </dl>
@@ -1225,19 +1257,19 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
         <tr>
           <td class="memname">virtual bool sxsdk::display_interface::set_stereo_type </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>stereo_type</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>stereo_type</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -1245,34 +1277,34 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 
 <p>成功したらtrue、失敗したらfalseを返す. </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>stereo_type</em>&nbsp;</td><td>specify figure window stereo type. 0: none, 1: anaglyph, 2: opengl quad buffer. (enum) </td></tr>
+  <table class="params">
+    <tr><td class="paramname">stereo_type</td><td>specify figure window stereo type. 0: none, 1: anaglyph, 2: opengl quad buffer. (enum) </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="ae85b17d48832167a5f79b11ea07393fe"></a><!-- doxytag: member="sxsdk::display_interface::set_texture_size" ref="ae85b17d48832167a5f79b11ea07393fe" args="(int texture_size_param, void *=0)" -->
+<a class="anchor" id="aa4d4f5a8d9d07b5c167e016914ec1dea"></a><!-- doxytag: member="sxsdk::display_interface::set_texture_size" ref="aa4d4f5a8d9d07b5c167e016914ec1dea" args="(int texture_size_param, void *=nullptr)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">virtual <a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a>&amp; sxsdk::display_interface::set_texture_size </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>texture_size_param</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>texture_size_param</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -1290,25 +1322,25 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
         <tr>
           <td class="memname">virtual void sxsdk::display_interface::set_uv_display_image </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>viewpane</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>viewpane</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&nbsp;</td>
-          <td class="paramname"> <em>uv_display_image_param</em>, </td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>uv_display_image_param</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -1316,9 +1348,9 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 
 <p>指定したUVビューの画像表示のオン/オフを設定する。 </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>viewpane</em>&nbsp;</td><td>ビューを指定 </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>uv_display_image_param</em>&nbsp;</td><td>blah </td></tr>
+  <table class="params">
+    <tr><td class="paramname">viewpane</td><td>ビューを指定 </td></tr>
+    <tr><td class="paramname">uv_display_image_param</td><td>blah </td></tr>
   </table>
   </dd>
 </dl>
@@ -1332,25 +1364,25 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
         <tr>
           <td class="memname">virtual void sxsdk::display_interface::set_uv_image_brightness </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>viewpane</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>viewpane</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&nbsp;</td>
-          <td class="paramname"> <em>uv_image_brightness_param</em>, </td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>uv_image_brightness_param</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -1358,9 +1390,9 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 
 <p>画像の明るさを設定する。 </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>viewpane</em>&nbsp;</td><td>ビューを指定 </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>uv_image_brightness_param</em>&nbsp;</td><td>blah </td></tr>
+  <table class="params">
+    <tr><td class="paramname">viewpane</td><td>ビューを指定 </td></tr>
+    <tr><td class="paramname">uv_image_brightness_param</td><td>blah </td></tr>
   </table>
   </dd>
 </dl>
@@ -1374,25 +1406,25 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
         <tr>
           <td class="memname">virtual void sxsdk::display_interface::set_uv_shading </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>viewpane</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>viewpane</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&nbsp;</td>
-          <td class="paramname"> <em>uv_shading_param</em>, </td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>uv_shading_param</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -1400,9 +1432,9 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 
 <p>指定したUVビューのシェーディング表示のオン/オフを設定する。 </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>viewpane</em>&nbsp;</td><td>ビューを指定 </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>uv_shading_param</em>&nbsp;</td><td>blah </td></tr>
+  <table class="params">
+    <tr><td class="paramname">viewpane</td><td>ビューを指定 </td></tr>
+    <tr><td class="paramname">uv_shading_param</td><td>blah </td></tr>
   </table>
   </dd>
 </dl>
@@ -1416,19 +1448,19 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
         <tr>
           <td class="memname">virtual void sxsdk::display_interface::update_background </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>viewpane</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>viewpane</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -1436,8 +1468,8 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 
 <p>背景表示の表示、更新を行う。 </p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>viewpane</em>&nbsp;</td><td>ビューを指定 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">viewpane</td><td>ビューを指定 </td></tr>
   </table>
   </dd>
 </dl>
@@ -1451,19 +1483,19 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
         <tr>
           <td class="memname">virtual void sxsdk::display_interface::update_solid_texture </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>viewpane</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>viewpane</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&nbsp;</td>
-          <td class="paramname"> <em>aux</em> = <code>0</code></td><td>&nbsp;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>aux</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -1472,8 +1504,8 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <p>ソリッドテクスチャの更新を行う。 </p>
 <p>テクスチャのレイヤ、投影マッピングも反映される。</p>
 <dl><dt><b>引数:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>viewpane</em>&nbsp;</td><td>ビューを指定 </td></tr>
+  <table class="params">
+    <tr><td class="paramname">viewpane</td><td>ビューを指定 </td></tr>
   </table>
   </dd>
 </dl>
@@ -1484,6 +1516,11 @@ virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <li><a class="el" href="displayinterface_8h_source.html">displayinterface.h</a></li>
 </ul>
 </div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><b>sxsdk</b>      </li>
+      <li class="navelem"><a class="el" href="structsxsdk_1_1display__interface.html">display_interface</a>      </li>
 <br><br>
 <hr>
 <div align="center">Copyright &copy; e frontier, Inc. All rights reserved.</div>

@@ -1,7 +1,8 @@
 #pragma once
 
 namespace sxsdk {
-	class surface_class {
+	class
+	surface_class {
 	public:
 		virtual ~surface_class () { }
 		VTABLE_PADDING
@@ -196,5 +197,20 @@ namespace sxsdk {
 	virtual surface_class &set_multiply_ambient (bool multiply_ambient_param, void * = 0) = 0; // 188
 	virtual bool get_multiply_ambient (void * = 0) const = 0; // 189
 	virtual bool find_multiply_ambient (const sxsdk::shape_class& shape, void* aux = 0) const = 0; // 190
+	virtual surface_class &set_dont_reflect_background (bool dont_reflect_background_param, void * = 0) = 0; // 191
+	virtual bool get_dont_reflect_background (void * = 0) const = 0; // 192
+	virtual surface_class &set_dont_visible_to_camera (bool dont_visible_to_camera_param, void * = 0) = 0; // 193
+	virtual bool get_dont_visible_to_camera (void * = 0) const = 0; // 194
+	virtual surface_class &set_dont_visible_to_reflection_rays (bool dont_visible_to_reflection_rays_param, void * = 0) = 0; // 195
+	virtual bool get_dont_visible_to_reflection_rays (void * = 0) const = 0; // 196
+	virtual surface_class &set_dont_visible_to_refraction_rays (bool dont_visible_to_refraction_rays_param, void * = 0) = 0; // 197
+	virtual bool get_dont_visible_to_refraction_rays (void * = 0) const = 0; // 198
+	virtual surface_class &set_dont_visible_to_indirect_rays (bool dont_visible_to_indirect_rays_param, void * = 0) = 0; // 199
+	virtual bool get_dont_visible_to_indirect_rays (void * = 0) const = 0; // 200
+	virtual bool find_dont_reflect_background (const sxsdk::shape_class& shape, void* aux = 0) const = 0; // 201
+	virtual bool find_dont_visible_to_camera (const sxsdk::shape_class& shape, void* aux = 0) const = 0; // 202
+	virtual bool find_dont_visible_to_reflection_rays (const sxsdk::shape_class& shape, void* aux = 0) const = 0; // 203
+	virtual bool find_dont_visible_to_refraction_rays (const sxsdk::shape_class& shape, void* aux = 0) const = 0; // 204
+	virtual bool find_dont_visible_to_indirect_rays (const sxsdk::shape_class& shape, void* aux = 0) const = 0; // 205
 	};
 }

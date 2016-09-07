@@ -4,68 +4,107 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <title>構造体 sxsdk::morph_effector_interface</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<!-- 作成： Doxygen 1.6.1 -->
-<div class="navigation" id="top">
-  <div class="tabs">
-    <ul>
-      <li><a href="main.html"><span>メインページ</span></a></li>
+<!-- 作成： Doxygen 1.7.4 -->
+<div id="top">
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
       <li><a href="pages.html"><span>関連ページ</span></a></li>
       <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
       <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
       <li><a href="files.html"><span>ファイル</span></a></li>
     </ul>
   </div>
-  <div class="tabs">
-    <ul>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
       <li><a href="annotated.html"><span>構成</span></a></li>
       <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
       <li><a href="functions.html"><span>構成メンバ</span></a></li>
     </ul>
   </div>
-  <div class="navpath"><a class="el" href="namespacesxsdk.html">sxsdk</a>::<a class="el" href="structsxsdk_1_1morph__effector__interface.html">morph_effector_interface</a>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
   </div>
 </div>
+<script type="text/javascript">
+  initNavTree('structsxsdk_1_1morph__effector__interface.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public メソッド</a>  </div>
+  <div class="headertitle">
+<div class="title">構造体 sxsdk::morph_effector_interface</div>  </div>
+</div>
 <div class="contents">
-<h1>構造体 sxsdk::morph_effector_interface</h1><!-- doxytag: class="sxsdk::morph_effector_interface" --><!-- doxytag: inherits="unknown_interface" --><div class="dynheader">
+<!-- doxytag: class="sxsdk::morph_effector_interface" --><!-- doxytag: inherits="unknown_interface" -->
+<p>変形ジョイントにアクセスするためのインターフェイス  
+ <a href="structsxsdk_1_1morph__effector__interface.html#details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="shapeclass_8h_source.html">shapeclass.h</a>&gt;</code></p>
+<div class="dynheader">
 sxsdk::morph_effector_interfaceに対する継承グラフ</div>
-<div class="dynsection">
+<div class="dyncontent">
  <div class="center">
-  <img src="structsxsdk_1_1morph__effector__interface.gif" usemap="#sxsdk::morph_effector_interface_map" alt=""/>
+  <img src="structsxsdk_1_1morph__effector__interface.png" usemap="#sxsdk::morph_effector_interface_map" alt=""/>
   <map id="sxsdk::morph_effector_interface_map" name="sxsdk::morph_effector_interface_map">
 <area href="classunknown__interface.html" alt="unknown_interface" shape="rect" coords="0,0,192,24"/>
 </map>
- </div>
-</div>
+ </div></div>
 
 <p><a href="structsxsdk_1_1morph__effector__interface-members.html">すべてのメンバ一覧</a></p>
-<table border="0" cellpadding="0" cellspacing="0">
-<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a18beab118c5229ce372d8e9fd09bec9d"></a><!-- doxytag: member="sxsdk::morph_effector_interface::set_morph" ref="a18beab118c5229ce372d8e9fd09bec9d" args="(float morph_param, void *=0)" -->
-virtual <a class="el" href="structsxsdk_1_1morph__effector__interface.html">morph_effector_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1morph__effector__interface.html#a18beab118c5229ce372d8e9fd09bec9d">set_morph</a> (float morph_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">変形量を設定する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab602603652b5f889ee7cdf351f1fbdcf"></a><!-- doxytag: member="sxsdk::morph_effector_interface::get_morph" ref="ab602603652b5f889ee7cdf351f1fbdcf" args="(void *=0) const " -->
-virtual float&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1morph__effector__interface.html#ab602603652b5f889ee7cdf351f1fbdcf">get_morph</a> (void *=0) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">変形量を取得する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac7ef12eeecf5e60874e241fbc4ca59b4"></a><!-- doxytag: member="sxsdk::morph_effector_interface::set_range" ref="ac7ef12eeecf5e60874e241fbc4ca59b4" args="(bool range_param, void *=0)" -->
-virtual <a class="el" href="structsxsdk_1_1morph__effector__interface.html">morph_effector_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1morph__effector__interface.html#ac7ef12eeecf5e60874e241fbc4ca59b4">set_range</a> (bool range_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">範囲制限を設定する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac001692e2d10d3fcf00f351df61e1cf2"></a><!-- doxytag: member="sxsdk::morph_effector_interface::get_range" ref="ac001692e2d10d3fcf00f351df61e1cf2" args="(void *=0) const " -->
-virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1morph__effector__interface.html#ac001692e2d10d3fcf00f351df61e1cf2">get_range</a> (void *=0) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">範囲制限を取得する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1779d6e6d00eef99450c0e645164eaa9"></a><!-- doxytag: member="sxsdk::morph_effector_interface::set_limit" ref="a1779d6e6d00eef99450c0e645164eaa9" args="(const sxsdk::vec2 &amp;limit_param, void *=0)" -->
-virtual <a class="el" href="structsxsdk_1_1morph__effector__interface.html">morph_effector_interface</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1morph__effector__interface.html#a1779d6e6d00eef99450c0e645164eaa9">set_limit</a> (const sxsdk::vec2 &amp;limit_param, void *=0)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">リミットを設定する。 <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acbd101de96670698ebac3eaa776defcb"></a><!-- doxytag: member="sxsdk::morph_effector_interface::get_limit" ref="acbd101de96670698ebac3eaa776defcb" args="(void *=0) const " -->
-virtual sxsdk::vec2&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1morph__effector__interface.html#acbd101de96670698ebac3eaa776defcb">get_limit</a> (void *=0) const </td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">リミットを取得する。 <br/></td></tr>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a97e4857bd12cafaed0f46222695d105a"></a><!-- doxytag: member="sxsdk::morph_effector_interface::set_morph" ref="a97e4857bd12cafaed0f46222695d105a" args="(float morph_param, void *=nullptr)" -->
+virtual <a class="el" href="structsxsdk_1_1morph__effector__interface.html">morph_effector_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1morph__effector__interface.html#a97e4857bd12cafaed0f46222695d105a">set_morph</a> (float morph_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">変形量を設定する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aacd752081d31de94eb6bf74104a377a5"></a><!-- doxytag: member="sxsdk::morph_effector_interface::get_morph" ref="aacd752081d31de94eb6bf74104a377a5" args="(void *=nullptr) const " -->
+virtual float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1morph__effector__interface.html#aacd752081d31de94eb6bf74104a377a5">get_morph</a> (void *=nullptr) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">変形量を取得する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad45c30f6943391d40c63a0a479adae49"></a><!-- doxytag: member="sxsdk::morph_effector_interface::set_range" ref="ad45c30f6943391d40c63a0a479adae49" args="(bool range_param, void *=nullptr)" -->
+virtual <a class="el" href="structsxsdk_1_1morph__effector__interface.html">morph_effector_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1morph__effector__interface.html#ad45c30f6943391d40c63a0a479adae49">set_range</a> (bool range_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">範囲制限を設定する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7fd0e49e9337bae8c7587d9b5eafeb2a"></a><!-- doxytag: member="sxsdk::morph_effector_interface::get_range" ref="a7fd0e49e9337bae8c7587d9b5eafeb2a" args="(void *=nullptr) const " -->
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1morph__effector__interface.html#a7fd0e49e9337bae8c7587d9b5eafeb2a">get_range</a> (void *=nullptr) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">範囲制限を取得する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaf302f367109299a8a40a44983b84c4d"></a><!-- doxytag: member="sxsdk::morph_effector_interface::set_limit" ref="aaf302f367109299a8a40a44983b84c4d" args="(const sxsdk::vec2 &amp;limit_param, void *=nullptr)" -->
+virtual <a class="el" href="structsxsdk_1_1morph__effector__interface.html">morph_effector_interface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1morph__effector__interface.html#aaf302f367109299a8a40a44983b84c4d">set_limit</a> (const sxsdk::vec2 &amp;limit_param, void *=nullptr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">リミットを設定する。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a093dba6eb933ec91cacf56fc3a024251"></a><!-- doxytag: member="sxsdk::morph_effector_interface::get_limit" ref="a093dba6eb933ec91cacf56fc3a024251" args="(void *=nullptr) const " -->
+virtual sxsdk::vec2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsxsdk_1_1morph__effector__interface.html#a093dba6eb933ec91cacf56fc3a024251">get_limit</a> (void *=nullptr) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">リミットを取得する。 <br/></td></tr>
 </table>
-<hr/>この構造体の説明は次のファイルから生成されました:<ul>
+<hr/><a name="details" id="details"></a><h2>説明</h2>
+<div class="textblock"><p>変形ジョイントにアクセスするためのインターフェイス </p>
+<p>変形ジョイントに関する設定値は形状の属性の一部として保持されているが、プラグイン／スクリプトからのアクセスを容易にするため、別途インターフェイスを介して値の取得／設定を行う。</p>
+<p>以下の関数でこのクラスを直接取得する。これ以外に関数の引数として渡される場合がある。</p>
+<p><code><a class="el" href="structsxsdk_1_1shape__class.html#a8cfa8794d75ee3fbab9810005f33896b" title="変形ジョイントを取得する。">sxsdk::shape_class::get_morph_effector_interface()</a></code> </p>
+</div><hr/>この構造体の説明は次のファイルから生成されました:<ul>
 <li><a class="el" href="shapeclass_8h_source.html">shapeclass.h</a></li>
 </ul>
 </div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><b>sxsdk</b>      </li>
+      <li class="navelem"><a class="el" href="structsxsdk_1_1morph__effector__interface.html">morph_effector_interface</a>      </li>
 <br><br>
 <hr>
 <div align="center">Copyright &copy; e frontier, Inc. All rights reserved.</div>

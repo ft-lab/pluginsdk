@@ -5,8 +5,13 @@
 	#define DEFINE_DYNAMIC_CAST(class_name, base_name, shape_type) static class_name &cast (base_name &s) { if (s.get_type() != shape_type) throw std::bad_cast(); return static_cast<class_name &>(s); } static const class_name &cast (const base_name &s) { if (s.get_type() != shape_type) throw std::bad_cast(); return static_cast<const class_name &>(s); } static class_name *cast (base_name *s) { if (s && s->get_type() != shape_type) return 0; return static_cast<class_name *>(s); } static const class_name *cast (const base_name *s) { if (s && s->get_type() != shape_type) return 0; return static_cast<const class_name *>(s); }
 #endif
 
+namespace model {
+	class polygonmesh_topology_data_class;
+}
+
 namespace sxsdk {
-	class shape_class {
+	class
+	shape_class {
 	public:
 		virtual ~shape_class () { }
 		VTABLE_PADDING
@@ -308,7 +313,7 @@ void set_tag_floatValue (const char* tagName, float value, void* aux = 0) { get_
 void set_tag_stringValue (const char* tagName, const char* value, void* aux = 0) { get_implementation().set_tag_stringValue(*this,tagName,value); }
 void set_tag_boolValue (const char* tagName, bool value, void* aux = 0) { get_implementation().set_tag_boolValue(*this,tagName,value); }
 int tag_value_type (const char* tagName, void* aux = 0) { return get_implementation().tag_value_type(*this,tagName); }
-std::vector<const char*> tags (void* aux = 0) { return get_implementation().tags(*this); }
+std::vector<const char*> tags_obsolete (void* aux = 0) { return get_implementation().tags_obsolete(*this); }
 bool has_tag (const char* tagName, void* aux = 0) { return get_implementation().has_tag(*this,tagName); }
 void remove_tag (const char* tagName, void* aux = 0) { get_implementation().remove_tag(*this,tagName); }
 sx::uuid_class get_uuid (void * = 0) const { return get_implementation().uuid(*this); }
@@ -328,20 +333,31 @@ sxsdk::vec3 get_bounding_box_center (void * = 0) const { return get_implementati
 shape_class &set_active_vertex_indices (int n, int list[], void * = 0) { get_implementation().set_active_vertex_indices(*this, n, list); return *this; }
 int get_active_vertex_indices (int list[], void * = 0) const { return get_implementation().get_active_vertex_indices(*this, list); }
 void update_skin_bindings () { get_implementation().update_skin_bindings(*this); }
+int get_tags (const char* list[], void * = 0) const { return get_implementation().get_tags(*this, list); }
 sxsdk::texture_interface* create_texture_interface2 (int self = 0, const sxsdk::vec3& point = sxsdk::vec3(0.0f,0.0f,0.0f), const sxsdk::vec3& shading_normal = sxsdk::vec3(0.0f,1.0f,0.0f), const sxsdk::vec3& geometric_normal = sxsdk::vec3(0.0f,1.0f,0.0f), const sxsdk::vec3& incident = sxsdk::vec3(0.0f,0.0f,-1.0f), const sxsdk::vec2* uv = 0, const sxsdk::vec3* du = 0, const sxsdk::vec3* dv = 0, int n_uvs = 0, const sxsdk::vec2* uvs = 0, sxsdk::master_surface_class* master_surface = 0) { return get_implementation().create_texture_interface2(*this, self, point, shading_normal, geometric_normal, incident, uv, du, dv, n_uvs, uvs, master_surface); }
+bool is_surface_replicator (void * = 0) const { return get_implementation().is_surface_replicator(*this); }
+sxsdk::surface_replicator_interface* get_surface_replicator_interface (void * = 0) const { return get_implementation().get_surface_replicator_interface(*this); }
+int get_skin_type (void * = 0) const { return get_implementation().get_skin_type(*this); }
+shape_class &set_skin_type (int skin_type_param, void * = 0) { get_implementation().set_skin_type(*this, skin_type_param); return *this; }
+sxsdk::bone_joint_interface* get_bone_joint_interface (void * = 0) const { return get_implementation().get_bone_joint_interface(*this); }
+bool is_bone_joint (void * = 0) const { return get_implementation().is_bone_joint(*this); }
+void unlink_master_surface (bool deep, void* aux = 0) { get_implementation().unlink_master_surface(*this, deep); }
 	};
 
-	class sentinel_class : public shape_class {
+	class
+	sentinel_class : public shape_class {
 	public:
 		DEFINE_DYNAMIC_CAST(sentinel_class , shape_class , enums::sentinel)	
 	};
 
-	class insert_class : public shape_class {
+	class
+	insert_class : public shape_class {
 	public:
 		DEFINE_DYNAMIC_CAST(insert_class , shape_class , enums::dxf_insert)	
 	};
 
-	class part_class : public shape_class {
+	class
+	part_class : public shape_class {
 	public:
 		DEFINE_DYNAMIC_CAST(part_class , shape_class , enums::part)	
 	virtual shape_saver_interface* create_shape_saver_interface (void* aux = 0) = 0; // -1
@@ -427,8 +443,8 @@ sxsdk::texture_interface* create_texture_interface2 (int self = 0, const sxsdk::
 	virtual vertex_class& vertex (int i, void* aux = 0) = 0; // 78
 	virtual edge_class& edge (int i, void* aux = 0) = 0; // 79
 	virtual face_class& face (int i, void* aux = 0) = 0; // 80
-	virtual int part_class_dummy81(void *) { assert(false); throw "invalid interface part_class"; return 0; } // 81
-	virtual int part_class_dummy82(void *) { assert(false); throw "invalid interface part_class"; return 0; } // 82
+	virtual shape_class& realize_link (void* aux = 0) = 0; // 81
+	virtual shape_class& realize_replicator (void* aux = 0) = 0; // 82
 	virtual int part_class_dummy83(void *) { assert(false); throw "invalid interface part_class"; return 0; } // 83
 	virtual int part_class_dummy84(void *) { assert(false); throw "invalid interface part_class"; return 0; } // 84
 	virtual int part_class_dummy85(void *) { assert(false); throw "invalid interface part_class"; return 0; } // 85
@@ -548,7 +564,8 @@ sxsdk::texture_interface* create_texture_interface2 (int self = 0, const sxsdk::
 	virtual int part_class_dummy199(void *) { assert(false); throw "invalid interface part_class"; return 0; } // 199
 	};
 
-	class plugin_filereference_class {
+	class
+	plugin_filereference_class {
 	public:
 		enum { not_found, failed_to_load, recursive };
 		enum { shape_type, surface_type, image_type };
@@ -557,7 +574,8 @@ sxsdk::texture_interface* create_texture_interface2 (int self = 0, const sxsdk::
 		virtual bool alert (int error_type, const char* path, const char* name, int file_type, int number_of_extensions, char** extensions) { return true; }
 	};
 
-	class master_shape_class : public part_class {
+	class
+	master_shape_class : public part_class {
 	public:
 		DEFINE_DYNAMIC_CAST(master_shape_class , part_class , enums::part)	
 	virtual master_shape_class &set_path (const char* path_param, void * = 0) = 0; // 0
@@ -762,7 +780,8 @@ sxsdk::texture_interface* create_texture_interface2 (int self = 0, const sxsdk::
 	virtual int master_shape_class_dummy199(void *) { assert(false); throw "invalid interface master_shape_class"; return 0; } // 199
 	};
 
-	class master_surface_class : public shape_class {
+	class
+	master_surface_class : public shape_class {
 	public:
 		DEFINE_DYNAMIC_CAST(master_surface_class , shape_class , enums::master_surface)	
 	virtual master_surface_class &set_path (const char* path_param, void * = 0) = 0; // 0
@@ -967,7 +986,8 @@ sxsdk::texture_interface* create_texture_interface2 (int self = 0, const sxsdk::
 	virtual int master_surface_class_dummy199(void *) { assert(false); throw "invalid interface master_surface_class"; return 0; } // 199
 	};
 
-	class master_image_class : public shape_class {
+	class
+	master_image_class : public shape_class {
 	public:
 		DEFINE_DYNAMIC_CAST(master_image_class , shape_class , enums::master_image)	
 	virtual master_image_class &set_image (sxsdk::image_interface* image_param, void * = 0) = 0; // 0
@@ -975,8 +995,8 @@ sxsdk::texture_interface* create_texture_interface2 (int self = 0, const sxsdk::
 	virtual void load_image (const char* from, void* aux = 0) = 0; // 2
 	virtual void save_image (const char* to, void* aux = 0) = 0; // 3
 	virtual bool is_master_image_being_used (void* aux = 0) = 0; // 4
-	virtual int master_image_class_dummy5(void *) { assert(false); throw "invalid interface master_image_class"; return 0; } // 5
-	virtual int master_image_class_dummy6(void *) { assert(false); throw "invalid interface master_image_class"; return 0; } // 6
+	virtual master_image_class &set_gamma (float gamma_param, void* = nullptr) = 0; // 5
+	virtual float get_gamma (void* = nullptr) const = 0; // 6
 	virtual int master_image_class_dummy7(void *) { assert(false); throw "invalid interface master_image_class"; return 0; } // 7
 	virtual int master_image_class_dummy8(void *) { assert(false); throw "invalid interface master_image_class"; return 0; } // 8
 	virtual int master_image_class_dummy9(void *) { assert(false); throw "invalid interface master_image_class"; return 0; } // 9
@@ -1172,7 +1192,8 @@ sxsdk::texture_interface* create_texture_interface2 (int self = 0, const sxsdk::
 	virtual int master_image_class_dummy199(void *) { assert(false); throw "invalid interface master_image_class"; return 0; } // 199
 	};
 
-	class light_class : public shape_class {
+	class
+	light_class : public shape_class {
 	public:
 		DEFINE_DYNAMIC_CAST(light_class , shape_class , enums::light)	
 	virtual shape_saver_interface* create_shape_saver_interface (void* aux = 0) = 0; // -1
@@ -1378,7 +1399,8 @@ sxsdk::texture_interface* create_texture_interface2 (int self = 0, const sxsdk::
 	virtual int light_class_dummy199(void *) { assert(false); throw "invalid interface light_class"; return 0; } // 199
 	};
 
-	class line_class : public shape_class {
+	class
+	line_class : public shape_class {
 	public:
 		DEFINE_DYNAMIC_CAST(line_class , shape_class , enums::line)	
 	virtual shape_saver_interface* create_shape_saver_interface (void* aux = 0) = 0; // -1
@@ -1584,7 +1606,8 @@ sxsdk::texture_interface* create_texture_interface2 (int self = 0, const sxsdk::
 	virtual int line_class_dummy199(void *) { assert(false); throw "invalid interface line_class"; return 0; } // 199
 	};
 
-	class polygon_mesh_class : public shape_class {
+	class
+	polygon_mesh_class : public shape_class {
 	public:
 		DEFINE_DYNAMIC_CAST(polygon_mesh_class , shape_class , enums::polygon_mesh)	
 	virtual shape_saver_interface* create_shape_saver_interface (void* aux = 0) = 0; // -1
@@ -1679,7 +1702,8 @@ sxsdk::texture_interface* create_texture_interface2 (int self = 0, const sxsdk::
 	virtual bool remove_face_group (int face_group_index, void* aux = 0) = 0; // 88
 	};
 
-	class sphere_class : public shape_class {
+	class
+	sphere_class : public shape_class {
 	public:
 		DEFINE_DYNAMIC_CAST(sphere_class , shape_class , enums::sphere)
 	virtual shape_saver_interface* create_shape_saver_interface (void* aux = 0) = 0; // -1
@@ -1695,7 +1719,8 @@ sxsdk::texture_interface* create_texture_interface2 (int self = 0, const sxsdk::
 	virtual bool get_volume_distance_decay (void * = 0) const = 0; // 9
 	};
 
-	class disk_class : public shape_class {
+	class
+	disk_class : public shape_class {
 	public:
 		DEFINE_DYNAMIC_CAST(disk_class , shape_class , enums::disk)	
 	virtual shape_saver_interface* create_shape_saver_interface (void* aux = 0) = 0; // -1
@@ -1715,7 +1740,8 @@ sxsdk::texture_interface* create_texture_interface2 (int self = 0, const sxsdk::
 	virtual disk_saver_class* get_disk_saver (void* aux = 0) = 0; // 13
 	};
 
-	class proxy_shape_class : public shape_class {
+	class
+	proxy_shape_class : public shape_class {
 	public:
 		DEFINE_DYNAMIC_CAST(proxy_shape_class , shape_class , enums::proxy_shape)	
 		~proxy_shape_class ();
@@ -1739,7 +1765,8 @@ sxsdk::texture_interface* create_texture_interface2 (int self = 0, const sxsdk::
 	virtual sxsdk::vec3 get_face_group_surface_id_color (const int face_group_index = -1, void* aux = 0) const = 0; // 13
 	};
 
-	class rotator_joint_interface : public unknown_interface {
+	class
+	rotator_joint_interface : public unknown_interface {
 	public:
 	virtual rotator_joint_interface &set_pivot (const sxsdk::vec3 &pivot_param, void * = 0) = 0; // 0
 	virtual sxsdk::vec3 get_pivot (void * = 0) const = 0; // 1
@@ -1757,7 +1784,8 @@ sxsdk::texture_interface* create_texture_interface2 (int self = 0, const sxsdk::
 	virtual sxsdk::vec2 get_limit (void * = 0) const = 0; // 13
 	};
 
-	class slider_joint_interface : public unknown_interface {
+	class
+	slider_joint_interface : public unknown_interface {
 	public:
 	virtual slider_joint_interface &set_starting_position (const sxsdk::vec3 &starting_position_param, void * = 0) = 0; // 0
 	virtual sxsdk::vec3 get_starting_position (void * = 0) const = 0; // 1
@@ -1775,7 +1803,8 @@ sxsdk::texture_interface* create_texture_interface2 (int self = 0, const sxsdk::
 	virtual sxsdk::vec2 get_limit (void * = 0) const = 0; // 13
 	};
 
-	class scale_joint_interface : public unknown_interface {
+	class
+	scale_joint_interface : public unknown_interface {
 	public:
 	virtual scale_joint_interface &set_pivot (const sxsdk::vec3 &pivot_param, void * = 0) = 0; // 0
 	virtual sxsdk::vec3 get_pivot (void * = 0) const = 0; // 1
@@ -1791,7 +1820,8 @@ sxsdk::texture_interface* create_texture_interface2 (int self = 0, const sxsdk::
 	virtual sxsdk::vec2 get_limit (void * = 0) const = 0; // 11
 	};
 
-	class uniscale_joint_interface : public unknown_interface {
+	class
+	uniscale_joint_interface : public unknown_interface {
 	public:
 	virtual uniscale_joint_interface &set_pivot (const sxsdk::vec3 &pivot_param, void * = 0) = 0; // 0
 	virtual sxsdk::vec3 get_pivot (void * = 0) const = 0; // 1
@@ -1805,7 +1835,8 @@ sxsdk::texture_interface* create_texture_interface2 (int self = 0, const sxsdk::
 	virtual sxsdk::vec2 get_limit (void * = 0) const = 0; // 9
 	};
 
-	class light_effector_interface : public unknown_interface {
+	class
+	light_effector_interface : public unknown_interface {
 	public:
 	virtual light_effector_interface &set_value (float value_param, void * = 0) = 0; // 0
 	virtual float get_value (void * = 0) const = 0; // 1
@@ -1817,7 +1848,8 @@ sxsdk::texture_interface* create_texture_interface2 (int self = 0, const sxsdk::
 	virtual sxsdk::vec2 get_limit (void * = 0) const = 0; // 7
 	};
 
-	class path_joint_interface : public unknown_interface {
+	class
+	path_joint_interface : public unknown_interface {
 	public:
 	virtual path_joint_interface &set_path_position (float path_position_param, void * = 0) = 0; // 0
 	virtual float get_path_position (void * = 0) const = 0; // 1
@@ -1831,7 +1863,8 @@ sxsdk::texture_interface* create_texture_interface2 (int self = 0, const sxsdk::
 	virtual sxsdk::vec2 get_limit (void * = 0) const = 0; // 9
 	};
 
-	class morph_effector_interface : public unknown_interface {
+	class
+	morph_effector_interface : public unknown_interface {
 	public:
 	virtual morph_effector_interface &set_morph (float morph_param, void * = 0) = 0; // 0
 	virtual float get_morph (void * = 0) const = 0; // 1
@@ -1841,7 +1874,8 @@ sxsdk::texture_interface* create_texture_interface2 (int self = 0, const sxsdk::
 	virtual sxsdk::vec2 get_limit (void * = 0) const = 0; // 5
 	};
 
-	class ball_joint_interface : public unknown_interface {
+	class
+	ball_joint_interface : public unknown_interface {
 	public:
 	virtual ball_joint_interface &set_rotation (const sxsdk::quaternion_class &rotation_param, void * = 0) = 0; // 0
 	virtual sxsdk::quaternion_class get_rotation (void * = 0) const = 0; // 1
@@ -1855,9 +1889,12 @@ sxsdk::texture_interface* create_texture_interface2 (int self = 0, const sxsdk::
 	virtual sxsdk::vec3 get_position (void * = 0) const = 0; // 9
 	virtual ball_joint_interface &set_size (float size_param, void * = 0) = 0; // 10
 	virtual float get_size (void * = 0) const = 0; // 11
+	virtual ball_joint_interface &set_compatible (bool value_param, void * = 0) = 0; // 12
+	virtual bool get_compatible (void * = 0) const = 0; // 13
 	};
 
-	class custom_joint_interface : public unknown_interface {
+	class
+	custom_joint_interface : public unknown_interface {
 	public:
 	virtual custom_joint_interface &set_value (float value_param, void * = 0) = 0; // 0
 	virtual float get_value (void * = 0) const = 0; // 1
@@ -1867,7 +1904,8 @@ sxsdk::texture_interface* create_texture_interface2 (int self = 0, const sxsdk::
 	virtual sxsdk::vec2 get_limit (void * = 0) const = 0; // 5
 	};
 
-	class sound_track_interface : public unknown_interface {
+	class
+	sound_track_interface : public unknown_interface {
 	public:
 	virtual sound_track_interface &set_value (float value_param, void * = 0) = 0; // 0
 	virtual float get_value (void * = 0) const = 0; // 1
@@ -1882,7 +1920,8 @@ sxsdk::texture_interface* create_texture_interface2 (int self = 0, const sxsdk::
 	virtual bool is_playing (void* aux = 0) = 0; // 10
 	};
 
-	class switch_effector_interface : public unknown_interface {
+	class
+	switch_effector_interface : public unknown_interface {
 	public:
 	virtual switch_effector_interface &set_selection (int selection_param, void * = 0) = 0; // 0
 	virtual int get_selection (void * = 0) const = 0; // 1
@@ -1892,7 +1931,8 @@ sxsdk::texture_interface* create_texture_interface2 (int self = 0, const sxsdk::
 	virtual sxsdk::vec2 get_limit (void * = 0) const = 0; // 5
 	};
 
-	class path_replicator_interface : public unknown_interface {
+	class
+	path_replicator_interface : public unknown_interface {
 	public:
 	virtual path_replicator_interface &set_replication (float replication_param, void * = 0) = 0; // 0
 	virtual float get_replication (void * = 0) const = 0; // 1
@@ -1900,8 +1940,8 @@ sxsdk::texture_interface* create_texture_interface2 (int self = 0, const sxsdk::
 	virtual bool get_range (void * = 0) const = 0; // 3
 	virtual path_replicator_interface &set_mode (int mode_param, void * = 0) = 0; // 4
 	virtual int get_mode (void * = 0) const = 0; // 5
-	virtual path_replicator_interface &set_alignment_type (int alignment_type_param, void * = 0) = 0; // 6
-	virtual int get_alignment_type (void * = 0) const = 0; // 7
+	virtual path_replicator_interface &set_alignment_type_obsolete (int alignment_type_obsolete_param, void * = 0) = 0; // 6
+	virtual int get_alignment_type_obsolete (void * = 0) const = 0; // 7
 	virtual path_replicator_interface &set_step_rounding_type (int step_rounding_type_param, void * = 0) = 0; // 8
 	virtual int get_step_rounding_type (void * = 0) const = 0; // 9
 	virtual path_replicator_interface &set_skip_head (bool skip_head_param, void * = 0) = 0; // 10
@@ -1914,5 +1954,95 @@ sxsdk::texture_interface* create_texture_interface2 (int self = 0, const sxsdk::
 	virtual float get_step (void * = 0) const = 0; // 17
 	virtual path_replicator_interface &set_limit (const sxsdk::vec2 &limit_param, void * = 0) = 0; // 18
 	virtual sxsdk::vec2 get_limit (void * = 0) const = 0; // 19
+	virtual path_replicator_interface &set_reference_point (int reference_point_param, void * = 0) = 0; // 20
+	virtual int get_reference_point (void * = 0) const = 0; // 21
+	virtual path_replicator_interface &set_preview (int preview_param, void * = 0) = 0; // 22
+	virtual int get_preview (void * = 0) const = 0; // 23
+	virtual path_replicator_interface &set_use_direction_control (bool use_direction_control_param, void * = 0) = 0; // 24
+	virtual bool get_use_direction_control (void * = 0) const = 0; // 25
+	virtual path_replicator_interface &set_upper_direction_type (int upper_direction_type_param, void * = 0) = 0; // 26
+	virtual int get_upper_direction_type (void * = 0) const = 0; // 27
+	virtual path_replicator_interface &set_use_upper_direction_path (bool use_upper_direction_path_param, void * = 0) = 0; // 28
+	virtual bool get_use_upper_direction_path (void * = 0) const = 0; // 29
+	virtual path_replicator_interface &set_front_direction_type (int front_direction_type_param, void * = 0) = 0; // 30
+	virtual int get_front_direction_type (void * = 0) const = 0; // 31
+	virtual path_replicator_interface &set_use_forward_direction_path (bool use_forward_direction_path_param, void * = 0) = 0; // 32
+	virtual bool get_use_forward_direction_path (void * = 0) const = 0; // 33
+	virtual path_replicator_interface &set_show_directions (bool show_directions_param, void * = 0) = 0; // 34
+	virtual bool get_show_directions (void * = 0) const = 0; // 35
+	virtual path_replicator_interface &set_random_replication (bool random_replication_param, void * = 0) = 0; // 36
+	virtual bool get_random_replication (void * = 0) const = 0; // 37
+	virtual path_replicator_interface &set_random_translation (sxsdk::vec3 random_translation_param, void * = 0) = 0; // 38
+	virtual sxsdk::vec3 get_random_translation (void * = 0) const = 0; // 39
+	virtual path_replicator_interface &set_random_translation_mode (int random_translation_mode_param, void * = 0) = 0; // 40
+	virtual int get_random_translation_mode (void * = 0) const = 0; // 41
+	virtual path_replicator_interface &set_random_rotation (sxsdk::vec3 random_rotation_param, void * = 0) = 0; // 42
+	virtual sxsdk::vec3 get_random_rotation (void * = 0) const = 0; // 43
+	virtual path_replicator_interface &set_random_scale (sxsdk::vec3 random_scale_param, void * = 0) = 0; // 44
+	virtual sxsdk::vec3 get_random_scale (void * = 0) const = 0; // 45
+	virtual path_replicator_interface &set_random_uniscale (bool random_uniscale_param, void * = 0) = 0; // 46
+	virtual bool get_random_uniscale (void * = 0) const = 0; // 47
+	virtual path_replicator_interface &set_random_seed (int random_seed_param, void * = 0) = 0; // 48
+	virtual int get_random_seed (void * = 0) const = 0; // 49
+	};
+
+	class
+	surface_replicator_interface : public unknown_interface {
+	public:
+	virtual surface_replicator_interface &set_replication (float replication_param, void * = 0) = 0; // 0
+	virtual float get_replication (void * = 0) const = 0; // 1
+	virtual surface_replicator_interface &set_range (bool range_param, void * = 0) = 0; // 2
+	virtual bool get_range (void * = 0) const = 0; // 3
+	virtual surface_replicator_interface &set_limit (const sxsdk::vec2 &limit_param, void * = 0) = 0; // 4
+	virtual sxsdk::vec2 get_limit (void * = 0) const = 0; // 5
+	virtual surface_replicator_interface &set_distribution (int distribution_param, void * = 0) = 0; // 6
+	virtual int get_distribution (void * = 0) const = 0; // 7
+	virtual surface_replicator_interface &set_subdivision_level (int subdivision_level_param, void * = 0) = 0; // 8
+	virtual int get_subdivision_level (void * = 0) const = 0; // 9
+	virtual surface_replicator_interface &set_preview (int preview_param, void * = 0) = 0; // 10
+	virtual int get_preview (void * = 0) const = 0; // 11
+	virtual surface_replicator_interface &set_count (int count_param, void * = 0) = 0; // 12
+	virtual int get_count (void * = 0) const = 0; // 13
+	virtual surface_replicator_interface &set_direction (int direction_param, void * = 0) = 0; // 14
+	virtual int get_direction (void * = 0) const = 0; // 15
+	virtual surface_replicator_interface &set_random_replication (bool random_replication_param, void * = 0) = 0; // 16
+	virtual bool get_random_replication (void * = 0) const = 0; // 17
+	virtual surface_replicator_interface &set_random_translation (sxsdk::vec3 random_translation_param, void * = 0) = 0; // 18
+	virtual sxsdk::vec3 get_random_translation (void * = 0) const = 0; // 19
+	virtual surface_replicator_interface &set_random_translation_mode (int random_translation_mode_param, void * = 0) = 0; // 20
+	virtual int get_random_translation_mode (void * = 0) const = 0; // 21
+	virtual surface_replicator_interface &set_random_rotation (sxsdk::vec3 random_rotation_param, void * = 0) = 0; // 22
+	virtual sxsdk::vec3 get_random_rotation (void * = 0) const = 0; // 23
+	virtual surface_replicator_interface &set_random_scale (sxsdk::vec3 random_scale_param, void * = 0) = 0; // 24
+	virtual sxsdk::vec3 get_random_scale (void * = 0) const = 0; // 25
+	virtual surface_replicator_interface &set_random_uniscale (bool random_uniscale_param, void * = 0) = 0; // 26
+	virtual bool get_random_uniscale (void * = 0) const = 0; // 27
+	virtual surface_replicator_interface &set_random_seed (int random_seed_param, void * = 0) = 0; // 28
+	virtual int get_random_seed (void * = 0) const = 0; // 29
+	virtual surface_replicator_interface &set_uv_layer (int uv_layer_param, void * = 0) = 0; // 30
+	virtual int get_uv_layer (void * = 0) const = 0; // 31
+	};
+
+	class
+	bone_joint_interface : public unknown_interface {
+	public:
+	virtual bone_joint_interface &set_rotation (const sxsdk::quaternion_class &rotation_param, void* = nullptr) = 0; // 0
+	virtual sxsdk::quaternion_class get_rotation (void* = nullptr) const = 0; // 1
+	virtual bone_joint_interface &set_offset (const sxsdk::vec3 &offset_param, void* = nullptr) = 0; // 2
+	virtual sxsdk::vec3 get_offset (void* = nullptr) const = 0; // 3
+	virtual bone_joint_interface &set_position (const sxsdk::vec3 &position_param, void* = nullptr) = 0; // 4
+	virtual sxsdk::vec3 get_position (void* = nullptr) const = 0; // 5
+	virtual bone_joint_interface &set_size (float size_param, void* = nullptr) = 0; // 6
+	virtual float get_size (void* = nullptr) const = 0; // 7
+	virtual bone_joint_interface &set_auto_direction (bool auto_direction_param, void* = nullptr) = 0; // 8
+	virtual bool get_auto_direction (void* = nullptr) const = 0; // 9
+	virtual bone_joint_interface &set_matrix (sxsdk::mat4 matrix_param, void* = nullptr) = 0; // 10
+	virtual sxsdk::mat4 get_matrix (void* = nullptr) const = 0; // 11
+	virtual bone_joint_interface &set_range (bool range_param, void* = nullptr) = 0; // 12
+	virtual bool get_range (void* = nullptr) const = 0; // 13
+	virtual void set_limit (int axis, const sxsdk::vec2& limit_param, void* aux = 0) = 0; // 14
+	virtual sxsdk::vec2 get_limit (int axis, void* aux = 0) const = 0; // 15
+	virtual bone_joint_interface &set_axis_dir (const sxsdk::vec3 &axis_dir_param, void* = nullptr) = 0; // 16
+	virtual sxsdk::vec3 get_axis_dir (void* = nullptr) const = 0; // 17
 	};
 }

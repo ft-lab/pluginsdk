@@ -1,7 +1,8 @@
 #pragma once
 
 namespace sxsdk {
-	class text_stream_interface : public shade_interface {
+	class
+	text_stream_interface : public shade_interface {
 	public:
 		typedef text_stream_interface& (*func_type ) (text_stream_interface&);
 	virtual text_stream_interface& read_line (const char*& s, void* aux = 0) = 0; // -1

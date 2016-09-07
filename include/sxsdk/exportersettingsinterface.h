@@ -12,21 +12,22 @@ namespace sxsdk {
 		bool export_all_objects;
 		bool export_binary;
 		bool export_surface_attributes;
+		int export_filter_objects;
 
-	virtual int get_shadeversion (void * = 0) const = 0; // 0
-	virtual sx::uuid_class get_uuid (void * = 0) const = 0; // 1
-	virtual exporter_settings_interface &set_eol (int eol_param, void * = 0) = 0; // 2
-	virtual int get_eol (void * = 0) const = 0; // 3
-	virtual exporter_settings_interface &set_export_all_objects (bool export_all_objects_param, void * = 0) = 0; // 4
-	virtual bool get_export_all_objects (void * = 0) const = 0; // 5
-	virtual exporter_settings_interface &set_subdivision_level (int subdivision_level_param, void * = 0) = 0; // 6
-	virtual int get_subdivision_level (void * = 0) const = 0; // 7
-	virtual exporter_settings_interface &set_export_binary (bool export_binary_param, void * = 0) = 0; // 8
-	virtual bool get_export_binary (void * = 0) const = 0; // 9
-	virtual exporter_settings_interface &set_export_surface_attributes (bool export_surface_attributes_param, void * = 0) = 0; // 10
-	virtual bool get_export_surface_attributes (void * = 0) const = 0; // 11
-	virtual int exporter_settings_interface_dummy12(void *) { assert(false); throw "invalid interface exporter_settings_interface"; return 0; } // 12
-	virtual int exporter_settings_interface_dummy13(void *) { assert(false); throw "invalid interface exporter_settings_interface"; return 0; } // 13
+	virtual int get_shadeversion (void* = nullptr) const = 0; // 0
+	virtual sx::uuid_class get_uuid (void* = nullptr) const = 0; // 1
+	virtual exporter_settings_interface &set_eol (int eol_param, void* = nullptr) = 0; // 2
+	virtual int get_eol (void* = nullptr) const = 0; // 3
+	virtual exporter_settings_interface &set_export_all_objects (bool export_all_objects_param, void* = nullptr) = 0; // 4
+	virtual bool get_export_all_objects (void* = nullptr) const = 0; // 5
+	virtual exporter_settings_interface &set_subdivision_level (int subdivision_level_param, void* = nullptr) = 0; // 6
+	virtual int get_subdivision_level (void* = nullptr) const = 0; // 7
+	virtual exporter_settings_interface &set_export_binary (bool export_binary_param, void* = nullptr) = 0; // 8
+	virtual bool get_export_binary (void* = nullptr) const = 0; // 9
+	virtual exporter_settings_interface &set_export_surface_attributes (bool export_surface_attributes_param, void* = nullptr) = 0; // 10
+	virtual bool get_export_surface_attributes (void* = nullptr) const = 0; // 11
+	virtual exporter_settings_interface &set_export_filter_objects (int export_filter_objects_param, void* = nullptr) = 0; // 12
+	virtual int get_export_filter_objects (void* = nullptr) const = 0; // 13
 	virtual int exporter_settings_interface_dummy14(void *) { assert(false); throw "invalid interface exporter_settings_interface"; return 0; } // 14
 	virtual int exporter_settings_interface_dummy15(void *) { assert(false); throw "invalid interface exporter_settings_interface"; return 0; } // 15
 	virtual int exporter_settings_interface_dummy16(void *) { assert(false); throw "invalid interface exporter_settings_interface"; return 0; } // 16
@@ -128,17 +129,19 @@ namespace sxsdk {
 		bool short_name;
 		std::string groupname_prefix;
 
-	virtual _3ds_exporter_settings_interface &set_export_material (bool export_material_param, void * = 0) = 0; // 0
-	virtual bool get_export_material (void * = 0) const = 0; // 1
-	virtual _3ds_exporter_settings_interface &set_image_filetype (int image_filetype_param, void * = 0) = 0; // 2
-	virtual int get_image_filetype (void * = 0) const = 0; // 3
-	virtual _3ds_exporter_settings_interface &set_export_camera (bool export_camera_param, void * = 0) = 0; // 4
-	virtual bool get_export_camera (void * = 0) const = 0; // 5
-	virtual _3ds_exporter_settings_interface &set_export_light (bool export_light_param, void * = 0) = 0; // 6
-	virtual bool get_export_light (void * = 0) const = 0; // 7
-	virtual _3ds_exporter_settings_interface &set_groupname_method (int groupname_method_param, void * = 0) = 0; // 8
-	virtual int get_groupname_method (void * = 0) const = 0; // 9
-	virtual _3ds_exporter_settings_interface &set_groupname_prefix (const char* groupname_prefix_param, void * = 0) = 0; // 10
-	virtual const char* get_groupname_prefix (void * = 0) const = 0; // 11
-	virtual _3ds_exporter_settings_interface &set_short_name (bool short_name_param, void * = 0) = 0; // 12
-	virtual bool get_short_name (void * = 0) const = 0; // 13
+	virtual _3ds_exporter_settings_interface &set_export_material (bool export_material_param, void* = nullptr) = 0; // 0
+	virtual bool get_export_material (void* = nullptr) const = 0; // 1
+	virtual _3ds_exporter_settings_interface &set_image_filetype (int image_filetype_param, void* = nullptr) = 0; // 2
+	virtual int get_image_filetype (void* = nullptr) const = 0; // 3
+	virtual _3ds_exporter_settings_interface &set_export_camera (bool export_camera_param, void* = nullptr) = 0; // 4
+	virtual bool get_export_camera (void* = nullptr) const = 0; // 5
+	virtual _3ds_exporter_settings_interface &set_export_light (bool export_light_param, void* = nullptr) = 0; // 6
+	virtual bool get_export_light (void* = nullptr) const = 0; // 7
+	virtual _3ds_exporter_settings_interface &set_groupname_method (int groupname_method_param, void* = nullptr) = 0; // 8
+	virtual int get_groupname_method (void* = nullptr) const = 0; // 9
+	virtual _3ds_exporter_settings_interface &set_groupname_prefix (const char* groupname_prefix_param, void* = nullptr) = 0; // 10
+	virtual const char* get_groupname_prefix (void* = nullptr) const = 0; // 11
+	virtual _3ds_exporter_settings_interface &set_short_name (bool short_name_param, void* = nullptr) = 0; // 12
+	virtual bool get_short_name (void* = nullptr) const = 0; // 13
+	};
+}

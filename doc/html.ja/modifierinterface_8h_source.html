@@ -4,43 +4,69 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <title>modifierinterface.h ソースファイル</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript">
+$(document).ready(initResizable);
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<!-- 作成： Doxygen 1.6.1 -->
-<div class="navigation" id="top">
-  <div class="tabs">
-    <ul>
-      <li><a href="main.html"><span>メインページ</span></a></li>
+<!-- 作成： Doxygen 1.7.4 -->
+<div id="top">
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
       <li><a href="pages.html"><span>関連ページ</span></a></li>
       <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
       <li><a href="annotated.html"><span>クラス</span></a></li>
       <li class="current"><a href="files.html"><span>ファイル</span></a></li>
     </ul>
   </div>
-  <div class="tabs">
-    <ul>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
       <li><a href="files.html"><span>ファイル一覧</span></a></li>
       <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
     </ul>
   </div>
-<h1>modifierinterface.h</h1><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// this file has been created by makeheader.py</span>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+  initNavTree('modifierinterface_8h.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">modifierinterface.h</div>  </div>
+</div>
+<div class="contents">
+<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// this file has been created by makeheader.py</span>
 <a name="l00002"></a>00002 <span class="comment">// ja utf-8</span>
 <a name="l00003"></a>00003 <span class="preprocessor">#pragma once</span>
-<a name="l00010"></a>00010 <span class="preprocessor">namespace sxsdk {</span>
-<a name="l00011"></a><a class="code" href="structsxsdk_1_1modifier__interface.html">00011</a> <span class="preprocessor"></span><span class="keyword">struct </span><a class="code" href="structsxsdk_1_1modifier__interface.html">modifier_interface</a> : <span class="keyword">public</span> <a class="code" href="structsxsdk_1_1plugin__interface.html">plugin_interface</a> {
+<a name="l00004"></a>00004 <span class="preprocessor"></span><span class="keyword">namespace </span>sxsdk {
+<a name="l00011"></a><a class="code" href="structsxsdk_1_1modifier__interface.html">00011</a> <span class="keyword">struct </span><a class="code" href="structsxsdk_1_1modifier__interface.html" title="モディファイアプラグインの基本クラス">modifier_interface</a> : <span class="keyword">public</span> <a class="code" href="structsxsdk_1_1plugin__interface.html" title="プラグインの基本クラス">plugin_interface</a> {
 <a name="l00012"></a>00012 <span class="keyword">public</span>:
-<a name="l00019"></a><a class="code" href="structsxsdk_1_1modifier__interface.html#a35e918742c22908cf823c366f68188e9">00019</a>     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="structsxsdk_1_1modifier__interface.html#a35e918742c22908cf823c366f68188e9" title="オーバライド可。図形ウインドウ内での、球を作成するドラッグ操作を待�...">accepts_sphere</a> ( <span class="keywordtype">void</span> *aux = 0 )<span class="keyword"> const </span>{ <span class="keywordflow">return</span> accepts_sphere_private(aux); } 
-<a name="l00026"></a><a class="code" href="structsxsdk_1_1modifier__interface.html#a9793f6b6759fd2c81a167940d807de68">00026</a>     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="structsxsdk_1_1modifier__interface.html#a9793f6b6759fd2c81a167940d807de68" title="オーバライド可。図形ウインドウ内での、円を作成するドラッグ操作を待�...">accepts_disk</a> ( <span class="keywordtype">void</span> *aux = 0 )<span class="keyword"> const </span>{ <span class="keywordflow">return</span> accepts_disk_private(aux); } 
-<a name="l00033"></a><a class="code" href="structsxsdk_1_1modifier__interface.html#a6a415f3cfa5d39dd274f2cd37f758262">00033</a>     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="structsxsdk_1_1modifier__interface.html#a6a415f3cfa5d39dd274f2cd37f758262" title="オーバライド可。図形ウインドウ内での、長方形を作成するドラッグ操作�...">accepts_rectangle</a> ( <span class="keywordtype">void</span> *aux = 0 )<span class="keyword"> const </span>{ <span class="keywordflow">return</span> accepts_rectangle_private(aux); } 
-<a name="l00040"></a><a class="code" href="structsxsdk_1_1modifier__interface.html#af9de073e7a0f887662f4fd28df145282">00040</a>     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="structsxsdk_1_1modifier__interface.html#af9de073e7a0f887662f4fd28df145282" title="オーバライド可。図形ウインドウ内での、直線移動するドラッグ操作を待�...">accepts_translation</a> ( <span class="keywordtype">void</span> *aux = 0 )<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <span class="keyword">false</span>; } 
+<a name="l00019"></a><a class="code" href="structsxsdk_1_1modifier__interface.html#a35e918742c22908cf823c366f68188e9">00019</a>     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="structsxsdk_1_1modifier__interface.html#a35e918742c22908cf823c366f68188e9" title="オーバライド可。図形ウインドウ内での、球を作成するドラッグ操作を待ち受けるかどうかを返す。">accepts_sphere</a> ( <span class="keywordtype">void</span> *aux = 0 )<span class="keyword"> const </span>{ <span class="keywordflow">return</span> accepts_sphere_private(aux); } 
+<a name="l00026"></a><a class="code" href="structsxsdk_1_1modifier__interface.html#a9793f6b6759fd2c81a167940d807de68">00026</a>     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="structsxsdk_1_1modifier__interface.html#a9793f6b6759fd2c81a167940d807de68" title="オーバライド可。図形ウインドウ内での、円を作成するドラッグ操作を待ち受けるかどうかを返す。">accepts_disk</a> ( <span class="keywordtype">void</span> *aux = 0 )<span class="keyword"> const </span>{ <span class="keywordflow">return</span> accepts_disk_private(aux); } 
+<a name="l00033"></a><a class="code" href="structsxsdk_1_1modifier__interface.html#a6a415f3cfa5d39dd274f2cd37f758262">00033</a>     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="structsxsdk_1_1modifier__interface.html#a6a415f3cfa5d39dd274f2cd37f758262" title="オーバライド可。図形ウインドウ内での、長方形を作成するドラッグ操作を待ち受けるかどうかを返す。">accepts_rectangle</a> ( <span class="keywordtype">void</span> *aux = 0 )<span class="keyword"> const </span>{ <span class="keywordflow">return</span> accepts_rectangle_private(aux); } 
+<a name="l00040"></a><a class="code" href="structsxsdk_1_1modifier__interface.html#af9de073e7a0f887662f4fd28df145282">00040</a>     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="structsxsdk_1_1modifier__interface.html#af9de073e7a0f887662f4fd28df145282" title="オーバライド可。図形ウインドウ内での、直線移動するドラッグ操作を待ち受けるかどうかを返す。">accepts_translation</a> ( <span class="keywordtype">void</span> *aux = 0 )<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <span class="keyword">false</span>; } 
 <a name="l00045"></a><a class="code" href="structsxsdk_1_1modifier__interface.html#a1a85fa7aef3818ab78a00b4996d8fe60">00045</a>     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="structsxsdk_1_1modifier__interface.html#a1a85fa7aef3818ab78a00b4996d8fe60" title="オーバライド可。球のドラッグ操作後に呼ばれる。">set_sphere</a> (<span class="keyword">const</span> sxsdk::vec3&amp; center, <span class="keywordtype">float</span> radius, <span class="keywordtype">int</span> axis) { <span class="keywordflow">return</span> set_sphere_private(center, radius, axis); } 
 <a name="l00050"></a><a class="code" href="structsxsdk_1_1modifier__interface.html#af48269a2a125539a0fd04d182a9fc8ca">00050</a>     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="structsxsdk_1_1modifier__interface.html#af48269a2a125539a0fd04d182a9fc8ca" title="オーバライド可。円のドラッグ操作後に呼ばれる。">set_disk</a> (<span class="keyword">const</span> sxsdk::vec3&amp; center, <span class="keywordtype">float</span> radius, <span class="keywordtype">int</span> axis, <span class="keywordtype">void</span>* aux = 0) { <span class="keywordflow">return</span> set_disk_private(center, radius, axis, aux); } 
 <a name="l00055"></a><a class="code" href="structsxsdk_1_1modifier__interface.html#a9d704033dd204d4f592a72eef7607cba">00055</a>     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="structsxsdk_1_1modifier__interface.html#a9d704033dd204d4f592a72eef7607cba" title="オーバライド可。長方形のドラッグ操作後に呼ばれる。">set_rectangle</a> (<span class="keyword">const</span> sxsdk::vec3&amp; p, <span class="keyword">const</span> sxsdk::vec3&amp; q, <span class="keywordtype">int</span> axis, <span class="keywordtype">void</span>* aux = 0) { <span class="keywordflow">return</span> set_rectangle_private(p, q, axis, aux); } 
 <a name="l00060"></a><a class="code" href="structsxsdk_1_1modifier__interface.html#afaae298e772204d0ce4f40fa7a3d4460">00060</a>     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="structsxsdk_1_1modifier__interface.html#afaae298e772204d0ce4f40fa7a3d4460" title="オーバライド可。直線移動のドラッグ操作後に呼ばれる。">set_translation</a> (<span class="keyword">const</span> sxsdk::mat4&amp; t, <span class="keyword">const</span> sxsdk::vec3&amp; p, <span class="keywordtype">int</span> axis) { <span class="keywordflow">return</span> set_translation_private(t, p, axis); } 
-<a name="l00071"></a><a class="code" href="structsxsdk_1_1modifier__interface.html#a114478a9bbb1cccba31af815eb363c58">00071</a>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structsxsdk_1_1modifier__interface.html#a114478a9bbb1cccba31af815eb363c58" title="オーバライド可。Shadeが形状のワイヤフレームを表示する際にこの関数が�...">make_wireframe</a> (<a class="code" href="structsxsdk_1_1shape__class.html">sxsdk::shape_class</a>&amp; shape, <span class="keyword">const</span> sxsdk::mat4&amp; mat, <span class="keywordtype">int</span> view, <span class="keywordtype">int</span> flags, <span class="keywordtype">void</span>* aux = 0) { make_wireframe_private(shape, mat, view); } 
-<a name="l00077"></a>00077     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> modify (<a class="code" href="structsxsdk_1_1scene__interface.html">sxsdk::scene_interface</a>* scene, <span class="keywordtype">void</span>* aux = 0) = 0;
-<a name="l00078"></a>00078     <span class="keyword">virtual</span> <span class="keywordtype">void</span> make_wireframe_private (<a class="code" href="structsxsdk_1_1shape__class.html">sxsdk::shape_class</a>&amp; shape, <span class="keyword">const</span> sxsdk::mat4&amp; mat, <span class="keywordtype">int</span> view, <span class="keywordtype">void</span>* aux = 0) { } 
+<a name="l00071"></a><a class="code" href="structsxsdk_1_1modifier__interface.html#a114478a9bbb1cccba31af815eb363c58">00071</a>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structsxsdk_1_1modifier__interface.html#a114478a9bbb1cccba31af815eb363c58" title="オーバライド可。Shadeが形状のワイヤフレームを表示する際にこの関数が呼ばれる。この関数をオーバーライドしてワイヤフレーム表示を追加することが可能。(参照：メモリ常駐型プラグイン)">make_wireframe</a> (<a class="code" href="structsxsdk_1_1shape__class.html" title="すべての種類の形状に共通する操作を扱う基本クラス">sxsdk::shape_class</a>&amp; shape, <span class="keyword">const</span> sxsdk::mat4&amp; mat, <span class="keywordtype">int</span> view, <span class="keywordtype">int</span> flags, <span class="keywordtype">void</span>* aux = 0) { make_wireframe_private(shape, mat, view); } 
+<a name="l00077"></a>00077     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="structsxsdk_1_1modifier__interface.html#ab3f6a861e7cf700039dc5ed70ede8318" title="オーバライド可。メニューからプラグインが選択され、指定したダイアログ表示やユーザ操作の後に呼ばれる。">modify</a> (<a class="code" href="structsxsdk_1_1scene__interface.html" title="シーンの情報の取得・設定に使用する。">sxsdk::scene_interface</a>* scene, <span class="keywordtype">void</span>* aux = 0) = 0;
+<a name="l00078"></a>00078     <span class="keyword">virtual</span> <span class="keywordtype">void</span> make_wireframe_private (<a class="code" href="structsxsdk_1_1shape__class.html" title="すべての種類の形状に共通する操作を扱う基本クラス">sxsdk::shape_class</a>&amp; shape, <span class="keyword">const</span> sxsdk::mat4&amp; mat, <span class="keywordtype">int</span> view, <span class="keywordtype">void</span>* aux = 0) { } 
 <a name="l00079"></a>00079     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> accepts_sphere_private (<span class="keywordtype">void</span>* aux = 0)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <span class="keyword">false</span>; } 
 <a name="l00080"></a>00080     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> accepts_disk_private (<span class="keywordtype">void</span>* aux = 0)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <span class="keyword">false</span>; } 
 <a name="l00081"></a>00081     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> accepts_rectangle_private (<span class="keywordtype">void</span>* aux = 0)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <span class="keyword">false</span>; } 
@@ -49,8 +75,8 @@
 <a name="l00084"></a>00084     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> set_disk_private (<span class="keyword">const</span> sxsdk::vec3&amp; center, <span class="keywordtype">float</span> radius, <span class="keywordtype">int</span> axis, <span class="keywordtype">void</span>* aux = 0) { <span class="keywordflow">return</span> <span class="keyword">true</span>; } 
 <a name="l00085"></a>00085     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> set_rectangle_private (<span class="keyword">const</span> sxsdk::vec3&amp; p, <span class="keyword">const</span> sxsdk::vec3&amp; q, <span class="keywordtype">int</span> axis, <span class="keywordtype">void</span>* aux = 0) { <span class="keywordflow">return</span> <span class="keyword">true</span>; } 
 <a name="l00086"></a>00086     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> set_translation_private (<span class="keyword">const</span> sxsdk::mat4&amp; t, <span class="keyword">const</span> sxsdk::vec3&amp; p, <span class="keywordtype">int</span> axis) { <span class="keywordflow">return</span> <span class="keyword">true</span>; } 
-<a name="l00089"></a><a class="code" href="structsxsdk_1_1modifier__interface.html#af3d00d2eb0b0de2ef939b9be967d8f3f">00089</a>     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="structsxsdk_1_1modifier__interface.html#af3d00d2eb0b0de2ef939b9be967d8f3f" title="オーバライド可。メニューからプラグインが選択された直後、指定したダ�...">pre_modify</a> (<a class="code" href="structsxsdk_1_1scene__interface.html">sxsdk::scene_interface</a>* scene, <span class="keywordtype">void</span>* aux = 0) { <span class="keywordflow">return</span> <span class="keyword">true</span>; } 
-<a name="l00094"></a><a class="code" href="structsxsdk_1_1modifier__interface.html#a1dd4630acb671b7695f342ba9e7a8dd1">00094</a>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structsxsdk_1_1modifier__interface.html#a1dd4630acb671b7695f342ba9e7a8dd1" title="オーバライド可。ドラッグ操作待ちの時にfinishボタンや他のツールの選択�...">canceled</a> (<a class="code" href="structsxsdk_1_1scene__interface.html">sxsdk::scene_interface</a>* scene, <span class="keywordtype">void</span>* aux = 0) { } 
+<a name="l00089"></a><a class="code" href="structsxsdk_1_1modifier__interface.html#af3d00d2eb0b0de2ef939b9be967d8f3f">00089</a>     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="structsxsdk_1_1modifier__interface.html#af3d00d2eb0b0de2ef939b9be967d8f3f" title="オーバライド可。メニューからプラグインが選択された直後、指定したダイアログ表示やユーザ操作の前に呼ばれる。">pre_modify</a> (<a class="code" href="structsxsdk_1_1scene__interface.html" title="シーンの情報の取得・設定に使用する。">sxsdk::scene_interface</a>* scene, <span class="keywordtype">void</span>* aux = 0) { <span class="keywordflow">return</span> <span class="keyword">true</span>; } 
+<a name="l00094"></a><a class="code" href="structsxsdk_1_1modifier__interface.html#a1dd4630acb671b7695f342ba9e7a8dd1">00094</a>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structsxsdk_1_1modifier__interface.html#a1dd4630acb671b7695f342ba9e7a8dd1" title="オーバライド可。ドラッグ操作待ちの時にfinishボタンや他のツールの選択でプラグインの実行がキャンセルされると呼び出される。">canceled</a> (<a class="code" href="structsxsdk_1_1scene__interface.html" title="シーンの情報の取得・設定に使用する。">sxsdk::scene_interface</a>* scene, <span class="keywordtype">void</span>* aux = 0) { } 
 <a name="l00095"></a>00095 <span class="preprocessor">#ifndef DOXYGEN_SKIP</span>
 <a name="l00096"></a>00096 <span class="preprocessor"></span>    <span class="keyword">virtual</span> <span class="keywordtype">int</span> modifier_interface_dummy12(<span class="keywordtype">void</span> *) { assert(<span class="keyword">false</span>); <span class="keywordflow">throw</span> <span class="stringliteral">&quot;invalid interface modifier_interface&quot;</span>; <span class="keywordflow">return</span> 0; } <span class="comment">// 12</span>
 <a name="l00097"></a>00097     <span class="keyword">virtual</span> <span class="keywordtype">int</span> modifier_interface_dummy13(<span class="keywordtype">void</span> *) { assert(<span class="keyword">false</span>); <span class="keywordflow">throw</span> <span class="stringliteral">&quot;invalid interface modifier_interface&quot;</span>; <span class="keywordflow">return</span> 0; } <span class="comment">// 13</span>
@@ -244,6 +270,10 @@
 <a name="l00285"></a>00285 <span class="preprocessor"></span>};
 <a name="l00286"></a>00286 } <span class="comment">// sxsdk</span>
 </pre></div></div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><b>modifierinterface.h</b>      </li>
 <br><br>
 <hr>
 <div align="center">Copyright &copy; e frontier, Inc. All rights reserved.</div>
